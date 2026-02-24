@@ -1,0 +1,49 @@
+{% set formId = 'formCallback' ~ random(1000000) %}
+<form class="form-callback js-form-callback" novalidate method="post" action="" id="{{ formId }}">
+  <div class="form-callback__container">
+    <div class="form-callback__item form-callback-item-phone">
+      <label class="form-callback__label" for="{{ formId }}Phone">
+        <span class="form-callback__label-text">{{ global['form-callback'].label[lang_code].phone }}</span><span class="form-callback__required" aria-hidden="true"> *</span>
+      </label>
+      <input id="{{ formId }}Phone" type="tel" class="form-callback__input" name="phone" inputmode="tel" autocomplete="tel" placeholder="{{ global['form-callback'].placeholder[lang_code].phone }}" aria-required="true">
+    </div>
+    <div class="form-callback__item form-callback-item-name">
+      <label class="form-callback__label" for="{{ formId }}Name">
+        <span class="form-callback__label-text">{{ global['form-callback'].label[lang_code].name }}</span><span class="form-callback__required" aria-hidden="true"> *</span>
+      </label>
+      <input id="{{ formId }}Name" type="text" class="form-callback__input" name="name" autocomplete="name" placeholder="{{ global['form-callback'].placeholder[lang_code].name }}" aria-required="true">
+    </div>
+    <div class="form-callback__item form-callback-item-square">
+      <label class="form-callback__label" for="{{ formId }}Square">
+        <span class="form-callback__label-text">{{ global['form-callback'].label[lang_code].square }}</span><span class="form-callback__required" aria-hidden="true"> *</span>
+      </label>
+      <input id="{{ formId }}Square" type="text" class="form-callback__input" name="square" placeholder="{{ global['form-callback'].placeholder[lang_code].square }}" aria-required="true">
+    </div>
+    <div class="form-callback__item form-callback-item-policy">
+      <label class="form-callback__custom-checkbox">
+        <input id="{{ formId }}Policy" type="checkbox" name="policy" class="form-callback__checkbox" aria-required="true">
+        <span class="form-callback__checkmark" aria-hidden="true"></span>
+        <span class="form-callback__placeholder uppercase">{{ global['form-callback'].label[lang_code].policy }}</span>
+      </label>
+    </div>
+    <div class="form-callback__item form-callback-item-hidden">
+      <input type="hidden" name="current_url" value="">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token | default('') }}">
+    </div>
+    <div class="form-callback__item button-wrap">
+      <button class="button button-sm outline-color-2 button-animated animation-shift uppercase link" type="submit">
+        {% if data.button is defined and data.button.title is defined %}
+          {{ data.button.title }}
+        {% else %}
+          {{ global['form-callback'].button[lang_code].title }}
+        {% endif %}
+      </button>
+    </div>
+    <div class="form-callback__item form-callback-item-rules rules-wrap">
+      <span class="form-callback__rules">{{ global['form-callback'].rules[lang_code].policy | raw }}</span>
+    </div>
+    <div class="form-callback__item form-callback__error hidden" aria-live="polite" aria-atomic="true">
+      <span id="{{ formId }}Error" class="form-callback__error-text" role="alert" aria-live="assertive">{{ global['form-callback'].error[lang_code].title }}</span>
+    </div>
+  </div>
+</form>

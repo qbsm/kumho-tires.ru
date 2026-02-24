@@ -1,0 +1,113 @@
+<?php
+
+declare(strict_types=1);
+
+use App\Action\HealthAction;
+use App\Action\PageAction;
+use App\Action\SitemapAction;
+use App\Handler\HttpErrorHandler;
+use App\Handler\ServerErrorHandler;
+use App\Middleware\CorsMiddleware;
+use App\Middleware\LanguageMiddleware;
+use App\Middleware\RateLimitMiddleware;
+use App\Middleware\RedirectMiddleware;
+use App\Middleware\SecurityHeadersMiddleware;
+use App\Service\DataLoaderService;
+use App\Twig\AssetExtension;
+use App\Twig\DataExtension;
+use App\Twig\UrlExtension;
+use DI\ContainerBuilder;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+use Psr\Log\LoggerInterface;
+use Slim\Psr7\Factory\ResponseFactory;
+use Slim\Views\Twig;
+use Twig\Extension\DebugExtension;
+use Twig\Extension\StringLoaderExtension;
+
+return static function (): ContainerInterface {
+    $settings = require __DIR__ . '/settings.php';
+    $builder = new ContainerBuilder();
+
+    $builder->addDefinitions([
+        'settings' => $settings,
+        'displayErrorDetails' => (bool) ($settings['twig']['debug'] ?? false),
+        'errorMap' => $settings['errors'] ?? [],
+
+        ResponseFactoryInterface::class => \DI\get(ResponseFactory::class),
+
+        LoggerInterface::class => static function () use ($settings): LoggerInterface {
+            $logDir = (string) ($settings['paths']['logs'] ?? '');
+            if ($logDir !== '' && !is_dir($logDir)) {
+                @mkdir($logDir, 0755, true);
+            }
+
+            $logger = new Logger('app');
+            $logFile = rtrim($logDir, '/') . '/app.log';
+            $level = ($settings['env'] ?? 'development') === 'production' ? Logger::WARNING : Logger::DEBUG;
+            $logger->pushHandler(new StreamHandler($logFile, $level));
+            return $logger;
+        },
+
+        Twig::class => static function (ContainerInterface $container) use ($settings): Twig {
+            $baseDir = (string) $settings['project_root'];
+            $baseUrl = rtrim((string) ($_ENV['APP_BASE_URL'] ?? $_SERVER['APP_BASE_URL'] ?? getenv('APP_BASE_URL') ?: ''), '/');
+            if ($baseUrl === '') {
+                $https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+                $host = (string) ($_SERVER['HTTP_HOST'] ?? 'localhost');
+                $scriptDir = dirname((string) ($_SERVER['SCRIPT_NAME'] ?? '/'));
+                $basePath = $scriptDir === '/' || $scriptDir === '.' ? '' : rtrim($scriptDir, '/');
+                $baseUrl = $https . $host . $basePath;
+            }
+            $baseUrl .= '/';
+
+            $twig = Twig::create((string) $settings['paths']['templates'], $settings['twig']);
+            $env = $twig->getEnvironment();
+            $env->addExtension(new StringLoaderExtension());
+            $env->addExtension(new AssetExtension($baseDir, $baseUrl));
+            $env->addExtension(new UrlExtension($baseUrl));
+            $env->addExtension(new DataExtension($baseDir, $baseUrl));
+
+            if (!empty($settings['twig']['debug'])) {
+                $env->addExtension(new DebugExtension());
+            }
+
+            $global = $container->get(DataLoaderService::class)->loadGlobal(
+                (string) $settings['paths']['json_global'],
+                $baseUrl
+            );
+            $env->addGlobal('base_url', $baseUrl);
+            $env->addGlobal('global', $global);
+
+            return $twig;
+        },
+
+        SecurityHeadersMiddleware::class => static fn(ContainerInterface $c) => new SecurityHeadersMiddleware(
+            ($c->get('settings')['env'] ?? 'development') === 'production'
+        ),
+
+        HealthAction::class => \DI\autowire(),
+        PageAction::class => \DI\autowire()->constructorParameter('settings', \DI\get('settings')),
+        SitemapAction::class => \DI\autowire()->constructorParameter('settings', \DI\get('settings')),
+        ServerErrorHandler::class => \DI\autowire()->constructorParameter('displayErrorDetails', \DI\get('displayErrorDetails')),
+        HttpErrorHandler::class => \DI\autowire()->constructorParameter('errorMap', \DI\get('errorMap')),
+        RedirectMiddleware::class => \DI\autowire()->constructorParameter('settings', \DI\get('settings')),
+        LanguageMiddleware::class => \DI\autowire()->constructorParameter('settings', \DI\get('settings')),
+        CorsMiddleware::class => static fn(ContainerInterface $c) => new CorsMiddleware(
+            $c->get(ResponseFactoryInterface::class),
+            $c->get('settings')['cors'] ?? []
+        ),
+        RateLimitMiddleware::class => static function (ContainerInterface $c) {
+            $s = $c->get('settings');
+            return new RateLimitMiddleware(
+                $c->get(ResponseFactoryInterface::class),
+                $s['rate_limit_api_send'] ?? [],
+                $s['paths']['cache'] ?? ''
+            );
+        },
+    ]);
+
+    return $builder->build();
+};

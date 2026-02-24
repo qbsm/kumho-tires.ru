@@ -1,0 +1,94 @@
+{% set sliderSettings = slider_settings %}
+
+{% if sliderSettings.navigation is not defined %}
+  {% set sliderSettings = sliderSettings|merge({'navigation': {'enabled': true}}) %}
+{% endif %}
+
+{% if sliderSettings.pagination is not defined %}
+  {% set sliderSettings = sliderSettings|merge({'pagination': {'enabled': true}}) %}
+{% endif %}
+
+{% if sliderSettings.navigation.color is not defined %}
+  {% set sliderSettings = sliderSettings|merge({'navigation': {'color': '#fff'}|merge(sliderSettings.navigation)}) %}
+{% endif %}
+
+{% if sliderSettings.navigation.size is not defined %}
+  {% set sliderSettings = sliderSettings|merge({'navigation': {'size': '3rem'}|merge(sliderSettings.navigation)}) %}
+{% endif %}
+
+{% if sliderSettings.pagination.color is not defined %}
+  {% set sliderSettings = sliderSettings|merge({'pagination': {'color': '#fff'}|merge(sliderSettings.pagination)}) %}
+{% endif %}
+
+<div class="slider">
+  <div 
+    class="swiper-container {% if sliderSettings.pagination is defined and not sliderSettings.pagination.enabled %}no-pagination{% endif %}" 
+    id="{{ slider_id|default('introSlider') }}" 
+    data-settings="{{ sliderSettings|json_encode }}">
+    <div class="swiper-wrapper">
+      {% if items is defined and items is not empty %}
+        {% for item in items %}
+          <div class="swiper-slide" {% if item.type is defined %}data-orientation="{{ item.type }}"{% endif %}>
+            {% if slide_component is defined %}
+              {% include slide_component with {'item': item} %}
+            {% else %}
+              {% if item.image is defined %}
+                {# New format with image object containing raw/800/1600 versions #}
+                {% include 'components/picture.twig' with {
+                  image: item.image,
+                  alt: item.alt|default(item.heading.title|default('Slider image')),
+                  class: 'img-responsive',
+                  style: 'width: 100%; height: 100%; object-fit: cover;',
+                  picture_style: 'display: block; width: 100%; height: 100%;',
+                  sizes_preset: 'full',
+                  loading: loop.first ? 'eager' : 'lazy'
+                } %}
+              {% elseif item.cover is defined and item.cover %}
+                {# Слайд с обложкой (URL в item.cover) #}
+                {% include 'components/picture.twig' with {
+                  image: {'src': item.cover},
+                  alt: item.alt|default(item.heading.title|default('Slider image')),
+                  class: 'img-responsive',
+                  style: 'width: 100%; height: 100%; object-fit: cover;',
+                  picture_style: 'display: block; width: 100%; height: 100%;',
+                  sizes_preset: 'full',
+                  loading: loop.first ? 'eager' : 'lazy'
+                } %}
+              {% endif %}
+              
+              {% if item.heading is defined and item.heading or item.desc is defined and item.desc %}
+              <div class="container">
+                <div class="slider__item content-wrap">
+                  <a href="{{ item.href is defined ? url(item.href) : '#' }}" class="slider__subitem link">
+                    {% if item.heading is defined and item.heading %}
+                      {% include 'components/heading.twig' with {'item': item.heading} %}
+                    {% endif %}
+                    {% if item.desc is defined and item.desc %}
+                      <span class="slider__desc uppercase">{{ item.desc | raw }}</span>
+                    {% endif %}
+                  </a>
+                </div>
+              </div>
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="swiper-slide">
+          <div class="container">
+            <div class="slider__item content-wrap">
+              <p>Ошибка: данные слайдов не найдены</p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    {% if sliderSettings.pagination is defined and sliderSettings.pagination.enabled is defined and sliderSettings.pagination.enabled %}
+    <div class="swiper-pagination" style="--swiper-pagination-color: {{ sliderSettings.pagination.color }}"></div>
+    {% endif %}
+    {% if sliderSettings.navigation is defined and sliderSettings.navigation.enabled %}
+    <div class="swiper-button-next" style="--swiper-navigation-color: {{ sliderSettings.navigation.color }}"></div>
+    <div class="swiper-button-prev" style="--swiper-navigation-color: {{ sliderSettings.navigation.color }}"></div>
+    {% endif %}
+  </div>
+</div>

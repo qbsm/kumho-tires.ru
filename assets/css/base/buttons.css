@@ -1,0 +1,276 @@
+.button {
+    position: relative;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    text-decoration: none;
+    border-width: .1rem;
+    border-style: solid;
+    border-color: transparent;
+    cursor: pointer;
+    transition: background var(--transition-1), border-color var(--transition-1), color var(--transition-1);
+    overflow: hidden;
+    border-radius: 1rem;
+    gap: 0.5rem;
+}
+
+.button__icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+.button__item.content-wrap {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    text-wrap: nowrap;
+    transition: var(--transition-2);
+}
+
+.button__item.content-wrap::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.button__item.content-hidden {
+    display: none;
+}
+
+.button__subitem.icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: var(--transition-1);
+    overflow: hidden;
+}
+
+.button-sm {
+    height: 4rem;
+    gap: 1rem;
+    padding: 0.75rem 2rem;
+    font-size: 0.9em;
+
+    @media (--lg) {
+        font-size: 1em;
+    }
+}
+
+.button-md {
+    height: 5rem;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.button-md .button__item.content-wrap::before {
+    left: calc(-1 * (100% - 3rem));
+}
+
+.button-md .button__subitem.icon-wrap {
+    height: 3rem;
+    width: 3rem;
+}
+
+.button-md .button__icon {
+    height: 1.4rem;
+}
+
+.button-md.button-circle {
+    width: 5rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.button-md.button-circle .button__subitem.icon-absolute {
+    position: absolute;
+    inset: 0;
+    left: calc(-1 * (100% + 1rem));
+}
+
+.button-lg {
+    height: 6rem;
+    gap: 1rem;
+    padding: 1rem;
+    padding-right: 2rem;
+    font-size: 1.1em;
+}
+
+.button-lg .button__item.content-wrap::before {
+    left: calc(-1 * (100% - 4rem));
+}
+
+.button-lg .button__subitem.icon-wrap {
+    height: 4rem;
+    width: 4rem;
+}
+
+.button-lg .button__icon {
+    width: 1.6rem;
+}
+
+.button-circle {
+    height: 4.6rem;
+    width: 4.6rem;
+    background: transparent;
+    border: .1rem solid var(--color-1);
+    border-radius: 50%;
+}
+
+.button-sm.button-rounded {
+    border-radius: 2rem;
+}
+
+.button-md.button-rounded {
+    border-radius: 2.5rem;
+}
+
+.button-md.button-rounded-sm {
+    border-radius: 1rem;
+}
+
+.button-lg.button-rounded {
+    border-radius: 3rem;
+}
+
+.button.bg-color-1:hover {
+    background: var(--color-6);
+    color: var(--color-1);
+}
+
+.button.bg-color-1.color-3:hover {
+    color: var(--color-1);
+}
+
+.button.bg-color-2 {
+    background: var(--color-2);
+    color: var(--color-1);
+}
+
+.button.bg-color-2:hover {
+    background: var(--color-6);
+    color: var(--color-2);
+}
+
+.button.bg-color-3:hover {
+    background: var(--color-6);
+}
+
+.button.bg-color-6 {
+    background: var(--color-6);
+}
+
+.button.bg-color-6:hover,
+.button.bg-color-6.active {
+    background: var(--color-2);
+    color: var(--color-1);
+}
+
+.button.outline-color-1 {
+    border-color: var(--color-1);
+}
+
+.button.outline-color-1:hover {
+    border-color: var(--color-6);
+}
+
+.button.outline-color-1:hover .button__subitem.icon-wrap {
+    background: var(--color-6);
+}
+
+.button.outline-color-2 {
+    border-color: var(--color-2);
+}
+
+.button.outline-color-2:hover {
+    background: var(--color-2);
+    border-color: var(--color-2);
+    color: var(--color-1);
+}
+
+.button.outline-color-2:hover .button__subitem.icon-wrap {
+    background: var(--color-6);
+}
+
+.button.outline-color-3 {
+    border-color: var(--color-3);
+}
+
+.button.outline-color-3:hover .button__subitem.icon-wrap {
+    background: var(--color-6);
+}
+
+.button.outline-color-6 {
+    border-color: var(--color-6);
+}
+
+.button.outline-color-6:hover {
+    border-color: var(--color-1);
+}
+
+.button.outline-color-6:hover .button__subitem.icon-wrap {
+    background: var(--color-6);
+}
+
+.button-animated.animation-shift::after {
+    content: "";
+    display: block;
+    right: 0;
+    top: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: url("/data/img/ui/icons/icon-arrow-right-sm-color-2.svg") center no-repeat;
+    transition: transform 0.25s ease-out;
+}
+
+.button-animated.animation-shift:hover::after {
+    transform: translateX(0.5rem);
+}
+
+.button-md.button-animated:hover .button__item.animation-shift {
+    transform: translateX(calc(100% - 2rem));
+}
+
+.button-md.button-circle.button-animated:hover .button__item.animation-shift {
+    transform: translateX(calc(100% + 1rem));
+}
+
+.button-md.button-circle.button-animated .button__subitem.icon-wrap.animation-rotate-90 {
+    transition: var(--transition-2);
+}
+
+.button-md.button-circle.button-animated:hover .button__subitem.icon-wrap.animation-rotate-90 {
+    transform: rotate(90deg);
+}
+
+.button-animated:hover .button__subitem.icon-wrap.animation-rotate-45 {
+    transform: rotate(-45deg);
+}
+
+.button-animated:hover .button__subitem.icon-wrap.animation-fly .button__icon {
+    animation: fly 0.5s ease-out forwards;
+}
+
+.button-animated:hover .button__subitem.icon-wrap.animation-top-to-down .button__icon {
+    animation: top-to-down 0.5s ease-out forwards;
+}
+
+.button-animated:hover .button__subitem.icon-wrap.animation-scale .button__icon {
+    animation: scale 0.5s ease-out forwards;
+}
+
+.button-animated:hover .button__subitem.icon-wrap.animation-icon-up .button__icon {
+    animation: top-to-down 0.5s ease-out forwards;
+}

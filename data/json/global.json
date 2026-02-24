@@ -1,0 +1,277 @@
+{
+  "lang": [
+    {
+      "title": "Русский",
+      "code": "ru",
+      "direction": "ltr"
+    },
+    {
+      "title": "English",
+      "code": "en",
+      "direction": "ltr"
+    }
+  ],
+  "phones": [
+    {
+      "title": "+7 (000) 000-00-00",
+      "href": "tel:+70000000000"
+    }
+  ],
+  "nav": {
+    "ru": {
+      "items": [
+        {
+          "title": "Главная",
+          "href": "/"
+        },
+        {
+          "title": "Бренд",
+          "href": "/brand/"
+        },
+        {
+          "title": "Шины",
+          "href": "/tires/"
+        },
+        {
+          "title": "Расширенная гарантия",
+          "href": "/warranty/"
+        },
+        {
+          "title": "Где купить",
+          "href": "/buy/"
+        }
+      ]
+    },
+    "en": {
+      "items": [
+        {
+          "title": "Home",
+          "href": "/"
+        },
+        {
+          "title": "Brand",
+          "href": "/brand/"
+        },
+        {
+          "title": "Tires",
+          "href": "/tires/"
+        },
+        {
+          "title": "Extended warranty",
+          "href": "/warranty/"
+        },
+        {
+          "title": "Where to buy",
+          "href": "/buy/"
+        }
+      ]
+    }
+  },
+  "email": {
+    "title": "info@example.com",
+    "href": "mailto:info@example.com"
+  },
+  "logo": {
+    "horizontal": {
+      "white": {
+        "src": "data/img/ui/logos/logo-h-color-1.svg",
+        "alt": "Logo"
+      },
+      "black": {
+        "src": "data/img/ui/logos/logo-h-color-2.svg",
+        "alt": "Logo"
+      }
+    },
+    "vertical": {
+      "white": {
+        "src": "data/img/ui/logos/logo-v-color-1.svg",
+        "alt": "Logo"
+      },
+      "black": {
+        "src": "data/img/ui/logos/logo-v-color-2.svg",
+        "alt": "Logo"
+      }
+    }
+  },
+  "socials": [],
+  "socials-headings": {
+    "ru": "Подписывайтесь на нас",
+    "en": "Follow us"
+  },
+  "policy": {
+    "ru": {
+      "title": "Политика в отношении обработки персональных данных",
+      "href": "/policy/"
+    },
+    "en": {
+      "title": "Privacy Policy",
+      "href": "/policy/"
+    }
+  },
+  "agree": {
+    "ru": {
+      "title": "Пользовательское соглашение",
+      "href": "/agree/"
+    },
+    "en": {
+      "title": "User Agreement",
+      "href": "/agree/"
+    }
+  },
+  "copyright": {
+    "ru": "Все права защищены",
+    "en": "All rights reserved"
+  },
+  "form-callback": {
+    "placeholder": {
+      "ru": {
+        "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
+        "name": "Ваше имя",
+        "square": "Площадь, м²"
+      },
+      "en": {
+        "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
+        "name": "Your name",
+        "square": "Area, m²"
+      }
+    },
+    "label": {
+      "ru": {
+        "phone": "Телефон",
+        "name": "Ваше имя",
+        "square": "Площадь, м²",
+        "policy": "Принять конфиденциальность"
+      },
+      "en": {
+        "phone": "Phone",
+        "name": "Your name",
+        "square": "Area, m²",
+        "policy": "Accept privacy policy"
+      }
+    },
+    "rules": {
+      "ru": {
+        "policy": "Нажимая на кнопку, вы даете согласие на обработку персональных данных."
+      },
+      "en": {
+        "policy": "By clicking the button, you agree to the processing of personal data."
+      }
+    },
+    "error": {
+      "ru": {
+        "title": "Пожалуйста, исправьте ошибки в форме",
+        "name_required": "Пожалуйста, укажите ваше имя",
+        "name_min_length": "Имя должно содержать не менее 2 символов",
+        "phone_required": "Пожалуйста, укажите номер телефона",
+        "phone_invalid": "Неверный формат номера телефона",
+        "policy_required": "Необходимо согласиться с политикой конфиденциальности",
+        "form_errors": "Пожалуйста, исправьте ошибки в форме",
+        "invalid_method": "Недопустимый метод запроса",
+        "success": "Ваша заявка успешно отправлена!",
+        "success_title": "Спасибо за заявку!",
+        "success_text": "Мы свяжемся с вами в ближайшее время",
+        "server_error": "Произошла ошибка при отправке формы",
+        "response_error": "Произошла ошибка при обработке ответа сервера",
+        "connection_error": "Ошибка соединения с сервером"
+      },
+      "en": {
+        "title": "Please correct the errors in the form",
+        "name_required": "Please enter your name",
+        "name_min_length": "Name should be at least 2 characters",
+        "phone_required": "Please enter your phone number",
+        "phone_invalid": "Invalid phone number format",
+        "policy_required": "You must agree to the privacy policy",
+        "form_errors": "Please correct the errors in the form",
+        "invalid_method": "Invalid request method",
+        "success": "Your request has been successfully sent!",
+        "success_title": "Thank you for your request!",
+        "success_text": "We will contact you shortly",
+        "server_error": "An error occurred while submitting the form",
+        "response_error": "An error occurred while processing the server response",
+        "connection_error": "Server connection error"
+      }
+    },
+    "button": {
+      "ru": {
+        "title": "Получить консультацию"
+      },
+      "en": {
+        "title": "Get a consultation"
+      }
+    },
+    "link": {
+      "ru": {
+        "title": "Политика конфиденциальности"
+      },
+      "en": {
+        "title": "Privacy Policy"
+      }
+    }
+  },
+  "filter": {
+    "ru": {
+      "items": [
+        "рады детям",
+        "с красивым видом",
+        "итальянская кухня",
+        "завтраки",
+        "на каждый день",
+        "можно с животными"
+      ]
+    },
+    "en": {
+      "items": [
+        "kids friendly",
+        "with a beautiful view",
+        "italian cuisine",
+        "breakfast",
+        "every day",
+        "pets friendly"
+      ]
+    }
+  },
+  "icons": {
+    "cup": {
+      "white": {
+        "src": "data/img/ui/icons/icon-cup-light.svg",
+        "alt": "Cup"
+      },
+      "black": {
+        "src": "data/img/ui/icons/icon-cup-dark.svg",
+        "alt": "Cup"
+      }
+    }
+  },
+  "accordion": {
+    "show-all": {
+      "ru": "Показать все",
+      "en": "Show all"
+    }
+  },
+  "burger": {
+    "aria_open": {
+      "ru": "Открыть меню",
+      "en": "Open menu"
+    },
+    "aria_close": {
+      "ru": "Закрыть меню",
+      "en": "Close menu"
+    }
+  },
+  "cookie-panel": {
+    "ru": {
+      "desc": "Наш сайт использует файлы cookie для улучшения работы сайта — <a href='/policy/' class='link color-2 weight-400'>подробнее</a>.",
+      "button": {
+        "title": "Принимаю",
+        "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"
+      }
+    },
+    "en": {
+      "desc": "Our website uses cookies to improve the site's performance — <a href='/en/policy/' class='link color-2 weight-400'>learn more</a>.",
+      "button": {
+        "title": "Accept",
+        "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"
+      }
+    }
+  }
+}

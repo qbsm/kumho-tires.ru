@@ -1,0 +1,70 @@
+.link {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--transition-1), opacity var(--transition-1);
+}
+
+.link:hover {
+  opacity: 0.9;
+}
+
+.link:active {
+  opacity: 0.8;
+}
+
+.button.link,
+.button.link:hover,
+.button.link:active {
+  opacity: 1;
+  transition: background var(--transition-1), border-color var(--transition-1), color var(--transition-1);
+}
+
+.link.color-1:hover {
+  color: var(--color-6);
+}
+
+.link.color-2 {
+  color: var(--color-2);
+}
+
+.link.color-2:hover {
+  color: var(--color-3);
+}
+
+.link.color-3:hover {
+  color: var(--color-6);
+}
+
+.link.color-6 {
+  color: var(--color-6);
+}
+
+.link.color-6:hover {
+  color: var(--color-2);
+}
+
+.link.inline {
+  display: inline;
+}
+
+.link.underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentcolor;
+  transition: width 0.3s ease;
+}
+
+.link.underline:hover::after {
+  width: 100%;
+}
+
+.link.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+
+  /* Это свойство нужно для работы sticky-позиционирования и корректного скролла внутри контейнеров */
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--color-2);
+  background-color: var(--color-1);
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+span,
+a,
+strong,
+em,
+b,
+i,
+u,
+mark,
+small,
+code,
+label,
+button,
+input,
+select,
+textarea,
+img,
+sub,
+sup,
+abbr,
+cite,
+q,
+time,
+kbd,
+var,
+samp,
+dfn,
+bdo,
+br,
+wbr,
+data,
+meter,
+progress,
+ruby,
+rt,
+rp,
+del,
+ins,
+s,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+img {
+  display: block;
+  line-height: 1;
+}
+
+*::-webkit-scrollbar {
+  width: .2rem;
+  height: .2rem;
+}
+
+
+
+*::-webkit-scrollbar-thumb {
+  background: hsl(0deg 0% 0% / 30%);
+  border-radius: 2rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: hsl(0deg 0% 0% / 10%);
+}

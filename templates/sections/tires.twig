@@ -1,0 +1,25 @@
+<section class="tires section">
+  <div class="container">
+    {% if data.heading is defined %}
+      <div class="section__item heading-wrap">
+        {% include 'components/heading.twig' with {'item': data.heading} %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="container">
+    {% set tiresList = load_json('data/json/' ~ lang_code ~ '/pages/tires.json') %}
+    {% if tiresList and tiresList.items is not empty %}
+      <div class="section__item cards-tire-wrap">
+        {% for slug in tiresList.items %}
+          {% set tireItem = load_json('data/json/' ~ lang_code ~ '/tires/' ~ slug ~ '.json') %}
+          {% if tireItem and tireItem.visible | default(false) %}
+            <div class="section__subitem card-tire-wrap">
+              {% include 'components/card-tire.twig' with {'item': tireItem} %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

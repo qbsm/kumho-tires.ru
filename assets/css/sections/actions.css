@@ -1,0 +1,30 @@
+.actions {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @media (--lg) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.actions .section__item.block-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.actions .section__subitem.heading-wrap {
+  text-align: center;
+}
+
+.actions .section__subitem.cards-action-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.actions .section__inner.card-action-wrap {
+  width: 100%;
+}

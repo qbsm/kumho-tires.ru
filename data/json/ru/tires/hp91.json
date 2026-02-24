@@ -1,0 +1,19 @@
+{
+  "slug": "hp91",
+  "visible": true,
+  "item": {
+    "code": "HP91",
+    "series": "CRUGEN",
+    "name": "Kumho HP91 CRUGEN"
+  },
+  "image": {
+    "src": "data/img/tires/hp91/hp91.jpg"
+  },
+  "images": {
+    "sidewall": "data/img/tires/hp91/hp91-sidewall.jpg",
+    "tread": "data/img/tires/hp91/hp91-tread.png"
+  },
+  "desc": {
+    "short": "Шина Kumho HP91 CRUGEN"
+  }
+}

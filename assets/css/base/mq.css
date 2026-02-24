@@ -1,0 +1,7 @@
+@custom-media --xs (max-width: 539px);
+@custom-media --xm (min-width: 540px);
+@custom-media --sm (min-width: 768px);
+@custom-media --md (min-width: 992px);
+@custom-media --lg (min-width: 1200px);
+@custom-media --xl (min-width: 1441px);
+@custom-media --xxl (min-width: 1601px);

@@ -1,0 +1,1 @@
+<{{item.tag}} class='{{item.class}}'{% if item.attributes %} {% for attr, value in item.attributes %}{{ attr }}="{{ value }}"{% if not loop.last %} {% endif %}{% endfor %}{% endif %}>{{item.title | raw }}</{{item.tag}}>

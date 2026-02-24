@@ -1,0 +1,115 @@
+/* Стили для GLightbox. !important — переопределение стилей библиотеки. */
+
+/* Блокировка скролла при открытом лайтбоксе */
+body.glightbox-open {
+  overflow: hidden !important;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+/* Дополнительные стили для GLightbox */
+.glightbox-container {
+  z-index: 9999;
+}
+
+.glightbox-clean .gclose {
+  background-color: var(--color-4) !important;
+  opacity: 0.5;
+  backdrop-filter: blur(5px);
+}
+
+/* Анимации для плавного появления/исчезновения */
+.glightbox-closing .glightbox-container,
+.glightbox-closing .glightbox-container .goverlay {
+  animation: fadeOut 0.5s ease;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* Улучшенные стили навигации */
+.glightbox-clean .gnext, 
+.glightbox-clean .gprev {
+  background-color: var(--color-4) !important;
+  opacity: 0.5;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.glightbox-clean .gnext:hover, 
+.glightbox-clean .gprev:hover {
+  background-color: var(--color-4) !important;
+  opacity: 0.5;
+}
+
+.goverlay {
+  background-color: var(--color-4) !important;
+}
+
+/* Фон модального окна */
+.glightbox-clean {
+  background-color: var(--color-4) !important;
+}
+
+/* Скрываем описание в модальном окне */
+.glightbox-clean .gslide-description,
+.glightbox-clean .description-bottom {
+  display: none !important;
+}
+
+/* Фон для контента модального окна */
+.ginlined-content {
+  background-color: var(--color-4) !important;
+}
+
+.glightbox-clean .gprev svg path,
+.glightbox-clean .gnext svg path,
+.glightbox-clean .gclose svg path {
+  fill: var(--color-2) !important;
+}
+
+.glightbox-clean .gslide-media {
+  box-shadow: none !important;
+}
+
+/* Стили для VK видео контейнера */
+.vk-video-container {
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: 0 auto;
+}
+
+.vk-video-container iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 30%);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (width <= 768px) {
+  .vk-video-container {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+  
+  .vk-video-container iframe {
+    border-radius: 4px;
+  }
+}
+
+/* Обеспечиваем корректное отображение контента в GLightbox */
+.glightbox-clean .gslide-inner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,24 @@
+<header class="header js-header" itemscope itemtype="https://schema.org/Organization">
+  <div class="section__item block-wrap">
+    <div class="section__subitem logo-wrap">
+      <a href="/" class="link header__logo" itemprop="url">
+        <img src="{{ url(global.logo.vertical.black.src|default('data/img/ui/logos/logo-v-color-2.svg')) }}" alt="{{ global.logo.vertical.black.alt|default('Logo') }}" class="img-responsive" itemprop="logo">
+      </a>
+    </div>
+    <nav class="section__subitem nav-wrap" aria-label="Основное меню">
+      {% for item in global.nav[lang_code].items %}
+        <div class="section__inner nav-link-wrap">
+          <a href="{{ url(item.href) }}" class="link color-2">{{ item.title }}</a>
+        </div>
+      {% endfor %}
+    </nav>
+    <div class="section__subitem burger-icon-wrap">
+      {% include 'components/burger-icon.twig' %}
+    </div>
+    <div class="section__subitem burger-menu-wrap">
+      {% include 'components/burger-menu.twig' with {
+        items: global.nav[lang_code].items
+      } %}
+    </div>
+  </div>
+</header>

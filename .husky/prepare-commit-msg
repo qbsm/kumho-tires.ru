@@ -1,0 +1,5 @@
+# Удаляем Co-authored-by: Cursor из сообщения коммита
+msg_file="$1"
+if [ -f "$msg_file" ]; then
+  grep -v "Co-authored-by: Cursor" "$msg_file" > "${msg_file}.tmp" && mv "${msg_file}.tmp" "$msg_file"
+fi

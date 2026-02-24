@@ -1,0 +1,15 @@
+<section class="contacts" itemscope itemtype="https://schema.org/Organization">
+  <div class="container contacts__container">
+    {% include 'components/heading.twig' with {'item': {tag: 'h2', class: 'contacts__title', title: section.title, attributes: {itemprop: 'name'}}} %}
+    <div class="contacts__content">
+      {{ section.content|raw }}
+    </div>
+    <div class="contacts__info">
+      <a href="tel:{{ contacts.phone_link }}" class="contacts__phone" itemprop="telephone">{{ contacts.phone }}</a>
+      <a href="mailto:{{ contacts.email }}" class="contacts__email" itemprop="email">{{ contacts.email }}</a>
+      <div class="contacts__address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">{{ contacts.address }}</span>
+      </div>
+    </div>
+  </div>
+</section>

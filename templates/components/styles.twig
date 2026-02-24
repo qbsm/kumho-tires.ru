@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="{{ assetUrl('main.css', 'css') }}" />
+{% set vendorCss = assetUrl('vendors.css', 'js', true) %}
+{% if vendorCss %}<link rel="stylesheet" href="{{ vendorCss }}" />{% endif %}
+{% set uiVendorCss = assetUrl('ui-vendors.css', 'js', true) %}
+{% if uiVendorCss %}<link rel="stylesheet" href="{{ uiVendorCss }}" />{% endif %}

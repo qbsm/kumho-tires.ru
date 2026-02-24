@@ -1,0 +1,26 @@
+{
+  "name": "tires-list",
+  "sections": [
+    {"name": "header", "visible": true, "data": {}},
+    {
+      "name": "tires",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h1",
+          "class": "heading weight-400 uppercase",
+          "title": "Шины Kumho — модели"
+        }
+      }
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
+    }
+  ]
+}

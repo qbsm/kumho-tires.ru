@@ -1,0 +1,15 @@
+.numbered-list {
+  margin: 0;
+  margin-left: 1.5rem;
+  padding: 0;
+  font-size: 1em;
+  list-style: decimal;
+
+  @media (--lg) {
+    font-size: 0.9em;
+  }
+}
+
+.numbered-list__item {
+  padding-top: 0.5rem;
+}

@@ -1,0 +1,3842 @@
+{
+  "us/800/video-cover.webp": {
+    "width": 800,
+    "height": 783
+  },
+  "us/800/video-cover.avif": {
+    "width": 800,
+    "height": 783
+  },
+  "us/1600/video-cover.webp": {
+    "width": 1600,
+    "height": 1566
+  },
+  "us/1600/video-cover.avif": {
+    "width": 1600,
+    "height": 1566
+  },
+  "us/raw/video-cover.webp": {
+    "width": 1950,
+    "height": 1908
+  },
+  "us/raw/video-cover.avif": {
+    "width": 1950,
+    "height": 1908
+  },
+  "restaurants-list/800/card-bg.webp": {
+    "width": 800,
+    "height": 469
+  },
+  "restaurants-list/800/card-bg.avif": {
+    "width": 800,
+    "height": 469
+  },
+  "restaurants-list/1600/card-bg.webp": {
+    "width": 890,
+    "height": 522
+  },
+  "restaurants-list/1600/card-bg.avif": {
+    "width": 890,
+    "height": 522
+  },
+  "restaurants-list/raw/card-bg.webp": {
+    "width": 890,
+    "height": 522
+  },
+  "restaurants-list/raw/card-bg.avif": {
+    "width": 890,
+    "height": 522
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/9.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/9.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/9.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/9.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/9.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/9.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/8.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/8.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/8.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/8.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/8.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/8.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/7.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/7.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/7.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/7.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/7.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/7.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/6.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/6.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/6.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/6.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/6.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/6.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/5.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/5.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/5.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/5.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/5.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/5.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/4.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/4.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/4.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/4.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/3.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/3.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/3.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/3.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/2.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/2.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/2.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/2.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/13.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/13.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/13.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/13.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/13.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/13.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/12.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/12.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/12.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/12.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/12.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/12.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/11.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/11.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/11.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/11.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/11.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/11.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/10.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/10.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/10.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/10.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/10.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/10.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/1.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar-moscow/covers/raw/1.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar/covers/800/3.webp": {
+    "width": 800,
+    "height": 1233
+  },
+  "restaurants/salone-pasta-bar/covers/800/3.avif": {
+    "width": 800,
+    "height": 1233
+  },
+  "restaurants/salone-pasta-bar/covers/1600/3.webp": {
+    "width": 1600,
+    "height": 2466
+  },
+  "restaurants/salone-pasta-bar/covers/1600/3.avif": {
+    "width": 1600,
+    "height": 2466
+  },
+  "restaurants/salone-pasta-bar/covers/raw/3.webp": {
+    "width": 1680,
+    "height": 2589
+  },
+  "restaurants/salone-pasta-bar/covers/raw/3.avif": {
+    "width": 1680,
+    "height": 2589
+  },
+  "restaurants/salone-pasta-bar/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar/covers/1600/2.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar/covers/1600/2.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar/covers/raw/2.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar/covers/raw/2.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/salone-pasta-bar/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/salone-pasta-bar/covers/raw/1.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/salone-pasta-bar/covers/raw/1.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/oasis-gourmet/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/oasis-gourmet/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/oasis-gourmet/covers/1600/2.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/oasis-gourmet/covers/1600/2.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/oasis-gourmet/covers/raw/2.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/oasis-gourmet/covers/raw/2.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/oasis-gourmet/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/oasis-gourmet/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/oasis-gourmet/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/oasis-gourmet/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/oasis-gourmet/covers/raw/1.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/oasis-gourmet/covers/raw/1.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/juan-cantina-espanola/covers/800/5.webp": {
+    "width": 800,
+    "height": 1067
+  },
+  "restaurants/juan-cantina-espanola/covers/800/5.avif": {
+    "width": 800,
+    "height": 1067
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/5.webp": {
+    "width": 1600,
+    "height": 2133
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/5.avif": {
+    "width": 1600,
+    "height": 2133
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/5.webp": {
+    "width": 1680,
+    "height": 2240
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/5.avif": {
+    "width": 1680,
+    "height": 2240
+  },
+  "restaurants/juan-cantina-espanola/covers/800/4.webp": {
+    "width": 800,
+    "height": 1067
+  },
+  "restaurants/juan-cantina-espanola/covers/800/4.avif": {
+    "width": 800,
+    "height": 1067
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/4.webp": {
+    "width": 1600,
+    "height": 2133
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/4.avif": {
+    "width": 1600,
+    "height": 2133
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/4.webp": {
+    "width": 1680,
+    "height": 2240
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/4.avif": {
+    "width": 1680,
+    "height": 2240
+  },
+  "restaurants/juan-cantina-espanola/covers/800/3.webp": {
+    "width": 800,
+    "height": 1067
+  },
+  "restaurants/juan-cantina-espanola/covers/800/3.avif": {
+    "width": 800,
+    "height": 1067
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/3.webp": {
+    "width": 1600,
+    "height": 2133
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/3.avif": {
+    "width": 1600,
+    "height": 2133
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/3.webp": {
+    "width": 1680,
+    "height": 2240
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/3.avif": {
+    "width": 1680,
+    "height": 2240
+  },
+  "restaurants/juan-cantina-espanola/covers/800/2.webp": {
+    "width": 800,
+    "height": 1067
+  },
+  "restaurants/juan-cantina-espanola/covers/800/2.avif": {
+    "width": 800,
+    "height": 1067
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/2.webp": {
+    "width": 1600,
+    "height": 2133
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/2.avif": {
+    "width": 1600,
+    "height": 2133
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/2.webp": {
+    "width": 1680,
+    "height": 2240
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/2.avif": {
+    "width": 1680,
+    "height": 2240
+  },
+  "restaurants/juan-cantina-espanola/covers/800/1.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/juan-cantina-espanola/covers/800/1.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/juan-cantina-espanola/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/1.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/juan-cantina-espanola/covers/raw/1.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/joli-grand-bistrot/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/joli-grand-bistrot/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/joli-grand-bistrot/covers/1600/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/1600/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/raw/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/raw/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/joli-grand-bistrot/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/joli-grand-bistrot/covers/1600/3.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/1600/3.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/raw/3.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/raw/3.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/joli-grand-bistrot/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/joli-grand-bistrot/covers/1600/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/1600/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/raw/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/raw/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/joli-grand-bistrot/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/joli-grand-bistrot/covers/1600/1.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/1600/1.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/raw/1.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/joli-grand-bistrot/covers/raw/1.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/jam-cafe/covers/800/9.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/9.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/9.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/9.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/9.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/9.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/800/8.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/8.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/8.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/8.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/8.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/8.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/800/7.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/7.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/7.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/7.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/7.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/7.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/800/6.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/6.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/6.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/6.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/6.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/6.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/800/5.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/5.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/5.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/5.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/5.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/5.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/4.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/4.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/4.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/4.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/3.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/3.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/3.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/3.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/2.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/2.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/2.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/2.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/jam-cafe/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/jam-cafe/covers/raw/1.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/jam-cafe/covers/raw/1.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/italy-vilenskiy/covers/800/9.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/800/9.avif": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/1600/9.webp": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/1600/9.avif": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/raw/9.webp": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/raw/9.avif": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/800/8.webp": {
+    "width": 800,
+    "height": 1068
+  },
+  "restaurants/italy-vilenskiy/covers/800/8.avif": {
+    "width": 800,
+    "height": 1068
+  },
+  "restaurants/italy-vilenskiy/covers/1600/8.webp": {
+    "width": 1198,
+    "height": 1600
+  },
+  "restaurants/italy-vilenskiy/covers/1600/8.avif": {
+    "width": 1198,
+    "height": 1600
+  },
+  "restaurants/italy-vilenskiy/covers/raw/8.webp": {
+    "width": 1198,
+    "height": 1600
+  },
+  "restaurants/italy-vilenskiy/covers/raw/8.avif": {
+    "width": 1198,
+    "height": 1600
+  },
+  "restaurants/italy-vilenskiy/covers/800/7.webp": {
+    "width": 800,
+    "height": 1101
+  },
+  "restaurants/italy-vilenskiy/covers/800/7.avif": {
+    "width": 800,
+    "height": 1101
+  },
+  "restaurants/italy-vilenskiy/covers/1600/7.webp": {
+    "width": 1163,
+    "height": 1600
+  },
+  "restaurants/italy-vilenskiy/covers/1600/7.avif": {
+    "width": 1163,
+    "height": 1600
+  },
+  "restaurants/italy-vilenskiy/covers/raw/7.webp": {
+    "width": 1163,
+    "height": 1600
+  },
+  "restaurants/italy-vilenskiy/covers/raw/7.avif": {
+    "width": 1163,
+    "height": 1600
+  },
+  "restaurants/italy-vilenskiy/covers/800/6.webp": {
+    "width": 800,
+    "height": 1101
+  },
+  "restaurants/italy-vilenskiy/covers/800/6.avif": {
+    "width": 800,
+    "height": 1101
+  },
+  "restaurants/italy-vilenskiy/covers/1600/6.webp": {
+    "width": 1600,
+    "height": 2203
+  },
+  "restaurants/italy-vilenskiy/covers/1600/6.avif": {
+    "width": 1600,
+    "height": 2203
+  },
+  "restaurants/italy-vilenskiy/covers/raw/6.webp": {
+    "width": 2179,
+    "height": 3000
+  },
+  "restaurants/italy-vilenskiy/covers/raw/6.avif": {
+    "width": 2179,
+    "height": 3000
+  },
+  "restaurants/italy-vilenskiy/covers/800/5.webp": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/italy-vilenskiy/covers/800/5.avif": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/italy-vilenskiy/covers/1600/5.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/italy-vilenskiy/covers/1600/5.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/italy-vilenskiy/covers/raw/5.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/italy-vilenskiy/covers/raw/5.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/italy-vilenskiy/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-vilenskiy/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-vilenskiy/covers/1600/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-vilenskiy/covers/1600/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-vilenskiy/covers/raw/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-vilenskiy/covers/raw/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-vilenskiy/covers/800/3.webp": {
+    "width": 800,
+    "height": 570
+  },
+  "restaurants/italy-vilenskiy/covers/800/3.avif": {
+    "width": 800,
+    "height": 570
+  },
+  "restaurants/italy-vilenskiy/covers/1600/3.webp": {
+    "width": 1600,
+    "height": 1139
+  },
+  "restaurants/italy-vilenskiy/covers/1600/3.avif": {
+    "width": 1600,
+    "height": 1139
+  },
+  "restaurants/italy-vilenskiy/covers/raw/3.webp": {
+    "width": 1920,
+    "height": 1367
+  },
+  "restaurants/italy-vilenskiy/covers/raw/3.avif": {
+    "width": 1920,
+    "height": 1367
+  },
+  "restaurants/italy-vilenskiy/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-vilenskiy/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-vilenskiy/covers/1600/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-vilenskiy/covers/1600/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-vilenskiy/covers/raw/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-vilenskiy/covers/raw/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-vilenskiy/covers/800/15.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/800/15.avif": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/1600/15.webp": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/1600/15.avif": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/raw/15.webp": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/raw/15.avif": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/800/14.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/800/14.avif": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/1600/14.webp": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/1600/14.avif": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/raw/14.webp": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/raw/14.avif": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/800/13.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/800/13.avif": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/1600/13.webp": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/1600/13.avif": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/raw/13.webp": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/raw/13.avif": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/800/12.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/800/12.avif": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/1600/12.webp": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/1600/12.avif": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/raw/12.webp": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/raw/12.avif": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/800/11.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/800/11.avif": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/1600/11.webp": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/1600/11.avif": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/raw/11.webp": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/raw/11.avif": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/800/10.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/800/10.avif": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/1600/10.webp": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/1600/10.avif": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/raw/10.webp": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/raw/10.avif": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/800/1.webp": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/800/1.avif": {
+    "width": 800,
+    "height": 502
+  },
+  "restaurants/italy-vilenskiy/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1004
+  },
+  "restaurants/italy-vilenskiy/covers/raw/1.webp": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-vilenskiy/covers/raw/1.avif": {
+    "width": 1920,
+    "height": 1205
+  },
+  "restaurants/italy-moskovskiy/covers/800/9.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/9.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/9.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/9.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/9.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/9.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/8.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/8.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/8.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/8.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/8.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/8.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/7.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/7.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/7.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/7.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/7.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/7.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/6.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/6.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/6.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/6.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/6.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/6.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/5.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/5.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/5.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/5.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/5.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/5.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-moskovskiy/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-moskovskiy/covers/1600/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/1600/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/raw/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/raw/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-moskovskiy/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-moskovskiy/covers/1600/3.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/1600/3.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/raw/3.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/raw/3.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/800/24.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/24.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/24.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/24.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/24.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/24.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/23.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/23.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/23.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/23.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/23.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/23.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/22.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/22.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/22.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/22.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/22.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/22.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/21.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/21.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/21.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/21.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/21.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/21.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/20.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/20.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/20.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/20.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/20.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/20.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-moskovskiy/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-moskovskiy/covers/1600/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/1600/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/raw/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/raw/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-moskovskiy/covers/800/19.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/19.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/19.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/19.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/19.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/19.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/18.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/18.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/18.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/18.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/18.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/18.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/17.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/17.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/17.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/17.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/17.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/17.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/16.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/16.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/16.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/16.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/16.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/16.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/15.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/15.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/15.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/15.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/15.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/15.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/14.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/14.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/14.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/14.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/14.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/14.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/13.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/13.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/13.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/13.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/13.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/13.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/12.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/12.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/12.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/12.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/12.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/12.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/11.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/11.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/11.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/11.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/11.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/11.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/10.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/10.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/10.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/10.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/10.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/10.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/800/1.webp": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/800/1.avif": {
+    "width": 800,
+    "height": 600
+  },
+  "restaurants/italy-moskovskiy/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1200
+  },
+  "restaurants/italy-moskovskiy/covers/raw/1.webp": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-moskovskiy/covers/raw/1.avif": {
+    "width": 1680,
+    "height": 1260
+  },
+  "restaurants/italy-bolshoy/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-bolshoy/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-bolshoy/covers/1600/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/1600/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/raw/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/raw/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-bolshoy/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-bolshoy/covers/1600/3.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/1600/3.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/raw/3.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/raw/3.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-bolshoy/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-bolshoy/covers/1600/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/1600/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/raw/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/raw/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italy-bolshoy/covers/800/1.webp": {
+    "width": 800,
+    "height": 466
+  },
+  "restaurants/italy-bolshoy/covers/800/1.avif": {
+    "width": 800,
+    "height": 466
+  },
+  "restaurants/italy-bolshoy/covers/1600/1.webp": {
+    "width": 1197,
+    "height": 698
+  },
+  "restaurants/italy-bolshoy/covers/1600/1.avif": {
+    "width": 1197,
+    "height": 698
+  },
+  "restaurants/italy-bolshoy/covers/raw/1.webp": {
+    "width": 1197,
+    "height": 698
+  },
+  "restaurants/italy-bolshoy/covers/raw/1.avif": {
+    "width": 1197,
+    "height": 698
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/800/4.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/800/4.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/1600/4.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/1600/4.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/raw/4.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/raw/4.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/800/3.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/800/3.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/1600/3.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/1600/3.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/raw/3.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/raw/3.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/800/2.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/800/2.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/1600/2.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/1600/2.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/raw/2.webp": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/raw/2.avif": {
+    "width": 707,
+    "height": 415
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/raw/1.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/italy-bolshaya-morskaya/covers/raw/1.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/italiani/covers/800/9.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/9.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/9.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/9.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/9.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/9.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/8.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/8.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/8.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/8.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/8.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/8.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/7.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/7.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/7.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/7.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/7.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/7.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/6.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/6.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/6.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/6.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/6.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/6.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/5.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/5.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/5.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/5.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/5.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/5.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/4.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/4.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/3.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/3.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/3.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/3.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/2.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/2.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/11.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/11.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/11.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/11.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/11.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/11.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/10.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/10.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/10.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/10.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/10.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/10.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/italiani/covers/1600/1.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/1600/1.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/1.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/italiani/covers/raw/1.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/hitch/covers/800/9.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/9.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/9.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/1600/9.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/9.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/9.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/800/8.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/8.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/8.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/1600/8.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/8.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/8.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/800/7.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/7.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/7.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/1600/7.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/7.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/7.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/800/6.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/6.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/6.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/hitch/covers/1600/6.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/hitch/covers/raw/6.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/hitch/covers/raw/6.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/hitch/covers/800/5.webp": {
+    "width": 800,
+    "height": 617
+  },
+  "restaurants/hitch/covers/800/5.avif": {
+    "width": 800,
+    "height": 617
+  },
+  "restaurants/hitch/covers/1600/5.webp": {
+    "width": 1600,
+    "height": 1233
+  },
+  "restaurants/hitch/covers/1600/5.avif": {
+    "width": 1600,
+    "height": 1233
+  },
+  "restaurants/hitch/covers/raw/5.webp": {
+    "width": 1920,
+    "height": 1480
+  },
+  "restaurants/hitch/covers/raw/5.avif": {
+    "width": 1920,
+    "height": 1480
+  },
+  "restaurants/hitch/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/4.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/hitch/covers/1600/4.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/hitch/covers/raw/4.webp": {
+    "width": 1920,
+    "height": 1280
+  },
+  "restaurants/hitch/covers/raw/4.avif": {
+    "width": 1920,
+    "height": 1280
+  },
+  "restaurants/hitch/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/3.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/hitch/covers/1600/3.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/hitch/covers/raw/3.webp": {
+    "width": 1920,
+    "height": 1280
+  },
+  "restaurants/hitch/covers/raw/3.avif": {
+    "width": 1920,
+    "height": 1280
+  },
+  "restaurants/hitch/covers/800/2.webp": {
+    "width": 800,
+    "height": 616
+  },
+  "restaurants/hitch/covers/800/2.avif": {
+    "width": 800,
+    "height": 616
+  },
+  "restaurants/hitch/covers/1600/2.webp": {
+    "width": 1600,
+    "height": 1233
+  },
+  "restaurants/hitch/covers/1600/2.avif": {
+    "width": 1600,
+    "height": 1233
+  },
+  "restaurants/hitch/covers/raw/2.webp": {
+    "width": 1920,
+    "height": 1479
+  },
+  "restaurants/hitch/covers/raw/2.avif": {
+    "width": 1920,
+    "height": 1479
+  },
+  "restaurants/hitch/covers/800/12.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/12.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/12.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/1600/12.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/12.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/12.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/800/11.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/11.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/11.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/1600/11.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/11.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/11.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/800/10.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/800/10.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/hitch/covers/1600/10.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/1600/10.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/10.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/raw/10.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/hitch/covers/800/1.webp": {
+    "width": 800,
+    "height": 621
+  },
+  "restaurants/hitch/covers/800/1.avif": {
+    "width": 800,
+    "height": 621
+  },
+  "restaurants/hitch/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1242
+  },
+  "restaurants/hitch/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1242
+  },
+  "restaurants/hitch/covers/raw/1.webp": {
+    "width": 1920,
+    "height": 1490
+  },
+  "restaurants/hitch/covers/raw/1.avif": {
+    "width": 1920,
+    "height": 1490
+  },
+  "restaurants/goose-goose/covers/800/9.webp": {
+    "width": 800,
+    "height": 427
+  },
+  "restaurants/goose-goose/covers/800/9.avif": {
+    "width": 800,
+    "height": 427
+  },
+  "restaurants/goose-goose/covers/1600/9.webp": {
+    "width": 900,
+    "height": 480
+  },
+  "restaurants/goose-goose/covers/1600/9.avif": {
+    "width": 900,
+    "height": 480
+  },
+  "restaurants/goose-goose/covers/raw/9.webp": {
+    "width": 900,
+    "height": 480
+  },
+  "restaurants/goose-goose/covers/raw/9.avif": {
+    "width": 900,
+    "height": 480
+  },
+  "restaurants/goose-goose/covers/800/8.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/800/8.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/1600/8.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/goose-goose/covers/1600/8.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/goose-goose/covers/raw/8.webp": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/goose-goose/covers/raw/8.avif": {
+    "width": 1200,
+    "height": 800
+  },
+  "restaurants/goose-goose/covers/800/7.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/800/7.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/1600/7.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/1600/7.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/7.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/7.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/800/6.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/800/6.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/1600/6.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/1600/6.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/6.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/6.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/800/5.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/800/5.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/1600/5.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/1600/5.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/5.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/5.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/1600/4.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/1600/4.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/4.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/4.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/1600/3.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/1600/3.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/3.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/3.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/1600/2.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/1600/2.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/2.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/2.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/800/10.webp": {
+    "width": 800,
+    "height": 427
+  },
+  "restaurants/goose-goose/covers/800/10.avif": {
+    "width": 800,
+    "height": 427
+  },
+  "restaurants/goose-goose/covers/1600/10.webp": {
+    "width": 900,
+    "height": 480
+  },
+  "restaurants/goose-goose/covers/1600/10.avif": {
+    "width": 900,
+    "height": 480
+  },
+  "restaurants/goose-goose/covers/raw/10.webp": {
+    "width": 900,
+    "height": 480
+  },
+  "restaurants/goose-goose/covers/raw/10.avif": {
+    "width": 900,
+    "height": 480
+  },
+  "restaurants/goose-goose/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/goose-goose/covers/1600/1.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/1600/1.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/1.webp": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/goose-goose/covers/raw/1.avif": {
+    "width": 1280,
+    "height": 853
+  },
+  "restaurants/bist/covers/800/27.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/27.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/27.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/27.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/27.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/27.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/26.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/26.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/26.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/26.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/26.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/26.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/25.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/25.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/25.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/25.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/25.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/25.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/24.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/24.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/24.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/24.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/24.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/24.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/23.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/23.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/23.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/23.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/23.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/23.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/22.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/22.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/22.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/22.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/22.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/22.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/21.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/21.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/21.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/21.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/21.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/21.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/20.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/20.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/20.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/20.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/20.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/20.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/19.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/19.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/19.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/19.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/19.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/19.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/18.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/18.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/18.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/18.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/18.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/18.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/17.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/17.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/17.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/17.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/17.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/17.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/16.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/16.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/16.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/16.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/16.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/16.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/15.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/15.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/15.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/15.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/15.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/15.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/800/14.webp": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/800/14.avif": {
+    "width": 800,
+    "height": 436
+  },
+  "restaurants/bist/covers/1600/14.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/1600/14.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/14.webp": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bist/covers/raw/14.avif": {
+    "width": 1328,
+    "height": 724
+  },
+  "restaurants/bear/covers/800/9.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/9.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/9.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/9.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/9.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/9.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/800/8.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/8.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/8.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/8.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/8.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/8.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/800/7.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/7.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/7.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/7.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/7.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/7.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/800/6.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/6.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/6.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/6.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/6.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/6.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/800/5.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/5.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/5.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/5.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/5.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/5.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/800/4.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/4.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/4.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/4.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/4.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/4.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/800/3.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/3.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/3.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/3.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/3.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/3.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/800/2.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/2.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/2.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/2.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/2.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/2.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/800/1.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/800/1.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "restaurants/bear/covers/1600/1.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/1600/1.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "restaurants/bear/covers/raw/1.webp": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/bear/covers/raw/1.avif": {
+    "width": 1680,
+    "height": 1120
+  },
+  "restaurants/atelier/covers/800/5.webp": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/800/5.avif": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/1600/5.webp": {
+    "width": 958,
+    "height": 639
+  },
+  "restaurants/atelier/covers/1600/5.avif": {
+    "width": 958,
+    "height": 639
+  },
+  "restaurants/atelier/covers/raw/5.webp": {
+    "width": 958,
+    "height": 639
+  },
+  "restaurants/atelier/covers/raw/5.avif": {
+    "width": 958,
+    "height": 639
+  },
+  "restaurants/atelier/covers/800/4.webp": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/800/4.avif": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/1600/4.webp": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/1600/4.avif": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/raw/4.webp": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/raw/4.avif": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/800/3.webp": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/800/3.avif": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/1600/3.webp": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/1600/3.avif": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/raw/3.webp": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/raw/3.avif": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/800/2.webp": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/800/2.avif": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/1600/2.webp": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/1600/2.avif": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/raw/2.webp": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/raw/2.avif": {
+    "width": 958,
+    "height": 640
+  },
+  "restaurants/atelier/covers/800/1.webp": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/800/1.avif": {
+    "width": 800,
+    "height": 534
+  },
+  "restaurants/atelier/covers/1600/1.webp": {
+    "width": 958,
+    "height": 639
+  },
+  "restaurants/atelier/covers/1600/1.avif": {
+    "width": 958,
+    "height": 639
+  },
+  "restaurants/atelier/covers/raw/1.webp": {
+    "width": 958,
+    "height": 639
+  },
+  "restaurants/atelier/covers/raw/1.avif": {
+    "width": 958,
+    "height": 639
+  },
+  "owners/800/timur-dmitriev.webp": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/800/timur-dmitriev.avif": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/1600/timur-dmitriev.webp": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/1600/timur-dmitriev.avif": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/raw/timur-dmitriev.webp": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/raw/timur-dmitriev.avif": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/800/mikhail-sokolov.webp": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/800/mikhail-sokolov.avif": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/1600/mikhail-sokolov.webp": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/1600/mikhail-sokolov.avif": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/raw/mikhail-sokolov.webp": {
+    "width": 504,
+    "height": 504
+  },
+  "owners/raw/mikhail-sokolov.avif": {
+    "width": 504,
+    "height": 504
+  },
+  "navigation/800/rests.webp": {
+    "width": 800,
+    "height": 411
+  },
+  "navigation/800/rests.avif": {
+    "width": 800,
+    "height": 411
+  },
+  "navigation/1600/rests.webp": {
+    "width": 1524,
+    "height": 783
+  },
+  "navigation/1600/rests.avif": {
+    "width": 1524,
+    "height": 783
+  },
+  "navigation/raw/rests.webp": {
+    "width": 1524,
+    "height": 783
+  },
+  "navigation/raw/rests.avif": {
+    "width": 1524,
+    "height": 783
+  },
+  "navigation/800/lottery.webp": {
+    "width": 800,
+    "height": 271
+  },
+  "navigation/800/lottery.avif": {
+    "width": 800,
+    "height": 271
+  },
+  "navigation/1600/lottery.webp": {
+    "width": 1600,
+    "height": 541
+  },
+  "navigation/1600/lottery.avif": {
+    "width": 1600,
+    "height": 541
+  },
+  "navigation/raw/lottery.webp": {
+    "width": 4080,
+    "height": 1380
+  },
+  "navigation/raw/lottery.avif": {
+    "width": 4080,
+    "height": 1380
+  },
+  "navigation/800/italy-people.webp": {
+    "width": 800,
+    "height": 271
+  },
+  "navigation/800/italy-people.avif": {
+    "width": 800,
+    "height": 271
+  },
+  "navigation/1600/italy-people.webp": {
+    "width": 1600,
+    "height": 541
+  },
+  "navigation/1600/italy-people.avif": {
+    "width": 1600,
+    "height": 541
+  },
+  "navigation/raw/italy-people.webp": {
+    "width": 4080,
+    "height": 1380
+  },
+  "navigation/raw/italy-people.avif": {
+    "width": 4080,
+    "height": 1380
+  },
+  "navigation/800/delivery.webp": {
+    "width": 800,
+    "height": 441
+  },
+  "navigation/800/delivery.avif": {
+    "width": 800,
+    "height": 441
+  },
+  "navigation/1600/delivery.webp": {
+    "width": 1419,
+    "height": 783
+  },
+  "navigation/1600/delivery.avif": {
+    "width": 1419,
+    "height": 783
+  },
+  "navigation/raw/delivery.webp": {
+    "width": 1419,
+    "height": 783
+  },
+  "navigation/raw/delivery.avif": {
+    "width": 1419,
+    "height": 783
+  },
+  "navigation/800/bg-gradient2.webp": {
+    "width": 800,
+    "height": 97
+  },
+  "navigation/800/bg-gradient2.avif": {
+    "width": 800,
+    "height": 97
+  },
+  "navigation/1600/bg-gradient2.webp": {
+    "width": 1300,
+    "height": 157
+  },
+  "navigation/1600/bg-gradient2.avif": {
+    "width": 1300,
+    "height": 157
+  },
+  "navigation/raw/bg-gradient2.webp": {
+    "width": 1300,
+    "height": 157
+  },
+  "navigation/raw/bg-gradient2.avif": {
+    "width": 1300,
+    "height": 157
+  },
+  "navigation/800/bg-gradient1.webp": {
+    "width": 800,
+    "height": 93
+  },
+  "navigation/800/bg-gradient1.avif": {
+    "width": 800,
+    "height": 93
+  },
+  "navigation/1600/bg-gradient1.webp": {
+    "width": 1360,
+    "height": 158
+  },
+  "navigation/1600/bg-gradient1.avif": {
+    "width": 1360,
+    "height": 158
+  },
+  "navigation/raw/bg-gradient1.webp": {
+    "width": 1360,
+    "height": 158
+  },
+  "navigation/raw/bg-gradient1.avif": {
+    "width": 1360,
+    "height": 158
+  },
+  "intro/800/cover1.webp": {
+    "width": 800,
+    "height": 458
+  },
+  "intro/800/cover1.avif": {
+    "width": 800,
+    "height": 458
+  },
+  "intro/1600/cover1.webp": {
+    "width": 1450,
+    "height": 830
+  },
+  "intro/1600/cover1.avif": {
+    "width": 1450,
+    "height": 830
+  },
+  "intro/raw/cover1.webp": {
+    "width": 1450,
+    "height": 830
+  },
+  "intro/raw/cover1.avif": {
+    "width": 1450,
+    "height": 830
+  },
+  "intro/800/cover.webp": {
+    "width": 800,
+    "height": 461
+  },
+  "intro/800/cover.avif": {
+    "width": 800,
+    "height": 461
+  },
+  "intro/1600/cover.webp": {
+    "width": 1440,
+    "height": 830
+  },
+  "intro/1600/cover.avif": {
+    "width": 1440,
+    "height": 830
+  },
+  "intro/raw/cover.webp": {
+    "width": 1440,
+    "height": 830
+  },
+  "intro/raw/cover.avif": {
+    "width": 1440,
+    "height": 830
+  },
+  "favicons/800/web-app-manifest-512x512.webp": {
+    "width": 512,
+    "height": 512
+  },
+  "favicons/800/web-app-manifest-512x512.avif": {
+    "width": 512,
+    "height": 512
+  },
+  "favicons/1600/web-app-manifest-512x512.webp": {
+    "width": 512,
+    "height": 512
+  },
+  "favicons/1600/web-app-manifest-512x512.avif": {
+    "width": 512,
+    "height": 512
+  },
+  "favicons/raw/web-app-manifest-512x512.webp": {
+    "width": 512,
+    "height": 512
+  },
+  "favicons/raw/web-app-manifest-512x512.avif": {
+    "width": 512,
+    "height": 512
+  },
+  "favicons/800/web-app-manifest-192x192.webp": {
+    "width": 192,
+    "height": 192
+  },
+  "favicons/800/web-app-manifest-192x192.avif": {
+    "width": 192,
+    "height": 192
+  },
+  "favicons/1600/web-app-manifest-192x192.webp": {
+    "width": 192,
+    "height": 192
+  },
+  "favicons/1600/web-app-manifest-192x192.avif": {
+    "width": 192,
+    "height": 192
+  },
+  "favicons/raw/web-app-manifest-192x192.webp": {
+    "width": 192,
+    "height": 192
+  },
+  "favicons/raw/web-app-manifest-192x192.avif": {
+    "width": 192,
+    "height": 192
+  },
+  "favicons/800/favicon-96x96.webp": {
+    "width": 96,
+    "height": 96
+  },
+  "favicons/800/favicon-96x96.avif": {
+    "width": 96,
+    "height": 96
+  },
+  "favicons/1600/favicon-96x96.webp": {
+    "width": 96,
+    "height": 96
+  },
+  "favicons/1600/favicon-96x96.avif": {
+    "width": 96,
+    "height": 96
+  },
+  "favicons/raw/favicon-96x96.webp": {
+    "width": 96,
+    "height": 96
+  },
+  "favicons/raw/favicon-96x96.avif": {
+    "width": 96,
+    "height": 96
+  },
+  "favicons/800/apple-touch-icon.webp": {
+    "width": 180,
+    "height": 180
+  },
+  "favicons/800/apple-touch-icon.avif": {
+    "width": 180,
+    "height": 180
+  },
+  "favicons/1600/apple-touch-icon.webp": {
+    "width": 180,
+    "height": 180
+  },
+  "favicons/1600/apple-touch-icon.avif": {
+    "width": 180,
+    "height": 180
+  },
+  "favicons/raw/apple-touch-icon.webp": {
+    "width": 180,
+    "height": 180
+  },
+  "favicons/raw/apple-touch-icon.avif": {
+    "width": 180,
+    "height": 180
+  }
+}

@@ -1,0 +1,8 @@
+<div class="cover">
+  {% include 'components/picture.twig' with {
+    image: cover,
+    alt: cover.alt|default(''),
+    class: 'cover__image img-responsive',
+    loading: 'lazy'
+  } %}
+</div>

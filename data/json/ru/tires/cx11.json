@@ -1,0 +1,12 @@
+{
+  "slug": "cx11",
+  "visible": true,
+  "item": {
+    "code": "CX11",
+    "series": "PorTran",
+    "name": "Kumho CX11 PorTran"
+  },
+  "desc": {
+    "short": "Шина Kumho CX11 PorTran"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "ha32",
+  "visible": true,
+  "item": {
+    "code": "HA32",
+    "series": "SOLUS",
+    "name": "Kumho HA32 SOLUS"
+  },
+  "desc": {
+    "short": "Шина Kumho HA32 SOLUS"
+  }
+}

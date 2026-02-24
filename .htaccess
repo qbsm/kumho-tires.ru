@@ -1,0 +1,18 @@
+# Защита при ошибочной настройке DocumentRoot на корень проекта вместо public/
+# Если DocumentRoot указан на эту папку, доступ к чувствительным путям запрещён.
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "^\\.env">
+        Require all denied
+    </FilesMatch>
+    <FilesMatch "^(composer\\.(json|lock)|package(-lock)?\\.json)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.env(\..*)?$ - [F,L]
+    RewriteRule ^\.git(/|$) - [F,L]
+    RewriteRule ^(config|src|tools|cache|logs|vendor|docs|assets|data)/ - [F,L]
+</IfModule>

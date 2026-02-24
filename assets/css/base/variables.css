@@ -1,0 +1,49 @@
+:root {
+    /* Базовые */
+    --color-1: #fff;
+    --color-2: #000;
+
+    /* Фирменные */
+    --color-3: #ef0010;
+    --color-4: #d6d6d6;
+    --color-5: #6e6e6e;
+    --color-6: #4a4a49;
+    --color-7: #b4b7b9;
+    --color-8: #4c4c4e;
+
+    /* Служебные: ошибки, статусы, подписи */
+    --color-error: #f44336;
+    --color-error-bg: rgb(244 67 54 / 5%);
+    --color-success: #4CAF50;
+    --color-placeholder: #6C6B6B;
+    --color-muted: #666;
+    --color-border: #888;
+    --gradient-1: linear-gradient(to bottom, hsl(0deg 0% 100% / 100%), hsl(0deg 0% 100% / 0%));
+    --gradient-2: linear-gradient(to bottom, hsl(0deg 0% 0% / 100%), hsl(0deg 0% 0% / 0%));
+    --gradient-3: linear-gradient(to left, #F1ECE4, #DAD8D7);
+}
+
+:root {
+    /* font-1: основной текст; font-2: заголовки */
+    --font-1: "Source Sans 3", sans-serif;
+    --font-2: "Manrope", sans-serif;
+}
+
+:root {
+    --transition-1: 0.25s all ease-out;
+    --transition-2: 0.5s all ease-out;
+    --transition-3: 1s all ease-out;
+}
+
+:root {
+    --z-index-1: 1000;
+    --z-index-2: 990;
+    --z-index-3: 980;
+    --z-index-4: 970;
+    --z-index-5: 960;
+    --z-index-6: 950;
+    --z-index-7: 940;
+    --z-index-8: 930;
+    --z-index-9: 920;
+    --z-index-10: 910;
+}

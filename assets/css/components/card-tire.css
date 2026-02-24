@@ -1,0 +1,21 @@
+.card-tire {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--color-4);
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.card-tire:hover {
+  border-color: var(--color-6);
+  background: rgb(0 0 0 / 2%);
+}
+
+.card-tire .card__title {
+  font-size: 1.25rem;
+}
+
+.card-tire .card__desc {
+  font-size: 0.9rem;
+  color: var(--color-5);
+}

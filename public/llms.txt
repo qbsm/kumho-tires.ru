@@ -1,0 +1,25 @@
+# iSmart Platform
+
+Официальное описание сайта для LLM и AI-краулеров.
+
+## О проекте
+
+Многоязычная веб-платформа. Контент и разделы задаются в конфигурации и data/json; список страниц для sitemap — в config/settings.php (sitemap_pages). Языки: из data/json/global.json (поле lang).
+
+## Основные страницы
+
+Актуальный набор страниц и URL задаётся в проекте (route_map и sitemap_pages в config). Примеры:
+- Главная: /
+- Контакты: /contacts/
+- Политика конфиденциальности: /policy/
+- Пользовательское соглашение: /agree/
+
+Для языковой версии используется префикс в URL (например /en/, /en/contacts/). Полный список URL с hreflang: /sitemap.xml
+
+## Контакты
+
+Актуальные контакты — на странице контактов и в data/json/global.json (phones, email).
+
+## Структура контента
+
+Контент управляется через JSON (data/json/). На сайте используются структурированные данные Schema.org (Organization, WebSite, BreadcrumbList и др.). Расширенное описание сущностей (каталоги, разделы) формируется из config/llms-full.php и выводится в /llms-full.txt

@@ -1,0 +1,45 @@
+{# Подключаем JS бандлы с помощью assetUrl #}
+{# assetUrl должна находить хешированный файл в манифесте и возвращать полный URL #}
+{# Порядок подключения может быть важен и должен соответствовать зависимостям, определенным в Webpack #}
+
+{% set runtime_url = assetUrl('runtime.js', 'js', true) %}
+{% if runtime_url %}
+  <script src="{{ runtime_url }}" defer></script>
+{% endif %}
+
+{# Используем assetUrl с третьим параметром true для безопасного получения URL #}
+{# Если файл отсутствует в манифесте, функция вернет null вместо выброса исключения #}
+{% set vendors_url = assetUrl('vendors.js', 'js', true) %}
+{% if vendors_url %}
+  <script src="{{ vendors_url }}" defer></script>
+{% endif %}
+
+{% set ui_vendors_url = assetUrl('ui-vendors.js', 'js', true) %}
+{% if ui_vendors_url %}
+  <script src="{{ ui_vendors_url }}" defer></script>
+{% endif %}
+
+{% set util_vendors_url = assetUrl('util-vendors.js', 'js', true) %}
+{% if util_vendors_url %}
+  <script src="{{ util_vendors_url }}" defer></script>
+{% endif %}
+
+{# vendor.js больше не используется, т.к. удален из точек входа в webpack.config.js
+   его функциональность полностью заменена автоматическими бандлами vendors.js, ui-vendors.js и util-vendors.js #}
+
+{# Основной бандл приложения, который импортирует все остальные кастомные JS модули #}
+{% set main_url = assetUrl('main.js', 'js', true) %}
+{% if main_url %}
+  {# Если main.js использует ES6 import/export, ему может потребоваться type="module" #}
+  {# Однако, если Webpack собирает его в формат, понятный старым браузерам (например, IIFE), #}
+  {# то type="module" не нужен. Атрибут defer уже есть. #}
+  <script src="{{ main_url }}" defer></script>
+{% endif %}
+
+{# Примечание: Блок с определением window.appConfig.baseUrl и window.appConfig.langCode #}
+{# теперь находится в base.twig ДО включения этого файла (scripts.twig) #}
+
+{# Примечание: window.appConfig определяется в base.twig #}
+
+{# Подключаем скрипт для работы с UTM-метками #}
+<script src="{{ base_url }}assets/js/utils/utm.js" defer></script>

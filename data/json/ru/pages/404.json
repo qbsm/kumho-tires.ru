@@ -1,0 +1,30 @@
+{
+  "name": "404",
+  "sections": [
+    {
+      "name": "header",
+      "data": {}
+    },
+    {
+      "name": "promo",
+      "data": {
+        "background": {
+          "src": "data/img/ui/bg1.webp"
+        }
+      }
+    },
+    {
+      "name": "form-container",
+      "data": {}
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
+    }
+  ]
+}

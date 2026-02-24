@@ -1,0 +1,38 @@
+{
+  "name": "index",
+  "title": "Kumho Tire — главная",
+  "meta": [
+    {
+      "name": "description",
+      "content": "Kumho Tire — официальный сайт бренда шин Kumho. Линейка шин для легковых автомобилей, кроссоверов и внедорожников."
+    },
+    {
+      "property": "og:url",
+      "content": "https://example.com/"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Kumho Tire — главная"
+    },
+    {
+      "property": "og:description",
+      "content": "Kumho Tire — официальный сайт бренда шин Kumho. Линейка шин для легковых автомобилей, кроссоверов и внедорожников."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Студия"
+    },
+    {
+      "property": "og:image",
+      "content": "https://example.com/data/img/seo/og.webp?v=1"
+    },
+    {
+      "property": "og:image:secure_url",
+      "content": "https://example.com/data/img/seo/og.webp?v=1"
+    }
+  ]
+}

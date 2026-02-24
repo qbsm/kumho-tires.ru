@@ -1,0 +1,12 @@
+{
+  "slug": "kh25",
+  "visible": true,
+  "item": {
+    "code": "KH25",
+    "series": "Ecowing",
+    "name": "Kumho KH25 Ecowing"
+  },
+  "desc": {
+    "short": "Шина Kumho KH25 Ecowing"
+  }
+}

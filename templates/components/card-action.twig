@@ -1,0 +1,30 @@
+{% if item.href is defined and item.href %}
+<a href="{{ url(item.href) }}" class="card-action link {{ item.class|default('') }}"{% if item.target is defined %} target="{{ item.target }}"{% endif %}>
+{% else %}
+<div class="card-action {{ item.class|default('') }}">
+{% endif %}
+  {% if item.cover is defined and item.cover.src %}
+    <div class="card-action__item cover-wrap">
+      <div class="card-action__cover" style="background-image: url('{{ url(item.cover.src) }}');"></div>
+    </div>
+  {% endif %}
+  {% if item.icon is defined and item.icon %}
+    <div class="card-action__item icon-wrap">
+      <img src="{{ url(item.icon.src) }}" alt="{{ item.icon.alt|default('') }}" class="card-action__icon img-responsive" loading="lazy">
+    </div>
+  {% endif %}
+  {% if item.title is defined and item.title %}
+    <div class="card-action__item title-wrap">
+      <span class="card-action__title uppercase">{{ item.title|raw }}</span>
+    </div>
+  {% endif %}
+  {% if item.desc is defined and item.desc %}
+    <div class="card-action__item desc-wrap">
+      <span class="card-action__desc">{{ item.desc|raw }}</span>
+    </div>
+  {% endif %}
+{% if item.href is defined and item.href %}
+</a>
+{% else %}
+</div>
+{% endif %}

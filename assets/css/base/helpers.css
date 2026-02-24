@@ -1,0 +1,262 @@
+.color-1 {
+  color: var(--color-1);
+}
+
+.color-2 {
+  color: var(--color-2);
+}
+
+.color-3 {
+  color: var(--color-3);
+}
+
+.color-4 {
+  color: var(--color-4);
+}
+
+.color-5 {
+  color: var(--color-5);
+}
+
+.color-6 {
+  color: var(--color-6);
+}
+
+.bg-color-1 {
+  background: var(--color-1);
+}
+
+.bg-color-2 {
+  background: var(--color-2);
+}
+
+.bg-color-3 {
+  background: var(--color-3);
+}
+
+.bg-color-4 {
+  background: var(--color-4);
+}
+
+.bg-color-5 {
+  background: var(--color-5);
+}
+
+.bg-color-6 {
+  background: var(--color-6);
+}
+
+.bg-color-7 {
+  background: var(--color-7);
+}
+
+.opacity-08 {
+  opacity: 0.08;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-12 {
+  opacity: 0.12;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.height-1 {
+  height: 1px;
+}
+
+.height-2 {
+  height: 2px;
+}
+
+.height-3 {
+  height: 3px;
+}
+
+.height-4 {
+  height: 4px;
+}
+
+.height-20 {
+  height: 20px;
+}
+
+.height-46 {
+  height: 46px;
+}
+
+.width-1 {
+  width: 1px;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Утилита принудительного скрытия; !important — чтобы перебить контекстные display */
+.hidden {
+  display: none !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-checkbox__input {
+  display: none;
+}
+
+.custom-checkbox__box {
+  width: 2rem;
+  height: 2rem;
+  border: 0.1rem solid var(--color-1);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  transition: border-color 0.3s ease;
+  position: relative;
+}
+
+.custom-checkbox__box:hover {
+  border-color: var(--color-border);
+}
+
+.custom-checkbox__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: var(--color-1);
+  stroke-width: 0.2rem;
+  visibility: hidden;
+}
+
+.custom-checkbox__input:checked+.custom-checkbox__box {
+  background-color: var(--color-4);
+  border-color: var(--color-4);
+}
+
+.custom-checkbox__input:checked+.custom-checkbox__box .custom-checkbox__icon {
+  visibility: visible;
+  transform: scale(1);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.icon-sm-wrap {
+  width: 3.6rem;
+  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+  transition: all 0.3s ease;
+
+  @media (--lg) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+.icon-sm-wrap:hover {
+  box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+}
+
+.icon-sm {
+  width: auto;
+  height: 3rem;
+}
+
+.animation-bw-color {
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+}
+
+.animation-bw-color:hover {
+    filter: grayscale(0%);
+}
+
+.no-zoom img {
+  transform: scale(1);
+}
+
+/* Skip-link: скрыт до фокуса (доступность, WCAG) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-1, #000);
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}

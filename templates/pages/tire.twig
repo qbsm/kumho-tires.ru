@@ -1,0 +1,25 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div id="page-content">
+  {% include 'sections/header.twig' with {'data': {}} %}
+  <main class="section tire-detail" role="main">
+    <div class="container">
+      {% set t = tire.item %}
+      <article class="tire-detail__article">
+        <h1 class="tire-detail__title font-2">{{ t.name | default(t.code) }}</h1>
+        {% if t.series is defined and t.series %}
+          <p class="tire-detail__series">{{ t.series }}</p>
+        {% endif %}
+        {% if tire.desc.short is defined and tire.desc.short %}
+          <p class="tire-detail__desc">{{ tire.desc.short }}</p>
+        {% endif %}
+        {% if tire.desc.full is defined and tire.desc.full %}
+          <div class="tire-detail__full">{{ tire.desc.full }}</div>
+        {% endif %}
+      </article>
+    </div>
+  </main>
+  {% include 'sections/footer.twig' with {'data': global.footer|default({})} %}
+</div>
+{% endblock %}

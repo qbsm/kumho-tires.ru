@@ -1,0 +1,12 @@
+{
+  "slug": "ha31",
+  "visible": true,
+  "item": {
+    "code": "HA31",
+    "series": "SOLUS",
+    "name": "Kumho HA31 SOLUS"
+  },
+  "desc": {
+    "short": "Шина Kumho HA31 SOLUS"
+  }
+}

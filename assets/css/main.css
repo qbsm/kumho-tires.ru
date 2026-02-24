@@ -1,0 +1,59 @@
+/* Base styles */
+@import "base/variables.css";
+@import "base/fonts.css";
+@import "base/general.css";
+@import "base/typography.css";
+@import "base/grid.css";
+@import "base/links.css";
+@import "base/buttons.css";
+@import "base/helpers.css";
+@import "base/animations.css";
+@import "base/mq.css";
+
+/* Sections */
+@import "sections/header.css";
+@import "sections/footer.css";
+@import "sections/burger-menu.css";
+@import "sections/contacts.css";
+@import "sections/content.css";
+@import "sections/cookie-panel.css";
+@import "sections/intro.css";
+@import "sections/headline.css";
+@import "sections/actions.css";
+@import "sections/owners.css";
+@import "sections/us.css";
+@import "sections/navigation.css";
+@import "sections/tires.css";
+
+/* Components */
+@import "components/accordion.css";
+@import "components/analytics.css";
+@import "components/blockquote.css";
+@import "components/burger-icon.css";
+@import "components/burger-menu.css";
+@import "components/button.css";
+@import "components/cover.css";
+@import "components/custom-checkbox.css";
+@import "components/custom-list.css";
+@import "components/features-list.css";
+@import "components/form-callback.css";
+@import "components/glightbox-custom.css";
+@import "components/heading.css";
+@import "components/mini-table.css";
+@import "components/numbered-list.css";
+@import "components/slider.css";
+@import "components/spoiler.css";
+@import "components/card-owner.css";
+@import "components/card-nav.css";
+@import "components/button-section.css";
+@import "components/card-gradient.css";
+@import "components/card-action.css";
+@import "components/card-number.css";
+@import "components/card-tire.css";
+
+/* Pages */
+@import "pages/404.css";
+@import "pages/contacts.css";
+@import "pages/index.css";
+@import "sections/logoline.css";
+@import "pages/tires.css";

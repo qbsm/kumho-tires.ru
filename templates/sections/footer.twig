@@ -1,0 +1,53 @@
+<section class="footer section" itemscope itemtype="https://schema.org/Organization">
+  <div class="container">
+    <div class="section__item form-wrap">
+      <div class="section__subitem heading-wrap">
+        <span class="footer__heading uppercase">{{ data.form.heading | default(global['form-callback'].button[lang_code].title) }}</span>
+      </div>
+      <div class="section__subitem form-inner-wrap">
+        {% include 'components/form-callback.twig' %}
+      </div>
+    </div>
+    <div class="section__item links-wrap">
+      <div class="section__subitem nav-wrap">
+        {% if global.nav[lang_code].items is defined %}
+          {% for link in global.nav[lang_code].items %}
+            <div class="footer__link-wrap">
+              <a href="{{ url(link.href) }}" class="link footer__link">{{ link.title }}</a>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="section__subitem social-wrap">
+        {% if global.socials is defined %}
+          {% for social in global.socials %}
+            {% if social.visible is not defined or social.visible %}
+              <a href="{{ social.href }}" target="_blank" rel="noopener noreferrer" class="link social-link" itemprop="sameAs">
+                {% if social.icon is defined %}
+                  <img src="{{ url(social.icon.src) }}" alt="{{ social.icon.alt | default(social.title | default('')) }}" class="icon-sm" loading="lazy">
+                {% else %}
+                  {{ social.title }}
+                {% endif %}
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="section__item bottom-wrap">
+      <div class="section__subitem disclaimer-wrap">
+        {% if global.policy[lang_code] is defined %}
+          <a href="{{ url(global.policy[lang_code].href) }}" class="link footer__disclaimer-link">{{ global.policy[lang_code].title }}</a>
+        {% endif %}
+        {% if global.agree[lang_code] is defined %}
+          <a href="{{ url(global.agree[lang_code].href) }}" class="link footer__disclaimer-link">{{ global.agree[lang_code].title }}</a>
+        {% endif %}
+      </div>
+      <div class="section__subitem copyright-wrap">
+        {% if global.copyright[lang_code] is defined %}
+          <span class="footer__copyright">© 2020-{{ "now"|date("Y") }}. {{ global.copyright[lang_code] }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

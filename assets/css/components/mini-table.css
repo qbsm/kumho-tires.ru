@@ -1,0 +1,49 @@
+.mini-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.mini-table__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--color-6);
+
+  @media (--lg) {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: first baseline;
+    gap: 2rem;
+  }
+}
+
+.mini-table__item:first-child {
+  margin-top: -1rem;
+
+  @media (--lg) {
+    margin-top: -1.25rem;
+  }
+}
+
+.mini-table__title {
+  font-size: 0.7em;
+}
+
+.mini-table__value {
+  font-size: 0.8em;
+  text-align: start;
+
+  @media (--lg) {
+    text-align: end;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "slug": "hp71",
+  "visible": true,
+  "item": {
+    "code": "HP71",
+    "series": "CRUGEN",
+    "name": "Kumho HP71 CRUGEN"
+  },
+  "desc": {
+    "short": "Шина Kumho HP71 CRUGEN"
+  }
+}

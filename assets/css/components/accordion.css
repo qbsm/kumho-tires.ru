@@ -1,0 +1,128 @@
+.accordion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+
+  @media (--lg) {
+    gap: 1.25rem;
+  }
+}
+
+.accordion__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 0.1rem solid var(--color-6);
+
+  @media (--lg) {
+    gap: 1.25rem;
+  }
+}
+
+.accordion__subitem.title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  text-align: left;
+}
+
+.accordion__show-all {
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+.accordion__title {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.accordion__item.active .accordion__title {
+  font-weight: 600;
+}
+
+.accordion__icon-wrap {
+  width: 0.5rem;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  flex-shrink: 0;
+}
+
+.accordion__item.active .accordion__icon-wrap {
+  transform: rotate(180deg);
+}
+
+.accordion__subitem.desc-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.accordion__item.active .desc-wrap {
+  padding-top: 0.25rem;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.accordion__desc {
+  font-size: 0.9em;
+}
+
+/* Компенсируем уменьшенный размер шрифта внутри аккордеона */
+.accordion__desc .custom-list {
+  font-size: 1.111em;
+
+  /* 1 / 0.9 = 1.111 */
+
+  @media (--lg) {
+    font-size: 1em;
+
+    /* 0.9 / 0.9 = 1 */
+  }
+}
+
+/* Стили для кнопки "Показать все" */
+
+/* Скрытие элемента (JS переключает класс вместо inline style) */
+.accordion__item.hidden {
+  display: none;
+}
+
+.accordion__item.show-all {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: none;
+}
+
+.accordion__show-all {
+  font-size: 0.8em;
+  text-decoration: underline;
+}

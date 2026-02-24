@@ -1,0 +1,94 @@
+{
+  "name": "index",
+  "sections": [
+    {
+      "name": "header",
+      "visible": true,
+      "data": {}
+    },
+    {
+      "name": "intro",
+      "visible": true,
+      "data": {
+        "slider": {
+          "id": "introSlider",
+          "items": [
+            {
+              "video": "data/video/intro/cover.mp4"
+            }
+          ]
+        },
+        "heading": {
+          "tag": "h1",
+          "class": "heading font-2 weight-500 text-center uppercase",
+          "title": "Шины Kumho — южнокорейский бренд с 60-летней историей.<br>Надёжность, проверенная временем."
+        }
+      }
+    },
+    {
+      "name": "logoline",
+      "visible": false,
+      "data": {
+        "tires": [
+          "at52",
+          "at61",
+          "cx11",
+          "es31",
+          "ha31",
+          "hp91",
+          "hs51",
+          "kl71",
+          "mt51",
+          "ps72",
+          "ta31"
+        ]
+      }
+    },
+    {
+      "name": "headline",
+      "visible": false,
+      "data": {}
+    },
+    {
+      "name": "actions",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-500 uppercase",
+          "title": "Действующие акции"
+        },
+        "items": [
+          {
+            "href": "/warranty/",
+            "title": "Расширенная гарантия",
+            "desc": "1 год дополнительной гарантии от повреждений на шины Kumho",
+            "class": "button",
+            "target": "_self",
+            "cover": {"src": "data/img/actions/warranty.jpg"}
+          }
+        ]
+      }
+    },
+    {
+      "name": "tires",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "title font-2 weight-500",
+          "title": "Модели шин"
+        }
+      }
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {
+        "form": {
+          "heading": "Получить консультацию"
+        }
+      }
+    }
+  ]
+}

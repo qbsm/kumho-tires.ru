@@ -1,0 +1,16 @@
+# Политика обновления зависимостей: еженедельные PR от Dependabot.
+# См. docs/guides/dependencies-policy.md
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5

@@ -1,0 +1,54 @@
+<section class="intro">
+  <div class="swiper-container" id="{{ data.slider.id|default('introSlider') }}" data-settings="{{ data.slider.settings|default({})|json_encode }}">
+    <div class="swiper-wrapper">
+      {% if data.slider.items is defined and data.slider.items is not empty %}
+        {% for slide in data.slider.items %}
+          <div class="section__item slide-wrap swiper-slide">
+              <div class="section__subitem cover-wrap">
+                {% if slide.video is defined %}
+                  <video class="intro__video cover" autoplay muted loop playsinline poster="{{ slide.cover is defined ? url(slide.cover) : '' }}">
+                    <source src="{{ url(slide.video) }}" type="video/mp4">
+                  </video>
+                {% elseif slide.image is defined %}
+                  {% include 'components/picture.twig' with {
+                    image: slide.image,
+                    alt: slide.alt|default(''),
+                    class: 'img-responsive',
+                    style: 'width: 100%; height: 100%; object-fit: cover;',
+                    picture_style: 'display: block; width: 100%; height: 100%;',
+                    sizes_preset: 'full',
+                    loading: loop.first ? 'eager' : 'lazy'
+                  } %}
+                {% elseif slide.cover is defined %}
+                  <div class="cover" style="background-image: url('{{ url(slide.cover) }}');"></div>
+                {% endif %}
+              </div>
+              {% if data.heading is defined and (loop.first or not data.slider.items is defined) %}
+                <div class="section__item heading-wrap">
+                  <div class="container">
+                    {% include 'components/heading.twig' with {'item': data.heading} %}
+                  </div>
+                </div>
+              {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="section__item slide-wrap swiper-slide">
+            <div class="section__subitem cover-wrap">
+              <div class="cover" style="--bg-color: {{ data.background|default('transparent') }};"></div>
+            </div>
+            {% if data.heading is defined %}
+              <div class="section__item heading-wrap">
+                <div class="container">
+                  {% include 'components/heading.twig' with {'item': data.heading} %}
+                </div>
+              </div>
+            {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>

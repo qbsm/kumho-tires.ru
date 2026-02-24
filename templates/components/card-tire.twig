@@ -1,0 +1,21 @@
+{% set name = item.item.name | default(item.item.code | default('')) %}
+{% set href = item.slug is defined ? '/' ~ item.slug ~ '/' : null %}
+
+{% if href %}
+<a href="{{ url(href) }}" class="card-tire link">
+{% else %}
+<div class="card-tire">
+{% endif %}
+  <div class="card__item title-wrap">
+    <span class="card__title font-2 weight-600">{{ item.item.code }}</span>
+  </div>
+  {% if item.item.series is defined and item.item.series %}
+    <div class="card__item desc-wrap">
+      <span class="card__desc">{{ item.item.series }}</span>
+    </div>
+  {% endif %}
+{% if href %}
+</a>
+{% else %}
+</div>
+{% endif %}

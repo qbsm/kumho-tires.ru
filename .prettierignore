@@ -1,0 +1,8 @@
+node_modules/
+vendor/
+dist/
+assets/js/build/
+assets/css/build/
+data/
+public/assets/
+public/data/
