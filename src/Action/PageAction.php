@@ -63,6 +63,8 @@ final class PageAction
         $status = 200;
         $tire = null;
         $tireBreadcrumb = null;
+        $news = null;
+        $newsBreadcrumb = null;
 
         if ($pageData === null) {
             $slug = (string) ($segments[0] ?? '');
@@ -83,11 +85,32 @@ final class PageAction
         }
 
         $jsonBaseDir = (string) ($this->settings['paths']['json_base'] ?? '');
+        if ($tire === null && $pageId === 'news' && count($routeParams) === 0) {
+            $this->injectNewsListItems($pageData, $jsonBaseDir, $langCode, $baseUrl);
+        }
+        if ($tire === null && $pageId === 'news' && count($routeParams) === 1) {
+            $newsSlug = (string) $routeParams[0];
+            $newsSlugs = $this->dataLoader->loadNewsSlugs($jsonBaseDir, $langCode);
+            if ($newsSlugs !== null && in_array($newsSlug, $newsSlugs, true)) {
+                $news = $this->dataLoader->loadNews($jsonBaseDir, $langCode, $newsSlug, $baseUrl);
+            }
+            if ($news !== null) {
+                $pageData = ['name' => $newsSlug, 'sections' => []];
+                $newsBreadcrumb = $this->buildNewsBreadcrumb($global, $langCode, $news);
+            } else {
+                $status = 404;
+                $pageId = '404';
+                $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl) ?? ['name' => '404', 'sections' => []];
+            }
+        }
+
         $seoData = $this->dataLoader->loadSeo($jsonBaseDir, $langCode, $pageId, $baseUrl);
 
         if ($tire !== null) {
             $seoData = $this->buildSeoForTire($tire, $baseUrl);
             $tireBreadcrumb = $this->buildTireBreadcrumb($global, $langCode, $tire);
+        } elseif ($news !== null) {
+            $seoData = $this->buildSeoForNews($news, $baseUrl);
         }
 
         if ($seoData !== null) {
@@ -106,12 +129,15 @@ final class PageAction
             $seoData = ['title' => '', 'meta' => [], 'json_ld' => null];
         }
 
-        $template = $tire !== null ? 'pages/tire.twig' : 'pages/page.twig';
+        $template = $tire !== null ? 'pages/tire.twig' : ($news !== null ? 'pages/news.twig' : 'pages/page.twig');
 
         $extras = [];
         if ($tire !== null) {
             $extras['tire'] = $tire;
             $extras['breadcrumb'] = $tireBreadcrumb;
+        } elseif ($news !== null) {
+            $extras['news'] = $news;
+            $extras['breadcrumb'] = $newsBreadcrumb;
         }
 
         $data = $this->templateDataBuilder->build(
@@ -186,6 +212,99 @@ final class PageAction
             ['name' => $homeTitle, 'url' => '/'],
             ['name' => $listTitle, 'url' => $listHref],
             ['name' => $name, 'url' => '/' . $tire['slug'] . '/'],
+        ];
+    }
+
+    /**
+     * Заполняет секцию "news" на странице /news/ данными карточек из загруженных новостей.
+     *
+     * @param array<string,mixed> $pageData
+     */
+    private function injectNewsListItems(array &$pageData, string $jsonBaseDir, string $langCode, string $baseUrl): void
+    {
+        $slugs = $pageData['items'] ?? [];
+        if (!is_array($slugs) || $slugs === []) {
+            return;
+        }
+        $items = [];
+        foreach ($slugs as $newsSlug) {
+            $news = $this->dataLoader->loadNews($jsonBaseDir, $langCode, (string) $newsSlug, $baseUrl);
+            if ($news === null) {
+                continue;
+            }
+            $n = $news['news'] ?? [];
+            $items[] = [
+                'slug' => $news['slug'] ?? $newsSlug,
+                'cover' => $n['cover'] ?? ['src' => ''],
+                'date' => $n['date'] ?? '',
+                'title' => $n['title'] ?? '',
+                'desc' => $n['desc'] ?? $n['lead'] ?? '',
+            ];
+        }
+        $sections = &$pageData['sections'];
+        if (!is_array($sections)) {
+            return;
+        }
+        foreach ($sections as $idx => $section) {
+            if (isset($section['name']) && $section['name'] === 'news' && isset($section['data'])) {
+                $sections[$idx]['data']['items'] = $items;
+                return;
+            }
+        }
+    }
+
+    /**
+     * @param array<string,mixed> $news
+     * @return array<string,mixed>
+     */
+    private function buildSeoForNews(array $news, string $baseUrl): array
+    {
+        $n = $news['news'] ?? [];
+        $title = (string) ($n['title'] ?? $news['slug'] ?? '');
+        $desc = (string) ($n['desc'] ?? $n['lead'] ?? '');
+
+        return [
+            'title' => $title,
+            'meta' => [
+                ['name' => 'description', 'content' => $desc],
+                ['property' => 'og:type', 'content' => 'article'],
+                ['property' => 'og:title', 'content' => $title],
+                ['property' => 'og:description', 'content' => $desc],
+            ],
+            'json_ld' => null,
+            'json_ld_faq' => null,
+        ];
+    }
+
+    /**
+     * @param array<string,mixed> $news
+     * @return array<int, array{name: string, url: string}>
+     */
+    private function buildNewsBreadcrumb(array $global, string $langCode, array $news): array
+    {
+        $n = $news['news'] ?? [];
+        $name = (string) ($n['title'] ?? $news['slug'] ?? '');
+        $nav = $global['nav'][$langCode]['items'] ?? [];
+        $homeTitle = 'Главная';
+        $listTitle = 'Новости';
+        $listHref = '/news/';
+        foreach ($nav as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $href = trim((string) ($item['href'] ?? ''), '/');
+            if ($href === '' || $href === '/') {
+                $homeTitle = (string) ($item['title'] ?? $homeTitle);
+            }
+            if ($href === 'news') {
+                $listTitle = (string) ($item['title'] ?? $listTitle);
+                $listHref = '/' . $href . '/';
+            }
+        }
+        return [
+            ['name' => $homeTitle, 'url' => '/'],
+            ['name' => $listTitle, 'url' => $listHref],
+            ['name' => $name, 'url' => '/news/' . $news['slug'] . '/'],
         ];
     }
 

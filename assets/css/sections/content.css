@@ -2,6 +2,18 @@
   /* Стили для контента */
 }
 
+.content-warranty {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (--lg) {
+  .content-warranty {
+    gap: 2rem;
+  }
+}
+
 /* section__item.content-wrap.container-sm — родитель секции без класса .content */
 .content-container .section__item.content-wrap.container-sm {
   display: flex;
@@ -11,7 +23,7 @@
 
 @media (--lg) {
   .content-container .section__item.content-wrap.container-sm {
-    gap: 4rem;
+    gap: 2rem;
   }
 }
 

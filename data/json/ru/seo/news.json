@@ -1,0 +1,9 @@
+{
+  "name": "news",
+  "title": "Новости Kumho",
+  "meta": [
+    {"name": "description", "content": "Актуальные новости и события бренда шин Kumho: запуск новых моделей, расширение сети дилеров, акции."},
+    {"property": "og:type", "content": "website"},
+    {"property": "og:title", "content": "Новости Kumho"}
+  ]
+}

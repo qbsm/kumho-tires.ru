@@ -5,7 +5,7 @@ declare(strict_types=1);
 use DI\Bridge\Slim\Bridge;
 use Dotenv\Dotenv;
 
-$projectRoot = dirname(__DIR__);
+$projectRoot = is_dir(__DIR__ . '/config') ? __DIR__ : dirname(__DIR__);
 require $projectRoot . '/vendor/autoload.php';
 
 Dotenv::createImmutable($projectRoot)->safeLoad();

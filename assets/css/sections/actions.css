@@ -24,7 +24,8 @@
 .actions .section__subitem.cards-action-wrap {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2
+  rem;
 }
 
 .actions .section__inner.card-action-wrap {
@@ -32,6 +33,6 @@
   height: 30rem;
 
   @media (--lg) {
-    height: 18rem;
+    height: 22rem;
   }
 }

@@ -55,11 +55,17 @@ return static function (): ContainerInterface {
             $baseDir = (string) $settings['project_root'];
             $baseUrl = rtrim((string) ($_ENV['APP_BASE_URL'] ?? $_SERVER['APP_BASE_URL'] ?? getenv('APP_BASE_URL') ?: ''), '/');
             if ($baseUrl === '') {
-                $https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+                // За прокси схема приходит в X-Forwarded-Proto; иначе HTTPS
+                $proto = (string) ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '');
+                $https = ($proto === 'https' || (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')) ? 'https://' : 'http://';
                 $host = (string) ($_SERVER['HTTP_HOST'] ?? 'localhost');
                 $scriptDir = dirname((string) ($_SERVER['SCRIPT_NAME'] ?? '/'));
                 $basePath = $scriptDir === '/' || $scriptDir === '.' ? '' : rtrim($scriptDir, '/');
                 $baseUrl = $https . $host . $basePath;
+            }
+            // В production всегда https для baseUrl (иначе mixed content и CSP блокирует CSS/JS)
+            if (($settings['env'] ?? '') === 'production' && str_starts_with($baseUrl, 'http://')) {
+                $baseUrl = 'https://' . substr($baseUrl, 7);
             }
             $baseUrl .= '/';
 

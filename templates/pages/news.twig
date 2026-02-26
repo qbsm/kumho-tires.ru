@@ -1,0 +1,34 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div id="page-content">
+  {% include 'sections/header.twig' with {'data': {}} %}
+  <main class="section news-detail" role="main">
+    <div class="container">
+      {% set n = news.news %}
+      <article class="news-detail__article">
+        {% if breadcrumb is defined and breadcrumb|length > 0 %}
+          <nav class="news-detail__breadcrumb" aria-label="Хлебные крошки">
+            {% for item in breadcrumb %}
+              <a href="{{ item.url }}">{{ item.name }}</a>{% if not loop.last %} <span class="news-detail__breadcrumb-sep" aria-hidden="true">/</span> {% endif %}
+            {% endfor %}
+          </nav>
+        {% endif %}
+        {% if n.cover is defined and n.cover.src %}
+          <div class="news-detail__cover-wrap">
+            <div class="news-detail__cover" style="background-image: url('{{ url(n.cover.src) }}');"></div>
+          </div>
+        {% endif %}
+        <div class="news-detail__meta">
+          {% if n.hex is defined %}<span class="news-detail__hex" style="background: {{ n.hex }};"></span>{% endif %}
+          {% if n.date is defined %}<time class="news-detail__date">{{ n.date | raw }}</time>{% endif %}
+        </div>
+        <h1 class="news-detail__title font-2">{{ n.title | raw }}</h1>
+        {% if n.lead is defined and n.lead %}<p class="news-detail__lead">{{ n.lead | raw }}</p>{% endif %}
+        {% if n.body is defined and n.body %}<div class="news-detail__body">{{ n.body | raw }}</div>{% endif %}
+      </article>
+    </div>
+  </main>
+  {% include 'sections/footer.twig' with {'data': global.footer|default({})} %}
+</div>
+{% endblock %}

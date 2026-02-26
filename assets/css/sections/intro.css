@@ -44,10 +44,14 @@
   width: 100%;
   height: 100%;
   transition-property: opacity;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .intro .section__subitem.cover-wrap {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
 }
@@ -73,7 +77,9 @@
 }
 
 .intro .intro__video.cover {
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   min-width: 100%;
@@ -82,19 +88,25 @@
   object-position: center;
 }
 
-.intro .intro__heading-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+.intro .section__item.slide-wrap.swiper-slide > .container {
   width: 100%;
   height: 100%;
   z-index: 2;
   display: flex;
   pointer-events: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.intro .intro__heading-container .section__item.heading-wrap {
+.intro .section__item.slide-wrap.swiper-slide > .container .section__item.heading-wrap {
   pointer-events: auto;
+}
+
+/* heading-flex по умолчанию выравнивает влево */
+.intro .section__item.slide-wrap.swiper-slide > .container .heading.heading-flex {
+  align-items: center;
+  text-align: center;
 }
 
 .intro .swiper-pagination {

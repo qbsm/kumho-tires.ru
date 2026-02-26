@@ -9,7 +9,8 @@ final class BaseUrlResolver
     public function resolve(ServerRequestInterface $request): string
     {
         $uri = $request->getUri();
-        $scheme = $uri->getScheme() !== '' ? $uri->getScheme() : 'http';
+        $forwarded = $request->getHeaderLine('X-Forwarded-Proto');
+        $scheme = $forwarded !== '' ? $forwarded : ($uri->getScheme() !== '' ? $uri->getScheme() : 'http');
         $host = $uri->getHost() !== '' ? $uri->getHost() : 'localhost';
         $port = $uri->getPort();
 

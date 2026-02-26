@@ -5,6 +5,25 @@ onReady(() => {
   initIntroSlider();
 });
 
+/**
+ * Запускает видео в активном слайде и ставит на паузу в остальных.
+ * На iOS автоплей по атрибутам часто не срабатывает — нужен программный play().
+ */
+function playVideosInActiveSlide(swiperInstance) {
+  if (!swiperInstance || !swiperInstance.el) return;
+  const container = swiperInstance.el;
+  container.querySelectorAll('.swiper-slide .intro__video').forEach((video) => {
+    const slide = video.closest('.swiper-slide');
+    if (slide && slide.classList.contains('swiper-slide-active')) {
+      video.muted = true;
+      const p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+}
+
 function initIntroSlider() {
   // Проверяем, доступен ли Swiper в глобальном контексте
   if (typeof window.Swiper === 'undefined') {
@@ -98,6 +117,12 @@ function initIntroSlider() {
       const introSlider = new window.Swiper(sliderElement, swiperOptions);
       // Сохраняем экземпляр слайдера
       sliderElement.swiperInstance = introSlider;
+
+      // iOS: автоплей по атрибутам часто не срабатывает — запускаем видео вручную
+      playVideosInActiveSlide(introSlider);
+      introSlider.on('slideChangeTransitionEnd', () => {
+        playVideosInActiveSlide(introSlider);
+      });
     } catch (error) {
       console.error('Ошибка при инициализации introSlider в секции intro:', error);
     }

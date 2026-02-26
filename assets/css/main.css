@@ -24,6 +24,7 @@
 @import "sections/us.css";
 @import "sections/navigation.css";
 @import "sections/tires.css";
+@import "sections/news.css";
 
 /* Components */
 @import "components/accordion.css";
@@ -50,6 +51,7 @@
 @import "components/card-action.css";
 @import "components/card-number.css";
 @import "components/card-tire.css";
+@import "components/card-news.css";
 
 /* Pages */
 @import "pages/404.css";
@@ -57,3 +59,4 @@
 @import "pages/index.css";
 @import "sections/logoline.css";
 @import "pages/tires.css";
+@import "pages/news.css";

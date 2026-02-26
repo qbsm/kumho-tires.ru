@@ -41,6 +41,25 @@ final class DataLoaderService
         return $data;
     }
 
+    /** @return array<int, string>|null */
+    public function loadNewsSlugs(string $jsonBaseDir, string $langCode): ?array
+    {
+        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/pages/news.json';
+        $data = $this->loadJson($path, '');
+        return isset($data['items']) && is_array($data['items']) ? $data['items'] : null;
+    }
+
+    public function loadNews(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl): ?array
+    {
+        $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/news/' . $slug . '.json';
+        $data = $this->loadJson($path, $baseUrl);
+        if ($data === null || empty($data['news']) || (isset($data['visible']) && $data['visible'] === false)) {
+            return null;
+        }
+        $data['slug'] = $slug;
+        return $data;
+    }
+
     public function loadJson(string $path, string $baseUrl): ?array
     {
         if (!is_file($path)) {

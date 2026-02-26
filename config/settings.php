@@ -65,6 +65,7 @@ return [
     // slug в URL => page_id (файл в data/json/{lang}/pages/{page_id}.json)
     'route_map' => [
         'tires' => 'tires-list',
+        'news' => 'news',
     ],
     // page_id страниц для sitemap.xml (без 404). Задаётся под проект.
     'sitemap_pages' => [
@@ -73,6 +74,7 @@ return [
         'policy',
         'agree',
         'tires-list',
+        'news',
     ],
     // Rate limiting для POST /api/send (по IP, файловое хранилище в cache/rate_limit)
     'rate_limit_api_send' => [

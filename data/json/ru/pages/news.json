@@ -1,0 +1,9 @@
+{
+  "name": "news",
+  "items": ["launch-2026", "dealers-2026"],
+  "sections": [
+    {"name": "header", "data": {}},
+    {"name": "news", "visible": true, "data": {"heading": {"tag": "h1", "class": "h1 heading font-2 weight-700 heading-flex uppercase", "title": "Новости Kumho"}}},
+    {"name": "footer", "visible": true, "data": {}}
+  ]
+}
