@@ -2,6 +2,7 @@
   <div class="container">
     {% set dealersData = load_json('data/json/' ~ lang_code ~ '/pages/dealers.json') %}
     {% set dealerItems = dealersData.items | default(data.items | default([])) %}
+    {% set onlyMappedCards = data.map.only_mapped_cards | default(false) %}
     {% set filterVisible = true %}
     {% if data.filter is defined %}
       {% if data.filter is iterable %}
@@ -13,14 +14,16 @@
     {% set cityOptions = [] %}
     {% set hasBshm = false %}
     {% for dealer in dealerItems %}
-      {% set dealerCity = dealer.city | default('') | trim %}
-      {% set bshmData = dealer.bshm | default({}) %}
-      {% set bshmVisible = bshmData.visible | default(false) %}
-      {% if dealerCity and dealerCity not in cityOptions %}
-        {% set cityOptions = cityOptions | merge([dealerCity]) %}
-      {% endif %}
-      {% if bshmVisible %}
-        {% set hasBshm = true %}
+      {% if not onlyMappedCards or (dealer.location is defined and dealer.location) %}
+        {% set dealerCity = dealer.city | default('') | trim %}
+        {% set bshmData = dealer.bshm | default({}) %}
+        {% set bshmVisible = bshmData.visible | default(false) %}
+        {% if dealerCity and dealerCity not in cityOptions %}
+          {% set cityOptions = cityOptions | merge([dealerCity]) %}
+        {% endif %}
+        {% if bshmVisible %}
+          {% set hasBshm = true %}
+        {% endif %}
       {% endif %}
     {% endfor %}
     {% if data.heading is defined %}
@@ -113,19 +116,21 @@
     {% if dealerItems is not empty %}
       <div class="section__item cards-wrap">
         {% for item in dealerItems %}
-          {% set dealerId = item.id | default(loop.index) %}
-          {% set guaranteeData = item.guarantee | default({}) %}
-          {% set bshmData = item.bshm | default({}) %}
-          {% set guaranteeVisible = guaranteeData.visible | default(false) %}
-          {% set bshmVisible = bshmData.visible | default(false) %}
-          <div
-            class="section__subitem card-wrap js-dealer-card"
-            data-id="{{ dealerId }}"
-            data-city="{{ item.city | default('') | e('html_attr') }}"
-            data-guarantee="{{ guaranteeVisible ? '1' : '0' }}"
-            data-bshm="{{ bshmVisible ? '1' : '0' }}">
-            {% include 'components/card-dealer.twig' with {'item': item} %}
-          </div>
+          {% if not onlyMappedCards or (item.location is defined and item.location) %}
+            {% set dealerId = item.id | default(loop.index) %}
+            {% set guaranteeData = item.guarantee | default({}) %}
+            {% set bshmData = item.bshm | default({}) %}
+            {% set guaranteeVisible = guaranteeData.visible | default(false) %}
+            {% set bshmVisible = bshmData.visible | default(false) %}
+            <div
+              class="section__subitem card-wrap js-dealer-card"
+              data-id="{{ dealerId }}"
+              data-city="{{ item.city | default('') | e('html_attr') }}"
+              data-guarantee="{{ guaranteeVisible ? '1' : '0' }}"
+              data-bshm="{{ bshmVisible ? '1' : '0' }}">
+              {% include 'components/card-dealer.twig' with {'item': item} %}
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
     {% endif %}

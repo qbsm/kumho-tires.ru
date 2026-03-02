@@ -9,7 +9,7 @@
           </div>
         {% endif %}
         {% if page_id is defined and page_id != 'news' %}
-          <a href="{{ url('/news/') }}" class="link news__all-link">Все новости</a>
+          <a href="{{ url('/news/') }}" class="link underline-center news__all-link">Все новости</a>
         {% endif %}
       </div>
       {% if data.items is defined and data.items is not empty %}

@@ -3,6 +3,15 @@
   "sections": [
     {"name": "header", "data": {}},
     {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": {
+          "src": "data/img/frames/warranty.webp"
+        }
+      }
+    },
+    {
       "name": "content-container",
       "data": {
         "container": "container-sm",

@@ -6,10 +6,21 @@
       </a>
     </div>
     <nav class="section__subitem nav-wrap" aria-label="Основное меню">
+      {% set pageKey = pageData.name|default(page_id|default('')) %}
       {% for item in global.nav[lang_code].items %}
         {% if item.visible is not defined or item.visible %}
+        {% set itemHref = item.href|default('/') %}
+        {% set normalizedItemHref = itemHref|trim('/') %}
+        {% set isActive = false %}
+        {% if normalizedItemHref == '' %}
+          {% set isActive = pageKey == 'index' %}
+        {% elseif normalizedItemHref == 'tires' %}
+          {% set isActive = pageKey in ['tires-list', 'tire'] %}
+        {% else %}
+          {% set isActive = pageKey == normalizedItemHref %}
+        {% endif %}
         <div class="section__inner nav-link-wrap">
-          <a href="{{ url(item.href) }}" class="link color-2">{{ item.title }}</a>
+          <a href="{{ url(itemHref) }}" class="link color-2 underline-center header__nav-link{{ isActive ? ' active' : '' }}">{{ item.title }}</a>
         </div>
         {% endif %}
       {% endfor %}

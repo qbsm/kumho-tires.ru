@@ -64,6 +64,36 @@
   width: 100%;
 }
 
+.link.underline-center {
+  position: relative;
+}
+
+.link.underline-center::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2rem;
+  height: 1px;
+  background-color: currentcolor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.link.underline-center:hover::after,
+.link.underline-center:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.link.active {
+  opacity: 1;
+}
+
+.link.underline-center.active::after {
+  transform: scaleX(1);
+}
+
 .link.disabled {
   opacity: 0.5;
   pointer-events: none;

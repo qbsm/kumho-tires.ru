@@ -1,8 +1,20 @@
+:root {
+  --header-top-offset: 0.5rem;
+  --header-fixed-height: 5.2rem;
+
+  @media (--lg) {
+    --header-top-offset: 2rem;
+    --header-fixed-height: 7.2rem;
+  }
+}
+
 .header {
   position: sticky;
-  top: 0.5rem;
+  top: var(--header-top-offset);
   width: auto;
-  height: 5.2rem;
+  height: var(--header-fixed-height);
+  min-height: var(--header-fixed-height);
+  max-height: var(--header-fixed-height);
   margin-left: 2rem;
   margin-right: 2rem;
   padding: 1rem 1.5rem;
@@ -13,9 +25,7 @@
   z-index: var(--z-index-4);
 
   @media (--lg) {
-    top: 2rem;
     width: 116rem;
-    height: 7.2rem;
     margin-left: calc((100vw - 116rem) / 2);
     margin-right: calc((100vw - 116rem) / 2);
     padding: 1rem 2rem;
@@ -70,6 +80,17 @@
     align-items: center;
     gap: 2rem;
   }
+}
+
+.header .header__nav-link.underline-center::after {
+  background-color: var(--color-3);
+}
+
+.header .header__nav-link:hover,
+.header .header__nav-link:focus-visible,
+.header .header__nav-link.active {
+  color: var(--color-2);
+  opacity: 1;
 }
 
 .header .section__subitem.burger-icon-wrap {

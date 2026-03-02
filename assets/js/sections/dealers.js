@@ -256,6 +256,41 @@ function setMapVisibility(mapState, visibleIds) {
   }
 }
 
+function isPointInBounds(coords, bounds) {
+  if (!Array.isArray(coords) || !Array.isArray(bounds) || bounds.length !== 2) {
+    return false;
+  }
+  const [southWest, northEast] = bounds;
+  if (!Array.isArray(southWest) || !Array.isArray(northEast)) {
+    return false;
+  }
+  const [lat, lon] = coords;
+  const [south, west] = southWest;
+  const [north, east] = northEast;
+  return lat >= south && lat <= north && lon >= west && lon <= east;
+}
+
+function getVisibleIdsInMapBounds(mapState, allowedIds) {
+  if (!mapState?.map || !Array.isArray(mapState.points)) {
+    return new Set(allowedIds || []);
+  }
+  const bounds = mapState.map.getBounds();
+  if (!bounds) {
+    return new Set(allowedIds || []);
+  }
+  const allowed = allowedIds instanceof Set ? allowedIds : new Set(allowedIds || []);
+  const visible = new Set();
+  mapState.points.forEach((point) => {
+    if (!allowed.has(point.id)) {
+      return;
+    }
+    if (isPointInBounds(point.coords, bounds)) {
+      visible.add(point.id);
+    }
+  });
+  return visible;
+}
+
 function createDealerMap(mapEl, onReadyMap) {
   const placemarkEls = Array.from(mapEl.querySelectorAll('.map__placemark'));
   const points = placemarkEls.map((el) => ({
@@ -299,8 +334,13 @@ function createDealerMap(mapEl, onReadyMap) {
             },
             {
               preset: 'islands#redIcon',
+              openBalloonOnClick: true,
+              hideIconOnBalloonOpen: false,
             }
           );
+          placemark.events.add('click', () => {
+            placemark.balloon.open();
+          });
           map.geoObjects.add(placemark);
           return {
             ...point,
@@ -340,11 +380,11 @@ onReady(() => {
     const cards = Array.from(sectionEl.querySelectorAll('.js-dealer-card'));
     let mapState = null;
 
-    const applyFilters = () => {
+    const applyFilters = ({ syncMap = true } = {}) => {
       const selectedCity = normalize(citySelect?.value || '');
       const requireGuarantee = Boolean(guaranteeCheckbox?.checked);
       const requireBshm = Boolean(bshmCheckbox?.checked);
-      const visibleIds = new Set();
+      const matchedIds = new Set();
       const guaranteeLabel = guaranteeCheckbox?.closest('.filter__selector');
       const bshmLabel = bshmCheckbox?.closest('.filter__selector');
 
@@ -358,21 +398,28 @@ onReady(() => {
         const cityMatch = !selectedCity || city === selectedCity;
         const guaranteeMatch = !requireGuarantee || hasGuarantee;
         const bshmMatch = !requireBshm || hasBshm;
-        const visible = cityMatch && guaranteeMatch && bshmMatch;
-
-        cardEl.classList.toggle('hidden', !visible);
-        if (visible && cardEl.dataset.id) {
-          visibleIds.add(String(cardEl.dataset.id));
+        const matchesFilters = cityMatch && guaranteeMatch && bshmMatch;
+        if (matchesFilters && cardEl.dataset.id) {
+          matchedIds.add(String(cardEl.dataset.id));
         }
       });
 
-      setMapVisibility(mapState, visibleIds);
+      if (syncMap) {
+        setMapVisibility(mapState, matchedIds);
+      }
+
+      const visibleIds = getVisibleIdsInMapBounds(mapState, matchedIds);
+      cards.forEach((cardEl) => {
+        const id = String(cardEl.dataset.id || '');
+        cardEl.classList.toggle('hidden', !visibleIds.has(id));
+      });
     };
 
     if (mapEl) {
       createDealerMap(mapEl, (state) => {
         mapState = state;
         applyFilters();
+        mapState?.map?.events?.add('boundschange', () => applyFilters({ syncMap: false }));
         applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
       });
     }

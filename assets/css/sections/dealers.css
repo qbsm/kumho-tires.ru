@@ -55,4 +55,5 @@
 .card-dealer-balloon {
   min-width: 24rem;
   max-width: 32rem;
+  border-color: transparent;
 }

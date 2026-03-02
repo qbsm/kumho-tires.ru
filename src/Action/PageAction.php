@@ -222,10 +222,57 @@ final class PageAction
      */
     private function injectNewsListItems(array &$pageData, string $jsonBaseDir, string $langCode, string $baseUrl): void
     {
-        $slugs = $pageData['items'] ?? [];
-        if (!is_array($slugs) || $slugs === []) {
+        $slugs = [];
+
+        $topLevelItems = $pageData['items'] ?? [];
+        if (is_array($topLevelItems) && $topLevelItems !== []) {
+            foreach ($topLevelItems as $item) {
+                if (is_string($item) && $item !== '') {
+                    $slugs[] = $item;
+                    continue;
+                }
+                if (is_array($item) && isset($item['slug']) && is_string($item['slug']) && $item['slug'] !== '') {
+                    $slugs[] = $item['slug'];
+                }
+            }
+        }
+
+        $sections = &$pageData['sections'];
+        if (!is_array($sections)) {
             return;
         }
+
+        if ($slugs === []) {
+            foreach ($sections as $section) {
+                if (
+                    !is_array($section)
+                    || ($section['name'] ?? '') !== 'news'
+                    || !isset($section['data'])
+                    || !is_array($section['data'])
+                    || !isset($section['data']['items'])
+                    || !is_array($section['data']['items'])
+                ) {
+                    continue;
+                }
+
+                foreach ($section['data']['items'] as $item) {
+                    if (is_string($item) && $item !== '') {
+                        $slugs[] = $item;
+                        continue;
+                    }
+                    if (is_array($item) && isset($item['slug']) && is_string($item['slug']) && $item['slug'] !== '') {
+                        $slugs[] = $item['slug'];
+                    }
+                }
+                break;
+            }
+        }
+
+        $slugs = array_values(array_unique($slugs));
+        if ($slugs === []) {
+            return;
+        }
+
         $items = [];
         foreach ($slugs as $newsSlug) {
             $news = $this->dataLoader->loadNews($jsonBaseDir, $langCode, (string) $newsSlug, $baseUrl);
@@ -240,10 +287,6 @@ final class PageAction
                 'title' => $n['title'] ?? '',
                 'desc' => $n['desc'] ?? $n['lead'] ?? '',
             ];
-        }
-        $sections = &$pageData['sections'];
-        if (!is_array($sections)) {
-            return;
         }
         foreach ($sections as $idx => $section) {
             if (isset($section['name']) && $section['name'] === 'news' && isset($section['data'])) {

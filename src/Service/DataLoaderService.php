@@ -46,7 +46,44 @@ final class DataLoaderService
     {
         $path = rtrim($jsonBaseDir, '/') . '/' . $langCode . '/pages/news.json';
         $data = $this->loadJson($path, '');
-        return isset($data['items']) && is_array($data['items']) ? $data['items'] : null;
+        if (!is_array($data)) {
+            return null;
+        }
+
+        $rawItems = [];
+        if (isset($data['items']) && is_array($data['items'])) {
+            $rawItems = $data['items'];
+        } else {
+            $sections = $data['sections'] ?? [];
+            if (is_array($sections)) {
+                foreach ($sections as $section) {
+                    if (
+                        is_array($section)
+                        && ($section['name'] ?? '') === 'news'
+                        && isset($section['data'])
+                        && is_array($section['data'])
+                        && isset($section['data']['items'])
+                        && is_array($section['data']['items'])
+                    ) {
+                        $rawItems = $section['data']['items'];
+                        break;
+                    }
+                }
+            }
+        }
+
+        $slugs = [];
+        foreach ($rawItems as $item) {
+            if (is_string($item) && $item !== '') {
+                $slugs[] = $item;
+                continue;
+            }
+            if (is_array($item) && isset($item['slug']) && is_string($item['slug']) && $item['slug'] !== '') {
+                $slugs[] = $item['slug'];
+            }
+        }
+
+        return $slugs === [] ? null : array_values(array_unique($slugs));
     }
 
     public function loadNews(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl): ?array

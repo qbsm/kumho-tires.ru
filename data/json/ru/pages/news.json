@@ -1,9 +1,49 @@
 {
   "name": "news",
-  "items": ["launch-2026", "dealers-2026"],
   "sections": [
     {"name": "header", "data": {}},
-    {"name": "news", "visible": true, "data": {"heading": {"tag": "h1", "class": "h1 heading font-2 weight-700 heading-flex uppercase", "title": "Новости Kumho"}}},
+    {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": {
+          "src": "data/img/frames/news.webp"
+        }
+      }
+    },
+    {
+      "name": "news",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Новости Kumho"
+        },
+        "items": [
+          {
+            "slug": "launch-2026",
+            "cover": {
+              "src": "data/img/news/1.png"
+            },
+            "hex": "#C72229",
+            "date": "Февраль 2026",
+            "title": "Запуск новой линейки шин",
+            "desc": "Представляем обновлённую линейку шин Kumho для городских и загородных дорог."
+          },
+          {
+            "slug": "dealers-2026",
+            "cover": {
+              "src": "data/img/news/2.png"
+            },
+            "hex": "#008ACF",
+            "date": "Январь 2026",
+            "title": "Расширение сети дилеров",
+            "desc": "Kumho расширяет сеть официальных дилеров в регионах России."
+          }
+        ]
+      }
+    },
     {"name": "footer", "visible": true, "data": {}}
   ]
 }
