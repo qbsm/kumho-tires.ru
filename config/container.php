@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 use App\Action\HealthAction;
 use App\Action\PageAction;
+use App\Action\PhotoroomRemoveBackgroundAction;
 use App\Action\SitemapAction;
+use App\Api\PhotoroomApiClient;
 use App\Handler\HttpErrorHandler;
 use App\Handler\ServerErrorHandler;
 use App\Middleware\CorsMiddleware;
@@ -96,6 +98,15 @@ return static function (): ContainerInterface {
 
         HealthAction::class => \DI\autowire(),
         PageAction::class => \DI\autowire()->constructorParameter('settings', \DI\get('settings')),
+        PhotoroomApiClient::class => static fn(ContainerInterface $c) => new PhotoroomApiClient(
+            (string) ($c->get('settings')['photoroom']['api_key'] ?? ''),
+            (string) ($c->get('settings')['photoroom']['base_url'] ?? 'https://image-api.photoroom.com'),
+            (int) ($c->get('settings')['photoroom']['timeout'] ?? 60),
+            (int) ($c->get('settings')['photoroom']['connect_timeout'] ?? 10),
+            (string) ($c->get('settings')['photoroom']['sandbox_api_key'] ?? '')
+        ),
+        PhotoroomRemoveBackgroundAction::class => \DI\autowire()
+            ->constructorParameter('settings', \DI\get('settings')),
         SitemapAction::class => \DI\autowire()->constructorParameter('settings', \DI\get('settings')),
         ServerErrorHandler::class => \DI\autowire()->constructorParameter('displayErrorDetails', \DI\get('displayErrorDetails')),
         HttpErrorHandler::class => \DI\autowire()->constructorParameter('errorMap', \DI\get('errorMap')),

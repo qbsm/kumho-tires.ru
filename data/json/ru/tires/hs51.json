@@ -6,10 +6,13 @@
     "series": "ECSTA",
     "name": "Kumho HS51 ECSTA"
   },
-  "image": {
-    "src": "data/img/tires/hs51/raw/hs51-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho HS51 ECSTA"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/hs51/raw/hs51-30deg.webp",
+      "alt": "Kumho HS51 ECSTA, ракурс 30°"
+    }
   }
 }

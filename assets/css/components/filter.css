@@ -1,5 +1,6 @@
 .filter.filter-wrap {
   --filter-control-height: 3.2rem;
+
   width: 100%;
   padding: 1rem;
   border: 0.1rem solid var(--color-4);

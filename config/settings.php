@@ -62,6 +62,14 @@ return [
     'default_lang' => $default_lang,
     'available_langs' => $available_langs,
     'yandex_metric_id' => (int) (getenv('YANDEX_METRIC_ID') ?: 0),
+    'photoroom' => [
+        'api_key' => (string) (getenv('PHOTOROOM_API_KEY') ?: ''),
+        'sandbox_api_key' => (string) (getenv('PHOTOROOM_SANDBOX_API_KEY') ?: ''),
+        'base_url' => (string) (getenv('PHOTOROOM_API_BASE_URL') ?: 'https://image-api.photoroom.com'),
+        'timeout' => (int) (getenv('PHOTOROOM_API_TIMEOUT') ?: 60),
+        'connect_timeout' => (int) (getenv('PHOTOROOM_API_CONNECT_TIMEOUT') ?: 10),
+        'internal_token' => (string) (getenv('PHOTOROOM_INTERNAL_TOKEN') ?: ''),
+    ],
     // slug в URL => page_id (файл в data/json/{lang}/pages/{page_id}.json)
     'route_map' => [
         'tires' => 'tires-list',

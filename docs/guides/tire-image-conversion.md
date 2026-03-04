@@ -10,18 +10,18 @@
 
 ## Стандарт результата
 
-- Формат: `JPG`
+- Формат: `WebP` (основной для сайта) или `PNG` (для `raw` исходников)
 - Цветовое пространство: `sRGB`
 - Высота контента шины: `1180px`
 - Размер холста: `1280x1280`
-- Фон: белый
-- Основное изображение модели: `1.jpg`
+- Фон: прозрачный (альфа-канал)
 
 ## Папки и пути
 
-- Изображения модели: `data/img/tires/<slug>/`
+- Исходники (`raw`): `data/img/tires/<slug>/raw/<slug>-<view>.webp`
+- Версии для превью (400px): `data/img/tires/<slug>/400/<slug>-<view>.webp`
 - JSON модели: `data/json/ru/tires/<slug>.json`
-- Поле в JSON: `image.src`
+- Поле в JSON: `images['30deg'].src` (основное изображение)
 
 ## Порядок конвертации
 
@@ -29,11 +29,12 @@
 2. Перевести в `sRGB`.
 3. Обрезать лишние поля (`trim`), чтобы масштабировалась шина, а не пустоты.
 4. Масштабировать по высоте до `1180px` (`resize x1180`).
-5. Поместить по центру на белый холст `1280x1280`.
-6. Сохранить как `JPG` (обычно `1.jpg`).
-7. Убедиться, что `image.src` в JSON указывает на `data/img/tires/<slug>/1.jpg`.
+5. Поместить по центру на прозрачный холст `1280x1280`.
+6. Сохранить как `WebP` (или `PNG`) с альфа-каналом.
+7. Сохранить в `data/img/tires/<slug>/raw/<slug>-30deg.webp`.
+8. Обновить JSON: убедиться, что структура `images` содержит `30deg`, `side`, `front` с полями `src` и `alt`.
 
-## Эталонная команда ImageMagick
+## Эталонная команда ImageMagick (в WebP)
 
 ```bash
 magick "SOURCE_FILE" \
@@ -41,11 +42,11 @@ magick "SOURCE_FILE" \
   -fuzz 8% -trim +repage \
   -resize x1180 \
   -gravity center \
-  -background white \
-  -alpha remove -alpha off \
+  -background none \
+  -alpha on \
   -extent 1280x1280 \
-  -strip -quality 92 \
-  "data/img/tires/<slug>/1.jpg"
+  -define webp:lossless=true \
+  "data/img/tires/<slug>/raw/<slug>-30deg.webp"
 ```
 
 ## Проверка результата
@@ -53,28 +54,61 @@ magick "SOURCE_FILE" \
 Проверка холста и профиля:
 
 ```bash
-magick identify -format "canvas=%wx%h colorspace=%[colorspace]\n" "data/img/tires/<slug>/1.jpg"
+magick identify -format "canvas=%wx%h colorspace=%[colorspace] alpha=%[alpha]\n" "data/img/tires/<slug>/raw/<slug>-30deg.webp"
 ```
 
 Проверка высоты полезного контента:
 
 ```bash
-magick "data/img/tires/<slug>/1.jpg" -fuzz 8% -trim +repage -format "content=%wx%h\n" info:
+magick "data/img/tires/<slug>/raw/<slug>-30deg.webp" -fuzz 8% -trim +repage -format "content=%wx%h\n" info:
 ```
 
 Ожидаемое:
 
 - `canvas=1280x1280`
 - `colorspace=sRGB`
+- `alpha=true`
 - `content=<любой_размер_по_ширине>x1180`
 
 ## Нейминг нескольких ракурсов
 
-Если у модели несколько изображений, использовать последовательность:
+Использовать нейминг по `slug` и виду ракурса в папке `raw`:
 
-- `1.jpg`, `2.jpg`, `3.jpg`, ...
+- `data/img/tires/<slug>/raw/<slug>-30deg.webp` - основной ракурс
+- `data/img/tires/<slug>/raw/<slug>-side.webp` - боковой ракурс
+- `data/img/tires/<slug>/raw/<slug>-front.webp` - фронтальный ракурс
+- `data/img/tires/<slug>/<slug>-tread.png` - протектор (обычно без альфа-канала)
 
 Для каждого файла применять тот же конвейер.
+
+## Нормализация цветовой температуры и яркости
+
+Для приведения всех изображений к единому визуальному стандарту (яркость, контраст, баланс белого) используется Python-скрипт `tools/ops/normalize-tire-temperature.py`.
+
+### Принцип работы
+Скрипт сопоставляет гистограмму текущего изображения с эталонным (`ha32-30deg.webp`) по трем точкам (черное, белое, средние тона) и применяет кривую коррекции (LUT).
+
+### Команда для запуска (рекомендуемые параметры)
+
+```bash
+.venv/bin/python tools/ops/normalize-tire-temperature.py \
+  --use-grayscale-roundtrip \
+  --min-luma-ratio 0.75 \
+  --dark-luma-threshold 0.35 \
+  --dark-target-luma 0.38 \
+  --dark-max-boost 1.25 \
+  --shadow-lift-strength 0.25 \
+  --shadow-lift-pivot 0.50 \
+  --shadow-lift-gamma 1.5
+```
+
+### Описание ключевых параметров
+- `--use-grayscale-roundtrip`: (Опционально) Сбрасывает насыщенность перед коррекцией. Помогает убрать паразитные оттенки на черной резине.
+- `--min-luma-ratio`: Защита от чрезмерного затемнения. Если итоговая яркость упадет ниже этого коэффициента от исходной, изменения не сохранятся.
+- `--dark-luma-threshold`: Порог, ниже которого изображение считается "слишком темным" и к нему применяются дополнительные шаги осветления.
+- `--shadow-lift-strength`: Сила локального осветления теней (0.0 - 1.0).
+- `--processed-log`: Путь к файлу лога (по умолчанию `tools/ops/normalized_models.log`). Скрипт пропускает уже обработанные модели.
+- `--force`: Игнорировать лог и переобработать все изображения заново.
 
 ## Типовые проблемы
 

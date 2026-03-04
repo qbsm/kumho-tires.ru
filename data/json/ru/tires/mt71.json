@@ -6,10 +6,21 @@
     "series": "Road Venture",
     "name": "Kumho MT71 Road Venture"
   },
-  "image": {
-    "src": "data/img/tires/mt71/raw/mt71-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho MT71 Road Venture"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/mt71/raw/mt71-30deg.webp",
+      "alt": "Kumho MT71 Road Venture, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/mt71/raw/mt71-front.webp",
+      "alt": "Kumho MT71 Road Venture, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/mt71/raw/mt71-side.webp",
+      "alt": "Kumho MT71 Road Venture, вид сбоку"
+    }
   }
 }

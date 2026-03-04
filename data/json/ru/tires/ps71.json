@@ -6,10 +6,21 @@
     "series": "ECSTA",
     "name": "Kumho PS71 ECSTA"
   },
-  "image": {
-    "src": "data/img/tires/ps71/raw/ps71-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho PS71 ECSTA"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/ps71/raw/ps71-30deg.webp",
+      "alt": "Kumho PS71 ECSTA, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/ps71/raw/ps71-front.webp",
+      "alt": "Kumho PS71 ECSTA, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/ps71/raw/ps71-side.webp",
+      "alt": "Kumho PS71 ECSTA, вид сбоку"
+    }
   }
 }

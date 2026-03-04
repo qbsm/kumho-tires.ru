@@ -6,10 +6,17 @@
     "series": "Road Venture",
     "name": "Kumho KL71 Road Venture"
   },
-  "image": {
-    "src": "data/img/tires/kl71/raw/kl71-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho KL71 Road Venture"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/kl71/raw/kl71-30deg.webp",
+      "alt": "Kumho KL71 Road Venture, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/kl71/raw/kl71-front.webp",
+      "alt": "Kumho KL71 Road Venture, вид спереди"
+    }
   }
 }

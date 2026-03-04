@@ -6,10 +6,21 @@
     "series": "Road Venture",
     "name": "Kumho TA31 Road Venture"
   },
-  "image": {
-    "src": "data/img/tires/ta31/raw/ta31-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho TA31 Road Venture"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/ta31/raw/ta31-30deg.webp",
+      "alt": "Kumho TA31 Road Venture, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/ta31/raw/ta31-front.webp",
+      "alt": "Kumho TA31 Road Venture, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/ta31/raw/ta31-side.webp",
+      "alt": "Kumho TA31 Road Venture, вид сбоку"
+    }
   }
 }

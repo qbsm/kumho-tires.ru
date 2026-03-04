@@ -82,7 +82,8 @@ function applyIpGeolocation(mapState, citySelect, applyFilters) {
   if (!window.ymaps?.geolocation?.get) {
     return;
   }
-  window.ymaps.geolocation.get({ provider: 'yandex' })
+  window.ymaps.geolocation
+    .get({ provider: 'yandex' })
     .then((result) => {
       const firstGeoObject = result?.geoObjects?.get?.(0);
       const coords = firstGeoObject?.geometry?.getCoordinates?.();
@@ -192,11 +193,15 @@ function buildDealerBalloon(point) {
   }
 
   const phoneBlock = point.phones
-    .map((phone) => `<div class="card-dealer__item opacity-80"><div class="link-wrap"><a href="${escapeHtml(normalizePhoneHref(phone.href))}" class="link link-a font-1-demi nowrap">${escapeHtml(phone.title)}</a></div></div>`)
+    .map(
+      (phone) =>
+        `<div class="card-dealer__item opacity-80"><div class="link-wrap"><a href="${escapeHtml(normalizePhoneHref(phone.href))}" class="link link-a font-1-demi nowrap">${escapeHtml(phone.title)}</a></div></div>`
+    )
     .join('');
-  const siteBlock = point.site && point.siteHref
-    ? `<div class="card-dealer__item opacity-80"><div class="link-wrap"><a href="${escapeHtml(point.siteHref)}" target="_blank" rel="noopener noreferrer" class="link link-a nowrap">${escapeHtml(point.site)}</a></div></div>`
-    : '';
+  const siteBlock =
+    point.site && point.siteHref
+      ? `<div class="card-dealer__item opacity-80"><div class="link-wrap"><a href="${escapeHtml(point.siteHref)}" target="_blank" rel="noopener noreferrer" class="link link-a nowrap">${escapeHtml(point.site)}</a></div></div>`
+      : '';
 
   return `<article class="card-dealer card-dealer-balloon"><div class="card-dealer__item title-wrap"><h3 class="card__title font-2 weight-600">${escapeHtml(point.name)}</h3><div class="card-dealer__subitem badges-wrap">${badges.join('')}</div><div class="card-dealer__subitem address-wrap opacity-80">${escapeHtml(point.address)}</div></div>${phoneBlock}${siteBlock}</article>`;
 }
@@ -293,19 +298,21 @@ function getVisibleIdsInMapBounds(mapState, allowedIds) {
 
 function createDealerMap(mapEl, onReadyMap) {
   const placemarkEls = Array.from(mapEl.querySelectorAll('.map__placemark'));
-  const points = placemarkEls.map((el) => ({
-    id: String(el.dataset.id || ''),
-    coords: parseCoords(el.dataset.location),
-    city: (el.dataset.city || '').toString().trim(),
-    guarantee: el.dataset.guarantee === '1',
-    guaranteeTitle: (el.dataset.guaranteeTitle || '').toString().trim(),
-    bshm: el.dataset.bshm === '1',
-    name: el.dataset.name || '',
-    address: el.dataset.address || '',
-    phones: parsePhones(el.dataset.phones),
-    site: el.dataset.site || '',
-    siteHref: el.dataset.siteHref || '',
-  })).filter((item) => item.id && Array.isArray(item.coords));
+  const points = placemarkEls
+    .map((el) => ({
+      id: String(el.dataset.id || ''),
+      coords: parseCoords(el.dataset.location),
+      city: (el.dataset.city || '').toString().trim(),
+      guarantee: el.dataset.guarantee === '1',
+      guaranteeTitle: (el.dataset.guaranteeTitle || '').toString().trim(),
+      bshm: el.dataset.bshm === '1',
+      name: el.dataset.name || '',
+      address: el.dataset.address || '',
+      phones: parsePhones(el.dataset.phones),
+      site: el.dataset.site || '',
+      siteHref: el.dataset.siteHref || '',
+    }))
+    .filter((item) => item.id && Array.isArray(item.coords));
   if (points.length === 0) {
     onReadyMap(null);
     return;

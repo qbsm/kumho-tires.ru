@@ -6,10 +6,21 @@
     "series": "Road Venture",
     "name": "Kumho AT52 Road Venture"
   },
-  "image": {
-    "src": "data/img/tires/at52/raw/at52-front.webp"
-  },
   "desc": {
     "short": "Шина Kumho AT52 Road Venture"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/at52/raw/at52-30deg.webp",
+      "alt": "Kumho AT52 Road Venture, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/at52/raw/at52-front.webp",
+      "alt": "Kumho AT52 Road Venture, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/at52/raw/at52-side.webp",
+      "alt": "Kumho AT52 Road Venture, вид сбоку"
+    }
   }
 }

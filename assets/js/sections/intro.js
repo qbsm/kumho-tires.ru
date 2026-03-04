@@ -16,8 +16,33 @@ function playVideosInActiveSlide(swiperInstance) {
     const slide = video.closest('.swiper-slide');
     if (slide && slide.classList.contains('swiper-slide-active')) {
       video.muted = true;
-      const p = video.play();
-      if (p && typeof p.catch === 'function') p.catch(() => {});
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+
+      // Небольшая задержка перед play() помогает на некоторых версиях iOS
+      setTimeout(() => {
+        // На iOS видео может не играть, если оно не "видимо" или не "взаимодействовано"
+        // Но muted + playsinline обычно достаточно.
+        // Добавим принудительную установку свойств перед проигрыванием.
+        video.muted = true;
+        video.defaultMuted = true;
+
+        const p = video.play();
+        if (p && typeof p.catch === 'function') {
+          p.catch((e) => {
+            console.warn('Автоплей видео не удался:', e);
+
+            // Если не удалось, попробуем еще раз при первом клике по документу
+            const playOnInteraction = () => {
+              video.play().catch(() => {});
+              document.removeEventListener('click', playOnInteraction);
+              document.removeEventListener('touchstart', playOnInteraction);
+            };
+            document.addEventListener('click', playOnInteraction);
+            document.addEventListener('touchstart', playOnInteraction);
+          });
+        }
+      }, 100);
     } else {
       video.pause();
     }

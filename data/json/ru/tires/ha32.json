@@ -6,10 +6,21 @@
     "series": "SOLUS",
     "name": "Kumho HA32 SOLUS"
   },
-  "image": {
-    "src": "data/img/tires/ha32/raw/ha32-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho HA32 SOLUS"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/ha32/raw/ha32-30deg.webp",
+      "alt": "Kumho HA32 SOLUS, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/ha32/raw/ha32-front.webp",
+      "alt": "Kumho HA32 SOLUS, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/ha32/raw/ha32-side.webp",
+      "alt": "Kumho HA32 SOLUS, вид сбоку"
+    }
   }
 }

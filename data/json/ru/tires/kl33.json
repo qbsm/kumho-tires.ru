@@ -6,10 +6,21 @@
     "series": "Road Venture",
     "name": "Kumho KL33 Road Venture"
   },
-  "image": {
-    "src": "data/img/tires/kl33/raw/kl33-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho KL33 Road Venture"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/kl33/raw/kl33-30deg.webp",
+      "alt": "Kumho KL33 Road Venture, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/kl33/raw/kl33-front.webp",
+      "alt": "Kumho KL33 Road Venture, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/kl33/raw/kl33-side.webp",
+      "alt": "Kumho KL33 Road Venture, вид сбоку"
+    }
   }
 }

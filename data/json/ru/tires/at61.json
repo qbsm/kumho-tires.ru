@@ -6,10 +6,21 @@
     "series": "Road Venture",
     "name": "Kumho AT61 Road Venture"
   },
-  "image": {
-    "src": "data/img/tires/at61/raw/at61-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho AT61 Road Venture"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/at61/raw/at61-30deg.webp",
+      "alt": "Kumho AT61 Road Venture, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/at61/raw/at61-front.webp",
+      "alt": "Kumho AT61 Road Venture, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/at61/raw/at61-side.webp",
+      "alt": "Kumho AT61 Road Venture, вид сбоку"
+    }
   }
 }

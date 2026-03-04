@@ -6,12 +6,19 @@
     "series": "CRUGEN",
     "name": "Kumho HP91 CRUGEN"
   },
-  "image": {
-    "src": "data/img/tires/hp91/raw/hp91-30deg.webp"
-  },
   "images": {
-    "sidewall": "data/img/tires/hp91/hp91-sidewall.jpg",
-    "tread": "data/img/tires/hp91/hp91-tread.png"
+    "30deg": {
+      "src": "data/img/tires/hp91/raw/hp91-30deg.webp",
+      "alt": "Kumho HP91 CRUGEN, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/hp91/raw/hp91-front.webp",
+      "alt": "Kumho HP91 CRUGEN, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/hp91/raw/hp91-side.webp",
+      "alt": "Kumho HP91 CRUGEN, вид сбоку"
+    }
   },
   "desc": {
     "short": "Шина Kumho HP91 CRUGEN"

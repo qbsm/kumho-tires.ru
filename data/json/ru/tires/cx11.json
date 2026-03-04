@@ -6,8 +6,13 @@
     "series": "PorTran",
     "name": "Kumho CX11 PorTran"
   },
-  "image": {},
   "desc": {
     "short": "Шина Kumho CX11 PorTran"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/cx11/raw/cx11-30deg.webp",
+      "alt": "Kumho CX11 PorTran, ракурс 30°"
+    }
   }
 }

@@ -6,10 +6,17 @@
     "series": "ECSTA",
     "name": "Kumho KU39 ECSTA"
   },
-  "image": {
-    "src": "data/img/tires/ku39/raw/ku39-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho KU39 ECSTA"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/ku39/raw/ku39-30deg.webp",
+      "alt": "Kumho KU39 ECSTA, ракурс 30°"
+    },
+    "front": {
+      "src": "data/img/tires/ku39/raw/ku39-front.webp",
+      "alt": "Kumho KU39 ECSTA, вид спереди"
+    }
   }
 }

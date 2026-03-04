@@ -16,11 +16,23 @@
       <span class="card__frame">{{ item.item.frame }}</span>
     </div>
   {% endif %}
-  {% set imageSrc = item.image is defined and item.image.src is defined
+{% set imageSrc = item.images is defined
+  and item.images['30deg'] is defined
+  and item.images['30deg'].src is defined
+  ? item.images['30deg'].src
+  : (item.image is defined and item.image.src is defined
     ? item.image.src
-    : 'data/img/tires/hs51/400/hs51-30deg.webp' %}
+    : 'data/img/tires/hs51/400/hs51-30deg.webp') %}
+{% set imageAlt = item.images is defined
+  and item.images['30deg'] is defined
+  and item.images['30deg'].alt is defined
+  and item.images['30deg'].alt
+  ? item.images['30deg'].alt
+  : (item.image is defined and item.image.alt is defined and item.image.alt
+    ? item.image.alt
+    : (name ? name ~ ', ракурс 30°' : '')) %}
   {% set imageSrcCard = imageSrc|replace({'/raw/': '/400/'}) %}
   <div class="card-tire__img-wrap">
-    <img src="{{ url(imageSrcCard) }}" alt="" class="card-tire__img img-responsive" loading="lazy">
+  <img src="{{ url(imageSrcCard) }}" alt="{{ imageAlt }}" class="card-tire__img img-responsive" loading="lazy">
   </div>
 </div>

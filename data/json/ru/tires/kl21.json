@@ -6,10 +6,13 @@
     "series": "Road Venture",
     "name": "Kumho KL21 Road Venture"
   },
-  "image": {
-    "src": "data/img/tires/kl21/raw/kl21-30deg.webp"
-  },
   "desc": {
     "short": "Шина Kumho KL21 Road Venture"
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/kl21/raw/kl21-30deg.webp",
+      "alt": "Kumho KL21 Road Venture, ракурс 30°"
+    }
   }
 }
