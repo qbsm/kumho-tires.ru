@@ -4,7 +4,7 @@
   display: none;
   position: fixed;
   inset: 0;
-  background-color: var(--color-4);
+  background-color: var(--color-1);
   z-index: var(--z-index-5);
 }
 
@@ -21,7 +21,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0;
-  background-color: var(--color-4);
+  background-color: var(--color-1);
 }
 
 .burger-menu__item {

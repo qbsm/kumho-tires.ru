@@ -6,7 +6,7 @@
           <div class="section__item slide-wrap swiper-slide">
               <div class="section__subitem cover-wrap">
                 {% if slide.video is defined %}
-                  <video class="intro__video cover" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="{{ slide.cover is defined ? url(slide.cover) : '' }}">
+                  <video class="intro__video cover" autoplay muted loop playsinline webkit-playsinline disableRemotePlayback preload="auto" poster="{{ slide.cover is defined ? url(slide.cover) : '' }}">
                     <source src="{{ url(slide.video) }}" type="video/mp4">
                   </video>
                 {% elseif slide.image is defined %}

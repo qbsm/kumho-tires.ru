@@ -16,14 +16,21 @@ function playVideosInActiveSlide(swiperInstance) {
     const slide = video.closest('.swiper-slide');
     if (slide && slide.classList.contains('swiper-slide-active')) {
       video.muted = true;
+      video.defaultMuted = true;
       video.setAttribute('muted', '');
       video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
 
-      // Небольшая задержка перед play() помогает на некоторых версиях iOS
+      // iOS Safari: сброс src заставляет WebKit заново создать рендер-слой для видео.
+      // Без этого видео может остаться невидимым после fade-перехода Swiper.
+      if (
+        /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+      ) {
+        video.load();
+      }
+
       setTimeout(() => {
-        // На iOS видео может не играть, если оно не "видимо" или не "взаимодействовано"
-        // Но muted + playsinline обычно достаточно.
-        // Добавим принудительную установку свойств перед проигрыванием.
         video.muted = true;
         video.defaultMuted = true;
 
@@ -32,7 +39,6 @@ function playVideosInActiveSlide(swiperInstance) {
           p.catch((e) => {
             console.warn('Автоплей видео не удался:', e);
 
-            // Если не удалось, попробуем еще раз при первом клике по документу
             const playOnInteraction = () => {
               video.play().catch(() => {});
               document.removeEventListener('click', playOnInteraction);
@@ -42,7 +48,7 @@ function playVideosInActiveSlide(swiperInstance) {
             document.addEventListener('touchstart', playOnInteraction);
           });
         }
-      }, 100);
+      }, 200);
     } else {
       video.pause();
     }
