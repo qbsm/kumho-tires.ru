@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const {
   PROJECT_ROOT,
@@ -71,10 +70,7 @@ for (const lang of langs) {
       { name: 'footer', data: {} },
     ],
   };
-  writeIfNotExists(
-    path.join(jsonBase, lang, 'pages', `${slug}.json`),
-    JSON.stringify(listPageData, null, 2)
-  );
+  writeIfNotExists(path.join(jsonBase, lang, 'pages', `${slug}.json`), JSON.stringify(listPageData, null, 2));
 
   // 2. Директория сущностей + 3 fixtures
   for (let i = 0; i < fixturesSlugs.length; i++) {
@@ -92,10 +88,7 @@ for (const lang of langs) {
         body: `<p>Полное описание элемента ${num} коллекции «${slug}». Отредактируйте этот файл.</p>`,
       },
     };
-    writeIfNotExists(
-      path.join(jsonBase, lang, slug, `${fSlug}.json`),
-      JSON.stringify(entityData, null, 2)
-    );
+    writeIfNotExists(path.join(jsonBase, lang, slug, `${fSlug}.json`), JSON.stringify(entityData, null, 2));
   }
 
   // 3. SEO: data/json/{lang}/seo/{slug}.json
@@ -156,10 +149,10 @@ console.log('\n========================================');
 console.log('Добавьте в config/project.php:');
 console.log('========================================\n');
 
-console.log("// route_map — добавить, ЕСЛИ list_page_id отличается от slug:");
+console.log('// route_map — добавить, ЕСЛИ list_page_id отличается от slug:');
 console.log(`// '${slug}' => '${config.list_page_id}',\n`);
 
-console.log("// collections — добавить:");
+console.log('// collections — добавить:');
 console.log(`'${slug}' => [`);
 console.log(`    'nav_slug'     => '${config.nav_slug}',`);
 console.log(`    'list_page_id' => '${config.list_page_id}',`);
@@ -171,7 +164,7 @@ console.log(`    'og_type'      => '${config.og_type}',`);
 console.log(`    'extras_key'   => '${config.extras_key}',`);
 console.log(`],\n`);
 
-console.log("// sitemap_pages — добавить:");
+console.log('// sitemap_pages — добавить:');
 console.log(`'${slug}',\n`);
 
 console.log('========================================');

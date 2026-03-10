@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { PROJECT_ROOT, validateSlug, ensureDir, writeIfNotExists } = require('./utils');
+const { PROJECT_ROOT, validateSlug, writeIfNotExists } = require('./utils');
 
 // --- Аргументы ---
 const args = process.argv.slice(2);
@@ -193,10 +193,7 @@ const indexPage = {
     { name: 'footer', data: {} },
   ],
 };
-writeIfNotExists(
-  path.join(deployDir, 'data', 'json', 'ru', 'pages', 'index.json'),
-  JSON.stringify(indexPage, null, 2)
-);
+writeIfNotExists(path.join(deployDir, 'data', 'json', 'ru', 'pages', 'index.json'), JSON.stringify(indexPage, null, 2));
 
 // --- data/json/ru/seo/index.json ---
 const indexSeo = {
@@ -209,10 +206,7 @@ const indexSeo = {
     { property: 'og:description', content: '' },
   ],
 };
-writeIfNotExists(
-  path.join(deployDir, 'data', 'json', 'ru', 'seo', 'index.json'),
-  JSON.stringify(indexSeo, null, 2)
-);
+writeIfNotExists(path.join(deployDir, 'data', 'json', 'ru', 'seo', 'index.json'), JSON.stringify(indexSeo, null, 2));
 
 // --- README.md ---
 writeIfNotExists(

@@ -51,9 +51,7 @@ onReady(() => {
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
           ctx.strokeStyle =
-            nodes[i].accent || nodes[j].accent
-              ? `rgba(255, 102, 0, ${a * 1.8})`
-              : `rgba(255, 255, 255, ${a})`;
+            nodes[i].accent || nodes[j].accent ? `rgba(255, 102, 0, ${a * 1.8})` : `rgba(255, 255, 255, ${a})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }

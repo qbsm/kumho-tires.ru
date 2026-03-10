@@ -1,12 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {
-  PROJECT_ROOT,
-  getAvailableLangs,
-  getExistingSlugs,
-  validateSlug,
-  writeIfNotExists,
-} = require('./utils');
+const { PROJECT_ROOT, getAvailableLangs, getExistingSlugs, validateSlug, writeIfNotExists } = require('./utils');
 
 // --- Аргументы ---
 const args = process.argv.slice(2);
@@ -131,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 console.log('\n========================================');
 console.log('Добавьте в config/project.php:');
 console.log('========================================\n');
-console.log("// sitemap_pages — добавить:");
+console.log('// sitemap_pages — добавить:');
 console.log(`'${page}',\n`);
 console.log('========================================');
 console.log('Готово!\n');

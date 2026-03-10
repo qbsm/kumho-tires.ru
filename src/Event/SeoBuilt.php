@@ -20,5 +20,6 @@ final class SeoBuilt
         public readonly string $pageId,
         public readonly array $seoData,
         public readonly bool $isEntity,
-    ) {}
+    ) {
+    }
 }

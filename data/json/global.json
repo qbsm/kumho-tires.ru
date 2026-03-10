@@ -129,16 +129,26 @@
     "en": "All rights reserved"
   },
   "form-callback": {
+    "fields": [
+      { "type": "tel", "name": "phone", "inputmode": "tel", "autocomplete": "tel", "validation": { "required": true, "validator": "phone" } },
+      { "type": "text", "name": "name", "autocomplete": "name", "validation": { "required": true, "minLength": 2 } },
+      { "type": "text", "name": "square", "validation": { "required": true } },
+      { "type": "checkbox", "name": "policy", "validation": { "required": true } },
+      { "type": "hidden", "name": "current_url" },
+      { "type": "hidden", "name": "csrf_token" }
+    ],
     "placeholder": {
       "ru": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Ваше имя",
-        "square": "Площадь, м²"
+        "square": "Площадь, м²",
+        "photos": ""
       },
       "en": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Your name",
-        "square": "Area, m²"
+        "square": "Area, m²",
+        "photos": ""
       }
     },
     "label": {
@@ -146,13 +156,15 @@
         "phone": "Телефон",
         "name": "Ваше имя",
         "square": "Площадь, м²",
-        "policy": "Принять конфиденциальность"
+        "policy": "Принять конфиденциальность",
+        "photos": "Фотографии повреждения"
       },
       "en": {
         "phone": "Phone",
         "name": "Your name",
         "square": "Area, m²",
-        "policy": "Accept privacy policy"
+        "policy": "Accept privacy policy",
+        "photos": "Damage photos"
       }
     },
     "rules": {

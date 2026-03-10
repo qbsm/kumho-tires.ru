@@ -83,7 +83,7 @@
 
 .hero__description {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255 255 255 / 60%);
   line-height: 1.7;
   margin-bottom: 40px;
 }
@@ -118,7 +118,7 @@
   width: 100%;
   max-width: 400px;
   flex-shrink: 0;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 30%);
 }
 
 @media (--lg) {
@@ -167,7 +167,7 @@
 
 .hero__form-group input:focus {
   border-color: var(--color-3);
-  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+  box-shadow: 0 0 0 3px rgb(255 102 0 / 10%);
 }
 
 .hero__login-btn {

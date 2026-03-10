@@ -1,8 +1,22 @@
-/* Форма обратной связи: BEM, переменные, доступность (подписи над полями, обязательность *, подпись под кнопкой) */
+/* Форма обратной связи: BEM, переменные, доступность, анимации */
+
+/* --- Переменные компонента --- */
 .form-callback {
+  --fc-field-height: 2.75rem;
+  --fc-field-padding: 0.625rem 0;
+  --fc-field-font-size: 1em;
+  --fc-field-font-weight: 400;
+  --fc-field-border-width: 0.1rem;
+  --fc-field-border-color: var(--color-5);
+  --fc-field-border-focus: var(--color-2);
+  --fc-field-border-error: var(--color-error);
+  --fc-label-font-size: 0.85em;
+  --fc-label-gap: 0.5rem;
+  --fc-transition: 0.25s ease-out;
   width: 100%;
 }
 
+/* --- Screen reader only --- */
 .form-callback__sr-only {
   position: absolute;
   width: 1px;
@@ -15,62 +29,29 @@
   border: 0;
 }
 
+/* --- Grid-контейнер (авто по количеству полей) --- */
 .form-callback__container {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "phone"
-    "name"
-    "square"
-    "policy"
-    "button"
-    "rules"
-    "error";
 }
 
-.form-callback__item.form-callback-item-phone {
-  grid-area: phone;
+/* --- Обёртка поля --- */
+.form-callback__item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.form-callback__item.form-callback-item-name {
-  grid-area: name;
-}
-
-.form-callback__item.form-callback-item-square {
-  grid-area: square;
-}
-
-.form-callback__item.form-callback-item-policy {
-  grid-area: policy;
-}
-
-.form-callback__item.form-callback-item-hidden {
-  display: none;
-}
-
-.form-callback__item.button-wrap {
-  grid-area: button;
-}
-
-.form-callback__item.form-callback-item-rules {
-  grid-area: rules;
-  font-size: 0.8em;
-}
-
-.form-callback__item.form-callback__error {
-  grid-area: error;
-}
-
-/* Подпись над полем */
+/* --- Подпись над полем --- */
 .form-callback__label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.85em;
+  margin-bottom: var(--fc-label-gap);
+  font-size: var(--fc-label-font-size);
   font-weight: 400;
   color: var(--color-2);
   cursor: pointer;
-  transition: color var(--transition-1);
+  transition: color var(--fc-transition);
 }
 
 .form-callback__label-text {
@@ -89,73 +70,159 @@
   line-height: 1.3;
 }
 
-/* Поля ввода: класс .form-callback__input вместо селекторов по тегу */
-.form-callback__input,
-.form-callback textarea.form-callback__input {
+/* ============================================================
+   ЕДИНЫЙ РАЗМЕР: input, select, textarea — одинаковая высота
+   ============================================================ */
+
+.form-callback__input {
   width: 100%;
-  padding-top: 0.25rem;
-  padding-bottom: 1rem;
-  font-weight: 400;
-  font-size: 1em;
+  min-height: var(--fc-field-height);
+  padding: var(--fc-field-padding);
+  font-weight: var(--fc-field-font-weight);
+  font-size: var(--fc-field-font-size);
+  font-family: inherit;
+  line-height: 1.4;
   background: none;
   color: var(--color-2);
   text-transform: uppercase;
   border: none;
-  border-bottom: 0.1rem solid var(--color-5);
+  border-bottom: var(--fc-field-border-width) solid var(--fc-field-border-color);
   border-radius: 0;
   outline: none;
-  transition: border-color var(--transition-1), background-color var(--transition-1);
+  transition:
+    border-color var(--fc-transition),
+    background-color var(--fc-transition),
+    box-shadow var(--fc-transition);
 }
 
-.form-callback__input::placeholder,
-.form-callback textarea.form-callback__input::placeholder {
+.form-callback__input::placeholder {
   color: var(--color-placeholder);
   text-transform: uppercase;
+  transition: opacity var(--fc-transition);
 }
 
-.form-callback__input:focus,
-.form-callback textarea.form-callback__input:focus {
-  border-bottom-color: var(--color-2);
+/* Focus: плавная подсветка нижней границы */
+.form-callback__input:focus {
+  border-bottom-color: var(--fc-field-border-focus);
 }
 
-.form-callback textarea.form-callback__input {
+.form-callback__input:focus::placeholder {
+  opacity: 0.5;
+}
+
+.form-callback__input:focus-visible {
+  outline: 0.125rem solid var(--fc-field-border-focus);
+  outline-offset: 0.125rem;
+}
+
+/* ============================================================
+   SELECT: сброс нативного вида, кастомная стрелка
+   ============================================================ */
+
+.form-callback__select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236e6e6e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+  background-size: 0.75rem;
+}
+
+.form-callback__select:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   TEXTAREA: та же база, вертикальный resize
+   ============================================================ */
+
+textarea.form-callback__input {
   min-height: 6rem;
   resize: vertical;
   text-transform: none;
 }
 
-.form-callback textarea.form-callback__input::placeholder {
+textarea.form-callback__input::placeholder {
   text-transform: none;
 }
 
-.form-callback__input:focus-visible,
-.form-callback textarea.form-callback__input:focus-visible,
-.form-callback .form-callback__checkbox:focus-visible + .form-callback__checkmark,
-.form-callback button:focus-visible {
-  outline: 0.125rem solid var(--color-2);
-  outline-offset: 0.125rem;
+/* ============================================================
+   FILE UPLOAD: кастомный стиль загрузки файлов
+   ============================================================ */
+
+.form-callback__file {
+  cursor: pointer;
+  color: var(--color-placeholder);
+  text-transform: none;
 }
 
-/* Кастомный чекбокс */
-.form-callback__custom-checkbox {
-  position: relative;
+.form-callback__file::file-selector-button {
+  padding: 0.5rem 1.25rem;
+  font-family: inherit;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-2);
+  background: none;
+  border: var(--fc-field-border-width) solid var(--fc-field-border-color);
+  border-radius: 0;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition:
+    border-color var(--fc-transition),
+    background-color var(--fc-transition),
+    color var(--fc-transition);
+}
+
+.form-callback__file::file-selector-button:hover {
+  border-color: var(--fc-field-border-focus);
+  background-color: var(--color-2);
+  color: var(--color-1);
+}
+
+/* ============================================================
+   RADIO GROUP
+   ============================================================ */
+
+.form-callback__radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding: var(--fc-field-padding);
+  border-bottom: var(--fc-field-border-width) solid var(--fc-field-border-color);
+}
+
+.form-callback__radio-option {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 1rem;
-  padding: 0 0 1.25rem;
-  transition: border-color var(--transition-1), padding var(--transition-1);
-  border-bottom: 0.1rem solid var(--color-5);
+  gap: 0.5rem;
   cursor: pointer;
-  user-select: none;
 }
 
-.form-callback__custom-checkbox .form-callback__checkbox:checked ~ .form-callback__checkmark::after {
-  opacity: 1;
-  visibility: visible;
+.form-callback__radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.form-callback__checkmark::after {
+.form-callback__radio-mark {
+  position: relative;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: var(--fc-field-border-width) solid var(--fc-field-border-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: border-color var(--fc-transition);
+}
+
+.form-callback__radio-input:checked + .form-callback__radio-mark {
+  border-color: var(--fc-field-border-focus);
+}
+
+.form-callback__radio-input:checked + .form-callback__radio-mark::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -164,9 +231,34 @@
   height: 0.6rem;
   transform: translate(-50%, -50%);
   background: var(--color-2);
-  opacity: 0;
-  transition: opacity var(--transition-1), visibility var(--transition-1);
-  visibility: hidden;
+  border-radius: 50%;
+}
+
+.form-callback__radio-input:focus-visible + .form-callback__radio-mark {
+  outline: 0.125rem solid var(--fc-field-border-focus);
+  outline-offset: 0.125rem;
+}
+
+.form-callback__radio-label {
+  font-size: var(--fc-field-font-size);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   КАСТОМНЫЙ ЧЕКБОКС
+   ============================================================ */
+
+.form-callback__custom-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 0 0 1.25rem;
+  transition: border-color var(--fc-transition), padding var(--fc-transition);
+  border-bottom: var(--fc-field-border-width) solid var(--fc-field-border-color);
+  cursor: pointer;
+  user-select: none;
 }
 
 .form-callback__custom-checkbox .form-callback__checkmark {
@@ -176,16 +268,30 @@
   flex-shrink: 0;
   background: transparent;
   border-radius: 0;
-  border: 0.1rem solid var(--color-5);
-  transition: border-color var(--transition-1);
+  border: var(--fc-field-border-width) solid var(--fc-field-border-color);
+  transition: border-color var(--fc-transition), background-color var(--fc-transition);
 }
 
-.form-callback__placeholder {
-  font-weight: 400;
-  text-transform: uppercase;
-  color: var(--color-placeholder);
-  font-size: 0.8em;
-  margin: 0 1rem 0 0;
+.form-callback__checkmark::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.6rem;
+  height: 0.6rem;
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--color-2);
+  opacity: 0;
+  transition: opacity var(--fc-transition), transform var(--fc-transition);
+}
+
+.form-callback__custom-checkbox .form-callback__checkbox:checked ~ .form-callback__checkmark::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.form-callback__custom-checkbox .form-callback__checkbox:checked ~ .form-callback__checkmark {
+  border-color: var(--fc-field-border-focus);
 }
 
 .form-callback__custom-checkbox .form-callback__checkbox {
@@ -196,8 +302,25 @@
   cursor: pointer;
 }
 
+.form-callback .form-callback__checkbox:focus-visible + .form-callback__checkmark {
+  outline: 0.125rem solid var(--fc-field-border-focus);
+  outline-offset: 0.125rem;
+}
+
+.form-callback__placeholder {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-placeholder);
+  font-size: 0.8em;
+  margin: 0 1rem 0 0;
+}
+
+/* ============================================================
+   КНОПКА И БЛОКИ ПОД ФОРМОЙ
+   ============================================================ */
+
 .form-callback__item.button-wrap {
-  padding-top: 0.25rem;
+  padding-top: 0.5rem;
 }
 
 .form-callback__rules {
@@ -212,16 +335,43 @@
   text-underline-offset: 0.15em;
 }
 
-/* Состояние ошибки поля */
+.form-callback__item.form-callback-item-rules {
+  font-size: 0.8em;
+}
+
+/* ============================================================
+   СОСТОЯНИЕ ОШИБКИ
+   ============================================================ */
+
 .form-callback__item.error .form-callback__input,
-.form-callback__item.error textarea,
+.form-callback__item.error textarea.form-callback__input,
+.form-callback__item.error .form-callback__select {
+  border-bottom-color: var(--fc-field-border-error);
+  background-color: var(--color-error-bg);
+  animation: shake 0.4s ease-out;
+}
+
 .form-callback__item.error .form-callback__checkmark {
-  border-bottom-color: var(--color-error);
+  border-color: var(--fc-field-border-error);
+  animation: shake 0.4s ease-out;
+}
+
+.form-callback__item.error .form-callback__radio-mark {
+  border-color: var(--fc-field-border-error);
+}
+
+.form-callback__item.error .form-callback__radio-group {
+  border-bottom-color: var(--fc-field-border-error);
   background-color: var(--color-error-bg);
 }
 
 .form-callback__item.error .form-callback__placeholder {
-  color: var(--color-error);
+  color: var(--fc-field-border-error);
+}
+
+.form-callback__item.error .form-callback__file {
+  border-bottom-color: var(--fc-field-border-error);
+  background-color: var(--color-error-bg);
 }
 
 .form-callback__error-text {
@@ -229,37 +379,30 @@
   font-size: 0.9em;
 }
 
-/* Сообщение об успешной отправке */
-.form-callback__success {
-  text-align: center;
-  padding: 1.25rem;
+/* Анимация тряски при ошибке */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-0.375rem); }
+  40% { transform: translateX(0.375rem); }
+  60% { transform: translateX(-0.25rem); }
+  80% { transform: translateX(0.25rem); }
 }
 
-.form-callback__success-icon {
-  width: 3.75rem;
-  height: 3.75rem;
-  line-height: 3.75rem;
-  background-color: var(--color-success);
-  color: var(--color-1);
-  border-radius: 50%;
-  font-size: 1.875rem;
-  margin: 0 auto 0.9375rem;
+/* ============================================================
+   КНОПКА: LOADING / SUCCESS
+   ============================================================ */
+
+.form-callback button[type="submit"] {
+  transition:
+    opacity var(--fc-transition),
+    background-color var(--fc-transition),
+    color var(--fc-transition),
+    border-color var(--fc-transition);
 }
 
-.form-callback__success-title {
-  font-size: 1.375rem;
-  font-weight: 600;
-  margin-bottom: 0.625rem;
-}
-
-.form-callback__success-text {
-  font-size: 1rem;
-  color: var(--color-muted);
-}
-
-/* Кнопка: состояние загрузки (анимация из base/animations.css) */
 .form-callback button.loading {
   opacity: 0.7;
+  pointer-events: none;
   position: relative;
 }
 
@@ -287,7 +430,41 @@
   margin-right: 0.5rem;
 }
 
-/* Доступность: отключение движения по prefers-reduced-motion ( !important по гайду допустим) */
+/* ============================================================
+   УСПЕШНАЯ ОТПРАВКА
+   ============================================================ */
+
+.form-callback__success {
+  text-align: center;
+  padding: 1.25rem;
+}
+
+.form-callback__success-icon {
+  width: 3.75rem;
+  height: 3.75rem;
+  line-height: 3.75rem;
+  background-color: var(--color-success);
+  color: var(--color-1);
+  border-radius: 50%;
+  font-size: 1.875rem;
+  margin: 0 auto 0.9375rem;
+}
+
+.form-callback__success-title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+.form-callback__success-text {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+
+/* ============================================================
+   ДОСТУПНОСТЬ: prefers-reduced-motion
+   ============================================================ */
+
 @media (prefers-reduced-motion: reduce) {
   .form-callback *,
   .form-callback *::before,

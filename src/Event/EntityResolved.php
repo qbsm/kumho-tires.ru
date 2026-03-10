@@ -22,5 +22,6 @@ final class EntityResolved
         public readonly string $slug,
         public readonly array $entity,
         public readonly array $config,
-    ) {}
+    ) {
+    }
 }
