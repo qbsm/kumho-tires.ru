@@ -91,6 +91,13 @@ return [
         'allowed_headers' => ['Content-Type', 'Accept', 'Authorization', 'X-Requested-With'],
         'allow_credentials' => false,
     ],
+    'mail' => [
+        'dsn' => (string) (getenv('MAILER_DSN') ?: 'sendmail://default'),
+        'to' => (string) (getenv('MAIL_TO') ?: ''),
+        'from' => (string) (getenv('MAIL_FROM') ?: 'noreply@localhost'),
+        'from_name' => (string) (getenv('MAIL_FROM_NAME') ?: ''),
+        'subject_prefix' => (string) (getenv('MAIL_SUBJECT_PREFIX') ?: ''),
+    ],
     'errors' => require __DIR__ . '/errors.php',
     'twig' => [
         'cache' => $isProduction ? $cacheDir . '/twig' : false,

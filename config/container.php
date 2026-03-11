@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Action\ApiSendAction;
 use App\Action\HealthAction;
 use App\Action\PageAction;
 use App\Action\PhotoroomRemoveBackgroundAction;
@@ -16,6 +17,7 @@ use App\Middleware\RedirectMiddleware;
 use App\Middleware\RequestDurationMiddleware;
 use App\Middleware\SecurityHeadersMiddleware;
 use App\Service\DataLoaderService;
+use App\Service\MailService;
 use App\Twig\AssetExtension;
 use App\Twig\DataExtension;
 use App\Twig\UrlExtension;
@@ -30,6 +32,9 @@ use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Log\LoggerInterface;
 use Slim\Psr7\Factory\ResponseFactory;
 use Slim\Views\Twig;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mailer\Transport;
 use Twig\Extension\DebugExtension;
 use Twig\Extension\StringLoaderExtension;
 
@@ -138,6 +143,21 @@ return static function (): ContainerInterface {
                 $s['paths']['cache'] ?? ''
             );
         },
+
+        MailerInterface::class => static function (ContainerInterface $c): MailerInterface {
+            $dsn = (string) ($c->get('settings')['mail']['dsn'] ?? 'sendmail://default');
+            return new Mailer(Transport::fromDsn($dsn));
+        },
+
+        MailService::class => static function (ContainerInterface $c): MailService {
+            return new MailService(
+                $c->get(MailerInterface::class),
+                $c->get(LoggerInterface::class),
+                $c->get('settings')['mail'] ?? [],
+            );
+        },
+
+        ApiSendAction::class => \DI\autowire(),
     ]);
 
     return $builder->build();

@@ -142,13 +142,13 @@
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Ваше имя",
         "square": "Площадь, м²",
-        "photos": ""
+        "photos": "Нажмите или перетащите фотографии шин(-ы)"
       },
       "en": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Your name",
         "square": "Area, m²",
-        "photos": ""
+        "photos": "Click or drag & drop photos"
       }
     },
     "label": {
@@ -156,15 +156,15 @@
         "phone": "Телефон",
         "name": "Ваше имя",
         "square": "Площадь, м²",
-        "policy": "Принять конфиденциальность",
-        "photos": "Фотографии повреждения"
+        "policy": "Даю согласие на обработку персональных данных в&nbsp;соответствии с&nbsp;<a href='/policy/' target='_blank'>Политикой конфиденциальности</a>",
+        "photos": "Прикрепите изображения"
       },
       "en": {
         "phone": "Phone",
         "name": "Your name",
         "square": "Area, m²",
-        "policy": "Accept privacy policy",
-        "photos": "Damage photos"
+        "policy": "I consent to the processing of personal data in&nbsp;accordance with the&nbsp;<a href='/en/policy/' target='_blank'>Privacy Policy</a>",
+        "photos": "Attach images"
       }
     },
     "rules": {

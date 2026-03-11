@@ -34,7 +34,7 @@ export function isFieldVisible(field) {
     return false;
   }
 
-  const fieldItem = field.closest('.form-callback__item');
+  const fieldItem = field.closest('.form-callback__field');
   if (!fieldItem) {
     return true;
   }
@@ -65,57 +65,91 @@ export class FormValidator {
     const errors = {};
     let firstError = '';
 
-    const phoneField = this.form.querySelector('input[name="phone"]');
-    if (phoneField) {
-      const value = phoneField.value.trim();
-      const digits = normalizePhone(value);
-      const countryCodeDigits = normalizePhone(phoneField.getAttribute('data-country-code') || '');
-
-      if (!isRequired(value)) {
-        this._setError(errors, 'phone', this._text('phone_required'), (msg) => {
-          firstError = firstError || msg;
-        });
-      } else if (!isValidPhone(digits, countryCodeDigits)) {
-        this._setError(errors, 'phone', this._text('phone_invalid'), (msg) => {
-          firstError = firstError || msg;
-        });
+    const setError = (fieldName, message) => {
+      errors[fieldName] = message;
+      if (!firstError) {
+        firstError = message;
       }
-    }
+    };
 
-    const nameField = this.form.querySelector('input[name="name"]');
-    if (nameField && isFieldVisible(nameField)) {
-      const name = nameField.value.trim();
-      if (!isRequired(name)) {
-        this._setError(errors, 'name', this._text('name_required'), (msg) => {
-          firstError = firstError || msg;
-        });
-      } else if (!isMinLength(name, 2)) {
-        this._setError(errors, 'name', this._text('name_min_length'), (msg) => {
-          firstError = firstError || msg;
-        });
+    // Собираем все видимые поля формы (кроме hidden, submit, csrf_token, current_url)
+    const skipNames = new Set(['csrf_token', 'current_url']);
+    const fields = this.form.querySelectorAll('input, select, textarea');
+
+    fields.forEach((field) => {
+      const name = field.name;
+      if (!name || skipNames.has(name) || field.type === 'hidden' || field.type === 'submit') {
+        return;
       }
-    }
+      if (!isFieldVisible(field)) {
+        return;
+      }
 
-    const squareField = this.form.querySelector('input[name="square"]');
-    if (squareField && isFieldVisible(squareField) && !isRequired(squareField.value)) {
-      this._setError(errors, 'square', this._text('square_required'), (msg) => {
-        firstError = firstError || msg;
-      });
-    }
+      const isReq = field.getAttribute('aria-required') === 'true';
 
-    const emailField = this.form.querySelector('input[name="email"]');
-    if (emailField && !isValidEmail(emailField.value.trim())) {
-      this._setError(errors, 'email', this._text('email_invalid'), (msg) => {
-        firstError = firstError || msg;
-      });
-    }
+      // --- Телефон ---
+      if (field.type === 'tel') {
+        const value = field.value.trim();
+        const digits = normalizePhone(value);
+        const countryCodeDigits = normalizePhone(field.getAttribute('data-country-code') || '');
 
-    const policyField = this.form.querySelector('input[name="policy"]');
-    if (policyField && isFieldVisible(policyField) && !policyField.checked) {
-      this._setError(errors, 'policy', this._text('policy_required'), (msg) => {
-        firstError = firstError || msg;
-      });
-    }
+        if (isReq && !isRequired(value)) {
+          setError(name, this._text('phone_required'));
+        } else if (isRequired(value) && !isValidPhone(digits, countryCodeDigits)) {
+          setError(name, this._text('phone_invalid'));
+        }
+        return;
+      }
+
+      // --- Email ---
+      if (field.type === 'email') {
+        const value = field.value.trim();
+        if (isReq && !isRequired(value)) {
+          setError(name, this._text('email_required'));
+        } else if (isRequired(value) && !isValidEmail(value)) {
+          setError(name, this._text('email_invalid'));
+        }
+        return;
+      }
+
+      // --- Чекбокс ---
+      if (field.type === 'checkbox') {
+        if (isReq && !field.checked) {
+          setError(name, this._text(name + '_required'));
+        }
+        return;
+      }
+
+      // --- Файл ---
+      if (field.type === 'file') {
+        if (isReq && (!field.files || field.files.length === 0)) {
+          setError(name, this._text(name + '_required'));
+        }
+        return;
+      }
+
+      // --- Текстовые поля, select, textarea ---
+      const value = field.value.trim();
+
+      if (isReq && !isRequired(value)) {
+        setError(name, this._text(name + '_required'));
+        return;
+      }
+
+      // minLength (по атрибуту или по имени поля name → 2 символа)
+      if (isRequired(value)) {
+        const minLen = field.getAttribute('minlength');
+        if (minLen && !isMinLength(value, parseInt(minLen, 10))) {
+          setError(name, this._text(name + '_min_length'));
+          return;
+        }
+        // Имя — всегда минимум 2 символа
+        if (name === 'name' && !isMinLength(value, 2)) {
+          setError(name, this._text('name_min_length'));
+          return;
+        }
+      }
+    });
 
     return {
       isValid: Object.keys(errors).length === 0,
@@ -126,10 +160,5 @@ export class FormValidator {
 
   _text(key) {
     return this.i18n.get('error', key, this.defaults[key] || '');
-  }
-
-  _setError(errors, fieldName, message, setFirstError) {
-    errors[fieldName] = message;
-    setFirstError(message);
   }
 }
