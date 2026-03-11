@@ -323,6 +323,7 @@ final class PageAction
             $items[] = [
                 'slug' => $entity['slug'] ?? $entitySlug,
                 'cover' => $inner['cover'] ?? ['src' => ''],
+                'hex' => $inner['hex'] ?? '',
                 'date' => $inner['date'] ?? '',
                 'title' => $inner['title'] ?? $inner['name'] ?? '',
                 'desc' => $inner['desc'] ?? $inner['lead'] ?? '',

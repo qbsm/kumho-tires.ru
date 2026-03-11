@@ -53,6 +53,7 @@ import './components/burger-icon.js';
 import './pages/404.js';
 import './pages/contacts.js';
 import './pages/index.js';
+import './pages/news.js';
 
 // --- Init ---
 onReady(() => {

@@ -5,7 +5,7 @@
   <div class="card-news__item content-wrap">
     <div class="card-news__item date-link-wrap">
       <div class="card-news__subitem date-wrap">
-        <div class="card-news__hex-cube"></div>
+        <div class="card-news__hex-cube"{% if item.hex is defined %} style="background: {{ item.hex }};"{% endif %}></div>
         <span class="card-news__date">{{ item.date | raw }}</span>
       </div>
       <div class="card-news__subitem link-wrap">
