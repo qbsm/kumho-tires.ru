@@ -38,15 +38,21 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/hs52/raw/hs52-30deg.webp",
+      "400": "data/img/tires/hs52/400/hs52-30deg.webp",
+      "800": "data/img/tires/hs52/800/hs52-30deg.webp",
+      "1280": "data/img/tires/hs52/1280/hs52-30deg.webp",
       "alt": "Kumho HS52 ECSTA, ракурс 30°"
     },
     "front": {
-      "src": "data/img/tires/hs52/raw/hs52-front.webp",
+      "400": "data/img/tires/hs52/400/hs52-front.webp",
+      "800": "data/img/tires/hs52/800/hs52-front.webp",
+      "1280": "data/img/tires/hs52/1280/hs52-front.webp",
       "alt": "Kumho HS52 ECSTA, вид спереди"
     },
     "side": {
-      "src": "data/img/tires/hs52/raw/hs52-side.webp",
+      "400": "data/img/tires/hs52/400/hs52-side.webp",
+      "800": "data/img/tires/hs52/800/hs52-side.webp",
+      "1280": "data/img/tires/hs52/1280/hs52-side.webp",
       "alt": "Kumho HS52 ECSTA, вид сбоку"
     }
   }

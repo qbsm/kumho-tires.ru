@@ -1,13 +1,21 @@
 {
   "name": "tires-list",
   "sections": [
-    {"name": "header", "visible": true, "data": {}},
+    {
+      "name": "header",
+      "visible": true,
+      "data": {}
+    },
     {
       "name": "frame",
       "visible": true,
       "data": {
         "cover": {
-          "src": "data/img/frames/tires.webp"
+          "400": "data/img/frames/400/tires.webp",
+          "800": "data/img/frames/800/tires.webp",
+          "1280": "data/img/frames/1280/tires.webp",
+          "1600": "data/img/frames/1600/tires.webp",
+          "1920": "data/img/frames/1920/tires.webp"
         }
       }
     },
@@ -18,10 +26,24 @@
         "filter": {
           "visible": true,
           "seasons": [
-            {"label": "Лето",        "value": "summer"},
-            {"label": "Зима",        "value": "winter",    "disabled": true},
-            {"label": "Всесезонные", "value": "allseason"},
-            {"label": "Шипованные", "value": "studded",   "disabled": true}
+            {
+              "label": "Лето",
+              "value": "summer"
+            },
+            {
+              "label": "Зима",
+              "value": "winter",
+              "disabled": true
+            },
+            {
+              "label": "Всесезонные",
+              "value": "allseason"
+            },
+            {
+              "label": "Шипованные",
+              "value": "studded",
+              "disabled": true
+            }
           ]
         },
         "heading": {

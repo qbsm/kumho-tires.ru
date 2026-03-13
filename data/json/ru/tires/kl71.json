@@ -37,11 +37,15 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/kl71/raw/kl71-30deg.webp",
+      "400": "data/img/tires/kl71/400/kl71-30deg.webp",
+      "800": "data/img/tires/kl71/800/kl71-30deg.webp",
+      "1280": "data/img/tires/kl71/1280/kl71-30deg.webp",
       "alt": "Kumho KL71 Road Venture, ракурс 30°"
     },
     "front": {
-      "src": "data/img/tires/kl71/raw/kl71-front.webp",
+      "400": "data/img/tires/kl71/400/kl71-front.webp",
+      "800": "data/img/tires/kl71/800/kl71-front.webp",
+      "1280": "data/img/tires/kl71/1280/kl71-front.webp",
       "alt": "Kumho KL71 Road Venture, вид спереди"
     }
   }

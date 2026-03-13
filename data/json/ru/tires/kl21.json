@@ -37,7 +37,9 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/kl21/raw/kl21-30deg.webp",
+      "400": "data/img/tires/kl21/400/kl21-30deg.webp",
+      "800": "data/img/tires/kl21/800/kl21-30deg.webp",
+      "1280": "data/img/tires/kl21/1280/kl21-30deg.webp",
       "alt": "Kumho KL21 Road Venture, ракурс 30°"
     }
   }

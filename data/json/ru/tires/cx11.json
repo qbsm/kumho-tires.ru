@@ -36,7 +36,9 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/cx11/raw/cx11-30deg.webp",
+      "400": "data/img/tires/cx11/400/cx11-30deg.webp",
+      "800": "data/img/tires/cx11/800/cx11-30deg.webp",
+      "1280": "data/img/tires/cx11/1280/cx11-30deg.webp",
       "alt": "Kumho CX11 PorTran, ракурс 30°"
     }
   }

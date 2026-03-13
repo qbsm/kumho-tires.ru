@@ -1,13 +1,21 @@
 {
   "name": "warranty",
   "sections": [
-    {"name": "header", "data": {}},
+    {
+      "name": "header",
+      "data": {}
+    },
     {
       "name": "frame",
       "visible": true,
       "data": {
         "cover": {
-          "src": "data/img/frames/warranty.webp"
+          "400": "data/img/frames/400/warranty.webp",
+          "800": "data/img/frames/800/warranty.webp",
+          "1280": "data/img/frames/1280/warranty.webp",
+          "1600": "data/img/frames/1600/warranty.webp",
+          "1920": "data/img/frames/1920/warranty.webp",
+          "2560": "data/img/frames/2560/warranty.webp"
         }
       }
     },
@@ -111,6 +119,10 @@
         }
       }
     },
-    {"name": "footer", "visible": true, "data": {}}
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {}
+    }
   ]
 }

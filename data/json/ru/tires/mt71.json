@@ -32,15 +32,21 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/mt71/raw/mt71-30deg.webp",
+      "400": "data/img/tires/mt71/400/mt71-30deg.webp",
+      "800": "data/img/tires/mt71/800/mt71-30deg.webp",
+      "1280": "data/img/tires/mt71/1280/mt71-30deg.webp",
       "alt": "Kumho MT71 Road Venture, ракурс 30°"
     },
     "front": {
-      "src": "data/img/tires/mt71/raw/mt71-front.webp",
+      "400": "data/img/tires/mt71/400/mt71-front.webp",
+      "800": "data/img/tires/mt71/800/mt71-front.webp",
+      "1280": "data/img/tires/mt71/1280/mt71-front.webp",
       "alt": "Kumho MT71 Road Venture, вид спереди"
     },
     "side": {
-      "src": "data/img/tires/mt71/raw/mt71-side.webp",
+      "400": "data/img/tires/mt71/400/mt71-side.webp",
+      "800": "data/img/tires/mt71/800/mt71-side.webp",
+      "1280": "data/img/tires/mt71/1280/mt71-side.webp",
       "alt": "Kumho MT71 Road Venture, вид сбоку"
     }
   }

@@ -35,7 +35,9 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/hs51/raw/hs51-30deg.webp",
+      "400": "data/img/tires/hs51/400/hs51-30deg.webp",
+      "800": "data/img/tires/hs51/800/hs51-30deg.webp",
+      "1280": "data/img/tires/hs51/1280/hs51-30deg.webp",
       "alt": "Kumho HS51 ECSTA, ракурс 30°"
     }
   }

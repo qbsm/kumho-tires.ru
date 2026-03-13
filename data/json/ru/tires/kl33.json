@@ -38,15 +38,21 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/kl33/raw/kl33-30deg.webp",
+      "400": "data/img/tires/kl33/400/kl33-30deg.webp",
+      "800": "data/img/tires/kl33/800/kl33-30deg.webp",
+      "1280": "data/img/tires/kl33/1280/kl33-30deg.webp",
       "alt": "Kumho KL33 Road Venture, ракурс 30°"
     },
     "front": {
-      "src": "data/img/tires/kl33/raw/kl33-front.webp",
+      "400": "data/img/tires/kl33/400/kl33-front.webp",
+      "800": "data/img/tires/kl33/800/kl33-front.webp",
+      "1280": "data/img/tires/kl33/1280/kl33-front.webp",
       "alt": "Kumho KL33 Road Venture, вид спереди"
     },
     "side": {
-      "src": "data/img/tires/kl33/raw/kl33-side.webp",
+      "400": "data/img/tires/kl33/400/kl33-side.webp",
+      "800": "data/img/tires/kl33/800/kl33-side.webp",
+      "1280": "data/img/tires/kl33/1280/kl33-side.webp",
       "alt": "Kumho KL33 Road Venture, вид сбоку"
     }
   }
