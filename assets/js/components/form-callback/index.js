@@ -127,7 +127,9 @@ export class CallbackForm {
     if (!(target instanceof HTMLElement)) {
       return;
     }
-    const field = target.closest('.form-callback__control, .form-callback__file-input, .form-callback__checkbox-input, .form-callback__radio-input');
+    const field = target.closest(
+      '.form-callback__control, .form-callback__file-input, .form-callback__checkbox-input, .form-callback__radio-input'
+    );
     if (field) {
       this.ui.clearFieldError(field);
     }

@@ -76,7 +76,7 @@ async function main() {
 
       console.log(
         `  ${relPath} → ${relWoff2}` +
-          `  (${(ttfSize / 1024).toFixed(0)} KB → ${(woff2Size / 1024).toFixed(0)} KB, -${ratio}%)`,
+          `  (${(ttfSize / 1024).toFixed(0)} KB → ${(woff2Size / 1024).toFixed(0)} KB, -${ratio}%)`
       );
       converted++;
     } catch (err) {

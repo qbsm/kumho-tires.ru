@@ -105,6 +105,7 @@ final class TemplateDataBuilder
                     }
                 }
                 if ($hasAdaptive) {
+                    /** @var array<string,string> $result */
                     $result = [];
                     foreach ($sizeKeys as $key) {
                         if (isset($image[$key]) && is_string($image[$key]) && $image[$key] !== '#') {

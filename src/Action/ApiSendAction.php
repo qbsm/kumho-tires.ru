@@ -15,7 +15,8 @@ final class ApiSendAction
     public function __construct(
         private readonly MailService $mailService,
         private readonly LoggerInterface $logger,
-    ) {}
+    ) {
+    }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {

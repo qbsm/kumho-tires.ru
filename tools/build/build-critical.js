@@ -48,7 +48,7 @@ async function build() {
   const outputSize = Buffer.byteLength(result.css);
   console.log(
     `build:critical: ${(inputSize / 1024).toFixed(1)} KB → ${(outputSize / 1024).toFixed(1)} KB` +
-      ` (-${((1 - outputSize / inputSize) * 100).toFixed(0)}%)`,
+      ` (-${((1 - outputSize / inputSize) * 100).toFixed(0)}%)`
   );
 }
 

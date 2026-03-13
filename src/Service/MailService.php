@@ -39,7 +39,8 @@ final class MailService
         private readonly MailerInterface $mailer,
         private readonly LoggerInterface $logger,
         private readonly array $config,
-    ) {}
+    ) {
+    }
 
     /**
      * @param array<string,mixed>  $formData     POST-данные формы

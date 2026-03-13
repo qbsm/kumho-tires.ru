@@ -22,6 +22,7 @@
   --fc-font-size-xs: 1.2rem;
   --fc-success: #2e7d32;
   --fc-success-bg: #e8f5e9;
+
   width: 100%;
   position: relative;
 }
@@ -126,17 +127,33 @@
 }
 
 @keyframes fcSuccessPop {
-  0% { transform: scale(0); opacity: 0; }
-  60% { transform: scale(1.15); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes fcCheckDraw {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes fcFadeUp {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-callback__field--full,
@@ -176,8 +193,6 @@
     border-color var(--fc-speed) var(--fc-ease),
     background-color var(--fc-speed) var(--fc-ease),
     box-shadow var(--fc-speed) var(--fc-ease);
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 }
 
@@ -316,7 +331,7 @@
   height: 1px;
   opacity: 0;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
 }
 
 .form-callback__file-icon {
@@ -461,9 +476,17 @@
 }
 
 @keyframes checkPop {
-  0% { transform: scale(1); }
-  40% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* ==========================================================================
@@ -617,7 +640,9 @@
 }
 
 @keyframes fcSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ==========================================================================
@@ -718,8 +743,15 @@
 }
 
 @keyframes fcSlideDown {
-  from { opacity: 0; transform: translateY(-1.2rem); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-1.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-callback__error-text {
@@ -728,11 +760,26 @@
 }
 
 @keyframes fcShake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-4px); }
-  40% { transform: translateX(4px); }
-  60% { transform: translateX(-2px); }
-  80% { transform: translateX(2px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-4px);
+  }
+
+  40% {
+    transform: translateX(4px);
+  }
+
+  60% {
+    transform: translateX(-2px);
+  }
+
+  80% {
+    transform: translateX(2px);
+  }
 }
 
 /* ==========================================================================

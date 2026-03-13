@@ -1,4 +1,4 @@
-import { DEFAULT_ERROR_TEXTS, SUCCESS_RESTORE_DELAY_MS } from './constants.js';
+import { DEFAULT_ERROR_TEXTS } from './constants.js';
 
 export class FormUI {
   constructor(formElement, i18n) {
@@ -6,7 +6,9 @@ export class FormUI {
     this.i18n = i18n;
     this.submitButton = formElement.querySelector('.form-callback__submit');
     this.errorContainer = this._resolveErrorContainer();
-    this.errorMessageNode = this.errorContainer ? this.errorContainer.querySelector('.form-callback__error-text') : null;
+    this.errorMessageNode = this.errorContainer
+      ? this.errorContainer.querySelector('.form-callback__error-text')
+      : null;
     this.errorId = this.errorMessageNode ? this.errorMessageNode.id : '';
     this.originalButtonNodes = this.submitButton
       ? Array.from(this.submitButton.childNodes).map((node) => node.cloneNode(true))
@@ -126,9 +128,7 @@ export class FormUI {
   }
 
   clearErrors() {
-    this.form
-      .querySelectorAll('.form-callback__field.error')
-      .forEach((element) => element.classList.remove('error'));
+    this.form.querySelectorAll('.form-callback__field.error').forEach((element) => element.classList.remove('error'));
 
     this.form.querySelectorAll('[aria-invalid="true"]').forEach((element) => {
       element.removeAttribute('aria-invalid');
@@ -157,12 +157,16 @@ export class FormUI {
     overlay.className = 'form-callback__success';
     overlay.innerHTML =
       '<span class="form-callback__success-icon">' +
-        '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-          '<path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '</svg>' +
+      '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '</svg>' +
       '</span>' +
-      '<span class="form-callback__success-title">' + this._escapeHtml(successTitle) + '</span>' +
-      '<span class="form-callback__success-text">' + this._escapeHtml(successText) + '</span>';
+      '<span class="form-callback__success-title">' +
+      this._escapeHtml(successTitle) +
+      '</span>' +
+      '<span class="form-callback__success-text">' +
+      this._escapeHtml(successText) +
+      '</span>';
 
     overlay.style.cursor = 'pointer';
     overlay.addEventListener('click', () => {

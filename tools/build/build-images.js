@@ -18,7 +18,10 @@ function loadConfig() {
   const raw = fs.readFileSync(configPath, 'utf8');
   const data = JSON.parse(raw);
   const keys = Array.isArray(data.keys) ? data.keys : ['400', '800', '1280', '1600', '1920', '2560'];
-  const widths = data.widths && typeof data.widths === 'object' ? data.widths : { 400: 400, 800: 800, 1280: 1280, 1600: 1600, 1920: 1920, 2560: 2560 };
+  const widths =
+    data.widths && typeof data.widths === 'object'
+      ? data.widths
+      : { 400: 400, 800: 800, 1280: 1280, 1600: 1600, 1920: 1920, 2560: 2560 };
   return { keys, widths };
 }
 
