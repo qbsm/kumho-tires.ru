@@ -93,7 +93,8 @@ function cleanCssAssets() {
   // Удаляем файлы, которые не в манифесте
   let deletedCount = 0;
   allFoundFiles.forEach((file) => {
-    if (!currentFiles.has(file) && path.basename(file) !== 'css-manifest.json') {
+    const baseName = path.basename(file);
+    if (!currentFiles.has(file) && baseName !== 'css-manifest.json' && baseName !== 'critical.min.css') {
       fs.unlinkSync(file);
       console.log(`Удален устаревший CSS файл: ${path.basename(file)}`);
       deletedCount++;

@@ -46,6 +46,18 @@
   {{- items|join(', ') -}}
 {% endmacro %}
 
+{# --- Макрос: собрать AVIF srcset (заменяет .webp → .avif в путях) --- #}
+{% macro build_avif_srcset(img, sizeKeys) %}
+  {%- set items = [] -%}
+  {%- for key in sizeKeys -%}
+    {%- if img[key] is defined and img[key] and img[key] != '#' -%}
+      {%- set avifPath = img[key]|replace({'.webp': '.avif'}) -%}
+      {%- set items = items|merge([url(avifPath) ~ ' ' ~ key ~ 'w']) -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {{- items|join(', ') -}}
+{% endmacro %}
+
 {# --- Макрос: найти fallback src (наименьший доступный размер) --- #}
 {% macro find_fallback(img, sizeKeys) %}
   {%- for key in sizeKeys -%}
@@ -64,6 +76,14 @@
   <picture {% if pictureClass %}class="{{ pictureClass }}"{% endif %} {% if pictureStyle %}style="{{ pictureStyle }}"{% endif %}>
     {# Вертикальная версия для узких экранов #}
     {% if image.vertical is defined %}
+      {% set vAvifSrcset = self.build_avif_srcset(image.vertical, sizeKeys) %}
+      {% if vAvifSrcset|trim %}
+        <source
+          media="(max-width: 767px)"
+          srcset="{{ vAvifSrcset|trim }}"
+          sizes="{{ imageSizes }}"
+          type="image/avif">
+      {% endif %}
       {% set vSrcset = self.build_srcset(image.vertical, sizeKeys) %}
       {% if vSrcset|trim %}
         <source
@@ -76,6 +96,13 @@
 
     {# Горизонтальная версия для широких экранов (по умолчанию) #}
     {% if image.horizontal is defined %}
+      {% set hAvifSrcset = self.build_avif_srcset(image.horizontal, sizeKeys) %}
+      {% if hAvifSrcset|trim %}
+        <source
+          srcset="{{ hAvifSrcset|trim }}"
+          sizes="{{ imageSizes }}"
+          type="image/avif">
+      {% endif %}
       {% set hSrcset = self.build_srcset(image.horizontal, sizeKeys) %}
       {% if hSrcset|trim %}
         <source
@@ -104,10 +131,17 @@
 {# Формат: числовые ключи размеров (400/800/1280/1600/1920/2560) #}
 {% elseif image['400'] is defined or image['800'] is defined or image['1280'] is defined or image['1600'] is defined or image['1920'] is defined or image['2560'] is defined %}
   {% set srcset = self.build_srcset(image, sizeKeys) %}
+  {% set avifSrcset = self.build_avif_srcset(image, sizeKeys) %}
   {% set fallbackSrc = self.find_fallback(image, sizeKeys)|trim %}
   {% set dims = imageWidth and imageHeight ? {'width': imageWidth, 'height': imageHeight} : image_dimensions(fallbackSrc) %}
 
   <picture {% if pictureClass %}class="{{ pictureClass }}"{% endif %} {% if pictureStyle %}style="{{ pictureStyle }}"{% endif %}>
+    {% if avifSrcset|trim %}
+      <source
+        srcset="{{ avifSrcset|trim }}"
+        sizes="{{ imageSizes }}"
+        type="image/avif">
+    {% endif %}
     {% if srcset|trim %}
       <source
         srcset="{{ srcset|trim }}"

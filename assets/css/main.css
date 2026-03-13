@@ -9,6 +9,7 @@
 @import "base/helpers.css";
 @import "base/animations.css";
 @import "base/mq.css";
+@import "base/performance.css";
 
 /* Sections */
 @import "sections/header.css";

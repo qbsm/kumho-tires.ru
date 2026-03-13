@@ -1,15 +1,45 @@
-{# Yandex.Metrika — скрипт в head. ID из config или fallback 107236894 #}
+{# Yandex.Metrika — отложенная загрузка после load + requestIdleCallback.
+   Не блокирует FCP/LCP/TBT. ID из config или fallback 107236894 #}
 {% set _ym_id = config.settings.yandex_metric_id|default(0) %}
 {% if _ym_id == 0 %}{% set _ym_id = 107236894 %}{% endif %}
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id={{ _ym_id }}', 'ym');
+<script>
+  (function() {
+    function initMetrika() {
+      var m = window, e = document, t = 'script',
+          r = 'https://mc.yandex.ru/metrika/tag.js',
+          i = 'ym';
+      m[i] = m[i] || function() { (m[i].a = m[i].a || []).push(arguments); };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < e.scripts.length; j++) { if (e.scripts[j].src === r) return; }
+      var k = e.createElement(t); k.async = 1; k.src = r;
+      var a = e.getElementsByTagName(t)[0]; a.parentNode.insertBefore(k, a);
 
-    ym({{ _ym_id }}, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+      m[i]({{ _ym_id }}, 'init', {
+        ssr: true,
+        webvisor: true,
+        clickmap: true,
+        ecommerce: "dataLayer",
+        referrer: e.referrer,
+        url: location.href,
+        accurateTrackBounce: true,
+        trackLinks: true
+      });
+    }
+
+    function deferInit() {
+      if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(initMetrika, { timeout: 3000 });
+      } else {
+        setTimeout(initMetrika, 3000);
+      }
+    }
+
+    if (document.readyState === 'complete') {
+      deferInit();
+    } else {
+      window.addEventListener('load', deferInit, { once: true });
+    }
+  })();
 </script>
 <!-- /Yandex.Metrika counter -->

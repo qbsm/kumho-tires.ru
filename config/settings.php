@@ -114,4 +114,8 @@ return [
         'logs' => $projectRoot . '/logs',
     ],
     'image_sizes' => $image_sizes,
+    'resource_hints' => [
+        ['rel' => 'preconnect', 'href' => 'https://mc.yandex.ru', 'crossorigin' => false],
+        ['rel' => 'preconnect', 'href' => 'https://yastatic.net', 'crossorigin' => false],
+    ],
 ];

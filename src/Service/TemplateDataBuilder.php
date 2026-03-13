@@ -68,9 +68,15 @@ final class TemplateDataBuilder
     }
 
     /**
+     * Извлекает hero-изображение для responsive preload (imagesrcset + type).
+     *
+     * Возвращает объект с ключами размеров (400, 800, ...) и src для fallback,
+     * либо строку (обратная совместимость), либо null.
+     *
      * @param array<int,array<string,mixed>> $sections
+     * @return array<string,string>|string|null
      */
-    private function extractHeroPreloadImage(array $sections): ?string
+    private function extractHeroPreloadImage(array $sections): array|string|null
     {
         foreach ($sections as $section) {
             if (isset($section['name']) && $section['name'] !== 'intro') {
@@ -81,48 +87,84 @@ final class TemplateDataBuilder
                 return null;
             }
             $first = $items[0];
+
+            // cover — одиночный URL
             if (isset($first['cover']) && is_string($first['cover'])) {
                 return $first['cover'];
             }
-            if (isset($first['image']['raw']) && is_string($first['image']['raw'])) {
-                return $first['image']['raw'];
+
+            // image с числовыми ключами (адаптивные размеры)
+            if (isset($first['image']) && is_array($first['image'])) {
+                $image = $first['image'];
+                $sizeKeys = ['400', '800', '1280', '1600', '1920', '2560'];
+                $hasAdaptive = false;
+                foreach ($sizeKeys as $key) {
+                    if (isset($image[$key]) && is_string($image[$key]) && $image[$key] !== '#') {
+                        $hasAdaptive = true;
+                        break;
+                    }
+                }
+                if ($hasAdaptive) {
+                    $result = [];
+                    foreach ($sizeKeys as $key) {
+                        if (isset($image[$key]) && is_string($image[$key]) && $image[$key] !== '#') {
+                            $result[$key] = $image[$key];
+                        }
+                    }
+                    // horizontal для art-direction
+                    if (isset($image['horizontal']) && is_array($image['horizontal'])) {
+                        foreach ($sizeKeys as $key) {
+                            if (isset($image['horizontal'][$key]) && is_string($image['horizontal'][$key]) && $image['horizontal'][$key] !== '#') {
+                                $result[$key] = $image['horizontal'][$key];
+                            }
+                        }
+                    }
+                    if ($result !== []) {
+                        return $result;
+                    }
+                }
+
+                // Fallback: raw/src
+                if (isset($image['raw']) && is_string($image['raw'])) {
+                    return $image['raw'];
+                }
+                if (isset($image['src']) && is_string($image['src'])) {
+                    return $image['src'];
+                }
             }
-            if (isset($first['image']['src']) && is_string($first['image']['src'])) {
-                return $first['image']['src'];
-            }
+
             return null;
         }
         return null;
     }
 
     /**
-     * Извлекает пути шрифтов из fonts.css для preload (один источник правды — fonts.css).
+     * Извлекает пути основных шрифтов из fonts.css для preload.
+     *
+     * Preload ограничен 3 шрифтами — только те, что нужны для первого экрана:
+     * Source Sans 3 (основной текст), TT Norms Pro Expanded Regular и Bold (заголовки).
+     * Остальные шрифты загружаются через font-display: swap без preload.
      *
      * @return array<int,string>
      */
     private function extractFontPathsFromCss(string $projectRoot): array
     {
-        $fontsCss = $projectRoot . '/assets/css/base/fonts.css';
-        if (!is_readable($fontsCss)) {
-            return [];
-        }
-        $content = (string) file_get_contents($fontsCss);
-        if (preg_match_all("/url\s*\(\s*['\"]?(.+?)['\"]?\s*\)/", $content, $matches) === 0) {
-            return [];
-        }
+        // Только критические шрифты для первого экрана (above-the-fold)
+        $criticalFonts = [
+            'assets/fonts/source-sans-3/SourceSans3VF-Upright.ttf.woff2',
+            'assets/fonts/tt-norms-pro-expanded/TTNormsProExpanded-Regular.woff2',
+            'assets/fonts/tt-norms-pro-expanded/TTNormsProExpanded-Bold.woff2',
+        ];
+
         $paths = [];
-        foreach ($matches[1] as $path) {
-            $path = trim($path, " \t\n\r\0\x0B'\"");
-            if ($path === '') {
-                continue;
-            }
-            // В fonts.css пути вида ../../fonts/...; собранный CSS лежит в assets/css/build/ → ../../ = assets/
-            $preloadPath = preg_replace('#^\.\./\.\./#', 'assets/', $path);
-            if ($preloadPath !== $path || str_contains($path, 'fonts/')) {
-                $paths[] = $preloadPath;
+        foreach ($criticalFonts as $font) {
+            $fullPath = $projectRoot . '/' . $font;
+            if (is_readable($fullPath)) {
+                $paths[] = $font;
             }
         }
-        return array_values(array_unique($paths));
+
+        return $paths;
     }
 
     /**

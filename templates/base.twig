@@ -96,13 +96,37 @@
     <link rel="alternate" href="{{ _base_secure_domain_for_seo ~ '/' }}" hreflang="x-default" />
   {% endif %}
 
+  {% include 'components/resource-hints.twig' %}
+
   {% if preload_fonts is defined and preload_fonts is iterable and preload_fonts|length > 0 %}
   {% for path in preload_fonts %}
-  <link rel="preload" href="{{ url(path) }}" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="{{ url(path) }}" as="font" type="font/woff2" crossorigin>
   {% endfor %}
   {% endif %}
+
+  {# Responsive preload hero-изображения с imagesrcset и type #}
   {% if hero_preload_image is defined and hero_preload_image %}
-  <link rel="preload" href="{{ url(hero_preload_image) }}" as="image">
+    {% if hero_preload_image is iterable %}
+      {# Адаптивный preload с AVIF и WebP #}
+      {% set _preload_srcset_parts = [] %}
+      {% for key, path in hero_preload_image %}
+        {% set _preload_srcset_parts = _preload_srcset_parts|merge([url(path) ~ ' ' ~ key ~ 'w']) %}
+      {% endfor %}
+      {% if _preload_srcset_parts|length > 0 %}
+        {% set _preload_srcset = _preload_srcset_parts|join(', ') %}
+        {# AVIF preload #}
+        {% set _avif_srcset_parts = [] %}
+        {% for key, path in hero_preload_image %}
+          {% set _avif_path = path|replace({'.webp': '.avif'}) %}
+          {% set _avif_srcset_parts = _avif_srcset_parts|merge([url(_avif_path) ~ ' ' ~ key ~ 'w']) %}
+        {% endfor %}
+        <link rel="preload" as="image" imagesrcset="{{ _avif_srcset_parts|join(', ') }}" imagesizes="100vw" type="image/avif">
+        {# WebP preload (fallback) #}
+        <link rel="preload" as="image" imagesrcset="{{ _preload_srcset }}" imagesizes="100vw" type="image/webp">
+      {% endif %}
+    {% else %}
+      <link rel="preload" href="{{ url(hero_preload_image) }}" as="image">
+    {% endif %}
   {% endif %}
 
   <script>

@@ -97,22 +97,37 @@ async function processImage(inputPath, keys, widths, manifest) {
       fs.mkdirSync(outDir, { recursive: true });
     }
 
-    const ext = '.webp';
-    const outPath = path.join(outDir, baseName + ext);
-    const relKey = (relDir + '/' + baseName + ext).replace(/\\/g, '/');
-
-    let pipeline = sharp(inputPath);
-    if (targetW != null && targetW > 0 && origW > targetW) {
-      pipeline = pipeline.resize(targetW, null, { withoutEnlargement: true });
+    // Resize pipeline (shared between WebP and AVIF)
+    function createResized() {
+      let p = sharp(inputPath);
+      if (targetW != null && targetW > 0 && origW > targetW) {
+        p = p.resize(targetW, null, { withoutEnlargement: true });
+      }
+      return p;
     }
-    pipeline = pipeline.webp({ quality: 85, effort: 4 });
-    await pipeline.toFile(outPath);
 
-    const outMeta = await sharp(outPath).metadata();
+    // WebP
+    const webpPath = path.join(outDir, baseName + '.webp');
+    const webpRelKey = (relDir + '/' + baseName + '.webp').replace(/\\/g, '/');
+    await createResized().webp({ quality: 85, effort: 4 }).toFile(webpPath);
+
+    const outMeta = await sharp(webpPath).metadata();
     const w = outMeta.width || 0;
     const h = outMeta.height || 0;
     if (w && h) {
-      manifest[relKey] = { width: w, height: h };
+      manifest[webpRelKey] = { width: w, height: h };
+    }
+
+    // AVIF
+    const avifPath = path.join(outDir, baseName + '.avif');
+    const avifRelKey = (relDir + '/' + baseName + '.avif').replace(/\\/g, '/');
+    await createResized().avif({ quality: 63, effort: 4 }).toFile(avifPath);
+
+    const avifMeta = await sharp(avifPath).metadata();
+    const aw = avifMeta.width || 0;
+    const ah = avifMeta.height || 0;
+    if (aw && ah) {
+      manifest[avifRelKey] = { width: aw, height: ah };
     }
   }
 }
