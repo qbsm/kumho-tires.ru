@@ -1,5 +1,6 @@
 /**
- * Создаёт в public/ симлинки: assets → ../assets, data → ../data, robots.txt → ../robots.txt.
+ * Создаёт в public/ симлинки на все директории и файлы из корня проекта,
+ * необходимые для работы приложения (PHP runtime + статика).
  * Запуск: npm run setup:public-links или при сборке (build/build:dev).
  */
 const path = require('path');
@@ -9,9 +10,21 @@ const projectRoot = path.resolve(__dirname, '../..');
 const publicDir = path.join(projectRoot, 'public');
 
 const LINKS = [
+  // PHP runtime
+  { link: 'src', target: '../src', type: 'dir' },
+  { link: 'config', target: '../config', type: 'dir' },
+  { link: 'templates', target: '../templates', type: 'dir' },
+  { link: 'vendor', target: '../vendor', type: 'dir' },
+  { link: 'cache', target: '../cache', type: 'dir' },
+  { link: 'logs', target: '../logs', type: 'dir' },
+  // Статика
   { link: 'assets', target: '../assets', type: 'dir' },
   { link: 'data', target: '../data', type: 'dir' },
+  // Корневые файлы
   { link: 'robots.txt', target: '../robots.txt', type: 'file' },
+  { link: '.env', target: '../.env', type: 'file' },
+  { link: 'composer.json', target: '../composer.json', type: 'file' },
+  { link: 'composer.lock', target: '../composer.lock', type: 'file' },
 ];
 
 function ensurePublicDir() {
