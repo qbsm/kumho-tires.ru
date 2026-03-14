@@ -24,16 +24,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-picture {
-  display: block;
-}
-
 h1,
 h2,
 h3 {

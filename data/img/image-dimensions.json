@@ -1455,6 +1455,238 @@
     "width": 1280,
     "height": 1280
   },
+  "frames/400/warranty.webp": {
+    "width": 400,
+    "height": 267
+  },
+  "frames/400/warranty.avif": {
+    "width": 400,
+    "height": 267
+  },
+  "frames/800/warranty.webp": {
+    "width": 800,
+    "height": 534
+  },
+  "frames/800/warranty.avif": {
+    "width": 800,
+    "height": 534
+  },
+  "frames/1280/warranty.webp": {
+    "width": 1280,
+    "height": 854
+  },
+  "frames/1280/warranty.avif": {
+    "width": 1280,
+    "height": 854
+  },
+  "frames/1600/warranty.webp": {
+    "width": 1600,
+    "height": 1068
+  },
+  "frames/1600/warranty.avif": {
+    "width": 1600,
+    "height": 1068
+  },
+  "frames/1920/warranty.webp": {
+    "width": 1920,
+    "height": 1281
+  },
+  "frames/1920/warranty.avif": {
+    "width": 1920,
+    "height": 1281
+  },
+  "frames/2560/warranty.webp": {
+    "width": 2560,
+    "height": 1708
+  },
+  "frames/2560/warranty.avif": {
+    "width": 2560,
+    "height": 1708
+  },
+  "frames/400/tires.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "frames/400/tires.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "frames/800/tires.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "frames/800/tires.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "frames/1280/tires.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "frames/1280/tires.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "frames/1600/tires.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "frames/1600/tires.avif": {
+    "width": 1600,
+    "height": 1600
+  },
+  "frames/1920/tires.webp": {
+    "width": 1920,
+    "height": 1920
+  },
+  "frames/1920/tires.avif": {
+    "width": 1920,
+    "height": 1920
+  },
+  "frames/400/news1.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "frames/400/news1.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "frames/800/news1.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "frames/800/news1.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "frames/1280/news1.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "frames/1280/news1.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "frames/1600/news1.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "frames/1600/news1.avif": {
+    "width": 1600,
+    "height": 1600
+  },
+  "frames/1920/news1.webp": {
+    "width": 1920,
+    "height": 1920
+  },
+  "frames/1920/news1.avif": {
+    "width": 1920,
+    "height": 1920
+  },
+  "frames/2560/news1.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "frames/2560/news1.avif": {
+    "width": 2560,
+    "height": 2560
+  },
+  "frames/400/news.webp": {
+    "width": 400,
+    "height": 267
+  },
+  "frames/400/news.avif": {
+    "width": 400,
+    "height": 267
+  },
+  "frames/800/news.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "frames/800/news.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "frames/1280/news.webp": {
+    "width": 1280,
+    "height": 854
+  },
+  "frames/1280/news.avif": {
+    "width": 1280,
+    "height": 854
+  },
+  "frames/1600/news.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "frames/1600/news.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "frames/1920/news.webp": {
+    "width": 1920,
+    "height": 1280
+  },
+  "frames/1920/news.avif": {
+    "width": 1920,
+    "height": 1280
+  },
+  "frames/2560/news.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "frames/2560/news.avif": {
+    "width": 2560,
+    "height": 1707
+  },
+  "frames/400/buy.webp": {
+    "width": 400,
+    "height": 267
+  },
+  "frames/400/buy.avif": {
+    "width": 400,
+    "height": 267
+  },
+  "frames/800/buy.webp": {
+    "width": 800,
+    "height": 533
+  },
+  "frames/800/buy.avif": {
+    "width": 800,
+    "height": 533
+  },
+  "frames/1280/buy.webp": {
+    "width": 1280,
+    "height": 854
+  },
+  "frames/1280/buy.avif": {
+    "width": 1280,
+    "height": 854
+  },
+  "frames/1600/buy.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "frames/1600/buy.avif": {
+    "width": 1600,
+    "height": 1067
+  },
+  "frames/1920/buy.webp": {
+    "width": 1920,
+    "height": 1280
+  },
+  "frames/1920/buy.avif": {
+    "width": 1920,
+    "height": 1280
+  },
+  "frames/2560/buy.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "frames/2560/buy.avif": {
+    "width": 2560,
+    "height": 1707
+  },
   "favicons/400/web-app-manifest-512x512.webp": {
     "width": 400,
     "height": 400
@@ -2702,190 +2934,6 @@
   "news/conference-sever-avto-2026/1920/1.avif": {
     "width": 1920,
     "height": 1280
-  },
-  "frames/400/warranty.webp": {
-    "width": 400,
-    "height": 267
-  },
-  "frames/400/warranty.avif": {
-    "width": 400,
-    "height": 267
-  },
-  "frames/800/warranty.webp": {
-    "width": 800,
-    "height": 534
-  },
-  "frames/800/warranty.avif": {
-    "width": 800,
-    "height": 534
-  },
-  "frames/1280/warranty.webp": {
-    "width": 1280,
-    "height": 854
-  },
-  "frames/1280/warranty.avif": {
-    "width": 1280,
-    "height": 854
-  },
-  "frames/1600/warranty.webp": {
-    "width": 1600,
-    "height": 1068
-  },
-  "frames/1600/warranty.avif": {
-    "width": 1600,
-    "height": 1068
-  },
-  "frames/1920/warranty.webp": {
-    "width": 1920,
-    "height": 1281
-  },
-  "frames/1920/warranty.avif": {
-    "width": 1920,
-    "height": 1281
-  },
-  "frames/2560/warranty.webp": {
-    "width": 2560,
-    "height": 1708
-  },
-  "frames/2560/warranty.avif": {
-    "width": 2560,
-    "height": 1708
-  },
-  "frames/400/tires.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "frames/400/tires.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "frames/800/tires.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "frames/800/tires.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "frames/1280/tires.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "frames/1280/tires.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "frames/1600/tires.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "frames/1600/tires.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "frames/1920/tires.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "frames/1920/tires.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "frames/400/news.webp": {
-    "width": 400,
-    "height": 266
-  },
-  "frames/400/news.avif": {
-    "width": 400,
-    "height": 266
-  },
-  "frames/800/news.webp": {
-    "width": 800,
-    "height": 533
-  },
-  "frames/800/news.avif": {
-    "width": 800,
-    "height": 533
-  },
-  "frames/1280/news.webp": {
-    "width": 1280,
-    "height": 854
-  },
-  "frames/1280/news.avif": {
-    "width": 1280,
-    "height": 854
-  },
-  "frames/1600/news.webp": {
-    "width": 1600,
-    "height": 1067
-  },
-  "frames/1600/news.avif": {
-    "width": 1600,
-    "height": 1067
-  },
-  "frames/1920/news.webp": {
-    "width": 1920,
-    "height": 1280
-  },
-  "frames/1920/news.avif": {
-    "width": 1920,
-    "height": 1280
-  },
-  "frames/2560/news.webp": {
-    "width": 2560,
-    "height": 1707
-  },
-  "frames/2560/news.avif": {
-    "width": 2560,
-    "height": 1707
-  },
-  "frames/400/buy.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "frames/400/buy.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "frames/800/buy.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "frames/800/buy.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "frames/1280/buy.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "frames/1280/buy.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "frames/1600/buy.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "frames/1600/buy.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "frames/1920/buy.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "frames/1920/buy.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "frames/2560/buy.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "frames/2560/buy.avif": {
-    "width": 2560,
-    "height": 2560
   },
   "favicons/400/android-chrome-512x512.webp": {
     "width": 400,

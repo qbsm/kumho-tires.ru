@@ -1,11 +1,15 @@
 <section class="frame">
   <div class="section__item cover-wrap">
-    {% if data.cover.src is defined %}
-      <div class="cover" style="background-image: url('{{ url(data.cover.src) }}')"></div>
-    {% elseif data.cover['1280'] is defined %}
-      <div class="cover" style="background-image: url('{{ url(data.cover['1280']) }}')"></div>
-    {% elseif data.cover['800'] is defined %}
-      <div class="cover" style="background-image: url('{{ url(data.cover['800']) }}')"></div>
+    {% if data.cover is iterable %}
+      {% if data.cover.src is defined %}
+        <div class="cover" style="background-image: url('{{ url(data.cover.src) }}')"></div>
+      {% elseif data.cover['1920'] is defined %}
+        <div class="cover" style="background-image: url('{{ url(data.cover['1920']) }}')"></div>
+      {% elseif data.cover['1280'] is defined %}
+        <div class="cover" style="background-image: url('{{ url(data.cover['1280']) }}')"></div>
+      {% endif %}
+    {% else %}
+      <div class="cover" style="background-image: url('{{ url(data.cover) }}')"></div>
     {% endif %}
   </div>
 </section>
