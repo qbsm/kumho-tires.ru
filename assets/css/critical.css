@@ -45,7 +45,18 @@ h3 {
   top: 0;
 }
 
-.img-responsive {
+img {
   max-width: 100%;
   height: auto;
+}
+
+/* Резерв высоты для intro до загрузки main.css — предотвращает CLS */
+.intro .swiper {
+  min-height: 68.4rem;
+}
+
+@media (min-width: 1200px) {
+  .intro .swiper {
+    min-height: 85rem;
+  }
 }
