@@ -28,7 +28,7 @@ AddDefaultCharset UTF-8
 </IfModule>
 <IfModule mod_headers.c>
   <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|avif|svg|ico|woff2?)$">
-    Header set Cache-Control "public, max-age=31536000"
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
 
