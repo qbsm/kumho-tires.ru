@@ -60,13 +60,13 @@
 
 {# --- Макрос: найти fallback src (наименьший доступный размер) --- #}
 {% macro find_fallback(img, sizeKeys) %}
+  {%- set _found = '' -%}
   {%- for key in sizeKeys -%}
-    {%- if img[key] is defined and img[key] and img[key] != '#' -%}
-      {{- img[key] -}}
-      {%- set _found = true -%}
+    {%- if _found == '' and img[key] is defined and img[key] and img[key] != '#' -%}
+      {%- set _found = img[key] -%}
     {%- endif -%}
-    {%- if _found is defined -%}{%- break -%}{%- endif -%}
   {%- endfor -%}
+  {{- _found -}}
 {% endmacro %}
 
 {% import _self as self %}
