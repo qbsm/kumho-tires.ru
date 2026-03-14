@@ -1,21 +1,18 @@
-{# Critical CSS inline — стили первого экрана, не блокируют FCP #}
+{# Critical CSS inline — минимальный reset для быстрого FCP #}
 {% set criticalCssContent = inlineCss('critical.min.css') %}
 {% if criticalCssContent %}
 <style>{{ criticalCssContent|raw }}</style>
 {% endif %}
 
-{# Main CSS — async загрузка через media hack (не блокирует рендеринг) #}
-<link rel="stylesheet" href="{{ assetUrl('main.css', 'css') }}" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="{{ assetUrl('main.css', 'css') }}"></noscript>
+{# Main CSS — синхронная загрузка (async вызывает CLS из-за перерисовки макета) #}
+<link rel="stylesheet" href="{{ assetUrl('main.css', 'css') }}">
 
 {% set vendorCss = assetUrl('vendors.css', 'js', true) %}
 {% if vendorCss %}
-<link rel="stylesheet" href="{{ vendorCss }}" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="{{ vendorCss }}"></noscript>
+<link rel="stylesheet" href="{{ vendorCss }}">
 {% endif %}
 
 {% set uiVendorCss = assetUrl('ui-vendors.css', 'js', true) %}
 {% if uiVendorCss %}
-<link rel="stylesheet" href="{{ uiVendorCss }}" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="{{ uiVendorCss }}"></noscript>
+<link rel="stylesheet" href="{{ uiVendorCss }}">
 {% endif %}
