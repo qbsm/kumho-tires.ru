@@ -3,9 +3,13 @@
 {% else %}
 <div class="card-action items-start {{ item.class|default('') }}">
 {% endif %}
-  {% if item.cover is defined and item.cover.src %}
+  {% if item.cover is defined and item.cover %}
     <div class="card-action__item cover-wrap">
-      <img src="{{ url(item.cover.src) }}" alt="{{ item.cover.alt|default('') }}" class="card-action__cover img-responsive" loading="lazy">
+      {% if item.cover.src is defined %}
+        <img src="{{ url(item.cover.src) }}" alt="{{ item.cover.alt|default('') }}" class="card-action__cover img-responsive" loading="lazy">
+      {% else %}
+        {% include 'components/picture.twig' with {'image': item.cover, 'class': 'card-action__cover img-responsive', 'sizes_preset': 'content'} %}
+      {% endif %}
     </div>
   {% endif %}
   {% if global.logo.horizontal.white is defined %}

@@ -1,6 +1,12 @@
 <a href="{% if item.slug is defined %}{{ url('/news/' ~ item.slug ~ '/') }}{% else %}#{% endif %}" class="card-news card-news-link link">
   <div class="card-news__item cover-wrap">
-    <div class="card-news__cover" style="background-image: url('{{ url(item.cover.src) }}');"></div>
+    {% if item.cover.src is defined %}
+      <div class="card-news__cover" style="background-image: url('{{ url(item.cover.src) }}');"></div>
+    {% elseif item.cover['800'] is defined %}
+      <div class="card-news__cover" style="background-image: url('{{ url(item.cover['800']) }}');"></div>
+    {% elseif item.cover['400'] is defined %}
+      <div class="card-news__cover" style="background-image: url('{{ url(item.cover['400']) }}');"></div>
+    {% endif %}
   </div>
   <div class="card-news__item content-wrap">
     <div class="card-news__item date-link-wrap">

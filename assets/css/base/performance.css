@@ -1,21 +1,23 @@
 /* content-visibility: auto для below-fold секций.
    Ускоряет начальный рендеринг — браузер не рассчитывает layout/paint
    для секций за пределами viewport. contain-intrinsic-size задает
-   примерную высоту, чтобы избежать CLS при скролле. */
+   примерную высоту, чтобы избежать CLS при скролле.
 
-.section-trust,
-.section-partners,
-.section-frame,
-.section-headline,
-.section-actions,
-.section-owners,
-.section-us,
-.section-navigation,
-.section-tires,
-.section-dealers,
-.section-news,
-.section-content,
-.section-contacts,
+   Классы секций соответствуют реальной разметке (без префикса section-). */
+
+.actions,
+.tires,
+.news,
+.dealers,
+.trust,
+.partners,
+.frame,
+.headline,
+.owners,
+.us,
+.navigation,
+.content,
+.contacts,
 .footer {
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
