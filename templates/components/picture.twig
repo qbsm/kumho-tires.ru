@@ -31,8 +31,8 @@
 {% set imageStyle = style|default('') %}
 {% set pictureClass = picture_class|default('') %}
 {% set pictureStyle = picture_style|default('') %}
-{% set imageWidth = image.width|default(null) %}
-{% set imageHeight = image.height|default(null) %}
+{% set imageWidth = width|default(image.width|default(null)) %}
+{% set imageHeight = height|default(image.height|default(null)) %}
 {% set imageFetchpriority = imageLoading == 'eager' ? 'high' : null %}
 
 {# --- Макрос: собрать srcset из объекта изображения по доступным ключам --- #}

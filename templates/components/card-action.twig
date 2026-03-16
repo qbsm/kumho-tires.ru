@@ -8,7 +8,7 @@
       {% if item.cover.src is defined %}
         <img src="{{ url(item.cover.src) }}" alt="{{ item.cover.alt|default('') }}" class="card-action__cover img-responsive" loading="lazy">
       {% else %}
-        {% include 'components/picture.twig' with {'image': item.cover, 'class': 'card-action__cover img-responsive', 'sizes_preset': 'content'} %}
+        {% include 'components/picture.twig' with {'image': item.cover, 'class': 'card-action__cover img-responsive', 'sizes_preset': 'content', 'loading': 'eager'} %}
       {% endif %}
     </div>
   {% endif %}

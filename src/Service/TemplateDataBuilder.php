@@ -153,8 +153,8 @@ final class TemplateDataBuilder
         // Только критические шрифты для первого экрана (above-the-fold)
         $criticalFonts = [
             'assets/fonts/source-sans-3/SourceSans3VF-Upright.ttf.woff2',
+            'assets/fonts/manrope/ManropeVariable.woff2',
             'assets/fonts/tt-norms-pro-variable/TTNormsProVariable.woff2',
-            'assets/fonts/tt-norms-pro-expanded/TTNormsProExpanded-Bold.woff2',
         ];
 
         $paths = [];
