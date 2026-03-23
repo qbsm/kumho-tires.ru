@@ -234,6 +234,7 @@
 </head>
 
 <body class="page-{{ pageData.name|default(page_id) }}">
+  {% include 'components/analytics-noscript.twig' %}
   <a href="#page-content" class="skip-link js-skip-link">{{ skip_link_text|default('Перейти к контенту') }}</a>
   {% block content %}{% endblock %}
   {# Глобальное подключение cookie-panel #}
