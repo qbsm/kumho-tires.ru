@@ -1,8 +1,7 @@
 {% set name = item.item.name | default(item.item.code | default('')) %}
-{# Временно без перехода на страницу модели #}
-{% set href = null %}
+{% set href = item.slug is defined and item.slug ? url('/tires/' ~ item.slug ~ '/') : null %}
 
-<div class="card-tire">
+<a{% if href %} href="{{ href }}"{% endif %} class="card-tire"{{ href ? '' : ' role="group"' }}>
   <div class="card__item title-wrap">
     <span class="card__title font-2 weight-600">{{ item.item.code }}</span>
   </div>
@@ -35,4 +34,4 @@
       } %}
     {% endif %}
   </div>
-</div>
+</a>
