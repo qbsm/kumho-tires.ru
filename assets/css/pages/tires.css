@@ -33,7 +33,7 @@
 
 .tire-detail__main-image {
   background: #f7f7f7;
-  border-radius: 1.25rem;
+  border-radius: 2rem;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@
   width: 90px;
   height: 90px;
   border: 1px solid transparent;
-  border-radius: 1.25rem;
+  border-radius: 2rem;
   overflow: hidden;
   cursor: pointer;
   background: #f7f7f7;
@@ -172,7 +172,7 @@
 .tire-detail__table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border-radius: 0.75rem;
+  border-radius: 2rem 2rem 0 0;
 }
 
 .tire-detail__table {

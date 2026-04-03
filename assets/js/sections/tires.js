@@ -21,7 +21,7 @@ onReady(() => {
       .split('|')
       .filter(Boolean)
       .map((label) => {
-        const m = label.match(/^(\d+)\/(\d+)R(\d+)/);
+        const m = label.match(/^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)R(\d+)/);
         if (!m) return null;
         return { width: m[1], profile: m[2], diameter: m[3] };
       })

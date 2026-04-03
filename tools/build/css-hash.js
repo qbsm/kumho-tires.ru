@@ -114,7 +114,13 @@ async function processCss() {
 
 // Синхронизируем CSS-билд в public/assets/css/build/
 function syncToPublic(sourceDir, newFileName) {
-  const publicBuildDir = path.resolve(__dirname, '../../public/assets/css/build');
+  const publicAssetsDir = path.resolve(__dirname, '../../public/assets');
+  // Если public/assets — симлинк, файлы уже на месте
+  if (fs.existsSync(publicAssetsDir) && fs.lstatSync(publicAssetsDir).isSymbolicLink()) {
+    console.log('public/assets — симлинк, синхронизация не требуется');
+    return;
+  }
+  const publicBuildDir = path.join(publicAssetsDir, 'css/build');
   if (!fs.existsSync(publicBuildDir)) {
     fs.mkdirSync(publicBuildDir, { recursive: true });
   }
