@@ -16,6 +16,14 @@
     {
       "property": "og:description",
       "content": "Условия программы «Расширенная гарантия Kumho»: регистрация, сроки действия и порядок обращения по гарантийному случаю."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Kumho Tire"
+    },
+    {
+      "property": "og:image",
+      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
     }
   ]
 }

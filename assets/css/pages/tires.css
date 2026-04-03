@@ -4,6 +4,12 @@
   padding-block-end: 2rem;
 }
 
+.tire-detail .block-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
 /* Grid: две колонки на десктопе */
 .tire-detail__grid {
   display: grid;
@@ -59,14 +65,14 @@
 .tire-detail__thumbs {
   display: flex;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 .tire-detail__thumb {
   width: 90px;
   height: 90px;
-  border: 2px solid transparent;
-  border-radius: 1rem;
+  border: 1px solid transparent;
+  border-radius: 1.25rem;
   overflow: hidden;
   cursor: pointer;
   background: #f7f7f7;
@@ -98,22 +104,40 @@
   gap: 3rem;
 }
 
+.tire-detail p {
+  margin: 0;
+}
+
+.tire-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.tire-detail__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+}
+
+.tire-detail__title-group .heading-accent {
+  margin-bottom: 0.25rem;
+}
+
 .tire-detail__series {
   color: var(--color-5);
-  margin-block-end: 1.5rem;
 }
 
 .tire-detail__badge {
   display: inline-block;
   padding: 0.4rem 1rem;
-  border-radius: 1rem;
+  border-radius: 2rem;
   background: var(--color-3);
   color: #fff;
-  margin-block-end: 1.5rem;
+  align-self: flex-start;
 }
 
 .tire-detail__desc {
-  margin-block-end: 2rem;
   line-height: 1.6;
   font-size: 1.125em;
 }
@@ -140,9 +164,6 @@
 }
 
 .tire-detail__sizes .block-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   min-width: 0;
   overflow: hidden;
 }

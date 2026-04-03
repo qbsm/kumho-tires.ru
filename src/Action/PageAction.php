@@ -208,6 +208,7 @@ final class PageAction
         $inner = $itemKey !== '' ? ($entity[$itemKey] ?? []) : $entity;
         $name = (string) ($inner['name'] ?? $inner['title'] ?? $entity['slug'] ?? '');
         $desc = (string) ($entity['desc']['short'] ?? $entity['desc']['full'] ?? $inner['desc'] ?? $inner['lead'] ?? '');
+        $ogImage = $baseUrl . '/data/img/seo/og.webp?v=2';
 
         return [
             'title' => $name,
@@ -216,6 +217,8 @@ final class PageAction
                 ['property' => 'og:type', 'content' => $ogType],
                 ['property' => 'og:title', 'content' => $name],
                 ['property' => 'og:description', 'content' => $desc],
+                ['property' => 'og:site_name', 'content' => 'Kumho Tire'],
+                ['property' => 'og:image', 'content' => $ogImage],
             ],
             'json_ld' => null,
             'json_ld_faq' => null,

@@ -10,8 +10,8 @@ declare(strict_types=1);
  * @return array{title: string, intro: string, collections: array<int, array{list_path: string, list_key: string, item_dir: string, name_key: string, desc_key?: string, visible_key?: string, fields: array<int, array{label: string, key: string}>}>}
  */
 return [
-    'title' => 'iSmart Platform',
-    'intro' => 'Детальная информация о разделах и страницах платформы.',
+    'title' => 'Kumho Tire',
+    'intro' => 'Детальная информация о разделах и страницах сайта Kumho Tire.',
     'collections' => [
         [
             'list_path' => '{lang}/pages/tires.json',

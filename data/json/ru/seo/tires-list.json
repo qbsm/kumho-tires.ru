@@ -1,1 +1,34 @@
-{"name":"tires","title":"Модели шин Kumho","meta":[{"name":"description","content":"Каталог шин Kumho: модели AT52, Road Venture, PorTran, Ecowing, SOLUS, CRUGEN, ECSTA и другие."},{"property":"og:url","content":"https://example.com/tires/"},{"property":"og:type","content":"website"},{"property":"og:title","content":"Модели шин Kumho"},{"property":"og:description","content":"Каталог шин Kumho: модели AT52, Road Venture, PorTran, Ecowing, SOLUS, CRUGEN, ECSTA и другие."},{"property":"og:site_name","content":"Kumho Tires"},{"property":"og:image","content":"https://example.com/data/img/seo/og.webp?v=1"}]}
+{
+  "name": "tires",
+  "title": "Модели шин Kumho",
+  "meta": [
+    {
+      "name": "description",
+      "content": "Каталог шин Kumho: модели AT52, Road Venture, PorTran, Ecowing, SOLUS, CRUGEN, ECSTA и другие."
+    },
+    {
+      "property": "og:url",
+      "content": "https://kumho-tires.ru/tires/"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Модели шин Kumho"
+    },
+    {
+      "property": "og:description",
+      "content": "Каталог шин Kumho: модели AT52, Road Venture, PorTran, Ecowing, SOLUS, CRUGEN, ECSTA и другие."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Kumho Tires"
+    },
+    {
+      "property": "og:image",
+      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+    }
+  ]
+}

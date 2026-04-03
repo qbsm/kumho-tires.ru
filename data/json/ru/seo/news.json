@@ -2,8 +2,29 @@
   "name": "news",
   "title": "Новости Kumho",
   "meta": [
-    {"name": "description", "content": "Актуальные новости и события бренда шин Kumho: запуск новых моделей, расширение сети дилеров, акции."},
-    {"property": "og:type", "content": "website"},
-    {"property": "og:title", "content": "Новости Kumho"}
+    {
+      "name": "description",
+      "content": "Актуальные новости и события бренда шин Kumho: запуск новых моделей, расширение сети дилеров, акции."
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Новости Kumho"
+    },
+    {
+      "property": "og:site_name",
+      "content": "Kumho Tire"
+    },
+    {
+      "property": "og:description",
+      "content": "Актуальные новости и события бренда шин Kumho: запуск новых моделей, расширение сети дилеров, акции."
+    },
+    {
+      "property": "og:image",
+      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+    }
   ]
 }

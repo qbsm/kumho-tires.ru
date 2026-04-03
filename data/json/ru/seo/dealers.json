@@ -1,9 +1,10 @@
 {
-  "title": "Где купить шины Kumho",
+  "name": "dealers",
+  "title": "Дилеры Kumho",
   "meta": [
     {
       "name": "description",
-      "content": "Адреса точек продаж шин Kumho и карта дилеров."
+      "content": "Официальные дилеры шин Kumho в России. Адреса, телефоны и сайты партнёров."
     },
     {
       "property": "og:type",
@@ -11,11 +12,11 @@
     },
     {
       "property": "og:title",
-      "content": "Где купить шины Kumho"
+      "content": "Дилеры Kumho"
     },
     {
       "property": "og:description",
-      "content": "Адреса точек продаж шин Kumho и карта дилеров."
+      "content": "Официальные дилеры шин Kumho в России. Адреса, телефоны и сайты партнёров."
     },
     {
       "property": "og:site_name",

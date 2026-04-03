@@ -53,36 +53,27 @@
           {# --- Колонка 2: информация --- #}
           <div class="tire-detail__info">
             <div class="section__item block-wrap">
-              <div class="section__subitem heading-wrap">
-                <span class="heading-accent self-start" aria-hidden="true"></span>
-                <h1 class="h1 heading font-2 weight-700 heading-flex uppercase">{{ t.name|default(t.code) }}</h1>
-              </div>
-              {% if t.series is defined and t.series %}
-                <p class="tire-detail__series h3 font-2 weight-400">{{ t.series }}</p>
-              {% endif %}
-              {% if tire.season is defined and tire.season %}
-                <span class="tire-detail__badge">{{ tire.season }}</span>
-              {% endif %}
-              {% if tire.desc.short is defined and tire.desc.short %}
-                <p class="tire-detail__desc">{{ tire.desc.short }}</p>
-              {% endif %}
-
-              {% if tire.features is defined and tire.features %}
-              <div class="section__subitem">
-                {% set featureItems = [] %}
-                {% for feature in tire.features %}
-                  {% if feature.title is defined and feature.title %}
-                    {% set featureItems = featureItems|merge(['<strong>' ~ feature.title ~ '</strong> — ' ~ feature.text]) %}
-                  {% else %}
-                    {% set featureItems = featureItems|merge([feature.text]) %}
+              <div class="tire-detail__header">
+                <div class="tire-detail__title-group">
+                  <div class="section__subitem heading-wrap">
+                    <span class="heading-accent self-start" aria-hidden="true"></span>
+                    <h1 class="h1 heading font-2 weight-700 heading-flex uppercase">{{ t.name|default(t.code) }}</h1>
+                  </div>
+                  {% if t.series is defined and t.series %}
+                    <p class="tire-detail__series h5 font-2 weight-400">{{ t.series }}</p>
                   {% endif %}
-                {% endfor %}
-                {% include 'components/custom-list.twig' with { 'items': featureItems } %}
+                  {% if tire.season is defined and tire.season %}
+                    <span class="tire-detail__badge">{{ tire.season }}</span>
+                  {% endif %}
+                </div>
+                {% if tire.desc.short is defined and tire.desc.short %}
+                  <p class="tire-detail__desc">{{ tire.desc.short }}</p>
+                {% endif %}
               </div>
-              {% endif %}
+
             </div>
 
-            {# --- Описание (в правой колонке) --- #}
+            {# --- Описание --- #}
             {% if tire.desc.full is defined and tire.desc.full %}
             <div class="section__item block-wrap">
               <div class="section__subitem heading-wrap">
@@ -94,18 +85,29 @@
               </div>
             </div>
             {% endif %}
+
+            {# --- Преимущества --- #}
+            {% if tire.features is defined and tire.features %}
+            <div class="section__item block-wrap">
+              <div class="section__subitem">
+                {% set featureItems = [] %}
+                {% for feature in tire.features %}
+                  {% if feature.title is defined and feature.title %}
+                    {% set featureItems = featureItems|merge(['<strong>' ~ feature.title ~ '</strong> — ' ~ feature.text]) %}
+                  {% else %}
+                    {% set featureItems = featureItems|merge([feature.text]) %}
+                  {% endif %}
+                {% endfor %}
+                {% include 'components/custom-list.twig' with { 'items': featureItems } %}
+              </div>
+            </div>
+            {% endif %}
           </div>
 
 
-        </div>
-      </div>
-    </section>
-
-    {# --- Таблица размеров (отдельная секция на всю ширину) --- #}
-    {% if tire.sizes is defined and tire.sizes|length > 0 %}
-    <section class="section">
-      <div class="container">
-        <div class="section__item block-wrap">
+        {# --- Таблица размеров (на всю ширину грида) --- #}
+        {% if tire.sizes is defined and tire.sizes|length > 0 %}
+        <div class="section__item block-wrap" style="grid-column: 1 / -1">
           <div class="section__subitem heading-wrap">
             <span class="heading-accent self-start" aria-hidden="true"></span>
             <h2 class="h2 heading font-2 weight-700 heading-flex uppercase">Доступные размеры</h2>
@@ -135,14 +137,13 @@
             </div>
           </div>
         </div>
+        {% endif %}
+
+        </div>{# /tire-detail__grid #}
       </div>
     </section>
-    {% endif %}
 
   </main>
   {% include 'sections/footer.twig' with {'data': global.footer|default({})} %}
 </div>
-<script>
-document.addEventListener('DOMContentLoaded',function(){var thumbs=document.querySelectorAll('.tire-detail__thumb'),main=document.querySelector('.tire-detail__main-image');if(!thumbs.length||!main)return;thumbs.forEach(function(t){t.addEventListener('click',function(){thumbs.forEach(function(x){x.classList.remove('active')});t.classList.add('active');var p=t.querySelector('picture');if(!p)return;var n=p.cloneNode(true);var i=n.querySelector('img');if(i){i.className='img-responsive tire-detail__img';i.loading='eager';i.style.maxWidth='100%';i.style.maxHeight='100%';i.style.objectFit='contain'}var mp=main.querySelector('picture');if(mp){mp.replaceWith(n)}else{main.innerHTML='';main.appendChild(n)}})})});
-</script>
 {% endblock %}
