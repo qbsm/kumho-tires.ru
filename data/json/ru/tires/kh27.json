@@ -6,15 +6,12 @@
       "summer"
     ],
     "diameters": [
-      13,
       14,
       15,
-      16,
-      17
+      16
     ],
     "widths": [
-      155,
-      165,
+      145,
       175,
       185,
       195,
@@ -22,7 +19,6 @@
       215
     ],
     "profiles": [
-      50,
       55,
       60,
       65,
@@ -50,5 +46,94 @@
       "1280": "data/img/tires/kh27/1280/kh27-side.webp",
       "alt": "Kumho KH27 Ecowing, вид сбоку"
     }
-  }
+  },
+  "season": "Летняя",
+  "sizes": [
+    {
+      "label": "175/60R14",
+      "diameter": 14,
+      "index": "79H",
+      "commercial": false
+    },
+    {
+      "label": "175/65R14",
+      "diameter": 14,
+      "index": "86T",
+      "commercial": false
+    },
+    {
+      "label": "195/65R14",
+      "diameter": 14,
+      "index": "89H",
+      "commercial": false
+    },
+    {
+      "label": "195/70R14",
+      "diameter": 14,
+      "index": "91H",
+      "commercial": false
+    },
+    {
+      "label": "145/65R15",
+      "diameter": 15,
+      "index": "72T",
+      "commercial": false
+    },
+    {
+      "label": "175/55R15",
+      "diameter": 15,
+      "index": "77T",
+      "commercial": false
+    },
+    {
+      "label": "185/55R15",
+      "diameter": 15,
+      "index": "86H",
+      "commercial": false
+    },
+    {
+      "label": "185/65R15",
+      "diameter": 15,
+      "index": "88H",
+      "commercial": false
+    },
+    {
+      "label": "185/65R15",
+      "diameter": 15,
+      "index": "88H",
+      "commercial": false
+    },
+    {
+      "label": "215/60R15",
+      "diameter": 15,
+      "index": "94V",
+      "commercial": false
+    },
+    {
+      "label": "205/60R16",
+      "diameter": 16,
+      "index": "92V",
+      "commercial": false
+    },
+    {
+      "label": "205/65R16",
+      "diameter": 16,
+      "index": "95W",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Летняя шина среднего класса с асимметричным ненаправленным рисунком протектора"
+    },
+    {
+      "text": "Низкий уровень шума и комфортная езда для малых и средних автомобилей"
+    },
+    {
+      "text": "Эффективный отвод воды для защиты от аквапланирования"
+    },
+    {
+      "text": "Предшественник модели ES31, проверенная временем конструкция"
+    }
+  ]
 }

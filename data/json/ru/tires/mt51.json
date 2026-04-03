@@ -8,17 +8,29 @@
     "diameters": [
       15,
       16,
-      17
+      17,
+      18
     ],
     "widths": [
+      31,
+      32,
+      33,
+      225,
       235,
+      245,
+      255,
       265,
-      285,
-      315
+      285
     ],
     "profiles": [
+      10,
+      11,
+      12,
+      60,
+      65,
       70,
-      75
+      75,
+      85
     ]
   },
   "item": {
@@ -48,5 +60,112 @@
       "1280": "data/img/tires/mt51/1280/mt51-side.webp",
       "alt": "Kumho MT51 Road Venture, вид сбоку"
     }
-  }
+  },
+  "season": "Внедорожная",
+  "features": [
+    {
+      "text": "Шина для грязевых условий и горных дорог"
+    },
+    {
+      "text": "Превосходное очищение от грязи и защита от застревания камней в протекторе"
+    }
+  ],
+  "sizes": [
+    {
+      "label": "31/10.5R15",
+      "diameter": 15,
+      "index": "109Q",
+      "commercial": false
+    },
+    {
+      "label": "32/11.5R15",
+      "diameter": 15,
+      "index": "113Q",
+      "commercial": false
+    },
+    {
+      "label": "33/12.5R15",
+      "diameter": 15,
+      "index": "108Q",
+      "commercial": false
+    },
+    {
+      "label": "235/75R15",
+      "diameter": 15,
+      "index": "110/107Q",
+      "commercial": false
+    },
+    {
+      "label": "225/75R16",
+      "diameter": 16,
+      "index": "115/112Q",
+      "commercial": false
+    },
+    {
+      "label": "235/85R16",
+      "diameter": 16,
+      "index": "120/116Q",
+      "commercial": false
+    },
+    {
+      "label": "245/70R16",
+      "diameter": 16,
+      "index": "118/115Q",
+      "commercial": false
+    },
+    {
+      "label": "245/75R16",
+      "diameter": 16,
+      "index": "120/116Q",
+      "commercial": false
+    },
+    {
+      "label": "255/70R16",
+      "diameter": 16,
+      "index": "115/112Q",
+      "commercial": false
+    },
+    {
+      "label": "265/70R16",
+      "diameter": 16,
+      "index": "117/114Q",
+      "commercial": false
+    },
+    {
+      "label": "225/70R17",
+      "diameter": 17,
+      "index": "110/107Q",
+      "commercial": false
+    },
+    {
+      "label": "245/70R17",
+      "diameter": 17,
+      "index": "119/116Q",
+      "commercial": false
+    },
+    {
+      "label": "265/65R17",
+      "diameter": 17,
+      "index": "120/117Q",
+      "commercial": false
+    },
+    {
+      "label": "265/70R17",
+      "diameter": 17,
+      "index": "121/118Q",
+      "commercial": false
+    },
+    {
+      "label": "285/70R17",
+      "diameter": 17,
+      "index": "121/118Q",
+      "commercial": false
+    },
+    {
+      "label": "265/60R18",
+      "diameter": 18,
+      "index": "119/116Q",
+      "commercial": false
+    }
+  ]
 }

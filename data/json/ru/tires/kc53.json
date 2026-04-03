@@ -6,22 +6,33 @@
       "summer"
     ],
     "diameters": [
+      12,
+      13,
       14,
       15,
-      16
+      16,
+      17,
+      18
     ],
     "widths": [
+      145,
+      155,
+      165,
       175,
       185,
       195,
       205,
       215,
-      225
+      225,
+      235
     ],
     "profiles": [
+      55,
+      60,
       65,
       70,
-      75
+      75,
+      80
     ]
   },
   "item": {
@@ -39,5 +50,271 @@
       "1280": "data/img/tires/kc53/1280/kc53-30deg.webp",
       "alt": "Kumho KC53 PorTran, ракурс 30°"
     }
-  }
+  },
+  "season": "Летняя",
+  "features": [
+    {
+      "text": "Разработана специально для малотоннажных грузовиков и микроавтобусов"
+    },
+    {
+      "text": "Полностью фукциональный блочный протектор"
+    },
+    {
+      "text": "Центральная часть дорожки протектора оьбсепечивает низкий уровень шума и комфорт"
+    }
+  ],
+  "sizes": [
+    {
+      "label": "155/80R12C",
+      "diameter": 12,
+      "index": "88/86R",
+      "commercial": true
+    },
+    {
+      "label": "145/80R13C",
+      "diameter": 13,
+      "index": "88/86R",
+      "commercial": true
+    },
+    {
+      "label": "155/80R13C",
+      "diameter": 13,
+      "index": "90/88R",
+      "commercial": true
+    },
+    {
+      "label": "165/80R13C",
+      "diameter": 13,
+      "index": "94/92R",
+      "commercial": true
+    },
+    {
+      "label": "175/80R13C",
+      "diameter": 13,
+      "index": "94/92P",
+      "commercial": true
+    },
+    {
+      "label": "165/70R14C",
+      "diameter": 14,
+      "index": "89/87R",
+      "commercial": true
+    },
+    {
+      "label": "175/65R14C",
+      "diameter": 14,
+      "index": "90/88T",
+      "commercial": true
+    },
+    {
+      "label": "185/75R14C",
+      "diameter": 14,
+      "index": "102/100R",
+      "commercial": true
+    },
+    {
+      "label": "185/80R14C",
+      "diameter": 14,
+      "index": "102/100R",
+      "commercial": true
+    },
+    {
+      "label": "195/75R14C",
+      "diameter": 14,
+      "index": "106/104R",
+      "commercial": true
+    },
+    {
+      "label": "195/80R14C",
+      "diameter": 14,
+      "index": "106/104R",
+      "commercial": true
+    },
+    {
+      "label": "205/80R14C",
+      "diameter": 14,
+      "index": "109/107Q",
+      "commercial": true
+    },
+    {
+      "label": "215/80R14C",
+      "diameter": 14,
+      "index": "112/110Q",
+      "commercial": true
+    },
+    {
+      "label": "185/80R15C",
+      "diameter": 15,
+      "index": "103/102R",
+      "commercial": true
+    },
+    {
+      "label": "195/70R15C",
+      "diameter": 15,
+      "index": "104/102R",
+      "commercial": true
+    },
+    {
+      "label": "195/80R15",
+      "diameter": 15,
+      "index": "106/104R",
+      "commercial": false
+    },
+    {
+      "label": "205/65R15C",
+      "diameter": 15,
+      "index": "102/100T",
+      "commercial": true
+    },
+    {
+      "label": "205/70R15C",
+      "diameter": 15,
+      "index": "106/104R",
+      "commercial": true
+    },
+    {
+      "label": "215/65R15C",
+      "diameter": 15,
+      "index": "104/102T",
+      "commercial": true
+    },
+    {
+      "label": "215/70R15C",
+      "diameter": 15,
+      "index": "109/107T",
+      "commercial": true
+    },
+    {
+      "label": "225/70R15C",
+      "diameter": 15,
+      "index": "112/110R",
+      "commercial": true
+    },
+    {
+      "label": "225/70R15C",
+      "diameter": 15,
+      "index": "116/114R",
+      "commercial": true
+    },
+    {
+      "label": "185/75R16C",
+      "diameter": 16,
+      "index": "104/102R",
+      "commercial": true
+    },
+    {
+      "label": "195/60R16C",
+      "diameter": 16,
+      "index": "99/97H",
+      "commercial": true
+    },
+    {
+      "label": "195/65R16C",
+      "diameter": 16,
+      "index": "104/102T",
+      "commercial": true
+    },
+    {
+      "label": "195/75R16C",
+      "diameter": 16,
+      "index": "110/108R",
+      "commercial": true
+    },
+    {
+      "label": "195/75R16C",
+      "diameter": 16,
+      "index": "107/105T",
+      "commercial": true
+    },
+    {
+      "label": "205/65R16C",
+      "diameter": 16,
+      "index": "107/105T",
+      "commercial": true
+    },
+    {
+      "label": "205/75R16C",
+      "diameter": 16,
+      "index": "110/108R",
+      "commercial": true
+    },
+    {
+      "label": "215/60R16C",
+      "diameter": 16,
+      "index": "103/101T",
+      "commercial": true
+    },
+    {
+      "label": "215/65R16C",
+      "diameter": 16,
+      "index": "109/107T",
+      "commercial": true
+    },
+    {
+      "label": "215/70R16C",
+      "diameter": 16,
+      "index": "108/106T",
+      "commercial": true
+    },
+    {
+      "label": "215/75R16C",
+      "diameter": 16,
+      "index": "116/114R",
+      "commercial": true
+    },
+    {
+      "label": "215/75R16C",
+      "diameter": 16,
+      "index": "113/111R",
+      "commercial": true
+    },
+    {
+      "label": "225/65R16C",
+      "diameter": 16,
+      "index": "112/110R",
+      "commercial": true
+    },
+    {
+      "label": "225/75R16C",
+      "diameter": 16,
+      "index": "121/120R",
+      "commercial": true
+    },
+    {
+      "label": "235/65R16C",
+      "diameter": 16,
+      "index": "115/113R",
+      "commercial": true
+    },
+    {
+      "label": "235/65R16C",
+      "diameter": 16,
+      "index": "121/119R",
+      "commercial": true
+    },
+    {
+      "label": "215/60R17C",
+      "diameter": 17,
+      "index": "104/102T",
+      "commercial": true
+    },
+    {
+      "label": "215/65R17",
+      "diameter": 17,
+      "index": "108H",
+      "commercial": false
+    },
+    {
+      "label": "235/55R18C",
+      "diameter": 18,
+      "index": "104/102H",
+      "commercial": true
+    },
+    {
+      "label": "235/55R18",
+      "diameter": 18,
+      "index": "104H",
+      "commercial": false
+    }
+  ]
 }

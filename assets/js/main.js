@@ -54,6 +54,7 @@ import './pages/404.js';
 import './pages/contacts.js';
 import './pages/index.js';
 import './pages/news.js';
+import './pages/tire-detail.js';
 
 // --- Init ---
 onReady(() => {

@@ -15,14 +15,15 @@
       195,
       205,
       215,
-      225
+      225,
+      235
     ],
     "profiles": [
+      40,
       45,
       50,
       55,
-      60,
-      65
+      60
     ]
   },
   "item": {
@@ -40,5 +41,106 @@
       "1280": "data/img/tires/hs51/1280/hs51-30deg.webp",
       "alt": "Kumho HS51 ECSTA, ракурс 30°"
     }
-  }
+  },
+  "season": "Летняя",
+  "sizes": [
+    {
+      "label": "195/45R15",
+      "diameter": 15,
+      "index": "78V",
+      "commercial": false
+    },
+    {
+      "label": "205/50R15",
+      "diameter": 15,
+      "index": "86V",
+      "commercial": false
+    },
+    {
+      "label": "205/55R15",
+      "diameter": 15,
+      "index": "88V",
+      "commercial": false
+    },
+    {
+      "label": "225/60R15",
+      "diameter": 15,
+      "index": "96W",
+      "commercial": false
+    },
+    {
+      "label": "205/60R16",
+      "diameter": 16,
+      "index": "92H",
+      "commercial": false
+    },
+    {
+      "label": "205/60R16",
+      "diameter": 16,
+      "index": "92H",
+      "commercial": false
+    },
+    {
+      "label": "215/40R16",
+      "diameter": 16,
+      "index": "86W",
+      "commercial": false
+    },
+    {
+      "label": "215/45R16",
+      "diameter": 16,
+      "index": "86H",
+      "commercial": false
+    },
+    {
+      "label": "225/50R16",
+      "diameter": 16,
+      "index": "92W",
+      "commercial": false
+    },
+    {
+      "label": "205/45R17",
+      "diameter": 17,
+      "index": "88V",
+      "commercial": false
+    },
+    {
+      "label": "215/55R17",
+      "diameter": 17,
+      "index": "94V",
+      "commercial": false
+    },
+    {
+      "label": "215/60R17",
+      "diameter": 17,
+      "index": "96H",
+      "commercial": false
+    },
+    {
+      "label": "215/55R18",
+      "diameter": 18,
+      "index": "95H",
+      "commercial": false
+    },
+    {
+      "label": "235/45R18",
+      "diameter": 18,
+      "index": "94V",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Высокопроизводительная летняя шина с асимметричным рисунком протектора"
+    },
+    {
+      "text": "Победитель сравнительного теста Auto Bild среди 52 конкурентов с вердиктом «Образцовая»"
+    },
+    {
+      "text": "Отличная управляемость и стабильность на сухом и мокром покрытии"
+    },
+    {
+      "text": "Оптимальный баланс спортивных характеристик и комфорта"
+    }
+  ]
 }

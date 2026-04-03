@@ -10,16 +10,23 @@
       17,
       18,
       19,
-      20
+      20,
+      21,
+      22
     ],
     "widths": [
+      195,
       205,
       215,
       225,
       235,
       245,
       255,
-      275
+      265,
+      275,
+      285,
+      295,
+      315
     ],
     "profiles": [
       30,
@@ -27,7 +34,9 @@
       40,
       45,
       50,
-      55
+      55,
+      60,
+      65
     ]
   },
   "item": {
@@ -57,5 +66,799 @@
       "1280": "data/img/tires/ps71/1280/ps71-side.webp",
       "alt": "Kumho PS71 ECSTA, вид сбоку"
     }
-  }
+  },
+  "season": "Летняя",
+  "features": [
+    {
+      "text": "Отличная управляемость и томожение на сухих и мокрых дорогах"
+    },
+    {
+      "text": "Стабильная управляемость даже на очень высоких скоростях"
+    },
+    {
+      "text": "Для высоскоростных автомобилей класса SUV и широкого спектра современных внедорожных автомобилей"
+    }
+  ],
+  "sizes": [
+    {
+      "label": "195/55R16",
+      "diameter": 16,
+      "index": "91V",
+      "commercial": false
+    },
+    {
+      "label": "205/45R16",
+      "diameter": 16,
+      "index": "87W",
+      "commercial": false
+    },
+    {
+      "label": "205/55R16",
+      "diameter": 16,
+      "index": "91V",
+      "commercial": false
+    },
+    {
+      "label": "205/60R16",
+      "diameter": 16,
+      "index": "92V",
+      "commercial": false
+    },
+    {
+      "label": "205/60R16",
+      "diameter": 16,
+      "index": "96V",
+      "commercial": false
+    },
+    {
+      "label": "205/65R16",
+      "diameter": 16,
+      "index": "95H",
+      "commercial": false
+    },
+    {
+      "label": "205/55R17",
+      "diameter": 17,
+      "index": "91W",
+      "commercial": false
+    },
+    {
+      "label": "215/40R17",
+      "diameter": 17,
+      "index": "87Y",
+      "commercial": false
+    },
+    {
+      "label": "215/45R17",
+      "diameter": 17,
+      "index": "91V",
+      "commercial": false
+    },
+    {
+      "label": "215/50R17",
+      "diameter": 17,
+      "index": "95W",
+      "commercial": false
+    },
+    {
+      "label": "215/55R17",
+      "diameter": 17,
+      "index": "94W",
+      "commercial": false
+    },
+    {
+      "label": "215/55R17",
+      "diameter": 17,
+      "index": "94W",
+      "commercial": false
+    },
+    {
+      "label": "215/60R17",
+      "diameter": 17,
+      "index": "96H",
+      "commercial": false
+    },
+    {
+      "label": "215/65R17",
+      "diameter": 17,
+      "index": "99V",
+      "commercial": false
+    },
+    {
+      "label": "225/45R17",
+      "diameter": 17,
+      "index": "91W",
+      "commercial": false
+    },
+    {
+      "label": "225/45R17",
+      "diameter": 17,
+      "index": "94W",
+      "commercial": false
+    },
+    {
+      "label": "225/55R17",
+      "diameter": 17,
+      "index": "97Y",
+      "commercial": false
+    },
+    {
+      "label": "235/45R17",
+      "diameter": 17,
+      "index": "94Y",
+      "commercial": false
+    },
+    {
+      "label": "235/45R17",
+      "diameter": 17,
+      "index": "97Y",
+      "commercial": false
+    },
+    {
+      "label": "235/65R17",
+      "diameter": 17,
+      "index": "108V",
+      "commercial": false
+    },
+    {
+      "label": "255/40R17",
+      "diameter": 17,
+      "index": "94Y",
+      "commercial": false
+    },
+    {
+      "label": "265/65R17",
+      "diameter": 17,
+      "index": "112V",
+      "commercial": false
+    },
+    {
+      "label": "285/65R17",
+      "diameter": 17,
+      "index": "116H",
+      "commercial": false
+    },
+    {
+      "label": "215/50R18",
+      "diameter": 18,
+      "index": "92W",
+      "commercial": false
+    },
+    {
+      "label": "215/55R18",
+      "diameter": 18,
+      "index": "99V",
+      "commercial": false
+    },
+    {
+      "label": "215/55R18",
+      "diameter": 18,
+      "index": "95V",
+      "commercial": false
+    },
+    {
+      "label": "215/55R18",
+      "diameter": 18,
+      "index": "99V",
+      "commercial": false
+    },
+    {
+      "label": "225/35R18",
+      "diameter": 18,
+      "index": "87Y",
+      "commercial": false
+    },
+    {
+      "label": "225/40R18",
+      "diameter": 18,
+      "index": "92Y",
+      "commercial": false
+    },
+    {
+      "label": "235/45R18",
+      "diameter": 18,
+      "index": "98Y",
+      "commercial": false
+    },
+    {
+      "label": "235/45R18",
+      "diameter": 18,
+      "index": "98Y",
+      "commercial": false
+    },
+    {
+      "label": "235/50R18",
+      "diameter": 18,
+      "index": "97W",
+      "commercial": false
+    },
+    {
+      "label": "235/55R18",
+      "diameter": 18,
+      "index": "104W",
+      "commercial": false
+    },
+    {
+      "label": "235/55R18",
+      "diameter": 18,
+      "index": "100V",
+      "commercial": false
+    },
+    {
+      "label": "235/60R18",
+      "diameter": 18,
+      "index": "103T",
+      "commercial": false
+    },
+    {
+      "label": "235/60R18",
+      "diameter": 18,
+      "index": "103T",
+      "commercial": false
+    },
+    {
+      "label": "235/60R18",
+      "diameter": 18,
+      "index": "107V",
+      "commercial": false
+    },
+    {
+      "label": "235/60R18",
+      "diameter": 18,
+      "index": "107W",
+      "commercial": false
+    },
+    {
+      "label": "255/55R18",
+      "diameter": 18,
+      "index": "109Y",
+      "commercial": false
+    },
+    {
+      "label": "265/40R18",
+      "diameter": 18,
+      "index": "101Y",
+      "commercial": false
+    },
+    {
+      "label": "265/60R18",
+      "diameter": 18,
+      "index": "110V",
+      "commercial": false
+    },
+    {
+      "label": "275/45R18",
+      "diameter": 18,
+      "index": "103Y",
+      "commercial": false
+    },
+    {
+      "label": "285/35R18",
+      "diameter": 18,
+      "index": "101Y",
+      "commercial": false
+    },
+    {
+      "label": "285/60R18",
+      "diameter": 18,
+      "index": "116V",
+      "commercial": false
+    },
+    {
+      "label": "215/50R19",
+      "diameter": 19,
+      "index": "97V",
+      "commercial": false
+    },
+    {
+      "label": "215/50R19",
+      "diameter": 19,
+      "index": "97V",
+      "commercial": false
+    },
+    {
+      "label": "225/55R19",
+      "diameter": 19,
+      "index": "103Y",
+      "commercial": false
+    },
+    {
+      "label": "225/55R19",
+      "diameter": 19,
+      "index": "103Y",
+      "commercial": false
+    },
+    {
+      "label": "225/55R19",
+      "diameter": 19,
+      "index": "99W",
+      "commercial": false
+    },
+    {
+      "label": "235/40R19",
+      "diameter": 19,
+      "index": "96W",
+      "commercial": false
+    },
+    {
+      "label": "235/40R19",
+      "diameter": 19,
+      "index": "96W",
+      "commercial": false
+    },
+    {
+      "label": "235/45R19",
+      "diameter": 19,
+      "index": "99V",
+      "commercial": false
+    },
+    {
+      "label": "235/45R19",
+      "diameter": 19,
+      "index": "99Y",
+      "commercial": false
+    },
+    {
+      "label": "235/50R19",
+      "diameter": 19,
+      "index": "103W",
+      "commercial": false
+    },
+    {
+      "label": "235/55R19",
+      "diameter": 19,
+      "index": "105V",
+      "commercial": false
+    },
+    {
+      "label": "235/55R19",
+      "diameter": 19,
+      "index": "101Y",
+      "commercial": false
+    },
+    {
+      "label": "235/55R19",
+      "diameter": 19,
+      "index": "105Y",
+      "commercial": false
+    },
+    {
+      "label": "235/65R19",
+      "diameter": 19,
+      "index": "109W",
+      "commercial": false
+    },
+    {
+      "label": "245/45R19",
+      "diameter": 19,
+      "index": "102W",
+      "commercial": false
+    },
+    {
+      "label": "245/45R19",
+      "diameter": 19,
+      "index": "102W",
+      "commercial": false
+    },
+    {
+      "label": "245/45R19",
+      "diameter": 19,
+      "index": "",
+      "commercial": false
+    },
+    {
+      "label": "255/40R19",
+      "diameter": 19,
+      "index": "100Y",
+      "commercial": false
+    },
+    {
+      "label": "255/45R19",
+      "diameter": 19,
+      "index": "104W",
+      "commercial": false
+    },
+    {
+      "label": "255/45R19",
+      "diameter": 19,
+      "index": "104W",
+      "commercial": false
+    },
+    {
+      "label": "255/50R19",
+      "diameter": 19,
+      "index": "107V",
+      "commercial": false
+    },
+    {
+      "label": "255/50R19",
+      "diameter": 19,
+      "index": "107V",
+      "commercial": false
+    },
+    {
+      "label": "255/50R19",
+      "diameter": 19,
+      "index": "107Y",
+      "commercial": false
+    },
+    {
+      "label": "255/55R19",
+      "diameter": 19,
+      "index": "111V",
+      "commercial": false
+    },
+    {
+      "label": "255/55R19",
+      "diameter": 19,
+      "index": "111V",
+      "commercial": false
+    },
+    {
+      "label": "255/55R19",
+      "diameter": 19,
+      "index": "111Y",
+      "commercial": false
+    },
+    {
+      "label": "275/40R19",
+      "diameter": 19,
+      "index": "105W",
+      "commercial": false
+    },
+    {
+      "label": "275/45R19",
+      "diameter": 19,
+      "index": "108Y",
+      "commercial": false
+    },
+    {
+      "label": "275/45R19",
+      "diameter": 19,
+      "index": "108Y",
+      "commercial": false
+    },
+    {
+      "label": "275/55R19",
+      "diameter": 19,
+      "index": "111W",
+      "commercial": false
+    },
+    {
+      "label": "285/45R19",
+      "diameter": 19,
+      "index": "111Y",
+      "commercial": false
+    },
+    {
+      "label": "295/30R19",
+      "diameter": 19,
+      "index": "100Y",
+      "commercial": false
+    },
+    {
+      "label": "295/35R19",
+      "diameter": 19,
+      "index": "104Y",
+      "commercial": false
+    },
+    {
+      "label": "235/35R20",
+      "diameter": 20,
+      "index": "92Y",
+      "commercial": false
+    },
+    {
+      "label": "235/35R20",
+      "diameter": 20,
+      "index": "92Y",
+      "commercial": false
+    },
+    {
+      "label": "235/40R20",
+      "diameter": 20,
+      "index": "96Y",
+      "commercial": false
+    },
+    {
+      "label": "235/45R20",
+      "diameter": 20,
+      "index": "100V",
+      "commercial": false
+    },
+    {
+      "label": "235/45R20",
+      "diameter": 20,
+      "index": "100W",
+      "commercial": false
+    },
+    {
+      "label": "235/45R20",
+      "diameter": 20,
+      "index": "100W",
+      "commercial": false
+    },
+    {
+      "label": "235/50R20",
+      "diameter": 20,
+      "index": "",
+      "commercial": false
+    },
+    {
+      "label": "245/35R20",
+      "diameter": 20,
+      "index": "95Y",
+      "commercial": false
+    },
+    {
+      "label": "245/40R20",
+      "diameter": 20,
+      "index": "99Y",
+      "commercial": false
+    },
+    {
+      "label": "245/45R20",
+      "diameter": 20,
+      "index": "103W",
+      "commercial": false
+    },
+    {
+      "label": "245/50R20",
+      "diameter": 20,
+      "index": "102V",
+      "commercial": false
+    },
+    {
+      "label": "245/50R20",
+      "diameter": 20,
+      "index": "102V",
+      "commercial": false
+    },
+    {
+      "label": "255/35R20",
+      "diameter": 20,
+      "index": "97Y",
+      "commercial": false
+    },
+    {
+      "label": "255/45R20",
+      "diameter": 20,
+      "index": "101V",
+      "commercial": false
+    },
+    {
+      "label": "255/45R20",
+      "diameter": 20,
+      "index": "101V",
+      "commercial": false
+    },
+    {
+      "label": "255/45R20",
+      "diameter": 20,
+      "index": "105V",
+      "commercial": false
+    },
+    {
+      "label": "255/45R20",
+      "diameter": 20,
+      "index": "105Y",
+      "commercial": false
+    },
+    {
+      "label": "255/50R20",
+      "diameter": 20,
+      "index": "109Y",
+      "commercial": false
+    },
+    {
+      "label": "255/55R20",
+      "diameter": 20,
+      "index": "110Y",
+      "commercial": false
+    },
+    {
+      "label": "265/40R20",
+      "diameter": 20,
+      "index": "104W",
+      "commercial": false
+    },
+    {
+      "label": "265/40R20",
+      "diameter": 20,
+      "index": "104W",
+      "commercial": false
+    },
+    {
+      "label": "265/45R20",
+      "diameter": 20,
+      "index": "108Y",
+      "commercial": false
+    },
+    {
+      "label": "265/50R20",
+      "diameter": 20,
+      "index": "111W",
+      "commercial": false
+    },
+    {
+      "label": "275/40R20",
+      "diameter": 20,
+      "index": "106Y",
+      "commercial": false
+    },
+    {
+      "label": "275/45R20",
+      "diameter": 20,
+      "index": "110Y",
+      "commercial": false
+    },
+    {
+      "label": "275/50R20",
+      "diameter": 20,
+      "index": "113V",
+      "commercial": false
+    },
+    {
+      "label": "275/50R20",
+      "diameter": 20,
+      "index": "113Y",
+      "commercial": false
+    },
+    {
+      "label": "285/40R20",
+      "diameter": 20,
+      "index": "108Y",
+      "commercial": false
+    },
+    {
+      "label": "285/45R20",
+      "diameter": 20,
+      "index": "112Y",
+      "commercial": false
+    },
+    {
+      "label": "285/50R20",
+      "diameter": 20,
+      "index": "116W",
+      "commercial": false
+    },
+    {
+      "label": "295/40R20",
+      "diameter": 20,
+      "index": "110Y",
+      "commercial": false
+    },
+    {
+      "label": "315/35R20",
+      "diameter": 20,
+      "index": "110Y",
+      "commercial": false
+    },
+    {
+      "label": "245/40R21",
+      "diameter": 21,
+      "index": "100Y",
+      "commercial": false
+    },
+    {
+      "label": "255/35R21",
+      "diameter": 21,
+      "index": "98W",
+      "commercial": false
+    },
+    {
+      "label": "255/35R21",
+      "diameter": 21,
+      "index": "98W",
+      "commercial": false
+    },
+    {
+      "label": "255/35R21",
+      "diameter": 21,
+      "index": "98Y",
+      "commercial": false
+    },
+    {
+      "label": "255/40R21",
+      "diameter": 21,
+      "index": "102Y",
+      "commercial": false
+    },
+    {
+      "label": "265/40R21",
+      "diameter": 21,
+      "index": "105Y",
+      "commercial": false
+    },
+    {
+      "label": "265/45R21",
+      "diameter": 21,
+      "index": "108W",
+      "commercial": false
+    },
+    {
+      "label": "275/40R21",
+      "diameter": 21,
+      "index": "107Y",
+      "commercial": false
+    },
+    {
+      "label": "275/45R21",
+      "diameter": 21,
+      "index": "110Y",
+      "commercial": false
+    },
+    {
+      "label": "285/40R21",
+      "diameter": 21,
+      "index": "109Y",
+      "commercial": false
+    },
+    {
+      "label": "285/45R21",
+      "diameter": 21,
+      "index": "113Y",
+      "commercial": false
+    },
+    {
+      "label": "295/35R21",
+      "diameter": 21,
+      "index": "107Y",
+      "commercial": false
+    },
+    {
+      "label": "315/35R21",
+      "diameter": 21,
+      "index": "111Y",
+      "commercial": false
+    },
+    {
+      "label": "265/35R22",
+      "diameter": 22,
+      "index": "102Y",
+      "commercial": false
+    },
+    {
+      "label": "265/40R22",
+      "diameter": 22,
+      "index": "106Y",
+      "commercial": false
+    },
+    {
+      "label": "275/35R22",
+      "diameter": 22,
+      "index": "104Y",
+      "commercial": false
+    },
+    {
+      "label": "275/40R22",
+      "diameter": 22,
+      "index": "108Y",
+      "commercial": false
+    },
+    {
+      "label": "285/35R22",
+      "diameter": 22,
+      "index": "106Y",
+      "commercial": false
+    },
+    {
+      "label": "285/40R22",
+      "diameter": 22,
+      "index": "110Y",
+      "commercial": false
+    },
+    {
+      "label": "315/30R22",
+      "diameter": 22,
+      "index": "107Y",
+      "commercial": false
+    },
+    {
+      "label": "315/35R22",
+      "diameter": 22,
+      "index": "111Y",
+      "commercial": false
+    }
+  ]
 }

@@ -172,6 +172,7 @@ final class PageAction
             $extras[$extrasKey] = $entity;
             $extras['entity'] = $entity;
             $extras['breadcrumb'] = $this->buildEntityBreadcrumb($global, $langCode, $entity, $entityConfig);
+            $extras['frame_data'] = $this->extractFrameFromListPage($pageJsonDir, $entityConfig, $baseUrl);
         }
 
         $data = $this->templateDataBuilder->build(
@@ -336,6 +337,31 @@ final class PageAction
                 return;
             }
         }
+    }
+
+    /**
+     * @param array<string,mixed> $config
+     * @return array<string,mixed>|null
+     */
+    private function extractFrameFromListPage(string $pageJsonDir, array $config, string $baseUrl): ?array
+    {
+        $listPageId = (string) ($config['list_page_id'] ?? '');
+        if ($listPageId === '') {
+            return null;
+        }
+
+        $listPage = $this->dataLoader->loadPage($pageJsonDir, $listPageId, $baseUrl);
+        if ($listPage === null || !isset($listPage['sections']) || !is_array($listPage['sections'])) {
+            return null;
+        }
+
+        foreach ($listPage['sections'] as $section) {
+            if (is_array($section) && ($section['name'] ?? '') === 'frame' && isset($section['data'])) {
+                return (array) $section['data'];
+            }
+        }
+
+        return null;
     }
 
     private function dispatch(object $event): void

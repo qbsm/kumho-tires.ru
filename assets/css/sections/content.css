@@ -8,6 +8,12 @@
   gap: 2rem;
 }
 
+.content-policy {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 @media (--lg) {
   .content-warranty {
     gap: 2rem;

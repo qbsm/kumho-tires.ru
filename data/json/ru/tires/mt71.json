@@ -9,17 +9,25 @@
       15,
       16,
       17,
-      18
+      20
     ],
     "widths": [
+      31,
+      33,
+      35,
       235,
+      255,
       265,
       285,
+      295,
       315
     ],
     "profiles": [
+      10,
+      12,
       70,
-      75
+      75,
+      85
     ]
   },
   "item": {
@@ -49,5 +57,85 @@
       "1280": "data/img/tires/mt71/1280/mt71-side.webp",
       "alt": "Kumho MT71 Road Venture, вид сбоку"
     }
-  }
+  },
+  "season": "Внедорожная",
+  "features": [
+    {
+      "text": "Агрессивный дизайн протектора и боковина для передвижения по горным и каменистым дорогам"
+    },
+    {
+      "text": "Усиленная износостойкость, улучшенная благодаря симметричному рисунку и трем слоям"
+    },
+    {
+      "text": "Усиленная управляемость как на дорогах общего пользования, так и на бездорожье"
+    }
+  ],
+  "sizes": [
+    {
+      "label": "31/10.5R15",
+      "diameter": 15,
+      "index": "109Q",
+      "commercial": false
+    },
+    {
+      "label": "33/12.5R15",
+      "diameter": 15,
+      "index": "108Q",
+      "commercial": false
+    },
+    {
+      "label": "35/12.5R15",
+      "diameter": 15,
+      "index": "113Q",
+      "commercial": false
+    },
+    {
+      "label": "235/85R16",
+      "diameter": 16,
+      "index": "120/116Q",
+      "commercial": false
+    },
+    {
+      "label": "35/12.5R17",
+      "diameter": 17,
+      "index": "121Q",
+      "commercial": false
+    },
+    {
+      "label": "255/75R17",
+      "diameter": 17,
+      "index": "111/108Q",
+      "commercial": false
+    },
+    {
+      "label": "265/70R17",
+      "diameter": 17,
+      "index": "121/118Q",
+      "commercial": false
+    },
+    {
+      "label": "285/70R17",
+      "diameter": 17,
+      "index": "121/118Q",
+      "commercial": false
+    },
+    {
+      "label": "295/70R17",
+      "diameter": 17,
+      "index": "121/118Q",
+      "commercial": false
+    },
+    {
+      "label": "315/70R17",
+      "diameter": 17,
+      "index": "121/118Q",
+      "commercial": false
+    },
+    {
+      "label": "33/12.5R20",
+      "diameter": 20,
+      "index": "119Q",
+      "commercial": false
+    }
+  ]
 }

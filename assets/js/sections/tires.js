@@ -16,6 +16,19 @@ onReady(() => {
     return (source || '').includes(`|${token}|`);
   };
 
+  const matchesSizes = (sizesStr, width, profile, diameter) => {
+    if (!width && !profile && !diameter) return true;
+    const sizes = (sizesStr || '').split('|').filter(Boolean);
+    return sizes.some((label) => {
+      const m = label.match(/^(\d+)\/(\d+)R(\d+)/);
+      if (!m) return false;
+      if (width && m[1] !== width) return false;
+      if (profile && m[2] !== profile) return false;
+      if (diameter && m[3] !== diameter) return false;
+      return true;
+    });
+  };
+
   const applyFilter = () => {
     const activeSeasonBtn = seasonButtons.find((btn) => btn.classList.contains('active'));
     const season = activeSeasonBtn ? activeSeasonBtn.dataset.season : '';
@@ -28,14 +41,11 @@ onReady(() => {
     cards.forEach((card) => {
       let visible = true;
       const cardSeason = card.dataset.season || '|';
-      const cardDiameter = card.dataset.diameter || '|';
-      const cardProfile = card.dataset.profile || '|';
-      const cardWidth = card.dataset.width || '|';
 
       if (season && !includesToken(cardSeason, season)) visible = false;
-      if (diameter && !includesToken(cardDiameter, diameter)) visible = false;
-      if (profile && !includesToken(cardProfile, profile)) visible = false;
-      if (width && !includesToken(cardWidth, width)) visible = false;
+      if (visible && (width || profile || diameter)) {
+        visible = matchesSizes(card.dataset.sizes || '', width, profile, diameter);
+      }
 
       card.classList.toggle('hidden', !visible);
       if (visible) visibleCount += 1;

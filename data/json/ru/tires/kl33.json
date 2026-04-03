@@ -6,22 +6,20 @@
       "all-season"
     ],
     "diameters": [
+      15,
       16,
       17,
       18,
-      19,
-      20
+      19
     ],
     "widths": [
+      205,
       215,
       225,
       235,
-      245,
-      255,
       265
     ],
     "profiles": [
-      50,
       55,
       60,
       65,
@@ -55,5 +53,67 @@
       "1280": "data/img/tires/kl33/1280/kl33-side.webp",
       "alt": "Kumho KL33 Road Venture, вид сбоку"
     }
-  }
+  },
+  "season": "Всесезонная",
+  "sizes": [
+    {
+      "label": "205/70R15",
+      "diameter": 15,
+      "index": "96T",
+      "commercial": false
+    },
+    {
+      "label": "215/65R16",
+      "diameter": 16,
+      "index": "98H",
+      "commercial": false
+    },
+    {
+      "label": "225/60R17",
+      "diameter": 17,
+      "index": "99H",
+      "commercial": false
+    },
+    {
+      "label": "235/65R17",
+      "diameter": 17,
+      "index": "104H",
+      "commercial": false
+    },
+    {
+      "label": "225/55R18",
+      "diameter": 18,
+      "index": "98H",
+      "commercial": false
+    },
+    {
+      "label": "265/60R18",
+      "diameter": 18,
+      "index": "110H",
+      "commercial": false
+    },
+    {
+      "label": "225/55R19",
+      "diameter": 19,
+      "index": "99H",
+      "commercial": false
+    },
+    {
+      "label": "235/55R19",
+      "diameter": 19,
+      "index": "101H",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Премиальная шина для SUV с симметричным рисунком протектора повышенной прочности"
+    },
+    {
+      "text": "Уверенное движение по гравию, грязи, снегу и песку"
+    },
+    {
+      "text": "Комфорт и стабильность на шоссе с возможностями лёгкого бездорожья"
+    }
+  ]
 }

@@ -3,15 +3,14 @@
   "visible": true,
   "filter": {
     "season": [
-      "summer"
+      "all-season"
     ],
     "diameters": [
-      14,
       15,
-      16
+      16,
+      17
     ],
     "widths": [
-      175,
       185,
       195,
       205,
@@ -20,6 +19,7 @@
       235
     ],
     "profiles": [
+      55,
       60,
       65,
       70,
@@ -41,5 +41,172 @@
       "1280": "data/img/tires/cx11/1280/cx11-30deg.webp",
       "alt": "Kumho CX11 PorTran, ракурс 30°"
     }
-  }
+  },
+  "season": "Всесезонная",
+  "features": [
+    {
+      "text": "Всесезонная шина для Коммерческого транспорта, минивэнов и легких грузовиков"
+    },
+    {
+      "text": "Увеличенный пробег и улучшенные характеристики на снегу"
+    },
+    {
+      "text": "Безопасность и комфорт в любую погоду"
+    },
+    {
+      "text": "Маркировка M+S и снежинка с тремя горными пиками (3PMSF) для шин, предназначенных для использования в зимних условиях"
+    }
+  ],
+  "sizes": [
+    {
+      "label": "195/70R15C",
+      "diameter": 15,
+      "index": "104/102R",
+      "commercial": true
+    },
+    {
+      "label": "205/65R15C",
+      "diameter": 15,
+      "index": "102/100T",
+      "commercial": true
+    },
+    {
+      "label": "205/70R15C",
+      "diameter": 15,
+      "index": "106/104R",
+      "commercial": true
+    },
+    {
+      "label": "215/65R15C",
+      "diameter": 15,
+      "index": "104/102T",
+      "commercial": true
+    },
+    {
+      "label": "215/70R15C",
+      "diameter": 15,
+      "index": "109/107R",
+      "commercial": true
+    },
+    {
+      "label": "225/70R15C",
+      "diameter": 15,
+      "index": "112/110R",
+      "commercial": true
+    },
+    {
+      "label": "185/75R16C",
+      "diameter": 16,
+      "index": "104/102R",
+      "commercial": true
+    },
+    {
+      "label": "195/60R16C",
+      "diameter": 16,
+      "index": "99/97H",
+      "commercial": true
+    },
+    {
+      "label": "195/65R16C",
+      "diameter": 16,
+      "index": "104/102T",
+      "commercial": true
+    },
+    {
+      "label": "195/75R16C",
+      "diameter": 16,
+      "index": "110/108R",
+      "commercial": true
+    },
+    {
+      "label": "195/75R16C",
+      "diameter": 16,
+      "index": "107/105R",
+      "commercial": true
+    },
+    {
+      "label": "205/65R16C",
+      "diameter": 16,
+      "index": "107/105T",
+      "commercial": true
+    },
+    {
+      "label": "205/75R16C",
+      "diameter": 16,
+      "index": "113/111R",
+      "commercial": true
+    },
+    {
+      "label": "205/75R16C",
+      "diameter": 16,
+      "index": "110/108R",
+      "commercial": true
+    },
+    {
+      "label": "215/60R16C",
+      "diameter": 16,
+      "index": "103/101T",
+      "commercial": true
+    },
+    {
+      "label": "215/65R16C",
+      "diameter": 16,
+      "index": "109/107T",
+      "commercial": true
+    },
+    {
+      "label": "215/75R16C",
+      "diameter": 16,
+      "index": "116/114R",
+      "commercial": true
+    },
+    {
+      "label": "225/65R16C",
+      "diameter": 16,
+      "index": "112/110R",
+      "commercial": true
+    },
+    {
+      "label": "225/75R16C",
+      "diameter": 16,
+      "index": "121/120R",
+      "commercial": true
+    },
+    {
+      "label": "235/65R16C",
+      "diameter": 16,
+      "index": "121/119R",
+      "commercial": true
+    },
+    {
+      "label": "235/65R16C",
+      "diameter": 16,
+      "index": "115/113R",
+      "commercial": true
+    },
+    {
+      "label": "205/70R17C",
+      "diameter": 17,
+      "index": "115/113R",
+      "commercial": true
+    },
+    {
+      "label": "215/60R17C",
+      "diameter": 17,
+      "index": "109/107T",
+      "commercial": true
+    },
+    {
+      "label": "225/55R17C",
+      "diameter": 17,
+      "index": "109/107H",
+      "commercial": true
+    },
+    {
+      "label": "235/60R17C",
+      "diameter": 17,
+      "index": "117/115S",
+      "commercial": true
+    }
+  ]
 }

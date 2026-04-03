@@ -6,25 +6,34 @@
       "all-season"
     ],
     "diameters": [
+      14,
       15,
       16,
-      17,
-      18
+      20
     ],
     "widths": [
+      27,
+      30,
+      31,
+      32,
+      35,
+      195,
+      205,
       215,
       225,
       235,
       245,
-      255,
-      265,
-      275
+      265
     ],
     "profiles": [
-      60,
-      65,
-      70,
-      75
+      8,
+      9,
+      10,
+      11,
+      12,
+      75,
+      80,
+      85
     ]
   },
   "item": {
@@ -48,5 +57,97 @@
       "1280": "data/img/tires/kl71/1280/kl71-front.webp",
       "alt": "Kumho KL71 Road Venture, вид спереди"
     }
-  }
+  },
+  "season": "Внедорожная",
+  "sizes": [
+    {
+      "label": "27/8.50R14",
+      "diameter": 14,
+      "index": "95Q",
+      "commercial": false
+    },
+    {
+      "label": "30/9.5R15",
+      "diameter": 15,
+      "index": "104Q",
+      "commercial": false
+    },
+    {
+      "label": "31/10.5R15",
+      "diameter": 15,
+      "index": "109Q",
+      "commercial": false
+    },
+    {
+      "label": "32/11.5R15",
+      "diameter": 15,
+      "index": "113Q",
+      "commercial": false
+    },
+    {
+      "label": "195/80R15",
+      "diameter": 15,
+      "index": "100Q",
+      "commercial": false
+    },
+    {
+      "label": "215/75R15",
+      "diameter": 15,
+      "index": "106/103Q",
+      "commercial": false
+    },
+    {
+      "label": "235/75R15",
+      "diameter": 15,
+      "index": "104/101Q",
+      "commercial": false
+    },
+    {
+      "label": "205/80R16",
+      "diameter": 16,
+      "index": "104Q",
+      "commercial": false
+    },
+    {
+      "label": "225/75R16",
+      "diameter": 16,
+      "index": "115/112Q",
+      "commercial": false
+    },
+    {
+      "label": "235/85R16",
+      "diameter": 16,
+      "index": "120/116Q",
+      "commercial": false
+    },
+    {
+      "label": "245/75R16",
+      "diameter": 16,
+      "index": "120/116Q",
+      "commercial": false
+    },
+    {
+      "label": "265/75R16",
+      "diameter": 16,
+      "index": "119/116Q",
+      "commercial": false
+    },
+    {
+      "label": "35/12.5R20",
+      "diameter": 20,
+      "index": "121Q",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Экстремальная грязевая шина (Mud Terrain) для серьёзного бездорожья"
+    },
+    {
+      "text": "Устойчивость к порезам и абразивному воздействию на каменистых дорогах"
+    },
+    {
+      "text": "Удивительно низкий уровень шума и сопротивления качению для MT-шины"
+    }
+  ]
 }

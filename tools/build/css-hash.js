@@ -103,10 +103,37 @@ async function processCss() {
 
     // Теперь безопасно удаляем старые файлы, но только после успешного обновления манифеста
     cleanOldFiles(currentActiveFile, outputFileName);
+
+    // Синхронизируем билд в public/
+    syncToPublic(outputDir, outputFileName);
   } catch (error) {
     console.error('Ошибка при обработке CSS:', error);
     process.exit(1);
   }
+}
+
+// Синхронизируем CSS-билд в public/assets/css/build/
+function syncToPublic(sourceDir, newFileName) {
+  const publicBuildDir = path.resolve(__dirname, '../../public/assets/css/build');
+  if (!fs.existsSync(publicBuildDir)) {
+    fs.mkdirSync(publicBuildDir, { recursive: true });
+  }
+
+  // Удаляем старые main.*.css из public
+  fs.readdirSync(publicBuildDir)
+    .filter((f) => /^main\.[a-f0-9]+\.css$/.test(f))
+    .forEach((f) => fs.unlinkSync(path.join(publicBuildDir, f)));
+
+  // Копируем новый CSS и манифест
+  fs.copyFileSync(
+    path.join(sourceDir, newFileName),
+    path.join(publicBuildDir, newFileName),
+  );
+  fs.copyFileSync(
+    path.join(sourceDir, 'css-manifest.json'),
+    path.join(publicBuildDir, 'css-manifest.json'),
+  );
+  console.log(`Синхронизировано в public: ${newFileName}`);
 }
 
 // Запускаем обработку CSS

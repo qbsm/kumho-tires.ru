@@ -6,28 +6,23 @@
       "all-season"
     ],
     "diameters": [
-      15,
       16,
       17,
-      18,
-      19
+      18
     ],
     "widths": [
-      185,
       195,
       205,
       215,
       225,
-      235,
-      245
+      235
     ],
     "profiles": [
       40,
       45,
       50,
       55,
-      60,
-      65
+      60
     ]
   },
   "item": {
@@ -57,5 +52,73 @@
       "1280": "data/img/tires/ha32-plus/1280/ha32-plus-side.webp",
       "alt": "Kumho HA32+ SOLUS, вид сбоку"
     }
-  }
+  },
+  "season": "Всесезонная",
+  "sizes": [
+    {
+      "label": "195/55R16",
+      "diameter": 16,
+      "index": "91V",
+      "commercial": false
+    },
+    {
+      "label": "205/55R16",
+      "diameter": 16,
+      "index": "94V",
+      "commercial": false
+    },
+    {
+      "label": "215/60R16",
+      "diameter": 16,
+      "index": "99V",
+      "commercial": false
+    },
+    {
+      "label": "215/55R17",
+      "diameter": 17,
+      "index": "98W",
+      "commercial": false
+    },
+    {
+      "label": "225/45R17",
+      "diameter": 17,
+      "index": "94W",
+      "commercial": false
+    },
+    {
+      "label": "225/50R17",
+      "diameter": 17,
+      "index": "98W",
+      "commercial": false
+    },
+    {
+      "label": "215/50R18",
+      "diameter": 18,
+      "index": "96W",
+      "commercial": false
+    },
+    {
+      "label": "225/40R18",
+      "diameter": 18,
+      "index": "92W",
+      "commercial": false
+    },
+    {
+      "label": "225/45R18",
+      "diameter": 18,
+      "index": "95W",
+      "commercial": false
+    },
+    {
+      "label": "235/55R18",
+      "diameter": 18,
+      "index": "104V",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Измененный протектор для улучшенных характеристик"
+    }
+  ]
 }

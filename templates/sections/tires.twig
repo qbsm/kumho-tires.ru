@@ -140,31 +140,18 @@
                 {% set seasonCodes = seasonCodes | merge([code]) %}
               {% endif %}
             {% endfor %}
-            {% set diameters = filterData.diameters | default(filterData.diameter | default([])) %}
-            {% set widths = filterData.widths | default(filterData.width | default([])) %}
-            {% set profiles = filterData.profiles | default(filterData.profile | default(filterData.heights | default(filterData.height | default([])))) %}
             {% set dataSeasons = '|' %}
             {% for value in seasonCodes %}
               {% set dataSeasons = dataSeasons ~ value ~ '|' %}
             {% endfor %}
-            {% set dataDiameters = '|' %}
-            {% for value in diameters %}
-              {% set dataDiameters = dataDiameters ~ value ~ '|' %}
-            {% endfor %}
-            {% set dataWidths = '|' %}
-            {% for value in widths %}
-              {% set dataWidths = dataWidths ~ value ~ '|' %}
-            {% endfor %}
-            {% set dataProfiles = '|' %}
-            {% for value in profiles %}
-              {% set dataProfiles = dataProfiles ~ value ~ '|' %}
+            {% set dataSizes = '|' %}
+            {% for size in tireItem.sizes | default([]) %}
+              {% set dataSizes = dataSizes ~ size.label ~ '|' %}
             {% endfor %}
             <div
               class="section__inner card-tire-wrap js-filter-card"
               data-season="{{ dataSeasons }}"
-              data-diameter="{{ dataDiameters }}"
-              data-width="{{ dataWidths }}"
-              data-profile="{{ dataProfiles }}"
+              data-sizes="{{ dataSizes }}"
             >
               {% include 'components/card-tire.twig' with {'item': tireItem} %}
             </div>
