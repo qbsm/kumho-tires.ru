@@ -260,19 +260,7 @@
     {
       "label": "185/65R15",
       "diameter": 15,
-      "index": "88T",
-      "commercial": false
-    },
-    {
-      "label": "185/65R15",
-      "diameter": 15,
       "index": "92T",
-      "commercial": false
-    },
-    {
-      "label": "185/65R15",
-      "diameter": 15,
-      "index": "88H",
       "commercial": false
     },
     {
@@ -303,12 +291,6 @@
       "label": "195/65R15",
       "diameter": 15,
       "index": "95T",
-      "commercial": false
-    },
-    {
-      "label": "195/65R15",
-      "diameter": 15,
-      "index": "91H",
       "commercial": false
     },
     {
@@ -351,12 +333,6 @@
       "label": "195/65R16",
       "diameter": 16,
       "index": "92V",
-      "commercial": false
-    },
-    {
-      "label": "205/55R16",
-      "diameter": 16,
-      "index": "91H",
       "commercial": false
     },
     {

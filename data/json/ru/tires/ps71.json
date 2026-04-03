@@ -148,12 +148,6 @@
       "commercial": false
     },
     {
-      "label": "215/55R17",
-      "diameter": 17,
-      "index": "94W",
-      "commercial": false
-    },
-    {
       "label": "215/60R17",
       "diameter": 17,
       "index": "96H",
@@ -238,12 +232,6 @@
       "commercial": false
     },
     {
-      "label": "215/55R18",
-      "diameter": 18,
-      "index": "99V",
-      "commercial": false
-    },
-    {
       "label": "225/35R18",
       "diameter": 18,
       "index": "87Y",
@@ -253,12 +241,6 @@
       "label": "225/40R18",
       "diameter": 18,
       "index": "92Y",
-      "commercial": false
-    },
-    {
-      "label": "235/45R18",
-      "diameter": 18,
-      "index": "98Y",
       "commercial": false
     },
     {
@@ -283,12 +265,6 @@
       "label": "235/55R18",
       "diameter": 18,
       "index": "100V",
-      "commercial": false
-    },
-    {
-      "label": "235/60R18",
-      "diameter": 18,
-      "index": "103T",
       "commercial": false
     },
     {
@@ -352,18 +328,6 @@
       "commercial": false
     },
     {
-      "label": "215/50R19",
-      "diameter": 19,
-      "index": "97V",
-      "commercial": false
-    },
-    {
-      "label": "225/55R19",
-      "diameter": 19,
-      "index": "103Y",
-      "commercial": false
-    },
-    {
       "label": "225/55R19",
       "diameter": 19,
       "index": "103Y",
@@ -373,12 +337,6 @@
       "label": "225/55R19",
       "diameter": 19,
       "index": "99W",
-      "commercial": false
-    },
-    {
-      "label": "235/40R19",
-      "diameter": 19,
-      "index": "96W",
       "commercial": false
     },
     {
@@ -438,12 +396,6 @@
     {
       "label": "245/45R19",
       "diameter": 19,
-      "index": "102W",
-      "commercial": false
-    },
-    {
-      "label": "245/45R19",
-      "diameter": 19,
       "index": "",
       "commercial": false
     },
@@ -457,18 +409,6 @@
       "label": "255/45R19",
       "diameter": 19,
       "index": "104W",
-      "commercial": false
-    },
-    {
-      "label": "255/45R19",
-      "diameter": 19,
-      "index": "104W",
-      "commercial": false
-    },
-    {
-      "label": "255/50R19",
-      "diameter": 19,
-      "index": "107V",
       "commercial": false
     },
     {
@@ -492,12 +432,6 @@
     {
       "label": "255/55R19",
       "diameter": 19,
-      "index": "111V",
-      "commercial": false
-    },
-    {
-      "label": "255/55R19",
-      "diameter": 19,
       "index": "111Y",
       "commercial": false
     },
@@ -505,12 +439,6 @@
       "label": "275/40R19",
       "diameter": 19,
       "index": "105W",
-      "commercial": false
-    },
-    {
-      "label": "275/45R19",
-      "diameter": 19,
-      "index": "108Y",
       "commercial": false
     },
     {
@@ -550,12 +478,6 @@
       "commercial": false
     },
     {
-      "label": "235/35R20",
-      "diameter": 20,
-      "index": "92Y",
-      "commercial": false
-    },
-    {
       "label": "235/40R20",
       "diameter": 20,
       "index": "96Y",
@@ -565,12 +487,6 @@
       "label": "235/45R20",
       "diameter": 20,
       "index": "100V",
-      "commercial": false
-    },
-    {
-      "label": "235/45R20",
-      "diameter": 20,
-      "index": "100W",
       "commercial": false
     },
     {
@@ -610,21 +526,9 @@
       "commercial": false
     },
     {
-      "label": "245/50R20",
-      "diameter": 20,
-      "index": "102V",
-      "commercial": false
-    },
-    {
       "label": "255/35R20",
       "diameter": 20,
       "index": "97Y",
-      "commercial": false
-    },
-    {
-      "label": "255/45R20",
-      "diameter": 20,
-      "index": "101V",
       "commercial": false
     },
     {
@@ -655,12 +559,6 @@
       "label": "255/55R20",
       "diameter": 20,
       "index": "110Y",
-      "commercial": false
-    },
-    {
-      "label": "265/40R20",
-      "diameter": 20,
-      "index": "104W",
       "commercial": false
     },
     {
@@ -739,12 +637,6 @@
       "label": "245/40R21",
       "diameter": 21,
       "index": "100Y",
-      "commercial": false
-    },
-    {
-      "label": "255/35R21",
-      "diameter": 21,
-      "index": "98W",
       "commercial": false
     },
     {
