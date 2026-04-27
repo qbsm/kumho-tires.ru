@@ -8,7 +8,7 @@ use Dotenv\Dotenv;
 $projectRoot = is_dir(__DIR__ . '/config') ? __DIR__ : dirname(__DIR__);
 require $projectRoot . '/vendor/autoload.php';
 
-Dotenv::createImmutable($projectRoot)->safeLoad();
+Dotenv::createUnsafeImmutable($projectRoot)->safeLoad();
 
 $containerFactory = require $projectRoot . '/config/container.php';
 $container = $containerFactory();
