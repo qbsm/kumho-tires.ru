@@ -56,6 +56,11 @@ final class MailService
             $this->logger->warning('MAIL_TO не задан, письмо не отправлено', ['request_id' => $requestId]);
             return false;
         }
+        $recipients = array_values(array_filter(array_map('trim', explode(',', $to)), static fn (string $a): bool => $a !== ''));
+        if ($recipients === []) {
+            $this->logger->warning('MAIL_TO не задан, письмо не отправлено', ['request_id' => $requestId]);
+            return false;
+        }
 
         $currentUrl = $this->extractString($formData, 'current_url');
         $pagePath = $currentUrl !== '' ? (parse_url($currentUrl, PHP_URL_PATH) ?: '/') : '/';
@@ -70,7 +75,7 @@ final class MailService
 
         $email = (new Email())
             ->from($from)
-            ->to($to)
+            ->to(...$recipients)
             ->subject($subject)
             ->text($textBody)
             ->html($htmlBody);
