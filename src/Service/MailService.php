@@ -116,7 +116,7 @@ final class MailService
             if (in_array($key, self::SKIP_FIELDS, true) || !is_string($value)) {
                 continue;
             }
-            $lines[] = $this->fieldLabel($key) . ': ' . $value;
+            $lines[] = $this->fieldLabel($key) . ': ' . $this->formatValue($key, $value);
         }
 
         $fileNames = $this->collectFileNames($uploadedFiles);
@@ -152,7 +152,7 @@ final class MailService
                 continue;
             }
             $label = htmlspecialchars($this->fieldLabel($key), ENT_QUOTES, 'UTF-8');
-            $val = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+            $val = htmlspecialchars($this->formatValue($key, $value), ENT_QUOTES, 'UTF-8');
             $rows .= "<tr><td style=\"padding:8px 12px;border-bottom:1px solid #eee;color:#666;white-space:nowrap;vertical-align:top\">{$label}</td>"
                 . "<td style=\"padding:8px 12px;border-bottom:1px solid #eee\">{$val}</td></tr>";
         }
@@ -245,6 +245,14 @@ final class MailService
     private function fieldLabel(string $key): string
     {
         return self::FIELD_LABELS[$key] ?? ucfirst(str_replace('_', ' ', $key));
+    }
+
+    private function formatValue(string $key, string $value): string
+    {
+        if ($key === 'phone' && $value !== '' && $value[0] !== '+' && ctype_digit($value)) {
+            return '+' . $value;
+        }
+        return $value;
     }
 
     private function extractString(array $data, string $key): string
