@@ -86,7 +86,6 @@ onReady(() => {
     closeOnOutsideClick: true,
   });
 
-  mainImage.style.cursor = 'zoom-in';
   mainImage.addEventListener('click', () => {
     const activeThumb = document.querySelector('.tire-detail__thumb.active');
     const index = activeThumb ? parseInt(activeThumb.dataset.index, 10) : 0;
