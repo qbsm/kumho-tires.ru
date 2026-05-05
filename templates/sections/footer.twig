@@ -20,6 +20,11 @@
         {% endfor %}
       {% endif %}
     </div>
+    <div class="section__item copyright-wrap">
+      {% if global.copyright[lang_code] is defined %}
+        <span class="footer__copyright opacity-80">© {{ "now"|date("Y") }}. {{ global.copyright[lang_code] }}</span>
+      {% endif %}
+    </div>
     <div class="section__item policy-agree-wrap">
       {% if global.policy[lang_code] is defined %}
 <a href="{{ url(global.policy[lang_code].href) }}" class="link footer__disclaimer-link opacity-80">{{ global.policy[lang_code].title }}</a>
@@ -28,11 +33,6 @@
       {% if global.agree[lang_code] is defined %}
 <a href="{{ url(global.agree[lang_code].href) }}" class="link footer__disclaimer-link opacity-80">{{ global.agree[lang_code].title }}</a>
 
-      {% endif %}
-    </div>
-    <div class="section__item copyright-wrap">
-      {% if global.copyright[lang_code] is defined %}
-        <span class="footer__copyright opacity-80">© {{ "now"|date("Y") }}. {{ global.copyright[lang_code] }}</span>
       {% endif %}
     </div>
   </div>
