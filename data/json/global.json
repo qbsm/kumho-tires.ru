@@ -142,13 +142,15 @@
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Ваше имя",
         "square": "Площадь, м²",
-        "photos": "Нажмите или перетащите фотографии шин(-ы)"
+        "photos": "Нажмите или перетащите фотографии шин(-ы)",
+        "message": "Опишите ситуацию: что произошло, модель и размер шин, номер расширенной гарантии и др."
       },
       "en": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Your name",
         "square": "Area, m²",
-        "photos": "Click or drag & drop photos"
+        "photos": "Click or drag & drop photos",
+        "message": "Describe the issue: what happened, tire model and size, warranty number, etc."
       }
     },
     "label": {
@@ -157,14 +159,16 @@
         "name": "Ваше имя",
         "square": "Площадь, м²",
         "policy": "Я ознакомился с&nbsp;<a href='/policy/' target='_blank'>Политикой обработки персональных данных</a> и&nbsp;<a href='/agree/' target='_blank'>Пользовательским соглашением,</a> принимаю условия Соглашения и&nbsp;согласен с&nbsp;<a href='/policy/' target='_blank'>обработкой моих персональных данных</a> способами и&nbsp;для целей указанных в&nbsp;Политике.",
-        "photos": "Прикрепите изображения"
+        "photos": "Прикрепите изображения",
+        "message": "Сообщение"
       },
       "en": {
         "phone": "Phone",
         "name": "Your name",
         "square": "Area, m²",
         "policy": "I consent to the processing of personal data in&nbsp;accordance with the&nbsp;<a href='/en/policy/' target='_blank'>Privacy Policy</a>",
-        "photos": "Attach images"
+        "photos": "Attach images",
+        "message": "Message"
       }
     },
     "rules": {
@@ -182,6 +186,7 @@
         "name_min_length": "Имя должно содержать не менее 2 символов",
         "phone_required": "Пожалуйста, укажите номер телефона",
         "phone_invalid": "Неверный формат номера телефона",
+        "message_required": "Пожалуйста, опишите ситуацию",
         "policy_required": "Необходимо согласиться с политикой конфиденциальности",
         "form_errors": "Пожалуйста, исправьте ошибки в форме",
         "invalid_method": "Недопустимый метод запроса",
@@ -198,6 +203,7 @@
         "name_min_length": "Name should be at least 2 characters",
         "phone_required": "Please enter your phone number",
         "phone_invalid": "Invalid phone number format",
+        "message_required": "Please describe the issue",
         "policy_required": "You must agree to the privacy policy",
         "form_errors": "Please correct the errors in the form",
         "invalid_method": "Invalid request method",
