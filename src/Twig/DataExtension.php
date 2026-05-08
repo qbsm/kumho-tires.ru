@@ -2,6 +2,7 @@
 
 namespace App\Twig;
 
+use App\Support\CitySlugger;
 use App\Support\JsonProcessor;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
@@ -26,6 +27,7 @@ class DataExtension extends AbstractExtension
         return [
             new TwigFunction('load_json', [$this, 'loadJson']),
             new TwigFunction('image_dimensions', [$this, 'getImageDimensions']),
+            new TwigFunction('city_to_slug', [CitySlugger::class, 'slug']),
         ];
     }
 

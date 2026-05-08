@@ -408,6 +408,41 @@ function buildBuyUrl(basePath, citySlug) {
   return `${path}${search}${hash}`;
 }
 
+function parseCityCases(headingEl) {
+  if (!headingEl?.dataset?.cityCases) {
+    return {};
+  }
+  try {
+    const parsed = JSON.parse(headingEl.dataset.cityCases);
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function setupHeadingSync(sectionEl, citySelect) {
+  const headingEl = sectionEl?.querySelector('.js-dealers-heading');
+  const titleEl = headingEl?.querySelector('.heading');
+  if (!headingEl || !titleEl) {
+    return null;
+  }
+  const base = headingEl.dataset.headingBase || titleEl.textContent || '';
+  const template = headingEl.dataset.headingCityTemplate || `${base} в {city}`;
+  const cases = parseCityCases(headingEl);
+
+  const update = () => {
+    const city = citySelect?.value || '';
+    if (!city) {
+      titleEl.textContent = base;
+      return;
+    }
+    const cased = cases[city] || city;
+    titleEl.textContent = template.replace('{city}', cased);
+  };
+
+  return update;
+}
+
 function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
   if (!sectionEl || !citySelect || sectionEl.dataset.urlSyncCity !== '1') {
     return;
@@ -415,12 +450,14 @@ function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
 
   const basePath = getBasePathSegment();
   const cities = getCityOptions(citySelect);
+  const updateHeading = setupHeadingSync(sectionEl, citySelect);
 
   const initialSlug = getCitySlugFromUrl();
   if (initialSlug) {
     const matchedCity = slugToCity(initialSlug, cities);
     if (matchedCity && citySelect.value !== matchedCity) {
       citySelect.value = matchedCity;
+      updateHeading?.();
     }
   }
 
@@ -432,7 +469,10 @@ function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
     }
   };
 
-  citySelect.addEventListener('change', pushUrl);
+  citySelect.addEventListener('change', () => {
+    pushUrl();
+    updateHeading?.();
+  });
 
   window.addEventListener('popstate', () => {
     const slug = getCitySlugFromUrl();
@@ -440,6 +480,7 @@ function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
     if (citySelect.value !== matchedCity) {
       citySelect.value = matchedCity;
       applyFilters();
+      updateHeading?.();
     }
   });
 }

@@ -27,10 +27,31 @@
         {% endif %}
       {% endif %}
     {% endfor %}
+    {% set cityCases = load_json('data/json/' ~ lang_code ~ '/city-cases.json') | default({}) %}
+    {% set headingBase = data.heading.title | default('') %}
+    {% set headingCityTemplate = data.heading_city_template | default(headingBase ~ ' в {city}') %}
+    {% set initialHeadingCityCase = '' %}
+    {% if urlSyncCity and route_params is defined and route_params|length == 1 %}
+      {% for city in cityOptions %}
+        {% if city_to_slug(city) == route_params[0] %}
+          {% set initialHeadingCityCase = cityCases[city] | default(city) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% set headingTitle = initialHeadingCityCase != ''
+      ? headingCityTemplate | replace({'{city}': initialHeadingCityCase})
+      : headingBase %}
     {% if data.heading is defined %}
-      <div class="section__item heading-wrap">
+      {% set citiesCasesJson = (cityCases | length > 0) ? cityCases | json_encode : '' %}
+      <div
+        class="section__item heading-wrap js-dealers-heading"
+        {% if urlSyncCity %}
+          data-heading-base="{{ headingBase | e('html_attr') }}"
+          data-heading-city-template="{{ headingCityTemplate | e('html_attr') }}"
+          {% if citiesCasesJson %}data-city-cases="{{ citiesCasesJson | e('html_attr') }}"{% endif %}
+        {% endif %}>
         <span class="heading-accent self-start" aria-hidden="true"></span>
-        {% include 'components/heading.twig' with {'item': data.heading} %}
+        {% include 'components/heading.twig' with {'item': data.heading | merge({'title': headingTitle})} %}
       </div>
     {% endif %}
 
