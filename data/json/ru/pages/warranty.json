@@ -10,12 +10,11 @@
       "visible": true,
       "data": {
         "cover": {
-          "400": "data/img/frames/400/warranty.webp",
-          "800": "data/img/frames/800/warranty.webp",
-          "1280": "data/img/frames/1280/warranty.webp",
-          "1600": "data/img/frames/1600/warranty.webp",
-          "1920": "data/img/frames/1920/warranty.webp",
-          "2560": "data/img/frames/2560/warranty.webp"
+          "400": "data/img/actions/400/warranty.webp",
+          "800": "data/img/actions/800/warranty.webp",
+          "1280": "data/img/actions/1280/warranty.webp",
+          "1600": "data/img/actions/1600/warranty.webp",
+          "1920": "data/img/actions/1920/warranty.webp"
         }
       }
     },
