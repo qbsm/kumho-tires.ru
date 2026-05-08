@@ -3,22 +3,146 @@
 {% block content %}
 <div id="page-content">
   {% include 'sections/header.twig' with {'data': {}} %}
-  <main class="section tire-detail" role="main">
-    <div class="container">
-      {% set t = tire.item %}
-      <article class="tire-detail__article">
-        <h1 class="tire-detail__title font-2">{{ t.name | default(t.code) }}</h1>
-        {% if t.series is defined and t.series %}
-          <p class="tire-detail__series">{{ t.series }}</p>
+  {% if frame_data is defined and frame_data %}
+    {% include 'sections/frame.twig' with {'data': frame_data} %}
+  {% endif %}
+  <main class="tire-detail" role="main">
+    {% set t = tire.item %}
+
+    <section class="content-container section">
+      <div class="container">
+        <div class="tire-detail__grid">
+
+          {# --- Колонка 1: галерея --- #}
+          <div class="tire-detail__gallery">
+            {% set imageKeys = ['30deg', 'front', 'side', 'back'] %}
+            {% set galleryImages = [] %}
+            {% for key in imageKeys %}
+              {% if tire.images[key] is defined %}
+                {% set galleryImages = galleryImages|merge([tire.images[key]]) %}
+              {% endif %}
+            {% endfor %}
+
+            {% if galleryImages|length > 0 %}
+              <div class="tire-detail__main-image">
+                {% include 'components/picture.twig' with {
+                  'image': galleryImages[0],
+                  'alt': galleryImages[0].alt|default(t.name),
+                  'sizes_preset': 'content',
+                  'loading': 'eager',
+                  'class': 'img-responsive tire-detail__img'
+                } %}
+              </div>
+              {% if galleryImages|length > 1 %}
+              <div class="tire-detail__thumbs">
+                {% for img in galleryImages %}
+                <div class="tire-detail__thumb{% if loop.first %} active{% endif %}" data-index="{{ loop.index0 }}">
+                  {% include 'components/picture.twig' with {
+                    'image': img,
+                    'alt': img.alt|default(t.name),
+                    'sizes_preset': 'content',
+                    'class': 'img-responsive'
+                  } %}
+                </div>
+                {% endfor %}
+              </div>
+              {% endif %}
+            {% endif %}
+          </div>
+
+          {# --- Колонка 2: информация --- #}
+          <div class="tire-detail__info">
+            <div class="section__item block-wrap">
+              <div class="tire-detail__header">
+                <div class="tire-detail__title-group">
+                  <div class="section__subitem heading-wrap">
+                    <span class="heading-accent self-start" aria-hidden="true"></span>
+                    <h1 class="h1 heading font-2 weight-700 heading-flex uppercase">{{ t.name|default(t.code) }}</h1>
+                  </div>
+                  {% if t.series is defined and t.series %}
+                    <p class="tire-detail__series h5 font-2 weight-400">{{ t.series }}</p>
+                  {% endif %}
+                  {% if tire.season is defined and tire.season %}
+                    <span class="tire-detail__badge">{{ tire.season }}</span>
+                  {% endif %}
+                </div>
+                {% if tire.desc.short is defined and tire.desc.short %}
+                  <p class="tire-detail__desc">{{ tire.desc.short }}</p>
+                {% endif %}
+              </div>
+
+            </div>
+
+            {# --- Описание --- #}
+            {% if tire.desc.full is defined and tire.desc.full %}
+            <div class="section__item block-wrap">
+              <div class="section__subitem heading-wrap">
+                <span class="heading-accent self-start" aria-hidden="true"></span>
+                <h2 class="h2 heading font-2 weight-700 heading-flex uppercase">Описание</h2>
+              </div>
+              <div class="section__subitem">
+                <div class="tire-detail__text longread">{{ tire.desc.full|raw }}</div>
+              </div>
+            </div>
+            {% endif %}
+
+            {# --- Преимущества --- #}
+            {% if tire.features is defined and tire.features %}
+            <div class="section__item block-wrap">
+              <div class="section__subitem">
+                {% set featureItems = [] %}
+                {% for feature in tire.features %}
+                  {% if feature.title is defined and feature.title %}
+                    {% set featureItems = featureItems|merge(['<strong>' ~ feature.title ~ '</strong> — ' ~ feature.text]) %}
+                  {% else %}
+                    {% set featureItems = featureItems|merge([feature.text]) %}
+                  {% endif %}
+                {% endfor %}
+                {% include 'components/custom-list.twig' with { 'items': featureItems } %}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+
+        {# --- Таблица размеров (на всю ширину грида) --- #}
+        {% if tire.sizes is defined and tire.sizes|length > 0 %}
+        <div class="section__item block-wrap" style="grid-column: 1 / -1">
+          <div class="section__subitem heading-wrap">
+            <span class="heading-accent self-start" aria-hidden="true"></span>
+            <h2 class="h2 heading font-2 weight-700 heading-flex uppercase">Доступные размеры</h2>
+          </div>
+          <div class="section__subitem">
+            <div class="tire-detail__table-wrap">
+              <table class="tire-detail__table">
+                <thead>
+                  <tr>
+                    <th>Размер</th>
+                    <th>Диаметр</th>
+                    <th>Индекс нагрузки/скорости</th>
+                    <th>C</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for size in tire.sizes %}
+                  <tr>
+                    <td>{{ size.label }}</td>
+                    <td>R{{ size.diameter }}</td>
+                    <td>{{ size.index|default('') }}</td>
+                    <td>{{ size.commercial|default(false) ? 'C' : '' }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
         {% endif %}
-        {% if tire.desc.short is defined and tire.desc.short %}
-          <p class="tire-detail__desc">{{ tire.desc.short }}</p>
-        {% endif %}
-        {% if tire.desc.full is defined and tire.desc.full %}
-          <div class="tire-detail__full">{{ tire.desc.full }}</div>
-        {% endif %}
-      </article>
-    </div>
+
+        </div>{# /tire-detail__grid #}
+      </div>
+    </section>
+
   </main>
   {% include 'sections/footer.twig' with {'data': global.footer|default({})} %}
 </div>
