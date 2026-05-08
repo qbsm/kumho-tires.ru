@@ -420,27 +420,47 @@ function parseCityCases(headingEl) {
   }
 }
 
-function setupHeadingSync(sectionEl, citySelect) {
+function setupCityCopySync(sectionEl, citySelect) {
   const headingEl = sectionEl?.querySelector('.js-dealers-heading');
   const titleEl = headingEl?.querySelector('.heading');
-  if (!headingEl || !titleEl) {
-    return null;
-  }
-  const base = headingEl.dataset.headingBase || titleEl.textContent || '';
-  const template = headingEl.dataset.headingCityTemplate || `${base} в {city}`;
   const cases = parseCityCases(headingEl);
 
-  const update = () => {
-    const city = citySelect?.value || '';
-    if (!city) {
-      titleEl.textContent = base;
-      return;
-    }
-    const cased = cases[city] || city;
-    titleEl.textContent = template.replace('{city}', cased);
-  };
+  const headingBase = headingEl?.dataset?.headingBase || titleEl?.textContent || '';
+  const headingTemplate = headingEl?.dataset?.headingCityTemplate || `${headingBase} в {city}`;
 
-  return update;
+  const metaTitleBase = sectionEl?.dataset?.metaTitleBase || '';
+  const metaTitleTemplate = sectionEl?.dataset?.metaTitleCityTemplate || '';
+  const metaDescBase = sectionEl?.dataset?.metaDescriptionBase || '';
+  const metaDescTemplate = sectionEl?.dataset?.metaDescriptionCityTemplate || '';
+
+  const descEl = document.querySelector('meta[name="description"]');
+  const ogTitleEl = document.querySelector('meta[property="og:title"]');
+  const ogDescEl = document.querySelector('meta[property="og:description"]');
+  const twitterDescEl = document.querySelector('meta[name="twitter:description"]');
+  const twitterTitleEl = document.querySelector('meta[name="twitter:title"]');
+
+  return () => {
+    const city = citySelect?.value || '';
+    const cityCase = city ? cases[city] || city : '';
+
+    if (titleEl) {
+      titleEl.textContent = cityCase ? headingTemplate.replace('{city}', cityCase) : headingBase;
+    }
+
+    if (metaTitleBase) {
+      const value = cityCase && metaTitleTemplate ? metaTitleTemplate.replace('{city}', cityCase) : metaTitleBase;
+      document.title = value;
+      ogTitleEl?.setAttribute('content', value);
+      twitterTitleEl?.setAttribute('content', value);
+    }
+
+    if (metaDescBase) {
+      const value = cityCase && metaDescTemplate ? metaDescTemplate.replace('{city}', cityCase) : metaDescBase;
+      descEl?.setAttribute('content', value);
+      ogDescEl?.setAttribute('content', value);
+      twitterDescEl?.setAttribute('content', value);
+    }
+  };
 }
 
 function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
@@ -450,14 +470,14 @@ function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
 
   const basePath = getBasePathSegment();
   const cities = getCityOptions(citySelect);
-  const updateHeading = setupHeadingSync(sectionEl, citySelect);
+  const updateCopy = setupCityCopySync(sectionEl, citySelect);
 
   const initialSlug = getCitySlugFromUrl();
   if (initialSlug) {
     const matchedCity = slugToCity(initialSlug, cities);
     if (matchedCity && citySelect.value !== matchedCity) {
       citySelect.value = matchedCity;
-      updateHeading?.();
+      updateCopy();
     }
   }
 
@@ -471,7 +491,7 @@ function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
 
   citySelect.addEventListener('change', () => {
     pushUrl();
-    updateHeading?.();
+    updateCopy();
   });
 
   window.addEventListener('popstate', () => {
@@ -480,7 +500,7 @@ function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
     if (citySelect.value !== matchedCity) {
       citySelect.value = matchedCity;
       applyFilters();
-      updateHeading?.();
+      updateCopy();
     }
   });
 }

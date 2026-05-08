@@ -1,5 +1,18 @@
 {% set urlSyncCity = data.url_sync_city | default(false) %}
-<section class="dealers section" id="dealers"{% if urlSyncCity %} data-url-sync-city="1"{% endif %}>
+{% set metaTitleBase = data.meta_title_base | default('') %}
+{% set metaTitleCityTemplate = data.meta_title_city_template | default('') %}
+{% set metaDescriptionBase = data.meta_description_base | default('') %}
+{% set metaDescriptionCityTemplate = data.meta_description_city_template | default('') %}
+<section
+  class="dealers section"
+  id="dealers"
+  {% if urlSyncCity %}
+    data-url-sync-city="1"
+    {% if metaTitleBase %}data-meta-title-base="{{ metaTitleBase | e('html_attr') }}"{% endif %}
+    {% if metaTitleCityTemplate %}data-meta-title-city-template="{{ metaTitleCityTemplate | e('html_attr') }}"{% endif %}
+    {% if metaDescriptionBase %}data-meta-description-base="{{ metaDescriptionBase | e('html_attr') }}"{% endif %}
+    {% if metaDescriptionCityTemplate %}data-meta-description-city-template="{{ metaDescriptionCityTemplate | e('html_attr') }}"{% endif %}
+  {% endif %}>
   <div class="container">
     {% set dealersData = load_json('data/json/' ~ lang_code ~ '/pages/dealers.json') %}
     {% set dealerItems = dealersData.items | default(data.items | default([])) %}
