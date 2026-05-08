@@ -80,6 +80,8 @@ return [
     'collections' => (array) ($projectConfig['collections'] ?? []),
     // page_id страниц для sitemap.xml (из project.php)
     'sitemap_pages' => (array) ($projectConfig['sitemap_pages'] ?? ['index']),
+    // Динамические подпути для sitemap (из project.php): page => {data_page, list_key, value_key, slugger}
+    'sitemap_dynamic_pages' => (array) ($projectConfig['sitemap_dynamic_pages'] ?? []),
     // Rate limiting для POST /api/send (по IP, файловое хранилище в cache/rate_limit)
     'rate_limit_api_send' => [
         'max_requests' => 10,

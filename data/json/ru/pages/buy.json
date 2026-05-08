@@ -24,6 +24,7 @@
       "name": "dealers",
       "visible": true,
       "data": {
+        "url_sync_city": true,
         "filter": {
           "visible": true
         },

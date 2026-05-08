@@ -1,4 +1,5 @@
-<section class="dealers section" id="dealers">
+{% set urlSyncCity = data.url_sync_city | default(false) %}
+<section class="dealers section" id="dealers"{% if urlSyncCity %} data-url-sync-city="1"{% endif %}>
   <div class="container">
     {% set dealersData = load_json('data/json/' ~ lang_code ~ '/pages/dealers.json') %}
     {% set dealerItems = dealersData.items | default(data.items | default([])) %}

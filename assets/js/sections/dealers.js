@@ -1,4 +1,5 @@
 import { onReady } from '../base/init.js';
+import { cityToSlug, slugToCity } from '../utils/translit.js';
 
 const YANDEX_MAPS_API = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
 
@@ -61,7 +62,8 @@ function applyDetectedCoords(mapState, citySelect, applyFilters, coords) {
   const nearestPoint = findNearestPoint(mapState.points, coords);
   let cityWasApplied = false;
 
-  if (citySelect && nearestPoint?.city) {
+  // Если город уже выбран (например, из URL) — не перетираем геолокацией.
+  if (citySelect && !citySelect.value && nearestPoint?.city) {
     const cityValue = nearestPoint.city.toString().trim();
     if (cityValue) {
       const hasOption = Array.from(citySelect.options || []).some((option) => option.value === cityValue);
@@ -377,6 +379,71 @@ function createDealerMap(mapEl, onReadyMap) {
     });
 }
 
+function getCityOptions(citySelect) {
+  if (!citySelect) {
+    return [];
+  }
+  return Array.from(citySelect.options || [])
+    .map((option) => option.value)
+    .filter((value) => value !== '');
+}
+
+function getBasePathSegment() {
+  const path = window.location.pathname || '/';
+  const segments = path.split('/').filter(Boolean);
+  return segments[0] || '';
+}
+
+function getCitySlugFromUrl() {
+  const path = window.location.pathname || '/';
+  const segments = path.split('/').filter(Boolean);
+  return segments[1] || '';
+}
+
+function buildBuyUrl(basePath, citySlug) {
+  const search = window.location.search || '';
+  const hash = window.location.hash || '';
+  const cleanBase = basePath ? `/${basePath}` : '';
+  const path = citySlug ? `${cleanBase}/${citySlug}` : cleanBase || '/';
+  return `${path}${search}${hash}`;
+}
+
+function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
+  if (!sectionEl || !citySelect || sectionEl.dataset.urlSyncCity !== '1') {
+    return;
+  }
+
+  const basePath = getBasePathSegment();
+  const cities = getCityOptions(citySelect);
+
+  const initialSlug = getCitySlugFromUrl();
+  if (initialSlug) {
+    const matchedCity = slugToCity(initialSlug, cities);
+    if (matchedCity && citySelect.value !== matchedCity) {
+      citySelect.value = matchedCity;
+    }
+  }
+
+  const pushUrl = () => {
+    const slug = cityToSlug(citySelect.value || '');
+    const target = buildBuyUrl(basePath, slug);
+    if (target !== `${window.location.pathname}${window.location.search}${window.location.hash}`) {
+      window.history.replaceState({ city: citySelect.value || '' }, '', target);
+    }
+  };
+
+  citySelect.addEventListener('change', pushUrl);
+
+  window.addEventListener('popstate', () => {
+    const slug = getCitySlugFromUrl();
+    const matchedCity = slug ? slugToCity(slug, cities) : '';
+    if (citySelect.value !== matchedCity) {
+      citySelect.value = matchedCity;
+      applyFilters();
+    }
+  });
+}
+
 onReady(() => {
   const sections = document.querySelectorAll('.dealers.section');
   sections.forEach((sectionEl) => {
@@ -430,6 +497,8 @@ onReady(() => {
         applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
       });
     }
+
+    setupUrlCitySync(sectionEl, citySelect, applyFilters);
 
     citySelect?.addEventListener('change', applyFilters);
     guaranteeCheckbox?.addEventListener('change', applyFilters);
