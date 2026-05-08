@@ -28,7 +28,49 @@ class DataExtension extends AbstractExtension
             new TwigFunction('load_json', [$this, 'loadJson']),
             new TwigFunction('image_dimensions', [$this, 'getImageDimensions']),
             new TwigFunction('city_to_slug', [CitySlugger::class, 'slug']),
+            new TwigFunction('resolve_city_by_slug', [$this, 'resolveCityBySlug']),
         ];
+    }
+
+    /**
+     * Резолвит URL-slug в данные города из dealers.json + city-cases.json.
+     *
+     * @return array{name: string, prepositional: string, slug: string}|null
+     */
+    public function resolveCityBySlug(string $slug, string $langCode): ?array
+    {
+        $slug = trim($slug);
+        if ($slug === '' || $langCode === '') {
+            return null;
+        }
+        $dealers = $this->loadJson("data/json/{$langCode}/pages/dealers.json");
+        if (!is_array($dealers) || !isset($dealers['items']) || !is_array($dealers['items'])) {
+            return null;
+        }
+        $cases = $this->loadJson("data/json/{$langCode}/city-cases.json");
+        if (!is_array($cases)) {
+            $cases = [];
+        }
+
+        $seen = [];
+        foreach ($dealers['items'] as $dealer) {
+            if (!is_array($dealer)) {
+                continue;
+            }
+            $city = isset($dealer['city']) && is_string($dealer['city']) ? trim($dealer['city']) : '';
+            if ($city === '' || isset($seen[$city])) {
+                continue;
+            }
+            $seen[$city] = true;
+            if (CitySlugger::slug($city) === $slug) {
+                return [
+                    'name' => $city,
+                    'prepositional' => isset($cases[$city]) && is_string($cases[$city]) ? $cases[$city] : $city,
+                    'slug' => $slug,
+                ];
+            }
+        }
+        return null;
     }
 
     /**
