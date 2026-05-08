@@ -1,5 +1,5 @@
 {% set name = item.item.name | default(item.item.code | default('')) %}
-{% set href = item.slug is defined and item.slug ? url('/tires/' ~ item.slug ~ '/') : null %}
+{% set href = item.slug is defined and item.slug ? url('/tires/' ~ item.slug) : null %}
 
 <a{% if href %} href="{{ href }}"{% endif %} class="card-tire"{{ href ? '' : ' role="group"' }} style="color:inherit;text-decoration:none">
   <div class="card__item title-wrap">

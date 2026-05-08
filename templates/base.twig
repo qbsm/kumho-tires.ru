@@ -38,19 +38,24 @@
   {# Логика формирования current_url, canonical и alternate #}
   {% set _base_url_trimmed = base_url|trim('/') %} {# base_url без слешей по краям #}
 
-  {% if page_id == 'index' %}
+  {# seo_url_path передан из PageAction — готовый путь без trailing slash. #}
+  {# Fallback для legacy-контекста: reverse route_map (page_id 'tires-list' → '/tires'). #}
+  {% if seo_url_path is defined and seo_url_path is not null %}
+    {% set _path_segment = seo_url_path %}
+  {% elseif page_id == 'index' %}
     {% set _path_segment = '' %}
   {% else %}
-    {% set _path_segment = page_id %}
+    {% set _url_slug = page_id %}
+    {% for url_part, mapped_id in config.settings.route_map | default({}) %}
+      {% if mapped_id == page_id %}{% set _url_slug = url_part %}{% endif %}
+    {% endfor %}
+    {% set _path_segment = _url_slug %}
+    {% if route_params|length > 0 %}
+      {% set _path_segment = _path_segment ~ '/' ~ route_params|join('/') %}
+    {% endif %}
   {% endif %}
 
-  {% if route_params|length > 0 and _path_segment != '' %}
-    {% set _path_segment = _path_segment ~ '/' ~ route_params|join('/') %}
-  {% elseif route_params|length > 0 and _path_segment == '' %}
-     {% set _path_segment = route_params|join('/') %}
-  {% endif %}
-
-  {% set _final_path_for_current_url = (_path_segment != '') ? '/' ~ _path_segment ~ '/' : '/' %}
+  {% set _final_path_for_current_url = (_path_segment != '') ? '/' ~ _path_segment : '/' %}
   {% set current_url = _base_url_trimmed ~ _final_path_for_current_url %}
 
 
@@ -65,10 +70,8 @@
     {% set _url_prefix_for_seo = _base_secure_domain_for_seo %}
   {% endif %}
   
-  {% set _canonical_parts = [_url_prefix_for_seo|trim('/'), _url_path_for_seo|trim('/')] %}
-  {% set final_canonical_url = _canonical_parts|filter(v => v is not empty and v is not null)|join('/') %}
-  {% if not final_canonical_url ends with '/' %}{% set final_canonical_url = final_canonical_url ~ '/' %}{% endif %}
-  {% if not final_canonical_url starts with 'https://' %}{% set final_canonical_url = _base_secure_domain_for_seo ~ '/' ~ final_canonical_url %}{% endif %}
+  {% set _path_for_canonical = _url_path_for_seo|trim('/') %}
+  {% set final_canonical_url = _url_prefix_for_seo|trim('/') ~ (_path_for_canonical != '' ? '/' ~ _path_for_canonical : '/') %}
 
 
   <link rel="canonical" href="{{ final_canonical_url }}" />
@@ -82,11 +85,8 @@
         {% set _alt_url_base_for_seo = _base_secure_domain_for_seo ~ '/' ~ lang_loop_code %}
       {% endif %}
 
-      {% set _alt_url_parts = [_alt_url_base_for_seo|trim('/'), _url_path_for_seo|trim('/')] %}
-      {% set final_alt_url = _alt_url_parts|filter(v => v is not empty and v is not null)|join('/') %}
-      {% if not final_alt_url ends with '/' and _url_path_for_seo != '' %}{% set final_alt_url = final_alt_url ~ '/' %}{% endif %}
-      {% if _url_path_for_seo == '' and not final_alt_url ends with '/' %}{% set final_alt_url = final_alt_url ~ '/' %}{% endif %}
-      {% if not final_alt_url starts with 'https://' %}{% set final_alt_url = _base_secure_domain_for_seo ~ '/' ~ final_alt_url|trim('/') %}{% endif %}
+      {% set _path_for_alt = _url_path_for_seo|trim('/') %}
+      {% set final_alt_url = _alt_url_base_for_seo|trim('/') ~ (_path_for_alt != '' ? '/' ~ _path_for_alt : '/') %}
 
       <link rel="alternate" href="{{ final_alt_url }}" hreflang="{{ lang_loop_code }}" />
     {% endif %}

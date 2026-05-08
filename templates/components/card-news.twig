@@ -1,4 +1,4 @@
-<a href="{% if item.slug is defined %}{{ url('/news/' ~ item.slug ~ '/') }}{% else %}#{% endif %}" class="card-news card-news-link link">
+<a href="{% if item.slug is defined %}{{ url('/news/' ~ item.slug) }}{% else %}#{% endif %}" class="card-news card-news-link link">
   <div class="card-news__item cover-wrap">
     {% if item.cover.src is defined %}
       <div class="card-news__cover" style="background-image: url('{{ url(item.cover.src) }}');"></div>

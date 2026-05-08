@@ -26,21 +26,24 @@
         },
         {
           "title": "Бренд",
-          "href": "/brand/",
+          "href": "/brand",
           "visible": false
         },
         {
           "title": "Шины",
-          "href": "/tires/",
-          "active_for": ["tires-list", "tire"]
+          "href": "/tires",
+          "active_for": [
+            "tires-list",
+            "tire"
+          ]
         },
         {
           "title": "Расширенная гарантия",
-          "href": "/warranty/"
+          "href": "/warranty"
         },
         {
           "title": "Где купить",
-          "href": "/buy/",
+          "href": "/buy",
           "visible": true
         }
       ]
@@ -53,21 +56,24 @@
         },
         {
           "title": "Brand",
-          "href": "/brand/",
+          "href": "/brand",
           "visible": false
         },
         {
           "title": "Tires",
-          "href": "/tires/",
-          "active_for": ["tires-list", "tire"]
+          "href": "/tires",
+          "active_for": [
+            "tires-list",
+            "tire"
+          ]
         },
         {
           "title": "Extended warranty",
-          "href": "/warranty/"
+          "href": "/warranty"
         },
         {
           "title": "Where to buy",
-          "href": "/buy/",
+          "href": "/buy",
           "visible": true
         }
       ]
@@ -107,21 +113,21 @@
   "policy": {
     "ru": {
       "title": "Политика в отношении обработки персональных данных",
-      "href": "/policy/"
+      "href": "/policy"
     },
     "en": {
       "title": "Privacy Policy",
-      "href": "/policy/"
+      "href": "/policy"
     }
   },
   "agree": {
     "ru": {
       "title": "Пользовательское соглашение",
-      "href": "/agree/"
+      "href": "/agree"
     },
     "en": {
       "title": "User Agreement",
-      "href": "/agree/"
+      "href": "/agree"
     }
   },
   "copyright": {
@@ -130,12 +136,47 @@
   },
   "form-callback": {
     "fields": [
-      { "type": "tel", "name": "phone", "inputmode": "tel", "autocomplete": "tel", "validation": { "required": true, "validator": "phone" } },
-      { "type": "text", "name": "name", "autocomplete": "name", "validation": { "required": true, "minLength": 2 } },
-      { "type": "text", "name": "square", "validation": { "required": true } },
-      { "type": "checkbox", "name": "policy", "validation": { "required": true } },
-      { "type": "hidden", "name": "current_url" },
-      { "type": "hidden", "name": "csrf_token" }
+      {
+        "type": "tel",
+        "name": "phone",
+        "inputmode": "tel",
+        "autocomplete": "tel",
+        "validation": {
+          "required": true,
+          "validator": "phone"
+        }
+      },
+      {
+        "type": "text",
+        "name": "name",
+        "autocomplete": "name",
+        "validation": {
+          "required": true,
+          "minLength": 2
+        }
+      },
+      {
+        "type": "text",
+        "name": "square",
+        "validation": {
+          "required": true
+        }
+      },
+      {
+        "type": "checkbox",
+        "name": "policy",
+        "validation": {
+          "required": true
+        }
+      },
+      {
+        "type": "hidden",
+        "name": "current_url"
+      },
+      {
+        "type": "hidden",
+        "name": "csrf_token"
+      }
     ],
     "placeholder": {
       "ru": {

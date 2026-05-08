@@ -60,7 +60,7 @@
         },
         "items": [
           {
-            "href": "/warranty/",
+            "href": "/warranty",
             "title": "Расширенная гарантия",
             "desc": "1 год дополнительной гарантии от повреждений на шины Kumho",
             "class": "button",
@@ -87,7 +87,7 @@
         "all_models_link": {
           "visible": true,
           "title": "Все модели",
-          "href": "/tires/"
+          "href": "/tires"
         },
         "heading": {
           "tag": "h2",
@@ -106,7 +106,7 @@
           "title": "Новости Kumho"
         },
         "all_news_link": {
-          "href": "/news/",
+          "href": "/news",
           "title": "Все новости"
         },
         "items": [

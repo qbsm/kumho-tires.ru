@@ -133,7 +133,7 @@ final class PageAction
                         $pageId = '404';
                         $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl) ?? ['name' => '404', 'sections' => []];
                     }
-                } elseif (count($routeParams) > 1) {
+                } else {
                     $status = 404;
                     $pageId = '404';
                     $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl) ?? ['name' => '404', 'sections' => []];
@@ -177,6 +177,7 @@ final class PageAction
             $extras['entity'] = $entity;
             $extras['breadcrumb'] = $this->buildEntityBreadcrumb($global, $langCode, $entity, $entityConfig);
             $extras['frame_data'] = $this->extractFrameFromListPage($pageJsonDir, $entityConfig, $baseUrl);
+            $extras['seo_url_path'] = trim((string) ($entityConfig['nav_slug'] ?? ''), '/') . '/' . trim((string) ($entity['slug'] ?? ''), '/');
         }
 
         $data = $this->templateDataBuilder->build(
