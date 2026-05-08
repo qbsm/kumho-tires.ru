@@ -1,9 +1,9 @@
 {
-  "title": "{% set _city = resolve_city_by_slug(route_params|first|default(''), lang_code) %}Где купить шины Kumho{% if _city %} в {{ _city.prepositional }}{% endif %}",
+  "title": "{{ resolve_section_meta('buy', 'dealers', 'title', lang_code, route_params) }}",
   "meta": [
     {
       "name": "description",
-      "content": "{% set _city = resolve_city_by_slug(route_params|first|default(''), lang_code) %}{% if _city %}Адреса точек продаж шин Kumho в {{ _city.prepositional }}: дилеры, карта, телефоны и часы работы.{% else %}Адреса точек продаж шин Kumho и карта дилеров по России.{% endif %}"
+      "content": "{{ resolve_section_meta('buy', 'dealers', 'description', lang_code, route_params) }}"
     },
     {
       "property": "og:type",
@@ -11,11 +11,11 @@
     },
     {
       "property": "og:title",
-      "content": "{% set _city = resolve_city_by_slug(route_params|first|default(''), lang_code) %}Где купить шины Kumho{% if _city %} в {{ _city.prepositional }}{% endif %}"
+      "content": "{{ resolve_section_meta('buy', 'dealers', 'title', lang_code, route_params) }}"
     },
     {
       "property": "og:description",
-      "content": "{% set _city = resolve_city_by_slug(route_params|first|default(''), lang_code) %}{% if _city %}Адреса точек продаж шин Kumho в {{ _city.prepositional }}: дилеры, карта, телефоны и часы работы.{% else %}Адреса точек продаж шин Kumho и карта дилеров по России.{% endif %}"
+      "content": "{{ resolve_section_meta('buy', 'dealers', 'description', lang_code, route_params) }}"
     },
     {
       "property": "og:site_name",

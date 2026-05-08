@@ -29,7 +29,52 @@ class DataExtension extends AbstractExtension
             new TwigFunction('image_dimensions', [$this, 'getImageDimensions']),
             new TwigFunction('city_to_slug', [CitySlugger::class, 'slug']),
             new TwigFunction('resolve_city_by_slug', [$this, 'resolveCityBySlug']),
+            new TwigFunction('resolve_section_meta', [$this, 'resolveSectionMeta']),
         ];
+    }
+
+    /**
+     * Возвращает SEO-строку для динамической страницы вида /<page>/<city-slug>.
+     *
+     * Источник правды — секция в pages/{lang}/{pageId}.json:
+     *   data.meta_{key}_base          — текст без города
+     *   data.meta_{key}_city_template — шаблон с {city}
+     *
+     * Если route_params[0] резолвится в известный город, возвращает шаблон
+     * с подставленным предложным падежом; иначе — base.
+     *
+     * @param array<int,string> $routeParams
+     */
+    public function resolveSectionMeta(
+        string $pageId,
+        string $sectionName,
+        string $key,
+        string $langCode,
+        array $routeParams = []
+    ): string {
+        $page = $this->loadJson("data/json/{$langCode}/pages/{$pageId}.json");
+        if (!is_array($page) || !isset($page['sections']) || !is_array($page['sections'])) {
+            return '';
+        }
+
+        $base = '';
+        $template = '';
+        foreach ($page['sections'] as $section) {
+            if (!is_array($section) || ($section['name'] ?? null) !== $sectionName) {
+                continue;
+            }
+            $data = is_array($section['data'] ?? null) ? $section['data'] : [];
+            $base = (string) ($data["meta_{$key}_base"] ?? '');
+            $template = (string) ($data["meta_{$key}_city_template"] ?? '');
+            break;
+        }
+
+        $slug = (string) ($routeParams[0] ?? '');
+        $city = $this->resolveCityBySlug($slug, $langCode);
+        if ($city !== null && $template !== '') {
+            return str_replace('{city}', $city['prepositional'], $template);
+        }
+        return $base;
     }
 
     /**
