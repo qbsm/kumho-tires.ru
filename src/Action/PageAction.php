@@ -133,6 +133,10 @@ final class PageAction
                         $pageId = '404';
                         $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl) ?? ['name' => '404', 'sections' => []];
                     }
+                } elseif (count($routeParams) > 1) {
+                    $status = 404;
+                    $pageId = '404';
+                    $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl) ?? ['name' => '404', 'sections' => []];
                 }
                 break;
             }
