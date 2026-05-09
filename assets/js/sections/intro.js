@@ -10,6 +10,7 @@ onReady(() => {
 
 function initIntroHeadingFade() {
   const heading = document.querySelector('.intro .heading-wrap');
+  console.log('[intro-fade] init, heading =', heading);
   if (!heading) {
     return;
   }
@@ -21,8 +22,14 @@ function initIntroHeadingFade() {
   const update = () => {
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
     const fadeDistance = Math.max(FADE_DISTANCE_REM * rem, 1);
-    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const scrollY =
+      window.scrollY ||
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
     const opacity = Math.max(0, Math.min(1, 1 - scrollY / fadeDistance));
+    console.log('[intro-fade] scrollY=', scrollY, 'opacity=', opacity);
     heading.style.opacity = String(opacity);
     ticking = false;
   };
@@ -35,6 +42,7 @@ function initIntroHeadingFade() {
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
+  document.addEventListener('scroll', onScroll, { passive: true, capture: true });
   window.addEventListener('resize', onScroll, { passive: true });
   update();
 }
