@@ -10,7 +10,6 @@ onReady(() => {
 
 function initIntroHeadingFade() {
   const heading = document.querySelector('.intro .heading-wrap');
-  console.log('[intro-fade] init, heading =', heading);
   if (!heading) {
     return;
   }
@@ -29,7 +28,6 @@ function initIntroHeadingFade() {
       document.body.scrollTop ||
       0;
     const opacity = Math.max(0, Math.min(1, 1 - scrollY / fadeDistance));
-    console.log('[intro-fade] scrollY=', scrollY, 'opacity=', opacity);
     heading.style.opacity = String(opacity);
     ticking = false;
   };
