@@ -15,8 +15,8 @@ function initIntroHeadingFade() {
     return;
   }
 
-  // Полное затухание при прокрутке на 50rem.
-  const FADE_DISTANCE_REM = 50;
+  // Полное затухание при прокрутке на 25rem.
+  const FADE_DISTANCE_REM = 25;
 
   let ticking = false;
   const update = () => {
