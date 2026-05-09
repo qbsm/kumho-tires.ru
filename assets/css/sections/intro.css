@@ -68,6 +68,21 @@
   z-index: 1;
 }
 
+/* Затухание заголовка по скроллу: 0 → 50rem полная прозрачность */
+@supports (animation-timeline: scroll()) {
+  .intro .heading-wrap {
+    animation: intro-heading-fade linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 50rem;
+  }
+
+  @keyframes intro-heading-fade {
+    to {
+      opacity: 0;
+    }
+  }
+}
+
 .intro .cover {
   width: 100%;
   height: 100%;
