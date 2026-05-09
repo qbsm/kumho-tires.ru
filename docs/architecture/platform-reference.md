@@ -1,23 +1,25 @@
-# Эталонная архитектура Slim 4 + Twig + JSON-контент
+# iSmart Platform
 
-Типовое описание платформы, на которой построены italy-platform / kumho-tires.ru / bp. Документ — спецификация для запуска нового проекта на этом стеке и для понимания общих правил при поддержке существующих.
+Эталонная архитектура: Slim 4 + PHP-DI + Twig + JSON-контент. На ней построены italy-platform, kumho-tires.ru, bp. Канонический template — репо `ismart-platform`.
+
+Документ — спецификация для запуска нового проекта на iSmart Platform и для понимания общих правил при поддержке существующих.
 
 ---
 
 ## 1. Тех-стек
 
-| Слой | Что | Зачем |
-|---|---|---|
-| HTTP | **Slim 4** (PSR-7/PSR-15) | Тонкий router без магии; стандартные middleware |
-| DI | **PHP-DI** + `slim-bridge` | Autowiring, factory bindings, `ContainerInterface` |
-| Шаблоны | **Twig 3** + `slim-views` | Безопасный escape, наследование, kebab-case |
-| Email | **Symfony Mailer** | Универсальный DSN (sendmail/SMTP/null) |
-| События | **league/event** (`Psr\EventDispatcher`) | PageLoaded, EntityResolved, SeoBuilt |
-| Логи | **Monolog** | PSR-3, ротация |
-| CSS | PostCSS + lightningcss | BEM, hash-naming, минификация |
-| JS | esbuild / webpack | Code splitting, hash-naming |
-| Контент | JSON в `data/json/{lang}/` | Read-only для приложения, версионируется в git |
-| PHP | 8.2+ (typed props, readonly, `match`) | Современный синтаксис, `declare(strict_types=1)` |
+| Слой    | Что                                      | Зачем                                              |
+| ------- | ---------------------------------------- | -------------------------------------------------- |
+| HTTP    | **Slim 4** (PSR-7/PSR-15)                | Тонкий router без магии; стандартные middleware    |
+| DI      | **PHP-DI** + `slim-bridge`               | Autowiring, factory bindings, `ContainerInterface` |
+| Шаблоны | **Twig 3** + `slim-views`                | Безопасный escape, наследование, kebab-case        |
+| Email   | **Symfony Mailer**                       | Универсальный DSN (sendmail/SMTP/null)             |
+| События | **league/event** (`Psr\EventDispatcher`) | PageLoaded, EntityResolved, SeoBuilt               |
+| Логи    | **Monolog**                              | PSR-3, ротация                                     |
+| CSS     | PostCSS + lightningcss                   | BEM, hash-naming, минификация                      |
+| JS      | esbuild / webpack                        | Code splitting, hash-naming                        |
+| Контент | JSON в `data/json/{lang}/`               | Read-only для приложения, версионируется в git     |
+| PHP     | 8.2+ (typed props, readonly, `match`)    | Современный синтаксис, `declare(strict_types=1)`   |
 
 Не используется: ORM, БД, очереди, контейнеры. Это **content-driven SSG-подобное** приложение с динамическим SEO/i18n.
 
@@ -153,24 +155,25 @@ routeParams = остаток segments
 ```
 
 Расширение поведения — только через config (`config/project.php`):
+
 - `'collections' => [...]` — типы сущностей
 - `'route_map' => ['old' => 'new']` — алиасы page_id
 
 Спец-логика per-collection (не правя Action):
 
-| Поле коллекции | Эффект |
-|---|---|
-| `data_dir` | `data/json/{lang}/{data_dir}/` |
-| `nav_slug` | URL-сегмент (`/foo`) |
-| `list_page_id` | `pages/{list_page_id}.json` — layout list-страницы |
-| `slugs_page` | где лежат slug'и (по умолчанию = `nav_slug`) |
-| `slugs_source` | ключ внутри slugs_page (`items`) |
-| `item_key` | внутренний ключ entity-данных (`item`/`news`/…) |
-| `extras_key` | имя в Twig-extras |
-| `entity_url_pattern` | для breadcrumb / canonical |
-| `template` | спец-шаблон страницы entity (kumho-style) |
-| `og_type` | для og:type метатега |
-| `sort_by` / `sort_format` / `sort_dir` | сортировка items при inject |
+| Поле коллекции                         | Эффект                                             |
+| -------------------------------------- | -------------------------------------------------- |
+| `data_dir`                             | `data/json/{lang}/{data_dir}/`                     |
+| `nav_slug`                             | URL-сегмент (`/foo`)                               |
+| `list_page_id`                         | `pages/{list_page_id}.json` — layout list-страницы |
+| `slugs_page`                           | где лежат slug'и (по умолчанию = `nav_slug`)       |
+| `slugs_source`                         | ключ внутри slugs_page (`items`)                   |
+| `item_key`                             | внутренний ключ entity-данных (`item`/`news`/…)    |
+| `extras_key`                           | имя в Twig-extras                                  |
+| `entity_url_pattern`                   | для breadcrumb / canonical                         |
+| `template`                             | спец-шаблон страницы entity (kumho-style)          |
+| `og_type`                              | для og:type метатега                               |
+| `sort_by` / `sort_format` / `sort_dir` | сортировка items при inject                        |
 
 ---
 
@@ -221,18 +224,18 @@ return static function (App $app): void {
 
 Slim 4: «last added = outermost = runs first».
 
-| Middleware | Что делает |
-|---|---|
-| `RequestDurationMiddleware` | Записывает time-to-response в логи |
-| `CorrelationIdMiddleware` | `X-Correlation-Id` для трассировки |
-| `SecurityHeadersMiddleware` | CSP, HSTS, X-Frame-Options, Permissions-Policy |
-| `CorsMiddleware` | Pre-flight + Access-Control-* для API |
-| `BodyParsingMiddleware` | JSON/form-data → `$request->getParsedBody()` |
-| `RateLimitMiddleware` | По IP, файловое хранилище в `cache/rate_limit/` |
-| `LanguageMiddleware` | Резолвит lang_code из URL/headers, кладёт в request attribute, грузит `global.json` |
-| `RoutingMiddleware` | Slim: матчинг маршрута. **Бросает 404 для незарегистрированных путей** — поэтому ставится до Redirect |
-| `RedirectMiddleware` | 301-редиректы (exact + prefix-based) из `redirects.json` |
-| `TrailingSlashMiddleware` | `/path/` → 301 → `/path` |
+| Middleware                  | Что делает                                                                                            |
+| --------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `RequestDurationMiddleware` | Записывает time-to-response в логи                                                                    |
+| `CorrelationIdMiddleware`   | `X-Correlation-Id` для трассировки                                                                    |
+| `SecurityHeadersMiddleware` | CSP, HSTS, X-Frame-Options, Permissions-Policy                                                        |
+| `CorsMiddleware`            | Pre-flight + Access-Control-\* для API                                                                |
+| `BodyParsingMiddleware`     | JSON/form-data → `$request->getParsedBody()`                                                          |
+| `RateLimitMiddleware`       | По IP, файловое хранилище в `cache/rate_limit/`                                                       |
+| `LanguageMiddleware`        | Резолвит lang_code из URL/headers, кладёт в request attribute, грузит `global.json`                   |
+| `RoutingMiddleware`         | Slim: матчинг маршрута. **Бросает 404 для незарегистрированных путей** — поэтому ставится до Redirect |
+| `RedirectMiddleware`        | 301-редиректы (exact + prefix-based) из `redirects.json`                                              |
+| `TrailingSlashMiddleware`   | `/path/` → 301 → `/path`                                                                              |
 
 Если `addRoutingMiddleware()` зарегистрировать ПОСЛЕ `Redirect`/`TrailingSlash`, RoutingMiddleware становится outermost и кидает 404 на пути `/img/*` ДО того, как `RedirectMiddleware` успевает их редиректнуть. Симптом: префиксные SEO-редиректы возвращают 404.
 
@@ -287,8 +290,8 @@ Twig-globals: `lang_code`, `current_lang`, `is_lang_in_url`, `available_langs`.
    {
      "title": "About — Brand",
      "meta": [
-       {"name": "description", "content": "..."},
-       {"property": "og:title", "content": "..."}
+       { "name": "description", "content": "..." },
+       { "property": "og:title", "content": "..." }
      ],
      "json_ld": { "@context": "schema.org", "@type": "Organization", "name": "..." }
    }
@@ -384,18 +387,19 @@ BEM-нейминг: `block`, `block__element`, `block__element--modifier`. Од�
 
 `SecurityHeadersMiddleware` пишет:
 
-| Header | Значение |
-|---|---|
-| `Content-Security-Policy` | См. ниже |
-| `X-Content-Type-Options` | `nosniff` |
-| `X-Frame-Options` | `SAMEORIGIN` |
-| `Referrer-Policy` | `strict-origin-when-cross-origin` |
-| `Permissions-Policy` | `geolocation=(), microphone=(), camera=()` |
+| Header                      | Значение                                                    |
+| --------------------------- | ----------------------------------------------------------- |
+| `Content-Security-Policy`   | См. ниже                                                    |
+| `X-Content-Type-Options`    | `nosniff`                                                   |
+| `X-Frame-Options`           | `SAMEORIGIN`                                                |
+| `Referrer-Policy`           | `strict-origin-when-cross-origin`                           |
+| `Permissions-Policy`        | `geolocation=(), microphone=(), camera=()`                  |
 | `Strict-Transport-Security` | `max-age=31536000; includeSubDomains; preload` (если HTTPS) |
 
 CSP — два профиля:
 
 **Узкий (без внешних скриптов):**
+
 ```
 default-src 'self';
 script-src 'self' 'unsafe-inline';
@@ -405,6 +409,7 @@ img-src 'self' data: https:;
 ```
 
 **Широкий (внешние https-источники: Yandex.Метрика, api-maps.yandex.ru, smartcaptcha.yandexcloud.net, Google Analytics):**
+
 ```
 default-src 'self' https:;
 script-src 'self' 'unsafe-inline' https:;
@@ -475,6 +480,7 @@ EventDispatcherInterface::class => function ($c) {
 `RateLimitMiddleware` — простой counter по IP в `cache/rate_limit/{ip-hash}.json` (без БД). Применяется только к POST-маршрутам, для которых это сконфигурировано (через DI bind).
 
 Конфиг:
+
 ```php
 'rate_limit_api_send' => ['max_requests' => 10, 'window_seconds' => 60],
 ```
@@ -484,6 +490,7 @@ EventDispatcherInterface::class => function ($c) {
 ## 18. Конфиг: settings.php vs project.php
 
 **`settings.php`** — общий каркас (одинаковый между проектами):
+
 - пути (paths)
 - языки (default_lang, available_langs)
 - twig (cache, debug)
@@ -492,6 +499,7 @@ EventDispatcherInterface::class => function ($c) {
 - cors
 
 **`project.php`** — проект-специфичное (грузится из settings.php через `require`):
+
 - collections
 - route_map
 - sitemap_pages
@@ -507,31 +515,31 @@ EventDispatcherInterface::class => function ($c) {
 
 Шорт:
 
-| Уровень | Правило |
-|---|---|
-| Имена файлов | kebab-case (`card-news.twig`, `news-list.css`) |
-| BEM-классы | `block__element--modifier` |
-| CSS-переменные | `--color-1`, `--md` (с `@custom-media`) |
-| JS-хуки | `js-foo` (не пересекаются со стилевыми классами) |
-| Twig-переменные | snake_case (`page_id`, `lang_code`) |
-| JSON-ключи | kebab-case в URL/slug, snake_case в payload (`category_id`, `og_type`) |
-| PHP-классы | PascalCase, suffix по роли (`PageAction`, `DataLoaderService`, `RedirectMiddleware`) |
-| PHP-методы | camelCase (`loadEntity`, `processTemplates`) |
+| Уровень         | Правило                                                                              |
+| --------------- | ------------------------------------------------------------------------------------ |
+| Имена файлов    | kebab-case (`card-news.twig`, `news-list.css`)                                       |
+| BEM-классы      | `block__element--modifier`                                                           |
+| CSS-переменные  | `--color-1`, `--md` (с `@custom-media`)                                              |
+| JS-хуки         | `js-foo` (не пересекаются со стилевыми классами)                                     |
+| Twig-переменные | snake_case (`page_id`, `lang_code`)                                                  |
+| JSON-ключи      | kebab-case в URL/slug, snake_case в payload (`category_id`, `og_type`)               |
+| PHP-классы      | PascalCase, suffix по роли (`PageAction`, `DataLoaderService`, `RedirectMiddleware`) |
+| PHP-методы      | camelCase (`loadEntity`, `processTemplates`)                                         |
 
 ---
 
 ## 20. Когда что добавлять
 
-| Задача | Куда |
-|---|---|
-| Новая статичная страница (`/foo`) | `data/json/{lang}/pages/foo.json` + `data/json/{lang}/seo/foo.json`; зарегистрировать в `routes.php` (или авто-цикл по списку) |
-| Новый тип сущности (collection) | `config/project.php`: `'collections' => ['foo' => [...]]` (см. §5). Если нужен спец-шаблон — `pages/foo.twig` + `'template' => 'pages/foo.twig'` |
-| Новая секция | `templates/sections/{name}.twig` + `assets/css/sections/{name}/` + (опционально) `assets/js/sections/{name}.js`. Использование: добавить блок `{name, visible, data}` в `pageData.sections` нужной страницы |
-| Новый компонент | `templates/components/{name}.twig` + `assets/css/components/{name}/`. Включается через `{% include %}` |
-| Новый язык | Запись в `available_langs`; создать `data/json/{newlang}/{pages,seo,...}/`; обновить routes-цикл; убедиться, что `LanguageMiddleware` его видит |
-| Новый редирект | `config/redirects.json`: `{"from": "/old", "to": "/new", "status": 301}` или `{"from_prefix": "/old/", "to_prefix": "/new/", "status": 301}` |
-| Новое внешнее API | Расширить CSP в `SecurityHeadersMiddleware`; добавить URL в `csp_extra_origins` если нужны явные origin'ы |
-| Новый формат события | `src/Event/{Name}Event.php` + listener в `src/EventListener/`; регистрация в DI |
+| Задача                            | Куда                                                                                                                                                                                                        |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Новая статичная страница (`/foo`) | `data/json/{lang}/pages/foo.json` + `data/json/{lang}/seo/foo.json`; зарегистрировать в `routes.php` (или авто-цикл по списку)                                                                              |
+| Новый тип сущности (collection)   | `config/project.php`: `'collections' => ['foo' => [...]]` (см. §5). Если нужен спец-шаблон — `pages/foo.twig` + `'template' => 'pages/foo.twig'`                                                            |
+| Новая секция                      | `templates/sections/{name}.twig` + `assets/css/sections/{name}/` + (опционально) `assets/js/sections/{name}.js`. Использование: добавить блок `{name, visible, data}` в `pageData.sections` нужной страницы |
+| Новый компонент                   | `templates/components/{name}.twig` + `assets/css/components/{name}/`. Включается через `{% include %}`                                                                                                      |
+| Новый язык                        | Запись в `available_langs`; создать `data/json/{newlang}/{pages,seo,...}/`; обновить routes-цикл; убедиться, что `LanguageMiddleware` его видит                                                             |
+| Новый редирект                    | `config/redirects.json`: `{"from": "/old", "to": "/new", "status": 301}` или `{"from_prefix": "/old/", "to_prefix": "/new/", "status": 301}`                                                                |
+| Новое внешнее API                 | Расширить CSP в `SecurityHeadersMiddleware`; добавить URL в `csp_extra_origins` если нужны явные origin'ы                                                                                                   |
+| Новый формат события              | `src/Event/{Name}Event.php` + listener в `src/EventListener/`; регистрация в DI                                                                                                                             |
 
 ---
 

@@ -1,36 +1,39 @@
-# Поддержание одноархитектурных проектов в актуальном состоянии
+# iSmart Platform — синхронизация экземпляров
 
-Действует для трёх проектов на единой архитектуре Slim 4 + PHP-DI + Twig + Symfony Mailer + league/event:
+Действует для проектов на платформе **iSmart Platform** (`ismart-platform`) — единая архитектура Slim 4 + PHP-DI + Twig + Symfony Mailer + league/event.
+
+Текущие экземпляры:
 
 - `italy-platform` — каноническая база
 - `kumho-tires.ru` — домен авто-шин (RL/CDN, FTP-деплой)
 - `bp` — Бипитрон (миграция с легаси PHP)
+- `ismart-platform` — template-репозиторий платформы (стартовая точка для новых проектов)
 
-Цель документа — дать однозначные правила, что обязано быть синхронизировано между проектами, что может отличаться, и как именно поддерживать консистентность при правках.
+Цель документа — дать однозначные правила, что обязано быть синхронизировано между экземплярами iSmart Platform, что может отличаться, и как именно поддерживать консистентность при правках.
 
 ---
 
-## 1. Что обязательно идентично (architecture core)
+## 1. Что обязательно идентично (iSmart Platform core)
 
-Изменения в этих файлах применяются СИНХРОННО ко всем трём проектам, отдельным коммитом в каждом репозитории с одинаковым сообщением (`fix(middleware): …` и т. п.).
+Изменения в этих файлах применяются СИНХРОННО ко всем экземплярам iSmart Platform, отдельным коммитом в каждом репозитории с одинаковым сообщением (`fix(middleware): …` и т. п.).
 
-| Файл / директория | Назначение |
-|---|---|
-| `src/Action/PageAction.php` | Generic-обработчик страниц и коллекций |
-| `src/Service/DataLoaderService.php` | Загрузка JSON-страниц/сущностей |
-| `src/Service/SeoService.php`, `SeoBuilderRegistry.php`, `SeoBuilderInterface.php` | SEO pipeline |
-| `src/Service/TemplateDataBuilder.php` | Сборка контекста для Twig |
-| `src/Middleware/*` (Redirect, TrailingSlash, SecurityHeaders, Cors, RateLimit, Language, RequestDuration, CorrelationId) | PSR-15 middleware |
-| `src/Event/*`, `src/EventListener/*` | События приложения |
-| `src/Support/*` (BaseUrlResolver, JsonProcessor, …) | Утилиты ядра |
-| `src/Handler/*` (HttpErrorHandler, ServerErrorHandler) | Обработчики ошибок |
-| `config/middleware.php` | **Порядок регистрации middleware (см. §3)** |
-| `config/container.php` (DI-биндинги ядра) | Без проектной специфики |
-| `config/dependencies.php`, `config/errors.php` | Базовая обвязка |
-| `public/index.php` | Bootstrap Slim |
-| `composer.json` (lock-зависимости) | Версии Slim/PHP-DI/Twig идентичны |
+| Файл / директория                                                                                                        | Назначение                                  |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------- |
+| `src/Action/PageAction.php`                                                                                              | Generic-обработчик страниц и коллекций      |
+| `src/Service/DataLoaderService.php`                                                                                      | Загрузка JSON-страниц/сущностей             |
+| `src/Service/SeoService.php`, `SeoBuilderRegistry.php`, `SeoBuilderInterface.php`                                        | SEO pipeline                                |
+| `src/Service/TemplateDataBuilder.php`                                                                                    | Сборка контекста для Twig                   |
+| `src/Middleware/*` (Redirect, TrailingSlash, SecurityHeaders, Cors, RateLimit, Language, RequestDuration, CorrelationId) | PSR-15 middleware                           |
+| `src/Event/*`, `src/EventListener/*`                                                                                     | События приложения                          |
+| `src/Support/*` (BaseUrlResolver, JsonProcessor, …)                                                                      | Утилиты ядра                                |
+| `src/Handler/*` (HttpErrorHandler, ServerErrorHandler)                                                                   | Обработчики ошибок                          |
+| `config/middleware.php`                                                                                                  | **Порядок регистрации middleware (см. §3)** |
+| `config/container.php` (DI-биндинги ядра)                                                                                | Без проектной специфики                     |
+| `config/dependencies.php`, `config/errors.php`                                                                           | Базовая обвязка                             |
+| `public/index.php`                                                                                                       | Bootstrap Slim                              |
+| `composer.json` (lock-зависимости)                                                                                       | Версии Slim/PHP-DI/Twig идентичны           |
 
-**Правило:** перед началом работы в файле из этой таблицы делаем `diff` с двумя другими проектами. После правки — `diff` снова, должен совпасть.
+**Правило:** перед началом работы в файле из этой таблицы делаем `diff` с другими экземплярами iSmart Platform. После правки — `diff` снова, должен совпасть.
 
 ```bash
 diff italy-platform/src/Action/PageAction.php kumho-tires.ru/src/Action/PageAction.php
@@ -41,14 +44,14 @@ diff italy-platform/src/Action/PageAction.php bp/src/Action/PageAction.php
 
 ## 2. Что отличается per-project (project-specific)
 
-| Область | Где |
-|---|---|
-| Контент | `data/json/{lang}/...` |
-| Вёрстка | `templates/sections/*.twig`, `templates/components/*.twig`, `templates/pages/*.twig` |
-| CSS / JS | `assets/css/**`, `assets/js/**` |
-| Коллекции, route_map, sitemap_pages | `config/project.php` или раздел `collections` в `config/settings.php` |
-| Конфиг безопасности (CSP) | `src/Middleware/SecurityHeadersMiddleware.php::DEFAULT_CSP` — может расширяться под внешние источники проекта |
-| Деплой / FTP / vhost | `.env`, `deploy/*`, hooks |
+| Область                             | Где                                                                                                           |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Контент                             | `data/json/{lang}/...`                                                                                        |
+| Вёрстка                             | `templates/sections/*.twig`, `templates/components/*.twig`, `templates/pages/*.twig`                          |
+| CSS / JS                            | `assets/css/**`, `assets/js/**`                                                                               |
+| Коллекции, route_map, sitemap_pages | `config/project.php` или раздел `collections` в `config/settings.php`                                         |
+| Конфиг безопасности (CSP)           | `src/Middleware/SecurityHeadersMiddleware.php::DEFAULT_CSP` — может расширяться под внешние источники проекта |
+| Деплой / FTP / vhost                | `.env`, `deploy/*`, hooks                                                                                     |
 
 Эти файлы можно (и нужно) править независимо. Но **не копируйте сюда логику, которая должна жить в core** (см. §1).
 
@@ -94,11 +97,13 @@ $app->add(TrailingSlashMiddleware::class);
 `src/Middleware/SecurityHeadersMiddleware.php::DEFAULT_CSP` — единственное место, где CSP для проекта прописывается явно.
 
 Базовый профиль (italy):
+
 ```
 default-src 'self'; script-src 'self' 'unsafe-inline'; ...
 ```
 
 Если проект подключает внешние https-скрипты (Yandex.Метрика, api-maps.yandex.ru, smartcaptcha.yandexcloud.net, Google Analytics) — расширяем до:
+
 ```
 default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src ... https:;
 font-src 'self' https:; connect-src 'self' https: wss:; ...
@@ -127,6 +132,7 @@ font-src 'self' https:; connect-src 'self' https: wss:; ...
 Только в `config/project.php` (kumho) или раздел `collections` в `config/settings.php` (italy/bp). Без правок PHP в `PageAction`.
 
 Минимальный набор полей коллекции:
+
 ```php
 'collection-name' => [
     'data_dir'     => 'foo',          // data/json/{lang}/foo/{slug}.json
@@ -202,9 +208,10 @@ font-src 'self' https:; connect-src 'self' https: wss:; ...
 ## 12. Где живёт этот документ
 
 Канонический источник — `italy-platform/docs/guides/multi-project-sync.md`.  
-Копии (зеркала) лежат в:
+Копии (зеркала) лежат во всех экземплярах iSmart Platform:
 
+- `ismart-platform/docs/guides/multi-project-sync.md`
 - `kumho-tires.ru/docs/guides/multi-project-sync.md`
 - `bp/docs/guides/multi-project-sync.md`
 
-При изменении правил — обновляются все три копии в одном проходе, как и любой core-файл.
+При изменении правил — обновляются все копии в одном проходе, как и любой core-файл.
