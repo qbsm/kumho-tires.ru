@@ -4,6 +4,40 @@ import { onReady } from '../base/init.js';
 onReady(() => {
   initIntroSlider();
 });
+onReady(() => {
+  initIntroHeadingFade();
+});
+
+function initIntroHeadingFade() {
+  const heading = document.querySelector('.intro .heading-wrap');
+  if (!heading) {
+    return;
+  }
+
+  // Полное затухание при прокрутке на 50rem.
+  const FADE_DISTANCE_REM = 50;
+
+  let ticking = false;
+  const update = () => {
+    const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    const fadeDistance = Math.max(FADE_DISTANCE_REM * rem, 1);
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const opacity = Math.max(0, Math.min(1, 1 - scrollY / fadeDistance));
+    heading.style.opacity = String(opacity);
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+}
 
 /**
  * Запускает видео в активном слайде и ставит на паузу в остальных.
