@@ -4,11 +4,6 @@
       "title": "Русский",
       "code": "ru",
       "direction": "ltr"
-    },
-    {
-      "title": "English",
-      "code": "en",
-      "direction": "ltr"
     }
   ],
   "phones": [
