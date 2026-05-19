@@ -41,6 +41,11 @@ final class SecurityHeadersMiddleware implements MiddlewareInterface
             $response = $response->withHeader('Content-Security-Policy', $this->contentSecurityPolicy);
         }
 
+        $host = $request->getUri()->getHost();
+        if (str_ends_with($host, '.ismart.pro') || ($_ENV['APP_ENV'] ?? '') === 'staging') {
+            $response = $response->withHeader('X-Robots-Tag', 'noindex, nofollow');
+        }
+
         return $response;
     }
 }
