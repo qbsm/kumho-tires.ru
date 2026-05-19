@@ -1,10 +1,10 @@
 {
   "name": "index",
-  "title": "Kumho Tire — главная",
+  "title": "Kumho Tire — сайт официального дистрибьютора шин Kumho tire в России",
   "meta": [
     {
       "name": "description",
-      "content": "Kumho Tire — официальный сайт бренда шин Kumho. Линейка шин для легковых автомобилей, кроссоверов и внедорожников."
+      "content": "Шины для легковых авто, внедорожников и легко-грузовых автомобилей."
     },
     {
       "property": "og:url",
@@ -16,11 +16,11 @@
     },
     {
       "property": "og:title",
-      "content": "Kumho Tire — главная"
+      "content": "Kumho Tire — сайт официального дистрибьютора шин Kumho tire в России"
     },
     {
       "property": "og:description",
-      "content": "Kumho Tire — официальный сайт бренда шин Kumho. Линейка шин для легковых автомобилей, кроссоверов и внедорожников."
+      "content": "Шины для легковых авто, внедорожников и легко-грузовых автомобилей."
     },
     {
       "property": "og:site_name",

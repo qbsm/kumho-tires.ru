@@ -86,9 +86,7 @@ onReady(() => {
     }
 
     // Collect available values from cards matching season only (for selects)
-    const seasonMatchCards = cardData.filter(
-      (cd) => !season || includesToken(cd.season, season),
-    );
+    const seasonMatchCards = cardData.filter((cd) => !season || includesToken(cd.season, season));
 
     const availDiameters = new Set();
     const availProfiles = new Set();

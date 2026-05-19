@@ -1,4 +1,5 @@
 import { onReady } from '../base/init.js';
+import { cityToSlug, slugToCity } from '../utils/translit.js';
 
 const YANDEX_MAPS_API = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
 
@@ -61,7 +62,8 @@ function applyDetectedCoords(mapState, citySelect, applyFilters, coords) {
   const nearestPoint = findNearestPoint(mapState.points, coords);
   let cityWasApplied = false;
 
-  if (citySelect && nearestPoint?.city) {
+  // Если город уже выбран (например, из URL) — не перетираем геолокацией.
+  if (citySelect && !citySelect.value && nearestPoint?.city) {
     const cityValue = nearestPoint.city.toString().trim();
     if (cityValue) {
       const hasOption = Array.from(citySelect.options || []).some((option) => option.value === cityValue);
@@ -377,6 +379,132 @@ function createDealerMap(mapEl, onReadyMap) {
     });
 }
 
+function getCityOptions(citySelect) {
+  if (!citySelect) {
+    return [];
+  }
+  return Array.from(citySelect.options || [])
+    .map((option) => option.value)
+    .filter((value) => value !== '');
+}
+
+function getBasePathSegment() {
+  const path = window.location.pathname || '/';
+  const segments = path.split('/').filter(Boolean);
+  return segments[0] || '';
+}
+
+function getCitySlugFromUrl() {
+  const path = window.location.pathname || '/';
+  const segments = path.split('/').filter(Boolean);
+  return segments[1] || '';
+}
+
+function buildBuyUrl(basePath, citySlug) {
+  const search = window.location.search || '';
+  const hash = window.location.hash || '';
+  const cleanBase = basePath ? `/${basePath}` : '';
+  const path = citySlug ? `${cleanBase}/${citySlug}` : cleanBase || '/';
+  return `${path}${search}${hash}`;
+}
+
+function parseCityCases(headingEl) {
+  if (!headingEl?.dataset?.cityCases) {
+    return {};
+  }
+  try {
+    const parsed = JSON.parse(headingEl.dataset.cityCases);
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function setupCityCopySync(sectionEl, citySelect) {
+  const headingEl = sectionEl?.querySelector('.js-dealers-heading');
+  const titleEl = headingEl?.querySelector('.heading');
+  const cases = parseCityCases(headingEl);
+
+  const headingBase = headingEl?.dataset?.headingBase || titleEl?.textContent || '';
+  const headingTemplate = headingEl?.dataset?.headingCityTemplate || `${headingBase} в {city}`;
+
+  const metaTitleBase = sectionEl?.dataset?.metaTitleBase || '';
+  const metaTitleTemplate = sectionEl?.dataset?.metaTitleCityTemplate || '';
+  const metaDescBase = sectionEl?.dataset?.metaDescriptionBase || '';
+  const metaDescTemplate = sectionEl?.dataset?.metaDescriptionCityTemplate || '';
+
+  const descEl = document.querySelector('meta[name="description"]');
+  const ogTitleEl = document.querySelector('meta[property="og:title"]');
+  const ogDescEl = document.querySelector('meta[property="og:description"]');
+  const twitterDescEl = document.querySelector('meta[name="twitter:description"]');
+  const twitterTitleEl = document.querySelector('meta[name="twitter:title"]');
+
+  return () => {
+    const city = citySelect?.value || '';
+    const cityCase = city ? cases[city] || city : '';
+
+    if (titleEl) {
+      titleEl.textContent = cityCase ? headingTemplate.replace('{city}', cityCase) : headingBase;
+    }
+
+    if (metaTitleBase) {
+      const value = cityCase && metaTitleTemplate ? metaTitleTemplate.replace('{city}', cityCase) : metaTitleBase;
+      document.title = value;
+      ogTitleEl?.setAttribute('content', value);
+      twitterTitleEl?.setAttribute('content', value);
+    }
+
+    if (metaDescBase) {
+      const value = cityCase && metaDescTemplate ? metaDescTemplate.replace('{city}', cityCase) : metaDescBase;
+      descEl?.setAttribute('content', value);
+      ogDescEl?.setAttribute('content', value);
+      twitterDescEl?.setAttribute('content', value);
+    }
+  };
+}
+
+function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
+  if (!sectionEl || !citySelect || sectionEl.dataset.urlSyncCity !== '1') {
+    return;
+  }
+
+  const basePath = getBasePathSegment();
+  const cities = getCityOptions(citySelect);
+  const updateCopy = setupCityCopySync(sectionEl, citySelect);
+
+  const initialSlug = getCitySlugFromUrl();
+  if (initialSlug) {
+    const matchedCity = slugToCity(initialSlug, cities);
+    if (matchedCity && citySelect.value !== matchedCity) {
+      citySelect.value = matchedCity;
+      updateCopy();
+    }
+  }
+
+  const pushUrl = () => {
+    const slug = cityToSlug(citySelect.value || '');
+    const target = buildBuyUrl(basePath, slug);
+    if (target !== `${window.location.pathname}${window.location.search}${window.location.hash}`) {
+      window.history.replaceState({ city: citySelect.value || '' }, '', target);
+    }
+  };
+
+  citySelect.addEventListener('change', () => {
+    pushUrl();
+    updateCopy();
+  });
+
+  window.addEventListener('popstate', () => {
+    const slug = getCitySlugFromUrl();
+    const matchedCity = slug ? slugToCity(slug, cities) : '';
+    if (citySelect.value !== matchedCity) {
+      citySelect.value = matchedCity;
+      applyFilters();
+      updateCopy();
+    }
+  });
+}
+
 onReady(() => {
   const sections = document.querySelectorAll('.dealers.section');
   sections.forEach((sectionEl) => {
@@ -430,6 +558,8 @@ onReady(() => {
         applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
       });
     }
+
+    setupUrlCitySync(sectionEl, citySelect, applyFilters);
 
     citySelect?.addEventListener('change', applyFilters);
     guaranteeCheckbox?.addEventListener('change', applyFilters);

@@ -40,10 +40,21 @@ return [
         'index',
         'contacts',
         'policy',
-        'agree',
+        'cookies-policy',
         'tires-list',
         'buy',
         'news',
+    ],
+
+    // Динамические подпути в sitemap.xml: page_id => источник данных и стратегия slug.
+    // Для /buy раскрываем {lang}/pages/dealers.json → items[].city → /buy/<city-slug>/.
+    'sitemap_dynamic_pages' => [
+        'buy' => [
+            'data_page' => 'dealers',
+            'list_key' => 'items',
+            'value_key' => 'city',
+            'slugger' => 'city',
+        ],
     ],
 
     // Внешние интеграции (флаги включения)

@@ -1,9 +1,9 @@
 {
-  "title": "Где купить шины Kumho",
+  "title": "{{ resolve_section_meta('buy', 'dealers', 'title', lang_code, route_params) }}",
   "meta": [
     {
       "name": "description",
-      "content": "Адреса точек продаж шин Kumho и карта дилеров."
+      "content": "{{ resolve_section_meta('buy', 'dealers', 'description', lang_code, route_params) }}"
     },
     {
       "property": "og:type",
@@ -11,11 +11,11 @@
     },
     {
       "property": "og:title",
-      "content": "Где купить шины Kumho"
+      "content": "{{ resolve_section_meta('buy', 'dealers', 'title', lang_code, route_params) }}"
     },
     {
       "property": "og:description",
-      "content": "Адреса точек продаж шин Kumho и карта дилеров."
+      "content": "{{ resolve_section_meta('buy', 'dealers', 'description', lang_code, route_params) }}"
     },
     {
       "property": "og:site_name",

@@ -38,9 +38,9 @@ onReady(() => {
   const thumbs = document.querySelectorAll('.tire-detail__thumb');
   const mainImage = document.querySelector('.tire-detail__main-image');
 
-  if (!thumbs.length || !mainImage) return;
+  if (!mainImage) return;
 
-  // --- Thumbnail switching ---
+  // --- Thumbnail switching (только если миниатюр > 1) ---
   thumbs.forEach((thumb) => {
     thumb.addEventListener('click', () => {
       thumbs.forEach((t) => t.classList.remove('active'));
@@ -65,17 +65,30 @@ onReady(() => {
   if (typeof window.GLightbox !== 'function') return;
 
   const galleryItems = [];
-  thumbs.forEach((thumb) => {
-    const url = getLargestImageUrl(thumb);
+  if (thumbs.length > 0) {
+    thumbs.forEach((thumb) => {
+      const url = getLargestImageUrl(thumb);
+      if (url) {
+        const img = thumb.querySelector('img');
+        galleryItems.push({
+          href: url,
+          type: 'image',
+          alt: img ? img.alt || '' : '',
+        });
+      }
+    });
+  } else {
+    // Одно фото без миниатюр — берём напрямую из mainImage.
+    const url = getLargestImageUrl(mainImage);
     if (url) {
-      const img = thumb.querySelector('img');
+      const img = mainImage.querySelector('img');
       galleryItems.push({
         href: url,
         type: 'image',
         alt: img ? img.alt || '' : '',
       });
     }
-  });
+  }
 
   if (!galleryItems.length) return;
 
@@ -86,6 +99,7 @@ onReady(() => {
     closeOnOutsideClick: true,
   });
 
+  mainImage.style.cursor = 'pointer';
   mainImage.addEventListener('click', () => {
     const activeThumb = document.querySelector('.tire-detail__thumb.active');
     const index = activeThumb ? parseInt(activeThumb.dataset.index, 10) : 0;

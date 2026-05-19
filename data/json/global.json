@@ -26,21 +26,24 @@
         },
         {
           "title": "Бренд",
-          "href": "/brand/",
+          "href": "/brand",
           "visible": false
         },
         {
           "title": "Шины",
-          "href": "/tires/",
-          "active_for": ["tires-list", "tire"]
+          "href": "/tires",
+          "active_for": [
+            "tires-list",
+            "tire"
+          ]
         },
         {
           "title": "Расширенная гарантия",
-          "href": "/warranty/"
+          "href": "/warranty"
         },
         {
           "title": "Где купить",
-          "href": "/buy/",
+          "href": "/buy",
           "visible": true
         }
       ]
@@ -53,21 +56,24 @@
         },
         {
           "title": "Brand",
-          "href": "/brand/",
+          "href": "/brand",
           "visible": false
         },
         {
           "title": "Tires",
-          "href": "/tires/",
-          "active_for": ["tires-list", "tire"]
+          "href": "/tires",
+          "active_for": [
+            "tires-list",
+            "tire"
+          ]
         },
         {
           "title": "Extended warranty",
-          "href": "/warranty/"
+          "href": "/warranty"
         },
         {
           "title": "Where to buy",
-          "href": "/buy/",
+          "href": "/buy",
           "visible": true
         }
       ]
@@ -106,22 +112,24 @@
   },
   "policy": {
     "ru": {
-      "title": "Политика в отношении обработки персональных данных",
-      "href": "/policy/"
+      "title": "Политика обработки персональных данных",
+      "href": "/data/docs/personal-data-policy.pdf",
+      "target": "_blank"
     },
     "en": {
       "title": "Privacy Policy",
-      "href": "/policy/"
+      "href": "/data/docs/personal-data-policy.pdf",
+      "target": "_blank"
     }
   },
-  "agree": {
+  "cookies-policy": {
     "ru": {
-      "title": "Пользовательское соглашение",
-      "href": "/agree/"
+      "title": "Политика использования cookie-файлов",
+      "href": "/cookies-policy"
     },
     "en": {
-      "title": "User Agreement",
-      "href": "/agree/"
+      "title": "Cookie Policy",
+      "href": "/cookies-policy"
     }
   },
   "copyright": {
@@ -130,12 +138,47 @@
   },
   "form-callback": {
     "fields": [
-      { "type": "tel", "name": "phone", "inputmode": "tel", "autocomplete": "tel", "validation": { "required": true, "validator": "phone" } },
-      { "type": "text", "name": "name", "autocomplete": "name", "validation": { "required": true, "minLength": 2 } },
-      { "type": "text", "name": "square", "validation": { "required": true } },
-      { "type": "checkbox", "name": "policy", "validation": { "required": true } },
-      { "type": "hidden", "name": "current_url" },
-      { "type": "hidden", "name": "csrf_token" }
+      {
+        "type": "tel",
+        "name": "phone",
+        "inputmode": "tel",
+        "autocomplete": "tel",
+        "validation": {
+          "required": true,
+          "validator": "phone"
+        }
+      },
+      {
+        "type": "text",
+        "name": "name",
+        "autocomplete": "name",
+        "validation": {
+          "required": true,
+          "minLength": 2
+        }
+      },
+      {
+        "type": "text",
+        "name": "square",
+        "validation": {
+          "required": true
+        }
+      },
+      {
+        "type": "checkbox",
+        "name": "policy",
+        "validation": {
+          "required": true
+        }
+      },
+      {
+        "type": "hidden",
+        "name": "current_url"
+      },
+      {
+        "type": "hidden",
+        "name": "csrf_token"
+      }
     ],
     "placeholder": {
       "ru": {
@@ -158,7 +201,7 @@
         "phone": "Телефон",
         "name": "Ваше имя",
         "square": "Площадь, м²",
-        "policy": "Я ознакомился с&nbsp;<a href='/policy/' target='_blank'>Политикой обработки персональных данных</a> и&nbsp;<a href='/agree/' target='_blank'>Пользовательским соглашением,</a> принимаю условия Соглашения и&nbsp;согласен с&nbsp;<a href='/policy/' target='_blank'>обработкой моих персональных данных</a> способами и&nbsp;для целей указанных в&nbsp;Политике.",
+        "policy": "Я ознакомился с&nbsp;<a href='/data/docs/personal-data-policy.pdf' target='_blank'>Политикой обработки персональных данных</a> и&nbsp;согласен с&nbsp;обработкой моих персональных данных способами и&nbsp;для целей, указанных в&nbsp;Политике.",
         "photos": "Прикрепите изображения",
         "message": "Сообщение"
       },
@@ -284,14 +327,14 @@
   },
   "cookie-panel": {
     "ru": {
-      "desc": "Наш сайт использует файлы cookie для улучшения работы сайта — <a href='/policy/' class='link color-2 weight-400'>подробнее</a>",
+      "desc": "Мы используем <a href='/cookies-policy/' class='link color-2 weight-400'>cookie-файлы</a> для вашего удобства пользования сайтом",
       "button": {
-        "title": "Принимаю",
+        "title": "Принять",
         "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"
       }
     },
     "en": {
-      "desc": "Our website uses cookies to improve the site's performance — <a href='/en/policy/' class='link color-2 weight-400'>learn more</a>",
+      "desc": "We use <a href='/cookies-policy/' class='link color-2 weight-400'>cookies</a> to improve your experience on our website",
       "button": {
         "title": "Accept",
         "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"
