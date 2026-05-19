@@ -40,7 +40,7 @@ return [
         'index',
         'contacts',
         'policy',
-        'agree',
+        'cookies-policy',
         'tires-list',
         'buy',
         'news',

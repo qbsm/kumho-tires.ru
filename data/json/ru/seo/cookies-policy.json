@@ -1,0 +1,38 @@
+{
+  "name": "cookies-policy",
+  "title": "Политика использования cookie-файлов",
+  "meta": [
+    {
+      "name": "description",
+      "content": "Политика использования cookie-файлов на сайте kumho-tires.ru. Типы cookies, цели использования и как отказаться от обработки."
+    },
+    {
+      "property": "og:url",
+      "content": "https://kumho-tires.ru/cookies-policy"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Политика использования cookie-файлов"
+    },
+    {
+      "property": "og:description",
+      "content": "Политика использования cookie-файлов на сайте kumho-tires.ru. Типы cookies, цели использования и как отказаться от обработки."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Kumho Tire"
+    },
+    {
+      "property": "og:image",
+      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+    },
+    {
+      "property": "og:image:secure_url",
+      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+    }
+  ]
+}
