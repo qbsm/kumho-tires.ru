@@ -131,14 +131,8 @@ function syncToPublic(sourceDir, newFileName) {
     .forEach((f) => fs.unlinkSync(path.join(publicBuildDir, f)));
 
   // Копируем новый CSS и манифест
-  fs.copyFileSync(
-    path.join(sourceDir, newFileName),
-    path.join(publicBuildDir, newFileName),
-  );
-  fs.copyFileSync(
-    path.join(sourceDir, 'css-manifest.json'),
-    path.join(publicBuildDir, 'css-manifest.json'),
-  );
+  fs.copyFileSync(path.join(sourceDir, newFileName), path.join(publicBuildDir, newFileName));
+  fs.copyFileSync(path.join(sourceDir, 'css-manifest.json'), path.join(publicBuildDir, 'css-manifest.json'));
   console.log(`Синхронизировано в public: ${newFileName}`);
 }
 

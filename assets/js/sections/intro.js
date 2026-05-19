@@ -22,11 +22,7 @@ function initIntroHeadingFade() {
     const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
     const fadeDistance = Math.max(FADE_DISTANCE_REM * rem, 1);
     const scrollY =
-      window.scrollY ||
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0;
+      window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const opacity = Math.max(0, Math.min(1, 1 - scrollY / fadeDistance));
     heading.style.opacity = String(opacity);
     ticking = false;
