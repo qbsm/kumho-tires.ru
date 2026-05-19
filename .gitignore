@@ -71,6 +71,13 @@ assets/js/build/*
 *.bundle.css
 *.[0-9a-f]*.css
 *.[0-9a-f]*.js
+# Исключения: корневые конфиги (паттерн выше ловит их из-за hex-символов c/d/e/f в имени)
+!webpack.config.js
+!postcss.config.js
+!eslint.config.js
+!eslint.config.mjs
+!stylelint.config.mjs
+!vitest.config.js
 
 # Файлы манифестов сборки
 *-manifest.json
