@@ -39,21 +39,20 @@
 
 .footer .footer__logo-link {
   display: block;
-  width: 9.4rem;
-  height: auto;
+  width: auto;
+  height: 2.2rem;
 
   @media (--lg) {
-    width: 14rem;
+    height: 3.2rem;
   }
 }
 
 .footer__logo {
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   object-fit: contain;
   object-position: left top;
-  filter: brightness(0) invert(1);
 }
 
 .footer .section__subitem.heading-wrap {

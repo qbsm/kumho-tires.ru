@@ -96,11 +96,11 @@
     },
     "vertical": {
       "white": {
-        "src": "data/img/ui/logos/logo-v-color-1.svg",
+        "src": "data/img/ui/logos/dealer-brand-logo-color-1.svg",
         "alt": "Logo"
       },
       "black": {
-        "src": "data/img/ui/logos/logo-v-color-2.svg",
+        "src": "data/img/ui/logos/dealer-brand-logo-color-2.svg",
         "alt": "Logo"
       }
     }

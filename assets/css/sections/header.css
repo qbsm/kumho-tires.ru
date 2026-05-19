@@ -62,13 +62,18 @@
 
 .header .section__subitem.logo-wrap a {
   display: flex;
-  width: 9.4rem;
-  height: auto;
+  width: auto;
+  height: 2.2rem;
   transition: all 0.5s ease-out;
 
   @media (--lg) {
-    width: 14rem;
+    height: 3.2rem;
   }
+}
+
+.header .section__subitem.logo-wrap a img {
+  width: auto;
+  height: 100%;
 }
 
 .header .section__subitem.nav-wrap {
