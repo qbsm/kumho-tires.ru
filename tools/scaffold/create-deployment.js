@@ -40,9 +40,6 @@ APP_DEFAULT_LANG=ru
 
 YANDEX_METRIC_ID=0
 
-# Photoroom API
-PHOTOROOM_API_KEY=
-PHOTOROOM_SANDBOX_API_KEY=
 
 # n8n (Этап 4)
 # N8N_BASE_URL=http://n8n:5678
@@ -74,8 +71,6 @@ APP_DEFAULT_LANG=ru          # Язык по умолчанию
 
 YANDEX_METRIC_ID=0           # ID Яндекс.Метрики
 
-PHOTOROOM_API_KEY=            # API-ключ Photoroom
-PHOTOROOM_SANDBOX_API_KEY=    # Sandbox API-ключ Photoroom
 
 # n8n (Этап 4)
 N8N_BASE_URL=                # http://n8n:5678

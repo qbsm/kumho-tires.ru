@@ -6,16 +6,6 @@
   "platform_branch": "distill/initial-baseline",
   "last_sync": "2026-05-20T00:00:00Z",
   "overrides": {
-    "src/Action/PhotoroomRemoveBackgroundAction.php": {
-      "reason": "kumho-only: Photoroom API удаляет фон на фотографиях шин",
-      "accepted_drift": true,
-      "first_seen": "2026-05-20"
-    },
-    "src/Api/PhotoroomApiClient.php": {
-      "reason": "kumho-only: клиент Photoroom API (используется PhotoroomRemoveBackgroundAction)",
-      "accepted_drift": true,
-      "first_seen": "2026-05-20"
-    },
     "src/Support/CitySlugger.php": {
       "reason": "kumho-only: транслитерация городов для /buy/{city}/ — только у kumho есть dealers по городам",
       "accepted_drift": true,
