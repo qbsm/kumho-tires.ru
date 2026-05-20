@@ -40,6 +40,12 @@
       "reason": "deployment-specific: коллекция tires для GEO-краулеров",
       "accepted_drift": true,
       "first_seen": "2026-05-20"
+    },
+    "templates/sections/tires.twig": {
+      "reason": "kumho-only: секция списка шин на главной",
+      "accepted_drift": true,
+      "first_seen": "2026-05-20",
+      "last_review": "2026-05-20"
     }
   },
   "drift": {
