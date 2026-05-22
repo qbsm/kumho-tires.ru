@@ -6,20 +6,6 @@
       "data": {}
     },
     {
-      "name": "promo",
-      "data": {
-        "container": "container-sm",
-        "heading": {
-          "tag": "h1",
-          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
-          "title": "<span>Политика</span> <span>использования</span> <span>cookie-файлов</span>"
-        },
-        "background": {
-          "src": "data/img/ui/bg1.webp"
-        }
-      }
-    },
-    {
       "name": "content-container",
       "data": {
         "container": "container-sm",
@@ -27,21 +13,21 @@
           "class": "content-policy",
           "items": [
             {
-              "class": "content-wrap",
-              "content": "<style>.content-policy{display:flex;flex-direction:column;gap:3rem}</style><div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div>",
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div>",
               "heading": {
-                "tag": "h2",
-                "class": "h4 heading font-2 weight-700 heading-flex uppercase text-center",
-                "title": "ПОЛИТИКА ИСПОЛЬЗОВАНИЯ COOKIE-ФАЙЛОВ"
+                "tag": "h1",
+                "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Политика использования cookie-файлов"
               }
             },
             {
-              "class": "content-wrap",
+              "class": "content-wrap container-sm",
               "content": "<div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "desc": "<p>Настоящая Политика использования Сookies (далее — «Политика») применяется в дополнение к Политике обработки персональных данных, которая распространяется на продукты и сервисы ООО «Сталкер» (далее – Компания). Политика описывает типы Сookies, цели их использования, как именно Компания обрабатывает данные, собранные в процессе использования посетителями веб-сайта kumho-tires.ru (далее – веб-сайт) и способы, с помощью которых можно отказаться от обработки Сookies.</p><p>При первом посещении с помощью нового браузера или в режиме приватного просмотра предоставляется баннер, предупреждающий посетителей веб-сайта об осуществлении сбора Сookies на сайте и запрашивающий Ваше согласие на обработку Сookies.</p><p>Нажимая кнопку «Принять» или продолжая пользоваться веб-сайтом Вы даете свое согласие на обработку Ваших Сookies. Вы также можете отказаться от обработки Сookies, однако такой отказ может привести к некорректной работе веб-сайта.</p>"
             },
             {
-              "class": "content-wrap",
+              "class": "content-wrap container-sm",
               "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
@@ -51,7 +37,7 @@
               "desc": "<p>Сookies — это небольшой фрагмент данных, который веб-сайт запрашивает у браузера, используемого на вашем компьютере или мобильном устройстве. Cookies отражают Ваши предпочтения или действия на веб-сайте, а также сведения об оборудовании пользователя, дата и время сессии. Сookies хранятся локально на Вашем компьютере или мобильном устройстве. При желании Вы можете удалить сохраненные Сookies в настройках браузера.</p>"
             },
             {
-              "class": "content-wrap",
+              "class": "content-wrap container-sm",
               "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
@@ -61,7 +47,7 @@
               "desc": "<p>Сookies используются Компанией в целях улучшения работы веб-сайта.</p><p>Сведения о действиях пользователей веб-сайта обрабатываются для совершенствования продуктов и услуг Компании, определения предпочтений пользователя, используются для улучшения персонализации и интерактивности в предоставлении целевой информации по продуктам и услугам на сайте Компании.</p>"
             },
             {
-              "class": "content-wrap",
+              "class": "content-wrap container-sm",
               "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
@@ -71,7 +57,7 @@
               "desc": "<p>Веб-сайт обрабатывает полученные данные, в том числе, с использованием метрических программ, таких как Яндекс.Метрика.</p><p>Третьи лица не имеют доступа к Cookies веб-сайта. Третьи лица (например, Yandex), которые собирают Cookie, включая Ваш браузер, имеют собственные политики использования Cookie.</p>"
             },
             {
-              "class": "content-wrap",
+              "class": "content-wrap container-sm",
               "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
@@ -81,7 +67,7 @@
               "desc": "<p><b>Сессионные</b></p><p>Существуют только во временной памяти в течение времени, когда пользователь находится на странице веб-сайта. Браузеры обычно удаляют сессионные Cookies после того, как Вы закрываете окно веб-сайта. Сессионные Cookies позволяют веб-сайту помнить информацию о Вашем выборе на предыдущем сайте, чтобы избежать необходимости повторного ввода информации.</p><p><b>Постоянные</b></p><p>Сookies, которые хранятся на Вашем компьютере и не удаляются при закрытии браузера. Постоянные Сookies могут сохранять пользовательские настройки для определенного веб-сайта, позволяя использовать эти предпочтения в будущих сеансах просмотра.</p><p>Такие Cookies позволяют идентифицировать Вас как уникального пользователя веб-сайта, и при возвращении на веб-сайт помогают вспомнить информацию о Вас и ранее совершенных действиях.</p><p><b>Статистические</b></p><p>Включают в себя информацию о том, как Вы используете веб-сайт. Например, какие страницы Вы посещаете, по каким ссылкам переходите. Главная цель таких Cookies — улучшение функций сайта.</p><p><b>Обязательные</b></p><p>Минимальный набор Cookies, использование которых необходимо для корректной работы сайта.</p>"
             },
             {
-              "class": "content-wrap",
+              "class": "content-wrap container-sm",
               "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
@@ -91,7 +77,7 @@
               "desc": "<p>Вы можете отказаться от обработки Cookies в настройках своего браузера (просим Вас ознакомиться с данной возможностью в разделе «Справка» вашего браузера). В таком случае наш сайт будет использовать только те Cookies, которые строго необходимы для функционирования сайта и предлагаемых им сервисов.</p>"
             },
             {
-              "class": "content-wrap",
+              "class": "content-wrap container-sm",
               "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
