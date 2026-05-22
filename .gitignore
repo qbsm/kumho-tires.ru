@@ -62,6 +62,9 @@ uploads/
 # Файлы сборки (если используется сборщик)
 build/
 !tools/build/
+!assets/css/build/
+!assets/js/build/
+!assets/img/build/
 dist/
 
 # Файлы сборки CSS и JS
@@ -69,6 +72,8 @@ assets/css/build/*
 !assets/css/build/.gitkeep
 assets/js/build/*
 !assets/js/build/.gitkeep
+assets/img/build/*
+!assets/img/build/.gitkeep
 
 # Хешированные файлы сборки
 *.bundle.js
