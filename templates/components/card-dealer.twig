@@ -7,7 +7,7 @@
     {% set bshmVisible = bshmData.visible | default(false) %}
     {% set bshmTitle = bshmData.title | default('Бесплатный шиномонтаж') %}
     {% if item.name is defined %}
-      <h3 class="card__title font-2 weight-600">{{ item.name | raw }}</h3>
+      <h2 class="card__title font-2 weight-600">{{ item.name | raw }}</h2>
     {% endif %}
     <div class="card-dealer__subitem badges-wrap">
       {% if bshmVisible %}

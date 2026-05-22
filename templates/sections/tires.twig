@@ -153,7 +153,7 @@
               data-season="{{ dataSeasons }}"
               data-sizes="{{ dataSizes }}"
             >
-              {% include 'components/card-tire.twig' with {'item': tireItem} %}
+              {% include 'components/card-tire.twig' with {'item': tireItem, 'heading_tag': (page_id is defined and page_id == 'tires-list') ? 'h2' : 'span'} %}
             </div>
           {% endfor %}
         </div>

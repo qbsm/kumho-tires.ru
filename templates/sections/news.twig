@@ -16,7 +16,7 @@
         <div class="section__subitem cards-news-wrap">
           {% for item in data.items %}
             <div class="section__inner card-news-wrap">
-              {% include 'components/card-news.twig' with {'item': item} %}
+              {% include 'components/card-news.twig' with {'item': item, 'heading_tag': (page_id is defined and page_id == 'news') ? 'h2' : 'span'} %}
             </div>
           {% endfor %}
         </div>
