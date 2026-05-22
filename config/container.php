@@ -14,6 +14,9 @@ use App\Middleware\RateLimitMiddleware;
 use App\Middleware\RedirectMiddleware;
 use App\Middleware\RequestDurationMiddleware;
 use App\Middleware\SecurityHeadersMiddleware;
+use App\Notification\Channel\CallTouchChannel;
+use App\Notification\Channel\MailChannel;
+use App\Notification\NotificationDispatcher;
 use App\Service\DataLoaderService;
 use App\Service\DefaultSeoBuilder;
 use App\Service\MailService;
@@ -154,6 +157,25 @@ return static function (): ContainerInterface {
                 $c->get(MailerInterface::class),
                 $c->get(LoggerInterface::class),
                 $c->get('settings')['mail'] ?? [],
+            );
+        },
+
+        MailChannel::class => \DI\autowire(),
+
+        CallTouchChannel::class => static function (ContainerInterface $c): CallTouchChannel {
+            return new CallTouchChannel(
+                $c->get(LoggerInterface::class),
+                $c->get('settings')['calltouch'] ?? [],
+            );
+        },
+
+        NotificationDispatcher::class => static function (ContainerInterface $c): NotificationDispatcher {
+            return new NotificationDispatcher(
+                [
+                    $c->get(MailChannel::class),
+                    $c->get(CallTouchChannel::class),
+                ],
+                $c->get(LoggerInterface::class),
             );
         },
 

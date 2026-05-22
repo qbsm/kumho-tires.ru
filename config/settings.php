@@ -92,6 +92,12 @@ return [
         'from_name' => (string) (getenv('MAIL_FROM_NAME') ?: ''),
         'subject_prefix' => (string) (getenv('MAIL_SUBJECT_PREFIX') ?: ''),
     ],
+    'calltouch' => [
+        'enable' => filter_var((string) (getenv('CT_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'route_key' => (string) (getenv('CT_ROUTE_KEY') ?: ''),
+        'token' => (string) (getenv('CT_TOKEN') ?: ''),
+        'timeout' => (int) (getenv('CT_TIMEOUT') ?: 10),
+    ],
     'errors' => require __DIR__ . '/errors.php',
     'twig' => [
         'cache' => $isProduction ? $cacheDir . '/twig' : false,

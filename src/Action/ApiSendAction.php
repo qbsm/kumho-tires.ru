@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace App\Action;
 
 use App\Middleware\CorrelationIdMiddleware;
-use App\Service\MailService;
+use App\Notification\ChannelResult;
+use App\Notification\NotificationDispatcher;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
@@ -13,7 +14,7 @@ use Psr\Log\LoggerInterface;
 final class ApiSendAction
 {
     public function __construct(
-        private readonly MailService $mailService,
+        private readonly NotificationDispatcher $dispatcher,
         private readonly LoggerInterface $logger,
     ) {
     }
@@ -66,17 +67,26 @@ final class ApiSendAction
             return $this->json($response, 422, $payload);
         }
 
-        // Отправка email
+        // Параллельная (независимая) отправка по всем каналам
         $uploadedFiles = $request->getUploadedFiles();
-        $mailSent = $this->mailService->sendFormSubmission($data, $uploadedFiles, $requestId);
+        $results = $this->dispatcher->dispatch($data, $uploadedFiles, $requestId);
 
-        if (!$mailSent) {
-            $this->logger->warning('Форма принята, но письмо не отправлено', ['request_id' => $requestId]);
+        $channels = [];
+        foreach ($results as $result) {
+            $channels[$result->channel] = $result->status;
+            if ($result->status === ChannelResult::STATUS_FAILED) {
+                $this->logger->warning('Форма принята, но канал не доставил', [
+                    'channel' => $result->channel,
+                    'message' => $result->message,
+                    'request_id' => $requestId,
+                ]);
+            }
         }
 
         $payload = [
             'success' => true,
             'message' => 'Заявка успешно отправлена',
+            'channels' => $channels,
             'request_id' => $requestId,
         ];
         $this->cacheResponse($idempotencyKey, 200, $payload);
