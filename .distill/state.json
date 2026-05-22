@@ -2,7 +2,7 @@
   "$schema": "https://ismart.pro/schemas/distill-state-v1.json",
   "platform_repo": "github:qbsm/ismart-platform",
   "platform_version": "1.0.0",
-  "platform_commit": "eed1119",
+  "platform_commit": "2457054",
   "platform_branch": "distill/initial-baseline",
   "last_sync": "2026-05-22T16:45:10.049Z",
   "overrides": {
