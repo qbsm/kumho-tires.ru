@@ -31,21 +31,15 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/at61/400/at61-30deg.webp",
-      "800": "data/img/tires/at61/800/at61-30deg.webp",
-      "1280": "data/img/tires/at61/1280/at61-30deg.webp",
+      "src": "data/img/tires/at61/raw/at61-30deg.webp",
       "alt": "Kumho AT61 Road Venture, ракурс 30°"
     },
     "front": {
-      "400": "data/img/tires/at61/400/at61-front.webp",
-      "800": "data/img/tires/at61/800/at61-front.webp",
-      "1280": "data/img/tires/at61/1280/at61-front.webp",
+      "src": "data/img/tires/at61/raw/at61-front.webp",
       "alt": "Kumho AT61 Road Venture, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/at61/400/at61-side.webp",
-      "800": "data/img/tires/at61/800/at61-side.webp",
-      "1280": "data/img/tires/at61/1280/at61-side.webp",
+      "src": "data/img/tires/at61/raw/at61-side.webp",
       "alt": "Kumho AT61 Road Venture, вид сбоку"
     }
   },

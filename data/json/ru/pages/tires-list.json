@@ -10,13 +10,7 @@
       "name": "frame",
       "visible": true,
       "data": {
-        "cover": {
-          "400": "data/img/frames/400/tires.webp",
-          "800": "data/img/frames/800/tires.webp",
-          "1280": "data/img/frames/1280/tires.webp",
-          "1600": "data/img/frames/1600/tires.webp",
-          "1920": "data/img/frames/1920/tires.webp"
-        }
+        "cover": "data/img/frames/raw/tires.webp"
       }
     },
     {

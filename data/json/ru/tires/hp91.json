@@ -36,21 +36,15 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/hp91/400/hp91-30deg.webp",
-      "800": "data/img/tires/hp91/800/hp91-30deg.webp",
-      "1280": "data/img/tires/hp91/1280/hp91-30deg.webp",
+      "src": "data/img/tires/hp91/raw/hp91-30deg.webp",
       "alt": "Kumho HP91 CRUGEN, ракурс 30°"
     },
     "front": {
-      "400": "data/img/tires/hp91/400/hp91-front.webp",
-      "800": "data/img/tires/hp91/800/hp91-front.webp",
-      "1280": "data/img/tires/hp91/1280/hp91-front.webp",
+      "src": "data/img/tires/hp91/raw/hp91-front.webp",
       "alt": "Kumho HP91 CRUGEN, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/hp91/400/hp91-side.webp",
-      "800": "data/img/tires/hp91/800/hp91-side.webp",
-      "1280": "data/img/tires/hp91/1280/hp91-side.webp",
+      "src": "data/img/tires/hp91/raw/hp91-side.webp",
       "alt": "Kumho HP91 CRUGEN, вид сбоку"
     }
   },

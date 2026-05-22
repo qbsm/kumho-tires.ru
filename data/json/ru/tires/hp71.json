@@ -40,9 +40,7 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/hp71/400/hp71-30deg.webp",
-      "800": "data/img/tires/hp71/800/hp71-30deg.webp",
-      "1280": "data/img/tires/hp71/1280/hp71-30deg.webp",
+      "src": "data/img/tires/hp71/raw/hp71-30deg.webp",
       "alt": "Kumho HP71 CRUGEN, ракурс 30°"
     }
   },

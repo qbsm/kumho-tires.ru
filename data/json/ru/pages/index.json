@@ -65,13 +65,7 @@
             "desc": "1 год дополнительной гарантии от повреждений на шины Kumho",
             "class": "button",
             "target": "_self",
-            "cover": {
-              "400": "data/img/actions/400/warranty.webp",
-              "800": "data/img/actions/800/warranty.webp",
-              "1280": "data/img/actions/1280/warranty.webp",
-              "1600": "data/img/actions/1600/warranty.webp",
-              "1920": "data/img/actions/1920/warranty.webp"
-            }
+            "cover": "data/img/actions/raw/warranty.jpg"
           }
         ]
       }
@@ -112,13 +106,7 @@
         "items": [
           {
             "slug": "conference-sever-avto-2026",
-            "cover": {
-              "400": "data/img/news/conference-sever-avto-2026/400/cover.webp",
-              "800": "data/img/news/conference-sever-avto-2026/800/cover.webp",
-              "1280": "data/img/news/conference-sever-avto-2026/1280/cover.webp",
-              "1600": "data/img/news/conference-sever-avto-2026/1600/cover.webp",
-              "1920": "data/img/news/conference-sever-avto-2026/1920/cover.webp"
-            },
+            "cover": "data/img/news/conference-sever-avto-2026/raw/cover.webp",
             "hex": "#EF0010",
             "date": "Март 2026",
             "title": "Шинные дистрибьюторы обсудили стратегии роста",
@@ -126,13 +114,7 @@
           },
           {
             "slug": "dealers-2026",
-            "cover": {
-              "400": "data/img/news/400/2.webp",
-              "800": "data/img/news/800/2.webp",
-              "1280": "data/img/news/1280/2.webp",
-              "1600": "data/img/news/1600/2.webp",
-              "1920": "data/img/news/1920/2.webp"
-            },
+            "cover": "data/img/news/raw/2.png",
             "hex": "#008ACF",
             "date": "Январь 2026",
             "title": "Расширение сети дилеров",

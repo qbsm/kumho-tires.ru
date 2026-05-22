@@ -36,15 +36,11 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/kh27/400/kh27-30deg.webp",
-      "800": "data/img/tires/kh27/800/kh27-30deg.webp",
-      "1280": "data/img/tires/kh27/1280/kh27-30deg.webp",
+      "src": "data/img/tires/kh27/raw/kh27-30deg.webp",
       "alt": "Kumho KH27 Ecowing, ракурс 30°"
     },
     "side": {
-      "400": "data/img/tires/kh27/400/kh27-side.webp",
-      "800": "data/img/tires/kh27/800/kh27-side.webp",
-      "1280": "data/img/tires/kh27/1280/kh27-side.webp",
+      "src": "data/img/tires/kh27/raw/kh27-side.webp",
       "alt": "Kumho KH27 Ecowing, вид сбоку"
     }
   },

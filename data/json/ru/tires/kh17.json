@@ -27,9 +27,7 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/kh17/400/kh17-30deg.webp",
-      "800": "data/img/tires/kh17/800/kh17-30deg.webp",
-      "1280": "data/img/tires/kh17/1280/kh17-30deg.webp",
+      "src": "data/img/tires/kh17/raw/kh17-30deg.webp",
       "alt": "Kumho KH17 Ecowing, ракурс 30°"
     }
   },

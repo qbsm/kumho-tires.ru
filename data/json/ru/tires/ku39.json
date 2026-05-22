@@ -30,15 +30,11 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/ku39/400/ku39-30deg.webp",
-      "800": "data/img/tires/ku39/800/ku39-30deg.webp",
-      "1280": "data/img/tires/ku39/1280/ku39-30deg.webp",
+      "src": "data/img/tires/ku39/raw/ku39-30deg.webp",
       "alt": "Kumho KU39 ECSTA, ракурс 30°"
     },
     "front": {
-      "400": "data/img/tires/ku39/400/ku39-front.webp",
-      "800": "data/img/tires/ku39/800/ku39-front.webp",
-      "1280": "data/img/tires/ku39/1280/ku39-front.webp",
+      "src": "data/img/tires/ku39/raw/ku39-front.webp",
       "alt": "Kumho KU39 ECSTA, вид спереди"
     }
   },

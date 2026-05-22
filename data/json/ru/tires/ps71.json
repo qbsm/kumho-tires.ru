@@ -50,21 +50,15 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/ps71/400/ps71-30deg.webp",
-      "800": "data/img/tires/ps71/800/ps71-30deg.webp",
-      "1280": "data/img/tires/ps71/1280/ps71-30deg.webp",
+      "src": "data/img/tires/ps71/raw/ps71-30deg.webp",
       "alt": "Kumho PS71 ECSTA, ракурс 30°"
     },
     "front": {
-      "400": "data/img/tires/ps71/400/ps71-front.webp",
-      "800": "data/img/tires/ps71/800/ps71-front.webp",
-      "1280": "data/img/tires/ps71/1280/ps71-front.webp",
+      "src": "data/img/tires/ps71/raw/ps71-front.webp",
       "alt": "Kumho PS71 ECSTA, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/ps71/400/ps71-side.webp",
-      "800": "data/img/tires/ps71/800/ps71-side.webp",
-      "1280": "data/img/tires/ps71/1280/ps71-side.webp",
+      "src": "data/img/tires/ps71/raw/ps71-side.webp",
       "alt": "Kumho PS71 ECSTA, вид сбоку"
     }
   },

@@ -54,21 +54,15 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/ha32/400/ha32-30deg.webp",
-      "800": "data/img/tires/ha32/800/ha32-30deg.webp",
-      "1280": "data/img/tires/ha32/1280/ha32-30deg.webp",
+      "src": "data/img/tires/ha32/raw/ha32-30deg.webp",
       "alt": "Kumho HA32 SOLUS, ракурс 30°"
     },
     "front": {
-      "400": "data/img/tires/ha32/400/ha32-front.webp",
-      "800": "data/img/tires/ha32/800/ha32-front.webp",
-      "1280": "data/img/tires/ha32/1280/ha32-front.webp",
+      "src": "data/img/tires/ha32/raw/ha32-front.webp",
       "alt": "Kumho HA32 SOLUS, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/ha32/400/ha32-side.webp",
-      "800": "data/img/tires/ha32/800/ha32-side.webp",
-      "1280": "data/img/tires/ha32/1280/ha32-side.webp",
+      "src": "data/img/tires/ha32/raw/ha32-side.webp",
       "alt": "Kumho HA32 SOLUS, вид сбоку"
     }
   },

@@ -45,21 +45,15 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/es31/400/es31-30deg.webp",
-      "800": "data/img/tires/es31/800/es31-30deg.webp",
-      "1280": "data/img/tires/es31/1280/es31-30deg.webp",
+      "src": "data/img/tires/es31/raw/es31-30deg.webp",
       "alt": "Kumho ES31 Ecowing, ракурс 30°"
     },
     "front": {
-      "400": "data/img/tires/es31/400/es31-front.webp",
-      "800": "data/img/tires/es31/800/es31-front.webp",
-      "1280": "data/img/tires/es31/1280/es31-front.webp",
+      "src": "data/img/tires/es31/raw/es31-front.webp",
       "alt": "Kumho ES31 Ecowing, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/es31/400/es31-side.webp",
-      "800": "data/img/tires/es31/800/es31-side.webp",
-      "1280": "data/img/tires/es31/1280/es31-side.webp",
+      "src": "data/img/tires/es31/raw/es31-side.webp",
       "alt": "Kumho ES31 Ecowing, вид сбоку"
     }
   },

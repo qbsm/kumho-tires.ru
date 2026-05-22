@@ -10,14 +10,7 @@
       "name": "frame",
       "visible": true,
       "data": {
-        "cover": {
-          "400": "data/img/frames/400/buy.webp",
-          "800": "data/img/frames/800/buy.webp",
-          "1280": "data/img/frames/1280/buy.webp",
-          "1600": "data/img/frames/1600/buy.webp",
-          "1920": "data/img/frames/1920/buy.webp",
-          "2560": "data/img/frames/2560/buy.webp"
-        }
+        "cover": "data/img/frames/raw/buy.webp"
       }
     },
     {

@@ -48,21 +48,15 @@
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/ps72/400/ps72-30deg.webp",
-      "800": "data/img/tires/ps72/800/ps72-30deg.webp",
-      "1280": "data/img/tires/ps72/1280/ps72-30deg.webp",
+      "src": "data/img/tires/ps72/raw/ps72-30deg.webp",
       "alt": "Kumho PS72 ECSTA Sport S, ракурс 30°"
     },
     "front": {
-      "400": "data/img/tires/ps72/400/ps72-front.webp",
-      "800": "data/img/tires/ps72/800/ps72-front.webp",
-      "1280": "data/img/tires/ps72/1280/ps72-front.webp",
+      "src": "data/img/tires/ps72/raw/ps72-front.webp",
       "alt": "Kumho PS72 ECSTA Sport S, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/ps72/400/ps72-side.webp",
-      "800": "data/img/tires/ps72/800/ps72-side.webp",
-      "1280": "data/img/tires/ps72/1280/ps72-side.webp",
+      "src": "data/img/tires/ps72/raw/ps72-side.webp",
       "alt": "Kumho PS72 ECSTA Sport S, вид сбоку"
     }
   },
