@@ -2,9 +2,9 @@
   "$schema": "https://ismart.pro/schemas/distill-state-v1.json",
   "platform_repo": "github:qbsm/ismart-platform",
   "platform_version": "1.0.0",
-  "platform_commit": "eb54d7f7c915afc25122038519cab29211a45e0f",
+  "platform_commit": "aa96a567e57eb8eb9239896611dd16e4c26025e6",
   "platform_branch": "distill/initial-baseline",
-  "last_sync": "2026-05-22T03:15:45.843Z",
+  "last_sync": "2026-05-22T12:33:49.582Z",
   "overrides": {
     "src/Support/CitySlugger.php": {
       "reason": "kumho-only: транслитерация городов для /buy/{city}/ — только у kumho есть dealers по городам",
