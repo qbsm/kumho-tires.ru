@@ -2,9 +2,8 @@
 {% set href = item.slug is defined and item.slug ? url('/tires/' ~ item.slug) : null %}
 
 <a{% if href %} href="{{ href }}"{% endif %} class="card-tire"{{ href ? '' : ' role="group"' }} style="color:inherit;text-decoration:none">
-  {% set _hTag = heading_tag | default('span') %}
   <div class="card__item title-wrap">
-    <{{ _hTag }} class="card__title font-2 weight-600">{{ item.item.code }}</{{ _hTag }}>
+    <span class="card__title font-2 weight-600">{{ item.item.code }}</span>
   </div>
   {% if item.item.series is defined and item.item.series %}
     <div class="card__item desc-wrap">

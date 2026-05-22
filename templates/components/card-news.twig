@@ -19,8 +19,7 @@
       </div>
     </div>
     <div class="card-news__item title-wrap">
-      {% set _hTag = heading_tag | default('span') %}
-      <{{ _hTag }} class="card-news__title font-1">{{ item.title | raw }}</{{ _hTag }}>
+      <span class="card-news__title font-1">{{ item.title | raw }}</span>
     </div>
     <div class="card-news__item desc-wrap">
       <span class="card-news__desc">{{ item.desc | raw }}</span>

@@ -15,7 +15,9 @@ use App\Middleware\RedirectMiddleware;
 use App\Middleware\RequestDurationMiddleware;
 use App\Middleware\SecurityHeadersMiddleware;
 use App\Notification\Channel\CallTouchChannel;
+use App\Notification\Channel\GoogleSheetsChannel;
 use App\Notification\Channel\MailChannel;
+use App\Notification\Channel\TelegramChannel;
 use App\Notification\NotificationDispatcher;
 use App\Service\DataLoaderService;
 use App\Service\DefaultSeoBuilder;
@@ -38,6 +40,8 @@ use Slim\Views\Twig;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mailer\Transport;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Twig\Extension\DebugExtension;
 use Twig\Extension\StringLoaderExtension;
 
@@ -118,7 +122,12 @@ return static function (): ContainerInterface {
 
         HealthAction::class => \DI\autowire(),
 
-        // SEO Strategy (ADR-0003)
+        // SEO Strategy: реестр builder'ов по типу коллекции + DefaultSeoBuilder как fallback.
+        // Deployments расширяют через config-override этого binding'а, добавляя свои Builder'ы:
+        //   SeoBuilderRegistry::class => static fn(ContainerInterface $c) => new SeoBuilderRegistry(
+        //       ['restaurants' => $c->get(RestaurantSeoBuilder::class)],
+        //       $c->get(DefaultSeoBuilder::class),
+        //   ),
         DefaultSeoBuilder::class => \DI\autowire(),
         SeoBuilderRegistry::class => static fn(ContainerInterface $c) => new SeoBuilderRegistry(
             [],
@@ -160,24 +169,41 @@ return static function (): ContainerInterface {
             );
         },
 
-        MailChannel::class => \DI\autowire(),
+        HttpClientInterface::class => static fn () => HttpClient::create(),
 
-        CallTouchChannel::class => static function (ContainerInterface $c): CallTouchChannel {
-            return new CallTouchChannel(
-                $c->get(LoggerInterface::class),
-                $c->get('settings')['calltouch'] ?? [],
-            );
-        },
+        MailChannel::class => static fn (ContainerInterface $c) => new MailChannel(
+            $c->get(MailService::class),
+            $c->get('settings')['mail'] ?? [],
+        ),
 
-        NotificationDispatcher::class => static function (ContainerInterface $c): NotificationDispatcher {
-            return new NotificationDispatcher(
-                [
-                    $c->get(MailChannel::class),
-                    $c->get(CallTouchChannel::class),
-                ],
-                $c->get(LoggerInterface::class),
-            );
-        },
+        CallTouchChannel::class => static fn (ContainerInterface $c) => new CallTouchChannel(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['calltouch'] ?? [],
+        ),
+
+        TelegramChannel::class => static fn (ContainerInterface $c) => new TelegramChannel(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['telegram'] ?? [],
+        ),
+
+        GoogleSheetsChannel::class => static fn (ContainerInterface $c) => new GoogleSheetsChannel(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['google_sheets'] ?? [],
+            (string) ($c->get('settings')['project_root'] ?? ''),
+        ),
+
+        NotificationDispatcher::class => static fn (ContainerInterface $c) => new NotificationDispatcher(
+            [
+                $c->get(MailChannel::class),
+                $c->get(CallTouchChannel::class),
+                $c->get(TelegramChannel::class),
+                $c->get(GoogleSheetsChannel::class),
+            ],
+            $c->get(LoggerInterface::class),
+        ),
 
         ApiSendAction::class => \DI\autowire(),
     ]);

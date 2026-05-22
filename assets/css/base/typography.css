@@ -158,12 +158,5 @@ strong {
 }
 
 .longread {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
   font-size: 1em;
-}
-
-.longread p {
-  margin-block: 0;
 }

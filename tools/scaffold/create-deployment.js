@@ -40,7 +40,6 @@ APP_DEFAULT_LANG=ru
 
 YANDEX_METRIC_ID=0
 
-
 # n8n (Этап 4)
 # N8N_BASE_URL=http://n8n:5678
 # N8N_API_KEY=
@@ -70,7 +69,6 @@ APP_BASE_URL=                # https://example.com (без trailing slash)
 APP_DEFAULT_LANG=ru          # Язык по умолчанию
 
 YANDEX_METRIC_ID=0           # ID Яндекс.Метрики
-
 
 # n8n (Этап 4)
 N8N_BASE_URL=                # http://n8n:5678

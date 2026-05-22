@@ -10,8 +10,12 @@ use App\Service\MailService;
 
 final class MailChannel implements ChannelInterface
 {
+    /**
+     * @param array{to?: string} $config Секция settings['mail']
+     */
     public function __construct(
         private readonly MailService $mailService,
+        private readonly array $config = [],
     ) {
     }
 
@@ -22,7 +26,7 @@ final class MailChannel implements ChannelInterface
 
     public function isEnabled(): bool
     {
-        return true;
+        return (string) ($this->config['to'] ?? '') !== '';
     }
 
     public function send(array $formData, array $uploadedFiles, string $requestId): ChannelResult

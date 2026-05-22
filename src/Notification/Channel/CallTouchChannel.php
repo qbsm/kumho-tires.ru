@@ -7,6 +7,9 @@ namespace App\Notification\Channel;
 use App\Notification\ChannelInterface;
 use App\Notification\ChannelResult;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpClient\Exception\TransportException;
+use Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final class CallTouchChannel implements ChannelInterface
 {
@@ -14,14 +17,10 @@ final class CallTouchChannel implements ChannelInterface
     private const ERROR_VALIDATION_CODE = 10007;
 
     /**
-     * @param array{
-     *     enable?: bool,
-     *     route_key?: string,
-     *     token?: string,
-     *     timeout?: int
-     * } $config
+     * @param array{enable?: bool, route_key?: string, token?: string, timeout?: int} $config
      */
     public function __construct(
+        private readonly HttpClientInterface $httpClient,
         private readonly LoggerInterface $logger,
         private readonly array $config,
     ) {
@@ -47,35 +46,32 @@ final class CallTouchChannel implements ChannelInterface
             return ChannelResult::warning($this->name(), 'empty_phone');
         }
 
-        $ch = curl_init(self::API_URL);
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => (string) json_encode($payload, JSON_UNESCAPED_UNICODE),
-            CURLOPT_HTTPHEADER => [
-                'Access-Token: ' . $this->config['token'],
-                'Content-Type: application/json',
-            ],
-            CURLOPT_CONNECTTIMEOUT => (int) ($this->config['timeout'] ?? 10),
-            CURLOPT_TIMEOUT => (int) ($this->config['timeout'] ?? 10),
-        ]);
+        $timeout = (float) ($this->config['timeout'] ?? 10);
 
-        $response = curl_exec($ch);
-        $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $curlError = curl_error($ch);
-        curl_close($ch);
-
-        if ($response === false) {
-            $this->logger->error('CallTouch: cURL error', [
-                'request_id' => $requestId,
-                'error' => $curlError,
+        try {
+            $response = $this->httpClient->request('POST', self::API_URL, [
+                'headers' => [
+                    'Access-Token' => (string) ($this->config['token'] ?? ''),
+                    'Content-Type' => 'application/json',
+                ],
+                'body' => (string) json_encode($payload, JSON_UNESCAPED_UNICODE),
+                'timeout' => $timeout,
+                'max_duration' => $timeout,
             ]);
-            return ChannelResult::failed($this->name(), $curlError);
-        }
-
-        $decoded = is_string($response) ? json_decode($response, true) : null;
-        if (!is_array($decoded)) {
-            $decoded = [];
+            $httpCode = $response->getStatusCode();
+            $decoded = $response->toArray(false);
+        } catch (TransportException $e) {
+            $this->logger->error('CallTouch: transport error', [
+                'request_id' => $requestId,
+                'error' => $e->getMessage(),
+            ]);
+            return ChannelResult::failed($this->name(), $e->getMessage());
+        } catch (ExceptionInterface $e) {
+            $this->logger->error('CallTouch: http client error', [
+                'request_id' => $requestId,
+                'error' => $e->getMessage(),
+            ]);
+            return ChannelResult::failed($this->name(), $e->getMessage());
         }
 
         if ($httpCode === 200 && !empty($decoded['data']['widgetRequestId'])) {
