@@ -120,3 +120,5 @@ public/data
 public/robots.txt
 
 
+# Контентные медиа-файлы лежат в git (full dataset).
+# Не добавлять сюда data/img/<section>/ — см. memory/project_full_media_in_git.
