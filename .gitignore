@@ -119,10 +119,4 @@ public/assets
 public/data
 public/robots.txt
 
-# Архивная копия master
-kumho-tires.ru-master/
 
-# Крупные медиа-файлы, не коммитим в репозиторий
-data/img/tires/
-data/img/restaurants/
-data/img/restaurants-list/
