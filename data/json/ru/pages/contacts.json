@@ -90,14 +90,6 @@
               }
             },
             {
-              "class": "cover-wrap",
-              "content": "{% include 'components/cover.twig' with {'cover': item.cover} %}",
-              "cover": {
-                "src": "data/img/contact/cover.webp",
-                "alt": "Контакты"
-              }
-            },
-            {
               "class": "content-wrap social-wrap",
               "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': {'tag': 'h2', 'class': 'h5 heading font-2 weight-700 heading-flex uppercase', 'title': global['socials-headings'].ru}} %}</div><div class='section__subitem mini-table-wrap container-md'>{% set socialItems = [] %}{% for social in global.socials %}{% if social.visible %}{% set socialItems = socialItems|merge([{'title': social.title.ru, 'href': social.href, 'value': social.subscribers.ru}]) %}{% endif %}{% endfor %}{% include 'components/mini-table.twig' with {'items': socialItems} %}</div>"
             },
