@@ -1,0 +1,17 @@
+<section class="faq section">
+  <div class="container">
+    <div class="section__item block-wrap">
+      {% if data.heading is defined %}
+        <div class="section__subitem heading-wrap items-start text-left">
+          <span class="heading-accent self-start" aria-hidden="true"></span>
+          {% include 'components/heading.twig' with {'item': data.heading} %}
+        </div>
+      {% endif %}
+      {% if data.items is defined and data.items is not empty %}
+        <div class="section__subitem">
+          {% include 'components/accordion.twig' with {'items': data.items, 'accordion_id': 'faq'} %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
