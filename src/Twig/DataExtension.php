@@ -37,7 +37,37 @@ class DataExtension extends AbstractExtension
             new TwigFunction('city_to_slug', [CitySlugger::class, 'slug']),
             new TwigFunction('resolve_city_by_slug', [$this, 'resolveCityBySlug']),
             new TwigFunction('resolve_section_meta', [$this, 'resolveSectionMeta']),
+            new TwigFunction('dealer_cities', [$this, 'dealerCities']),
         ];
+    }
+
+    /**
+     * Уникальные города точек продаж из dealers.json (для areaServed в разметке).
+     *
+     * @return list<string>
+     */
+    public function dealerCities(string $langCode): array
+    {
+        if ($langCode === '') {
+            return [];
+        }
+        $dealers = $this->loadJson("data/json/{$langCode}/pages/dealers.json");
+        if (!is_array($dealers) || !isset($dealers['items']) || !is_array($dealers['items'])) {
+            return [];
+        }
+        $cities = [];
+        foreach ($dealers['items'] as $dealer) {
+            if (!is_array($dealer)) {
+                continue;
+            }
+            $city = isset($dealer['city']) && is_string($dealer['city']) ? trim($dealer['city']) : '';
+            if ($city !== '' && !in_array($city, $cities, true)) {
+                $cities[] = $city;
+            }
+        }
+        sort($cities);
+
+        return $cities;
     }
 
     /**
