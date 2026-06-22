@@ -1,0 +1,24 @@
+/* FAQ-секция: отступ заголовок → аккордеон и читаемый шрифт.
+   Базовый компонент .accordion в контексте секции выходит мелким
+   (accordion__title 0.8em ≈ 11px), поэтому увеличиваем ЛОКАЛЬНО —
+   policy/cookies аккордеоны не затрагиваем. */
+.faq .section__subitem.heading-wrap {
+  margin-bottom: 2.4rem;
+}
+
+.faq .accordion__title {
+  font-size: 1.5rem;
+
+  @media (--lg) {
+    font-size: 1.8rem;
+  }
+}
+
+.faq .accordion__desc {
+  font-size: 1.4rem;
+  line-height: 1.55;
+
+  @media (--lg) {
+    font-size: 1.5rem;
+  }
+}
