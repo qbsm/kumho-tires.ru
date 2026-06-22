@@ -17,6 +17,29 @@
     {% set dealersData = load_json('data/json/' ~ lang_code ~ '/pages/dealers.json') %}
     {% set dealerItems = dealersData.items | default(data.items | default([])) %}
     {% set onlyMappedCards = data.map.only_mapped_cards | default(false) %}
+
+    {# JSON-LD: точки продаж (ItemList) — где купить шины Kumho, с адресом/гео/телефоном #}
+    {% set _stores = [] %}
+    {% for item in dealerItems %}
+      {% if item.location is defined and item.location %}
+        {% set _loc = item.location|split(',') %}
+        {% set _addr = {'@type': 'PostalAddress', 'streetAddress': item.address|default(''), 'addressCountry': 'RU'} %}
+        {% if item.city|default('') is not empty %}{% set _addr = _addr|merge({'addressLocality': item.city}) %}{% endif %}
+        {% if item.region|default('') is not empty %}{% set _addr = _addr|merge({'addressRegion': item.region}) %}{% endif %}
+        {% set _store = {'@type': 'AutoPartsStore', 'name': item.name|default(''), 'address': _addr} %}
+        {% if _loc|length == 2 %}{% set _store = _store|merge({'geo': {'@type': 'GeoCoordinates', 'latitude': _loc[0]|trim, 'longitude': _loc[1]|trim}}) %}{% endif %}
+        {% set _phones = [] %}
+        {% for ph in item.phones|default([]) %}{% if ph.title is defined %}{% set _phones = _phones|merge([ph.title]) %}{% endif %}{% endfor %}
+        {% if _phones|length > 0 %}{% set _store = _store|merge({'telephone': _phones}) %}{% endif %}
+        {% if item.site.href|default('') is not empty %}{% set _store = _store|merge({'url': item.site.href}) %}{% endif %}
+        {% set _stores = _stores|merge([{'@type': 'ListItem', 'position': _stores|length + 1, 'item': _store}]) %}
+      {% endif %}
+    {% endfor %}
+    {% if _stores|length > 0 %}
+    <script type="application/ld+json">
+    {{ {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'Где купить шины Kumho', 'numberOfItems': _stores|length, 'itemListElement': _stores}|json_encode|raw }}
+    </script>
+    {% endif %}
     {% set filterVisible = true %}
     {% if data.filter is defined %}
       {% if data.filter is iterable %}
