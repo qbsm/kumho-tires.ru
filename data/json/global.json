@@ -132,6 +132,10 @@
     "ru": "Все права защищены",
     "en": "All rights reserved"
   },
+  "owner": {
+    "ru": "Права на сайт принадлежат ООО «Сталкер» (ИНН 7719614965, ОГРН 1067761249654).",
+    "en": "All rights to the website belong to LLC «Stalker» (INN 7719614965, OGRN 1067761249654)."
+  },
   "form-callback": {
     "fields": [
       {
