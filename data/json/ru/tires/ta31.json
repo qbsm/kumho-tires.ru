@@ -2,21 +2,10 @@
   "slug": "ta31",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      16,
-      18
-    ],
-    "widths": [
-      205,
-      215
-    ],
-    "profiles": [
-      50,
-      65
-    ]
+    "season": ["all-season"],
+    "diameters": [16, 18],
+    "widths": [205, 215],
+    "profiles": [50, 65]
   },
   "item": {
     "code": "TA31",
@@ -30,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/ta31/raw/ta31-30deg.webp",
-      "alt": "Kumho TA31 Road Venture, ракурс 30°"
+      "alt": "Kumho TA31 Road Venture"
     },
     "front": {
       "src": "data/img/tires/ta31/raw/ta31-front.webp",

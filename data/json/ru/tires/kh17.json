@@ -2,19 +2,10 @@
   "slug": "kh17",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      13
-    ],
-    "widths": [
-      135,
-      165
-    ],
-    "profiles": [
-      80
-    ]
+    "season": ["summer"],
+    "diameters": [13],
+    "widths": [135, 165],
+    "profiles": [80]
   },
   "item": {
     "code": "KH17",
@@ -28,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/kh17/raw/kh17-30deg.webp",
-      "alt": "Kumho KH17 Ecowing, ракурс 30°"
+      "alt": "Kumho KH17 Ecowing"
     }
   },
   "season": "Летняя",

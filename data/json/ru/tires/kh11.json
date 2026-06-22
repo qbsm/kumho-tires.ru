@@ -2,20 +2,10 @@
   "slug": "kh11",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      15
-    ],
-    "widths": [
-      155,
-      175
-    ],
-    "profiles": [
-      55,
-      60
-    ]
+    "season": ["summer"],
+    "diameters": [15],
+    "widths": [155, 175],
+    "profiles": [55, 60]
   },
   "item": {
     "code": "KH11",
@@ -29,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/kh11/raw/kh11-30deg.webp",
-      "alt": "Kumho KH11 Ecowing, ракурс 30°"
+      "alt": "Kumho KH11 Ecowing"
     }
   },
   "season": "Летняя",

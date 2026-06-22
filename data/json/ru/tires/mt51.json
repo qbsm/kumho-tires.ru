@@ -2,36 +2,10 @@
   "slug": "mt51",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16,
-      17,
-      18
-    ],
-    "widths": [
-      "31",
-      "32",
-      "33",
-      "225",
-      "235",
-      "245",
-      "255",
-      "265",
-      "285"
-    ],
-    "profiles": [
-      "10.5",
-      "11.5",
-      "12.5",
-      "60",
-      "65",
-      "70",
-      "75",
-      "85"
-    ]
+    "season": ["all-season"],
+    "diameters": [15, 16, 17, 18],
+    "widths": ["31", "32", "33", "225", "235", "245", "255", "265", "285"],
+    "profiles": ["10.5", "11.5", "12.5", "60", "65", "70", "75", "85"]
   },
   "item": {
     "code": "MT51",
@@ -45,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/mt51/raw/mt51-30deg.webp",
-      "alt": "Kumho MT51 Road Venture, ракурс 30°"
+      "alt": "Kumho MT51 Road Venture"
     },
     "front": {
       "src": "data/img/tires/mt51/raw/mt51-front.webp",

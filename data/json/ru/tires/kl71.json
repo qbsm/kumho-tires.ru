@@ -2,39 +2,10 @@
   "slug": "kl71",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      14,
-      15,
-      16,
-      20
-    ],
-    "widths": [
-      "27",
-      "30",
-      "31",
-      "32",
-      "35",
-      "195",
-      "205",
-      "215",
-      "225",
-      "235",
-      "245",
-      "265"
-    ],
-    "profiles": [
-      "8.50",
-      "9.5",
-      "10.5",
-      "11.5",
-      "12.5",
-      "75",
-      "80",
-      "85"
-    ]
+    "season": ["all-season"],
+    "diameters": [14, 15, 16, 20],
+    "widths": ["27", "30", "31", "32", "35", "195", "205", "215", "225", "235", "245", "265"],
+    "profiles": ["8.50", "9.5", "10.5", "11.5", "12.5", "75", "80", "85"]
   },
   "item": {
     "code": "KL71",
@@ -48,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/kl71/raw/kl71-30deg.webp",
-      "alt": "Kumho KL71 Road Venture, ракурс 30°"
+      "alt": "Kumho KL71 Road Venture"
     },
     "front": {
       "src": "data/img/tires/kl71/raw/kl71-front.webp",

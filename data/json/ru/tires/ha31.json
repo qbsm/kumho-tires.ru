@@ -2,39 +2,10 @@
   "slug": "ha31",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
-    "widths": [
-      155,
-      165,
-      175,
-      185,
-      195,
-      205,
-      215,
-      225,
-      245,
-      255,
-      265,
-      275
-    ],
-    "profiles": [
-      50,
-      55,
-      60,
-      65,
-      70,
-      80
-    ]
+    "season": ["all-season"],
+    "diameters": [13, 14, 15, 16, 17, 18],
+    "widths": [155, 165, 175, 185, 195, 205, 215, 225, 245, 255, 265, 275],
+    "profiles": [50, 55, 60, 65, 70, 80]
   },
   "item": {
     "code": "HA31",
@@ -48,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/ha31/raw/ha31-30deg.webp",
-      "alt": "Kumho HA31 SOLUS, ракурс 30°"
+      "alt": "Kumho HA31 SOLUS"
     },
     "front": {
       "src": "data/img/tires/ha31/raw/ha31-front.webp",

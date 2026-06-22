@@ -2,28 +2,10 @@
   "slug": "kh27",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      14,
-      15,
-      16
-    ],
-    "widths": [
-      145,
-      175,
-      185,
-      195,
-      205,
-      215
-    ],
-    "profiles": [
-      55,
-      60,
-      65,
-      70
-    ]
+    "season": ["summer"],
+    "diameters": [14, 15, 16],
+    "widths": [145, 175, 185, 195, 205, 215],
+    "profiles": [55, 60, 65, 70]
   },
   "item": {
     "code": "KH27",
@@ -37,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/kh27/raw/kh27-30deg.webp",
-      "alt": "Kumho KH27 Ecowing, ракурс 30°"
+      "alt": "Kumho KH27 Ecowing"
     },
     "side": {
       "src": "data/img/tires/kh27/raw/kh27-side.webp",

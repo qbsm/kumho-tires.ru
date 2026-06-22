@@ -2,29 +2,10 @@
   "slug": "kl33",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "widths": [
-      205,
-      215,
-      225,
-      235,
-      265
-    ],
-    "profiles": [
-      55,
-      60,
-      65,
-      70
-    ]
+    "season": ["all-season"],
+    "diameters": [15, 16, 17, 18, 19],
+    "widths": [205, 215, 225, 235, 265],
+    "profiles": [55, 60, 65, 70]
   },
   "item": {
     "code": "KL33",
@@ -38,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/kl33/raw/kl33-30deg.webp",
-      "alt": "Kumho KL33 Road Venture, ракурс 30°"
+      "alt": "Kumho KL33 Road Venture"
     },
     "front": {
       "src": "data/img/tires/kl33/raw/kl33-front.webp",

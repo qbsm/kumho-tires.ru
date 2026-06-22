@@ -2,18 +2,10 @@
   "slug": "kh25",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      17
-    ],
-    "widths": [
-      205
-    ],
-    "profiles": [
-      55
-    ]
+    "season": ["summer"],
+    "diameters": [17],
+    "widths": [205],
+    "profiles": [55]
   },
   "item": {
     "code": "KH25",
@@ -27,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/kh25/raw/kh25-30deg.webp",
-      "alt": "Kumho KH25 Ecowing, ракурс 30°"
+      "alt": "Kumho KH25 Ecowing"
     }
   },
   "season": "Летняя",

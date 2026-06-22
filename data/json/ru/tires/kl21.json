@@ -2,21 +2,10 @@
   "slug": "kl21",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      17,
-      18
-    ],
-    "widths": [
-      225,
-      265
-    ],
-    "profiles": [
-      60,
-      65
-    ]
+    "season": ["summer"],
+    "diameters": [17, 18],
+    "widths": [225, 265],
+    "profiles": [60, 65]
   },
   "item": {
     "code": "KL21",
@@ -30,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/kl21/raw/kl21-30deg.webp",
-      "alt": "Kumho KL21 Road Venture, ракурс 30°"
+      "alt": "Kumho KL21 Road Venture"
     }
   },
   "season": "Летняя",

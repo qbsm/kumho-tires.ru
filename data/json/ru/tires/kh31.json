@@ -2,19 +2,10 @@
   "slug": "kh31",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      16
-    ],
-    "widths": [
-      195,
-      225
-    ],
-    "profiles": [
-      55
-    ]
+    "season": ["summer"],
+    "diameters": [16],
+    "widths": [195, 225],
+    "profiles": [55]
   },
   "item": {
     "code": "KH31",
@@ -28,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/kh31/raw/kh31-30deg.webp",
-      "alt": "Kumho KH31 Ecowing, ракурс 30°"
+      "alt": "Kumho KH31 Ecowing"
     },
     "front": {
       "src": "data/img/tires/kh31/raw/kh31-front.webp",

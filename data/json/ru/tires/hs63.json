@@ -2,18 +2,10 @@
   "slug": "hs63",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      16
-    ],
-    "widths": [
-      205
-    ],
-    "profiles": [
-      60
-    ]
+    "season": ["summer"],
+    "diameters": [16],
+    "widths": [205],
+    "profiles": [60]
   },
   "item": {
     "code": "HS63",
@@ -27,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/hs63/raw/hs63-30deg.webp",
-      "alt": "Kumho HS63 ECSTA, ракурс 30°"
+      "alt": "Kumho HS63 ECSTA"
     }
   },
   "season": "Летняя",

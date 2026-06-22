@@ -2,22 +2,10 @@
   "slug": "ku39",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      17,
-      19
-    ],
-    "widths": [
-      215,
-      225,
-      235
-    ],
-    "profiles": [
-      35,
-      50
-    ]
+    "season": ["summer"],
+    "diameters": [17, 19],
+    "widths": [215, 225, 235],
+    "profiles": [35, 50]
   },
   "item": {
     "code": "KU39",
@@ -31,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/ku39/raw/ku39-30deg.webp",
-      "alt": "Kumho KU39 ECSTA, ракурс 30°"
+      "alt": "Kumho KU39 ECSTA"
     },
     "front": {
       "src": "data/img/tires/ku39/raw/ku39-front.webp",

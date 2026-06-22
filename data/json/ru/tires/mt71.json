@@ -2,33 +2,10 @@
   "slug": "mt71",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16,
-      17,
-      20
-    ],
-    "widths": [
-      "31",
-      "33",
-      "35",
-      "235",
-      "255",
-      "265",
-      "285",
-      "295",
-      "315"
-    ],
-    "profiles": [
-      "10.5",
-      "12.5",
-      "70",
-      "75",
-      "85"
-    ]
+    "season": ["all-season"],
+    "diameters": [15, 16, 17, 20],
+    "widths": ["31", "33", "35", "235", "255", "265", "285", "295", "315"],
+    "profiles": ["10.5", "12.5", "70", "75", "85"]
   },
   "item": {
     "code": "MT71",
@@ -42,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/mt71/raw/mt71-30deg.webp",
-      "alt": "Kumho MT71 Road Venture, ракурс 30°"
+      "alt": "Kumho MT71 Road Venture"
     },
     "front": {
       "src": "data/img/tires/mt71/raw/mt71-front.webp",

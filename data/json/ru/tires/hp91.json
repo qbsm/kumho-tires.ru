@@ -2,32 +2,10 @@
   "slug": "hp91",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      16,
-      17,
-      18,
-      19
-    ],
-    "widths": [
-      215,
-      235,
-      245,
-      255,
-      265,
-      275,
-      285
-    ],
-    "profiles": [
-      45,
-      50,
-      55,
-      60,
-      65,
-      70
-    ]
+    "season": ["summer"],
+    "diameters": [16, 17, 18, 19],
+    "widths": [215, 235, 245, 255, 265, 275, 285],
+    "profiles": [45, 50, 55, 60, 65, 70]
   },
   "item": {
     "code": "HP91",
@@ -37,7 +15,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/hp91/raw/hp91-30deg.webp",
-      "alt": "Kumho HP91 CRUGEN, ракурс 30°"
+      "alt": "Kumho HP91 CRUGEN"
     },
     "front": {
       "src": "data/img/tires/hp91/raw/hp91-front.webp",

@@ -2,29 +2,10 @@
   "slug": "cx11",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16,
-      17
-    ],
-    "widths": [
-      185,
-      195,
-      205,
-      215,
-      225,
-      235
-    ],
-    "profiles": [
-      55,
-      60,
-      65,
-      70,
-      75
-    ]
+    "season": ["all-season"],
+    "diameters": [15, 16, 17],
+    "widths": [185, 195, 205, 215, 225, 235],
+    "profiles": [55, 60, 65, 70, 75]
   },
   "item": {
     "code": "CX11",
@@ -38,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/cx11/raw/cx11-30deg.webp",
-      "alt": "Kumho CX11 PorTran, ракурс 30°"
+      "alt": "Kumho CX11 PorTran"
     }
   },
   "season": "Всесезонная",

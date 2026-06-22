@@ -2,23 +2,10 @@
   "slug": "at61",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16
-    ],
-    "widths": [
-      195,
-      205,
-      215,
-      255
-    ],
-    "profiles": [
-      75,
-      80
-    ]
+    "season": ["all-season"],
+    "diameters": [15, 16],
+    "widths": [195, 205, 215, 255],
+    "profiles": [75, 80]
   },
   "item": {
     "code": "AT61",
@@ -32,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/at61/raw/at61-30deg.webp",
-      "alt": "Kumho AT61 Road Venture, ракурс 30°"
+      "alt": "Kumho AT61 Road Venture"
     },
     "front": {
       "src": "data/img/tires/at61/raw/at61-front.webp",

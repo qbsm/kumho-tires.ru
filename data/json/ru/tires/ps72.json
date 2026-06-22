@@ -2,40 +2,10 @@
   "slug": "ps72",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      17,
-      18,
-      19,
-      20,
-      21,
-      22
-    ],
-    "widths": [
-      205,
-      215,
-      225,
-      235,
-      245,
-      255,
-      265,
-      275,
-      285,
-      295,
-      305,
-      315,
-      325
-    ],
-    "profiles": [
-      30,
-      35,
-      40,
-      45,
-      50,
-      55
-    ]
+    "season": ["summer"],
+    "diameters": [17, 18, 19, 20, 21, 22],
+    "widths": [205, 215, 225, 235, 245, 255, 265, 275, 285, 295, 305, 315, 325],
+    "profiles": [30, 35, 40, 45, 50, 55]
   },
   "item": {
     "code": "PS72",
@@ -49,7 +19,7 @@
   "images": {
     "30deg": {
       "src": "data/img/tires/ps72/raw/ps72-30deg.webp",
-      "alt": "Kumho PS72 ECSTA Sport S, ракурс 30°"
+      "alt": "Kumho PS72 ECSTA Sport S"
     },
     "front": {
       "src": "data/img/tires/ps72/raw/ps72-front.webp",
