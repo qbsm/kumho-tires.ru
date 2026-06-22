@@ -22,7 +22,7 @@
     </div>
     <div class="section__item copyright-wrap">
       {% if global.copyright[lang_code] is defined %}
-        <span class="footer__copyright opacity-80">© {{ "now"|date("Y") }}. {{ global.copyright[lang_code] }}</span>
+        <span class="footer__copyright opacity-80">© {{ "now"|date("Y") }}{% if global.name is defined %} {{ global.name }}{% endif %}. {{ global.copyright[lang_code] }}</span>
       {% endif %}
     </div>
     <div class="section__item policy-agree-wrap">

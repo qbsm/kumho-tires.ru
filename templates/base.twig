@@ -150,7 +150,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "{{ site.name|default('Company') }}",
+    "name": "{{ global.name|default(site.name|default('Company')) }}",
     {% if global.logo.horizontal.black is defined %}
     "logo": "{{ _base_secure_domain_for_seo ~ '/' ~ global.logo.horizontal.black.src }}",
     {% endif %}
@@ -192,7 +192,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "{{ site.name|default('Company') }}",
+    "name": "{{ global.name|default(site.name|default('Company')) }}",
     "url": "{{ _base_secure_domain_for_seo ~ '/' }}"
   }
   </script>
