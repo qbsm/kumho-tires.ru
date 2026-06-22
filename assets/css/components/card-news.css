@@ -158,8 +158,12 @@ a.card-news-link {
 
 .card-news__desc {
   flex-grow: 1;
-  font-size: 0.9em;
+  font-size: 1em;
   opacity: 0.7;
+
+  @media (--lg) {
+    font-size: 0.9em;
+  }
 }
 
 .card-news.full-cover .card-news__desc {
