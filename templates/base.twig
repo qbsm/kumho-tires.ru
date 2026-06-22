@@ -199,6 +199,26 @@
   }
   </script>
 
+  {# Быстрые ссылки (SiteNavigationElement) — подсказка поисковику по основным разделам сайта (только на главной) #}
+  {% if page_id == 'index' %}
+    {% set _quicklinks = [] %}
+    {% for link in global.nav[lang_code].items|default([]) %}
+      {% if (link.visible is not defined or link.visible) and link.href != '/' %}
+        {% set _quicklinks = _quicklinks|merge([{'name': link.title, 'href': link.href}]) %}
+      {% endif %}
+    {% endfor %}
+    {% set _quicklinks = _quicklinks|merge([{'name': 'Новости', 'href': '/news'}, {'name': 'Контакты', 'href': '/contacts'}]) %}
+    {% set _navItems = [] %}
+    {% for ql in _quicklinks %}
+      {% set _navItems = _navItems|merge([{'@type': 'SiteNavigationElement', 'position': loop.index, 'name': ql.name, 'url': _base_secure_domain_for_seo ~ ql.href}]) %}
+    {% endfor %}
+    {% if _navItems|length > 0 %}
+    <script type="application/ld+json">
+    {{ {'@context': 'https://schema.org', '@type': 'ItemList', 'name': global.name|default('Company') ~ ' — разделы сайта', 'itemListElement': _navItems}|json_encode|raw }}
+    </script>
+    {% endif %}
+  {% endif %}
+
   {% if breadcrumb is defined and breadcrumb is iterable and breadcrumb|length > 0 %}
   {# Schema.org BreadcrumbList для GEO / LLM #}
   {% set _breadcrumb_base = _base_secure_domain_for_seo %}
