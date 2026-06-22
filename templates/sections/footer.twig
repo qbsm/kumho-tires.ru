@@ -21,11 +21,11 @@
       {% endif %}
     </div>
     <div class="section__item copyright-wrap">
-      {% if global.copyright[lang_code] is defined %}
-        <span class="footer__copyright opacity-80">© {{ "now"|date("Y") }}{% if global.name is defined %} {{ global.name }}{% endif %}. {{ global.copyright[lang_code] }}</span>
-      {% endif %}
       {% if global.owner[lang_code] is defined %}
         <span class="footer__owner opacity-80">{{ global.owner[lang_code] }}</span>
+      {% endif %}
+      {% if global.copyright[lang_code] is defined %}
+        <span class="footer__copyright opacity-80">© {{ "now"|date("Y") }}{% if global.name is defined %} {{ global.name }}{% endif %}. {{ global.copyright[lang_code] }}</span>
       {% endif %}
     </div>
     <div class="section__item policy-agree-wrap">
