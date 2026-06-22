@@ -53,11 +53,11 @@
 
 .accordion__title {
   font-family: var(--font-2);
-  font-size: 1.5rem;
+  font-size: 1.0714em;
   font-weight: 500;
 
   @media (--lg) {
-    font-size: 1.8rem;
+    font-size: 1.125em;
   }
 }
 
@@ -95,11 +95,11 @@
 }
 
 .accordion__desc {
-  font-size: 1.4rem;
+  font-size: 1em;
   line-height: 1.55;
 
   @media (--lg) {
-    font-size: 1.5rem;
+    font-size: 0.9375em;
   }
 }
 
