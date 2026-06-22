@@ -551,12 +551,31 @@ onReady(() => {
     };
 
     if (mapEl) {
-      createDealerMap(mapEl, (state) => {
-        mapState = state;
-        applyFilters();
-        mapState?.map?.events?.add('boundschange', () => applyFilters({ syncMap: false }));
-        applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
-      });
+      const initDealerMap = () => {
+        createDealerMap(mapEl, (state) => {
+          mapState = state;
+          applyFilters();
+          mapState?.map?.events?.add('boundschange', () => applyFilters({ syncMap: false }));
+          applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
+        });
+      };
+
+      // Ленивая загрузка карты: тяжёлый Yandex Maps API и 125 меток грузим,
+      // только когда блок карты приближается к вьюпорту (карточки рендерятся сервером).
+      if ('IntersectionObserver' in window) {
+        const mapObserver = new IntersectionObserver(
+          (entries, observer) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              observer.disconnect();
+              initDealerMap();
+            }
+          },
+          { rootMargin: '300px' }
+        );
+        mapObserver.observe(mapEl);
+      } else {
+        initDealerMap();
+      }
     }
 
     setupUrlCitySync(sectionEl, citySelect, applyFilters);
