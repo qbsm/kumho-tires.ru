@@ -130,7 +130,6 @@
 | Файл | Причина |
 |------|---------|
 | `docs/api/send-contract.md` | Корректно описывает текущий API |
-| `docs/api/photoroom-contract.md` | Корректно описывает текущий API |
 | `docs/architecture/config.md` | Актуально |
 | `docs/architecture/structure.md` | Актуально |
 | `docs/architecture/seo.md` | Актуально |

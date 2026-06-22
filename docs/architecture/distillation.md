@@ -246,7 +246,7 @@ deployments/<slug>/            # nginx, docker-compose, scripts
   "last_sync": "2026-05-20T00:00:00Z",
   "overrides": {
     "src/Action/PageAction.php": {
-      "reason": "PhotoroomRemoveBackgroundAction-интеграция вынесена сюда временно",
+      "reason": "deployment-specific интеграция вынесена сюда временно",
       "accepted_drift": true,
       "last_review": "2026-05-20"
     }
@@ -314,7 +314,7 @@ distill sync ../kumho-tires.ru --only=src/Middleware/
 distill propose ../kumho-tires.ru src/Middleware/SecurityHeadersMiddleware.php
 
 # Пометить файл как deployment-specific override
-distill mark-override ../kumho-tires.ru src/Action/PhotoroomAction.php "Photoroom integration, kumho-only"
+distill mark-override ../kumho-tires.ru src/Action/CustomAction.php "deployment-specific integration"
 
 # Создать новый deployment
 distill init <slug> --name "Ритейл Логистик" --domain retail-logistik.ru
@@ -346,7 +346,7 @@ distill init <slug> --name "Ритейл Логистик" --domain retail-logis
 
 1. Удалить legacy: `core/`, `index.php` в корне, всё что относится к старой архитектуре. Сохранить в отдельный tag `legacy-archive-v0` на случай возврата.
 2. Скопировать из kumho:
-   - `src/` (Action кроме `Photoroom*`, Service, Middleware, Handler, Event, Twig, Support)
+   - `src/` (Action, Service, Middleware, Handler, Event, Twig, Support)
    - `config/` (без `project.php`)
    - `tools/scaffold/`, `tools/build/`, `tools/ops/`
    - `public/index.php`, `public/.htaccess`
@@ -363,7 +363,6 @@ distill init <slug> --name "Ритейл Логистик" --domain retail-logis
 
 Каждый deployment получает `.distill/state.json`:
 
-- **kumho:** `src/Action/PhotoroomRemoveBackgroundAction.php` → override (Photoroom-интеграция, kumho-only).
 - **italy:** `src/Service/RestaurantSeoBuilder.php` → override (после унификации SeoService).
 - **beepitron:** массовый drift, см. §8.
 

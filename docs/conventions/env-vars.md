@@ -16,7 +16,7 @@
 | `MAILER_*` | Транспорт (Symfony Mailer) | `MAILER_DSN` |
 | `MAIL_*` | Параметры письма (отправитель, получатель) | `MAIL_TO`, `MAIL_FROM`, `MAIL_FROM_NAME`, `MAIL_SUBJECT_PREFIX` |
 | `YANDEX_*` | Яндекс-сервисы (метрика и т.д.) | `YANDEX_METRIC_ID` |
-| `<VENDOR>_*` | Интеграция со сторонним API (по имени вендора) | `PHOTOROOM_API_KEY` (kumho-only), `N8N_BASE_URL` (этап 4) |
+| `<VENDOR>_*` | Интеграция со сторонним API (по имени вендора) | `N8N_BASE_URL` (этап 4) |
 | `DJANGO_*` | Будущая Django-подсистема (этап 4) | `DJANGO_CORE_URL`, `DJANGO_SERVICE_TOKEN` |
 | `JWT_*` | Авторизация (этап 2) | `JWT_SECRET`, `JWT_TTL` |
 
@@ -59,7 +59,7 @@ MAIL_SUBJECT_PREFIX=[Site]
 ### Секреты
 
 - API-ключи, токены, пароли — **только в `.env`**, никогда в коде или в коммитах.
-- В `.env.example` оставлять пустыми (`PHOTOROOM_API_KEY=`) или с placeholder (`JWT_SECRET=change-me`).
+- В `.env.example` оставлять пустыми (`N8N_BASE_URL=`) или с placeholder (`JWT_SECRET=change-me`).
 - Не использовать одни и те же значения в development и production.
 
 ## .env.example правила

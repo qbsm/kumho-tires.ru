@@ -469,7 +469,7 @@ function printHelp() {
   npm run distill -- diff ../kumho-tires.ru
   npm run distill -- status
   npm run distill -- init retail-logistik --name "Ритейл Логистик" --domain retail-logistik.ru
-  npm run distill -- mark-override ../kumho-tires.ru src/Action/PhotoroomRemoveBackgroundAction.php "kumho-only Photoroom"
+  npm run distill -- mark-override ../kumho-tires.ru src/Service/CustomSeoBuilder.php "deployment-only override"
 
 Документация: docs/architecture/distillation.md §6, tools/distill/README.md.
 `);

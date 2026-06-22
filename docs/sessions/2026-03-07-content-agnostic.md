@@ -228,7 +228,6 @@ APP_ENV=development          # production | development
 APP_DEBUG=1                  # 0 или 1
 APP_DEFAULT_LANG=ru          # язык по умолчанию
 YANDEX_METRIC_ID=0           # ID Яндекс.Метрики
-PHOTOROOM_API_KEY=            # API-ключ Photoroom
 ```
 
 ### Запуск тестов

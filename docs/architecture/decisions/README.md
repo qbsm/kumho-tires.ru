@@ -25,7 +25,6 @@
 | # | Тема | Статус |
 |---|---|---|
 | 0001 | static-utilities-vs-services | Accepted |
-| 0002 | photoroom-out-of-baseline | Accepted |
 | 0003 | seo-builder-strategy | Accepted |
 | 0004 | data-items-from | Accepted |
 | 0005 | notification-channel-dispatcher | Accepted |

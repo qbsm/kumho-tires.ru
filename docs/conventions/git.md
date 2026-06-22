@@ -57,7 +57,7 @@
 fix(csp): разрешить data: в font-src (превентивно, под swiper-icons bundle)
 fix(env): createImmutable → createUnsafeImmutable
 fix(csrf): пробросить csrf_token в шаблон
-refactor(core): DRY-вытяжки + удаление Photoroom + lib.mjs для distill
+refactor(core): DRY-вытяжки + lib.mjs для distill
 test(support): unit-тесты для Arr, Json, PlatformSettings (29 тестов, 44 assertions)
 distill: дистилляция baseline платформы из kumho-tires.ru
 docs: перенос универсальных гайдов из italy + sessions/

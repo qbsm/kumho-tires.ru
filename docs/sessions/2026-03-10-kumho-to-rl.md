@@ -161,10 +161,10 @@ data/img/tires/                      — полная директория (не
 |---|--------|----------|
 | 1 | `header` | Шапка сайта |
 | 2 | `promo` | Заголовок H1 "AI-инструменты", подпись, фон |
-| 3 | `content-container` | 3 блока: удаление фона (рабочий инструмент с Photoroom API), извлечение данных с этикетки (заглушка «Скоро»), CTA на личный кабинет |
+| 3 | `content-container` | 3 блока: удаление фона, извлечение данных с этикетки (заглушка «Скоро»), CTA на личный кабинет |
 | 4 | `footer` | Подвал |
 
-Инструмент «Удаление фона» содержит полноценный dropzone с файловым input, блоками «До/После», индикатором загрузки и обработкой ошибок. Endpoint: `/api/photoroom/remove-background`.
+Инструмент «Удаление фона» содержит полноценный dropzone с файловым input, блоками «До/После», индикатором загрузки и обработкой ошибок.
 
 ### `data/json/ru/seo/demo-tools.json`
 SEO-данные для страницы demo-tools:
@@ -206,7 +206,6 @@ SEO-данные для страницы demo-tools:
 'collections' => [],
 'sitemap_pages' => ['index', 'contacts', 'demo-tools', 'policy', 'agree'],
 'integrations' => [
-    'photoroom' => ['enabled' => true],
 ],
 ```
 
@@ -410,7 +409,6 @@ return [
     'collections' => [],
     'sitemap_pages' => ['index', 'contacts', 'demo-tools', 'policy', 'agree'],
     'integrations' => [
-        'photoroom' => ['enabled' => true],
     ],
 ];
 ```
@@ -426,7 +424,6 @@ return [
 
 **Коллекции:** нет (пустой массив). У Kumho были `tires` и `news`.
 
-**Интеграции:** Photoroom API (удаление фона) включён.
 
 ### Глобальные данные (`data/json/global.json`)
 
@@ -496,7 +493,6 @@ npm run test:smoke  # Smoke-тесты (требует запущенный се
 ### Известные ограничения
 - **Windows symlink:** `EPERM: operation not permitted, symlink` при `npm run build:dev` — известное ограничение Windows, не блокирует работу. Решение: junction создаётся через `setup-public-links.js`.
 - **Заглушки:** телефон, email, адрес — ожидают реальные данные от заказчика
-- **Photoroom API:** endpoint `/api/photoroom/remove-background` требует настройки бэкенда (API-ключ в `.env`)
 
 ---
 
