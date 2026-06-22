@@ -52,6 +52,7 @@
 }
 
 .accordion__title {
+  font-family: var(--font-2);
   font-size: 1.5rem;
   font-weight: 500;
 
