@@ -53,12 +53,8 @@
 
 .accordion__title {
   font-family: var(--font-2);
-  font-size: 1.0714em;
+  font-size: 1em;
   font-weight: 500;
-
-  @media (--lg) {
-    font-size: 1.125em;
-  }
 }
 
 .accordion__item.active .accordion__title {
