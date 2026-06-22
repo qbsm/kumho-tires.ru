@@ -24,6 +24,8 @@ Disallow: /.git/
 Disallow: *.php$
 Disallow: /.htaccess
 
+Sitemap: https://kumho-tires.ru/sitemap.xml
+
 # AI / LLM-краулеры (GEO)
 # По умолчанию разрешаем индексацию для AI-поисковиков. Чтобы запретить бота — добавьте блок с Disallow: /
 # GPTBot (OpenAI), ChatGPT-User (браузерный доступ)

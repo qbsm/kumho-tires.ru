@@ -120,7 +120,7 @@ final class SitemapAction
             $listKey = (string) ($config['list_key'] ?? '');
             $valueKey = (string) ($config['value_key'] ?? '');
             $sluggerKey = (string) ($config['slugger'] ?? 'city');
-            if ($pathSegment === '' || $dataPage === '' || $listKey === '' || $valueKey === '') {
+            if ($pathSegment === '' || $dataPage === '' || $listKey === '') {
                 continue;
             }
 
@@ -173,10 +173,14 @@ final class SitemapAction
 
         $slugs = [];
         foreach ($items as $item) {
-            if (!is_array($item) || !isset($item[$valueKey]) || !is_string($item[$valueKey])) {
+            if (is_string($item)) {
+                $value = $item;
+            } elseif (is_array($item) && $valueKey !== '' && isset($item[$valueKey]) && is_string($item[$valueKey])) {
+                $value = (string) $item[$valueKey];
+            } else {
                 continue;
             }
-            $slug = $this->slugifyValue((string) $item[$valueKey], $sluggerKey);
+            $slug = $this->slugifyValue($value, $sluggerKey);
             if ($slug === '' || in_array($slug, $slugs, true)) {
                 continue;
             }
@@ -189,6 +193,7 @@ final class SitemapAction
     private function slugifyValue(string $value, string $sluggerKey): string
     {
         return match ($sluggerKey) {
+            'identity', 'slug' => trim($value),
             'city' => CitySlugger::slug($value),
             default => CitySlugger::slug($value),
         };

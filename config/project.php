@@ -55,6 +55,12 @@ return [
             'value_key' => 'city',
             'slugger' => 'city',
         ],
+        'tires-list' => [
+            'data_page' => 'tires',
+            'list_key' => 'items',
+            'value_key' => '',
+            'slugger' => 'identity',
+        ],
     ],
 
     // Внешние интеграции (флаги включения)

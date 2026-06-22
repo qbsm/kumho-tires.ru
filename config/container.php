@@ -23,6 +23,7 @@ use App\Service\DataLoaderService;
 use App\Service\DefaultSeoBuilder;
 use App\Service\MailService;
 use App\Service\SeoBuilderRegistry;
+use App\Service\TireSeoBuilder;
 use App\Twig\AssetExtension;
 use App\Twig\DataExtension;
 use App\Twig\UrlExtension;
@@ -129,8 +130,9 @@ return static function (): ContainerInterface {
         //       $c->get(DefaultSeoBuilder::class),
         //   ),
         DefaultSeoBuilder::class => \DI\autowire(),
+        TireSeoBuilder::class => \DI\autowire(),
         SeoBuilderRegistry::class => static fn(ContainerInterface $c) => new SeoBuilderRegistry(
-            [],
+            ['tires' => $c->get(TireSeoBuilder::class)],
             $c->get(DefaultSeoBuilder::class),
         ),
 
