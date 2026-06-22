@@ -52,8 +52,12 @@
 }
 
 .accordion__title {
-  font-size: 0.8em;
+  font-size: 1.5rem;
   font-weight: 500;
+
+  @media (--lg) {
+    font-size: 1.8rem;
+  }
 }
 
 .accordion__item.active .accordion__title {
@@ -90,20 +94,16 @@
 }
 
 .accordion__desc {
-  font-size: 0.9em;
-}
-
-/* Компенсируем уменьшенный размер шрифта внутри аккордеона */
-.accordion__desc .custom-list {
-  font-size: 1.111em;
-
-  /* 1 / 0.9 = 1.111 */
+  font-size: 1.4rem;
+  line-height: 1.55;
 
   @media (--lg) {
-    font-size: 1em;
-
-    /* 0.9 / 0.9 = 1 */
+    font-size: 1.5rem;
   }
+}
+
+.accordion__desc .custom-list {
+  font-size: 1em;
 }
 
 /* Стили для кнопки "Показать все" */
