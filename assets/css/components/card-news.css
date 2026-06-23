@@ -160,10 +160,6 @@ a.card-news-link {
   flex-grow: 1;
   font-size: 1em;
   opacity: 0.7;
-
-  @media (--lg) {
-    font-size: 0.9em;
-  }
 }
 
 .card-news.full-cover .card-news__desc {
