@@ -93,10 +93,6 @@
 .accordion__desc {
   font-size: 1em;
   line-height: 1.55;
-
-  @media (--lg) {
-    font-size: 0.9375em;
-  }
 }
 
 .accordion__desc .custom-list {
