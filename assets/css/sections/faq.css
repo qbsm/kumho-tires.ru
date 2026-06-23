@@ -3,3 +3,10 @@
 .faq .section__subitem.heading-wrap {
   margin-bottom: 2.4rem;
 }
+
+/* На десктопе FAQ по ширине одной карточки новостей (половина контейнера минус gap 2rem). */
+@media (--lg) {
+  .faq .section__item.block-wrap {
+    max-width: calc((100% - 2rem) / 2);
+  }
+}
