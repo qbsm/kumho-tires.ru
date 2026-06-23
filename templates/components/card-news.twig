@@ -17,7 +17,7 @@
       {% endfor %}
       {% set _fallbackUrl = (_v['800'] is defined and _v['800'] and _v['800'].webp) ? url(_v['800'].webp) : url(image_fallback(_coverRaw)) %}
       {% set _bg = "background-image: url('" ~ _fallbackUrl ~ "');" %}
-      {% if _set|length > 0 %}{% set _bg = _bg ~ " background-image: image-set(" ~ _set|join(', ') ~ ");" %}{% endif %}
+      {% if _set|length > 0 %}{% set _bg = _bg ~ " background-image: -webkit-image-set(" ~ _set|join(', ') ~ "); background-image: image-set(" ~ _set|join(', ') ~ ");" %}{% endif %}
       {% if _fallbackUrl %}
         <div class="card-news__cover" style="{{ _bg }}"></div>
       {% endif %}
