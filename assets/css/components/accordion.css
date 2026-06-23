@@ -93,6 +93,7 @@
 .accordion__desc {
   font-size: 1em;
   line-height: 1.55;
+  opacity: 0.7;
 }
 
 .accordion__desc .custom-list {
