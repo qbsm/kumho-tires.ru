@@ -79,7 +79,6 @@ class AssetExtension extends AbstractExtension
         $trimmedAssetName = ltrim($assetName, '/');
         if (!isset($manifest[$assetName]) && !isset($manifest[$trimmedAssetName])) {
             if ($safe) {
-                error_log("AssetExtension: Ассет '{$assetName}' отсутствует в '{$manifestType}' манифесте.");
                 return null;
             }
             throw new RuntimeException("Ассет '{$assetName}' отсутствует в '{$manifestType}' манифесте.");
