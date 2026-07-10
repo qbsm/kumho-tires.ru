@@ -6,21 +6,25 @@
   /* Стили для контейнера в contacts */
 }
 
-/* Две секции content-container подряд не должны давать двойной вертикальный паддинг */
-.page-contacts .content-container + .content-container {
-  padding-top: 0;
+/* Компактные вертикальные отступы: базовые .section дают по 6rem сверху и снизу,
+   на короткой странице контактов они складываются в огромные пустоты. */
+.page-contacts .promo.section {
+  padding-bottom: 1.5rem;
+}
+
+.page-contacts .content-container.section {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.page-contacts .card-doc {
+  padding: 1rem 0;
 }
 
 .content-contacts {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-}
-
-@media (--lg) {
-  .content-contacts {
-    gap: 4rem;
-  }
 }
 
 .content-contacts .section__item.content-wrap {
