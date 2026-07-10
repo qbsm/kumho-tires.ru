@@ -6,6 +6,11 @@
   /* Стили для контейнера в contacts */
 }
 
+/* Две секции content-container подряд не должны давать двойной вертикальный паддинг */
+.page-contacts .content-container + .content-container {
+  padding-top: 0;
+}
+
 .content-contacts {
   display: flex;
   flex-direction: column;

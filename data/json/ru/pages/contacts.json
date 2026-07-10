@@ -6,6 +6,13 @@
       "data": {}
     },
     {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": "data/img/frames/raw/news1.webp"
+      }
+    },
+    {
       "name": "promo",
       "data": {
         "heading": {
@@ -26,10 +33,10 @@
           "items": [
             {
               "class": "cards-doc-wrap",
-              "content": "{% for item in item.items %}<div class='section__subitem card-doc-wrap'><div class='container-md'>{% include 'components/card-doc.twig' with {'item': item} %}</div></div>{% endfor %}",
+              "content": "{% for item in item.items %}<div class='section__subitem card-doc-wrap'><div class='container-sm'>{% include 'components/card-doc.twig' with {'item': item} %}</div></div>{% endfor %}",
               "items": [
                 {
-                  "title": "Официальный дистрибьютор Kumho Tire",
+                  "title": "Официальный дистрибьютор Kumho Tire в России Север Авто",
                   "desc": "Kumho Tire — один из ведущих мировых производителей шин, основанный в 1960 году в Южной Корее. Продукция поставляется более чем в 180 стран мира."
                 },
                 {
@@ -50,7 +57,7 @@
           "items": [
             {
               "class": "content-wrap",
-              "content": "<div class='section__subitem container-md'>{% if global.address[lang_code] is defined and global.address[lang_code]|length > 0 %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.address.heading} %}</div>{% for address in global.address[lang_code] %}<div class='section__inner block-wrap'><div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.address.src, alt: item.icon.address.alt}, title: address.title} %}</div><div class='section__inner button-wrap'><a href='{{ address.href }}' class='{{ item.button.class }}' target='_blank'>{{ item.button.title }}</a></div></div>{% endfor %}{% endif %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.connect.heading} %}</div><div class='section__inner block-wrap'>{% for phone in global.phones %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.phone.src, alt: item.icon.phone.alt}, goal: {class: item.goal.phone.class}, link: {href: phone.href, title: phone.title}} %}</div>{% endfor %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.mail.src, alt: item.icon.mail.alt}, link: {href: global.email.href, title: global.email.title}} %}</div></div></div>",
+              "content": "<div class='section__subitem container-sm'>{% if global.address[lang_code] is defined and global.address[lang_code]|length > 0 %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.address.heading} %}</div>{% for address in global.address[lang_code] %}<div class='section__inner block-wrap'><div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.address.src, alt: item.icon.address.alt}, title: address.title} %}</div><div class='section__inner button-wrap'><a href='{{ address.href }}' class='{{ item.button.class }}' target='_blank'>{{ item.button.title }}</a></div></div>{% endfor %}{% endif %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.connect.heading} %}</div><div class='section__inner block-wrap'>{% for phone in global.phones %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.phone.src, alt: item.icon.phone.alt}, goal: {class: item.goal.phone.class}, link: {href: phone.href, title: phone.title}} %}</div>{% endfor %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.mail.src, alt: item.icon.mail.alt}, link: {href: global.email.href, title: global.email.title}} %}</div></div></div>",
               "icon": {
                 "address": {
                   "src": "data/img/ui/icons/icon-locate-color-2.svg",
@@ -91,7 +98,7 @@
             },
             {
               "class": "content-wrap form-callback-wrap",
-              "content": "<div class='section__subitem heading-wrap container-md'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem container-md'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': 'Получить консультацию'}}} %}</div>",
+              "content": "<div class='section__subitem heading-wrap container-sm'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem container-sm'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': 'Получить консультацию'}}} %}</div>",
               "heading": {
                 "tag": "h2",
                 "class": "h5 heading font-2 weight-700 heading-flex uppercase",
