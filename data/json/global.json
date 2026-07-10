@@ -7,12 +7,7 @@
       "direction": "ltr"
     }
   ],
-  "phones": [
-    {
-      "title": "+7 (000) 000-00-00",
-      "href": "tel:+70000000000"
-    }
-  ],
+  "phones": [],
   "nav": {
     "ru": {
       "items": [
@@ -158,13 +153,6 @@
         }
       },
       {
-        "type": "text",
-        "name": "square",
-        "validation": {
-          "required": true
-        }
-      },
-      {
         "type": "checkbox",
         "name": "policy",
         "validation": {
@@ -184,14 +172,12 @@
       "ru": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Ваше имя",
-        "square": "Площадь, м²",
         "photos": "Нажмите или перетащите фотографии шин(-ы)",
         "message": "Опишите ситуацию: что произошло, модель и размер шин, номер расширенной гарантии и др."
       },
       "en": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Your name",
-        "square": "Area, m²",
         "photos": "Click or drag & drop photos",
         "message": "Describe the issue: what happened, tire model and size, warranty number, etc."
       }
@@ -200,7 +186,6 @@
       "ru": {
         "phone": "Телефон",
         "name": "Ваше имя",
-        "square": "Площадь, м²",
         "policy": "Я ознакомился с&nbsp;<a href='/data/docs/personal-data-policy.pdf' target='_blank'>Политикой обработки персональных данных</a> и&nbsp;согласен с&nbsp;обработкой моих персональных данных способами и&nbsp;для целей, указанных в&nbsp;Политике.",
         "photos": "Прикрепите изображения",
         "message": "Сообщение"
@@ -208,7 +193,6 @@
       "en": {
         "phone": "Phone",
         "name": "Your name",
-        "square": "Area, m²",
         "policy": "I consent to the processing of personal data in&nbsp;accordance with the&nbsp;<a href='/en/policy/' target='_blank'>Privacy Policy</a>",
         "photos": "Attach images",
         "message": "Message"

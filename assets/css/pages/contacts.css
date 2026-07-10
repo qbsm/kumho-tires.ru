@@ -5,3 +5,37 @@
 .contacts .container {
   /* Стили для контейнера в contacts */
 }
+
+.content-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (--lg) {
+  .content-contacts {
+    gap: 4rem;
+  }
+}
+
+.content-contacts .section__item.content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-contacts .section__subitem {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-contacts .section__inner.block-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.content-contacts .section__inner.button-wrap {
+  display: inline-flex;
+}

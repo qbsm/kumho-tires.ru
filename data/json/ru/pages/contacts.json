@@ -50,7 +50,7 @@
           "items": [
             {
               "class": "content-wrap",
-              "content": "<div class='section__subitem container-md'><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.address.heading} %}</div>{% for address in global.address[lang_code] %}<div class='section__inner block-wrap'><div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.address.src, alt: item.icon.address.alt}, title: address.title} %}</div><div class='section__inner button-wrap'><a href='{{ address.href }}' class='{{ item.button.class }}' target='_blank'>{{ item.button.title }}</a></div></div>{% endfor %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.connect.heading} %}</div><div class='section__inner block-wrap'>{% for phone in global.phones %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.phone.src, alt: item.icon.phone.alt}, goal: {class: item.goal.phone.class}, link: {href: phone.href, title: phone.title}} %}</div>{% endfor %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.mail.src, alt: item.icon.mail.alt}, link: {href: global.email.href, title: global.email.title}} %}</div></div></div>",
+              "content": "<div class='section__subitem container-md'>{% if global.address[lang_code] is defined and global.address[lang_code]|length > 0 %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.address.heading} %}</div>{% for address in global.address[lang_code] %}<div class='section__inner block-wrap'><div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.address.src, alt: item.icon.address.alt}, title: address.title} %}</div><div class='section__inner button-wrap'><a href='{{ address.href }}' class='{{ item.button.class }}' target='_blank'>{{ item.button.title }}</a></div></div>{% endfor %}{% endif %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.connect.heading} %}</div><div class='section__inner block-wrap'>{% for phone in global.phones %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.phone.src, alt: item.icon.phone.alt}, goal: {class: item.goal.phone.class}, link: {href: phone.href, title: phone.title}} %}</div>{% endfor %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.mail.src, alt: item.icon.mail.alt}, link: {href: global.email.href, title: global.email.title}} %}</div></div></div>",
               "icon": {
                 "address": {
                   "src": "data/img/ui/icons/icon-locate-color-2.svg",
@@ -88,10 +88,6 @@
                   "title": "Связаться с нами"
                 }
               }
-            },
-            {
-              "class": "content-wrap social-wrap",
-              "content": "<div class='section__subitem heading-wrap'>{% include 'components/heading.twig' with {'item': {'tag': 'h2', 'class': 'h5 heading font-2 weight-700 heading-flex uppercase', 'title': global['socials-headings'].ru}} %}</div><div class='section__subitem mini-table-wrap container-md'>{% set socialItems = [] %}{% for social in global.socials %}{% if social.visible %}{% set socialItems = socialItems|merge([{'title': social.title.ru, 'href': social.href, 'value': social.subscribers.ru}]) %}{% endif %}{% endfor %}{% include 'components/mini-table.twig' with {'items': socialItems} %}</div>"
             },
             {
               "class": "content-wrap form-callback-wrap",
