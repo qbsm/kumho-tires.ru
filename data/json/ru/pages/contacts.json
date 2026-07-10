@@ -15,6 +15,7 @@
     {
       "name": "promo",
       "data": {
+        "container": "container-sm",
         "heading": {
           "tag": "h1",
           "class": "h1 heading font-2 weight-700 heading-flex uppercase",

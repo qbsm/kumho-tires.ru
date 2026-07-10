@@ -1,5 +1,5 @@
 <section class="promo section">
-  <div class="container">
+  <div class="{% if data.container is defined and data.container %}{{ data.container }}{% else %}container{% endif %}">
     {% if data.heading is defined %}
       <div class="section__item heading-wrap">
         <span class="heading-accent self-start" aria-hidden="true"></span>
