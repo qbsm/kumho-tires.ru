@@ -46,7 +46,7 @@
             },
             {
               "class": "content-wrap container-sm",
-              "content": "<div class='section__subitem about-highlight'><div class='about-highlight__item'><span class='about-highlight__num'>8&nbsp;<span class='about-highlight__unit'>млн</span></span><span class='about-highlight__label'>шин продано в&nbsp;2025&nbsp;году</span></div><span class='about-highlight__eq' aria-hidden='true'>=</span><div class='about-highlight__item'><span class='about-highlight__num'>22&nbsp;000</span><span class='about-highlight__label'>шин в&nbsp;день</span></div></div>"
+              "content": "<div class='section__subitem about-highlight'><div class='about-highlight__item'><span class='about-highlight__num'>8<span class='about-highlight__unit'>млн</span></span><span class='about-highlight__label'>шин продано в&nbsp;2025&nbsp;году</span></div><span class='about-highlight__eq' aria-hidden='true'>=</span><div class='about-highlight__item'><span class='about-highlight__num'>22&nbsp;000</span><span class='about-highlight__label'>шин в&nbsp;день</span></div></div>"
             },
             {
               "class": "content-wrap container-sm",
@@ -65,7 +65,7 @@
             },
             {
               "class": "content-wrap container-sm",
-              "content": "<div class='section__subitem about-slogan'>{{ item.slogan | raw }}</div>",
+              "content": "<div class='section__subitem about-slogan'><span class='about-slogan__accent' aria-hidden='true'></span><span class='about-slogan__text'>{{ item.slogan | raw }}</span></div>",
               "slogan": "Мы&nbsp;растём вместе с&nbsp;нашими клиентами и&nbsp;поставщиками!"
             }
           ]
