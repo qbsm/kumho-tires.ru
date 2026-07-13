@@ -1,0 +1,16 @@
+/* Страница «О компании» */
+
+/* Обложка (frame) выше в 1.5 раза, чем на остальных страницах */
+.page-about .frame {
+  height: 52.5rem;
+}
+
+/* Убираем большой двойной отступ между заголовком «О компании»
+   и первым блоком контента (промо + content-container складывали ~12rem). */
+.page-about .promo.section {
+  padding-bottom: 1.5rem;
+}
+
+.page-about .content-container.section {
+  padding-top: 1.5rem;
+}

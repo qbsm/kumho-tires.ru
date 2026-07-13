@@ -66,6 +66,7 @@
 
 /* Pages */
 @import "pages/404.css";
+@import "pages/about.css";
 @import "pages/contacts.css";
 @import "pages/index.css";
 @import "sections/logoline.css";
