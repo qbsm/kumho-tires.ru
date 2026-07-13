@@ -1,9 +1,9 @@
 <section class="faq section">
-  <div class="container">
+  <div class="container-sm">
     <div class="section__item block-wrap">
       {% if data.heading is defined %}
-        <div class="section__subitem heading-wrap items-start text-left">
-          <span class="heading-accent self-start" aria-hidden="true"></span>
+        <div class="section__subitem heading-wrap items-center text-center">
+          <span class="heading-accent" aria-hidden="true"></span>
           {% include 'components/heading.twig' with {'item': data.heading} %}
         </div>
       {% endif %}

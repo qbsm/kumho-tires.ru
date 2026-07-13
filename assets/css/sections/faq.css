@@ -2,11 +2,12 @@
    Размеры шрифта аккордеона теперь в самом компоненте — assets/css/components/accordion.css. */
 .faq .section__subitem.heading-wrap {
   margin-bottom: 2.4rem;
+  display: flex;
+  flex-direction: column;
 }
 
-/* На десктопе FAQ по ширине одной карточки новостей (половина контейнера минус gap 2rem). */
-@media (--lg) {
-  .faq .section__item.block-wrap {
-    max-width: calc((100% - 2rem) / 2);
-  }
+/* Заголовок FAQ по центру (align-items:center — из .items-center в разметке):
+   акцент-маркер и заголовок центрируются как единое целое, без левого сдвига маркера. */
+.faq .heading-accent {
+  margin-left: 0;
 }
