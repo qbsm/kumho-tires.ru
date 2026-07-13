@@ -93,6 +93,7 @@
 }
 
 .about-stat__plus {
+  align-self: center;
   margin-left: 0.02em;
   font-size: 0.55em;
 }
