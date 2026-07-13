@@ -14,26 +14,21 @@
       }
     },
     {
-      "name": "promo",
-      "data": {
-        "container": "container-sm",
-        "heading": {
-          "tag": "h1",
-          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
-          "title": "О компании"
-        },
-        "background": {
-          "src": "data/img/ui/bg1.webp"
-        }
-      }
-    },
-    {
       "name": "content-container",
       "data": {
         "container": "container-sm",
         "content": {
           "class": "content-about",
           "items": [
+            {
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div>",
+              "heading": {
+                "tag": "h1",
+                "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+                "title": "О компании"
+              }
+            },
             {
               "class": "content-wrap container-sm",
               "content": "<div class='section__subitem desc-wrap'><span class='longread about-lead'>{{ item.lead | raw }}</span></div><div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
