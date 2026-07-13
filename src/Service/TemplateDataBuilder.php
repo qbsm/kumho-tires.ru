@@ -186,6 +186,7 @@ final class TemplateDataBuilder
         $reverseMap = array_flip($routeMap);
         $homeName = 'Главная';
         $homeUrl = '/';
+        $navTitles = [];
 
         if (isset($global['nav'][$langCode]['items']) && is_array($global['nav'][$langCode]['items'])) {
             foreach ($global['nav'][$langCode]['items'] as $item) {
@@ -196,7 +197,10 @@ final class TemplateDataBuilder
                 if ($href === '' || $href === '/') {
                     $homeName = isset($item['title']) ? (string) $item['title'] : $homeName;
                     $homeUrl = '/';
-                    break;
+                    continue;
+                }
+                if (isset($item['title'])) {
+                    $navTitles[$href] = (string) $item['title'];
                 }
             }
         }
@@ -209,9 +213,13 @@ final class TemplateDataBuilder
             if ($routeParams !== []) {
                 $path .= '/' . implode('/', $routeParams);
             }
+            $crumbName = $navTitles[trim($pathSegment, '/')] ?? '';
+            if ($crumbName === '') {
+                $crumbName = $pageTitle !== '' ? $pageTitle : $pathSegment;
+            }
             $items[] = [
-                'name' => $pageTitle !== '' ? $pageTitle : $pathSegment,
-                'url' => '/' . $path . '/',
+                'name' => $crumbName,
+                'url' => '/' . $path,
             ];
         }
 
