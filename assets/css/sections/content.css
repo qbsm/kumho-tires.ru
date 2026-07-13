@@ -33,6 +33,157 @@
   }
 }
 
+.content-about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-about .about-lead {
+  display: block;
+  font-family: var(--font-2);
+  font-size: 1.375em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+@media (--md) {
+  .content-about .about-lead {
+    font-size: 1.625em;
+  }
+}
+
+/* Крупные цифры-показатели */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (--md) {
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.5rem;
+  background: var(--gradient-3);
+}
+
+.about-stat__num {
+  font-family: var(--font-2);
+  font-size: 3.25em;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-3);
+}
+
+@media (--md) {
+  .about-stat__num {
+    font-size: 3.75em;
+  }
+}
+
+.about-stat__plus {
+  font-size: 0.6em;
+  vertical-align: super;
+}
+
+.about-stat__label {
+  font-family: var(--font-2);
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--color-2);
+}
+
+/* Акцентный блок «8 млн = 22 000» */
+.about-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  color: var(--color-1);
+  background: var(--color-2);
+}
+
+@media (--md) {
+  .about-highlight {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 2.75rem 2rem;
+  }
+}
+
+.about-highlight__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-highlight__num {
+  font-family: var(--font-2);
+  font-size: 3em;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-3);
+}
+
+@media (--md) {
+  .about-highlight__num {
+    font-size: 4em;
+  }
+}
+
+.about-highlight__unit {
+  font-size: 0.45em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about-highlight__label {
+  font-family: var(--font-2);
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.about-highlight__eq {
+  font-family: var(--font-2);
+  font-size: 2.5em;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-7);
+}
+
+/* Финальный слоган */
+.about-slogan {
+  font-family: var(--font-2);
+  font-size: 1.5em;
+  font-weight: 800;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: var(--color-3);
+}
+
+@media (--md) {
+  .about-slogan {
+    font-size: 1.875em;
+  }
+}
+
 .content .container {
   /* Стили для контейнера в content */
 }

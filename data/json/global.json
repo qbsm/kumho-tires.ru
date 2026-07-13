@@ -16,6 +16,10 @@
           "href": "/"
         },
         {
+          "title": "О компании",
+          "href": "/about"
+        },
+        {
           "title": "Бренд",
           "href": "/brand",
           "visible": false
@@ -44,6 +48,10 @@
         {
           "title": "Home",
           "href": "/"
+        },
+        {
+          "title": "About",
+          "href": "/about"
         },
         {
           "title": "Brand",

@@ -1,0 +1,81 @@
+{
+  "name": "about",
+  "sections": [
+    {
+      "name": "header",
+      "data": {}
+    },
+    {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": "data/img/about/warehouse.webp",
+        "cover_position": "center center"
+      }
+    },
+    {
+      "name": "promo",
+      "data": {
+        "container": "container-sm",
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+          "title": "О компании"
+        },
+        "background": {
+          "src": "data/img/ui/bg1.webp"
+        }
+      }
+    },
+    {
+      "name": "content-container",
+      "data": {
+        "container": "container-sm",
+        "content": {
+          "class": "content-about",
+          "items": [
+            {
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem desc-wrap'><span class='longread about-lead'>{{ item.lead | raw }}</span></div><div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "lead": "«Север Авто» — официальный дистрибьютор шин Kumho Tire в России.",
+              "desc": "«Север Авто» является системообразующим предприятием России, которое оказывает существенное влияние на развитие экономики страны и обеспечивает высокую занятость в городах присутствия.<br><br>Многократный участник международных выставок автомобильной и шинной тематики."
+            },
+            {
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem about-stats'><div class='about-stat'><span class='about-stat__num'>27</span><span class='about-stat__label'>лет экспертного опыта в&nbsp;шинной отрасли</span></div><div class='about-stat'><span class='about-stat__num'>16</span><span class='about-stat__label'>филиалов и&nbsp;представительств по&nbsp;всей России</span></div><div class='about-stat'><span class='about-stat__num'>3000<span class='about-stat__plus'>+</span></span><span class='about-stat__label'>сотрудников</span></div></div>"
+            },
+            {
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem about-highlight'><div class='about-highlight__item'><span class='about-highlight__num'>8&nbsp;<span class='about-highlight__unit'>млн</span></span><span class='about-highlight__label'>шин продано в&nbsp;2025&nbsp;году</span></div><span class='about-highlight__eq' aria-hidden='true'>=</span><div class='about-highlight__item'><span class='about-highlight__num'>22&nbsp;000</span><span class='about-highlight__label'>шин в&nbsp;день</span></div></div>"
+            },
+            {
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "desc": "Широкий продуктовый портфель, включающий надёжные шины и&nbsp;диски от&nbsp;известных брендов. Присутствие на&nbsp;российском рынке с&nbsp;2013 года обеспечивает доверие и&nbsp;узнаваемость бренда «Север Авто»."
+            },
+            {
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Логистические центры"
+              },
+              "desc": "Логистические центры расположены в&nbsp;крупнейших городах: 16&nbsp;складских комплексов общей площадью более 140&nbsp;тыс.&nbsp;кв.&nbsp;м. В&nbsp;компании внедрена система управления складом WMS и&nbsp;система управления транспортом TMS.<br><br>Маршрутизация грузов работает на&nbsp;технологиях Яндекса — она позволяет эффективнее выстраивать маршрут, гарантирует высокое качество сервиса и&nbsp;отслеживание доставки заказов клиентам в&nbsp;режиме реального времени.<br><br>Компания «Север Авто» осуществляет оперативную доставку во&nbsp;все регионы страны не&nbsp;только собственным транспортом, но&nbsp;и&nbsp;с&nbsp;использованием услуг ведущих российских транспортных операторов, таких как «Деловые Линии», «ПЭК» и&nbsp;«КИТ», а&nbsp;также агрегаторов ключевых служб доставки.<br><br>Всё это помогает нам эффективно и&nbsp;быстро доставлять заказы для наших клиентов по&nbsp;всей стране."
+            },
+            {
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem about-slogan'>{{ item.slogan | raw }}</div>",
+              "slogan": "Мы&nbsp;растём вместе с&nbsp;нашими клиентами и&nbsp;поставщиками!"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {}
+    }
+  ]
+}

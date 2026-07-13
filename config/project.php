@@ -38,6 +38,7 @@ return [
     // page_id страниц для sitemap.xml (без 404)
     'sitemap_pages' => [
         'index',
+        'about',
         'contacts',
         'policy',
         'cookies-policy',

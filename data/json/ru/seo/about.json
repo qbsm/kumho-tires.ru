@@ -1,0 +1,38 @@
+{
+  "name": "about",
+  "title": "О компании — Север Авто, дистрибьютор Kumho",
+  "meta": [
+    {
+      "name": "description",
+      "content": "«Север Авто» — официальный дистрибьютор шин Kumho Tire в России: 27 лет опыта, 16 филиалов, более 3000 сотрудников, собственная логистика и складские комплексы."
+    },
+    {
+      "property": "og:url",
+      "content": "https://kumho-tires.ru/about"
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "О компании — Север Авто, дистрибьютор Kumho"
+    },
+    {
+      "property": "og:description",
+      "content": "«Север Авто» — официальный дистрибьютор шин Kumho Tire в России: 27 лет опыта, 16 филиалов, более 3000 сотрудников, собственная логистика и складские комплексы."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Kumho Tire"
+    },
+    {
+      "property": "og:image",
+      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+    },
+    {
+      "property": "og:image:secure_url",
+      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+    }
+  ]
+}
