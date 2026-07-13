@@ -32,7 +32,7 @@
             {
               "class": "content-wrap container-sm",
               "content": "<div class='section__subitem desc-wrap'><span class='longread about-lead'>{{ item.lead | raw }}</span></div><div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
-              "lead": "«Север&nbsp;Авто»&nbsp;—<br>официальный дистрибьютор шин Kumho&nbsp;Tire в&nbsp;России.",
+              "lead": "«Север&nbsp;Авто»&nbsp;— официальный дистрибьютор шин Kumho&nbsp;Tire в&nbsp;России.",
               "desc": "«Север Авто» является <strong>системообразующим предприятием России</strong>, которое оказывает существенное влияние на развитие экономики страны и обеспечивает высокую занятость в городах присутствия.<br><br>Многократный участник международных выставок автомобильной и шинной тематики."
             },
             {
