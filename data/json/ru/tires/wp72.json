@@ -1,0 +1,270 @@
+{
+  "slug": "wp72",
+  "visible": true,
+  "filter": {
+    "season": [
+      "winter"
+    ],
+    "diameters": [
+      18,
+      19,
+      20,
+      21
+    ],
+    "widths": [
+      215,
+      225,
+      235,
+      245,
+      255,
+      265,
+      275,
+      285
+    ],
+    "profiles": [
+      30,
+      35,
+      40,
+      45,
+      50
+    ]
+  },
+  "item": {
+    "code": "WP72",
+    "series": "WinterCraft",
+    "name": "Kumho WP72 WinterCraft"
+  },
+  "desc": {
+    "short": "Зимняя нешипованная шина Kumho WP72 WinterCraft для среднего и премиального класса. Инновационный дизайн протектора с 3D-ламелями для отличного торможения.",
+    "full": "Kumho WP72 WinterCraft — зимняя нешипованная шина из линейки WinterCraft для среднего и люксового класса, а также спортивных автомобилей. Инновационный дизайн протектора с 3D-ламелями обеспечивает отличное торможение на мокрой, заснеженной и обледенелой дороге, а точная и стабильная управляемость сохраняется на заснеженном покрытии. Низкий уровень шума и комфортный ход делают поездку приятной в любых зимних условиях."
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/wp72/raw/wp72-30deg.webp",
+      "alt": "Kumho WP72 WinterCraft"
+    },
+    "side": {
+      "src": "data/img/tires/wp72/raw/wp72-side.webp",
+      "alt": "Kumho WP72 WinterCraft, вид сбоку"
+    },
+    "front": {
+      "src": "data/img/tires/wp72/raw/wp72-front.webp",
+      "alt": "Kumho WP72 WinterCraft, вид спереди"
+    }
+  },
+  "season": "Зимняя",
+  "sizes": [
+    {
+      "label": "215/45R18",
+      "diameter": 18,
+      "index": "93V",
+      "commercial": false
+    },
+    {
+      "label": "245/50R18",
+      "diameter": 18,
+      "index": "104V",
+      "commercial": false
+    },
+    {
+      "label": "255/40R18",
+      "diameter": 18,
+      "index": "99V",
+      "commercial": false
+    },
+    {
+      "label": "265/35R18",
+      "diameter": 18,
+      "index": "97V",
+      "commercial": false
+    },
+    {
+      "label": "275/40R18",
+      "diameter": 18,
+      "index": "103V",
+      "commercial": false
+    },
+    {
+      "label": "275/45R18",
+      "diameter": 18,
+      "index": "107V",
+      "commercial": false
+    },
+    {
+      "label": "285/35R18",
+      "diameter": 18,
+      "index": "101V",
+      "commercial": false
+    },
+    {
+      "label": "225/40R19",
+      "diameter": 19,
+      "index": "93V",
+      "commercial": false
+    },
+    {
+      "label": "225/45R19",
+      "diameter": 19,
+      "index": "96V",
+      "commercial": false
+    },
+    {
+      "label": "235/35R19",
+      "diameter": 19,
+      "index": "91W",
+      "commercial": false
+    },
+    {
+      "label": "235/40R19",
+      "diameter": 19,
+      "index": "96V",
+      "commercial": false
+    },
+    {
+      "label": "235/45R19",
+      "diameter": 19,
+      "index": "99V",
+      "commercial": false
+    },
+    {
+      "label": "245/35R19",
+      "diameter": 19,
+      "index": "93W",
+      "commercial": false
+    },
+    {
+      "label": "245/40R19",
+      "diameter": 19,
+      "index": "98V",
+      "commercial": false
+    },
+    {
+      "label": "245/45R19",
+      "diameter": 19,
+      "index": "102V",
+      "commercial": false
+    },
+    {
+      "label": "245/50R19",
+      "diameter": 19,
+      "index": "105V",
+      "commercial": false
+    },
+    {
+      "label": "255/35R19",
+      "diameter": 19,
+      "index": "96V",
+      "commercial": false
+    },
+    {
+      "label": "255/40R19",
+      "diameter": 19,
+      "index": "100V",
+      "commercial": false
+    },
+    {
+      "label": "255/45R19",
+      "diameter": 19,
+      "index": "104V",
+      "commercial": false
+    },
+    {
+      "label": "265/35R19",
+      "diameter": 19,
+      "index": "98W",
+      "commercial": false
+    },
+    {
+      "label": "275/30R19",
+      "diameter": 19,
+      "index": "96W",
+      "commercial": false
+    },
+    {
+      "label": "275/35R19",
+      "diameter": 19,
+      "index": "100V",
+      "commercial": false
+    },
+    {
+      "label": "275/40R19",
+      "diameter": 19,
+      "index": "105W",
+      "commercial": false
+    },
+    {
+      "label": "245/35R20",
+      "diameter": 20,
+      "index": "95W",
+      "commercial": false
+    },
+    {
+      "label": "245/40R20",
+      "diameter": 20,
+      "index": "99W",
+      "commercial": false
+    },
+    {
+      "label": "245/45R20",
+      "diameter": 20,
+      "index": "103V",
+      "commercial": false
+    },
+    {
+      "label": "255/35R20",
+      "diameter": 20,
+      "index": "97W",
+      "commercial": false
+    },
+    {
+      "label": "255/40R20",
+      "diameter": 20,
+      "index": "101W",
+      "commercial": false
+    },
+    {
+      "label": "265/35R20",
+      "diameter": 20,
+      "index": "99V",
+      "commercial": false
+    },
+    {
+      "label": "265/40R20",
+      "diameter": 20,
+      "index": "104W",
+      "commercial": false
+    },
+    {
+      "label": "275/30R20",
+      "diameter": 20,
+      "index": "97W",
+      "commercial": false
+    },
+    {
+      "label": "275/35R20",
+      "diameter": 20,
+      "index": "102W",
+      "commercial": false
+    },
+    {
+      "label": "255/35R21",
+      "diameter": 21,
+      "index": "98W",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Инновационный дизайн протектора с 3D-ламелями для отличного торможения на мокрой, заснеженной и обледенелой дороге"
+    },
+    {
+      "text": "Точное и стабильное поведение при вождении на заснеженной дороге"
+    },
+    {
+      "text": "Низкий уровень шума и комфортный ход"
+    },
+    {
+      "text": "Для среднего и люксового класса, а также спортивных автомобилей"
+    }
+  ]
+}

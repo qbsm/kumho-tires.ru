@@ -15,9 +15,15 @@
       <span class="card__frame">{{ item.item.frame }}</span>
     </div>
   {% endif %}
-{% set tireImage = item.images['30deg'] is defined
-    ? item.images['30deg']
-    : (item.image is defined ? item.image : null) %}
+{% set tireImage = null %}
+  {% for angleKey in ['30deg', 'front', 'side'] %}
+    {% if not tireImage and item.images[angleKey] is defined %}
+      {% set tireImage = item.images[angleKey] %}
+    {% endif %}
+  {% endfor %}
+  {% if not tireImage and item.image is defined %}
+    {% set tireImage = item.image %}
+  {% endif %}
   {% set imageAlt = tireImage and tireImage.alt is defined and tireImage.alt
     ? tireImage.alt
     : (name ? name ~ ', ракурс 30°' : '') %}

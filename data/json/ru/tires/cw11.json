@@ -1,0 +1,180 @@
+{
+  "slug": "cw11",
+  "visible": true,
+  "filter": {
+    "season": [
+      "winter",
+      "studded"
+    ],
+    "diameters": [
+      14,
+      15,
+      16,
+      17
+    ],
+    "widths": [
+      185,
+      195,
+      205,
+      215,
+      225,
+      235,
+      285
+    ],
+    "profiles": [
+      60,
+      65,
+      70,
+      75,
+      80
+    ]
+  },
+  "item": {
+    "code": "CW11",
+    "series": "WinterPorTran",
+    "name": "Kumho CW11 WinterPorTran"
+  },
+  "desc": {
+    "short": "Зимняя шипованная шина Kumho CW11 WinterPorTran для лёгкого коммерческого транспорта. Диагональные блоки и 3D-ламели обеспечивают уверенное торможение на льду.",
+    "full": "Kumho CW11 WinterPorTran — зимняя шипованная шина из линейки WinterPorTran, разработанная для микроавтобусов, фургонов и лёгких грузовиков. Диагональный рисунок протектора и 3D-ламели обеспечивают превосходное торможение на льду, а прочная конструкция — высокую износостойкость и большой пробег. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают соответствие требованиям к шинам для суровых зимних условий."
+  },
+  "images": {
+    "front": {
+      "src": "data/img/tires/cw11/raw/cw11-front.webp",
+      "alt": "Kumho CW11 WinterPorTran, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/cw11/raw/cw11-side.webp",
+      "alt": "Kumho CW11 WinterPorTran, вид сбоку"
+    },
+    "30deg": {
+      "src": "data/img/tires/cw11/raw/cw11-30deg.webp",
+      "alt": "Kumho CW11 WinterPorTran"
+    }
+  },
+  "season": "Зимняя, шипованная",
+  "sizes": [
+    {
+      "label": "285/70R17C",
+      "diameter": 17,
+      "index": "121/118R",
+      "commercial": true
+    },
+    {
+      "label": "185/80R14C",
+      "diameter": 14,
+      "index": "102/100R",
+      "commercial": true
+    },
+    {
+      "label": "195/70R15C",
+      "diameter": 15,
+      "index": "104/102R",
+      "commercial": true
+    },
+    {
+      "label": "205/65R15C",
+      "diameter": 15,
+      "index": "102/100R",
+      "commercial": true
+    },
+    {
+      "label": "205/70R15C",
+      "diameter": 15,
+      "index": "106/104R",
+      "commercial": true
+    },
+    {
+      "label": "215/65R15C",
+      "diameter": 15,
+      "index": "104/102R",
+      "commercial": true
+    },
+    {
+      "label": "215/70R15C",
+      "diameter": 15,
+      "index": "109/107R",
+      "commercial": true
+    },
+    {
+      "label": "225/70R15C",
+      "diameter": 15,
+      "index": "112/110R",
+      "commercial": true
+    },
+    {
+      "label": "185/75R16C",
+      "diameter": 16,
+      "index": "104/102R",
+      "commercial": true
+    },
+    {
+      "label": "195/75R16C",
+      "diameter": 16,
+      "index": "107/105R",
+      "commercial": true
+    },
+    {
+      "label": "205/65R16C",
+      "diameter": 16,
+      "index": "107/105R",
+      "commercial": true
+    },
+    {
+      "label": "205/75R16C",
+      "diameter": 16,
+      "index": "110/108R",
+      "commercial": true
+    },
+    {
+      "label": "215/65R16C",
+      "diameter": 16,
+      "index": "109/107R",
+      "commercial": true
+    },
+    {
+      "label": "215/75R16C",
+      "diameter": 16,
+      "index": "116/114R",
+      "commercial": true
+    },
+    {
+      "label": "225/65R16C",
+      "diameter": 16,
+      "index": "112/110R",
+      "commercial": true
+    },
+    {
+      "label": "225/75R16C",
+      "diameter": 16,
+      "index": "121/120R",
+      "commercial": true
+    },
+    {
+      "label": "235/65R16C",
+      "diameter": 16,
+      "index": "115/113R",
+      "commercial": true
+    },
+    {
+      "label": "215/60R17C",
+      "diameter": 17,
+      "index": "109/107R",
+      "commercial": true
+    }
+  ],
+  "features": [
+    {
+      "text": "Зимняя шипованная шина для коммерческого транспорта, минивэнов и лёгких грузовиков"
+    },
+    {
+      "text": "Превосходное торможение на льду благодаря диагональным блокам и 3D-ламелям"
+    },
+    {
+      "text": "Высокая износостойкость и большой пробег"
+    },
+    {
+      "text": "Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF)"
+    }
+  ]
+}

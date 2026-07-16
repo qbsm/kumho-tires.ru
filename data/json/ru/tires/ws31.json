@@ -1,0 +1,157 @@
+{
+  "slug": "ws31",
+  "visible": true,
+  "filter": {
+    "season": [
+      "winter",
+      "studded"
+    ],
+    "diameters": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "widths": [
+      215,
+      225,
+      235,
+      245,
+      255,
+      265,
+      275,
+      285
+    ],
+    "profiles": [
+      40,
+      50,
+      55,
+      60,
+      65,
+      70
+    ]
+  },
+  "item": {
+    "code": "WS31",
+    "series": "WinterCraft ice",
+    "name": "Kumho WS31 WinterCraft ice"
+  },
+  "desc": {
+    "short": "Зимняя шипованная шина Kumho WS31 WinterCraft ice для кроссоверов и внедорожников. Оптимизированная шиповка для уверенного сцепления на льду и снегу.",
+    "full": "Kumho WS31 WinterCraft ice — зимняя шипованная шина из линейки WinterCraft ice, разработанная для кроссоверов и внедорожников. Направленный рисунок протектора эффективно отводит воду и слякоть, снижая риск аквапланирования, а оптимизированная шиповка обеспечивает уверенное сцепление на льду и снегу. 3D-ламели в форме сот улучшают управляемость на всех зимних покрытиях."
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/ws31/raw/ws31-30deg.webp",
+      "alt": "Kumho WS31 WinterCraft ice"
+    }
+  },
+  "season": "Зимняя, шипованная",
+  "sizes": [
+    {
+      "label": "235/70R16",
+      "diameter": 16,
+      "index": "106T",
+      "commercial": false
+    },
+    {
+      "label": "265/70R16",
+      "diameter": 16,
+      "index": "T",
+      "commercial": false
+    },
+    {
+      "label": "215/60R17",
+      "diameter": 17,
+      "index": "H",
+      "commercial": false
+    },
+    {
+      "label": "225/60R17",
+      "diameter": 17,
+      "index": "99H",
+      "commercial": false
+    },
+    {
+      "label": "235/60R17",
+      "diameter": 17,
+      "index": "106T",
+      "commercial": false
+    },
+    {
+      "label": "245/65R17",
+      "diameter": 17,
+      "index": "111T",
+      "commercial": false
+    },
+    {
+      "label": "255/65R17",
+      "diameter": 17,
+      "index": "114T",
+      "commercial": false
+    },
+    {
+      "label": "275/65R17",
+      "diameter": 17,
+      "index": "115T",
+      "commercial": false
+    },
+    {
+      "label": "285/60R18",
+      "diameter": 18,
+      "index": "T",
+      "commercial": false
+    },
+    {
+      "label": "245/55R19",
+      "diameter": 19,
+      "index": "107T",
+      "commercial": false
+    },
+    {
+      "label": "255/50R19",
+      "diameter": 19,
+      "index": "T",
+      "commercial": false
+    },
+    {
+      "label": "255/55R19",
+      "diameter": 19,
+      "index": "111T",
+      "commercial": false
+    },
+    {
+      "label": "265/50R19",
+      "diameter": 19,
+      "index": "110T",
+      "commercial": false
+    },
+    {
+      "label": "265/50R20",
+      "diameter": 20,
+      "index": "111T",
+      "commercial": false
+    },
+    {
+      "label": "275/40R20",
+      "diameter": 20,
+      "index": "106T",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Разработана специально для кроссоверов и внедорожников"
+    },
+    {
+      "text": "Направленный рисунок протектора для эффективного отвода воды и слякоти, снижающий риск аквапланирования"
+    },
+    {
+      "text": "Оптимизированная шиповка обеспечивает уверенное сцепление на льду и снегу"
+    },
+    {
+      "text": "3D-ламели в форме сот улучшают управляемость на всех зимних покрытиях"
+    }
+  ]
+}

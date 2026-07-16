@@ -26,8 +26,7 @@
             },
             {
               "label": "Зима",
-              "value": "winter",
-              "disabled": true
+              "value": "winter"
             },
             {
               "label": "Всесезонные",
@@ -35,8 +34,7 @@
             },
             {
               "label": "Шипованные",
-              "value": "studded",
-              "disabled": true
+              "value": "studded"
             }
           ]
         },

@@ -1,0 +1,213 @@
+{
+  "slug": "cw51",
+  "visible": true,
+  "filter": {
+    "season": [
+      "winter"
+    ],
+    "diameters": [
+      14,
+      15,
+      16,
+      17
+    ],
+    "widths": [
+      165,
+      185,
+      195,
+      205,
+      215,
+      225,
+      235
+    ],
+    "profiles": [
+      55,
+      60,
+      65,
+      70,
+      75,
+      80,
+      85
+    ]
+  },
+  "item": {
+    "code": "CW51",
+    "series": "WinterPorTran",
+    "name": "Kumho CW51 WinterPorTran"
+  },
+  "desc": {
+    "short": "Зимняя нешипованная шина Kumho CW51 WinterPorTran для лёгкого коммерческого транспорта. Серия WinterPorTran обеспечивает уверенное сцепление на снегу при высоких нагрузках.",
+    "full": "Kumho CW51 WinterPorTran — зимняя нешипованная шина из линейки WinterPorTran для микроавтобусов, фургонов и лёгких грузовиков. Симметричный рисунок протектора и 3D-ламели в плечевой зоне обеспечивают отличное сцепление и управляемость на снегу, а также стабильное поведение на сухой и мокрой дороге. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают соответствие требованиям к шинам для суровых зимних условий."
+  },
+  "images": {
+    "front": {
+      "src": "data/img/tires/cw51/raw/cw51-front.webp",
+      "alt": "Kumho CW51 WinterPorTran, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/cw51/raw/cw51-side.webp",
+      "alt": "Kumho CW51 WinterPorTran, вид сбоку"
+    }
+  },
+  "season": "Зимняя",
+  "sizes": [
+    {
+      "label": "165/70R14C",
+      "diameter": 14,
+      "index": "89/87R",
+      "commercial": true
+    },
+    {
+      "label": "185/80R14C",
+      "diameter": 14,
+      "index": "102/100Q",
+      "commercial": true
+    },
+    {
+      "label": "195/80R14C",
+      "diameter": 14,
+      "index": "106/104Q",
+      "commercial": true
+    },
+    {
+      "label": "195/70R15C",
+      "diameter": 15,
+      "index": "104/102R",
+      "commercial": true
+    },
+    {
+      "label": "205/65R15C",
+      "diameter": 15,
+      "index": "102/100T",
+      "commercial": true
+    },
+    {
+      "label": "205/70R15C",
+      "diameter": 15,
+      "index": "106/104R",
+      "commercial": true
+    },
+    {
+      "label": "215/70R15C",
+      "diameter": 15,
+      "index": "109/107R",
+      "commercial": true
+    },
+    {
+      "label": "225/70R15C",
+      "diameter": 15,
+      "index": "112/110R",
+      "commercial": true
+    },
+    {
+      "label": "195/60R16C",
+      "diameter": 16,
+      "index": "99/97T",
+      "commercial": true
+    },
+    {
+      "label": "195/65R16C",
+      "diameter": 16,
+      "index": "104/102T",
+      "commercial": true
+    },
+    {
+      "label": "195/75R16C",
+      "diameter": 16,
+      "index": "107/105R",
+      "commercial": true
+    },
+    {
+      "label": "195/75R16C",
+      "diameter": 16,
+      "index": "110/108R",
+      "commercial": true
+    },
+    {
+      "label": "205/65R16C",
+      "diameter": 16,
+      "index": "107/105T",
+      "commercial": true
+    },
+    {
+      "label": "205/75R16C",
+      "diameter": 16,
+      "index": "110/108R",
+      "commercial": true
+    },
+    {
+      "label": "215/65R16C",
+      "diameter": 16,
+      "index": "109/107R",
+      "commercial": true
+    },
+    {
+      "label": "215/75R16C",
+      "diameter": 16,
+      "index": "116/114R",
+      "commercial": true
+    },
+    {
+      "label": "225/65R16C",
+      "diameter": 16,
+      "index": "112/110R",
+      "commercial": true
+    },
+    {
+      "label": "225/75R16C",
+      "diameter": 16,
+      "index": "121/120R",
+      "commercial": true
+    },
+    {
+      "label": "235/65R16C",
+      "diameter": 16,
+      "index": "115/113R",
+      "commercial": true
+    },
+    {
+      "label": "235/85R16C",
+      "diameter": 16,
+      "index": "120/116R",
+      "commercial": true
+    },
+    {
+      "label": "215/60R17C",
+      "diameter": 17,
+      "index": "104/102H",
+      "commercial": true
+    },
+    {
+      "label": "215/65R17C",
+      "diameter": 17,
+      "index": "108/105R",
+      "commercial": true
+    },
+    {
+      "label": "225/55R17C",
+      "diameter": 17,
+      "index": "109/107T",
+      "commercial": true
+    }
+  ],
+  "features": [
+    {
+      "text": "Отличные характеристики сцепления и управляемости на снегу"
+    },
+    {
+      "text": "Симметричный рисунок протектора"
+    },
+    {
+      "text": "Улучшенные характеристики на сухой и мокрой поверхности"
+    },
+    {
+      "text": "3D-ламели в плечевой зоне"
+    },
+    {
+      "text": "Для коммерческого транспорта"
+    },
+    {
+      "text": "Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF)"
+    }
+  ]
+}

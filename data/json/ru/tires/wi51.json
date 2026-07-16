@@ -1,0 +1,436 @@
+{
+  "slug": "wi51",
+  "visible": true,
+  "filter": {
+    "season": [
+      "winter"
+    ],
+    "diameters": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "widths": [
+      175,
+      185,
+      195,
+      205,
+      215,
+      225,
+      235,
+      245,
+      255
+    ],
+    "profiles": [
+      35,
+      40,
+      45,
+      50,
+      55,
+      60,
+      65,
+      70
+    ]
+  },
+  "item": {
+    "code": "WI51",
+    "series": "WinterCraft ice",
+    "name": "Kumho WI51 WinterCraft ice"
+  },
+  "desc": {
+    "short": "Зимняя нешипованная шина Kumho WI51 WinterCraft ice для суровых зимних условий. Обеспечивает отличное ускорение и торможение на снегу и льду.",
+    "full": "Kumho WI51 WinterCraft ice — зимняя нешипованная шина из линейки WinterCraft ice для суровых зимних условий. Обеспечивает превосходное ускорение и торможение на снегу и льду, а также сбалансированное поведение на всех типах зимних дорог. Оптимизированная конструкция снижает расход топлива. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают соответствие требованиям к шинам для суровых зимних условий."
+  },
+  "images": {
+    "side": {
+      "src": "data/img/tires/wi51/raw/wi51-side.webp",
+      "alt": "Kumho WI51 WinterCraft ice, вид сбоку"
+    },
+    "30deg": {
+      "src": "data/img/tires/wi51/raw/wi51-30deg.webp",
+      "alt": "Kumho WI51 WinterCraft ice"
+    },
+    "front": {
+      "src": "data/img/tires/wi51/raw/wi51-front.webp",
+      "alt": "Kumho WI51 WinterCraft ice, вид спереди"
+    }
+  },
+  "season": "Зимняя",
+  "sizes": [
+    {
+      "label": "175/65R14",
+      "diameter": 14,
+      "index": "86T",
+      "commercial": false
+    },
+    {
+      "label": "175/70R14",
+      "diameter": 14,
+      "index": "88T",
+      "commercial": false
+    },
+    {
+      "label": "185/60R14",
+      "diameter": 14,
+      "index": "86T",
+      "commercial": false
+    },
+    {
+      "label": "185/65R14",
+      "diameter": 14,
+      "index": "90T",
+      "commercial": false
+    },
+    {
+      "label": "185/70R14",
+      "diameter": 14,
+      "index": "92T",
+      "commercial": false
+    },
+    {
+      "label": "185/55R15",
+      "diameter": 15,
+      "index": "86T",
+      "commercial": false
+    },
+    {
+      "label": "185/60R15",
+      "diameter": 15,
+      "index": "88T",
+      "commercial": false
+    },
+    {
+      "label": "185/65R15",
+      "diameter": 15,
+      "index": "92T",
+      "commercial": false
+    },
+    {
+      "label": "195/60R15",
+      "diameter": 15,
+      "index": "92T",
+      "commercial": false
+    },
+    {
+      "label": "195/65R15",
+      "diameter": 15,
+      "index": "95T",
+      "commercial": false
+    },
+    {
+      "label": "205/65R15",
+      "diameter": 15,
+      "index": "99T",
+      "commercial": false
+    },
+    {
+      "label": "195/50R16",
+      "diameter": 16,
+      "index": "88T",
+      "commercial": false
+    },
+    {
+      "label": "195/55R16",
+      "diameter": 16,
+      "index": "91T",
+      "commercial": false
+    },
+    {
+      "label": "195/60R16",
+      "diameter": 16,
+      "index": "93T",
+      "commercial": false
+    },
+    {
+      "label": "205/55R16",
+      "diameter": 16,
+      "index": "94T",
+      "commercial": false
+    },
+    {
+      "label": "205/60R16",
+      "diameter": 16,
+      "index": "96T",
+      "commercial": false
+    },
+    {
+      "label": "205/65R16",
+      "diameter": 16,
+      "index": "99T",
+      "commercial": false
+    },
+    {
+      "label": "215/55R16",
+      "diameter": 16,
+      "index": "97T",
+      "commercial": false
+    },
+    {
+      "label": "215/60R16",
+      "diameter": 16,
+      "index": "99T",
+      "commercial": false
+    },
+    {
+      "label": "225/55R16",
+      "diameter": 16,
+      "index": "99T",
+      "commercial": false
+    },
+    {
+      "label": "235/60R16",
+      "diameter": 16,
+      "index": "104T",
+      "commercial": false
+    },
+    {
+      "label": "205/50R17",
+      "diameter": 17,
+      "index": "93T",
+      "commercial": false
+    },
+    {
+      "label": "205/55R17",
+      "diameter": 17,
+      "index": "95T",
+      "commercial": false
+    },
+    {
+      "label": "215/50R17",
+      "diameter": 17,
+      "index": "95T",
+      "commercial": false
+    },
+    {
+      "label": "215/55R17",
+      "diameter": 17,
+      "index": "98T",
+      "commercial": false
+    },
+    {
+      "label": "225/45R17",
+      "diameter": 17,
+      "index": "94T",
+      "commercial": false
+    },
+    {
+      "label": "225/50R17",
+      "diameter": 17,
+      "index": "98T",
+      "commercial": false
+    },
+    {
+      "label": "225/55R17",
+      "diameter": 17,
+      "index": "101T",
+      "commercial": false
+    },
+    {
+      "label": "235/45R17",
+      "diameter": 17,
+      "index": "97T",
+      "commercial": false
+    },
+    {
+      "label": "235/55R17",
+      "diameter": 17,
+      "index": "103T",
+      "commercial": false
+    },
+    {
+      "label": "245/45R17",
+      "diameter": 17,
+      "index": "99T",
+      "commercial": false
+    },
+    {
+      "label": "215/55R18",
+      "diameter": 18,
+      "index": "99T",
+      "commercial": false
+    },
+    {
+      "label": "215/55R18",
+      "diameter": 18,
+      "index": "99T",
+      "commercial": false
+    },
+    {
+      "label": "225/40R18",
+      "diameter": 18,
+      "index": "92T",
+      "commercial": false
+    },
+    {
+      "label": "225/45R18",
+      "diameter": 18,
+      "index": "95T",
+      "commercial": false
+    },
+    {
+      "label": "235/40R18",
+      "diameter": 18,
+      "index": "95T",
+      "commercial": false
+    },
+    {
+      "label": "235/45R18",
+      "diameter": 18,
+      "index": "98T",
+      "commercial": false
+    },
+    {
+      "label": "235/45R18",
+      "diameter": 18,
+      "index": "98T",
+      "commercial": false
+    },
+    {
+      "label": "235/50R18",
+      "diameter": 18,
+      "index": "101T",
+      "commercial": false
+    },
+    {
+      "label": "245/40R18",
+      "diameter": 18,
+      "index": "97T",
+      "commercial": false
+    },
+    {
+      "label": "245/45R18",
+      "diameter": 18,
+      "index": "100T",
+      "commercial": false
+    },
+    {
+      "label": "245/50R18",
+      "diameter": 18,
+      "index": "T",
+      "commercial": false
+    },
+    {
+      "label": "215/50R19",
+      "diameter": 19,
+      "index": "97T",
+      "commercial": false
+    },
+    {
+      "label": "215/50R19",
+      "diameter": 19,
+      "index": "97T",
+      "commercial": false
+    },
+    {
+      "label": "235/40R19",
+      "diameter": 19,
+      "index": "96H",
+      "commercial": false
+    },
+    {
+      "label": "235/40R19",
+      "diameter": 19,
+      "index": "96H",
+      "commercial": false
+    },
+    {
+      "label": "245/40R19",
+      "diameter": 19,
+      "index": "T",
+      "commercial": false
+    },
+    {
+      "label": "245/45R19",
+      "diameter": 19,
+      "index": "102T",
+      "commercial": false
+    },
+    {
+      "label": "255/35R19",
+      "diameter": 19,
+      "index": "T",
+      "commercial": false
+    },
+    {
+      "label": "255/40R19",
+      "diameter": 19,
+      "index": "T",
+      "commercial": false
+    },
+    {
+      "label": "255/45R19",
+      "diameter": 19,
+      "index": "H",
+      "commercial": false
+    },
+    {
+      "label": "235/35R20",
+      "diameter": 20,
+      "index": "92H",
+      "commercial": false
+    },
+    {
+      "label": "235/35R20",
+      "diameter": 20,
+      "index": "92H",
+      "commercial": false
+    },
+    {
+      "label": "235/50R20",
+      "diameter": 20,
+      "index": "104H",
+      "commercial": false
+    },
+    {
+      "label": "235/50R20",
+      "diameter": 20,
+      "index": "104H",
+      "commercial": false
+    },
+    {
+      "label": "255/40R20",
+      "diameter": 20,
+      "index": "101H",
+      "commercial": false
+    },
+    {
+      "label": "255/40R20",
+      "diameter": 20,
+      "index": "101H",
+      "commercial": false
+    },
+    {
+      "label": "255/45R20",
+      "diameter": 20,
+      "index": "105H",
+      "commercial": false
+    },
+    {
+      "label": "255/45R20",
+      "diameter": 20,
+      "index": "105H",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Превосходные характеристики и комфорт в суровых зимних условиях"
+    },
+    {
+      "text": "Прекрасное ускорение и торможение на снегу и льду"
+    },
+    {
+      "text": "Сбалансированное поведение на всех типах зимних дорог"
+    },
+    {
+      "text": "Топливная экономичность"
+    },
+    {
+      "text": "Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF)"
+    }
+  ]
+}

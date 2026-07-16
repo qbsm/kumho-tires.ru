@@ -1,0 +1,198 @@
+{
+  "slug": "ws51",
+  "visible": true,
+  "filter": {
+    "season": [
+      "winter"
+    ],
+    "diameters": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "widths": [
+      205,
+      215,
+      225,
+      235,
+      245,
+      255,
+      265
+    ],
+    "profiles": [
+      50,
+      55,
+      60,
+      65,
+      70
+    ]
+  },
+  "item": {
+    "code": "WS51",
+    "series": "WinterCraft ice",
+    "name": "Kumho WS51 WinterCraft ice"
+  },
+  "desc": {
+    "short": "Зимняя нешипованная шина Kumho WS51 WinterCraft ice для SUV и внедорожников. Оптимизированная смесь протектора для отличного торможения на льду и снегу.",
+    "full": "Kumho WS51 WinterCraft ice — зимняя нешипованная шина из линейки WinterCraft ice для SUV и широкого спектра современных внедорожников. Оптимизированная смесь протектора обеспечивает отличное торможение на мокрых, заснеженных и обледенелых дорогах, а дизайн протектора с 3D-ламелями — улучшенное сцепление на льду и снегу. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают соответствие требованиям к шинам для суровых зимних условий."
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/ws51/raw/ws51-30deg.webp",
+      "alt": "Kumho WS51 WinterCraft ice"
+    },
+    "front": {
+      "src": "data/img/tires/ws51/raw/ws51-front.webp",
+      "alt": "Kumho WS51 WinterCraft ice, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/ws51/raw/ws51-side.webp",
+      "alt": "Kumho WS51 WinterCraft ice, вид сбоку"
+    }
+  },
+  "season": "Зимняя",
+  "sizes": [
+    {
+      "label": "205/70R15",
+      "diameter": 15,
+      "index": "100T",
+      "commercial": false
+    },
+    {
+      "label": "215/65R16",
+      "diameter": 16,
+      "index": "102T",
+      "commercial": false
+    },
+    {
+      "label": "215/70R16",
+      "diameter": 16,
+      "index": "100T",
+      "commercial": false
+    },
+    {
+      "label": "245/70R16",
+      "diameter": 16,
+      "index": "111T",
+      "commercial": false
+    },
+    {
+      "label": "215/60R17",
+      "diameter": 17,
+      "index": "100T",
+      "commercial": false
+    },
+    {
+      "label": "215/65R17",
+      "diameter": 17,
+      "index": "103T",
+      "commercial": false
+    },
+    {
+      "label": "225/60R17",
+      "diameter": 17,
+      "index": "103T",
+      "commercial": false
+    },
+    {
+      "label": "225/65R17",
+      "diameter": 17,
+      "index": "106T",
+      "commercial": false
+    },
+    {
+      "label": "235/65R17",
+      "diameter": 17,
+      "index": "108T",
+      "commercial": false
+    },
+    {
+      "label": "255/65R17",
+      "diameter": 17,
+      "index": "114T",
+      "commercial": false
+    },
+    {
+      "label": "265/65R17",
+      "diameter": 17,
+      "index": "116T",
+      "commercial": false
+    },
+    {
+      "label": "225/55R18",
+      "diameter": 18,
+      "index": "102T",
+      "commercial": false
+    },
+    {
+      "label": "225/60R18",
+      "diameter": 18,
+      "index": "104T",
+      "commercial": false
+    },
+    {
+      "label": "235/55R18",
+      "diameter": 18,
+      "index": "104T",
+      "commercial": false
+    },
+    {
+      "label": "235/60R18",
+      "diameter": 18,
+      "index": "107T",
+      "commercial": false
+    },
+    {
+      "label": "255/55R18",
+      "diameter": 18,
+      "index": "109T",
+      "commercial": false
+    },
+    {
+      "label": "265/60R18",
+      "diameter": 18,
+      "index": "114T",
+      "commercial": false
+    },
+    {
+      "label": "235/55R19",
+      "diameter": 19,
+      "index": "105T",
+      "commercial": false
+    },
+    {
+      "label": "245/55R19",
+      "diameter": 19,
+      "index": "107T",
+      "commercial": false
+    },
+    {
+      "label": "255/50R19",
+      "diameter": 19,
+      "index": "107T",
+      "commercial": false
+    },
+    {
+      "label": "255/55R19",
+      "diameter": 19,
+      "index": "111T",
+      "commercial": false
+    }
+  ],
+  "features": [
+    {
+      "text": "Оптимизированная смесь протектора для отличного торможения на мокрых, заснеженных и обледенелых дорогах"
+    },
+    {
+      "text": "Оптимизированный дизайн протектора и 3D-ламели для улучшенного сцепления на льду и снегу"
+    },
+    {
+      "text": "Для автомобилей класса SUV и широкого спектра современных внедорожников"
+    },
+    {
+      "text": "Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF)"
+    }
+  ]
+}
