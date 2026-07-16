@@ -3249,6 +3249,58 @@
         "visible": false,
         "title": "Бесплатный шиномонтаж"
       }
+    },
+    {
+      "id": 129,
+      "name": "Колесо.ру",
+      "region": "Хабаровск",
+      "city": "Хабаровск",
+      "location": "48.492614, 135.101004",
+      "address": "г. Хабаровск, проспект 60-летия Октября, д. 204",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 130,
+      "name": "Колесо.ру",
+      "region": "Москва",
+      "city": "Москва",
+      "location": "55.808427, 37.024253",
+      "address": "МО, муниципальный округ Истра, деревня Покровское, Центральная улица, 82А",
+      "phones": [
+        {
+          "title": "8 (800) 100-68-78",
+          "href": "88001006878"
+        }
+      ],
+      "site": {
+        "title": "koleso.ru",
+        "href": "https://koleso.ru/catalog/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
     }
   ]
 }
