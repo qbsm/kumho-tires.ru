@@ -30,7 +30,9 @@ final class SecurityHeadersMiddleware implements MiddlewareInterface
             ->withHeader('X-Content-Type-Options', 'nosniff')
             ->withHeader('X-Frame-Options', 'SAMEORIGIN')
             ->withHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
-            ->withHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+            // geolocation=(self) — карта дилеров на /buy запрашивает геопозицию у самого сайта;
+            // при geolocation=() браузер блокирует запрос молча, без промпта пользователю.
+            ->withHeader('Permissions-Policy', 'geolocation=(self), microphone=(), camera=()');
 
         if ($this->addHsts) {
             $response = $response->withHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');

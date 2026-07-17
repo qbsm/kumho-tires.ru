@@ -23,5 +23,5 @@
 .icon-text__title {
   font-size: 1.125em;
   line-height: 1.4;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }

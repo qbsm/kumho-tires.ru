@@ -179,7 +179,7 @@ function formatValue($value, string $key): string
     // array of objects with 'label' (например, таблица размеров шин)
     if (isset($value[0]) && is_array($value[0]) && array_key_exists('label', $value[0])) {
         $labels = array_filter(array_map(
-            static fn ($v) => is_array($v) ? (string) ($v['label'] ?? '') : '',
+            static fn($v) => is_array($v) ? (string) ($v['label'] ?? '') : '',
             $value
         ));
         return implode(', ', $labels);
