@@ -4110,5 +4110,53 @@
   "actions/1920/warranty.avif": {
     "width": 1920,
     "height": 1920
+  },
+  "data/img/tires/kc11/400/kc11-30deg.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "data/img/tires/kc11/400/kc11-30deg.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "data/img/tires/kc11/800/kc11-30deg.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "data/img/tires/kc11/800/kc11-30deg.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "data/img/tires/kc11/1280/kc11-30deg.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "data/img/tires/kc11/1280/kc11-30deg.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "data/img/tires/kc11/1600/kc11-30deg.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "data/img/tires/kc11/1600/kc11-30deg.avif": {
+    "width": 1600,
+    "height": 1600
+  },
+  "data/img/tires/kc11/1920/kc11-30deg.webp": {
+    "width": 1920,
+    "height": 1920
+  },
+  "data/img/tires/kc11/1920/kc11-30deg.avif": {
+    "width": 1920,
+    "height": 1920
+  },
+  "data/img/tires/kc11/2560/kc11-30deg.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "data/img/tires/kc11/2560/kc11-30deg.avif": {
+    "width": 2560,
+    "height": 2560
   }
 }
