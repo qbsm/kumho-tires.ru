@@ -3301,6 +3301,2044 @@
         "visible": false,
         "title": "Бесплатный шиномонтаж"
       }
+    },
+    {
+      "id": 131,
+      "name": "Мотор",
+      "region": "Кировская область",
+      "city": "Киров",
+      "location": "58.609372, 49.598216",
+      "address": "г. Киров, ул. Менделеева, д. 4",
+      "phones": [
+        {
+          "title": "8 (8332) 51-55-88",
+          "href": "88332515588"
+        }
+      ],
+      "site": {
+        "title": "motor43.ru",
+        "href": "https://motor43.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 132,
+      "name": "Моторавто Cordiant Professional",
+      "region": "Кировская область",
+      "city": "Кирово-Чепецк",
+      "location": "58.523974, 49.989242",
+      "address": "г. Кирово-Чепецк, ул. Мелиораторов, д. 24",
+      "phones": [
+        {
+          "title": "8 (83361) 65-888",
+          "href": "88336165888"
+        }
+      ],
+      "site": {
+        "title": "motor43.ru",
+        "href": "https://motor43.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 133,
+      "name": "АлАвто",
+      "region": "Ставропольский край",
+      "city": "Ставрополь",
+      "location": "45.048929, 42.008353",
+      "address": "г. Ставрополь, Каховский переулок, д. 38",
+      "phones": [
+        {
+          "title": "8 (962) 427-62-48",
+          "href": "89624276248"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 134,
+      "name": "Фараон",
+      "region": "Республика Башкортостан",
+      "city": "Туймазы",
+      "location": "54.618958, 53.685486",
+      "address": "г. Туймазы, ул. 70 лет Октября, д. 26",
+      "phones": [
+        {
+          "title": "8 (927) 300-41-41",
+          "href": "89273004141"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 135,
+      "name": "Zапчасти Здесь",
+      "region": "Свердловская область",
+      "city": "Камышлов",
+      "location": "56.844994, 62.762477",
+      "address": "г. Камышлов, ул. Северная, зд. 70",
+      "phones": [
+        {
+          "title": "8 (932) 699-95-55",
+          "href": "89326999555"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 136,
+      "name": "4как3",
+      "region": "Курская область",
+      "city": "Курск",
+      "location": "51.726595, 36.220646",
+      "address": "г. Курск, 2-я ул. Новосёловка, д. 3Б",
+      "phones": [
+        {
+          "title": "8 (800) 511-48-24",
+          "href": "88005114824"
+        }
+      ],
+      "site": {
+        "title": "4kak3.ru",
+        "href": "https://4kak3.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 137,
+      "name": "Pole Position",
+      "region": "Томская область",
+      "city": "Северск",
+      "location": "56.607747, 84.895557",
+      "address": "г. Северск, ул. Советская, д. 1, стр. 33",
+      "phones": [
+        {
+          "title": "8 (3823) 53-45-55",
+          "href": "83823534555"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 138,
+      "name": "Колеса дешево",
+      "region": "Удмуртская Республика",
+      "city": "Ижевск",
+      "location": "56.900450, 53.313773",
+      "address": "г. Ижевск, Воткинское шоссе, д. 7",
+      "phones": [
+        {
+          "title": "8 (912) 765-30-18",
+          "href": "89127653018"
+        }
+      ],
+      "site": {
+        "title": "www.xn----7sbhhf0ahxgy4f1ee.xn--p1ai",
+        "href": "https://www.xn----7sbhhf0ahxgy4f1ee.xn--p1ai/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 139,
+      "name": "АвтоВолга",
+      "region": "Нижегородская область",
+      "city": "Нижний Новгород",
+      "location": "56.316149, 44.071207",
+      "address": "г. Нижний Новгород, ул. Родионова, д. 142В, корп. 1",
+      "phones": [
+        {
+          "title": "8 (831) 410-33-77",
+          "href": "88314103377"
+        }
+      ],
+      "site": {
+        "title": "www.abc-nn.ru",
+        "href": "https://www.abc-nn.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 140,
+      "name": "АвтоВолга",
+      "region": "Нижегородская область",
+      "city": "Нижний Новгород",
+      "location": "56.315627, 44.069237",
+      "address": "г. Нижний Новгород, ул. Родионова, д. 163",
+      "phones": [
+        {
+          "title": "8 (831) 434-91-19",
+          "href": "88314349119"
+        }
+      ],
+      "site": {
+        "title": "www.abc-nn.ru",
+        "href": "https://www.abc-nn.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 141,
+      "name": "Царь-Шина",
+      "region": "Республика Башкортостан",
+      "city": "Туймазы",
+      "location": "54.607778, 53.683412",
+      "address": "г. Туймазы, микрорайон Молодёжный, д. 17А",
+      "phones": [
+        {
+          "title": "8 (937) 787-00-57",
+          "href": "89377870057"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 142,
+      "name": "Царь-Шина",
+      "region": "Республика Башкортостан",
+      "city": "Октябрьский",
+      "location": "54.492384, 53.472738",
+      "address": "г. Октябрьский, ул. Северная, д. 19/18",
+      "phones": [
+        {
+          "title": "8 (917) 787-00-57",
+          "href": "89177870057"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 143,
+      "name": "Автошины",
+      "region": "Вологодская область",
+      "city": "Вологда",
+      "location": "59.224965, 39.869470",
+      "address": "г. Вологда, проспект Победы, д. 81",
+      "phones": [
+        {
+          "title": "8 (8172) 72-03-42",
+          "href": "88172720342"
+        }
+      ],
+      "site": {
+        "title": "xn----8sbfefuxnlb7hrb.xn--p1ai",
+        "href": "https://xn----8sbfefuxnlb7hrb.xn--p1ai/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 144,
+      "name": "Автоальянс",
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "location": "55.217820, 61.381651",
+      "address": "г. Челябинск, Свердловский тракт, 3Н",
+      "phones": [
+        {
+          "title": "8 (351) 700-03-19",
+          "href": "83517000319"
+        }
+      ],
+      "site": {
+        "title": "aalyans.ru/?yclid=8975881844150763519",
+        "href": "https://aalyans.ru/?yclid=8975881844150763519"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 145,
+      "name": "Tyreplus",
+      "region": "Республика Мордовия",
+      "city": "Саранск",
+      "location": "54.202903, 45.149879",
+      "address": "г. Саранск, ул. Строительная, д. 36, стр. 7",
+      "phones": [
+        {
+          "title": "8 (8342) 29-15-16",
+          "href": "88342291516"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 146,
+      "name": "Автоботы",
+      "region": "Смоленская область",
+      "city": "Смоленск",
+      "location": "54.757525, 32.073884",
+      "address": "г. Смоленск, проспект Строителей, д. 30",
+      "phones": [
+        {
+          "title": "8 (951) 694-57-58",
+          "href": "89516945758"
+        }
+      ],
+      "site": {
+        "title": "v-shina.ru",
+        "href": "https://v-shina.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 147,
+      "name": "Шины и Диски",
+      "region": "Кемеровская область",
+      "city": "Юрга",
+      "location": "55.723300, 84.899574",
+      "address": "г. Юрга, ул. Шоссейная, д. 40/10",
+      "phones": [
+        {
+          "title": "8 (908) 943-59-07",
+          "href": "89089435907"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 148,
+      "name": "ЛенАвто",
+      "region": "Республика Башкортостан",
+      "city": "Белебей",
+      "location": "54.081938, 54.119461",
+      "address": "г. Белебей, ул. Советская, д. 140",
+      "phones": [
+        {
+          "title": "8 (34786) 7-50-99",
+          "href": "83478675099"
+        }
+      ],
+      "site": {
+        "title": "lenavto02.ru",
+        "href": "https://lenavto02.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 149,
+      "name": "Ivanor",
+      "region": "Республика Башкортостан",
+      "city": "Белебей",
+      "location": "54.112707, 54.107942",
+      "address": "г. Белебей, ул. Войкова, д. 144В",
+      "phones": [
+        {
+          "title": "8 (34786) 4-44-99",
+          "href": "83478644499"
+        }
+      ],
+      "site": {
+        "title": "lenavto02.ru",
+        "href": "https://lenavto02.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 150,
+      "name": "Центр Шин",
+      "region": "Чувашская Республика",
+      "city": "Чебоксары",
+      "location": "56.127379, 47.315942",
+      "address": "г. Чебоксары, Марпосадское ш., 6А, корп. 1",
+      "phones": [
+        {
+          "title": "8 (8352) 38-16-16",
+          "href": "88352381616"
+        }
+      ],
+      "site": {
+        "title": "xn--21-8kc5aza8d.xn--p1ai",
+        "href": "https://xn--21-8kc5aza8d.xn--p1ai/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 151,
+      "name": "Центр шин",
+      "region": "Чувашская Республика",
+      "city": "Чебоксары",
+      "location": "56.147401, 47.201720",
+      "address": "г. Чебоксары, проспект Максима Горького, д. 1Б",
+      "phones": [
+        {
+          "title": "8 (8352) 38-16-16",
+          "href": "88352381616"
+        }
+      ],
+      "site": {
+        "title": "xn--21-8kc5aza8d.xn--p1ai",
+        "href": "https://xn--21-8kc5aza8d.xn--p1ai/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 152,
+      "name": "Шинторг",
+      "region": "Чувашская Республика",
+      "city": "Чебоксары",
+      "location": "56.112247, 47.280111",
+      "address": "г. Чебоксары, ул. Хевешская, д. 41А",
+      "phones": [
+        {
+          "title": "8 (8352) 37-46-46",
+          "href": "88352374646"
+        }
+      ],
+      "site": {
+        "title": "www.shintorg21.ru",
+        "href": "https://www.shintorg21.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 153,
+      "name": "Склад колес",
+      "region": "Краснодарский край",
+      "city": "Новороссийск",
+      "location": "44.725241, 37.741661",
+      "address": "г. Новороссийск, ул. Луначарского, д. 28Д",
+      "phones": [
+        {
+          "title": "8 (988) 620-00-10",
+          "href": "89886200010"
+        }
+      ],
+      "site": {
+        "title": "sklad-koles.com",
+        "href": "https://sklad-koles.com/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 154,
+      "name": "ШинСервис",
+      "region": "Архангельская область",
+      "city": "Архангельск",
+      "location": "64.532868, 40.590833",
+      "address": "г. Архангельск, Московский проспект, д. 25, корп. 5",
+      "phones": [
+        {
+          "title": "8 (953) 930-43-34",
+          "href": "89539304334"
+        }
+      ],
+      "site": {
+        "title": "arhshinservice.ru",
+        "href": "https://arhshinservice.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 155,
+      "name": "ШинСервис",
+      "region": "Архангельская область",
+      "city": "Архангельск",
+      "location": "64.558677, 40.551181",
+      "address": "г. Архангельск, Обводный канал, д. 123, корп. 1",
+      "phones": [
+        {
+          "title": "8 (952) 304-02-22",
+          "href": "89523040222"
+        }
+      ],
+      "site": {
+        "title": "arhshinservice.ru",
+        "href": "https://arhshinservice.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 156,
+      "name": "Ivanor",
+      "region": "Красноярский край",
+      "city": "Ачинск",
+      "location": "56.258157, 90.506076",
+      "address": "г. Ачинск, ул. Профсоюзная, зд. 3А",
+      "phones": [
+        {
+          "title": "8 (967) 604-40-00",
+          "href": "89676044000"
+        }
+      ],
+      "site": {
+        "title": "ivanor.ru",
+        "href": "https://ivanor.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 157,
+      "name": "Колесо51.ру",
+      "region": "Мурманская область",
+      "city": "Мурманск",
+      "location": "68.999906, 33.113082",
+      "address": "г. Мурманск, ул. Свердлова, д. 31",
+      "phones": [
+        {
+          "title": "8 (8152) 40-00-10",
+          "href": "88152400010"
+        }
+      ],
+      "site": {
+        "title": "www.koleso51.ru",
+        "href": "http://www.koleso51.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 158,
+      "name": "Супер колесо",
+      "region": "Республика Коми",
+      "city": "Сыктывкар",
+      "location": "61.800415, 50.735300",
+      "address": "г. Сыктывкар, ул. Космонавтов, д. 23",
+      "phones": [
+        {
+          "title": "8 (8212) 63-14-78",
+          "href": "88212631478"
+        }
+      ],
+      "site": {
+        "title": "super-koleso.com",
+        "href": "https://super-koleso.com/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 159,
+      "name": "Супер колесо",
+      "region": "Республика Коми",
+      "city": "Сыктывкар",
+      "location": "61.671667, 50.811038",
+      "address": "г. Сыктывкар, Октябрьский проспект, д. 102",
+      "phones": [
+        {
+          "title": "8 (8212) 21-93-45",
+          "href": "88212219345"
+        }
+      ],
+      "site": {
+        "title": "super-koleso.com",
+        "href": "https://super-koleso.com/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 160,
+      "name": "Колесо",
+      "region": "Архангельская область",
+      "city": "Архангельск",
+      "location": "64.532885, 40.592003",
+      "address": "г. Архангельск, Московский проспект, д. 25, стр. 12",
+      "phones": [
+        {
+          "title": "8 (8182) 47-02-03",
+          "href": "88182470203"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 161,
+      "name": "Колесо",
+      "region": "Ивановская область",
+      "city": "Кинешма",
+      "location": "57.437576, 42.155930",
+      "address": "г. Кинешма, Подгорная ул., д.2",
+      "phones": [
+        {
+          "title": "8 (49331) 4-01-05",
+          "href": "84933140105"
+        }
+      ],
+      "site": {
+        "title": "koleso37.ru",
+        "href": "https://koleso37.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 162,
+      "name": "Pirelli",
+      "region": "Оренбургская область",
+      "city": "Оренбург",
+      "location": "51.767480, 55.200324",
+      "address": "г. Оренбург, ул. Загородное шоссе, д. 50",
+      "phones": [
+        {
+          "title": "8 (3532) 20-05-51",
+          "href": "83532200551"
+        }
+      ],
+      "site": {
+        "title": "www.pirelli.ru",
+        "href": "https://www.pirelli.ru"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 163,
+      "name": "Pirelli",
+      "region": "Оренбургская область",
+      "city": "Орск",
+      "location": "51.210932, 58.600978",
+      "address": "г. Орск, Вокзальное шоссе, д. 28, лит. К",
+      "phones": [
+        {
+          "title": "8 (3537) 25-33-60",
+          "href": "83537253360"
+        }
+      ],
+      "site": {
+        "title": "www.pirelli.ru",
+        "href": "https://www.pirelli.ru"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 164,
+      "name": "Pirelli",
+      "region": "Оренбургская область",
+      "city": "Орск",
+      "location": "51.228042, 58.466329",
+      "address": "г. Орск, ул. Новосибирская, д. 115Б",
+      "phones": [
+        {
+          "title": "8 (3532) 20-05-51",
+          "href": "83532200551"
+        }
+      ],
+      "site": {
+        "title": "www.pirelli.ru",
+        "href": "https://www.pirelli.ru"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 165,
+      "name": "Inside",
+      "region": "Нижегородская область",
+      "city": "Нижний Новгород",
+      "location": "56.258358, 43.999230",
+      "address": "г. Нижний Новгород, ул. Полярная, 65А",
+      "phones": [
+        {
+          "title": "8 (831) 280-96-22",
+          "href": "88312809622"
+        }
+      ],
+      "site": {
+        "title": "www.inside-tyre.ru",
+        "href": "https://www.inside-tyre.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 166,
+      "name": "Inside",
+      "region": "Нижегородская область",
+      "city": "Нижний Новгород",
+      "location": "56.234865, 43.965278",
+      "address": "г. Нижний Новгород, ул. Вятская, д.41",
+      "phones": [
+        {
+          "title": "8 (831) 280-96-22",
+          "href": "88312809622"
+        }
+      ],
+      "site": {
+        "title": "www.inside-tyre.ru",
+        "href": "https://www.inside-tyre.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 167,
+      "name": "Inside",
+      "region": "Нижегородская область",
+      "city": "Нижний Новгород",
+      "location": "56.224198, 43.835971",
+      "address": "г. Нижний Новгород, ул. Минеева, 29, корп. 1",
+      "phones": [
+        {
+          "title": "8 (831) 280-96-22",
+          "href": "88312809622"
+        }
+      ],
+      "site": {
+        "title": "www.inside-tyre.ru",
+        "href": "https://www.inside-tyre.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 168,
+      "name": "АртШина",
+      "region": "Республика Башкортостан",
+      "city": "Чесноковка",
+      "location": "54.613885, 55.928076",
+      "address": "Уфимский р-н, село Чесноковка, ул Репина, д 7",
+      "phones": [
+        {
+          "title": "8 (917) 778-74-45",
+          "href": "89177787445"
+        }
+      ],
+      "site": {
+        "title": "xn--80aaxunm6b.xn--p1ai",
+        "href": "https://xn--80aaxunm6b.xn--p1ai/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 169,
+      "name": "Автолайн",
+      "region": "Белгородская область",
+      "city": "Белгород",
+      "location": "50.553472, 36.581276",
+      "address": "г. Белгород, п. Дубовое, ул. Придорожная, д. 3А",
+      "phones": [
+        {
+          "title": "8 (903) 642-09-10",
+          "href": "89036420910"
+        }
+      ],
+      "site": {
+        "title": "autoline31.ru",
+        "href": "https://autoline31.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 170,
+      "name": "Шины и Диски",
+      "region": "Республика Татарстан",
+      "city": "Нижнекамск",
+      "location": "55.618064, 51.819730",
+      "address": "г. Нижнекамск, ул. Первопроходцев, д. 4А",
+      "phones": [
+        {
+          "title": "8 (8555) 41-99-46",
+          "href": "88555419946"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 171,
+      "name": "Автошинторг",
+      "region": "Иркутская область",
+      "city": "Иркутск",
+      "location": "52.326786, 104.246498",
+      "address": "г. Иркутск, Трактовая ул., 8с/5",
+      "phones": [
+        {
+          "title": "8 (3952) 75-80-80",
+          "href": "83952758080"
+        }
+      ],
+      "site": {
+        "title": "avtoshina38.ru",
+        "href": "https://avtoshina38.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 172,
+      "name": "Маркетшина",
+      "region": "Курганская область",
+      "city": "Курган",
+      "location": "55.423325, 65.276754",
+      "address": "г. Курган, ул. Бажова, д. 49",
+      "phones": [
+        {
+          "title": "8 (908) 007-11-00",
+          "href": "89080071100"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 173,
+      "name": "Мир колес",
+      "region": "Красноярский край",
+      "city": "Красноярск",
+      "location": "56.035549, 92.904281",
+      "address": "г. Красноярск, Взлётная ул., д. 26",
+      "phones": [
+        {
+          "title": "8 (391) 252-15-74",
+          "href": "83912521574"
+        }
+      ],
+      "site": {
+        "title": "www.xn--24-mlclkgesqo.xn--p1ai",
+        "href": "https://www.xn--24-mlclkgesqo.xn--p1ai/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 174,
+      "name": "Ivanor",
+      "region": "Республика Башкортостан",
+      "city": "Октябрьский",
+      "location": "54.490157, 53.445123",
+      "address": "г. Октябрьский, ул. Фрунзе, 6",
+      "phones": [
+        {
+          "title": "8 (927) 927-96-92",
+          "href": "89279279692"
+        }
+      ],
+      "site": {
+        "title": "shinaokt.ru",
+        "href": "https://shinaokt.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 175,
+      "name": "Волтайр-Сервис",
+      "region": "Ростовская область",
+      "city": "Волгодонск",
+      "location": "47.542528, 42.125045",
+      "address": "г. Волгодонск, ул. Складская, д. 1",
+      "phones": [
+        {
+          "title": "8 (989) 709-95-89",
+          "href": "89897099589"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 176,
+      "name": "Yokohama",
+      "region": "Республика Мордовия",
+      "city": "Саранск",
+      "location": "54.214602, 45.165925",
+      "address": "г. Саранск, ул. Титова, д. 2/1",
+      "phones": [
+        {
+          "title": "8 (8342) 22-38-77",
+          "href": "88342223877"
+        }
+      ],
+      "site": {
+        "title": "ivanor-saransk.ru",
+        "href": "https://ivanor-saransk.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 177,
+      "name": "Ivanor",
+      "region": "Республика Мордовия",
+      "city": "Саранск",
+      "location": "54.187954, 45.194556",
+      "address": "г. Саранск, ул. Рабочая, д. 61",
+      "phones": [
+        {
+          "title": "8 (8342) 47-24-07",
+          "href": "88342472407"
+        }
+      ],
+      "site": {
+        "title": "ivanor-saransk.ru",
+        "href": "https://ivanor-saransk.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 178,
+      "name": "Колесо154",
+      "region": "Новосибирская область",
+      "city": "Новосибирск",
+      "location": "54.954585, 82.902826",
+      "address": "г. Новосибирск, ул. Сибиряков-Гвардейцев, д. 47, корп. 8",
+      "phones": [
+        {
+          "title": "8 (383) 258-67-68",
+          "href": "83832586768"
+        }
+      ],
+      "site": {
+        "title": "koleso154.ru",
+        "href": "https://koleso154.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 179,
+      "name": "Колесо154",
+      "region": "Новосибирская область",
+      "city": "Новосибирск",
+      "location": "54.922262, 82.952558",
+      "address": "г. Новосибирск, п. Элитный, Советское ш., д. 1Г",
+      "phones": [
+        {
+          "title": "8 (383) 258-67-68",
+          "href": "83832586768"
+        }
+      ],
+      "site": {
+        "title": "koleso154.ru",
+        "href": "https://koleso154.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 180,
+      "name": "Вершина",
+      "region": "Республика Татарстан",
+      "city": "Казань",
+      "location": "55.826112, 49.028641",
+      "address": "г. Казань, ул. Горьковское Шоссе, 43А, корп. 2",
+      "phones": [
+        {
+          "title": "8 (843) 212-28-88",
+          "href": "88432122888"
+        }
+      ],
+      "site": {
+        "title": "vershina-kazan.ru",
+        "href": "https://vershina-kazan.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 181,
+      "name": "Резиновая подкова",
+      "region": "Омская область",
+      "city": "Омск",
+      "location": "54.973684, 73.281527",
+      "address": "г. Омск, Бульвар Архитекторов, д. 20",
+      "phones": [
+        {
+          "title": "8 (383) 230-40-30",
+          "href": "83832304030"
+        }
+      ],
+      "site": {
+        "title": "omsk.r-podkova.ru",
+        "href": "https://omsk.r-podkova.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 182,
+      "name": "ТД центр шин НЧ",
+      "region": "Республика Татарстан",
+      "city": "Набережные Челны",
+      "location": "55.707897, 52.395143",
+      "address": "г. Набережные Челны, Мензелинский тракт, 6",
+      "phones": [
+        {
+          "title": "8 (8552) 53-41-01",
+          "href": "88552534101"
+        }
+      ],
+      "site": {
+        "title": "kolesoved.ru",
+        "href": "https://kolesoved.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 183,
+      "name": "Kolesa-asb.ru",
+      "region": "Свердловская область",
+      "city": "Асбест",
+      "location": "57.011763, 61.457311",
+      "address": "г. Асбест, ул. Ленинградская, д 21",
+      "phones": [
+        {
+          "title": "8 (909) 700-33-99",
+          "href": "89097003399"
+        }
+      ],
+      "site": {
+        "title": "kolesa-asb.ru",
+        "href": "https://kolesa-asb.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 184,
+      "name": "Kolesa-asb.ru",
+      "region": "Свердловская область",
+      "city": "Асбест",
+      "location": "57.006328, 61.477554",
+      "address": "г. Асбест, ул. Калинина, зд 1А",
+      "phones": [
+        {
+          "title": "8 (909) 701-33-99",
+          "href": "89097013399"
+        }
+      ],
+      "site": {
+        "title": "kolesa-asb.ru",
+        "href": "https://kolesa-asb.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 185,
+      "name": "100колес.рф",
+      "region": "Нижегородская область",
+      "city": "Нижний Новгород",
+      "location": "56.269941, 44.089036",
+      "address": "д. Афонино, Магистральная ул., 10Б",
+      "phones": [
+        {
+          "title": "8 (920) 052-22-20",
+          "href": "89200522220"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 186,
+      "name": "Вавилон",
+      "region": "Костромская область",
+      "city": "Кострома",
+      "location": "57.752486, 40.979670",
+      "address": "г. Кострома, 2-я Волжская ул., д. 2Б, стр. 3",
+      "phones": [
+        {
+          "title": "8 (905) 151-44-95",
+          "href": "89051514495"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 187,
+      "name": "Шинный центр 13",
+      "region": "Республика Мордовия",
+      "city": "Саранск",
+      "location": "54.205660, 45.179388",
+      "address": "г. Саранск, ул. Пролетарская, д. 132/5",
+      "phones": [
+        {
+          "title": "8 (927) 640-52-40",
+          "href": "89276405240"
+        }
+      ],
+      "site": {
+        "title": "xn--13-vlcu7cua.xn--p1ai",
+        "href": "https://xn--13-vlcu7cua.xn--p1ai/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 188,
+      "name": "Шинный центр 13",
+      "region": "Республика Мордовия",
+      "city": "Саранск",
+      "location": "54.185207, 45.216018",
+      "address": "г. Саранск, ул. Волгоградская, д. 71",
+      "phones": [
+        {
+          "title": "8 (927) 977-26-01",
+          "href": "89279772601"
+        }
+      ],
+      "site": {
+        "title": "xn--13-vlcu7cua.xn--p1ai",
+        "href": "https://xn--13-vlcu7cua.xn--p1ai/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 189,
+      "name": "Шины-Диски",
+      "region": "Орловская область",
+      "city": "Ливны",
+      "location": "52.418562, 37.576672",
+      "address": "г. Ливны, ул. Железнодорожная, д. 10В",
+      "phones": [
+        {
+          "title": "8 (910) 748-31-05",
+          "href": "89107483105"
+        }
+      ],
+      "site": {
+        "title": "shiny-diski57.ru",
+        "href": "https://shiny-diski57.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 190,
+      "name": "100 Колес",
+      "region": "Кировская область",
+      "city": "Киров",
+      "location": "58.601252, 49.583380",
+      "address": "г. Киров, ул. Московская, д. 197",
+      "phones": [
+        {
+          "title": "8 (8332) 755-100",
+          "href": "88332755100"
+        }
+      ],
+      "site": {
+        "title": "100kolesdiskont.ru",
+        "href": "https://100kolesdiskont.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 191,
+      "name": "100 Колес",
+      "region": "Кировская область",
+      "city": "Киров",
+      "location": "58.599283, 49.628906",
+      "address": "г. Киров, ул. Солнечная, д. 4",
+      "phones": [
+        {
+          "title": "8 (8332) 755-108",
+          "href": "88332755108"
+        }
+      ],
+      "site": {
+        "title": "100kolesdiskont.ru",
+        "href": "https://100kolesdiskont.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 192,
+      "name": "100 Колес",
+      "region": "Кировская область",
+      "city": "Киров",
+      "location": "58.590043, 49.626565",
+      "address": "г. Киров, Мелькомбинатовский проезд, д. 2",
+      "phones": [
+        {
+          "title": "8 (8332) 733-100",
+          "href": "88332733100"
+        }
+      ],
+      "site": {
+        "title": "100kolesdiskont.ru",
+        "href": "https://100kolesdiskont.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 193,
+      "name": "100 Колес",
+      "region": "Кировская область",
+      "city": "Киров",
+      "location": "58.593061, 49.628213",
+      "address": "г. Киров, Мелькомбинатовский пр., 1",
+      "phones": [
+        {
+          "title": "8 (8332) 755-109",
+          "href": "88332755109"
+        }
+      ],
+      "site": {
+        "title": "100kolesdiskont.ru",
+        "href": "https://100kolesdiskont.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 194,
+      "name": "100 Колес",
+      "region": "Кировская область",
+      "city": "Кирово-Чепецк",
+      "location": "58.520178, 49.980080",
+      "address": "г. Кирово-Чепецк, ул. Комсомольская, д. 1А",
+      "phones": [
+        {
+          "title": "8 (8332) 263-100",
+          "href": "88332263100"
+        }
+      ],
+      "site": {
+        "title": "100kolesdiskont.ru",
+        "href": "https://100kolesdiskont.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 195,
+      "name": "Цефей",
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "location": "55.186358, 61.433074",
+      "address": "г. Челябинск, просп. Победы, д. 120",
+      "phones": [
+        {
+          "title": "8 (351) 210-99-99",
+          "href": "83512109999"
+        }
+      ],
+      "site": {
+        "title": "cephey.ru",
+        "href": "https://cephey.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 196,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.692653, 55.809929",
+      "address": "г. Уфа, ул. Майкопская, д. 18",
+      "phones": [
+        {
+          "title": "8 (347) 200-82-66",
+          "href": "83472008266"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 197,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.788852, 56.059539",
+      "address": "г. Уфа, ул. Уфимское ш, д. 34",
+      "phones": [
+        {
+          "title": "8 (347) 200-82-99",
+          "href": "83472008299"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 198,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.799032, 55.873007",
+      "address": "г. Уфа, с. Михайловка, проезд Мебельщиков, д. 8А",
+      "phones": [
+        {
+          "title": "8 (347) 201-91-99",
+          "href": "83472019199"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 199,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.807516, 56.100177",
+      "address": "г. Уфа, ул. Интернациональная, д. 115/1",
+      "phones": [
+        {
+          "title": "8 (347) 200-83-99",
+          "href": "83472008399"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 200,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.690863, 55.981993",
+      "address": "г. Уфа, ул. Пугачёва, д. 15/1",
+      "phones": [
+        {
+          "title": "8 (347) 200-85-99",
+          "href": "83472008599"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 201,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.718369, 55.982254",
+      "address": "г. Уфа, ул. Бакалинская, д. 31",
+      "phones": [
+        {
+          "title": "8 (347) 200-84-99",
+          "href": "83472008499"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 202,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Стерлитамак",
+      "location": "53.598422, 55.909401",
+      "address": "г. Стерлитамак, ул. Водолаженко, д. 214",
+      "phones": [
+        {
+          "title": "8 (3473) 30-90-99",
+          "href": "83473309099"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 203,
+      "name": "74 Колеса.ru",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.786567, 56.065352",
+      "address": "г. Уфа, ул. Новожёнова, д. 90/4",
+      "phones": [
+        {
+          "title": "8 (347) 201-44-01",
+          "href": "83472014401"
+        }
+      ],
+      "site": {
+        "title": "ufa.74kolesa.ru",
+        "href": "https://ufa.74kolesa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 204,
+      "name": "74 Колеса.ru",
+      "region": "Свердловская область",
+      "city": "Екатеринбург",
+      "location": "56.874694, 60.656227",
+      "address": "г. Екатеринбург, Шефская ул., 3М",
+      "phones": [
+        {
+          "title": "8 (343) 208-52-45",
+          "href": "83432085245"
+        }
+      ],
+      "site": {
+        "title": "ekaterinburg.74kolesa.ru",
+        "href": "https://ekaterinburg.74kolesa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 205,
+      "name": "74 Колеса.ru",
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "location": "55.157170, 61.514691",
+      "address": "г. Челябинск, ул. Линейная, д. 53",
+      "phones": [
+        {
+          "title": "8 (351) 701-69-73",
+          "href": "83517016973"
+        }
+      ],
+      "site": {
+        "title": "74kolesa.ru",
+        "href": "https://74kolesa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 206,
+      "name": "74 Колеса.ru",
+      "region": "Пермский край",
+      "city": "Пермь",
+      "location": "57.953005, 56.252163",
+      "address": "г. Пермь, ул. Василия Васильева, 37",
+      "phones": [
+        {
+          "title": "8 (342) 255-52-19",
+          "href": "83422555219"
+        }
+      ],
+      "site": {
+        "title": "perm.74kolesa.ru",
+        "href": "https://perm.74kolesa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 207,
+      "name": "74 Колеса.ru",
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "location": "55.125462, 61.378480",
+      "address": "г. Челябинск, ул. Рылеева, д. 16/74",
+      "phones": [
+        {
+          "title": "8 (351) 701-69-73",
+          "href": "83517016973"
+        }
+      ],
+      "site": {
+        "title": "74kolesa.ru",
+        "href": "https://74kolesa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 208,
+      "name": "74 Колеса.ru",
+      "region": "Тюменская область",
+      "city": "Тюмень",
+      "location": "57.186676, 65.632324",
+      "address": "г. Тюмень, ул. Тимофея Чаркова, д. 43/4",
+      "phones": [
+        {
+          "title": "8 (345) 257-72-05",
+          "href": "83452577205"
+        }
+      ],
+      "site": {
+        "title": "tyumen.74kolesa.ru",
+        "href": "https://tyumen.74kolesa.ru/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 209,
+      "name": "Автобат",
+      "region": "Псковская область",
+      "city": "Псков",
+      "location": "57.802631, 28.344331",
+      "address": "г. Тюмень, ул. Советская, д. 93А",
+      "phones": [
+        {
+          "title": "8 (8112) 75-21-92",
+          "href": "88112752192"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 210,
+      "name": "Траст-СВ",
+      "region": "Ставропольский край",
+      "city": "Ставрополь",
+      "location": "45.002939, 41.928093",
+      "address": "г. Ставрополь, ул Доваторцев, д. 60, корп. 2",
+      "phones": [
+        {
+          "title": "8 (8652) 77-30-61",
+          "href": "88652773061"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 211,
+      "name": "Шиномонтаж",
+      "region": "Московская область",
+      "city": "Домодедово",
+      "location": "55.476551, 37.747190",
+      "address": "г. Домодедово, тер М-4 Дон, д. 32, км стр 1",
+      "phones": [
+        {
+          "title": "8 (985) 128-25-77",
+          "href": "89851282577"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
     }
   ]
 }
