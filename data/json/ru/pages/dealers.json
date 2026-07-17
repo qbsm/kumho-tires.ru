@@ -3301,6 +3301,730 @@
         "visible": false,
         "title": "Бесплатный шиномонтаж"
       }
+    },
+    {
+      "id": 131,
+      "name": "Tyreplus",
+      "region": "Республика Мордовия",
+      "city": "Саранск",
+      "location": "54.202903, 45.149879",
+      "address": "г. Саранск, ул. Строительная, д. 36, стр. 7",
+      "phones": [
+        {
+          "title": "8 (8342) 29-15-16",
+          "href": "88342291516"
+        }
+      ],
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 132,
+      "name": "ЛенАвто",
+      "region": "Республика Башкортостан",
+      "city": "Белебей",
+      "location": "54.081938, 54.119461",
+      "address": "г. Белебей, ул. Советская, д. 140",
+      "phones": [
+        {
+          "title": "8 (34786) 7-50-99",
+          "href": "83478675099"
+        }
+      ],
+      "site": {
+        "title": "lenavto02.ru",
+        "href": "https://lenavto02.ru/catalog/tires/search/proizvoditel-is-kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 133,
+      "name": "Ivanor",
+      "region": "Республика Башкортостан",
+      "city": "Белебей",
+      "location": "54.112707, 54.107942",
+      "address": "г. Белебей, ул. Войкова, д. 144В",
+      "phones": [
+        {
+          "title": "8 (34786) 4-44-99",
+          "href": "83478644499"
+        }
+      ],
+      "site": {
+        "title": "lenavto02.ru",
+        "href": "https://lenavto02.ru/catalog/tires/search/proizvoditel-is-kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 134,
+      "name": "Шина25ру",
+      "region": "Приморский край",
+      "city": "Владивосток",
+      "location": "43.137183, 131.932085",
+      "address": "г. Владивосток, Снеговая ул., д. 3А",
+      "phones": [
+        {
+          "title": "8 (800) 700-88-25",
+          "href": "88007008825"
+        }
+      ],
+      "site": {
+        "title": "shina25.ru",
+        "href": "https://shina25.ru/catalog/tires/podbor/v-nalichii/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 135,
+      "name": "Шина25ру",
+      "region": "Приморский край",
+      "city": "Владивосток",
+      "location": "43.155501, 131.939027",
+      "address": "г. Владивосток, Днепровская ул., д. 115 стр 9",
+      "phones": [
+        {
+          "title": "8 (800) 700-88-25",
+          "href": "88007008825"
+        }
+      ],
+      "site": {
+        "title": "shina25.ru",
+        "href": "https://shina25.ru/catalog/tires/podbor/v-nalichii/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 136,
+      "name": "Шина25ру",
+      "region": "Приморский край",
+      "city": "Уссурийск",
+      "location": "43.813480, 131.951817",
+      "address": "г. Уссурийск, ул. Краснознаменная, 198В",
+      "phones": [
+        {
+          "title": "8 (800) 700-88-25",
+          "href": "88007008825"
+        }
+      ],
+      "site": {
+        "title": "shina25.ru",
+        "href": "https://shina25.ru/catalog/tires/podbor/v-nalichii/kumho/"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 137,
+      "name": "Cordiant",
+      "region": "Алтайский край",
+      "city": "Барнаул",
+      "location": "53.386755, 83.760995",
+      "address": "г. Барнаул, ул. ​Бриллиантовая, д. 22Е",
+      "phones": [
+        {
+          "title": "8 (3852) 22-32-26",
+          "href": "83852223226"
+        }
+      ],
+      "site": {
+        "title": "cordiant.org",
+        "href": "https://cordiant.org/shop/search?sort_by=&s%5Bfolder_id%5D=46649906&s%5Bshirina%5D=&s%5Bvysota%5D=&s%5Bdiametr%5D=&s%5Bproizvoditel_%5D=38624306"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 138,
+      "name": "Цефей",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.718650, 55.983348",
+      "address": "г. Уфа, ул. Бакалинская, д. 29",
+      "phones": [
+        {
+          "title": "8 (347) 226-60-60",
+          "href": "83472266060"
+        }
+      ],
+      "site": {
+        "title": "ufa.cephey.ru",
+        "href": "https://ufa.cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 139,
+      "name": "Цефей",
+      "region": "Челябинская область",
+      "city": "Магнитогорск",
+      "location": "53.378726, 58.969938",
+      "address": "г. Магнитогорск, ул. Галиуллина, д. 12",
+      "phones": [
+        {
+          "title": "8 (3519) 54-60-60",
+          "href": "83519546060"
+        }
+      ],
+      "site": {
+        "title": "magnitogorsk.cephey.ru",
+        "href": "https://magnitogorsk.cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 140,
+      "name": "Цефей",
+      "region": "Челябинская область",
+      "city": "Магнитогорск",
+      "location": "53.362834, 58.990842",
+      "address": "г. Магнитогорск, пр. Ленина, д. 143а",
+      "phones": [
+        {
+          "title": "8 (3519) 54-60-60",
+          "href": "83519546060"
+        }
+      ],
+      "site": {
+        "title": "magnitogorsk.cephey.ru",
+        "href": "https://magnitogorsk.cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 141,
+      "name": "Цефей",
+      "region": "Курганская область",
+      "city": "Курган",
+      "location": "55.478123, 65.312947",
+      "address": "г. Курган, просп. Маршала Голикова, д. 14",
+      "phones": [
+        {
+          "title": "8 (3522) 33-22-22",
+          "href": "83522332222"
+        }
+      ],
+      "site": {
+        "title": "kurgan.cephey.ru",
+        "href": "https://kurgan.cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 142,
+      "name": "Цефей",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.790094, 56.078539",
+      "address": "г. Уфа, ул. Маршала Жукова, д. 42/1",
+      "phones": [
+        {
+          "title": "8 (347) 226-60-60",
+          "href": "83472266060"
+        }
+      ],
+      "site": {
+        "title": "ufa.cephey.ru",
+        "href": "https://ufa.cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 143,
+      "name": "Цефей",
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "location": "55.219496, 61.380221",
+      "address": "г. Челябинск, Свердловский тракт, 3Л",
+      "phones": [
+        {
+          "title": "8 (351) 210-99-99",
+          "href": "83512109999"
+        }
+      ],
+      "site": {
+        "title": "cephey.ru",
+        "href": "https://cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 144,
+      "name": "Цефей",
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "location": "55.178294, 61.317242",
+      "address": "г. Челябинск, ул. Братьев Кашириных, 129Б",
+      "phones": [
+        {
+          "title": "8 (351) 210-99-99",
+          "href": "83512109999"
+        }
+      ],
+      "site": {
+        "title": "cephey.ru",
+        "href": "https://cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 145,
+      "name": "Цефей",
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "location": "55.138302, 61.457681",
+      "address": "г. Челябинск, Копейское ш., д. 35А",
+      "phones": [
+        {
+          "title": "8 (351) 210-99-99",
+          "href": "83512109999"
+        }
+      ],
+      "site": {
+        "title": "cephey.ru",
+        "href": "https://cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 146,
+      "name": "Цефей",
+      "region": "Челябинская область",
+      "city": "Копейск",
+      "location": "55.116585, 61.599015",
+      "address": "г. Копейск, ул. Учительская, д. 1Б",
+      "phones": [
+        {
+          "title": "8 (351) 210-99-99",
+          "href": "83512109999"
+        }
+      ],
+      "site": {
+        "title": "cephey.ru",
+        "href": "https://cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 147,
+      "name": "Цефей",
+      "region": "Курганская область",
+      "city": "Курган",
+      "location": "55.465349, 65.369061",
+      "address": "г. Курган, ул. Омская, д. 82",
+      "phones": [
+        {
+          "title": "8 (3522) 33-22-22",
+          "href": "83522332222"
+        }
+      ],
+      "site": {
+        "title": "kurgan.cephey.ru",
+        "href": "https://kurgan.cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 148,
+      "name": "Цефей",
+      "region": "Курганская область",
+      "city": "Курган",
+      "location": "55.441733, 65.279519",
+      "address": "г. Курган, ул. Мостостроителей, д. 1В",
+      "phones": [
+        {
+          "title": "8 (3522) 33-22-22",
+          "href": "83522332222"
+        }
+      ],
+      "site": {
+        "title": "kurgan.cephey.ru",
+        "href": "https://kurgan.cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 149,
+      "name": "Цефей",
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "location": "55.186358, 61.433074",
+      "address": "г. Челябинск, просп. Победы, д. 120",
+      "phones": [
+        {
+          "title": "8 (351) 210-99-99",
+          "href": "83512109999"
+        }
+      ],
+      "site": {
+        "title": "cephey.ru",
+        "href": "https://cephey.ru/goods/tyres/?filter=1&brands[]=Kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 150,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Стерлитамак",
+      "location": "53.640497, 55.903980",
+      "address": "г. Стерлитамак, Раевский тракт, 4",
+      "phones": [
+        {
+          "title": "8 (3473) 30-27-66",
+          "href": "83473302766"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 151,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Стерлитамак",
+      "location": "53.598422, 55.909401",
+      "address": "г. Стерлитамак, ул. Водолаженко, д. 214",
+      "phones": [
+        {
+          "title": "8 (3473) 30-90-99",
+          "href": "83473309099"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 152,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.718369, 55.982254",
+      "address": "г. Уфа, ул. Бакалинская, д. 31",
+      "phones": [
+        {
+          "title": "8 (347) 200-84-99",
+          "href": "83472008499"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 153,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.692653, 55.809929",
+      "address": "г. Уфа, ул. Майкопская, д. 18",
+      "phones": [
+        {
+          "title": "8 (347) 200-82-66",
+          "href": "83472008266"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 154,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.788852, 56.059539",
+      "address": "г. Уфа, ул. Уфимское ш, д. 34",
+      "phones": [
+        {
+          "title": "8 (347) 200-82-99",
+          "href": "83472008299"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 155,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.799032, 55.873007",
+      "address": "г. Уфа, с. Михайловка, проезд Мебельщиков, д. 8А",
+      "phones": [
+        {
+          "title": "8 (347) 201-91-99",
+          "href": "83472019199"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 156,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.807516, 56.100177",
+      "address": "г. Уфа, ул. Интернациональная, д. 115/1",
+      "phones": [
+        {
+          "title": "8 (347) 200-83-99",
+          "href": "83472008399"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 157,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.690863, 55.981993",
+      "address": "г. Уфа, ул. Пугачёва, д. 15/1",
+      "phones": [
+        {
+          "title": "8 (347) 200-85-99",
+          "href": "83472008599"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
+    },
+    {
+      "id": 158,
+      "name": "Уфимская шинная компания",
+      "region": "Республика Башкортостан",
+      "city": "Уфа",
+      "location": "54.711795, 55.985694",
+      "address": "г. Уфа, ул. Менделеева, д. 21",
+      "phones": [
+        {
+          "title": "8 (347) 258-96-99",
+          "href": "83472589699"
+        }
+      ],
+      "site": {
+        "title": "shinaufa.ru",
+        "href": "https://shinaufa.ru/tyres/kumho"
+      },
+      "guarantee": {
+        "visible": true,
+        "title": "Расширенная гарантия"
+      },
+      "bshm": {
+        "visible": false,
+        "title": "Бесплатный шиномонтаж"
+      }
     }
   ]
 }
