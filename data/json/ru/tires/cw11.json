@@ -40,15 +40,15 @@
   },
   "images": {
     "front": {
-      "src": "data/img/tires/cw11/raw/cw11-front.webp",
+      "src": "data/img/tires/cw11/raw/cw11-front-v2.webp",
       "alt": "Kumho CW11 WinterPorTran, вид спереди"
     },
     "side": {
-      "src": "data/img/tires/cw11/raw/cw11-side.webp",
+      "src": "data/img/tires/cw11/raw/cw11-side-v2.webp",
       "alt": "Kumho CW11 WinterPorTran, вид сбоку"
     },
     "30deg": {
-      "src": "data/img/tires/cw11/raw/cw11-30deg.webp",
+      "src": "data/img/tires/cw11/raw/cw11-30deg-v2.webp",
       "alt": "Kumho CW11 WinterPorTran"
     }
   },
