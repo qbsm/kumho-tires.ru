@@ -61,6 +61,8 @@ return [
             'list_key' => 'items',
             'value_key' => '',
             'slugger' => 'identity',
+            // Директория сущностей: slug исключается из sitemap, если {lang}/tires/<slug>.json скрыт (visible:false)
+            'entity_dir' => 'tires',
         ],
     ],
 

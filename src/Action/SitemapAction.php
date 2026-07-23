@@ -120,13 +120,14 @@ final class SitemapAction
             $listKey = (string) ($config['list_key'] ?? '');
             $valueKey = (string) ($config['value_key'] ?? '');
             $sluggerKey = (string) ($config['slugger'] ?? 'city');
+            $entityDir = (string) ($config['entity_dir'] ?? '');
             if ($pathSegment === '' || $dataPage === '' || $listKey === '') {
                 continue;
             }
 
             // Slug-набор одинаковый для всех языков: данные дилеров — это адреса/названия
             // на родном языке, перевод не предполагается. Берём slug-набор из дефолтного языка.
-            $slugs = $this->loadDynamicSlugs($jsonBaseDir, $defaultLang, $dataPage, $listKey, $valueKey, $sluggerKey);
+            $slugs = $this->loadDynamicSlugs($jsonBaseDir, $defaultLang, $dataPage, $listKey, $valueKey, $sluggerKey, $entityDir);
             if ($slugs === []) {
                 continue;
             }
@@ -164,7 +165,8 @@ final class SitemapAction
         string $dataPage,
         string $listKey,
         string $valueKey,
-        string $sluggerKey
+        string $sluggerKey,
+        string $entityDir = ''
     ): array {
         $items = Json::loadKey($jsonBaseDir . '/' . $lang . '/pages/' . $dataPage . '.json', $listKey);
         if ($items === null) {
@@ -184,10 +186,26 @@ final class SitemapAction
             if ($slug === '' || in_array($slug, $slugs, true)) {
                 continue;
             }
+            if ($entityDir !== '' && !$this->isEntityVisible($jsonBaseDir, $lang, $entityDir, $slug)) {
+                continue;
+            }
             $slugs[] = $slug;
         }
         sort($slugs);
         return $slugs;
+    }
+
+    /**
+     * Сущность попадает в sitemap только если её JSON существует и не скрыт (visible !== false) —
+     * иначе страница отдаёт 404 (та же логика, что DataLoaderService::loadEntity).
+     */
+    private function isEntityVisible(string $jsonBaseDir, string $lang, string $entityDir, string $slug): bool
+    {
+        $data = Json::load($jsonBaseDir . '/' . $lang . '/' . $entityDir . '/' . $slug . '.json');
+        if ($data === null) {
+            return false;
+        }
+        return !(isset($data['visible']) && $data['visible'] === false);
     }
 
     private function slugifyValue(string $value, string $sluggerKey): string
