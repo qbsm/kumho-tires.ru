@@ -1,1 +1,3 @@
-[]
+[
+  {"from": "/tires/kc11", "to": "/tires", "status": 301}
+]
