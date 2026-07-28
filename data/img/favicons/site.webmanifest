@@ -1,6 +1,6 @@
 {
   "name": "Kumho Tires",
-  "short_name": "KUMHO",
+  "short_name": "Kumho",
   "icons": [
     {
       "src": "/data/img/favicons/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ef0010",
-  "background_color": "#ef0010",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone"
 }
