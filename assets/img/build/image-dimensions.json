@@ -39,918 +39,6 @@
     "width": 1920,
     "height": 1879
   },
-  "tires/ws71/400/ws71-side.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws71/400/ws71-side.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws71/800/ws71-side.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws71/800/ws71-side.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws71/1280/ws71-side.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws71/1280/ws71-side.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws71/1600/ws71-side.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws71/1600/ws71-side.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws71/1920/ws71-side.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws71/1920/ws71-side.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws71/2560/ws71-side.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws71/2560/ws71-side.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws71/400/ws71-front.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws71/400/ws71-front.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws71/800/ws71-front.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws71/800/ws71-front.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws71/1280/ws71-front.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws71/1280/ws71-front.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws71/1600/ws71-front.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws71/1600/ws71-front.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws71/1920/ws71-front.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws71/1920/ws71-front.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws71/2560/ws71-front.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws71/2560/ws71-front.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws71/400/ws71-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws71/400/ws71-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws71/800/ws71-30deg.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws71/800/ws71-30deg.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws71/1280/ws71-30deg.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws71/1280/ws71-30deg.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws71/1600/ws71-30deg.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws71/1600/ws71-30deg.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws71/1920/ws71-30deg.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws71/1920/ws71-30deg.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws71/2560/ws71-30deg.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws71/2560/ws71-30deg.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws51/400/ws51-side.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws51/400/ws51-side.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws51/800/ws51-side.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws51/800/ws51-side.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws51/1280/ws51-side.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws51/1280/ws51-side.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws51/1600/ws51-side.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws51/1600/ws51-side.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws51/1920/ws51-side.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws51/1920/ws51-side.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws51/2560/ws51-side.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws51/2560/ws51-side.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws51/400/ws51-front.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws51/400/ws51-front.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws51/800/ws51-front.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws51/800/ws51-front.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws51/1280/ws51-front.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws51/1280/ws51-front.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws51/1600/ws51-front.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws51/1600/ws51-front.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws51/1920/ws51-front.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws51/1920/ws51-front.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws51/2560/ws51-front.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws51/2560/ws51-front.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws51/400/ws51-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws51/400/ws51-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws51/800/ws51-30deg.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws51/800/ws51-30deg.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws51/1280/ws51-30deg.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws51/1280/ws51-30deg.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws51/1600/ws51-30deg.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws51/1600/ws51-30deg.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/ws51/1920/ws51-30deg.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws51/1920/ws51-30deg.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/ws51/2560/ws51-30deg.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws51/2560/ws51-30deg.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/ws31/400/ws31-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws31/400/ws31-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/ws31/800/ws31-30deg.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws31/800/ws31-30deg.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/ws31/1280/ws31-30deg.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws31/1280/ws31-30deg.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/ws31/1600/ws31-30deg.webp": {
-    "width": 1600,
-    "height": 1601
-  },
-  "tires/ws31/1600/ws31-30deg.avif": {
-    "width": 1600,
-    "height": 1601
-  },
-  "tires/ws31/1920/ws31-30deg.webp": {
-    "width": 1920,
-    "height": 1921
-  },
-  "tires/ws31/1920/ws31-30deg.avif": {
-    "width": 1920,
-    "height": 1921
-  },
-  "tires/ws31/2560/ws31-30deg.webp": {
-    "width": 2560,
-    "height": 2561
-  },
-  "tires/ws31/2560/ws31-30deg.avif": {
-    "width": 2560,
-    "height": 2561
-  },
-  "tires/wp72/400/wp72-side.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp72/400/wp72-side.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp72/800/wp72-side.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wp72/800/wp72-side.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wp72/1280/wp72-side.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wp72/1280/wp72-side.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wp72/1600/wp72-side.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wp72/1600/wp72-side.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wp72/1920/wp72-side.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wp72/1920/wp72-side.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wp72/2560/wp72-side.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wp72/2560/wp72-side.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wp72/400/wp72-front.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp72/400/wp72-front.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp72/800/wp72-front.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wp72/800/wp72-front.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wp72/1280/wp72-front.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wp72/1280/wp72-front.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wp72/1600/wp72-front.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wp72/1600/wp72-front.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wp72/1920/wp72-front.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wp72/1920/wp72-front.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wp72/2560/wp72-front.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wp72/2560/wp72-front.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wp72/400/wp72-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp72/400/wp72-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp72/800/wp72-30deg.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wp72/800/wp72-30deg.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wp72/1280/wp72-30deg.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wp72/1280/wp72-30deg.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wp72/1600/wp72-30deg.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wp72/1600/wp72-30deg.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wp72/1920/wp72-30deg.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wp72/1920/wp72-30deg.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wp72/2560/wp72-30deg.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wp72/2560/wp72-30deg.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wp52-plus/400/wp52-plus-side.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp52-plus/400/wp52-plus-side.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp52-plus/800/wp52-plus-side.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wp52-plus/800/wp52-plus-side.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wp52-plus/1280/wp52-plus-side.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wp52-plus/1280/wp52-plus-side.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wp52-plus/1600/wp52-plus-side.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wp52-plus/1600/wp52-plus-side.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wp52-plus/1920/wp52-plus-side.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wp52-plus/1920/wp52-plus-side.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wp52-plus/2560/wp52-plus-side.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wp52-plus/2560/wp52-plus-side.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wp52-plus/400/wp52-plus-front.webp": {
-    "width": 400,
-    "height": 399
-  },
-  "tires/wp52-plus/400/wp52-plus-front.avif": {
-    "width": 400,
-    "height": 399
-  },
-  "tires/wp52-plus/800/wp52-plus-front.webp": {
-    "width": 800,
-    "height": 798
-  },
-  "tires/wp52-plus/800/wp52-plus-front.avif": {
-    "width": 800,
-    "height": 798
-  },
-  "tires/wp52-plus/1280/wp52-plus-front.webp": {
-    "width": 1280,
-    "height": 1276
-  },
-  "tires/wp52-plus/1280/wp52-plus-front.avif": {
-    "width": 1280,
-    "height": 1276
-  },
-  "tires/wp52-plus/1600/wp52-plus-front.webp": {
-    "width": 1600,
-    "height": 1595
-  },
-  "tires/wp52-plus/1600/wp52-plus-front.avif": {
-    "width": 1600,
-    "height": 1595
-  },
-  "tires/wp52-plus/1920/wp52-plus-front.webp": {
-    "width": 1920,
-    "height": 1914
-  },
-  "tires/wp52-plus/1920/wp52-plus-front.avif": {
-    "width": 1920,
-    "height": 1914
-  },
-  "tires/wp52-plus/2560/wp52-plus-front.webp": {
-    "width": 2560,
-    "height": 2552
-  },
-  "tires/wp52-plus/2560/wp52-plus-front.avif": {
-    "width": 2560,
-    "height": 2552
-  },
-  "tires/wp52-plus/400/wp52-plus-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp52-plus/400/wp52-plus-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wp52-plus/800/wp52-plus-30deg.webp": {
-    "width": 800,
-    "height": 799
-  },
-  "tires/wp52-plus/800/wp52-plus-30deg.avif": {
-    "width": 800,
-    "height": 799
-  },
-  "tires/wp52-plus/1280/wp52-plus-30deg.webp": {
-    "width": 1280,
-    "height": 1279
-  },
-  "tires/wp52-plus/1280/wp52-plus-30deg.avif": {
-    "width": 1280,
-    "height": 1279
-  },
-  "tires/wp52-plus/1600/wp52-plus-30deg.webp": {
-    "width": 1600,
-    "height": 1599
-  },
-  "tires/wp52-plus/1600/wp52-plus-30deg.avif": {
-    "width": 1600,
-    "height": 1599
-  },
-  "tires/wp52-plus/1920/wp52-plus-30deg.webp": {
-    "width": 1920,
-    "height": 1919
-  },
-  "tires/wp52-plus/1920/wp52-plus-30deg.avif": {
-    "width": 1920,
-    "height": 1919
-  },
-  "tires/wp52-plus/2560/wp52-plus-30deg.webp": {
-    "width": 2560,
-    "height": 2558
-  },
-  "tires/wp52-plus/2560/wp52-plus-30deg.avif": {
-    "width": 2560,
-    "height": 2558
-  },
-  "tires/wi51/400/wi51-side.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi51/400/wi51-side.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi51/800/wi51-side.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi51/800/wi51-side.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi51/1280/wi51-side.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi51/1280/wi51-side.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi51/1600/wi51-side.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi51/1600/wi51-side.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi51/1920/wi51-side.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi51/1920/wi51-side.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi51/2560/wi51-side.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi51/2560/wi51-side.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi51/400/wi51-front.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi51/400/wi51-front.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi51/800/wi51-front.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi51/800/wi51-front.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi51/1280/wi51-front.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi51/1280/wi51-front.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi51/1600/wi51-front.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi51/1600/wi51-front.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi51/1920/wi51-front.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi51/1920/wi51-front.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi51/2560/wi51-front.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi51/2560/wi51-front.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi51/400/wi51-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi51/400/wi51-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi51/800/wi51-30deg.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi51/800/wi51-30deg.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi51/1280/wi51-30deg.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi51/1280/wi51-30deg.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi51/1600/wi51-30deg.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi51/1600/wi51-30deg.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi51/1920/wi51-30deg.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi51/1920/wi51-30deg.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi51/2560/wi51-30deg.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi51/2560/wi51-30deg.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi32/400/wi32-side.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi32/400/wi32-side.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi32/800/wi32-side.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi32/800/wi32-side.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi32/1280/wi32-side.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi32/1280/wi32-side.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi32/1600/wi32-side.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi32/1600/wi32-side.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi32/1920/wi32-side.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi32/1920/wi32-side.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi32/2560/wi32-side.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi32/2560/wi32-side.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi32/400/wi32-front.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi32/400/wi32-front.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi32/800/wi32-front.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi32/800/wi32-front.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/wi32/1280/wi32-front.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi32/1280/wi32-front.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/wi32/1600/wi32-front.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi32/1600/wi32-front.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/wi32/1920/wi32-front.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi32/1920/wi32-front.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/wi32/2560/wi32-front.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi32/2560/wi32-front.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi32/400/wi32-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi32/400/wi32-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/wi32/800/wi32-30deg.webp": {
-    "width": 800,
-    "height": 801
-  },
-  "tires/wi32/800/wi32-30deg.avif": {
-    "width": 800,
-    "height": 801
-  },
-  "tires/wi32/1280/wi32-30deg.webp": {
-    "width": 1280,
-    "height": 1281
-  },
-  "tires/wi32/1280/wi32-30deg.avif": {
-    "width": 1280,
-    "height": 1281
-  },
-  "tires/wi32/1600/wi32-30deg.webp": {
-    "width": 1600,
-    "height": 1601
-  },
-  "tires/wi32/1600/wi32-30deg.avif": {
-    "width": 1600,
-    "height": 1601
-  },
-  "tires/wi32/1920/wi32-30deg.webp": {
-    "width": 1920,
-    "height": 1921
-  },
-  "tires/wi32/1920/wi32-30deg.avif": {
-    "width": 1920,
-    "height": 1921
-  },
-  "tires/wi32/2560/wi32-30deg.webp": {
-    "width": 2560,
-    "height": 2562
-  },
-  "tires/wi32/2560/wi32-30deg.avif": {
-    "width": 2560,
-    "height": 2562
-  },
   "tires/ta31/400/ta31-side.webp": {
     "width": 400,
     "height": 400
@@ -1695,54 +783,6 @@
     "width": 1280,
     "height": 1280
   },
-  "tires/kc11/400/kc11-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/kc11/400/kc11-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/kc11/800/kc11-30deg.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/kc11/800/kc11-30deg.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/kc11/1280/kc11-30deg.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/kc11/1280/kc11-30deg.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/kc11/1600/kc11-30deg.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/kc11/1600/kc11-30deg.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/kc11/1920/kc11-30deg.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/kc11/1920/kc11-30deg.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/kc11/2560/kc11-30deg.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/kc11/2560/kc11-30deg.avif": {
-    "width": 2560,
-    "height": 2560
-  },
   "tires/hs63/400/hs63-30deg.webp": {
     "width": 400,
     "height": 400
@@ -2270,254 +1310,6 @@
   "tires/cx11/1280/cx11-30deg.avif": {
     "width": 1280,
     "height": 1280
-  },
-  "tires/cw51/400/cw51-side.webp": {
-    "width": 400,
-    "height": 1037
-  },
-  "tires/cw51/400/cw51-side.avif": {
-    "width": 400,
-    "height": 1037
-  },
-  "tires/cw51/800/cw51-side.webp": {
-    "width": 800,
-    "height": 2075
-  },
-  "tires/cw51/800/cw51-side.avif": {
-    "width": 800,
-    "height": 2075
-  },
-  "tires/cw51/400/cw51-front.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw51/400/cw51-front.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw51/800/cw51-front.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw51/800/cw51-front.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw51/1280/cw51-front.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw51/1280/cw51-front.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw51/1600/cw51-front.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw51/1600/cw51-front.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw51/1920/cw51-front.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw51/1920/cw51-front.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw51/400/cw51-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw51/400/cw51-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw51/800/cw51-30deg.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw51/800/cw51-30deg.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw51/1280/cw51-30deg.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw51/1280/cw51-30deg.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw51/1600/cw51-30deg.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw51/1600/cw51-30deg.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw51/1920/cw51-30deg.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw51/1920/cw51-30deg.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw51/2560/cw51-30deg.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw51/2560/cw51-30deg.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw11/400/cw11-side.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw11/400/cw11-side.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw11/800/cw11-side.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw11/800/cw11-side.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw11/1280/cw11-side.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw11/1280/cw11-side.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw11/1600/cw11-side.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1600/cw11-side.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1920/cw11-side.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/1920/cw11-side.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/2560/cw11-side.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw11/2560/cw11-side.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw11/400/cw11-front.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw11/400/cw11-front.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw11/800/cw11-front.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw11/800/cw11-front.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw11/1280/cw11-front.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw11/1280/cw11-front.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw11/1600/cw11-front.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1600/cw11-front.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1920/cw11-front.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/1920/cw11-front.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/2560/cw11-front.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw11/2560/cw11-front.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw11/400/cw11-30deg.webp": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw11/400/cw11-30deg.avif": {
-    "width": 400,
-    "height": 400
-  },
-  "tires/cw11/800/cw11-30deg.webp": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw11/800/cw11-30deg.avif": {
-    "width": 800,
-    "height": 800
-  },
-  "tires/cw11/1280/cw11-30deg.webp": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw11/1280/cw11-30deg.avif": {
-    "width": 1280,
-    "height": 1280
-  },
-  "tires/cw11/1600/cw11-30deg.webp": {
-    "width": 1600,
-    "height": 1599
-  },
-  "tires/cw11/1600/cw11-30deg.avif": {
-    "width": 1600,
-    "height": 1599
-  },
-  "tires/cw11/1920/cw11-30deg.webp": {
-    "width": 1920,
-    "height": 1919
-  },
-  "tires/cw11/1920/cw11-30deg.avif": {
-    "width": 1920,
-    "height": 1919
-  },
-  "tires/cw11/2560/cw11-30deg.webp": {
-    "width": 2560,
-    "height": 2559
-  },
-  "tires/cw11/2560/cw11-30deg.avif": {
-    "width": 2560,
-    "height": 2559
   },
   "tires/at61/400/at61-side.webp": {
     "width": 400,
@@ -4191,196 +2983,628 @@
     "width": 1920,
     "height": 1920
   },
-  "tires/cw11/400/cw11-30deg-v2.webp": {
+  "tires/cw11/400/cw11-30deg-v3.webp": {
     "width": 400,
     "height": 400
   },
-  "tires/cw11/400/cw11-30deg-v2.avif": {
+  "tires/cw11/400/cw11-30deg-v3.avif": {
     "width": 400,
     "height": 400
   },
-  "tires/cw11/800/cw11-30deg-v2.webp": {
+  "tires/cw11/800/cw11-30deg-v3.webp": {
     "width": 800,
     "height": 800
   },
-  "tires/cw11/800/cw11-30deg-v2.avif": {
+  "tires/cw11/800/cw11-30deg-v3.avif": {
     "width": 800,
     "height": 800
   },
-  "tires/cw11/1280/cw11-30deg-v2.webp": {
+  "tires/cw11/1280/cw11-30deg-v3.webp": {
     "width": 1280,
     "height": 1280
   },
-  "tires/cw11/1280/cw11-30deg-v2.avif": {
+  "tires/cw11/1280/cw11-30deg-v3.avif": {
     "width": 1280,
     "height": 1280
   },
-  "tires/cw11/1600/cw11-30deg-v2.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1600/cw11-30deg-v2.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1920/cw11-30deg-v2.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/1920/cw11-30deg-v2.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/2560/cw11-30deg-v2.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw11/2560/cw11-30deg-v2.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw11/400/cw11-front-v2.webp": {
+  "tires/cw11/400/cw11-front-v3.webp": {
     "width": 400,
     "height": 400
   },
-  "tires/cw11/400/cw11-front-v2.avif": {
+  "tires/cw11/400/cw11-front-v3.avif": {
     "width": 400,
     "height": 400
   },
-  "tires/cw11/800/cw11-front-v2.webp": {
+  "tires/cw11/800/cw11-front-v3.webp": {
     "width": 800,
     "height": 800
   },
-  "tires/cw11/800/cw11-front-v2.avif": {
+  "tires/cw11/800/cw11-front-v3.avif": {
     "width": 800,
     "height": 800
   },
-  "tires/cw11/1280/cw11-front-v2.webp": {
+  "tires/cw11/1280/cw11-front-v3.webp": {
     "width": 1280,
     "height": 1280
   },
-  "tires/cw11/1280/cw11-front-v2.avif": {
+  "tires/cw11/1280/cw11-front-v3.avif": {
     "width": 1280,
     "height": 1280
   },
-  "tires/cw11/1600/cw11-front-v2.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1600/cw11-front-v2.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1920/cw11-front-v2.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/1920/cw11-front-v2.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/2560/cw11-front-v2.webp": {
-    "width": 2560,
-    "height": 2561
-  },
-  "tires/cw11/2560/cw11-front-v2.avif": {
-    "width": 2560,
-    "height": 2561
-  },
-  "tires/cw11/400/cw11-side-v2.webp": {
+  "tires/cw11/400/cw11-side-v3.webp": {
     "width": 400,
     "height": 400
   },
-  "tires/cw11/400/cw11-side-v2.avif": {
+  "tires/cw11/400/cw11-side-v3.avif": {
     "width": 400,
     "height": 400
   },
-  "tires/cw11/800/cw11-side-v2.webp": {
+  "tires/cw11/800/cw11-side-v3.webp": {
     "width": 800,
     "height": 800
   },
-  "tires/cw11/800/cw11-side-v2.avif": {
+  "tires/cw11/800/cw11-side-v3.avif": {
     "width": 800,
     "height": 800
   },
-  "tires/cw11/1280/cw11-side-v2.webp": {
+  "tires/cw11/1280/cw11-side-v3.webp": {
     "width": 1280,
     "height": 1280
   },
-  "tires/cw11/1280/cw11-side-v2.avif": {
+  "tires/cw11/1280/cw11-side-v3.avif": {
     "width": 1280,
     "height": 1280
   },
-  "tires/cw11/1600/cw11-side-v2.webp": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1600/cw11-side-v2.avif": {
-    "width": 1600,
-    "height": 1600
-  },
-  "tires/cw11/1920/cw11-side-v2.webp": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/1920/cw11-side-v2.avif": {
-    "width": 1920,
-    "height": 1920
-  },
-  "tires/cw11/2560/cw11-side-v2.webp": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/cw11/2560/cw11-side-v2.avif": {
-    "width": 2560,
-    "height": 2560
-  },
-  "tires/wi32/400/wi32-30deg-v2.webp": {
+  "tires/cw51/400/cw51-30deg-v2.webp": {
     "width": 400,
     "height": 400
   },
-  "tires/wi32/400/wi32-30deg-v2.avif": {
+  "tires/cw51/400/cw51-30deg-v2.avif": {
     "width": 400,
     "height": 400
   },
-  "tires/wi32/800/wi32-30deg-v2.webp": {
+  "tires/cw51/800/cw51-30deg-v2.webp": {
     "width": 800,
     "height": 800
   },
-  "tires/wi32/800/wi32-30deg-v2.avif": {
+  "tires/cw51/800/cw51-30deg-v2.avif": {
     "width": 800,
     "height": 800
   },
-  "tires/wi32/1280/wi32-30deg-v2.webp": {
+  "tires/cw51/1280/cw51-30deg-v2.webp": {
     "width": 1280,
-    "height": 1281
+    "height": 1280
   },
-  "tires/wi32/1280/wi32-30deg-v2.avif": {
+  "tires/cw51/1280/cw51-30deg-v2.avif": {
     "width": 1280,
-    "height": 1281
+    "height": 1280
   },
-  "tires/wi32/1600/wi32-30deg-v2.webp": {
-    "width": 1600,
-    "height": 1601
+  "tires/cw51/400/cw51-front-v2.webp": {
+    "width": 400,
+    "height": 400
   },
-  "tires/wi32/1600/wi32-30deg-v2.avif": {
-    "width": 1600,
-    "height": 1601
+  "tires/cw51/400/cw51-front-v2.avif": {
+    "width": 400,
+    "height": 400
   },
-  "tires/wi32/1920/wi32-30deg-v2.webp": {
-    "width": 1920,
-    "height": 1921
+  "tires/cw51/800/cw51-front-v2.webp": {
+    "width": 800,
+    "height": 800
   },
-  "tires/wi32/1920/wi32-30deg-v2.avif": {
-    "width": 1920,
-    "height": 1921
+  "tires/cw51/800/cw51-front-v2.avif": {
+    "width": 800,
+    "height": 800
   },
-  "tires/wi32/2560/wi32-30deg-v2.webp": {
-    "width": 2560,
-    "height": 2561
+  "tires/cw51/1280/cw51-front-v2.webp": {
+    "width": 1280,
+    "height": 1280
   },
-  "tires/wi32/2560/wi32-30deg-v2.avif": {
-    "width": 2560,
-    "height": 2561
+  "tires/cw51/1280/cw51-front-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/cw51/400/cw51-side-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/cw51/400/cw51-side-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/cw51/800/cw51-side-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/cw51/800/cw51-side-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/cw51/1280/cw51-side-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/cw51/1280/cw51-side-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/kc11/400/kc11-30deg-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/kc11/400/kc11-30deg-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/kc11/800/kc11-30deg-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/kc11/800/kc11-30deg-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/kc11/1280/kc11-30deg-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/kc11/1280/kc11-30deg-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi32/400/wi32-30deg-v3.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi32/400/wi32-30deg-v3.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi32/800/wi32-30deg-v3.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi32/800/wi32-30deg-v3.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi32/1280/wi32-30deg-v3.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi32/1280/wi32-30deg-v3.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi32/400/wi32-front-v3.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi32/400/wi32-front-v3.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi32/800/wi32-front-v3.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi32/800/wi32-front-v3.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi32/1280/wi32-front-v3.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi32/1280/wi32-front-v3.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi32/400/wi32-side-v3.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi32/400/wi32-side-v3.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi32/800/wi32-side-v3.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi32/800/wi32-side-v3.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi32/1280/wi32-side-v3.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi32/1280/wi32-side-v3.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi51/400/wi51-30deg-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi51/400/wi51-30deg-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi51/800/wi51-30deg-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi51/800/wi51-30deg-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi51/1280/wi51-30deg-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi51/1280/wi51-30deg-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi51/400/wi51-front-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi51/400/wi51-front-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi51/800/wi51-front-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi51/800/wi51-front-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi51/1280/wi51-front-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi51/1280/wi51-front-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi51/400/wi51-side-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi51/400/wi51-side-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wi51/800/wi51-side-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi51/800/wi51-side-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wi51/1280/wi51-side-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wi51/1280/wi51-side-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws31/400/ws31-30deg-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws31/400/ws31-30deg-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws31/800/ws31-30deg-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws31/800/ws31-30deg-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws31/1280/ws31-30deg-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws31/1280/ws31-30deg-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws51/400/ws51-30deg-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws51/400/ws51-30deg-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws51/800/ws51-30deg-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws51/800/ws51-30deg-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws51/1280/ws51-30deg-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws51/1280/ws51-30deg-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws51/400/ws51-front-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws51/400/ws51-front-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws51/800/ws51-front-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws51/800/ws51-front-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws51/1280/ws51-front-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws51/1280/ws51-front-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws51/400/ws51-side-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws51/400/ws51-side-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws51/800/ws51-side-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws51/800/ws51-side-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws51/1280/ws51-side-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws51/1280/ws51-side-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp52-plus/400/wp52-plus-30deg-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp52-plus/400/wp52-plus-30deg-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp52-plus/800/wp52-plus-30deg-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp52-plus/800/wp52-plus-30deg-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp52-plus/1280/wp52-plus-30deg-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp52-plus/1280/wp52-plus-30deg-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp52-plus/400/wp52-plus-front-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp52-plus/400/wp52-plus-front-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp52-plus/800/wp52-plus-front-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp52-plus/800/wp52-plus-front-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp52-plus/1280/wp52-plus-front-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp52-plus/1280/wp52-plus-front-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp52-plus/400/wp52-plus-side-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp52-plus/400/wp52-plus-side-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp52-plus/800/wp52-plus-side-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp52-plus/800/wp52-plus-side-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp52-plus/1280/wp52-plus-side-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp52-plus/1280/wp52-plus-side-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp72/400/wp72-30deg-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp72/400/wp72-30deg-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp72/800/wp72-30deg-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp72/800/wp72-30deg-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp72/1280/wp72-30deg-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp72/1280/wp72-30deg-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp72/400/wp72-front-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp72/400/wp72-front-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp72/800/wp72-front-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp72/800/wp72-front-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp72/1280/wp72-front-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp72/1280/wp72-front-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp72/400/wp72-side-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp72/400/wp72-side-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/wp72/800/wp72-side-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp72/800/wp72-side-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/wp72/1280/wp72-side-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/wp72/1280/wp72-side-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws71/400/ws71-30deg-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws71/400/ws71-30deg-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws71/800/ws71-30deg-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws71/800/ws71-30deg-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws71/1280/ws71-30deg-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws71/1280/ws71-30deg-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws71/400/ws71-front-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws71/400/ws71-front-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws71/800/ws71-front-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws71/800/ws71-front-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws71/1280/ws71-front-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws71/1280/ws71-front-v2.avif": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws71/400/ws71-side-v2.webp": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws71/400/ws71-side-v2.avif": {
+    "width": 400,
+    "height": 400
+  },
+  "tires/ws71/800/ws71-side-v2.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws71/800/ws71-side-v2.avif": {
+    "width": 800,
+    "height": 800
+  },
+  "tires/ws71/1280/ws71-side-v2.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "tires/ws71/1280/ws71-side-v2.avif": {
+    "width": 1280,
+    "height": 1280
   }
 }

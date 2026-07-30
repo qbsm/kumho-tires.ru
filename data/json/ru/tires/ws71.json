@@ -52,15 +52,15 @@
   },
   "images": {
     "side": {
-      "src": "data/img/tires/ws71/raw/ws71-side.webp",
+      "src": "data/img/tires/ws71/raw/ws71-side-v2.webp",
       "alt": "Kumho WS71 WinterCraft, вид сбоку"
     },
     "30deg": {
-      "src": "data/img/tires/ws71/raw/ws71-30deg.webp",
+      "src": "data/img/tires/ws71/raw/ws71-30deg-v2.webp",
       "alt": "Kumho WS71 WinterCraft"
     },
     "front": {
-      "src": "data/img/tires/ws71/raw/ws71-front.webp",
+      "src": "data/img/tires/ws71/raw/ws71-front-v2.webp",
       "alt": "Kumho WS71 WinterCraft, вид спереди"
     }
   },
