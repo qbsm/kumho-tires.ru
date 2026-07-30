@@ -35,8 +35,28 @@
 
 .filter .filter__label {
   white-space: nowrap;
-  color: var(--color-5);
+  color: var(--color-2);
   font-size: 0.9em;
+}
+
+/* Иконка рисуется маской, а не <img>: цвет берётся из currentColor,
+   поэтому на активной кнопке инвертируется вместе с текстом. */
+.filter .filter__icon {
+  flex: 0 0 auto;
+  width: 1.15em;
+  height: 1.15em;
+  margin-right: 0.5em;
+  background-color: currentcolor;
+  mask: var(--filter-icon) center / contain no-repeat;
+}
+
+/* Оптическая компенсация: gap группы (0.5rem) отодвигает иконку от своего лейбла ровно
+   так же, как от соседней группы, и она читается как ничья. Отрицательный margin
+   прижимает её к лейблу, левый — отыгрывает воздух до предыдущей группы. */
+.filter .filter__icon--select {
+  margin-right: -0.2rem;
+  margin-left: 0.3rem;
+  color: var(--color-5);
 }
 
 .filter .custom-select {

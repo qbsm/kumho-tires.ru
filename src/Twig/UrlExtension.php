@@ -8,10 +8,12 @@ use Twig\TwigFunction;
 class UrlExtension extends AbstractExtension
 {
     private string $baseUrl;
+    private string $imgVersion;
 
-    public function __construct(string $baseUrl)
+    public function __construct(string $baseUrl, string $imgVersion = '')
     {
         $this->baseUrl = rtrim($baseUrl, '/') . '/';
+        $this->imgVersion = $imgVersion;
     }
 
     public function getFunctions(): array
@@ -44,9 +46,20 @@ class UrlExtension extends AbstractExtension
 
         // Статика (data/, assets/) всегда от корня документа (public/), иначе на /ru/ картинки 404
         if ($trimmedPath !== '' && (str_starts_with($trimmedPath, 'data/') || str_starts_with($trimmedPath, 'assets/'))) {
-            return '/' . $trimmedPath;
+            return $this->withImgVersion('/' . $trimmedPath, $trimmedPath);
         }
 
-        return $this->baseUrl . $trimmedPath;
+        return $this->withImgVersion($this->baseUrl . $trimmedPath, $trimmedPath);
+    }
+
+    // Cache-busting для изображений: статика отдаётся с max-age=1y immutable, поэтому при замене
+    // файла под тем же именем посетитель видит старый кадр. IMG_CACHE_VERSION бампится в .env.
+    private function withImgVersion(string $url, string $path): string
+    {
+        if ($this->imgVersion !== '' && preg_match('/\.(webp|avif|jpe?g|png|svg|gif|ico)$/i', $path)) {
+            return $url . (str_contains($url, '?') ? '&' : '?') . 'v=' . $this->imgVersion;
+        }
+
+        return $url;
     }
 }

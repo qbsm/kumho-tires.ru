@@ -54,15 +54,15 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/wp52-plus/raw/wp52-plus-30deg-v2.webp",
+      "src": "data/img/tires/wp52-plus/raw/wp52-plus-30deg.webp",
       "alt": "Kumho WP52+ WinterCraft"
     },
     "front": {
-      "src": "data/img/tires/wp52-plus/raw/wp52-plus-front-v2.webp",
+      "src": "data/img/tires/wp52-plus/raw/wp52-plus-front.webp",
       "alt": "Kumho WP52+ WinterCraft, вид спереди"
     },
     "side": {
-      "src": "data/img/tires/wp52-plus/raw/wp52-plus-side-v2.webp",
+      "src": "data/img/tires/wp52-plus/raw/wp52-plus-side.webp",
       "alt": "Kumho WP52+ WinterCraft, вид сбоку"
     }
   },

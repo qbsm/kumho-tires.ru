@@ -78,6 +78,9 @@
           {% if s.disabled is defined and s.disabled %}
             {% set btn = btn | merge({'disabled': true}) %}
           {% endif %}
+          {% if s.icon is defined and s.icon %}
+            {% set btn = btn | merge({'icon': s.icon}) %}
+          {% endif %}
           {% set seasonButtons = seasonButtons | merge([btn]) %}
         {% endfor %}
         {% set tiresFilter = {
@@ -92,6 +95,7 @@
               'type': 'select',
               'class': 'select-wrap',
               'id': 'tires-diameter',
+              'icon': 'data/img/ui/icons/icon-size-diameter.svg',
               'label': 'Диаметр',
               'select_class': 'custom-select js-select js-select-diameter',
               'options': diameterOptions
@@ -100,6 +104,7 @@
               'type': 'select',
               'class': 'select-wrap',
               'id': 'tires-profile',
+              'icon': 'data/img/ui/icons/icon-size-profile.svg',
               'label': 'Высота профиля',
               'select_class': 'custom-select js-select js-select-profile',
               'options': profileOptions
@@ -108,6 +113,7 @@
               'type': 'select',
               'class': 'select-wrap',
               'id': 'tires-width',
+              'icon': 'data/img/ui/icons/icon-size-width.svg',
               'label': 'Ширина',
               'select_class': 'custom-select js-select js-select-width',
               'options': widthOptions

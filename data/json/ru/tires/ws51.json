@@ -40,15 +40,15 @@
   },
   "images": {
     "30deg": {
-      "src": "data/img/tires/ws51/raw/ws51-30deg-v2.webp",
+      "src": "data/img/tires/ws51/raw/ws51-30deg.webp",
       "alt": "Kumho WS51 WinterCraft ice"
     },
     "front": {
-      "src": "data/img/tires/ws51/raw/ws51-front-v2.webp",
+      "src": "data/img/tires/ws51/raw/ws51-front.webp",
       "alt": "Kumho WS51 WinterCraft ice, вид спереди"
     },
     "side": {
-      "src": "data/img/tires/ws51/raw/ws51-side-v2.webp",
+      "src": "data/img/tires/ws51/raw/ws51-side.webp",
       "alt": "Kumho WS51 WinterCraft ice, вид сбоку"
     }
   },

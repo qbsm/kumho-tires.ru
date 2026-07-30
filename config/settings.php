@@ -66,6 +66,9 @@ return [
     'default_lang' => $default_lang,
     'available_langs' => $available_langs,
     'yandex_metric_id' => (int) (getenv('YANDEX_METRIC_ID') ?: 0),
+    // Cache-busting изображений: ?v=<версия> к путям data/ и assets/ (см. UrlExtension).
+    // Бампится вручную при замене картинки под тем же именем.
+    'img_cache_version' => (string) (getenv('IMG_CACHE_VERSION') ?: '1'),
     // slug в URL => page_id (из project.php)
     'route_map' => (array) ($projectConfig['route_map'] ?? []),
     // Конфигурация коллекций (из project.php)

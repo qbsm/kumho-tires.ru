@@ -22,19 +22,23 @@
           "seasons": [
             {
               "label": "Лето",
-              "value": "summer"
-            },
-            {
-              "label": "Зима",
-              "value": "winter"
+              "value": "summer",
+              "icon": "data/img/ui/icons/icon-season-summer.svg"
             },
             {
               "label": "Всесезонные",
-              "value": "allseason"
+              "value": "allseason",
+              "icon": "data/img/ui/icons/icon-season-allseason.svg"
+            },
+            {
+              "label": "Зима",
+              "value": "winter",
+              "icon": "data/img/ui/icons/icon-season-winter.svg"
             },
             {
               "label": "Шипованные",
-              "value": "studded"
+              "value": "studded",
+              "icon": "data/img/ui/icons/icon-season-studded.svg"
             }
           ]
         },

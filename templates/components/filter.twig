@@ -15,11 +15,18 @@
                 {{ button.data_attr_name }}="{{ button.data_attr }}"
               {% endif %}
               {% if button.disabled %}disabled{% endif %}
-            >{{ button.label | default('') }}</button>
+            >
+              {%- if button.icon is defined and button.icon -%}
+                <span class="filter__icon" style="--filter-icon: url('{{ url(button.icon) }}')" aria-hidden="true"></span>
+              {%- endif -%}
+              {{ button.label | default('') }}</button>
           {% endfor %}
         </div>
       {% elseif group.type == 'select' %}
         <div class="{{ groupClass }}">
+          {% if group.icon is defined and group.icon %}
+            <span class="filter__icon filter__icon--select" style="--filter-icon: url('{{ url(group.icon) }}')" aria-hidden="true"></span>
+          {% endif %}
           {% if group.label is defined and group.id is defined %}
             <label class="filter__label" for="{{ group.id }}">{{ group.label }}</label>
           {% endif %}

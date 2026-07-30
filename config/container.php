@@ -98,7 +98,7 @@ return static function (): ContainerInterface {
             $env = $twig->getEnvironment();
             $env->addExtension(new StringLoaderExtension());
             $env->addExtension(new AssetExtension($baseDir, $baseUrl));
-            $env->addExtension(new UrlExtension($baseUrl));
+            $env->addExtension(new UrlExtension($baseUrl, (string) ($settings['img_cache_version'] ?? '')));
             $env->addExtension(new DataExtension($baseDir, $baseUrl));
 
             if (!empty($settings['twig']['debug'])) {
