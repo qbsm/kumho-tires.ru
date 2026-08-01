@@ -25,6 +25,10 @@ function sourceOf(element) {
 onReady(function () {
   if (!ymId) return;
 
+  if (document.querySelector('.error')) {
+    reachGoal('page_404', { path: window.location.pathname + window.location.search });
+  }
+
   document.addEventListener('click', function (event) {
     const link = event.target.closest && event.target.closest('a[href]');
     if (!link) return;
