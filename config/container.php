@@ -65,7 +65,16 @@ return static function (): ContainerInterface {
 
             $logger = new Logger('app');
             $logFile = rtrim($logDir, '/') . '/app.log';
-            $level = ($settings['env'] ?? 'development') === 'production' ? Logger::WARNING : Logger::DEBUG;
+            $default = ($settings['env'] ?? 'development') === 'production' ? Logger::WARNING : Logger::DEBUG;
+            $configured = strtoupper(trim((string) ($_ENV['APP_LOG_LEVEL'] ?? getenv('APP_LOG_LEVEL') ?: '')));
+            $level = $default;
+            if ($configured !== '') {
+                try {
+                    $level = Logger::toMonologLevel($configured);
+                } catch (\Throwable) {
+                    $level = $default;
+                }
+            }
             $handler = new RotatingFileHandler($logFile, 14, $level);
             $handler->setFormatter(new JsonFormatter());
             $logger->pushHandler($handler);
