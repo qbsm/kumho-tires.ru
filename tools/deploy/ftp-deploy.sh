@@ -67,7 +67,17 @@ echo "==> Фаза 1: сборка + ${#CHANGED[@]} изменённых фай�
   echo "set net:connection-limit 1"
   echo "set net:persist-retries 0"
   echo "set mirror:parallel-transfer-count 1"
-  # Собранная статика — всегда (хеши гитигнор), --delete чистит устаревшие хеши.
+  # Собранная статика — всегда (хеши гитигнор). Порядок критичен: сначала новые хешированные
+  # файлы, только потом манифесты. Иначе манифест на проде уже указывает на ещё не залитый файл,
+  # и AssetExtension валит рендер («Ассет 'main.css' отсутствует в манифесте») — реальные 500 в
+  # окне деплоя, поймано логом 2026-08-01. --delete устаревших хешей — последним шагом.
+  echo "mirror -R ${DRY} --verbose --no-symlinks --exclude-glob *manifest*.json assets/css/build/ ${FTP_DIR}assets/css/build/"
+  echo "mirror -R ${DRY} --verbose --no-symlinks --exclude-glob *manifest*.json assets/js/build/  ${FTP_DIR}assets/js/build/"
+  if [[ $APPLY -eq 1 ]]; then
+    for manifest in assets/css/build/css-manifest.json assets/js/build/asset-manifest.json; do
+      [[ -f "$ROOT/$manifest" ]] && printf 'put "%s" -o "%s"\n' "$ROOT/$manifest" "${FTP_DIR}${manifest}"
+    done
+  fi
   echo "mirror -R ${DRY} --verbose --no-symlinks --delete assets/css/build/ ${FTP_DIR}assets/css/build/"
   echo "mirror -R ${DRY} --verbose --no-symlinks --delete assets/js/build/  ${FTP_DIR}assets/js/build/"
   # Изменённые отслеживаемые файлы — только при реальной выкладке (mkdir/put меняют прод).
