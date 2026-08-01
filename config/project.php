@@ -45,6 +45,7 @@ return [
         'tires-list',
         'buy',
         'news',
+        'warranty',
     ],
 
     // Динамические подпути в sitemap.xml: page_id => источник данных и стратегия slug.
