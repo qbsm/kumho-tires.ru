@@ -141,3 +141,43 @@
   margin-block: 2rem 1rem;
   font-weight: 700;
 }
+
+.news-detail__body h2 {
+  margin-block: 3.2rem 1.2rem;
+  font-family: var(--font-2);
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.news-detail__body h2:first-child {
+  margin-block-start: 0;
+}
+
+.news-detail__body ul {
+  margin-block: 0 2rem;
+  padding-left: 2.4rem;
+  list-style: disc;
+}
+
+.news-detail__body li {
+  margin-block-end: 0.8rem;
+}
+
+.news-detail__body li::marker {
+  color: var(--color-3);
+}
+
+.news-detail__body strong {
+  font-weight: 700;
+}
+
+.news-detail__body a:not(.glightbox) {
+  color: var(--color-3);
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.news-detail__body a:not(.glightbox):hover {
+  text-decoration: none;
+}

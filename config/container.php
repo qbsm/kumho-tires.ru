@@ -22,6 +22,7 @@ use App\Notification\NotificationDispatcher;
 use App\Service\DataLoaderService;
 use App\Service\DefaultSeoBuilder;
 use App\Service\MailService;
+use App\Service\NewsSeoBuilder;
 use App\Service\SeoBuilderRegistry;
 use App\Service\TireSeoBuilder;
 use App\Twig\AssetExtension;
@@ -140,8 +141,12 @@ return static function (): ContainerInterface {
         //   ),
         DefaultSeoBuilder::class => \DI\autowire(),
         TireSeoBuilder::class => \DI\autowire(),
+        NewsSeoBuilder::class => \DI\autowire(),
         SeoBuilderRegistry::class => static fn(ContainerInterface $c) => new SeoBuilderRegistry(
-            ['tires' => $c->get(TireSeoBuilder::class)],
+            [
+                'tires' => $c->get(TireSeoBuilder::class),
+                'news' => $c->get(NewsSeoBuilder::class),
+            ],
             $c->get(DefaultSeoBuilder::class),
         ),
 

@@ -24,6 +24,14 @@
         },
         "items": [
           {
+            "slug": "winter-all-season-collection-2026",
+            "cover": "data/img/news/winter-all-season-collection-2026/raw/cover.webp",
+            "hex": "#008ACF",
+            "date": "Август 2026",
+            "title": "Обновлённая коллекция зимних и всесезонных шин",
+            "desc": "9 зимних моделей — шипованных и нешипованных — и 11 всесезонных: 685 типоразмеров от R13 до R22 в каталоге."
+          },
+          {
             "slug": "conference-sever-avto-2026",
             "cover": "data/img/news/conference-sever-avto-2026/raw/cover.webp",
             "hex": "#EF0010",
