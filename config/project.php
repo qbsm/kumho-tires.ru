@@ -57,6 +57,15 @@ return [
             'value_key' => 'city',
             'slugger' => 'city',
         ],
+        // Новости: список лежит внутри секции news в pages/news.json, slug — прямо в элементе.
+        'news' => [
+            'data_page' => 'news',
+            'list_key' => 'items',
+            'value_key' => 'slug',
+            'slugger' => 'identity',
+            'entity_dir' => 'news',
+        ],
+
         'tires-list' => [
             'data_page' => 'tires',
             'list_key' => 'items',

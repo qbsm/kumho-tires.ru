@@ -168,7 +168,13 @@ final class SitemapAction
         string $sluggerKey,
         string $entityDir = ''
     ): array {
-        $items = Json::loadKey($jsonBaseDir . '/' . $lang . '/pages/' . $dataPage . '.json', $listKey);
+        $file = $jsonBaseDir . '/' . $lang . '/pages/' . $dataPage . '.json';
+        $items = Json::loadKey($file, $listKey);
+        if ($items === null) {
+            // Страницы-конструкторы держат список внутри секции (sections[].data[listKey]),
+            // а не в корне JSON — например, новости.
+            $items = $this->loadListFromSections($file, $listKey);
+        }
         if ($items === null) {
             return [];
         }
@@ -193,6 +199,34 @@ final class SitemapAction
         }
         sort($slugs);
         return $slugs;
+    }
+
+    /**
+     * Список элементов из секций страницы: sections[].data[$listKey].
+     *
+     * @return array<int, mixed>|null
+     */
+    private function loadListFromSections(string $file, string $listKey): ?array
+    {
+        $sections = Json::loadKey($file, 'sections');
+        if ($sections === null) {
+            return null;
+        }
+
+        $items = [];
+        foreach ($sections as $section) {
+            if (!is_array($section) || !isset($section['data']) || !is_array($section['data'])) {
+                continue;
+            }
+            $list = $section['data'][$listKey] ?? null;
+            if (is_array($list)) {
+                foreach ($list as $item) {
+                    $items[] = $item;
+                }
+            }
+        }
+
+        return $items === [] ? null : $items;
     }
 
     /**
