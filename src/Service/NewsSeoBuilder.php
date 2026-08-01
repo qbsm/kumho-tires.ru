@@ -28,9 +28,14 @@ final class NewsSeoBuilder implements SeoBuilderInterface
             $cover = (string) ($cover['src'] ?? '');
         }
         $cover = (string) $cover;
-        $image = $cover !== ''
-            ? $origin . '/' . ltrim($cover, '/')
-            : $origin . '/data/img/seo/og.webp?v=2';
+        // cover может прийти как относительный raw-path или уже абсолютным URL — второй раз домен не клеим.
+        if ($cover === '') {
+            $image = $origin . '/data/img/seo/og.webp?v=2';
+        } elseif (preg_match('~^https?://~i', $cover) === 1) {
+            $image = $cover;
+        } else {
+            $image = $origin . '/' . ltrim($cover, '/');
+        }
 
         $meta = [
             ['name' => 'description', 'content' => $desc],
