@@ -44,8 +44,15 @@ final class ErrorLogMiddleware implements MiddlewareInterface
             default => LogLevel::INFO,
         };
 
+        // Middleware самый внешний, поэтому в запросе атрибута ещё нет — id берём из
+        // заголовка ответа, который проставил CorrelationIdMiddleware внутри стека.
+        $requestId = $response->getHeaderLine('X-Request-Id');
+        if ($requestId === '') {
+            $requestId = (string) $request->getAttribute(CorrelationIdMiddleware::REQUEST_ATTRIBUTE, '');
+        }
+
         $this->logger->log($level, sprintf('HTTP %d %s %s', $status, $request->getMethod(), $uri->getPath()), [
-            'request_id' => (string) $request->getAttribute(CorrelationIdMiddleware::REQUEST_ATTRIBUTE, ''),
+            'request_id' => $requestId,
             'status' => $status,
             'method' => $request->getMethod(),
             'path' => $uri->getPath(),
