@@ -1,0 +1,74 @@
+.error-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.4rem, 1.2vw, 1.6rem);
+  line-height: 1;
+}
+
+.error-code__digit {
+  position: relative;
+  z-index: 1;
+  font-family: "TT Norms Pro Expanded", var(--font-2);
+  font-weight: 700;
+  font-size: clamp(9rem, 20vw, 22rem);
+  letter-spacing: -0.02em;
+  color: var(--color-2);
+}
+
+.error-code__wheel {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: clamp(7.6rem, 17vw, 19rem);
+  aspect-ratio: 1;
+  animation: error-code-roll 2s cubic-bezier(0.12, 0.68, 0.14, 1) both;
+}
+
+.error-code__wheel::before {
+  content: "";
+  position: absolute;
+  right: 40%;
+  bottom: 6%;
+  z-index: -1;
+  width: 260%;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  background: linear-gradient(90deg, rgb(239 0 16 / 0%), var(--color-3));
+  transform-origin: right center;
+  animation: error-code-skid 2s cubic-bezier(0.12, 0.68, 0.14, 1) both;
+}
+
+.error-code__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes error-code-roll {
+  from {
+    transform: rotate(-680deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes error-code-skid {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .error-code__wheel,
+  .error-code__wheel::before {
+    animation: none;
+  }
+}
