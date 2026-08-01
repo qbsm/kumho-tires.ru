@@ -200,17 +200,6 @@
       }
     },
     {
-      "name": "form-container",
-      "data": {
-        "heading": {
-          "tag": "h2",
-          "class": "h5 heading font-2 weight-700 heading-flex uppercase",
-          "title": "Получить консультацию"
-        },
-        "catalogs": []
-      }
-    },
-    {
       "name": "footer",
       "visible": true,
       "data": {

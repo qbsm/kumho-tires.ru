@@ -14,6 +14,12 @@
   gap: 2rem;
 }
 
+.content-404 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 @media (--lg) {
   .content-warranty {
     gap: 2rem;

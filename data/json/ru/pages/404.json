@@ -8,14 +8,29 @@
     {
       "name": "promo",
       "data": {
-        "background": {
-          "src": "data/img/ui/bg1.webp"
+        "container": "container-sm",
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+          "title": "<span>Ошибка 404.</span> <span>Страница</span> <span>не найдена</span>"
         }
       }
     },
     {
-      "name": "form-container",
-      "data": {}
+      "name": "content-container",
+      "data": {
+        "container": "container-sm",
+        "content": {
+          "class": "content-404",
+          "items": [
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "desc": "Возможно, страница была удалена или в адресе опечатка. Загляните в <a href='/tires' class='link inline underline weight-400'>каталог шин</a> или посмотрите, <a href='/buy' class='link inline underline weight-400'>где купить</a> шины Kumho.<br><br><a href='/' class='button button-sm button-3 uppercase'>Вернуться на главную</a>"
+            }
+          ]
+        }
+      }
     },
     {
       "name": "footer",
