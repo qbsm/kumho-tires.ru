@@ -30,6 +30,11 @@
   justify-content: center;
 }
 
+.error .heading-flex {
+  align-items: center;
+  text-align: center;
+}
+
 .error .desc-wrap {
   max-width: 56rem;
   margin-left: auto;
