@@ -103,24 +103,8 @@
           "href": "/news",
           "title": "Все новости"
         },
-        "items": [
-          {
-            "slug": "conference-sever-avto-2026",
-            "cover": "data/img/news/conference-sever-avto-2026/raw/cover.webp",
-            "hex": "#EF0010",
-            "date": "Март 2026",
-            "title": "Шинные дистрибьюторы обсудили стратегии роста",
-            "desc": "На конференции «Север Авто» представители отрасли обсудили эффективные способы оживления спроса и стратегии роста с брендом KUMHO TIRE."
-          },
-          {
-            "slug": "dealers-2026",
-            "cover": "data/img/news/raw/2.png",
-            "hex": "#008ACF",
-            "date": "Январь 2026",
-            "title": "Расширение сети дилеров",
-            "desc": "Kumho расширяет сеть официальных дилеров в регионах России."
-          }
-        ]
+        "items_from": "news",
+        "limit": 2
       }
     },
     {
