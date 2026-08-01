@@ -22,7 +22,6 @@
   flex: none;
   width: clamp(7.6rem, 17vw, 19rem);
   aspect-ratio: 1;
-  animation: error-code-roll 2s cubic-bezier(0.12, 0.68, 0.14, 1) both;
 }
 
 .error-code__wheel::before {
@@ -44,6 +43,7 @@
   height: 100%;
   object-fit: contain;
   display: block;
+  animation: error-code-roll 2s cubic-bezier(0.12, 0.68, 0.14, 1) both;
 }
 
 @keyframes error-code-roll {
@@ -67,7 +67,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .error-code__wheel,
+  .error-code__img,
   .error-code__wheel::before {
     animation: none;
   }
