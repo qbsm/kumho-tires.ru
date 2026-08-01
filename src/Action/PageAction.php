@@ -88,15 +88,12 @@ final class PageAction
             if ($slug !== '') {
                 foreach ($collections as $collKey => $collConfig) {
                     $collConfig = (array) $collConfig;
-                    $slugs = $this->dataLoader->loadEntitySlugs($jsonBaseDir, $langCode, $collConfig);
-                    if ($slugs !== null && in_array($slug, $slugs, true)) {
-                        $loaded = $this->dataLoader->loadEntity($jsonBaseDir, $langCode, $slug, $baseUrl, $collConfig);
-                        if ($loaded !== null) {
-                            $entity = $loaded;
-                            $entityType = (string) $collKey;
-                            $entityConfig = $collConfig;
-                            break;
-                        }
+                    $loaded = $this->dataLoader->loadEntity($jsonBaseDir, $langCode, $slug, $baseUrl, $collConfig, true);
+                    if ($loaded !== null) {
+                        $entity = $loaded;
+                        $entityType = (string) $collKey;
+                        $entityConfig = $collConfig;
+                        break;
                     }
                 }
             }
@@ -125,9 +122,12 @@ final class PageAction
                     $this->injectListItems($pageData, $jsonBaseDir, $langCode, $baseUrl, $collConfig);
                 } elseif (count($routeParams) === 1) {
                     $subSlug = (string) $routeParams[0];
-                    $slugs = $this->dataLoader->loadEntitySlugs($jsonBaseDir, $langCode, $collConfig);
-                    if ($slugs !== null && in_array($subSlug, $slugs, true)) {
-                        $loaded = $this->dataLoader->loadEntity($jsonBaseDir, $langCode, $subSlug, $baseUrl, $collConfig);
+                    // Доступность страницы = наличие файла сущности, а не членство в items:
+                    // скрытые (visible:false) модели и новости остаются доступны по прямой ссылке
+                    // (200 + noindex), но отсутствуют в списках и sitemap. Слаг валидируется
+                    // внутри loadEntity — защита от path traversal.
+                    {
+                        $loaded = $this->dataLoader->loadEntity($jsonBaseDir, $langCode, $subSlug, $baseUrl, $collConfig, true);
                         if ($loaded !== null) {
                             $entity = $loaded;
                             $entityType = (string) $collKey;
@@ -208,7 +208,15 @@ final class PageAction
             $extras
         );
 
-        return $this->twig->render($response->withStatus($status), $template, $data);
+        $response = $response->withStatus($status);
+        // Скрытая сущность (visible:false) доступна по прямой ссылке, но убирается из индекса:
+        // noindex вместо 404 — поисковик деиндексирует URL без ошибок обхода; follow — чтобы вес
+        // ссылок со страницы не терялся.
+        if ($entity !== null && !empty($entity['_hidden'])) {
+            $response = $response->withHeader('X-Robots-Tag', 'noindex, follow');
+        }
+
+        return $this->twig->render($response, $template, $data);
     }
 
     /**

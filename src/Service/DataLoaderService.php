@@ -119,8 +119,19 @@ final class DataLoaderService
      * @param array<string,mixed> $collectionConfig Конфиг коллекции (data_dir, item_key)
      * @return array<string,mixed>|null Данные сущности или null если не найдена/скрыта
      */
-    public function loadEntity(string $jsonBaseDir, string $langCode, string $slug, string $baseUrl, array $collectionConfig): ?array
-    {
+    public function loadEntity(
+        string $jsonBaseDir,
+        string $langCode,
+        string $slug,
+        string $baseUrl,
+        array $collectionConfig,
+        bool $includeHidden = false
+    ): ?array {
+        // Валидация слага — защита от path traversal (файл читается по слагу напрямую)
+        if (preg_match('/^[a-z0-9][a-z0-9-]*$/', $slug) !== 1) {
+            return null;
+        }
+
         $dataDir = (string) ($collectionConfig['data_dir'] ?? '');
         $itemKey = (string) ($collectionConfig['item_key'] ?? '');
 
@@ -132,11 +143,18 @@ final class DataLoaderService
         if ($itemKey !== '' && empty($data[$itemKey])) {
             return null;
         }
-        if (isset($data['visible']) && $data['visible'] === false) {
+
+        // visible:false — скрытая сущность: не попадает в списки и sitemap. Детальная страница
+        // остаётся ДОСТУПНОЙ (200) при $includeHidden=true, чтобы уже проиндексированные и
+        // расшаренные URL не отдавали 404; PageAction помечает такую страницу noindex, и
+        // поисковик снимает её из индекса без ошибок обхода.
+        $hidden = isset($data['visible']) && $data['visible'] === false;
+        if ($hidden && !$includeHidden) {
             return null;
         }
 
         $data['slug'] = $slug;
+        $data['_hidden'] = $hidden;
         return $data;
     }
 

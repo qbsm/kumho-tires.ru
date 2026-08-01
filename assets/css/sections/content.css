@@ -14,6 +14,20 @@
   gap: 2rem;
 }
 
+.content-tires {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.content-tires .longread p {
+  margin-block-end: 1rem;
+}
+
+.content-tires .longread p:last-child {
+  margin-block-end: 0;
+}
+
 @media (--lg) {
   .content-warranty {
     gap: 2rem;
