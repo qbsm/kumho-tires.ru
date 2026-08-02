@@ -133,13 +133,18 @@ final class SitemapAction
             }
 
             foreach ($slugs as $subSlug) {
+                $lastmod = $entityDir !== '' ? $this->entityLastmod($jsonBaseDir, $defaultLang, $entityDir, $subSlug) : null;
                 foreach ($langs as $lang) {
                     $loc = $this->buildLangPath($base, $lang, $defaultLang, $pathSegment . '/' . $subSlug);
                     $alternates = [];
                     foreach ($langs as $altLang) {
                         $alternates[$altLang] = $this->buildLangPath($base, $altLang, $defaultLang, $pathSegment . '/' . $subSlug);
                     }
-                    $urls[] = ['loc' => $loc, 'alternates' => $alternates];
+                    $url = ['loc' => $loc, 'alternates' => $alternates];
+                    if ($lastmod !== null) {
+                        $url['lastmod'] = $lastmod;
+                    }
+                    $urls[] = $url;
                 }
             }
         }
@@ -199,6 +204,31 @@ final class SitemapAction
         }
         sort($slugs);
         return $slugs;
+    }
+
+    /**
+     * Дата обновления сущности для <lastmod>: поле date_iso в корне или во вложенном
+     * item-объекте (news.date_iso). W3C Datetime допускает точность до месяца (YYYY-MM).
+     * Не выдумываем дату из mtime файлов: на FTP-проде mtime отражает выкладку, не правку.
+     */
+    private function entityLastmod(string $jsonBaseDir, string $lang, string $entityDir, string $slug): ?string
+    {
+        $data = Json::load($jsonBaseDir . '/' . $lang . '/' . $entityDir . '/' . $slug . '.json');
+        if ($data === null) {
+            return null;
+        }
+        $candidates = [$data['date_iso'] ?? null];
+        foreach ($data as $value) {
+            if (is_array($value) && isset($value['date_iso'])) {
+                $candidates[] = $value['date_iso'];
+            }
+        }
+        foreach ($candidates as $candidate) {
+            if (is_string($candidate) && preg_match('/^\d{4}(-\d{2}){1,2}$/', $candidate) === 1) {
+                return $candidate;
+            }
+        }
+        return null;
     }
 
     /**
@@ -262,6 +292,9 @@ final class SitemapAction
         foreach ($urls as $u) {
             $out .= '  <url>' . "\n";
             $out .= '    <loc>' . htmlspecialchars($u['loc'], ENT_XML1, 'UTF-8') . '</loc>' . "\n";
+            if (isset($u['lastmod']) && is_string($u['lastmod']) && $u['lastmod'] !== '') {
+                $out .= '    <lastmod>' . htmlspecialchars($u['lastmod'], ENT_XML1, 'UTF-8') . '</lastmod>' . "\n";
+            }
             foreach ($u['alternates'] as $hreflang => $href) {
                 $out .= '    <xhtml:link rel="alternate" hreflang="' . htmlspecialchars($hreflang, ENT_XML1, 'UTF-8') . '" href="' . htmlspecialchars($href, ENT_XML1, 'UTF-8') . '"/>' . "\n";
             }

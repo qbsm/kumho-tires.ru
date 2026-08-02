@@ -1,4 +1,7 @@
 {% set urlSyncCity = data.url_sync_city | default(false) %}
+{# На /buy/<город> сервер рендерит только точки этого города: полный список из ~155 магазинов
+   на каждой городской странице — это 600+ КиБ HTML и дубль-контент между 56 URL #}
+{% set pageCitySlug = (urlSyncCity and route_params is defined and route_params|length == 1) ? route_params[0] : '' %}
 {% set metaTitleBase = data.meta_title_base | default('') %}
 {% set metaTitleCityTemplate = data.meta_title_city_template | default('') %}
 {% set metaDescriptionBase = data.meta_description_base | default('') %}
@@ -12,11 +15,22 @@
     {% if metaTitleCityTemplate %}data-meta-title-city-template="{{ metaTitleCityTemplate | e('html_attr') }}"{% endif %}
     {% if metaDescriptionBase %}data-meta-description-base="{{ metaDescriptionBase | e('html_attr') }}"{% endif %}
     {% if metaDescriptionCityTemplate %}data-meta-description-city-template="{{ metaDescriptionCityTemplate | e('html_attr') }}"{% endif %}
+    {% if pageCitySlug %}data-server-filtered="1"{% endif %}
   {% endif %}>
   <div class="container">
     {% set dealersData = load_json('data/json/' ~ lang_code ~ '/pages/dealers.json') %}
     {% set dealerItems = dealersData.items | default(data.items | default([])) %}
     {% set onlyMappedCards = data.map.only_mapped_cards | default(false) %}
+    {% if pageCitySlug %}
+      {% set renderDealerItems = [] %}
+      {% for item in dealerItems %}
+        {% if city_to_slug(item.city|default('')) == pageCitySlug %}
+          {% set renderDealerItems = renderDealerItems|merge([item]) %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% set renderDealerItems = dealerItems %}
+    {% endif %}
 
     {# JSON-LD: точки продаж (ItemList) — где купить шины Kumho, с адресом/гео/телефоном #}
     {# На странице города (/buy/<город>) ItemList сужается до его точек — local SEO без чужих адресов #}
@@ -144,7 +158,7 @@
           data-geolocation="{{ data.map.geolocation|default(false) ? '1' : '0' }}"
           data-fallback-src="{{ data.map.src|default('') }}"
           aria-label="Карта точек продаж">
-          {% for item in dealerItems %}
+          {% for item in renderDealerItems %}
             {% set dealerId = item.id | default(loop.index) %}
             {% set phones = item.phones | default([]) %}
             {% set guaranteeData = item.guarantee | default({}) %}
@@ -175,9 +189,9 @@
       </div>
     {% endif %}
 
-    {% if dealerItems is not empty %}
+    {% if renderDealerItems is not empty %}
       <div class="section__item cards-wrap">
-        {% for item in dealerItems %}
+        {% for item in renderDealerItems %}
           {% if not onlyMappedCards or (item.location is defined and item.location) %}
             {% set dealerId = item.id | default(loop.index) %}
             {% set guaranteeData = item.guarantee | default({}) %}

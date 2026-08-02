@@ -481,6 +481,16 @@ function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
     }
   }
 
+  // Городская страница отрендерена сервером только с точками своего города —
+  // выбор другого города ведёт полноценной навигацией на его URL
+  if (sectionEl.dataset.serverFiltered === '1') {
+    citySelect.addEventListener('change', () => {
+      const slug = cityToSlug(citySelect.value || '');
+      window.location.assign(buildBuyUrl(basePath, slug));
+    });
+    return;
+  }
+
   const pushUrl = () => {
     const slug = cityToSlug(citySelect.value || '');
     const target = buildBuyUrl(basePath, slug);
@@ -580,7 +590,12 @@ onReady(() => {
 
     setupUrlCitySync(sectionEl, citySelect, applyFilters);
 
-    citySelect?.addEventListener('change', applyFilters);
+    const serverFiltered = sectionEl.dataset.serverFiltered === '1';
+    citySelect?.addEventListener('change', () => {
+      if (!serverFiltered) {
+        applyFilters();
+      }
+    });
     guaranteeCheckbox?.addEventListener('change', applyFilters);
     bshmCheckbox?.addEventListener('change', applyFilters);
     applyFilters();

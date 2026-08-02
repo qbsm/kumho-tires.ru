@@ -143,6 +143,44 @@
       </div>
     </section>
 
+    {# Похожие модели: тот же сезон, до 4 карточек — перелинковка каталога #}
+    {% set _tiresList = load_json('data/json/' ~ lang_code ~ '/pages/tires.json') %}
+    {% set _currentSeasons = tire.filter.season | default([]) %}
+    {% set _related = [] %}
+    {% if _tiresList and _tiresList.items is defined %}
+      {% for _slug in _tiresList.items %}
+        {% if _related|length < 4 and _slug != tire.slug %}
+          {% set _cand = load_json('data/json/' ~ lang_code ~ '/tires/' ~ _slug ~ '.json') %}
+          {% if _cand and _cand.visible | default(false) %}
+            {% set _match = false %}
+            {% for _s in _cand.filter.season | default([]) %}
+              {% if _s in _currentSeasons %}{% set _match = true %}{% endif %}
+            {% endfor %}
+            {% if _match %}{% set _related = _related|merge([_cand]) %}{% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if _related|length > 0 %}
+    <section class="tires section">
+      <div class="container">
+        <div class="section__item block-wrap">
+          <div class="section__subitem heading-wrap">
+            <span class="heading-accent self-start" aria-hidden="true"></span>
+            <h2 class="h3 heading font-2 weight-700 heading-flex uppercase">Похожие модели</h2>
+          </div>
+          <div class="section__subitem cards-tire-wrap">
+            {% for tireItem in _related %}
+              <div class="section__inner card-tire-wrap">
+                {% include 'components/card-tire.twig' with {'item': tireItem, 'heading_tag': 'span'} %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
   </main>
   {% include 'sections/footer.twig' with {'data': global.footer|default({})} %}
 </div>
