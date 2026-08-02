@@ -292,7 +292,7 @@ final class SitemapAction
         foreach ($urls as $u) {
             $out .= '  <url>' . "\n";
             $out .= '    <loc>' . htmlspecialchars($u['loc'], ENT_XML1, 'UTF-8') . '</loc>' . "\n";
-            if (isset($u['lastmod']) && is_string($u['lastmod']) && $u['lastmod'] !== '') {
+            if (isset($u['lastmod']) && $u['lastmod'] !== '') {
                 $out .= '    <lastmod>' . htmlspecialchars($u['lastmod'], ENT_XML1, 'UTF-8') . '</lastmod>' . "\n";
             }
             foreach ($u['alternates'] as $hreflang => $href) {
