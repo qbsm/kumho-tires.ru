@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# FTP-выкладка kumho-tires.ru на прод (Timeweb 31.31.196.72, docroot www/kumho-tires.ru/).
+# FTP-выкладка kumho-tires.ru на прод (REG.RU 31.31.196.72, docroot www/kumho-tires.ru/).
 #
 # ДВЕ ФАЗЫ:
 #   Фаза 1 (foreground, быстро)  — собрать ассеты и залить ТОЛЬКО модифицированное:

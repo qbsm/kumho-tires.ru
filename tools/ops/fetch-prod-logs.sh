@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Забирает логи приложения с прода (Timeweb, только FTP — ssh на хостинге нет) в logs/prod/.
+# Забирает логи приложения с прода (REG.RU, только FTP — ssh на хостинге нет) в logs/prod/.
 #
 #   FTP_HOST=31.31.196.72 FTP_USER=... FTP_PASS=... bash tools/ops/fetch-prod-logs.sh
 #   FTP_HOST=... FTP_USER=... FTP_PASS=... bash tools/ops/fetch-prod-logs.sh --tail

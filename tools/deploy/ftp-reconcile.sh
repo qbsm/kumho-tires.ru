@@ -6,7 +6,7 @@
 #   * config/ src/ templates/ data/json/ — сравнение по size+time (правку того же размера, напр.
 #     css-manifest.json всегда 54 б, size-only пропустил бы → нужно по времени);
 #   * тяжёлая бинарщина data/img (86 МБ) / data/video (11 МБ) / data/docs / assets/img — по --ignore-time
-#     (размер), иначе checkout-mtime гонит десятки МБ каждый раз → таймаут/лок FTP-аккаунта Timeweb;
+#     (размер), иначе checkout-mtime гонит десятки МБ каждый раз → таймаут/лок FTP-аккаунта REG.RU;
 #   * assets/{css,js}/build — с --delete (чистка устаревших хешей).
 # БЕЗ --delete по контенту (беречь прод-специфику: .env, vendor, llms*.txt, yandex_*.html, cache, logs).
 # По успеху двигает маркер logs/ftp-last-deployed на текущий HEAD (следующая фаза 1 считает дельту отсюда).
