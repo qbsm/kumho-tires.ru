@@ -9,7 +9,7 @@
       {% endif %}
       {% if data.items is defined and data.items is not empty %}
         <div class="section__subitem">
-          {% include 'components/accordion.twig' with {'items': data.items, 'accordion_id': 'faq'} %}
+          {% include 'components/accordion.twig' with {'items': data.items, 'accordion_id': 'faq', 'preview_limit': data.preview_limit|default(0)} %}
         </div>
       {% endif %}
     </div>
