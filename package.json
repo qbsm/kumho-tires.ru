@@ -15,6 +15,7 @@
     "setup:public-copy": "node tools/build/setup-public-copy.js",
     "build:critical": "node tools/build/build-critical.js",
     "build:images": "node tools/build/build-images.js",
+    "build:image-manifest": "node tools/build/build-image-manifest.js",
     "lint": "eslint \"tools/**/*.js\" \"webpack.config.js\" \"postcss.config.js\" \"assets/js/**/*.js\"",
     "lint:css": "stylelint \"assets/css/main.css\" \"assets/css/base/**/*.css\" \"assets/css/sections/**/*.css\" \"assets/css/components/**/*.css\" \"assets/css/pages/**/*.css\"",
     "lint:php": "vendor/bin/phpstan analyse --no-progress",

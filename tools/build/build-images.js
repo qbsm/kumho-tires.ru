@@ -39,8 +39,14 @@ function findSourceFiles(keys) {
   const webpPattern = path.join(imgDir, '**/raw/*.webp').replace(/\\/g, '/');
   const rasterPattern = path.join(imgDir, '**/*.{jpg,jpeg,png}').replace(/\\/g, '/');
 
-  const webpFiles = glob.sync(webpPattern, { nodir: true });
-  const rasterFiles = glob.sync(rasterPattern, { nodir: true });
+  // og-картинки для превью мессенджеров (og.jpg и -og.jpg-двойники) отдаются как есть —
+  // варианты им не нужны
+  const notOgTwin = (f) => {
+    const base = path.basename(f, path.extname(f));
+    return base !== 'og' && !base.endsWith('-og');
+  };
+  const webpFiles = glob.sync(webpPattern, { nodir: true }).filter(notOgTwin);
+  const rasterFiles = glob.sync(rasterPattern, { nodir: true }).filter(notOgTwin);
 
   // Исключаем JPG/PNG из папок-ключей (уже сгенерированные)
   const keyDirs = new Set(keys);

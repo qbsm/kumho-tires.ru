@@ -35,10 +35,13 @@ command -v lftp >/dev/null 2>&1 || { echo "lftp не установлен"; exit
 
 MARKER="logs/ftp-last-deployed"
 
-echo "==> Прод-сборка ассетов (critical + CSS + JS)"
+echo "==> Прод-сборка ассетов (critical + CSS + JS + манифест картинок)"
 npm run build:critical
 npm run build:css:prod
 npm run build:js:prod
+# Манифест размеров — build-артефакт (не в git): без пересчёта он протухает на стейдже,
+# и фаза 2 зеркалит устаревший на прод (пропавшая обложка новости, 2026-08-03).
+npm run build:image-manifest
 
 HEAD_SHA="$(git rev-parse HEAD 2>/dev/null || true)"
 
@@ -86,6 +89,12 @@ echo "==> Фаза 1: сборка + ${#CHANGED[@]} изменённых фай�
       printf 'mkdir -p -f "%s"\n' "${FTP_DIR}$(dirname "$f")/"
       printf 'put "%s" -o "%s"\n' "$ROOT/$f" "${FTP_DIR}$f"
     done
+    # Манифест картинок — после файлов, на которые он ссылается (тот же принцип,
+    # что и у css/js-манифестов выше).
+    if [[ -f "$ROOT/assets/img/build/image-dimensions.json" ]]; then
+      printf 'mkdir -p -f "%s"\n' "${FTP_DIR}assets/img/build/"
+      printf 'put "%s" -o "%s"\n' "$ROOT/assets/img/build/image-dimensions.json" "${FTP_DIR}assets/img/build/image-dimensions.json"
+    fi
   fi
   echo "quit"
 } | lftp -u "${FTP_USER},${FTP_PASS}" "${FTP_HOST}"
