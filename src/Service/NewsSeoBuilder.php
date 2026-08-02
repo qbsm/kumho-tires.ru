@@ -36,6 +36,10 @@ final class NewsSeoBuilder implements SeoBuilderInterface
         } else {
             $image = $origin . '/' . ltrim($cover, '/');
         }
+        // Для превью — JPEG-двойник <имя>-og.jpg: Telegram/WhatsApp не принимают webp.
+        if (str_ends_with($image, '.webp')) {
+            $image = substr($image, 0, -5) . '-og.jpg';
+        }
 
         $meta = [
             ['name' => 'description', 'content' => $desc],

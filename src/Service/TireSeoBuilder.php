@@ -66,8 +66,14 @@ final class TireSeoBuilder implements SeoBuilderInterface
         }
 
         // og:image — рендер конкретной модели, а не общая картинка сайта: в выдаче и репостах
-        // каждая шина выглядит собой.
-        $ogImage = $imageUrl !== '' ? $imageUrl : $origin . '/data/img/seo/og.jpg?v=3';
+        // каждая шина выглядит собой. Для превью нужен JPEG-двойник <имя>-og.jpg (1200×630,
+        // генерируется рядом с raw-рендером): Telegram/WhatsApp не принимают webp.
+        $ogImage = $origin . '/data/img/seo/og.jpg?v=3';
+        if ($imageUrl !== '') {
+            $ogImage = str_ends_with($imageUrl, '.webp')
+                ? substr($imageUrl, 0, -5) . '-og.jpg'
+                : $imageUrl;
+        }
         $meta = [
             ['name' => 'description', 'content' => $desc],
             ['property' => 'og:type', 'content' => (string) ($config['og_type'] ?? 'website')],
