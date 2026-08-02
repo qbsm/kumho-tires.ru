@@ -64,7 +64,7 @@ final class SitemapAction
      * @param array<int, string> $langs
      * @param array<string, string> $routeMap slug => page_id
      * @param array<int, string> $sitemapPages page_id для включения в sitemap
-     * @return array<int, array{loc: string, alternates: array<string, string>}>
+     * @return array<int, array{loc: string, alternates: array<string, string>, lastmod?: string}>
      */
     private function buildUrls(string $base, array $langs, string $defaultLang, array $routeMap, array $sitemapPages): array
     {
@@ -101,7 +101,7 @@ final class SitemapAction
      * @param array<int, string> $langs
      * @param array<string, string> $routeMap
      * @param array<string, array<string, mixed>> $dynamicPages
-     * @return array<int, array{loc: string, alternates: array<string, string>}>
+     * @return array<int, array{loc: string, alternates: array<string, string>, lastmod?: string}>
      */
     private function buildDynamicUrls(
         string $base,
@@ -282,7 +282,7 @@ final class SitemapAction
     }
 
     /**
-     * @param array<int, array{loc: string, alternates: array<string, string>}> $urls
+     * @param array<int, array{loc: string, alternates: array<string, string>, lastmod?: string}> $urls
      */
     private function renderSitemap(string $base, array $urls): string
     {
