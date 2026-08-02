@@ -19,9 +19,13 @@
     {% set onlyMappedCards = data.map.only_mapped_cards | default(false) %}
 
     {# JSON-LD: точки продаж (ItemList) — где купить шины Kumho, с адресом/гео/телефоном #}
+    {# На странице города (/buy/<город>) ItemList сужается до его точек — local SEO без чужих адресов #}
+    {% set _ldCitySlug = (urlSyncCity and route_params is defined and route_params|length == 1) ? route_params[0] : '' %}
+    {% set _ldCityName = '' %}
     {% set _stores = [] %}
     {% for item in dealerItems %}
-      {% if item.location is defined and item.location %}
+      {% if item.location is defined and item.location and (_ldCitySlug == '' or city_to_slug(item.city|default('')) == _ldCitySlug) %}
+        {% if _ldCitySlug and _ldCityName == '' %}{% set _ldCityName = item.city|default('') %}{% endif %}
         {% set _loc = item.location|split(',') %}
         {% set _addr = {'@type': 'PostalAddress', 'streetAddress': item.address|default(''), 'addressCountry': 'RU'} %}
         {% if item.city|default('') is not empty %}{% set _addr = _addr|merge({'addressLocality': item.city}) %}{% endif %}
@@ -37,7 +41,7 @@
     {% endfor %}
     {% if _stores|length > 0 %}
     <script type="application/ld+json">
-    {{ {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'Где купить шины Kumho', 'numberOfItems': _stores|length, 'itemListElement': _stores}|json_encode|raw }}
+    {{ {'@context': 'https://schema.org', '@type': 'ItemList', 'name': _ldCityName ? 'Где купить шины Kumho: ' ~ _ldCityName : 'Где купить шины Kumho', 'numberOfItems': _stores|length, 'itemListElement': _stores}|json_encode|raw }}
     </script>
     {% endif %}
     {% set filterVisible = true %}

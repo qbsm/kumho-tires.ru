@@ -52,7 +52,18 @@ final class TireSeoBuilder implements SeoBuilderInterface
         $title = trim(implode(' ', $titleParts));
         $title = $title !== '' ? ($title . ' — характеристики и размеры') : $name;
 
-        $ogImage = $origin . '/data/img/seo/og.webp?v=2';
+        $imgSrc = '';
+        foreach (['30deg', 'front', 'side', 'back'] as $k) {
+            if (isset($entity['images'][$k]['src']) && is_string($entity['images'][$k]['src'])) {
+                $imgSrc = (string) $entity['images'][$k]['src'];
+                break;
+            }
+        }
+        $imageUrl = $imgSrc !== '' ? $origin . '/' . ltrim($imgSrc, '/') : '';
+
+        // og:image — рендер конкретной модели, а не общая картинка сайта: в выдаче и репостах
+        // каждая шина выглядит собой.
+        $ogImage = $imageUrl !== '' ? $imageUrl : $origin . '/data/img/seo/og.webp?v=2';
         $meta = [
             ['name' => 'description', 'content' => $desc],
             ['property' => 'og:type', 'content' => (string) ($config['og_type'] ?? 'website')],
@@ -64,27 +75,26 @@ final class TireSeoBuilder implements SeoBuilderInterface
             $meta[] = ['property' => 'og:site_name', 'content' => $siteName];
         }
 
-        // Product JSON-LD.
+        // Product JSON-LD. Kumho — бренд шин («Кумхо» по-русски), Kumho Tire — компания-производитель.
         $product = [
             '@context' => 'https://schema.org/',
             '@type' => 'Product',
             'name' => $name,
             'description' => $desc,
-            'brand' => ['@type' => 'Brand', 'name' => 'Kumho'],
+            'brand' => ['@type' => 'Brand', 'name' => 'Kumho', 'alternateName' => 'Кумхо'],
+            'manufacturer' => ['@type' => 'Organization', 'name' => 'Kumho Tire'],
             'category' => 'Автомобильные шины',
         ];
         if ($code !== '') {
             $product['mpn'] = $code;
         }
-        $imgSrc = '';
-        foreach (['30deg', 'front', 'side', 'back'] as $k) {
-            if (isset($entity['images'][$k]['src']) && is_string($entity['images'][$k]['src'])) {
-                $imgSrc = (string) $entity['images'][$k]['src'];
-                break;
-            }
+        $slug = (string) ($entity['slug'] ?? '');
+        $navSlug = (string) ($config['nav_slug'] ?? 'tires');
+        if ($slug !== '') {
+            $product['url'] = $origin . '/' . $navSlug . '/' . $slug;
         }
-        if ($imgSrc !== '') {
-            $product['image'] = $origin . '/' . ltrim($imgSrc, '/');
+        if ($imageUrl !== '') {
+            $product['image'] = $imageUrl;
         }
         $props = [];
         if ($season !== '') {

@@ -49,6 +49,29 @@
       {% endif %}
       {% set previewLimit = data.preview_limit | default(0) %}
       {% set hasPreviewLimit = previewLimit > 0 %}
+      {# JSON-LD: каталог моделей (ItemList) — только на полной странице каталога, для поисковиков и LLM #}
+      {% if not hasPreviewLimit %}
+        {% set _catalogLd = [] %}
+        {% for t in tiresItems %}
+          {% if t.slug | default('') %}
+            {% set _catalogLd = _catalogLd | merge([{
+              '@type': 'ListItem',
+              'position': _catalogLd|length + 1,
+              'item': {
+                '@type': 'Product',
+                'name': t.item.name | default(t.slug),
+                'url': url('/tires/' ~ t.slug),
+                'brand': {'@type': 'Brand', 'name': 'Kumho', 'alternateName': 'Кумхо'}
+              }
+            }]) %}
+          {% endif %}
+        {% endfor %}
+        {% if _catalogLd | length > 0 %}
+        <script type="application/ld+json">
+        {{ {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'Каталог шин Kumho', 'numberOfItems': _catalogLd|length, 'itemListElement': _catalogLd}|json_encode|raw }}
+        </script>
+        {% endif %}
+      {% endif %}
       {% set renderedItems = hasPreviewLimit ? (tiresItems | slice(0, previewLimit)) : tiresItems %}
       {% set allModelsLinkVisible = false %}
       {% set allModelsLinkTitle = 'Все модели' %}
