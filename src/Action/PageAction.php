@@ -456,7 +456,10 @@ final class PageAction
     private function ensureCsrfToken(): string
     {
         if (session_status() !== PHP_SESSION_ACTIVE) {
-            session_start();
+            // cache_limiter '' — иначе PHP шлёт Cache-Control: no-store/no-cache + Pragma + Expires
+            // на каждой странице, и мессенджеры (Telegram/WhatsApp) не строят превью ссылок:
+            // им запрещено кэшировать страницу.
+            session_start(['cache_limiter' => '']);
         }
 
         if (!isset($_SESSION['csrf_token']) || !is_string($_SESSION['csrf_token']) || $_SESSION['csrf_token'] === '') {
