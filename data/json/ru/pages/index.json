@@ -137,6 +137,14 @@
             "icon": {
               "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
             },
+            "title": "Какие шины Kumho есть для коммерческого транспорта?",
+            "answerText": "Для фургонов, микроавтобусов и лёгких грузовиков у Kumho есть семейство PorTran — 107 усиленных коммерческих типоразмеров (маркировка C) от R12 до R18: летняя PorTran KC53 (39 коммерческих типоразмеров, R12–R18), всесезонная PorTran CX11 (R15–R17), зимняя шипованная WinterPorTran CW11 и зимняя нешипованная WinterPorTran CW51 (обе R14–R17). Коммерческие типоразмеры отмечены в таблице размеров на странице каждой модели.",
+            "desc": "Для фургонов, микроавтобусов и лёгких грузовиков у Kumho есть семейство PorTran — 107 усиленных коммерческих типоразмеров (маркировка C) от R12 до R18: летняя PorTran KC53 (39 коммерческих типоразмеров, R12–R18), всесезонная PorTran CX11 (R15–R17), зимняя шипованная WinterPorTran CW11 и зимняя нешипованная WinterPorTran CW51 (обе R14–R17). Коммерческие типоразмеры отмечены в таблице размеров на странице каждой модели."
+          },
+          {
+            "icon": {
+              "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+            },
             "title": "Какие шины Kumho бывают: зимние, всесезонные, летние?",
             "answerText": "В каталоге три сезонные группы. Зимние — 9 моделей: шипованные WinterCraft ice WI32, WS31 и WinterPorTran CW11, нешипованные WinterCraft WP52+, WP72, WS71, WinterCraft ice WI51, WS51 и WinterPorTran CW51. Всесезонные — 11 моделей: SOLUS (HA31, HA32, HA32+), Road Venture (AT52, AT61, KL33, KL71, MT51, MT71, TA31) и PorTran CX11 для фургонов. Летние — 16 моделей: ECSTA, Ecowing, CRUGEN, PorTran. Сезонность указана в карточке каждой модели и доступна в фильтре каталога.",
             "desc": "В каталоге три сезонные группы. Зимние — 9 моделей: шипованные WinterCraft ice WI32, WS31 и WinterPorTran CW11, нешипованные WinterCraft WP52+, WP72, WS71, WinterCraft ice WI51, WS51 и WinterPorTran CW51. Всесезонные — 11 моделей: SOLUS (HA31, HA32, HA32+), Road Venture (AT52, AT61, KL33, KL71, MT51, MT71, TA31) и PorTran CX11 для фургонов. Летние — 16 моделей: ECSTA, Ecowing, CRUGEN, PorTran. Сезонность указана в карточке каждой модели и доступна в фильтре каталога."
