@@ -59,7 +59,11 @@ final class TireSeoBuilder implements SeoBuilderInterface
                 break;
             }
         }
-        $imageUrl = $imgSrc !== '' ? $origin . '/' . ltrim($imgSrc, '/') : '';
+        // Путь может прийти уже абсолютным (loadJson абсолютизирует) — домен второй раз не клеим.
+        $imageUrl = '';
+        if ($imgSrc !== '') {
+            $imageUrl = preg_match('~^https?://~i', $imgSrc) === 1 ? $imgSrc : $origin . '/' . ltrim($imgSrc, '/');
+        }
 
         // og:image — рендер конкретной модели, а не общая картинка сайта: в выдаче и репостах
         // каждая шина выглядит собой.
