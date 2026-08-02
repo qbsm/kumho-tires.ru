@@ -38,7 +38,9 @@ print(json.dumps({
 PY
 )"
 
-echo "==> IndexNow: ${COUNT} URL → api.indexnow.org"
-curl -s --noproxy '*' -m 30 -X POST "https://api.indexnow.org/indexnow" \
+# Пингуем Яндекс: по протоколу IndexNow уведомление расшаривается всем поисковикам-участникам.
+# (api.indexnow.org и Bing могут отдавать 403 SiteVerificationNotCompleted, пока не провалидировали ключ.)
+echo "==> IndexNow: ${COUNT} URL → yandex.com/indexnow"
+curl -s --noproxy '*' -m 30 -X POST "https://yandex.com/indexnow" \
   -H 'Content-Type: application/json; charset=utf-8' \
   -d "$PAYLOAD" -o /dev/null -w "HTTP %{http_code}\n"
