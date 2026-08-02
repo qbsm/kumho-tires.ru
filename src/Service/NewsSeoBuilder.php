@@ -30,7 +30,7 @@ final class NewsSeoBuilder implements SeoBuilderInterface
         $cover = (string) $cover;
         // cover может прийти как относительный raw-path или уже абсолютным URL — второй раз домен не клеим.
         if ($cover === '') {
-            $image = $origin . '/data/img/seo/og.webp?v=2';
+            $image = $origin . '/data/img/seo/og.jpg?v=3';
         } elseif (preg_match('~^https?://~i', $cover) === 1) {
             $image = $cover;
         } else {

@@ -67,7 +67,7 @@ final class TireSeoBuilder implements SeoBuilderInterface
 
         // og:image — рендер конкретной модели, а не общая картинка сайта: в выдаче и репостах
         // каждая шина выглядит собой.
-        $ogImage = $imageUrl !== '' ? $imageUrl : $origin . '/data/img/seo/og.webp?v=2';
+        $ogImage = $imageUrl !== '' ? $imageUrl : $origin . '/data/img/seo/og.jpg?v=3';
         $meta = [
             ['name' => 'description', 'content' => $desc],
             ['property' => 'og:type', 'content' => (string) ($config['og_type'] ?? 'website')],
