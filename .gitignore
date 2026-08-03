@@ -74,6 +74,7 @@ assets/js/build/*
 !assets/js/build/.gitkeep
 assets/img/build/*
 !assets/img/build/.gitkeep
+!assets/img/build/image-dimensions.json
 
 # Хешированные файлы сборки
 *.bundle.js
