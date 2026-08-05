@@ -29,13 +29,6 @@
         data-limit="{{ resultLimit }}"
         data-catalog-href="{{ url(catalogHref) }}"
       >
-        <div class="tire-selector__head">
-          <div class="tire-selector__progress">
-            <div class="tire-selector__progress-bar js-selector-progress"></div>
-          </div>
-          <span class="tire-selector__counter uppercase js-selector-counter">Шаг 1 из {{ steps | length }}</span>
-        </div>
-
         {% for step in steps %}
           {% set isMultiple = step.multiple | default(false) %}
           <div
@@ -45,9 +38,10 @@
             {% if isMultiple %}data-multiple="1"{% endif %}
           >
             <div class="tire-selector__step-head">
-              <span class="tire-selector__question h4 heading font-2 weight-700 uppercase">{{ step.question }}</span>
+              <span class="tire-selector__counter uppercase">Шаг {{ loop.index }} из {{ steps | length }}</span>
+              <span class="tire-selector__question font-2 weight-600">{{ step.question }}</span>
               {% if step.note is defined and step.note %}
-                <span class="tire-selector__note desc">{{ step.note }}</span>
+                <span class="tire-selector__note">{{ step.note }}</span>
               {% endif %}
             </div>
 
@@ -61,19 +55,14 @@
                     data-label="{{ option.label }}"
                     aria-pressed="false"
                   >
-                    <span class="tire-selector__option-check" aria-hidden="true"></span>
-                    {% if option.icon is defined and option.icon %}
-                      <span class="tire-selector__option-item icon-wrap">
-                        <span class="tire-selector__option-icon" style="--selector-icon: url('{{ url(option.icon) }}')" aria-hidden="true"></span>
-                      </span>
-                    {% endif %}
-                    <span class="tire-selector__option-item title-wrap">
-                      <span class="tire-selector__option-title font-2 weight-600 uppercase">{{ option.label }}</span>
-                      <span class="tire-selector__option-line" aria-hidden="true"></span>
-                    </span>
+                    <span class="tire-selector__option-mark" aria-hidden="true"></span>
+                    <span class="tire-selector__option-title card__title font-2 weight-600">{{ option.label }}</span>
                     {% if option.note is defined and option.note %}
-                      <span class="tire-selector__option-item desc-wrap">
-                        <span class="tire-selector__option-desc">{{ option.note }}</span>
+                      <span class="tire-selector__option-desc card__desc">{{ option.note }}</span>
+                    {% endif %}
+                    {% if option.icon is defined and option.icon %}
+                      <span class="tire-selector__option-icon-wrap">
+                        <span class="tire-selector__option-icon" style="--selector-icon: url('{{ url(option.icon) }}')" aria-hidden="true"></span>
                       </span>
                     {% endif %}
                   </button>
@@ -84,20 +73,23 @@
                   <button type="button" class="button button-sm button-3 button-animated animation-shift uppercase tire-selector__button disabled js-selector-next">
                     {{ step.submit | default('Далее') }}
                   </button>
+                  {% if loop.index > 1 %}
+                    <button type="button" class="button button-sm outline-color-2 uppercase tire-selector__button js-selector-back">Назад</button>
+                  {% endif %}
                 </div>
               {% endif %}
 
             {% elseif step.type == 'size' %}
+              {% set sizeControls = [
+                {'key': 'width', 'label': 'Ширина', 'any': 'Любая', 'icon': 'data/img/ui/icons/icon-size-width.svg'},
+                {'key': 'profile', 'label': 'Высота профиля', 'any': 'Любая', 'icon': 'data/img/ui/icons/icon-size-profile.svg'},
+                {'key': 'diameter', 'label': 'Диаметр', 'any': 'Любой', 'icon': 'data/img/ui/icons/icon-size-diameter.svg'}
+              ] %}
               <div class="tire-selector__sizes">
-                {% set sizeControls = [
-                  {'key': 'width', 'label': 'Ширина', 'any': 'Любая', 'icon': 'data/img/ui/icons/icon-size-width.svg'},
-                  {'key': 'profile', 'label': 'Высота профиля', 'any': 'Любая', 'icon': 'data/img/ui/icons/icon-size-profile.svg'},
-                  {'key': 'diameter', 'label': 'Диаметр', 'any': 'Любой', 'icon': 'data/img/ui/icons/icon-size-diameter.svg'}
-                ] %}
                 {% for control in sizeControls %}
                   <div class="tire-selector__size-field">
                     <span class="tire-selector__size-icon" style="--selector-icon: url('{{ url(control.icon) }}')" aria-hidden="true"></span>
-                    <label class="tire-selector__size-label uppercase" for="{{ selectorId }}-{{ control.key }}">{{ control.label }}</label>
+                    <label class="tire-selector__size-label" for="{{ selectorId }}-{{ control.key }}">{{ control.label }}</label>
                     <select
                       id="{{ selectorId }}-{{ control.key }}"
                       class="tire-selector__size-select js-selector-size"
@@ -112,6 +104,7 @@
                 <button type="button" class="button button-sm button-3 button-animated animation-shift uppercase tire-selector__button js-selector-submit">
                   {{ step.submit | default('Показать модели') }}
                 </button>
+                <button type="button" class="button button-sm outline-color-2 uppercase tire-selector__button js-selector-back">Назад</button>
               </div>
             {% endif %}
           </div>
@@ -119,8 +112,9 @@
 
         <div class="tire-selector__step tire-selector__result hidden js-selector-result">
           <div class="tire-selector__step-head">
-            <span class="tire-selector__question h4 heading font-2 weight-700 uppercase">{{ data.result.heading | default('Подходящие модели') }}</span>
-            <span class="tire-selector__summary desc js-selector-summary"></span>
+            <span class="tire-selector__counter uppercase">Подбор готов</span>
+            <span class="tire-selector__question font-2 weight-600">{{ data.result.heading | default('Подходящие модели') }}</span>
+            <span class="tire-selector__note js-selector-summary"></span>
           </div>
 
           <div class="tire-selector__cards js-selector-cards">
@@ -155,10 +149,10 @@
           </div>
 
           <div class="tire-selector__empty hidden js-selector-empty">
-            <span class="tire-selector__empty-text desc">Под такие параметры моделей не нашлось. Измените ответы или посмотрите весь каталог.</span>
+            <span class="tire-selector__note">Под такие параметры моделей не нашлось. Измените ответы или посмотрите весь каталог.</span>
           </div>
 
-          <div class="tire-selector__result-actions">
+          <div class="tire-selector__step-actions">
             <a href="{{ url(catalogHref) }}" class="button button-sm button-3 button-animated animation-shift uppercase link tire-selector__button js-selector-catalog">
               {{ data.result.catalog_title | default('Перейти в каталог') }}
             </a>
@@ -166,13 +160,6 @@
               {{ data.result.restart_title | default('Подобрать заново') }}
             </button>
           </div>
-        </div>
-
-        <div class="tire-selector__foot">
-          <button type="button" class="tire-selector__back uppercase js-selector-back hidden">
-            <span class="tire-selector__back-icon" aria-hidden="true"></span>
-            Назад
-          </button>
         </div>
       </div>
     </div>

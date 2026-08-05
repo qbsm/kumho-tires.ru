@@ -8,57 +8,13 @@
   }
 }
 
-.tire-selector__app {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  border: 0.1rem solid var(--color-4);
-  border-radius: 1rem;
-  background: var(--color-1);
-
-  @media (--lg) {
-    padding: 3rem;
-    gap: 2.5rem;
-    border-radius: 2rem;
-  }
-}
-
-.tire-selector__head {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.tire-selector__progress {
-  flex: 1 1 auto;
-  height: 0.2rem;
-  background: var(--color-4);
-  overflow: hidden;
-}
-
-.tire-selector__progress-bar {
-  width: 0;
-  height: 100%;
-  background: var(--color-3);
-  transition: width var(--transition-2);
-}
-
-.tire-selector__counter {
-  flex: 0 0 auto;
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
-  color: var(--color-5);
-  white-space: nowrap;
-}
-
 .tire-selector__step {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 
-  @media (--sm) {
-    gap: 2rem;
+  @media (--lg) {
+    gap: 3rem;
   }
 }
 
@@ -69,9 +25,22 @@
   gap: 0.5rem;
 }
 
-.tire-selector__note,
-.tire-selector__summary,
-.tire-selector__empty-text {
+.tire-selector__counter {
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  color: var(--color-3);
+}
+
+.tire-selector__question {
+  font-size: 2rem;
+  line-height: 1.2;
+
+  @media (--lg) {
+    font-size: 2.8rem;
+  }
+}
+
+.tire-selector__note {
   color: var(--color-5);
 }
 
@@ -85,19 +54,25 @@
   }
 
   @media (--md) {
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Тот же четырёхколоночный ритм, что у карточек каталога выше по странице */
+  @media (--lg) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
   }
 }
 
-/* Рамка и её поведение — как у card-tire: 0.1rem, акцент на hover, без сдвигов и теней */
+/* Карточка варианта повторяет оболочку card-tire: та же рамка, радиус, отступы и hover,
+   иконка занимает место фотографии шины — 60% ширины, прижата вправо вниз. */
 .tire-selector__option {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
   padding: 1.5rem;
-  border: 0.1rem solid var(--color-4);
+  border: 1px solid var(--color-4);
   border-radius: 1rem;
   background: var(--color-1);
   text-align: left;
@@ -112,97 +87,101 @@
   }
 }
 
-.tire-selector__option:hover,
 .tire-selector__option.active {
   border-color: var(--color-3);
 }
 
-.tire-selector__option.active {
-  background: rgb(239 0 16 / 3%);
+/* Только для указателя: на тач-устройствах :hover залипает после тапа */
+@media (hover: hover) {
+  .tire-selector__option:hover {
+    border-color: var(--color-3);
+  }
+
+  .tire-selector__option:hover .tire-selector__option-mark {
+    opacity: 1;
+  }
 }
 
-.tire-selector__option-check {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
-  width: 2rem;
-  height: 2rem;
-  border: 0.1rem solid var(--color-4);
-  border-radius: 50%;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
+/* Правый отступ держит место под меткой выбора, чтобы длинный заголовок не заходил под неё */
+.tire-selector__option-title {
+  padding-right: 3rem;
+  font-size: 1.25em;
+  line-height: 1.2;
 }
 
-.tire-selector__option-check::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-1);
-  mask: url("/data/img/ui/icons/icon-check-sm-color-2.svg") center / 55% no-repeat;
-  opacity: 0;
-  transition: opacity var(--transition-1);
+.tire-selector__option-desc {
+  margin-top: 0.25rem;
+  color: var(--color-5);
 }
 
-.tire-selector__option.active .tire-selector__option-check {
-  border-color: var(--color-3);
-  background: var(--color-3);
-}
-
-.tire-selector__option.active .tire-selector__option-check::after {
-  opacity: 1;
-}
-
-.tire-selector__option-item.icon-wrap {
-  margin-bottom: 0.5rem;
+.tire-selector__option-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  width: 60%;
+  margin-top: auto;
+  padding-top: 2rem;
 }
 
 .tire-selector__option-icon {
-  display: block;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 6.4rem;
+  height: 6.4rem;
   background-color: var(--color-2);
   mask: var(--selector-icon) center / contain no-repeat;
-  transition: background-color var(--transition-1);
+  transition: background-color 0.2s ease;
+
+  @media (--lg) {
+    width: 8rem;
+    height: 8rem;
+  }
 }
 
 .tire-selector__option.active .tire-selector__option-icon {
   background-color: var(--color-3);
 }
 
-.tire-selector__option-item.title-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-right: 2.5rem;
+/* Метка выбора: пустой контур появляется на hover, у выбранного — залитый акцентом */
+.tire-selector__option-mark {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--color-4);
+  border-radius: 50%;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+
+  @media (--lg) {
+    top: 2rem;
+    right: 2rem;
+  }
 }
 
-.tire-selector__option-title {
-  font-size: 1.5rem;
-  line-height: 1.25;
-  letter-spacing: 0.02em;
+.tire-selector__option-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-1);
+  mask: url("/data/img/ui/icons/icon-check-sm-color-2.svg") center / 50% no-repeat;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.tire-selector__option-line {
-  display: block;
-  width: 4rem;
-  height: 0.2rem;
-  margin-top: 0.75rem;
-  background-color: var(--color-4);
-  transition: background-color 0.2s ease;
+.tire-selector__option.active .tire-selector__option-mark {
+  opacity: 1;
+  border-color: var(--color-3);
+  background: var(--color-3);
 }
 
-.tire-selector__option:hover .tire-selector__option-line,
-.tire-selector__option.active .tire-selector__option-line {
-  background-color: var(--color-3);
+.tire-selector__option.active .tire-selector__option-mark::after {
+  opacity: 1;
 }
 
-.tire-selector__option-desc {
-  font-size: 1.4rem;
-  line-height: 1.35;
-  color: var(--color-5);
-}
-
+/* Контролы размера повторяют селекты фильтра каталога: высота 3.2rem, радиус 0.75rem */
 .tire-selector__sizes {
   display: grid;
   grid-template-columns: 1fr;
@@ -210,17 +189,17 @@
 
   @media (--xm) {
     grid-template-columns: repeat(3, 1fr);
+    max-width: 78rem;
   }
 }
 
-/* Контролы размера повторяют селекты фильтра каталога: высота 3.2rem, радиус 0.75rem */
 .tire-selector__size-field {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0 1.2rem;
   height: 3.2rem;
-  border: 0.1rem solid var(--color-4);
+  padding: 0 1.2rem;
+  border: 1px solid var(--color-4);
   border-radius: 0.75rem;
   transition: border-color 0.2s ease;
 }
@@ -239,8 +218,7 @@
 
 .tire-selector__size-label {
   flex: 0 0 auto;
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
+  font-size: 1.4rem;
   color: var(--color-5);
 }
 
@@ -258,15 +236,12 @@
   outline: none;
 }
 
-.tire-selector__step-actions,
-.tire-selector__result-actions {
+.tire-selector__step-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* Кнопки — штатные .button: радиус, hover и сдвиг стрелки берутся из base/buttons.css.
-   Своё — только состояние disabled, которого в базовых вариантах нет. */
 .tire-selector__button.disabled {
   background: var(--color-4);
   border-color: var(--color-4);
@@ -297,43 +272,6 @@
   }
 
   @media (--lg) {
-    flex: 0 0 calc((100% - 2rem * 2) / 3);
+    flex: 0 0 calc((100% - 2rem * 3) / 4);
   }
-}
-
-.tire-selector__foot {
-  display: flex;
-}
-
-.tire-selector__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
-  color: var(--color-5);
-  cursor: pointer;
-  transition: color var(--transition-1);
-}
-
-.tire-selector__back:hover {
-  color: var(--color-2);
-}
-
-.tire-selector__back-icon {
-  width: 1.6rem;
-  height: 1.6rem;
-  background-color: currentcolor;
-  mask: url("/data/img/ui/icons/icon-arrow-right-sm-color-2.svg") center / contain no-repeat;
-  transform: rotate(180deg);
-
-  /* Тайминг сдвига стрелки — как у .button-animated.animation-shift */
-  transition: transform 0.25s ease-out;
-}
-
-.tire-selector__back:hover .tire-selector__back-icon {
-  transform: rotate(180deg) translateX(0.5rem);
 }

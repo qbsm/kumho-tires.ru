@@ -31,9 +31,7 @@ const initSelector = (root) => {
   const cardsEl = root.querySelector('.js-selector-cards');
   const emptyEl = root.querySelector('.js-selector-empty');
   const summaryEl = root.querySelector('.js-selector-summary');
-  const progressEl = root.querySelector('.js-selector-progress');
-  const counterEl = root.querySelector('.js-selector-counter');
-  const backEl = root.querySelector('.js-selector-back');
+  const backEls = Array.from(root.querySelectorAll('.js-selector-back'));
   const catalogEl = root.querySelector('.js-selector-catalog');
   const restartEl = root.querySelector('.js-selector-restart');
   const sizeSelects = Array.from(root.querySelectorAll('.js-selector-size'));
@@ -68,17 +66,6 @@ const initSelector = (root) => {
 
   const priorityScore = (card) => answers.priority.filter((value) => hasToken(card.priority, value)).length;
 
-  const updateProgress = () => {
-    const total = stepEls.length;
-    const isResult = current >= total;
-    const percent = isResult ? 100 : Math.round(((current + 1) / total) * 100);
-    if (progressEl) progressEl.style.width = `${percent}%`;
-    if (counterEl) {
-      counterEl.textContent = isResult ? 'Подбор готов' : `Шаг ${current + 1} из ${total}`;
-    }
-    if (backEl) backEl.classList.toggle('hidden', current === 0);
-  };
-
   const updateNextState = (step) => {
     const nextButton = step.querySelector('.js-selector-next');
     if (!nextButton) return;
@@ -91,7 +78,6 @@ const initSelector = (root) => {
     current = index;
     stepEls.forEach((el, i) => el.classList.toggle('hidden', i !== index));
     resultEl.classList.toggle('hidden', index < stepEls.length);
-    updateProgress();
 
     const header = document.querySelector('.header');
     const offset = header ? header.offsetHeight : 0;
@@ -246,12 +232,12 @@ const initSelector = (root) => {
     });
   }
 
-  if (backEl) {
-    backEl.addEventListener('click', () => {
+  backEls.forEach((button) => {
+    button.addEventListener('click', () => {
       if (current === 0) return;
       showStep(current - 1);
     });
-  }
+  });
 
   if (restartEl) {
     restartEl.addEventListener('click', () => {
@@ -272,7 +258,6 @@ const initSelector = (root) => {
   }
 
   stepEls.forEach(updateNextState);
-  updateProgress();
 };
 
 onReady(() => {
