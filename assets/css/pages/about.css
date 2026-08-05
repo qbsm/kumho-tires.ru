@@ -7,3 +7,9 @@
 
 /* Заголовок «О компании» вынесен внутрь content-container первым итемом —
    он выравнен по ширине с остальным контентом (единый container-sm). */
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

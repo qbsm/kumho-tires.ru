@@ -32,7 +32,7 @@
             {
               "class": "content-wrap container-sm",
               "content": "<div class='section__subitem desc-wrap'><span class='longread about-lead'>{{ item.lead | raw }}</span></div><div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
-              "lead": "«Север&nbsp;Авто»&nbsp;— официальный дистрибьютор шин Kumho&nbsp;Tire в&nbsp;России.",
+              "lead": "«Север&nbsp;Авто»&nbsp;— официальный дистрибьютор шин Kumho в&nbsp;России.",
               "desc": "«Север Авто» является <strong>системообразующим предприятием России</strong>, которое оказывает существенное влияние на развитие экономики страны и обеспечивает высокую занятость в городах присутствия.<br><br>Многократный участник международных выставок автомобильной и шинной тематики."
             },
             {
@@ -62,6 +62,14 @@
               "class": "content-wrap container-sm",
               "content": "<div class='section__subitem about-slogan'><span class='about-slogan__accent' aria-hidden='true'></span><span class='about-slogan__text'>{{ item.slogan | raw }}</span></div>",
               "slogan": "Мы&nbsp;растём вместе с&nbsp;нашими клиентами и&nbsp;поставщиками!"
+            },
+            {
+              "class": "content-wrap container-sm",
+              "content": "<div class='section__subitem about-actions'><a href='{{ url(item.link.href) }}' class='button button-sm button-3 button-animated animation-shift uppercase link'>{{ item.link.title }}</a></div>",
+              "link": {
+                "title": "Контакты",
+                "href": "/contacts"
+              }
             }
           ]
         }

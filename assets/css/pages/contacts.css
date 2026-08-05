@@ -26,9 +26,6 @@
   }
 }
 
-.page-contacts .card-doc {
-  padding: 1rem 0;
-}
 
 .content-contacts {
   display: flex;
@@ -42,6 +39,11 @@
   gap: 2rem;
 }
 
+.content-contacts .section__item.content-wrap:empty {
+  display: none;
+}
+
+/* Легаси-правила страницы восстановлены: блоки идут колонкой, кнопки — в строку */
 .content-contacts .section__subitem {
   display: flex;
   flex-direction: column;
@@ -58,97 +60,8 @@
   display: inline-flex;
 }
 
-/* Карточки контактов: оболочка как у card-tire (рамка, радиус, отступы),
-   строки — иконка + подпись + значение, чтобы данные читались, а не шли абзацем */
-.contacts-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-
-  @media (--md) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
-
-.contacts-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-  padding: 1.5rem;
-  border: 1px solid var(--color-4);
-  border-radius: 1rem;
-  background: var(--color-1);
-
-  @media (--lg) {
-    padding: 2rem;
-    border-radius: 2rem;
-  }
-}
-
-.contacts-card__title {
-  font-size: 1.25em;
-  line-height: 1.2;
-}
-
-.contacts-card__desc {
-  color: var(--color-5);
-}
-
-.contacts-card__rows {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  width: 100%;
-  margin-top: 1.5rem;
-}
-
-.contacts-card__row {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.contacts-card__icon {
-  flex: 0 0 auto;
-  width: 2rem;
-  height: 2rem;
-  margin-top: 0.2rem;
-  background-color: var(--color-3);
-  mask: var(--contacts-icon) center / contain no-repeat;
-}
-
-.contacts-card__body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  min-width: 0;
-}
-
-.contacts-card__label {
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-5);
-}
-
-/* Начертание как у .icon-text__link на других страницах — Manrope 600 выбивался из сайта */
-.contacts-card__value {
-  font-size: 1.125em;
-  line-height: 1.4;
-  overflow-wrap: anywhere;
-}
-
-.contacts-card__note {
-  font-size: 1.4rem;
-  color: var(--color-5);
-}
-
-.contacts-card__links {
-  display: flex;
+.content-contacts .section__inner.block-wrap.buttons-wrap {
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.75rem 2rem;
-  margin-top: auto;
-  padding-top: 2rem;
+  gap: 1rem;
 }

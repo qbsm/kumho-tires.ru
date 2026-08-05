@@ -55,7 +55,8 @@
         },
         {
           "title": "Контакты",
-          "href": "/contacts"
+          "href": "/contacts",
+          "visible": false
         }
       ]
     },
@@ -93,7 +94,8 @@
         },
         {
           "title": "Contacts",
-          "href": "/contacts"
+          "href": "/contacts",
+          "visible": false
         }
       ]
     }

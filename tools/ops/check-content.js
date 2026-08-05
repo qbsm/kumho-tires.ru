@@ -165,6 +165,14 @@ Object.values(globalData.nav || {}).forEach((navLang) => {
   });
 });
 
+// Ссылка из контента другой страницы тоже считается: пункт меню можно скрыть,
+// а переход оставить — так сделано для /contacts со страницы «О компании».
+pageFiles.forEach((file) => {
+  const raw = fs.readFileSync(path.join(pagesDir, file), 'utf8');
+  const matches = raw.match(/["'](\/[a-z0-9-]+)["']/g) || [];
+  matches.forEach((m) => linked.add(m.replace(/["']/g, '').replace(/\/$/, '')));
+});
+
 if (sitemapBlock) {
   sitemapBlock[1]
     .split(',')
