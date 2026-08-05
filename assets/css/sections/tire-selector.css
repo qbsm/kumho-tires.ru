@@ -302,6 +302,11 @@
   }
 }
 
+/* На светлом бэнде прозрачная card-tire выглядела серой рядом с белыми карточками шагов */
+.tire-selector__card-wrap .card-tire {
+  background: var(--color-1);
+}
+
 .tire-selector__card-wrap {
   width: 100%;
   min-width: 0;
