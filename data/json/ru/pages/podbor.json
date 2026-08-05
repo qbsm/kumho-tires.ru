@@ -60,25 +60,25 @@
                 "value": "summer",
                 "label": "Летние",
                 "note": "Для тёплого сезона",
-                "icon": "data/img/ui/icons/icon-sel-summer.svg"
+                "icon": "data/img/ui/icons/icon-season-summer.svg"
               },
               {
                 "value": "friction",
                 "label": "Зимние нешипованные",
                 "note": "Липучка для города",
-                "icon": "data/img/ui/icons/icon-sel-friction.svg"
+                "icon": "data/img/ui/icons/icon-season-winter.svg"
               },
               {
                 "value": "studded",
                 "label": "Зимние шипованные",
                 "note": "Лёд и укатанный снег",
-                "icon": "data/img/ui/icons/icon-sel-studded.svg"
+                "icon": "data/img/ui/icons/icon-season-studded.svg"
               },
               {
                 "value": "all-season",
                 "label": "Всесезонные",
                 "note": "Мягкая зима и межсезонье",
-                "icon": "data/img/ui/icons/icon-sel-allseason.svg"
+                "icon": "data/img/ui/icons/icon-season-allseason.svg"
               }
             ]
           },
