@@ -52,6 +52,10 @@
           "title": "Где купить",
           "href": "/buy",
           "visible": true
+        },
+        {
+          "title": "Контакты",
+          "href": "/contacts"
         }
       ]
     },
@@ -86,6 +90,10 @@
           "title": "Where to buy",
           "href": "/buy",
           "visible": true
+        },
+        {
+          "title": "Contacts",
+          "href": "/contacts"
         }
       ]
     }

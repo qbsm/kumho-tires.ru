@@ -148,6 +148,42 @@ if (sitemapBlock) {
     });
 }
 
+// --- 5b. Страницы из sitemap_pages не осиротели ---------------------------------
+// Страница может быть в sitemap и llms, но не иметь ни одной внутренней ссылки —
+// так было с /contacts. Считаем ссылками навигацию и служебные ссылки из global.json.
+const globalData = readJson(path.join(DATA, 'global.json'));
+const linked = new Set();
+Object.values(globalData.nav || {}).forEach((navLang) => {
+  (navLang.items || []).forEach((item) => {
+    if (item.visible === false) return;
+    linked.add(String(item.href || '').replace(/\/$/, '') || '/');
+  });
+});
+['policy', 'cookies-policy'].forEach((key) => {
+  Object.values(globalData[key] || {}).forEach((entry) => {
+    if (entry && entry.href) linked.add(String(entry.href).replace(/\/$/, ''));
+  });
+});
+
+if (sitemapBlock) {
+  sitemapBlock[1]
+    .split(',')
+    .map((s) => s.trim().replace(/^'|'$/g, ''))
+    .filter(Boolean)
+    .forEach((pageId) => {
+      // index — сам сайт, news — раздел без пункта меню.
+      // policy — HTML-страница есть в sitemap, но футер ведёт на PDF: решение юридическое,
+      // до его пересмотра исключение явное, а не молчаливое.
+      if (['index', 'news', 'policy'].includes(pageId)) return;
+      const route = pageId === 'tires-list' ? '/tires' : `/${pageId}`;
+      if (!linked.has(route)) {
+        fail(
+          `Страница ${route} (${pageId}) есть в sitemap_pages, но на неё нет ссылок в навигации — осиротевшая страница`
+        );
+      }
+    });
+}
+
 // --- 6. llms-full.txt не протух --------------------------------------------------
 try {
   const generated = execFileSync('php', [path.join(ROOT, 'tools/ops/generate-llms-full.php'), ROOT], {
