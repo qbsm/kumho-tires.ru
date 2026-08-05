@@ -120,13 +120,41 @@ const initSelector = (root) => {
     });
   };
 
-  const buildSummary = () => {
-    const parts = ['vehicle', 'season', 'priority'].flatMap((key) => labels[key] || []);
-    const section = [size.width, size.profile].filter(Boolean).join('/');
-    const diameter = size.diameter ? `R${size.diameter}` : '';
-    const sizeLabel = [section, diameter].filter(Boolean).join(' ');
-    if (sizeLabel) parts.push(sizeLabel);
-    return parts.join(', ');
+  // Выбранные ответы показываем чипами в языке фильтра каталога: перечисление через
+  // запятую читалось как случайный набор слов, а «155» без подписи вообще ничего не значило.
+  const sizeChips = () => {
+    const chips = [];
+    if (size.width && size.profile && size.diameter) {
+      chips.push({ label: `${size.width}/${size.profile} R${size.diameter}` });
+      return chips;
+    }
+    if (size.width) chips.push({ label: `Ширина ${size.width}` });
+    if (size.profile) chips.push({ label: `Профиль ${size.profile}` });
+    if (size.diameter) chips.push({ label: `Диаметр R${size.diameter}` });
+    return chips;
+  };
+
+  const answerChips = () => {
+    const chips = ['vehicle', 'season', 'priority'].flatMap((key) => labels[key] || []);
+    return chips.concat(sizeChips());
+  };
+
+  const renderSummary = () => {
+    if (!summaryEl) return;
+    summaryEl.innerHTML = '';
+    answerChips().forEach((chip) => {
+      const el = document.createElement('span');
+      el.className = 'tire-selector__chip';
+      if (chip.icon) {
+        const icon = document.createElement('span');
+        icon.className = 'tire-selector__chip-icon';
+        icon.style.setProperty('--selector-icon', `url('${chip.icon}')`);
+        icon.setAttribute('aria-hidden', 'true');
+        el.appendChild(icon);
+      }
+      el.appendChild(document.createTextNode(chip.label));
+      summaryEl.appendChild(el);
+    });
   };
 
   // Каталог использует токен allseason, данные моделей — all-season
@@ -158,7 +186,7 @@ const initSelector = (root) => {
     });
 
     if (emptyEl) emptyEl.classList.toggle('hidden', matched.length > 0);
-    if (summaryEl) summaryEl.textContent = buildSummary();
+    renderSummary();
     updateCatalogLink();
   };
 
@@ -190,7 +218,7 @@ const initSelector = (root) => {
       });
 
       answers[key] = chosen.map((item) => item.dataset.value || '');
-      labels[key] = chosen.map((item) => item.dataset.label || '');
+      labels[key] = chosen.map((item) => ({ label: item.dataset.label || '', icon: item.dataset.icon || '' }));
       SIZE_KEYS.forEach((sizeKey) => {
         size[sizeKey] = '';
       });

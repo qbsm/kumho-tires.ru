@@ -86,6 +86,7 @@
                     class="tire-selector__option js-selector-option"
                     data-value="{{ option.value }}"
                     data-label="{{ option.label }}"
+                    {% if option.icon is defined and option.icon %}data-icon="{{ url(option.icon) }}"{% endif %}
                     aria-pressed="false"
                   >
                     <span class="tire-selector__option-mark" aria-hidden="true"></span>
@@ -147,7 +148,7 @@
           <div class="tire-selector__step-head">
             <span class="tire-selector__counter uppercase">Подбор готов</span>
             <{{ questionTag }} class="tire-selector__question h3 heading font-2 weight-600">{{ data.result.heading | default('Подходящие модели') }}</{{ questionTag }}>
-            <span class="tire-selector__note js-selector-summary"></span>
+            <div class="tire-selector__chips js-selector-summary"></div>
           </div>
 
           <div class="tire-selector__cards js-selector-cards">
