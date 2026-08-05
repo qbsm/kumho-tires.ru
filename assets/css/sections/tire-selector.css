@@ -37,19 +37,20 @@
 
 .tire-selector__counter {
   font-family: var(--font-2);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--color-5);
-}
-
-.tire-selector__question {
-  font-size: 2rem;
-  line-height: 1.2;
 
   @media (--lg) {
-    font-size: 2.8rem;
+    font-size: 1.4rem;
   }
+}
+
+/* Размер вопроса задаёт штатная шкала .h3 — на телефоне свой rem выходил крупнее
+   заголовка секции и выбивался из остальных блоков */
+.tire-selector__question {
+  line-height: 1.2;
 }
 
 .tire-selector__note {

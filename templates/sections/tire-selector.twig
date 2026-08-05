@@ -39,7 +39,7 @@
           >
             <div class="tire-selector__step-head">
               <span class="tire-selector__counter uppercase">Шаг {{ loop.index }} из {{ steps | length }}</span>
-              <span class="tire-selector__question font-2 weight-600">{{ step.question }}</span>
+              <span class="tire-selector__question h3 font-2 weight-600">{{ step.question }}</span>
               {% if step.note is defined and step.note %}
                 <span class="tire-selector__note">{{ step.note }}</span>
               {% endif %}
@@ -113,7 +113,7 @@
         <div class="tire-selector__step tire-selector__result hidden js-selector-result">
           <div class="tire-selector__step-head">
             <span class="tire-selector__counter uppercase">Подбор готов</span>
-            <span class="tire-selector__question font-2 weight-600">{{ data.result.heading | default('Подходящие модели') }}</span>
+            <span class="tire-selector__question h3 font-2 weight-600">{{ data.result.heading | default('Подходящие модели') }}</span>
             <span class="tire-selector__note js-selector-summary"></span>
           </div>
 
