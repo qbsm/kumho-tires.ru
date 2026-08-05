@@ -30,24 +30,31 @@
       "name": "content-container",
       "data": {
         "content": {
-          "class": "content-services",
+          "class": "content-contacts-intro",
           "items": [
             {
-              "class": "cards-doc-wrap",
-              "content": "{% for item in item.items %}<div class='section__subitem card-doc-wrap'><div class='container-sm'>{% include 'components/card-doc.twig' with {'item': item} %}</div></div>{% endfor %}",
-              "items": [
-                {
-                  "title": "Официальный дистрибьютор Kumho Tire в России Север Авто",
-                  "desc": "Kumho Tire — один из ведущих мировых производителей шин, основанный в 1960 году в Южной Корее. Продукция поставляется более чем в 180 стран мира."
-                },
-                {
-                  "title": "Гарантия качества",
-                  "desc": "Все шины Kumho проходят многоступенчатый контроль качества и сертифицированы в соответствии с международными стандартами безопасности."
-                }
-              ]
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Контакты для бизнеса"
+              },
+              "desc": "<p>Оптовые поставки, сотрудничество и подключение к дилерской сети — по контактам ниже.</p><p><b>Адрес:</b> 143900, Московская область, город Балашиха, шоссе Энтузиастов, дом 84, помещение 5 — <a href='https://yandex.ru/maps/?text=143900%2C%20Московская%20область%2C%20Балашиха%2C%20шоссе%20Энтузиастов%2C%2084' target='_blank' rel='noopener' class='link inline weight-400'>показать на карте</a><br><b>Телефон:</b> <a href='tel:88001007700' class='link inline weight-400'>8 800 100 77 00</a> — звонок по России бесплатный<br><b>E-mail:</b> <a href='mailto:B2B@svrauto.ru' class='link inline weight-400'>B2B@svrauto.ru</a></p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Покупателям"
+              },
+              "desc": "<p>Вопросы по шинам, гарантии и подбору — <a href='mailto:info@kumho-tires.ru' class='link inline weight-400'>info@kumho-tires.ru</a> или по телефону <a href='tel:88001007700' class='link inline weight-400'>8 800 100 77 00</a>.</p><p>Купить шины Kumho можно в 155 авторизованных точках продаж в 55 городах и 35 регионах России — адреса, телефоны и карта в разделе <a href='/buy' class='link inline weight-400'>«Где купить»</a>. Подобрать модель под автомобиль и сезон поможет <a href='/podbor' class='link inline weight-400'>конфигуратор подбора</a>. Условия программы — в разделе <a href='/warranty' class='link inline weight-400'>«Расширенная гарантия»</a>.</p>"
             }
           ]
-        }
+        },
+        "container": "container-sm"
       }
     },
     {
@@ -56,47 +63,6 @@
         "content": {
           "class": "content-contacts",
           "items": [
-            {
-              "class": "content-wrap",
-              "content": "<div class='section__subitem container-sm'>{% if global.address[lang_code] is defined and global.address[lang_code]|length > 0 %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.address.heading} %}</div>{% for address in global.address[lang_code] %}<div class='section__inner block-wrap'><div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.address.src, alt: item.icon.address.alt}, title: address.title} %}</div><div class='section__inner button-wrap'><a href='{{ address.href }}' class='{{ item.button.class }}' target='_blank'>{{ item.button.title }}</a></div></div>{% endfor %}{% endif %}<div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.connect.heading} %}</div><div class='section__inner block-wrap'>{% for phone in global.phones %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.phone.src, alt: item.icon.phone.alt}, goal: {class: item.goal.phone.class}, link: {href: phone.href, title: phone.title}} %}</div>{% endfor %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.mail.src, alt: item.icon.mail.alt}, link: {href: global.email.href, title: global.email.title}} %}</div></div></div>",
-              "icon": {
-                "address": {
-                  "src": "data/img/ui/icons/icon-locate-color-2.svg",
-                  "alt": "Адрес"
-                },
-                "phone": {
-                  "src": "data/img/ui/icons/icon-phone-color-2.svg",
-                  "alt": "Телефон"
-                },
-                "mail": {
-                  "src": "data/img/ui/icons/icon-mail-color-2.svg",
-                  "alt": "Email"
-                }
-              },
-              "goal": {
-                "phone": {
-                  "class": ""
-                }
-              },
-              "button": {
-                "title": "Показать на карте",
-                "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link"
-              },
-              "address": {
-                "heading": {
-                  "tag": "h2",
-                  "class": "h5 heading font-2 weight-700 heading-flex uppercase",
-                  "title": "Наши адреса"
-                }
-              },
-              "connect": {
-                "heading": {
-                  "tag": "h2",
-                  "class": "h5 heading font-2 weight-700 heading-flex uppercase",
-                  "title": "Связаться с нами"
-                }
-              }
-            },
             {
               "class": "content-wrap form-callback-wrap",
               "content": "<div class='section__subitem heading-wrap container-sm'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem container-sm'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': 'Получить консультацию'}}} %}</div>",

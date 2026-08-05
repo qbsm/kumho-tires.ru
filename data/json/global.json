@@ -7,7 +7,12 @@
       "direction": "ltr"
     }
   ],
-  "phones": [],
+  "phones": [
+    {
+      "title": "8 800 100 77 00",
+      "href": "tel:88001007700"
+    }
+  ],
   "nav": {
     "ru": {
       "items": [
@@ -339,5 +344,23 @@
         "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"
       }
     }
+  },
+  "address": {
+    "ru": [
+      {
+        "title": "143900, Московская область, город Балашиха, шоссе Энтузиастов, дом 84, помещение 5",
+        "href": "https://yandex.ru/maps/?text=143900%2C%20Московская%20область%2C%20Балашиха%2C%20шоссе%20Энтузиастов%2C%2084"
+      }
+    ],
+    "en": [
+      {
+        "title": "143900, Moscow Region, Balashikha, Shosse Entuziastov 84, room 5",
+        "href": "https://yandex.ru/maps/?text=143900%2C%20Московская%20область%2C%20Балашиха%2C%20шоссе%20Энтузиастов%2C%2084"
+      }
+    ]
+  },
+  "email-b2b": {
+    "title": "B2B@svrauto.ru",
+    "href": "mailto:B2B@svrauto.ru"
   }
 }
