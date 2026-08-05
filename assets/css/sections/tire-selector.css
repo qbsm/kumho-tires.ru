@@ -127,8 +127,8 @@
   color: var(--color-5);
 }
 
-/* Иконка прижата к правому краю: в card-tire те же 60% занимает фото целиком,
-   а маленькая иконка по центру блока висела бы в отрыве от края — заметно на телефоне */
+/* Иконка тяготеет к правому краю, но не упирается в него: по центру 60%-блока она висела
+   в отрыве от края, а вплотную к паддингу — прижата. Отступ держит середину. */
 .tire-selector__option-icon-wrap {
   display: flex;
   justify-content: flex-end;
@@ -136,6 +136,11 @@
   width: 60%;
   margin-top: auto;
   padding-top: 2rem;
+  padding-right: 2rem;
+
+  @media (--lg) {
+    padding-right: 2.5rem;
+  }
 }
 
 .tire-selector__option-icon {
