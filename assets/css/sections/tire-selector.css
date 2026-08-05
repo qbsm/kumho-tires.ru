@@ -26,9 +26,11 @@
 }
 
 .tire-selector__counter {
-  font-size: 1.3rem;
-  letter-spacing: 0.08em;
-  color: var(--color-3);
+  font-family: var(--font-2);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-5);
 }
 
 .tire-selector__question {
@@ -126,18 +128,13 @@
 .tire-selector__option-icon {
   width: 6.4rem;
   height: 6.4rem;
-  background-color: var(--color-2);
+  background-color: var(--color-3);
   mask: var(--selector-icon) center / contain no-repeat;
-  transition: background-color 0.2s ease;
 
   @media (--lg) {
     width: 8rem;
     height: 8rem;
   }
-}
-
-.tire-selector__option.active .tire-selector__option-icon {
-  background-color: var(--color-3);
 }
 
 /* Метка выбора: пустой контур появляется на hover, у выбранного — залитый акцентом */
@@ -239,7 +236,8 @@
 .tire-selector__step-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  align-items: center;
+  gap: 1rem 2rem;
 }
 
 .tire-selector__button.disabled {
@@ -247,6 +245,40 @@
   border-color: var(--color-4);
   color: var(--color-5);
   pointer-events: none;
+}
+
+/* Второстепенное действие не спорит с основным: текстовая кнопка вместо равной по весу */
+.tire-selector__link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--color-5);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.tire-selector__link-button:hover {
+  color: var(--color-2);
+}
+
+.tire-selector__link-button--back::before {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: currentcolor;
+  mask: url("/data/img/ui/icons/icon-arrow-right-sm-color-2.svg") center / contain no-repeat;
+  transform: rotate(180deg);
+  transition: transform 0.25s ease-out;
+}
+
+.tire-selector__link-button--back:hover::before {
+  transform: rotate(180deg) translateX(0.5rem);
 }
 
 .tire-selector__cards {

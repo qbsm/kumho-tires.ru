@@ -70,12 +70,12 @@
               </div>
               {% if isMultiple %}
                 <div class="tire-selector__step-actions">
+                  {% if loop.index > 1 %}
+                    <button type="button" class="tire-selector__link-button tire-selector__link-button--back uppercase js-selector-back">Назад</button>
+                  {% endif %}
                   <button type="button" class="button button-sm button-3 button-animated animation-shift uppercase tire-selector__button disabled js-selector-next">
                     {{ step.submit | default('Далее') }}
                   </button>
-                  {% if loop.index > 1 %}
-                    <button type="button" class="button button-sm outline-color-2 uppercase tire-selector__button js-selector-back">Назад</button>
-                  {% endif %}
                 </div>
               {% endif %}
 
@@ -101,10 +101,10 @@
                 {% endfor %}
               </div>
               <div class="tire-selector__step-actions">
+                <button type="button" class="tire-selector__link-button tire-selector__link-button--back uppercase js-selector-back">Назад</button>
                 <button type="button" class="button button-sm button-3 button-animated animation-shift uppercase tire-selector__button js-selector-submit">
                   {{ step.submit | default('Показать модели') }}
                 </button>
-                <button type="button" class="button button-sm outline-color-2 uppercase tire-selector__button js-selector-back">Назад</button>
               </div>
             {% endif %}
           </div>
@@ -156,7 +156,7 @@
             <a href="{{ url(catalogHref) }}" class="button button-sm button-3 button-animated animation-shift uppercase link tire-selector__button js-selector-catalog">
               {{ data.result.catalog_title | default('Перейти в каталог') }}
             </a>
-            <button type="button" class="button button-sm outline-color-2 button-animated animation-shift uppercase tire-selector__button js-selector-restart">
+            <button type="button" class="tire-selector__link-button uppercase js-selector-restart">
               {{ data.result.restart_title | default('Подобрать заново') }}
             </button>
           </div>

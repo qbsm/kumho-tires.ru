@@ -143,6 +143,13 @@
   font-size: 1.125em;
 }
 
+.tire-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
 .tire-detail .custom-list {
   font-size: 1.125em;
 }

@@ -69,6 +69,9 @@
                 {% if tire.desc.short is defined and tire.desc.short %}
                   <p class="tire-detail__desc">{{ tire.desc.short }}</p>
                 {% endif %}
+                <div class="tire-detail__actions">
+                  <a href="{{ url('/buy') }}" class="button button-sm button-3 button-animated animation-shift uppercase link">Где купить</a>
+                </div>
               </div>
 
             </div>
@@ -143,24 +146,74 @@
       </div>
     </section>
 
-    {# Похожие модели: тот же сезон, до 4 карточек — перелинковка каталога #}
+    {# Похожие модели: ранжирование по близости, до 4 карточек — перелинковка каталога.
+       Только пересечение сезона давало один и тот же блок для 12 моделей из 36 (порядок items
+       алфавитный, брались первые четыре) и путало классы техники: коммерческой шине предлагались
+       легковые. Считаем близость по серии, классу техники, сезону, приоритету и диаметрам. #}
     {% set _tiresList = load_json('data/json/' ~ lang_code ~ '/pages/tires.json') %}
-    {% set _currentSeasons = tire.filter.season | default([]) %}
-    {% set _related = [] %}
+    {% set _curFilter = tire.filter | default({}) %}
+    {% set _curSeasons = _curFilter.season | default([]) %}
+    {% set _curVehicle = _curFilter.vehicle | default([]) %}
+    {% set _curPriority = _curFilter.priority | default([]) %}
+    {% set _curDiameters = _curFilter.diameters | default([]) %}
+    {% set _curSeries = tire.item.series | default('') %}
+
+    {% set _scored = [] %}
     {% if _tiresList and _tiresList.items is defined %}
       {% for _slug in _tiresList.items %}
-        {% if _related|length < 4 and _slug != tire.slug %}
+        {% if _slug != tire.slug %}
           {% set _cand = load_json('data/json/' ~ lang_code ~ '/tires/' ~ _slug ~ '.json') %}
           {% if _cand and _cand.visible | default(false) %}
-            {% set _match = false %}
-            {% for _s in _cand.filter.season | default([]) %}
-              {% if _s in _currentSeasons %}{% set _match = true %}{% endif %}
+            {% set _f = _cand.filter | default({}) %}
+            {% set _score = 0 %}
+
+            {% set _vehicleHit = false %}
+            {% for _v in _f.vehicle | default([]) %}
+              {% if _v in _curVehicle %}{% set _vehicleHit = true %}{% endif %}
             {% endfor %}
-            {% if _match %}{% set _related = _related|merge([_cand]) %}{% endif %}
+            {% if _vehicleHit %}{% set _score = _score + 4 %}{% endif %}
+
+            {# Сезон — жёсткое условие: летняя шина в блоке зимней это ошибка, а не «похожесть» #}
+            {% set _seasonHit = false %}
+            {% for _s in _f.season | default([]) %}
+              {% if _s in _curSeasons %}{% set _seasonHit = true %}{% endif %}
+            {% endfor %}
+            {# Шипованная и нешипованная зима — разные покупки, точное совпадение набора ценнее #}
+            {% if _seasonHit and _f.season | default([]) | length == _curSeasons | length %}
+              {% set _score = _score + 1 %}
+            {% endif %}
+
+            {% if _cand.item.series | default('') == _curSeries and _curSeries %}
+              {% set _score = _score + 3 %}
+            {% endif %}
+
+            {% for _p in _f.priority | default([]) %}
+              {% if _p in _curPriority %}{% set _score = _score + 1 %}{% endif %}
+            {% endfor %}
+
+            {% set _diaHit = false %}
+            {% for _d in _f.diameters | default([]) %}
+              {% if _d in _curDiameters %}{% set _diaHit = true %}{% endif %}
+            {% endfor %}
+            {% if _diaHit %}{% set _score = _score + 1 %}{% endif %}
+
+            {% if _seasonHit %}
+              {% set _scored = _scored | merge([{'score': _score + 1, 'item': _cand}]) %}
+            {% endif %}
           {% endif %}
         {% endif %}
       {% endfor %}
     {% endif %}
+
+    {# Отбор по убыванию близости: Twig без расширения не сортирует по вычисленному ключу #}
+    {% set _related = [] %}
+    {% for _level in range(12, 0, -1) %}
+      {% for _entry in _scored %}
+        {% if _related | length < 4 and _entry.score == _level %}
+          {% set _related = _related | merge([_entry.item]) %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
     {% if _related|length > 0 %}
     <section class="tires section">
       <div class="container">
