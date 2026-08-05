@@ -47,7 +47,9 @@ pageFiles.forEach((file) => {
     (section.data?.items || []).forEach((item) => {
       if (!item.answerText) return;
       if (stripTags(item.desc) !== stripTags(item.answerText)) {
-        fail(`FAQ «${item.title}» (${file}): desc и answerText разошлись — разметка FAQPage не совпадёт с видимым текстом`);
+        fail(
+          `FAQ «${item.title}» (${file}): desc и answerText разошлись — разметка FAQPage не совпадёт с видимым текстом`
+        );
       }
     });
   });
