@@ -6,6 +6,8 @@
       "winter",
       "studded"
     ],
+    "vehicle": ["commercial", "suv"],
+    "priority": ["offroad"],
     "diameters": [
       14,
       15,

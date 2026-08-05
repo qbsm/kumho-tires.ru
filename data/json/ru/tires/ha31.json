@@ -3,6 +3,8 @@
   "visible": true,
   "filter": {
     "season": ["all-season"],
+    "vehicle": ["passenger"],
+    "priority": ["comfort", "economy"],
     "diameters": [13, 14, 15, 16, 17, 18],
     "widths": [155, 165, 175, 185, 195, 205, 215, 225, 245, 255, 265, 275],
     "profiles": [50, 55, 60, 65, 70, 80]

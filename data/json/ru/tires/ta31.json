@@ -3,6 +3,8 @@
   "visible": true,
   "filter": {
     "season": ["all-season"],
+    "vehicle": ["suv"],
+    "priority": ["offroad"],
     "diameters": [16, 18],
     "widths": [205, 215],
     "profiles": [50, 65]

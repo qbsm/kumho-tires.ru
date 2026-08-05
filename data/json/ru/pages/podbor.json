@@ -1,0 +1,138 @@
+{
+  "name": "podbor",
+  "sections": [
+    {
+      "name": "header",
+      "data": {}
+    },
+    {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": "data/img/frames/raw/tires.webp"
+      }
+    },
+    {
+      "name": "tire-selector",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Подбор шин Kumho"
+        },
+        "steps": [
+          {
+            "key": "vehicle",
+            "type": "options",
+            "question": "Какой у вас автомобиль?",
+            "note": "От типа кузова зависит конструкция каркаса и индекс нагрузки.",
+            "options": [
+              {
+                "value": "passenger",
+                "label": "Легковой",
+                "note": "Седаны, хэтчбеки, универсалы",
+                "icon": "data/img/ui/icons/icon-vehicle-passenger.svg"
+              },
+              {
+                "value": "suv",
+                "label": "Кроссовер и внедорожник",
+                "note": "SUV и пикапы",
+                "icon": "data/img/ui/icons/icon-vehicle-suv.svg"
+              },
+              {
+                "value": "commercial",
+                "label": "Коммерческий",
+                "note": "Фургоны и микроавтобусы",
+                "icon": "data/img/ui/icons/icon-vehicle-commercial.svg"
+              }
+            ]
+          },
+          {
+            "key": "season",
+            "type": "options",
+            "question": "Для какого сезона нужны шины?",
+            "note": "Шипы работают на льду, нешипованные — в городе и на снегу.",
+            "options": [
+              {
+                "value": "summer",
+                "label": "Летние",
+                "note": "Для тёплого сезона",
+                "icon": "data/img/ui/icons/icon-season-summer.svg"
+              },
+              {
+                "value": "friction",
+                "label": "Зимние нешипованные",
+                "note": "Липучка для города",
+                "icon": "data/img/ui/icons/icon-season-winter.svg"
+              },
+              {
+                "value": "studded",
+                "label": "Зимние шипованные",
+                "note": "Лёд и укатанный снег",
+                "icon": "data/img/ui/icons/icon-season-studded.svg"
+              },
+              {
+                "value": "all-season",
+                "label": "Всесезонные",
+                "note": "Мягкая зима и межсезонье",
+                "icon": "data/img/ui/icons/icon-season-allseason.svg"
+              }
+            ]
+          },
+          {
+            "key": "priority",
+            "type": "options",
+            "question": "Что важнее в шине?",
+            "note": "Приоритет поднимает подходящие модели выше в подборке.",
+            "options": [
+              {
+                "value": "comfort",
+                "label": "Комфорт и тишина",
+                "note": "Плавность хода, низкий шум",
+                "icon": "data/img/ui/icons/icon-priority-comfort.svg"
+              },
+              {
+                "value": "handling",
+                "label": "Управляемость",
+                "note": "Динамика и точность руля",
+                "icon": "data/img/ui/icons/icon-priority-handling.svg"
+              },
+              {
+                "value": "economy",
+                "label": "Экономичность",
+                "note": "Ниже расход топлива",
+                "icon": "data/img/ui/icons/icon-priority-economy.svg"
+              },
+              {
+                "value": "offroad",
+                "label": "Проходимость и нагрузка",
+                "note": "Грунт, бездорожье, вес",
+                "icon": "data/img/ui/icons/icon-priority-offroad.svg"
+              }
+            ]
+          },
+          {
+            "key": "size",
+            "type": "size",
+            "question": "Знаете размер шин?",
+            "note": "Выберите параметры с боковины или пропустите — покажем все подходящие модели.",
+            "submit": "Показать модели"
+          }
+        ],
+        "result": {
+          "heading": "Подходящие модели Kumho",
+          "limit": 6,
+          "catalog_href": "/tires",
+          "catalog_title": "Перейти в каталог",
+          "restart_title": "Подобрать заново"
+        }
+      }
+    },
+    {
+      "name": "footer",
+      "visible": true,
+      "data": {}
+    }
+  ]
+}

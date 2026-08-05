@@ -30,6 +30,7 @@ import './sections/contacts.js';
 import './sections/headline.js';
 import './sections/us.js';
 import './sections/tires.js';
+import './sections/tire-selector.js';
 import './sections/dealers.js';
 
 // --- Components ---

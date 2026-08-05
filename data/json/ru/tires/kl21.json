@@ -3,6 +3,8 @@
   "visible": true,
   "filter": {
     "season": ["summer"],
+    "vehicle": ["suv"],
+    "priority": ["handling"],
     "diameters": [17, 18],
     "widths": [225, 265],
     "profiles": [60, 65]

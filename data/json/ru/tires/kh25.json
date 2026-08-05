@@ -3,6 +3,8 @@
   "visible": true,
   "filter": {
     "season": ["summer"],
+    "vehicle": ["passenger"],
+    "priority": ["economy", "comfort"],
     "diameters": [17],
     "widths": [205],
     "profiles": [55]

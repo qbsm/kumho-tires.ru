@@ -33,6 +33,13 @@
           ]
         },
         {
+          "title": "Подбор шин",
+          "href": "/podbor",
+          "active_for": [
+            "podbor"
+          ]
+        },
+        {
           "title": "Расширенная гарантия",
           "href": "/warranty"
         },

@@ -43,6 +43,7 @@ return [
         'policy',
         'cookies-policy',
         'tires-list',
+        'podbor',
         'buy',
         'news',
         'warranty',

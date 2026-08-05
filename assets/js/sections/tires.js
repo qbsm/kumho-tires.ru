@@ -131,6 +131,28 @@ onReady(() => {
     select.addEventListener('change', applyFilter);
   });
 
+  // Пресет из query-параметров: переход из конфигуратора подбора (/podbor)
+  const presetParams = new URLSearchParams(window.location.search);
+  const presetSeason = presetParams.get('season') || '';
+  if (presetSeason) {
+    const presetButton = seasonButtons.find((btn) => btn.dataset.season === presetSeason);
+    if (presetButton && !presetButton.disabled && !presetButton.classList.contains('disabled')) {
+      presetButton.classList.add('active');
+    }
+  }
+
+  [
+    [widthSelect, 'width'],
+    [profileSelect, 'profile'],
+    [diameterSelect, 'diameter'],
+  ].forEach(([select, param]) => {
+    const value = presetParams.get(param);
+    if (!select || !value) return;
+    if (Array.from(select.options).some((option) => option.value === value)) {
+      select.value = value;
+    }
+  });
+
   // Initial run to set available options
   applyFilter();
 });

@@ -3,6 +3,8 @@
   "visible": true,
   "filter": {
     "season": ["summer"],
+    "vehicle": ["passenger"],
+    "priority": ["handling"],
     "diameters": [14, 15, 16, 17, 18, 19, 20],
     "widths": [175, 185, 195, 205, 215, 225, 235, 245],
     "profiles": [45, 50, 55, 60, 65]

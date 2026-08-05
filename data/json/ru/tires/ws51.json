@@ -5,6 +5,8 @@
     "season": [
       "winter"
     ],
+    "vehicle": ["suv"],
+    "priority": ["comfort"],
     "diameters": [
       15,
       16,

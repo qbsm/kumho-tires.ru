@@ -6,6 +6,8 @@
       "winter",
       "studded"
     ],
+    "vehicle": ["passenger", "suv"],
+    "priority": [],
     "diameters": [
       13,
       14,

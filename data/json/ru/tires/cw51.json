@@ -5,6 +5,8 @@
     "season": [
       "winter"
     ],
+    "vehicle": ["commercial"],
+    "priority": ["offroad"],
     "diameters": [
       14,
       15,

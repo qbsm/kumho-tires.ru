@@ -3,6 +3,8 @@
   "visible": true,
   "filter": {
     "season": ["all-season"],
+    "vehicle": ["commercial"],
+    "priority": ["offroad", "economy"],
     "diameters": [15, 16, 17],
     "widths": [185, 195, 205, 215, 225, 235],
     "profiles": [55, 60, 65, 70, 75]

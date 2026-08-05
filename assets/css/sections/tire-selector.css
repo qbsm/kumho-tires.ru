@@ -1,0 +1,252 @@
+.tire-selector .section__item.block-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (--lg) {
+    gap: 4rem;
+  }
+}
+
+.tire-selector__app {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  border: 0.1rem solid var(--color-4);
+  border-radius: 1.25rem;
+  background: var(--color-1);
+
+  @media (--sm) {
+    padding: 2.5rem;
+    gap: 2.5rem;
+  }
+}
+
+.tire-selector__head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tire-selector__progress {
+  flex: 1 1 auto;
+  height: 0.4rem;
+  border-radius: 0.2rem;
+  background: var(--color-4);
+  overflow: hidden;
+}
+
+.tire-selector__progress-bar {
+  width: 0;
+  height: 100%;
+  border-radius: 0.2rem;
+  background: var(--color-3);
+  transition: width var(--transition-1);
+}
+
+.tire-selector__counter {
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+  color: var(--color-5);
+  white-space: nowrap;
+}
+
+.tire-selector__step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (--sm) {
+    gap: 2rem;
+  }
+}
+
+.tire-selector__step-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tire-selector__question {
+  font-size: 2rem;
+  line-height: 1.2;
+
+  @media (--sm) {
+    font-size: 2.6rem;
+  }
+}
+
+.tire-selector__note,
+.tire-selector__summary {
+  font-size: 1.5rem;
+  color: var(--color-5);
+}
+
+.tire-selector__options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (--xm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (--md) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+.tire-selector__option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1.6rem;
+  border: 0.1rem solid var(--color-4);
+  border-radius: 1rem;
+  background: var(--color-1);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.tire-selector__option:hover {
+  border-color: var(--color-2);
+}
+
+.tire-selector__option.active {
+  border-color: var(--color-3);
+  box-shadow: inset 0 0 0 0.1rem var(--color-3);
+}
+
+.tire-selector__option-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--color-3);
+  mask: var(--selector-icon) center / contain no-repeat;
+}
+
+.tire-selector__option-label {
+  font-size: 1.7rem;
+  line-height: 1.25;
+}
+
+.tire-selector__option-note {
+  font-size: 1.4rem;
+  line-height: 1.35;
+  color: var(--color-5);
+}
+
+.tire-selector__sizes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (--xm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tire-selector__size-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  border: 0.1rem solid var(--color-4);
+  border-radius: 1rem;
+}
+
+.tire-selector__size-icon {
+  flex: 0 0 auto;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: var(--color-5);
+  mask: var(--selector-icon) center / contain no-repeat;
+}
+
+.tire-selector__size-label {
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+  color: var(--color-5);
+}
+
+.tire-selector__size-select {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 4rem;
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: var(--color-2);
+  cursor: pointer;
+}
+
+.tire-selector__step-actions,
+.tire-selector__result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tire-selector__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (--lg) {
+    gap: 2rem;
+  }
+}
+
+.tire-selector__card-wrap {
+  width: 100%;
+  min-width: 0;
+
+  @media (--xm) {
+    flex: 0 0 calc((100% - 1rem) / 2);
+  }
+
+  @media (--md) {
+    flex: 0 0 calc((100% - 1rem * 2) / 3);
+  }
+
+  @media (--lg) {
+    flex: 0 0 calc((100% - 2rem * 2) / 3);
+  }
+}
+
+.tire-selector__empty-text {
+  color: var(--color-5);
+}
+
+.tire-selector__foot {
+  display: flex;
+}
+
+.tire-selector__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  color: var(--color-5);
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.tire-selector__back:hover {
+  color: var(--color-2);
+}
+
+.tire-selector__back-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: currentcolor;
+  mask: url("/data/img/ui/icons/icon-arrow-right-sm-color-2.svg") center / contain no-repeat;
+  transform: rotate(180deg);
+}
