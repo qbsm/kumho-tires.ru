@@ -121,12 +121,12 @@ const initSelector = (root) => {
   };
 
   const buildSummary = () => {
-    const parts = ['vehicle', 'season', 'priority'].map((key) => (labels[key] || []).join(', ')).filter(Boolean);
+    const parts = ['vehicle', 'season', 'priority'].flatMap((key) => labels[key] || []);
     const section = [size.width, size.profile].filter(Boolean).join('/');
     const diameter = size.diameter ? `R${size.diameter}` : '';
     const sizeLabel = [section, diameter].filter(Boolean).join(' ');
     if (sizeLabel) parts.push(sizeLabel);
-    return parts.join(' · ');
+    return parts.join(', ');
   };
 
   // Каталог использует токен allseason, данные моделей — all-season
