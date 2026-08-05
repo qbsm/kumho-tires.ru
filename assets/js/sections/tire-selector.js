@@ -4,11 +4,6 @@ const SIZE_KEYS = ['width', 'profile', 'diameter'];
 
 const hasToken = (source, token) => (source || '').includes(`|${token}|`);
 
-const matchesSeason = (source, value) => {
-  if (value === 'friction') return hasToken(source, 'winter') && !hasToken(source, 'studded');
-  return hasToken(source, value);
-};
-
 const parseSizes = (raw) =>
   (raw || '')
     .split('|')
@@ -59,7 +54,7 @@ const initSelector = (root) => {
 
   const matchesAnswers = (card, options = {}) => {
     if (!matchesGroup(answers.vehicle, (value) => hasToken(card.vehicle, value))) return false;
-    if (!matchesGroup(answers.season, (value) => matchesSeason(card.season, value))) return false;
+    if (!matchesGroup(answers.season, (value) => hasToken(card.season, value))) return false;
     if (!options.ignoreSize && !matchesSize(card.sizes, size)) return false;
     return true;
   };
@@ -134,11 +129,8 @@ const initSelector = (root) => {
     return parts.join(' · ');
   };
 
-  const catalogSeason = (value) => {
-    if (value === 'friction') return 'winter';
-    if (value === 'all-season') return 'allseason';
-    return value;
-  };
+  // Каталог использует токен allseason, данные моделей — all-season
+  const catalogSeason = (value) => (value === 'all-season' ? 'allseason' : value);
 
   const updateCatalogLink = () => {
     if (!catalogEl || !catalogHref) return;

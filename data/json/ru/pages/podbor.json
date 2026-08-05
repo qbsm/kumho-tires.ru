@@ -55,31 +55,31 @@
             "type": "options",
             "multiple": true,
             "question": "Для какого сезона нужны шины?",
-            "note": "Шипы работают на льду, нешипованные — в городе и на снегу.",
+            "note": "Порядок и названия — как в фильтре каталога. Можно выбрать несколько.",
             "options": [
               {
                 "value": "summer",
                 "label": "Летние",
-                "note": "Для тёплого сезона",
+                "note": "Для тёплого сезона, от +7 °C",
                 "icon": "data/img/ui/icons/icon-season-summer.svg"
-              },
-              {
-                "value": "friction",
-                "label": "Зимние нешипованные",
-                "note": "Липучка для города",
-                "icon": "data/img/ui/icons/icon-season-winter.svg"
-              },
-              {
-                "value": "studded",
-                "label": "Зимние шипованные",
-                "note": "Лёд и укатанный снег",
-                "icon": "data/img/ui/icons/icon-season-studded.svg"
               },
               {
                 "value": "all-season",
                 "label": "Всесезонные",
                 "note": "Мягкая зима и межсезонье",
                 "icon": "data/img/ui/icons/icon-season-allseason.svg"
+              },
+              {
+                "value": "winter",
+                "label": "Зимние",
+                "note": "Снег, холод и реагенты",
+                "icon": "data/img/ui/icons/icon-season-winter.svg"
+              },
+              {
+                "value": "studded",
+                "label": "Шипованные",
+                "note": "Лёд и укатанный снег",
+                "icon": "data/img/ui/icons/icon-season-studded.svg"
               }
             ]
           },
@@ -130,6 +130,71 @@
           "catalog_href": "/tires",
           "catalog_title": "Перейти в каталог",
           "restart_title": "Подобрать заново"
+        },
+        "howto": true,
+        "howto_name": "Как подобрать шины Kumho",
+        "howto_description": "Подбор шин Kumho за четыре шага: тип автомобиля, сезон, приоритет и типоразмер. На каждом шаге можно выбрать несколько вариантов; результат — подходящие модели с переходом в каталог."
+      }
+    },
+    {
+      "name": "content-container",
+      "visible": true,
+      "data": {
+        "container": "container-sm",
+        "content": {
+          "class": "content-podbor",
+          "items": [
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Как подбирать шины"
+              },
+              "desc": "<p>Подбор опирается на четыре параметра: <b>тип автомобиля</b>, <b>сезон</b>, <b>приоритет в поведении шины</b> и <b>типоразмер</b>. Первые два отсекают неподходящие модели, приоритет поднимает выше те, что настроены под вашу задачу, размер сужает выдачу до конкретных позиций. Размер можно пропустить — тогда конфигуратор покажет все подходящие модели.</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Где посмотреть размер шины"
+              },
+              "desc": "<p>Размер написан на боковине и выглядит так: <b>205/55 R16 91V</b>. Первое число — <b>ширина протектора</b> в миллиметрах, второе — <b>высота профиля</b> в процентах от ширины, число после R — <b>посадочный диаметр</b> в дюймах, он должен совпадать с диаметром диска. Дальше идут <b>индекс нагрузки</b> (91 — 615 кг на колесо) и <b>индекс скорости</b> (V — до 240 км/ч): брать ниже заводских значений нельзя. Заводские размеры для вашей машины указаны в руководстве по эксплуатации и на табличке в проёме водительской двери или на лючке бензобака.</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Какой сезон выбрать"
+              },
+              "desc": "<p><b>Летние</b> шины рассчитаны на температуру примерно от +7 °C: их состав твердеет на холоде и теряет сцепление. <b>Зимние шипованные</b> держат лёд и укатанный снег — им место там, где зима настоящая и дороги чистят не всегда. <b>Зимние нешипованные</b> (липучка) тише и лучше для города с реагентами и частыми переходами через ноль. <b>Всесезонные</b> — компромисс для мягкой зимы и межсезонья; в сильный мороз и на льду они уступают зимним.</p><p>Менять комплект стоит по устойчивой погоде, а не по календарю: ориентир — среднесуточные +7 °C.</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Легковые, внедорожные и коммерческие"
+              },
+              "desc": "<p>Для <b>кроссоверов и внедорожников</b> нужен каркас, рассчитанный на большую массу и центр тяжести выше — это линейки <a href='/tires/at52' class='link inline weight-400'>Road Venture</a> и CRUGEN. Для <b>фургонов и микроавтобусов</b> выпускаются усиленные типоразмеры с индексом <b>C</b> и повышенным индексом нагрузки — семейство PorTran. Ставить на коммерческий транспорт легковую шину нельзя: она не рассчитана на постоянную загрузку.</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Что даёт приоритет"
+              },
+              "desc": "<p><b>Комфорт и тишина</b> — плавность хода и низкий уровень шума, для города и трассы. <b>Управляемость</b> — точность реакций на руль и сцепление в поворотах, для динамичной езды. <b>Экономичность</b> — низкое сопротивление качению и меньший расход топлива. <b>Проходимость и нагрузка</b> — грунт, лёгкое бездорожье и работа под весом. Приоритет не отсекает модели, а поднимает подходящие выше в подборке, поэтому можно отметить несколько.</p>"
+            }
+          ]
         }
       }
     },

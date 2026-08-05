@@ -134,31 +134,31 @@
             "type": "options",
             "multiple": true,
             "question": "Для какого сезона нужны шины?",
-            "note": "Можно выбрать несколько вариантов.",
+            "note": "Порядок и названия — как в фильтре каталога. Можно выбрать несколько.",
             "options": [
               {
                 "value": "summer",
                 "label": "Летние",
-                "note": "Для тёплого сезона",
+                "note": "Для тёплого сезона, от +7 °C",
                 "icon": "data/img/ui/icons/icon-season-summer.svg"
-              },
-              {
-                "value": "friction",
-                "label": "Зимние нешипованные",
-                "note": "Липучка для города",
-                "icon": "data/img/ui/icons/icon-season-winter.svg"
-              },
-              {
-                "value": "studded",
-                "label": "Зимние шипованные",
-                "note": "Лёд и укатанный снег",
-                "icon": "data/img/ui/icons/icon-season-studded.svg"
               },
               {
                 "value": "all-season",
                 "label": "Всесезонные",
                 "note": "Мягкая зима и межсезонье",
                 "icon": "data/img/ui/icons/icon-season-allseason.svg"
+              },
+              {
+                "value": "winter",
+                "label": "Зимние",
+                "note": "Снег, холод и реагенты",
+                "icon": "data/img/ui/icons/icon-season-winter.svg"
+              },
+              {
+                "value": "studded",
+                "label": "Шипованные",
+                "note": "Лёд и укатанный снег",
+                "icon": "data/img/ui/icons/icon-season-studded.svg"
               }
             ]
           },

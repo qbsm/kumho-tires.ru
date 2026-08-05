@@ -27,6 +27,36 @@
       {% set resultLimit = data.result.limit | default(6) %}
       {% set catalogHref = data.result.catalog_href | default('/tires') %}
 
+      {# HowTo для поисковиков и LLM собирается из тех же шагов, что крутят интерфейс,
+         поэтому разметка не разъезжается с UI. Включается флагом — HowTo на сайте нужен один. #}
+      {% if data.howto | default(false) %}
+        {% set _howToSteps = [] %}
+        {% for step in steps %}
+          {% set _optionTexts = [] %}
+          {% for option in step.options | default([]) %}
+            {% set _optionTexts = _optionTexts | merge([option.label ~ (option.note is defined and option.note ? ' — ' ~ option.note : '')]) %}
+          {% endfor %}
+          {% set _howToSteps = _howToSteps | merge([{
+            '@type': 'HowToStep',
+            'position': loop.index,
+            'name': step.question,
+            'text': _optionTexts is not empty ? _optionTexts | join('; ') : (step.note | default(''))
+          }]) %}
+        {% endfor %}
+        {% if _howToSteps | length > 0 %}
+          <script type="application/ld+json">
+          {{ {
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            'name': data.howto_name | default('Как подобрать шины Kumho'),
+            'description': data.howto_description | default('Подбор шин Kumho по типу автомобиля, сезону, приоритету и типоразмеру.'),
+            'totalTime': 'PT2M',
+            'step': _howToSteps
+          } | json_encode | raw }}
+          </script>
+        {% endif %}
+      {% endif %}
+
       <div
         class="section__subitem tire-selector__app js-tire-selector"
         data-limit="{{ resultLimit }}"
