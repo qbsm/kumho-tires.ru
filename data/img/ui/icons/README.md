@@ -2,7 +2,7 @@
 
 `icon-sel-*.svg` — иконки шагов конфигуратора подбора (`/podbor` и секция на главной).
 Взяты из [Phosphor Icons](https://github.com/phosphor-icons/core), начертание Regular,
-лицензия MIT: `car`, `jeep`, `van`, `armchair`, `steering-wheel`, `gas-pump`, `mountains`.
+лицензия MIT: `car`, `jeep`, `van`, `seat`, `steering-wheel`, `gas-pump`, `mountains`.
 
 При переносе снят комментарий-заголовок и `currentColor` заменён на `#000` — иконки
 подключаются через CSS-маску, где `currentColor` не имеет контекста, а цвет задаётся

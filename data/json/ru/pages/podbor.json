@@ -21,6 +21,7 @@
           "class": "h1 heading font-2 weight-700 heading-flex uppercase",
           "title": "Подбор шин Kumho"
         },
+        "question_tag": "h2",
         "steps": [
           {
             "key": "vehicle",

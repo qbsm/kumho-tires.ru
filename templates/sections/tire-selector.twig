@@ -20,6 +20,9 @@
       {% endif %}
 
       {% set selectorId = 'tireSelector' ~ random(1000000) %}
+      {# Вопросы шагов — настоящие заголовки: это те формулировки, которые пользователи и ищут.
+         Уровень задаётся данными, чтобы не спорить с заголовком секции на разных страницах. #}
+      {% set questionTag = data.question_tag | default('span') %}
       {% set steps = data.steps | default([]) %}
       {% set resultLimit = data.result.limit | default(6) %}
       {% set catalogHref = data.result.catalog_href | default('/tires') %}
@@ -39,7 +42,7 @@
           >
             <div class="tire-selector__step-head">
               <span class="tire-selector__counter uppercase">Шаг {{ loop.index }} из {{ steps | length }}</span>
-              <span class="tire-selector__question h3 font-2 weight-600">{{ step.question }}</span>
+              <{{ questionTag }} class="tire-selector__question h3 heading font-2 weight-600">{{ step.question }}</{{ questionTag }}>
               {% if step.note is defined and step.note %}
                 <span class="tire-selector__note">{{ step.note }}</span>
               {% endif %}
@@ -113,7 +116,7 @@
         <div class="tire-selector__step tire-selector__result hidden js-selector-result">
           <div class="tire-selector__step-head">
             <span class="tire-selector__counter uppercase">Подбор готов</span>
-            <span class="tire-selector__question h3 font-2 weight-600">{{ data.result.heading | default('Подходящие модели') }}</span>
+            <{{ questionTag }} class="tire-selector__question h3 heading font-2 weight-600">{{ data.result.heading | default('Подходящие модели') }}</{{ questionTag }}>
             <span class="tire-selector__note js-selector-summary"></span>
           </div>
 

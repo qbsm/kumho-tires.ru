@@ -100,6 +100,7 @@
           "class": "h2 heading font-2 weight-700 heading-flex uppercase",
           "title": "Конфигуратор подбора шин"
         },
+        "question_tag": "h3",
         "steps": [
           {
             "key": "vehicle",
