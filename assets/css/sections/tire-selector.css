@@ -127,9 +127,11 @@
   color: var(--color-5);
 }
 
+/* Иконка прижата к правому краю: в card-tire те же 60% занимает фото целиком,
+   а маленькая иконка по центру блока висела бы в отрыве от края — заметно на телефоне */
 .tire-selector__option-icon-wrap {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-self: flex-end;
   width: 60%;
   margin-top: auto;
