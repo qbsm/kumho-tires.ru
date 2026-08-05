@@ -27,7 +27,7 @@
     "test:php": "vendor/bin/phpunit --no-coverage",
     "test:js": "vitest run",
     "test:smoke": "node tests/smoke/smoke.js",
-    "check": "npm run lint && npm run lint:css && npm run lint:php && npm run format:check && npm run format:php:check && npm run test",
+    "check": "npm run lint && npm run lint:css && npm run lint:php && npm run format:check && npm run format:php:check && npm run check:content && npm run test",
     "check:env": "node tools/build/check-env-build.js",
     "channels:check": "php tools/build/check-notification-channels.php",
     "build:dev": "npm run build:critical && npm run build:css && npm run build:js && npm run clean:assets && npm run setup:public-links && npm run channels:check",
@@ -46,7 +46,8 @@
     "distill:scan": "node tools/distill/distill.mjs scan",
     "distill:inventory": "node tools/distill/build-inventory.mjs > docs/inventory/core.md",
     "orchestrate": "node tools/orchestrator/orchestrate.mjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check:content": "node tools/ops/check-content.js"
   },
   "lint-staged": {
     "*.{js,mjs}": "eslint --fix",

@@ -153,6 +153,10 @@
     'name': global.name|default('Company'),
     'url': _base_secure_domain_for_seo
   } %}
+  {# Варианты написания бренда: в поиске встречаются и «Кумхо», и «Камхо» #}
+  {% if global['brand-alternate-names'] is defined and global['brand-alternate-names']|length > 0 %}
+    {% set _org = _org|merge({'alternateName': global['brand-alternate-names']}) %}
+  {% endif %}
   {% if global.logo.horizontal.black.src is defined %}
     {% set _org = _org|merge({'logo': global.logo.horizontal.black.src}) %}
   {% endif %}

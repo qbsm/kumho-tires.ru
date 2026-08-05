@@ -61,7 +61,7 @@
                 '@type': 'Product',
                 'name': t.item.name | default(t.slug),
                 'url': url('/tires/' ~ t.slug),
-                'brand': {'@type': 'Brand', 'name': 'Kumho', 'alternateName': 'Кумхо'}
+                'brand': {'@type': 'Brand', 'name': 'Kumho', 'alternateName': ['Кумхо', 'Камхо']}
               }
             }]) %}
           {% endif %}
