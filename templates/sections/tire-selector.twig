@@ -1,4 +1,4 @@
-<section class="tire-selector section">
+<section class="tire-selector section{% if data.emphasis is defined and data.emphasis %} tire-selector--{{ data.emphasis }}{% endif %}">
   <div class="container">
     <div class="section__item block-wrap">
       {% if data.heading is defined %}

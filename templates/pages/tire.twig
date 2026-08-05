@@ -69,9 +69,6 @@
                 {% if tire.desc.short is defined and tire.desc.short %}
                   <p class="tire-detail__desc">{{ tire.desc.short }}</p>
                 {% endif %}
-                <div class="tire-detail__actions">
-                  <a href="{{ url('/buy') }}" class="button button-sm button-3 button-animated animation-shift uppercase link">Где купить</a>
-                </div>
               </div>
 
             </div>
@@ -85,6 +82,9 @@
               </div>
               <div class="section__subitem">
                 <div class="tire-detail__text longread">{{ tire.desc.full|raw }}</div>
+              </div>
+              <div class="section__subitem tire-detail__actions">
+                <a href="{{ url('/buy') }}" class="button button-sm button-3 button-animated animation-shift uppercase link">Где купить</a>
               </div>
             </div>
             {% endif %}

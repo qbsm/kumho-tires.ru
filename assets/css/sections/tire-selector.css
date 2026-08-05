@@ -1,3 +1,13 @@
+/* Выделение блока на главной: тот же светлый бэнд, что у секций partners и trust */
+.tire-selector--plate {
+  padding: 5rem 0;
+  background: #f8f9fb;
+
+  @media (--lg) {
+    padding: 7rem 0;
+  }
+}
+
 .tire-selector .section__item.block-wrap {
   display: flex;
   flex-direction: column;
@@ -240,8 +250,9 @@
   gap: 1rem 2rem;
 }
 
+/* Неактивная кнопка — контур, а не серая заливка: сплошное серое пятно спорит по весу с карточками */
 .tire-selector__button.disabled {
-  background: var(--color-4);
+  background: transparent;
   border-color: var(--color-4);
   color: var(--color-5);
   pointer-events: none;
