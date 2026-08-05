@@ -5,7 +5,6 @@ const SIZE_KEYS = ['width', 'profile', 'diameter'];
 const hasToken = (source, token) => (source || '').includes(`|${token}|`);
 
 const matchesSeason = (source, value) => {
-  if (!value) return true;
   if (value === 'friction') return hasToken(source, 'winter') && !hasToken(source, 'studded');
   return hasToken(source, value);
 };
@@ -26,10 +25,7 @@ const matchesSize = (sizes, selected) => {
   return sizes.some((size) => SIZE_KEYS.every((key) => !selected[key] || size[key] === selected[key]));
 };
 
-onReady(() => {
-  const root = document.querySelector('.js-tire-selector');
-  if (!root) return;
-
+const initSelector = (root) => {
   const stepEls = Array.from(root.querySelectorAll('.js-selector-step'));
   const resultEl = root.querySelector('.js-selector-result');
   const cardsEl = root.querySelector('.js-selector-cards');
@@ -56,17 +52,21 @@ onReady(() => {
     sizes: parseSizes(el.dataset.sizes),
   }));
 
-  const answers = {};
+  const answers = { vehicle: [], season: [], priority: [] };
   const labels = {};
   const size = { width: '', profile: '', diameter: '' };
   let current = 0;
 
+  const matchesGroup = (values, test) => values.length === 0 || values.some(test);
+
   const matchesAnswers = (card, options = {}) => {
-    if (answers.vehicle && !hasToken(card.vehicle, answers.vehicle)) return false;
-    if (answers.season && !matchesSeason(card.season, answers.season)) return false;
+    if (!matchesGroup(answers.vehicle, (value) => hasToken(card.vehicle, value))) return false;
+    if (!matchesGroup(answers.season, (value) => matchesSeason(card.season, value))) return false;
     if (!options.ignoreSize && !matchesSize(card.sizes, size)) return false;
     return true;
   };
+
+  const priorityScore = (card) => answers.priority.filter((value) => hasToken(card.priority, value)).length;
 
   const updateProgress = () => {
     const total = stepEls.length;
@@ -79,19 +79,24 @@ onReady(() => {
     if (backEl) backEl.classList.toggle('hidden', current === 0);
   };
 
+  const updateNextState = (step) => {
+    const nextButton = step.querySelector('.js-selector-next');
+    if (!nextButton) return;
+    const chosen = step.querySelectorAll('.js-selector-option.active').length;
+    nextButton.classList.toggle('disabled', chosen === 0);
+    nextButton.disabled = chosen === 0;
+  };
+
   const showStep = (index) => {
     current = index;
     stepEls.forEach((el, i) => el.classList.toggle('hidden', i !== index));
     resultEl.classList.toggle('hidden', index < stepEls.length);
     updateProgress();
 
-    const target = index < stepEls.length ? stepEls[index] : resultEl;
     const header = document.querySelector('.header');
     const offset = header ? header.offsetHeight : 0;
     const top = root.getBoundingClientRect().top + window.pageYOffset - offset - 16;
     window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
-    const focusable = target.querySelector('.js-selector-option, .js-selector-size');
-    if (focusable) focusable.focus({ preventScroll: true });
   };
 
   const fillSelect = (select, values, selected) => {
@@ -135,9 +140,7 @@ onReady(() => {
   };
 
   const buildSummary = () => {
-    const parts = Object.keys(labels)
-      .map((key) => labels[key])
-      .filter(Boolean);
+    const parts = ['vehicle', 'season', 'priority'].map((key) => (labels[key] || []).join(', ')).filter(Boolean);
     const section = [size.width, size.profile].filter(Boolean).join('/');
     const diameter = size.diameter ? `R${size.diameter}` : '';
     const sizeLabel = [section, diameter].filter(Boolean).join(' ');
@@ -154,7 +157,8 @@ onReady(() => {
   const updateCatalogLink = () => {
     if (!catalogEl || !catalogHref) return;
     const params = new URLSearchParams();
-    if (answers.season) params.set('season', catalogSeason(answers.season));
+    // Фильтр каталога принимает один сезон — передаём только при однозначном выборе
+    if (answers.season.length === 1) params.set('season', catalogSeason(answers.season[0]));
     SIZE_KEYS.forEach((key) => {
       if (size[key]) params.set(key, size[key]);
     });
@@ -165,10 +169,7 @@ onReady(() => {
   const renderResult = () => {
     const matched = cards
       .filter((card) => matchesAnswers(card))
-      .map((card) => ({
-        card,
-        score: answers.priority && hasToken(card.priority, answers.priority) ? 1 : 0,
-      }))
+      .map((card) => ({ card, score: priorityScore(card) }))
       .sort((a, b) => b.score - a.score)
       .slice(0, limit);
 
@@ -195,13 +196,38 @@ onReady(() => {
       const step = button.closest('.js-selector-step');
       if (!step) return;
       const key = step.dataset.key;
-      step.querySelectorAll('.js-selector-option').forEach((item) => item.classList.remove('active'));
-      button.classList.add('active');
-      answers[key] = button.dataset.value || '';
-      labels[key] = button.dataset.label || '';
+      const multiple = step.dataset.multiple === '1';
+
+      if (multiple) {
+        button.classList.toggle('active');
+      } else {
+        step.querySelectorAll('.js-selector-option').forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+      }
+
+      const chosen = Array.from(step.querySelectorAll('.js-selector-option.active'));
+      chosen.forEach((item) => item.setAttribute('aria-pressed', 'true'));
+      step.querySelectorAll('.js-selector-option:not(.active)').forEach((item) => {
+        item.setAttribute('aria-pressed', 'false');
+      });
+
+      answers[key] = chosen.map((item) => item.dataset.value || '');
+      labels[key] = chosen.map((item) => item.dataset.label || '');
       SIZE_KEYS.forEach((sizeKey) => {
         size[sizeKey] = '';
       });
+
+      if (multiple) {
+        updateNextState(step);
+      } else {
+        goNext();
+      }
+    });
+  });
+
+  root.querySelectorAll('.js-selector-next').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (button.classList.contains('disabled')) return;
       goNext();
     });
   });
@@ -229,15 +255,26 @@ onReady(() => {
 
   if (restartEl) {
     restartEl.addEventListener('click', () => {
-      Object.keys(answers).forEach((key) => delete answers[key]);
+      Object.keys(answers).forEach((key) => {
+        answers[key] = [];
+      });
       Object.keys(labels).forEach((key) => delete labels[key]);
       SIZE_KEYS.forEach((key) => {
         size[key] = '';
       });
-      root.querySelectorAll('.js-selector-option').forEach((item) => item.classList.remove('active'));
+      root.querySelectorAll('.js-selector-option').forEach((item) => {
+        item.classList.remove('active');
+        item.setAttribute('aria-pressed', 'false');
+      });
+      stepEls.forEach(updateNextState);
       showStep(0);
     });
   }
 
+  stepEls.forEach(updateNextState);
   updateProgress();
+};
+
+onReady(() => {
+  document.querySelectorAll('.js-tire-selector').forEach(initSelector);
 });

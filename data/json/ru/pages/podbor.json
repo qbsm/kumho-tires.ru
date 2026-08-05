@@ -25,6 +25,7 @@
           {
             "key": "vehicle",
             "type": "options",
+            "multiple": true,
             "question": "Какой у вас автомобиль?",
             "note": "От типа кузова зависит конструкция каркаса и индекс нагрузки.",
             "options": [
@@ -32,25 +33,26 @@
                 "value": "passenger",
                 "label": "Легковой",
                 "note": "Седаны, хэтчбеки, универсалы",
-                "icon": "data/img/ui/icons/icon-vehicle-passenger.svg"
+                "icon": "data/img/ui/icons/icon-sel-passenger.svg"
               },
               {
                 "value": "suv",
                 "label": "Кроссовер и внедорожник",
                 "note": "SUV и пикапы",
-                "icon": "data/img/ui/icons/icon-vehicle-suv.svg"
+                "icon": "data/img/ui/icons/icon-sel-suv.svg"
               },
               {
                 "value": "commercial",
                 "label": "Коммерческий",
                 "note": "Фургоны и микроавтобусы",
-                "icon": "data/img/ui/icons/icon-vehicle-commercial.svg"
+                "icon": "data/img/ui/icons/icon-sel-commercial.svg"
               }
             ]
           },
           {
             "key": "season",
             "type": "options",
+            "multiple": true,
             "question": "Для какого сезона нужны шины?",
             "note": "Шипы работают на льду, нешипованные — в городе и на снегу.",
             "options": [
@@ -58,31 +60,32 @@
                 "value": "summer",
                 "label": "Летние",
                 "note": "Для тёплого сезона",
-                "icon": "data/img/ui/icons/icon-season-summer.svg"
+                "icon": "data/img/ui/icons/icon-sel-summer.svg"
               },
               {
                 "value": "friction",
                 "label": "Зимние нешипованные",
                 "note": "Липучка для города",
-                "icon": "data/img/ui/icons/icon-season-winter.svg"
+                "icon": "data/img/ui/icons/icon-sel-friction.svg"
               },
               {
                 "value": "studded",
                 "label": "Зимние шипованные",
                 "note": "Лёд и укатанный снег",
-                "icon": "data/img/ui/icons/icon-season-studded.svg"
+                "icon": "data/img/ui/icons/icon-sel-studded.svg"
               },
               {
                 "value": "all-season",
                 "label": "Всесезонные",
                 "note": "Мягкая зима и межсезонье",
-                "icon": "data/img/ui/icons/icon-season-allseason.svg"
+                "icon": "data/img/ui/icons/icon-sel-allseason.svg"
               }
             ]
           },
           {
             "key": "priority",
             "type": "options",
+            "multiple": true,
             "question": "Что важнее в шине?",
             "note": "Приоритет поднимает подходящие модели выше в подборке.",
             "options": [
@@ -90,25 +93,25 @@
                 "value": "comfort",
                 "label": "Комфорт и тишина",
                 "note": "Плавность хода, низкий шум",
-                "icon": "data/img/ui/icons/icon-priority-comfort.svg"
+                "icon": "data/img/ui/icons/icon-sel-comfort.svg"
               },
               {
                 "value": "handling",
                 "label": "Управляемость",
                 "note": "Динамика и точность руля",
-                "icon": "data/img/ui/icons/icon-priority-handling.svg"
+                "icon": "data/img/ui/icons/icon-sel-handling.svg"
               },
               {
                 "value": "economy",
                 "label": "Экономичность",
                 "note": "Ниже расход топлива",
-                "icon": "data/img/ui/icons/icon-priority-economy.svg"
+                "icon": "data/img/ui/icons/icon-sel-economy.svg"
               },
               {
                 "value": "offroad",
                 "label": "Проходимость и нагрузка",
                 "note": "Грунт, бездорожье, вес",
-                "icon": "data/img/ui/icons/icon-priority-offroad.svg"
+                "icon": "data/img/ui/icons/icon-sel-offroad.svg"
               }
             ]
           },
