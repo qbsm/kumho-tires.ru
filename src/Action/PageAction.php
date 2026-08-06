@@ -236,6 +236,18 @@ final class PageAction
                         $pageData['sections'][$idx]['data']['heading']['title'] = $heading;
                     }
                 }
+
+                // Свой текст сезонной страницы вместо общего текста каталога: иначе четыре
+                // посадочные страницы отличались бы только заголовком.
+                $contentFile = $jsonBaseDir . '/' . $langCode . '/filters/tires-' . $extrasFilter['season'] . '.json';
+                $seasonContent = $this->dataLoader->loadJson($contentFile, $baseUrl);
+                if (is_array($seasonContent) && isset($seasonContent['content']) && is_array($seasonContent['content'])) {
+                    foreach (($pageData['sections'] ?? []) as $idx => $section) {
+                        if (($section['name'] ?? '') === 'content-container') {
+                            $pageData['sections'][$idx]['data']['content'] = $seasonContent['content'];
+                        }
+                    }
+                }
             }
         }
 

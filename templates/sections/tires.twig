@@ -1,4 +1,4 @@
-<section class="tires section">
+<section class="tires section"{% if page_id is defined and page_id == 'tires-list' %} data-catalog-path="/tires"{% endif %}>
   <div class="container">
     <div class="section__item block-wrap">
       {% if data.heading is defined %}
@@ -97,9 +97,14 @@
         {% for value in allWidths|sort %}
           {% set widthOptions = widthOptions|merge([{'value': value, 'label': value}]) %}
         {% endfor %}
+        {# Адрес сезонной выборки строим только на самом каталоге: на главной секция — витрина #}
+        {% set seasonHrefBase = (page_id is defined and page_id == 'tires-list') ? '/tires' : '' %}
         {% set seasonButtons = [] %}
         {% for s in data.filter.seasons | default([]) %}
           {% set btn = {'label': s.label, 'class': 'js-select-season', 'data_attr_name': 'data-season', 'data_attr': s.value} %}
+          {% if seasonHrefBase %}
+            {% set btn = btn | merge({'href': seasonHrefBase ~ '/' ~ s.value}) %}
+          {% endif %}
           {% if s.disabled is defined and s.disabled %}
             {% set btn = btn | merge({'disabled': true}) %}
           {% endif %}

@@ -8,18 +8,32 @@
         <div class="{{ groupClass }}">
           {% for button in group.buttons | default([]) %}
             {% set buttonClass = ('filter__selector ' ~ (button.class | default('')) ~ (button.disabled ? ' disabled' : '')) | trim %}
-            <button
-              type="button"
-              class="{{ buttonClass }}"
-              {% if button.data_attr is defined and button.data_attr_name is defined %}
-                {{ button.data_attr_name }}="{{ button.data_attr }}"
-              {% endif %}
-              {% if button.disabled %}disabled{% endif %}
-            >
+            {% set buttonInner %}
               {%- if button.icon is defined and button.icon -%}
                 <span class="filter__icon" style="--filter-icon: url('{{ url(button.icon) }}')" aria-hidden="true"></span>
               {%- endif -%}
-              {{ button.label | default('') }}</button>
+              {{- button.label | default('') -}}
+            {% endset %}
+            {# С href кнопка рендерится ссылкой: у отфильтрованного списка есть свой адрес,
+               и робот доходит до него по обычной ссылке, а не только через sitemap. #}
+            {% if button.href is defined and button.href and not button.disabled %}
+              <a
+                href="{{ url(button.href) }}"
+                class="{{ buttonClass }} link"
+                {% if button.data_attr is defined and button.data_attr_name is defined %}
+                  {{ button.data_attr_name }}="{{ button.data_attr }}"
+                {% endif %}
+              >{{ buttonInner }}</a>
+            {% else %}
+              <button
+                type="button"
+                class="{{ buttonClass }}"
+                {% if button.data_attr is defined and button.data_attr_name is defined %}
+                  {{ button.data_attr_name }}="{{ button.data_attr }}"
+                {% endif %}
+                {% if button.disabled %}disabled{% endif %}
+              >{{ buttonInner }}</button>
+            {% endif %}
           {% endfor %}
         </div>
       {% elseif group.type == 'select' %}

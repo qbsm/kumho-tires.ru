@@ -112,9 +112,23 @@ onReady(() => {
     updateSelectOptions(widthSelect, availWidths, width);
   };
 
+  // Сезонная кнопка — ссылка на /tires/<сезон>: роботу нужен адрес, человеку — мгновенный
+  // фильтр без перезагрузки. Клик отрабатываем на месте и синхронизируем адрес.
+  const syncSeasonUrl = (season) => {
+    const base = (root.dataset.catalogPath || window.location.pathname).replace(
+      /\/(summer|allseason|winter|studded)$/,
+      ''
+    );
+    const next = season ? `${base.replace(/\/$/, '')}/${season}` : base.replace(/\/$/, '') || '/';
+    if (window.history && typeof window.history.pushState === 'function' && next !== window.location.pathname) {
+      window.history.pushState({}, '', next + window.location.search);
+    }
+  };
+
   seasonButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (event) => {
       if (btn.disabled || btn.classList.contains('disabled')) return;
+      if (btn.tagName === 'A') event.preventDefault();
       const wasActive = btn.classList.contains('active');
       seasonButtons.forEach((item) => item.classList.remove('active'));
       if (!wasActive) btn.classList.add('active');
@@ -123,6 +137,7 @@ onReady(() => {
       if (profileSelect) profileSelect.value = '';
       if (widthSelect) widthSelect.value = '';
       applyFilter();
+      syncSeasonUrl(wasActive ? '' : btn.dataset.season);
     });
   });
 

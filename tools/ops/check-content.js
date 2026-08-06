@@ -74,6 +74,8 @@ const tires = fs
 facts['моделей'] = tires.length;
 facts['типоразмеров'] = tires.reduce((sum, t) => sum + (t.sizes || []).length, 0);
 
+const filtersDir = path.join(DATA, LANG, 'filters');
+
 const sources = [
   ...pageFiles.map((f) => ({ label: `pages/${f}`, text: fs.readFileSync(path.join(pagesDir, f), 'utf8') })),
   { label: 'public/llms.txt', text: fs.readFileSync(path.join(ROOT, 'public/llms.txt'), 'utf8') },
@@ -83,13 +85,15 @@ const sources = [
 // Сверяем только заявленные ИТОГИ. Частные цифры («9 моделей» про зимние,
 // «136 типоразмеров» у WP52+) легитимны и под проверку не попадают.
 const TOTAL_CLAIMS = [
-  { re: /(\d[\d\s]*)\s+(?:авторизованн\w+\s+)?точ(?:ках|ек|ки)\s+продаж/g, unit: 'точек продаж' },
+  { re: /(\d[\d\s]*)\s+(?:авторизованн[а-яё]*\s+)?точ(?:ках|ек|ки)\s+продаж/g, unit: 'точек продаж' },
   { re: /в\s+(\d[\d\s]*)\s+городах/g, unit: 'городов' },
   { re: /(\d[\d\s]*)\s+регионах/g, unit: 'регионов' },
-  { re: /(\d[\d\s]*)\s+моделей\s+и\s+[\d\s]+\s+типоразмер\w+/g, unit: 'моделей' },
-  { re: /[\d\s]+\s+моделей\s+и\s+(\d[\d\s]*)\s+типоразмер\w+/g, unit: 'типоразмеров' },
+  // Итог узнаём по формулировке «В каталоге …»: частные разрезы («Зимняя линейка — 9 моделей
+  // и 432 типоразмера») легитимны и проверяются отдельно, по своему сезону.
+  { re: /каталоге\s+(?:<b>)?(\d[\d\s]*)\s+моделей\s+и\s+[\d\s]+\s+типоразмер[а-яё]*/gi, unit: 'моделей' },
+  { re: /каталоге\s+(?:<b>)?[\d\s]+\s+моделей\s+и\s+(\d[\d\s]*)\s+типоразмер[а-яё]*/gi, unit: 'типоразмеров' },
   { re: /Каталог:\s*(\d[\d\s]*)\s+моделей/g, unit: 'моделей' },
-  { re: /Каталог:\s*[\d\s]+\s+моделей,\s*(\d[\d\s]*)\s+типоразмер\w+/g, unit: 'типоразмеров' },
+  { re: /Каталог:\s*[\d\s]+\s+моделей,\s*(\d[\d\s]*)\s+типоразмер[а-яё]*/g, unit: 'типоразмеров' },
 ];
 
 TOTAL_CLAIMS.forEach(({ re, unit }) => {
@@ -104,6 +108,36 @@ TOTAL_CLAIMS.forEach(({ re, unit }) => {
       }
     }
   });
+});
+
+// --- 3b. Сезонные итоги на страницах фильтра -------------------------------------
+// «В зимней линейке 9 моделей и 432 типоразмера» — цифра из данных, а не из головы:
+// добавили модель — текст сезонной посадочной обязан это отразить.
+const SEASON_ALIASES = {
+  summer: ['summer', 'лето'],
+  winter: ['winter', 'зима'],
+  allseason: ['all-season', 'allseason', 'всесезонная', 'всесезонные'],
+  studded: ['studded', 'шипованные'],
+};
+Object.entries(SEASON_ALIASES).forEach(([season, aliases]) => {
+  const file = path.join(filtersDir, `tires-${season}.json`);
+  if (!fs.existsSync(file)) return;
+  const inSeason = tires.filter((t) => (t.filter?.season || []).some((s) => aliases.includes(String(s).toLowerCase())));
+  const models = inSeason.length;
+  const sizes = inSeason.reduce((sum, t) => sum + (t.sizes || []).length, 0);
+  const text = fs.readFileSync(file, 'utf8');
+  const claim = /(\d[\d\s]*)\s+модел[а-яё]*\s+и\s+(\d[\d\s]*)\s+типоразмер[а-яё]*/g;
+  let match;
+  while ((match = claim.exec(text)) !== null) {
+    const claimedModels = Number(match[1].replace(/\s/g, ''));
+    const claimedSizes = Number(match[2].replace(/\s/g, ''));
+    if (claimedModels !== models || claimedSizes !== sizes) {
+      fail(
+        `filters/tires-${season}.json: заявлено «${claimedModels} моделей и ${claimedSizes} типоразмеров», ` +
+          `фактически ${models} и ${sizes}`
+      );
+    }
+  }
 });
 
 // --- 4. Шаги конфигуратора одинаковы на всех страницах ---------------------------
