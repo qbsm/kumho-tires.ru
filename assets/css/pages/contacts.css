@@ -145,3 +145,57 @@
   font-size: 1.4rem;
   color: var(--color-5);
 }
+
+/* Вложенный container-sm добавлял вторые 2rem: на мобильном заголовок стоял на 20px,
+   а контент на 40px. Ниже --lg внутренние отступы обнуляем — левый край один. */
+.content-contacts .container-sm {
+  padding-left: 0;
+  padding-right: 0;
+
+  @media (--lg) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Иконка выравнивается по первой строке значения, а не по центру блока:
+   у трёхстрочного адреса она уезжала в середину */
+.content-contacts .icon-text {
+  align-items: flex-start;
+}
+
+.content-contacts .icon-text__icon {
+  margin-top: 0.2rem;
+}
+
+/* Воздух между заголовком страницы и первым блоком */
+.page-contacts .promo.section {
+  padding-bottom: 3rem;
+
+  @media (--lg) {
+    padding-bottom: 4rem;
+  }
+}
+
+/* На узких экранах кнопки занимают строку целиком, а не встают вразнобой */
+.content-contacts .section__inner.block-wrap.buttons-wrap .button {
+  width: 100%;
+
+  @media (--xm) {
+    width: auto;
+  }
+}
+
+/* Второй смысловой блок отделяется от списка контактов, а не примыкает к нему */
+.content-contacts .section__inner.heading-wrap ~ .section__inner.heading-wrap {
+  margin-top: 3rem;
+
+  @media (--lg) {
+    margin-top: 4rem;
+  }
+}
+
+/* Иконка соразмерна значению рядом: при 20px значении 20px иконка читалась мелкой */
+.content-contacts .icon-text__icon {
+  width: 2.2rem;
+}
