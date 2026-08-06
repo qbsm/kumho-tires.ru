@@ -75,10 +75,13 @@
   margin-top: 2.5rem;
 }
 
+/* Сетка строки: подпись сверху во второй колонке, иконка — напротив значения */
 .contacts-card__row {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
+  display: grid;
+  grid-template-columns: 2.8rem minmax(0, 1fr);
+  align-items: start;
+  column-gap: 1.6rem;
+  row-gap: 0.4rem;
   padding: 1.8rem 0;
   color: inherit;
 }
@@ -88,7 +91,8 @@
 }
 
 .contacts-card__icon {
-  flex: 0 0 auto;
+  grid-column: 1;
+  grid-row: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,14 +106,9 @@
   height: auto;
 }
 
-.contacts-card__body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  min-width: 0;
-}
-
 .contacts-card__label {
+  grid-column: 2;
+  grid-row: 1;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -117,6 +116,8 @@
 }
 
 .contacts-card__value {
+  grid-column: 2;
+  grid-row: 2;
   font-family: var(--font-2);
   font-size: 1.6rem;
   font-weight: 600;
@@ -125,8 +126,9 @@
   transition: color 0.2s ease;
 }
 
+/* Подсветка только у кликабельных строк: у адреса ссылки нет, и подсвечиваться он не должен */
 @media (hover: hover) {
-  .contacts-card__row:hover .contacts-card__value {
+  a.contacts-card__row:hover .contacts-card__value {
     color: var(--color-3);
   }
 }
@@ -138,15 +140,6 @@
   margin-top: 2rem;
 }
 
-/* Кнопки в том же мягком ключе: скругление карточек и лёгкая тень, без сдвигов */
-.contacts-btn {
-  border-radius: 1rem;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 6%);
-}
-
-.button.button-3.contacts-btn {
-  box-shadow: 0 6px 18px rgb(239 0 16 / 24%);
-}
 
 .contacts-card--map {
   padding-bottom: 2rem;

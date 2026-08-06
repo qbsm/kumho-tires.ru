@@ -65,11 +65,17 @@
             },
             {
               "class": "content-wrap container-sm",
-              "content": "<div class='section__subitem about-actions'><a href='{{ url(item.link.href) }}' class='button button-sm button-3 button-animated animation-shift uppercase link'>{{ item.link.title }}</a></div>",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div><div class='section__subitem about-actions'><a href='{{ url(item.link.href) }}' class='button button-sm button-3 button-animated animation-shift uppercase link'>{{ item.link.title }}</a></div>",
               "link": {
-                "title": "Контакты",
+                "title": "Контакты для бизнеса",
                 "href": "/contacts"
-              }
+              },
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Сотрудничество"
+              },
+              "desc": "Работаем с&nbsp;партнёрами и&nbsp;оптовыми покупателями: условия поставок, подключение к&nbsp;дилерской сети и&nbsp;работа с&nbsp;ассортиментом Kumho. Адрес, телефон и&nbsp;почта для&nbsp;бизнеса&nbsp;— в&nbsp;разделе контактов."
             }
           ]
         }
