@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Action;
 
 use App\Support\CitySlugger;
+use App\Support\DynamicSlugs;
 use App\Support\Json;
 use App\Support\PlatformSettings;
 use Psr\Http\Message\ResponseInterface;
@@ -155,7 +156,13 @@ final class SitemapAction
 
             // Slug-набор одинаковый для всех языков: данные дилеров — это адреса/названия
             // на родном языке, перевод не предполагается. Берём slug-набор из дефолтного языка.
-            $slugs = $this->loadDynamicSlugs($jsonBaseDir, $defaultLang, $dataPage, $listKey, $valueKey, $sluggerKey, $entityDir);
+            $slugs = DynamicSlugs::list($jsonBaseDir, $defaultLang, [
+                'data_page' => $dataPage,
+                'list_key' => $listKey,
+                'value_key' => $valueKey,
+                'slugger' => $sluggerKey,
+                'entity_dir' => $entityDir,
+            ]);
             if ($slugs === []) {
                 continue;
             }
@@ -189,50 +196,6 @@ final class SitemapAction
         return $base . $prefix . '/' . $pathSegment;
     }
 
-    /**
-     * @return array<int, string>
-     */
-    private function loadDynamicSlugs(
-        string $jsonBaseDir,
-        string $lang,
-        string $dataPage,
-        string $listKey,
-        string $valueKey,
-        string $sluggerKey,
-        string $entityDir = ''
-    ): array {
-        $file = $jsonBaseDir . '/' . $lang . '/pages/' . $dataPage . '.json';
-        $items = Json::loadKey($file, $listKey);
-        if ($items === null) {
-            // Страницы-конструкторы держат список внутри секции (sections[].data[listKey]),
-            // а не в корне JSON — например, новости.
-            $items = $this->loadListFromSections($file, $listKey);
-        }
-        if ($items === null) {
-            return [];
-        }
-
-        $slugs = [];
-        foreach ($items as $item) {
-            if (is_string($item)) {
-                $value = $item;
-            } elseif (is_array($item) && $valueKey !== '' && isset($item[$valueKey]) && is_string($item[$valueKey])) {
-                $value = (string) $item[$valueKey];
-            } else {
-                continue;
-            }
-            $slug = $this->slugifyValue($value, $sluggerKey);
-            if ($slug === '' || in_array($slug, $slugs, true)) {
-                continue;
-            }
-            if ($entityDir !== '' && !$this->isEntityVisible($jsonBaseDir, $lang, $entityDir, $slug)) {
-                continue;
-            }
-            $slugs[] = $slug;
-        }
-        sort($slugs);
-        return $slugs;
-    }
 
     /**
      * Дата обновления сущности для <lastmod>: поле date_iso в корне или во вложенном
@@ -270,55 +233,8 @@ final class SitemapAction
         return $mtime === false ? null : date('Y-m-d', $mtime);
     }
 
-    /**
-     * Список элементов из секций страницы: sections[].data[$listKey].
-     *
-     * @return array<int, mixed>|null
-     */
-    private function loadListFromSections(string $file, string $listKey): ?array
-    {
-        $sections = Json::loadKey($file, 'sections');
-        if ($sections === null) {
-            return null;
-        }
 
-        $items = [];
-        foreach ($sections as $section) {
-            if (!is_array($section) || !isset($section['data']) || !is_array($section['data'])) {
-                continue;
-            }
-            $list = $section['data'][$listKey] ?? null;
-            if (is_array($list)) {
-                foreach ($list as $item) {
-                    $items[] = $item;
-                }
-            }
-        }
 
-        return $items === [] ? null : $items;
-    }
-
-    /**
-     * Сущность попадает в sitemap только если её JSON существует и не скрыт (visible !== false) —
-     * иначе страница отдаёт 404 (та же логика, что DataLoaderService::loadEntity).
-     */
-    private function isEntityVisible(string $jsonBaseDir, string $lang, string $entityDir, string $slug): bool
-    {
-        $data = Json::load($jsonBaseDir . '/' . $lang . '/' . $entityDir . '/' . $slug . '.json');
-        if ($data === null) {
-            return false;
-        }
-        return !(isset($data['visible']) && $data['visible'] === false);
-    }
-
-    private function slugifyValue(string $value, string $sluggerKey): string
-    {
-        return match ($sluggerKey) {
-            'identity', 'slug' => trim($value),
-            'city' => CitySlugger::slug($value),
-            default => CitySlugger::slug($value),
-        };
-    }
 
     /**
      * @param array<int, array{loc: string, alternates: array<string, string>, lastmod?: string}> $urls

@@ -2,6 +2,7 @@
 
 namespace App\Action;
 
+use App\Support\DynamicSlugs;
 use App\Event\EntityResolved;
 use App\Event\PageLoaded;
 use App\Event\SeoBuilt;
@@ -107,6 +108,22 @@ final class PageAction
                 $status = 404;
                 $pageId = '404';
                 $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl) ?? ['name' => '404', 'sections' => []];
+            }
+        }
+
+        // Подпуть страницы-конструктора (/buy/<город>) обязан существовать в данных: без проверки
+        // любой слаг отдавал 200 и плодил дубли, которых нет ни в карте сайта, ни в навигации.
+        if ($status === 200 && $routeParams !== [] && !$this->isCollectionListPage($pageId, $collections)) {
+            $subpathConfig = (array) ($this->settings['sitemap_dynamic_pages'][$pageId] ?? []);
+            if ($subpathConfig !== []) {
+                $allowed = DynamicSlugs::list($jsonBaseDir, $langCode, $subpathConfig);
+                if (count($routeParams) > 1 || !in_array((string) $routeParams[0], $allowed, true)) {
+                    $status = 404;
+                    $pageId = '404';
+                    $routeParams = [];
+                    $pageData = $this->dataLoader->loadPage($pageJsonDir, '404', $baseUrl)
+                        ?? ['name' => '404', 'sections' => []];
+                }
             }
         }
 
@@ -599,6 +616,20 @@ final class PageAction
         }
 
         return $preset === [] ? null : $preset;
+    }
+
+    /**
+     * @param array<string, mixed> $collections
+     */
+    private function isCollectionListPage(string $pageId, array $collections): bool
+    {
+        foreach ($collections as $collConfig) {
+            if (is_array($collConfig) && (string) ($collConfig['list_page_id'] ?? '') === $pageId) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private function dispatch(object $event): void
