@@ -5,11 +5,6 @@
     "status": 301
   },
   {
-    "from": "/en",
-    "to": "/",
-    "status": 301
-  },
-  {
     "from": "/buy/saint",
     "to": "/buy/saint-petersburg",
     "status": 301
