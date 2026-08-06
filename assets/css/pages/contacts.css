@@ -9,10 +9,10 @@
 /* Компактные вертикальные отступы: базовые .section дают по 6rem сверху и снизу,
    на короткой странице контактов они складываются в огромные пустоты. */
 .page-contacts .promo.section {
-  padding-bottom: 3rem;
+  padding-bottom: 2.5rem;
 
   @media (--lg) {
-    padding-bottom: 4rem;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -21,7 +21,6 @@
   padding-bottom: 1.5rem;
 }
 
-/* Последняя секция не должна упираться в футер */
 .page-contacts .content-container.section + .footer {
   margin-top: 4.5rem;
 
@@ -30,180 +29,145 @@
   }
 }
 
-.content-contacts {
+/* --- Мягкие карточки ------------------------------------------------------
+   Многослойная мягкая тень вместо рамки; подъёма на наведении нет намеренно.
+   Одна колонка: блоки идут стопкой. */
+
+.contacts-stack {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 
   @media (--lg) {
-    gap: 6rem;
+    gap: 2.5rem;
   }
 }
 
-.content-contacts .section__item.content-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-
-  @media (--lg) {
-    gap: 6rem;
-  }
-}
-
-/* Контакты и форма рядом: слева данные, справа обращение.
-   Пропорция 7/5 — данные шире, форма компактнее. */
-.contacts-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-
-  @media (--md) {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    gap: 4rem;
-  }
-
-  @media (--lg) {
-    gap: 6rem;
-  }
-}
-
-.contacts-main,
-.contacts-aside {
+.contacts-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 0;
+  padding: 2.4rem 2rem;
+  border-radius: 1.6rem;
+  background: var(--color-1);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 6%),
+    0 24px 48px rgb(0 0 0 / 4%);
+
+  @media (--lg) {
+    padding: 3.5rem;
+    border-radius: 2.4rem;
+  }
 }
 
-.contacts-main__head {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.8rem;
-}
-
-.contacts-note {
+.contacts-card__desc {
   display: block;
-  max-width: 54rem;
+  max-width: 58rem;
+  margin-top: 0.8rem;
   color: var(--color-5);
 }
 
-/* Список контактов: подпись мелким капсом, значение — основным текстом,
-   строка целиком кликабельна, разделители тонкие как у карточек сайта */
-.contacts-list {
+.contacts-card__list {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 3rem;
-  border-top: 1px solid var(--color-4);
+  margin-top: 2.5rem;
 }
 
-.contacts-item {
+.contacts-card__row {
   display: flex;
   align-items: flex-start;
   gap: 1.4rem;
-  padding: 1.8rem 0;
-  border-bottom: 1px solid var(--color-4);
+  padding: 1.6rem 0;
   color: inherit;
 }
 
-.contacts-item__icon {
-  flex: 0 0 auto;
-  width: 2rem;
-  margin-top: 0.2rem;
+.contacts-card__row + .contacts-card__row {
+  border-top: 1px solid var(--color-4);
 }
 
-.contacts-item__icon img {
+.contacts-card__icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  margin-top: 0.3rem;
+}
+
+.contacts-card__icon img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.contacts-item__body {
+.contacts-card__body {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   min-width: 0;
 }
 
-.contacts-item__label {
+.contacts-card__label {
   font-size: 1.2rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-5);
 }
 
-.contacts-item__value {
+.contacts-card__value {
   font-family: var(--font-2);
   font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 1.45;
+  font-weight: 600;
+  line-height: 1.4;
   overflow-wrap: anywhere;
   transition: color 0.2s ease;
 }
 
 @media (hover: hover) {
-  .contacts-item:hover .contacts-item__value {
+  .contacts-card__row:hover .contacts-card__value {
     color: var(--color-3);
   }
 }
 
-.contacts-buyers {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.8rem;
-  margin-top: 3.5rem;
-}
-
-.contacts-buyers__label {
-  font-family: var(--font-2);
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-5);
-}
-
-.contacts-buyers__actions {
+.contacts-card__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1.2rem;
+  margin-top: 2rem;
 }
 
-/* Форма — на светлой плашке, тем же приёмом, что выделен конфигуратор на главной */
-.contacts-aside {
-  gap: 0.8rem;
-  padding: 2.5rem 2rem;
+/* Кнопки в том же мягком ключе: скругление карточек и лёгкая тень, без сдвигов */
+.contacts-btn {
   border-radius: 1rem;
-  background: #f8f9fb;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 6%);
+}
+
+.button.button-3.contacts-btn {
+  box-shadow: 0 6px 18px rgb(239 0 16 / 24%);
+}
+
+.contacts-card--map {
+  padding-bottom: 2rem;
 
   @media (--lg) {
-    padding: 4rem 3.5rem;
-    border-radius: 2rem;
+    padding-bottom: 2.5rem;
   }
 }
 
-.contacts-aside__form {
-  width: 100%;
-  margin-top: 2.5rem;
-}
-
-.contacts-map {
+.contacts-card__map {
   position: relative;
   width: 100%;
-  height: 32rem;
-  border-radius: 1rem;
+  height: 28rem;
+  margin-top: 2.5rem;
+  border-radius: 1.2rem;
   overflow: hidden;
 
   @media (--lg) {
-    height: 44rem;
-    border-radius: 2rem;
+    height: 38rem;
+    border-radius: 1.6rem;
   }
 }
 
-.contacts-map iframe {
+.contacts-card__map iframe {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -211,8 +175,18 @@
   border: 0;
 }
 
+.contacts-card__form {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.contacts-card__form .form-callback__control {
+  border-radius: 1rem;
+}
+
 .contacts-legal__text {
   display: block;
+  margin-top: 1rem;
   font-size: 1.3rem;
   color: var(--color-5);
 }
