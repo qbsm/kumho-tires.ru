@@ -15,7 +15,7 @@
     {
       "name": "promo",
       "data": {
-        "container": "container-sm",
+        "container": "container",
         "heading": {
           "tag": "h1",
           "class": "h1 heading font-2 weight-700 heading-flex uppercase",
@@ -34,7 +34,7 @@
           "items": [
             {
               "class": "content-wrap",
-              "content": "<div class='section__subitem container-sm'><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.business.heading} %}</div><div class='section__inner block-wrap'>{% for address in global.address[lang_code] %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.address.src, alt: item.icon.address.alt}, link: {href: address.href, title: address.title}} %}</div>{% endfor %}{% for phone in global.phones %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.phone.src, alt: item.icon.phone.alt}, link: {href: phone.href, title: phone.title}} %}</div>{% endfor %}<div class='section__inner icon-text-wrap'>{% include 'components/icon-text.twig' with {icon: {src: item.icon.mail.src, alt: item.icon.mail.alt}, link: {href: global['email-b2b'].href, title: global['email-b2b'].title}} %}</div></div><div class='section__inner heading-wrap'>{% include 'components/heading.twig' with {'item': item.links.heading} %}</div><div class='section__inner block-wrap buttons-wrap'>{% for link in item.links.items %}<a href='{{ url(link.href) }}' class='{{ item.button.class }}'>{{ link.title }}</a>{% endfor %}</div></div>",
+              "content": "<div class='section__subitem contacts-block'><div class='contacts-block__head'>{% include 'components/heading.twig' with {'item': item.business.heading} %}<span class='contacts-block__desc'>{{ item.business.desc }}</span></div><div class='contacts-rows'>{% for address in global.address[lang_code] %}<a class='contacts-row contacts-row--wide link' href='{{ address.href }}' target='_blank' rel='noopener'><span class='contacts-row__icon' style=\"--contacts-icon: url('{{ url(item.icon.address.src) }}')\" aria-hidden='true'></span><span class='contacts-row__body'><span class='contacts-row__label'>{{ item.icon.address.alt }}</span><span class='contacts-row__value'>{{ address.title }}</span></span></a>{% endfor %}{% for phone in global.phones %}<a class='contacts-row link' href='{{ phone.href }}'><span class='contacts-row__icon' style=\"--contacts-icon: url('{{ url(item.icon.phone.src) }}')\" aria-hidden='true'></span><span class='contacts-row__body'><span class='contacts-row__label'>{{ item.icon.phone.alt }}</span><span class='contacts-row__value'>{{ phone.title }}</span></span></a>{% endfor %}<a class='contacts-row link' href='{{ global[\"email-b2b\"].href }}'><span class='contacts-row__icon' style=\"--contacts-icon: url('{{ url(item.icon.mail.src) }}')\" aria-hidden='true'></span><span class='contacts-row__body'><span class='contacts-row__label'>{{ item.icon.mail.alt }}</span><span class='contacts-row__value'>{{ global[\"email-b2b\"].title }}</span></span></a></div><div class='contacts-buyers'><div class='contacts-buyers__head'><span class='contacts-buyers__label'>{{ item.links.heading.title }}</span><span class='contacts-buyers__desc'>{{ item.links.desc }}</span></div><div class='contacts-buyers__actions'>{% for link in item.links.items %}<a href='{{ url(link.href) }}' class='button button-sm {{ loop.first ? 'button-3' : 'outline-color-2' }} button-animated animation-shift uppercase link'>{{ link.title }}</a>{% endfor %}</div></div></div>",
               "icon": {
                 "address": {
                   "src": "data/img/ui/icons/icon-locate-color-2.svg",
@@ -46,17 +46,11 @@
                 },
                 "mail": {
                   "src": "data/img/ui/icons/icon-mail-color-2.svg",
-                  "alt": "Email"
+                  "alt": "E-mail"
                 }
-              },
-              "button": {
-                "title": "Показать на карте",
-                "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link"
               },
               "links": {
                 "heading": {
-                  "tag": "h2",
-                  "class": "h5 heading font-2 weight-700 heading-flex uppercase",
                   "title": "Покупателям"
                 },
                 "items": [
@@ -68,28 +62,31 @@
                     "title": "Расширенная гарантия",
                     "href": "/warranty"
                   }
-                ]
+                ],
+                "desc": "Розничные покупки — в авторизованных шинных центрах: 155 точек продаж в 55 городах России. Там же оформляется расширенная гарантия."
               },
               "business": {
                 "heading": {
                   "tag": "h2",
-                  "class": "h5 heading font-2 weight-700 heading-flex uppercase",
+                  "class": "h3 heading font-2 weight-700 heading-flex uppercase",
                   "title": "Контакты для бизнеса"
-                }
+                },
+                "desc": "Для партнёров и оптовых покупателей: условия поставок, подключение к дилерской сети и работа с ассортиментом Kumho."
               }
             },
             {
               "class": "content-wrap form-callback-wrap",
-              "content": "<div class='section__subitem heading-wrap container-sm'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem container-sm'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': 'Получить консультацию'}}} %}</div>",
+              "content": "<div class='section__subitem contacts-form'><div class='contacts-form__head'>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='contacts-form__body'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': item.button}}} %}</div></div><div class='section__subitem contacts-legal'><span class='contacts-legal__text'>{{ global.owner[lang_code] }}</span></div>",
               "heading": {
                 "tag": "h2",
-                "class": "h5 heading font-2 weight-700 heading-flex uppercase",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
                 "title": "Получить консультацию"
               },
-              "catalogs": []
+              "button": "Отправить"
             }
           ]
-        }
+        },
+        "container": "container"
       }
     },
     {

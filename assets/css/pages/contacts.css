@@ -43,25 +43,168 @@
   display: none;
 }
 
-/* Легаси-правила страницы восстановлены: блоки идут колонкой, кнопки — в строку */
-.content-contacts .section__subitem {
+/* --- Контакты -------------------------------------------------------------
+   Данные — главное на странице, поэтому значения набраны Manrope 600 крупнее
+   текста, а подписи уходят в мелкий серый капс. Иконки в акценте и одного
+   размера с иконками конфигуратора. Вместо коробок — тонкие разделители,
+   как у карточек сайта. */
+
+.content-contacts {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
+
+  @media (--lg) {
+    gap: 6rem;
+  }
 }
 
-.content-contacts .section__inner.block-wrap {
+.contacts-block,
+.contacts-form {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
 }
 
-.content-contacts .section__inner.button-wrap {
-  display: inline-flex;
+.contacts-block__head,
+.contacts-form__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 62rem;
 }
 
-.content-contacts .section__inner.block-wrap.buttons-wrap {
-  flex-direction: row;
+.contacts-block__desc,
+.contacts-buyers__desc {
+  color: var(--color-5);
+}
+
+.contacts-rows {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-4);
+
+  @media (--md) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+  }
+}
+
+.contacts-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-4);
+  color: inherit;
+}
+
+/* Адрес длиннее прочих — занимает всю строку сетки */
+@media (--md) {
+  .contacts-row--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.contacts-row__icon {
+  flex: 0 0 auto;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-top: 0.4rem;
+  background-color: var(--color-3);
+  mask: var(--contacts-icon) center / contain no-repeat;
+}
+
+.contacts-row__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.contacts-row__label {
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-5);
+}
+
+.contacts-row__value {
+  font-family: var(--font-2);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+
+  @media (--lg) {
+    font-size: 2.2rem;
+  }
+}
+
+@media (hover: hover) {
+  .contacts-row:hover .contacts-row__value {
+    color: var(--color-3);
+  }
+}
+
+.contacts-buyers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 4rem;
+
+  @media (--md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+}
+
+.contacts-buyers__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 52rem;
+}
+
+.contacts-buyers__label {
+  font-family: var(--font-2);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-5);
+}
+
+.contacts-buyers__actions {
+  display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* Форма на светлой плашке — тот же приём, что выделяет конфигуратор на главной */
+.contacts-form {
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  background: #f8f9fb;
+
+  @media (--lg) {
+    padding: 5rem;
+    border-radius: 2rem;
+  }
+}
+
+.contacts-form__body {
+  max-width: 72rem;
+  margin-top: 3rem;
+}
+
+.contacts-legal__text {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--color-5);
 }
