@@ -19,6 +19,12 @@
           {% endif %}
         {% endfor %}
       {% endif %}
+      {# Ссылки только для футера: пункт может быть скрыт в шапке, но переход нужен #}
+      {% for link in global['footer-links'][lang_code] | default([]) %}
+        <div class="footer__link-wrap">
+          <a href="{{ url(link.href) }}" class="link footer__link">{{ link.title }}</a>
+        </div>
+      {% endfor %}
     </div>
     <div class="section__item copyright-wrap">
       {% if global.owner[lang_code] is defined %}

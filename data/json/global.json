@@ -377,5 +377,19 @@
     "Кумхо",
     "Камхо",
     "Kumho Tire"
-  ]
+  ],
+  "footer-links": {
+    "ru": [
+      {
+        "title": "Контакты",
+        "href": "/contacts"
+      }
+    ],
+    "en": [
+      {
+        "title": "Contacts",
+        "href": "/contacts"
+      }
+    ]
+  }
 }

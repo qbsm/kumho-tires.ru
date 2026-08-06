@@ -191,11 +191,29 @@
 /* Линия под заголовками блоков — отделяет шапку блока от содержимого */
 .contacts-card:not(.contacts-card--map):not(.contacts-card--form) .contacts-card__desc {
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--color-4);
+  border-bottom: 1px solid var(--color-3);
   width: 100%;
   max-width: none;
 }
 
 .contacts-card:not(.contacts-card--map):not(.contacts-card--form) .contacts-card__list {
   margin-top: 0.5rem;
+}
+
+/* Форма — смысловой переход от справки к действию, поэтому воздуха перед ней больше */
+.contacts-card--form {
+  margin-top: 2rem;
+
+  @media (--lg) {
+    margin-top: 3.5rem;
+  }
+}
+
+/* Розничный блок отделён от формы — это переход к другой аудитории */
+.contacts-card--form + .contacts-card {
+  margin-top: 2rem;
+
+  @media (--lg) {
+    margin-top: 3.5rem;
+  }
 }
