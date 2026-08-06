@@ -54,7 +54,7 @@
       "visible": true,
       "data": {
         "plate": true,
-        "container": "container",
+        "container": "container-sm",
         "heading": {
           "tag": "h2",
           "class": "h2 heading font-2 weight-700 heading-flex uppercase",
