@@ -1,3 +1,17 @@
 [
-  {"from": "/tires/kc11", "to": "/tires", "status": 301}
+  {
+    "from": "/tires/kc11",
+    "to": "/tires",
+    "status": 301
+  },
+  {
+    "from": "/en",
+    "to": "/",
+    "status": 301
+  },
+  {
+    "from": "/buy/saint",
+    "to": "/buy/saint-petersburg",
+    "status": 301
+  }
 ]
