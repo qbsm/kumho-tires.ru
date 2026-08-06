@@ -189,7 +189,7 @@
 }
 
 /* Короткая акцентная линия под самим заголовком — приём card-action__line */
-.contacts-card .heading::after {
+.contacts-card:not(.contacts-card--form) .heading::after {
   content: "";
   display: block;
   width: 8rem;

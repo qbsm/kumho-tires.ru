@@ -208,7 +208,7 @@ function buildDealerBalloon(point) {
   return `<article class="card-dealer card-dealer-balloon"><div class="card-dealer__item title-wrap"><h3 class="card__title font-2 weight-600">${escapeHtml(point.name)}</h3><div class="card-dealer__subitem badges-wrap">${badges.join('')}</div><div class="card-dealer__subitem address-wrap opacity-80">${escapeHtml(point.address)}</div></div>${phoneBlock}${siteBlock}</article>`;
 }
 
-function loadYandexMaps() {
+export function loadYandexMaps() {
   return new Promise((resolve, reject) => {
     if (window.ymaps && typeof window.ymaps.ready === 'function') {
       resolve(window.ymaps);
