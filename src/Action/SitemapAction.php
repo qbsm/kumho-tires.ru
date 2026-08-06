@@ -51,6 +51,23 @@ final class SitemapAction
             );
         }
 
+        foreach ((array) ($this->settings['sitemap_extra_paths'] ?? []) as $extraPath) {
+            $extraPath = trim((string) $extraPath, '/');
+            if ($extraPath === '') {
+                continue;
+            }
+            $alternates = [];
+            foreach ($langs as $altLang) {
+                $alternates[$altLang] = $this->buildLangPath($base, $altLang, $defaultLang, $extraPath);
+            }
+            foreach ($langs as $lang) {
+                $urls[] = [
+                    'loc' => $this->buildLangPath($base, $lang, $defaultLang, $extraPath),
+                    'alternates' => $alternates,
+                ];
+            }
+        }
+
         $xml = $this->renderSitemap($base, $urls);
 
         $response->getBody()->write($xml);

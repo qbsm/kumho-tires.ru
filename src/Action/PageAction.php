@@ -110,12 +110,22 @@ final class PageAction
             }
         }
 
+        $extrasFilter = null;
         if ($entity === null) {
             foreach ($collections as $collKey => $collConfig) {
                 $collConfig = (array) $collConfig;
                 $listPageId = (string) ($collConfig['list_page_id'] ?? '');
                 if ($pageId !== $listPageId) {
                     continue;
+                }
+
+                // Человечные адреса фильтра: /tires/summer, /tires/205-55-r16, /tires/summer/205-55-r16.
+                // Проверяем до загрузки сущности — сегменты фильтра не пересекаются со слагами моделей.
+                $filterPreset = $this->parseFilterParams($routeParams, $collConfig);
+                if ($filterPreset !== null) {
+                    $this->injectListItems($pageData, $jsonBaseDir, $langCode, $baseUrl, $collConfig);
+                    $extrasFilter = $filterPreset;
+                    break;
                 }
 
                 if (count($routeParams) === 0) {
@@ -177,6 +187,41 @@ final class PageAction
             $seoData = ['title' => '', 'meta' => [], 'json_ld' => null];
         }
 
+        // Сезонная страница фильтра — самостоятельная посадочная: свой title, description и h1,
+        // иначе четыре адреса делят заголовок с общим каталогом
+        if ($extrasFilter !== null && isset($extrasFilter['season']) && !isset($extrasFilter['width'])) {
+            $seasons = (array) ($this->settings['collections']['tires']['filters']['season'] ?? []);
+            $season = $seasons[$extrasFilter['season']] ?? null;
+            $season = is_array($season) ? $season : ['label' => (string) $season];
+            $label = (string) ($season['label'] ?? '');
+            if ($label !== '') {
+                $genitive = (string) ($season['genitive'] ?? mb_strtolower($label));
+                $seoData['title'] = $label . ' шины Kumho (Кумхо, Камхо) — каталог, купить в России';
+                $description = 'Каталог ' . $genitive . ' шин Kumho: модели и типоразмеры для легковых автомобилей, '
+                    . 'кроссоверов, внедорожников и коммерческого транспорта. Фильтр по диаметру, ширине и профилю.';
+                $meta = isset($seoData['meta']) && is_array($seoData['meta']) ? $seoData['meta'] : [];
+                foreach ($meta as $index => $tag) {
+                    if (!is_array($tag)) {
+                        continue;
+                    }
+                    if (($tag['name'] ?? '') === 'description' || ($tag['property'] ?? '') === 'og:description') {
+                        $meta[$index]['content'] = $description;
+                    }
+                    if (($tag['property'] ?? '') === 'og:title') {
+                        $meta[$index]['content'] = $seoData['title'];
+                    }
+                }
+                $seoData['meta'] = $meta;
+
+                $heading = (string) ($season['h1'] ?? ($label . ' шины Kumho'));
+                foreach (($pageData['sections'] ?? []) as $idx => $section) {
+                    if (($section['name'] ?? '') === 'tires' && isset($section['data']['heading']['title'])) {
+                        $pageData['sections'][$idx]['data']['heading']['title'] = $heading;
+                    }
+                }
+            }
+        }
+
         $this->dispatch(new SeoBuilt($pageId, $seoData, $entity !== null));
 
         $template = 'pages/page.twig';
@@ -189,6 +234,11 @@ final class PageAction
             $extras['breadcrumb'] = $this->buildEntityBreadcrumb($global, $langCode, $entity, $entityConfig, $pageJsonDir, $baseUrl);
             $extras['frame_data'] = $this->extractFrameFromListPage($pageJsonDir, $entityConfig, $baseUrl);
             $extras['seo_url_path'] = trim((string) ($entityConfig['nav_slug'] ?? ''), '/') . '/' . trim((string) ($entity['slug'] ?? ''), '/');
+        }
+
+        if ($extrasFilter !== null) {
+            $extras['filter_preset'] = $extrasFilter;
+            $extras['breadcrumb'] = $this->buildFilterBreadcrumb($global, $langCode, $extrasFilter);
         }
 
         $data = $this->templateDataBuilder->build(
@@ -213,6 +263,13 @@ final class PageAction
         // noindex вместо 404 — поисковик деиндексирует URL без ошибок обхода; follow — чтобы вес
         // ссылок со страницы не терялся.
         if ($entity !== null && !empty($entity['_hidden'])) {
+            $response = $response->withHeader('X-Robots-Tag', 'noindex, follow');
+        }
+
+        // Сезонные страницы фильтра индексируются: это осмысленные посадочные.
+        // Комбинации с типоразмером — noindex, follow: их сотни, в индексе они лишние,
+        // но вес по ссылкам на модели передаётся.
+        if ($extrasFilter !== null && isset($extrasFilter['width'])) {
             $response = $response->withHeader('X-Robots-Tag', 'noindex, follow');
         }
 
@@ -279,6 +336,56 @@ final class PageAction
      * @param array<string,mixed> $config
      * @return array<int, array{name: string, url: string}>
      */
+    /**
+     * @param array<string,mixed>|null $global
+     * @param array<string,string> $filter
+     * @return array<int, array{name: string, url: string}>
+     */
+    private function buildFilterBreadcrumb(?array $global, string $langCode, array $filter): array
+    {
+        $collConfig = (array) ($this->settings['collections']['tires'] ?? []);
+        $navSlug = trim((string) ($collConfig['nav_slug'] ?? 'tires'), '/');
+        $nav = is_array($global) ? ($global['nav'][$langCode]['items'] ?? []) : [];
+
+        $homeTitle = 'Главная';
+        $listTitle = ucfirst($navSlug);
+        foreach ((array) $nav as $navItem) {
+            if (!is_array($navItem)) {
+                continue;
+            }
+            $href = trim((string) ($navItem['href'] ?? ''), '/');
+            if ($href === '') {
+                $homeTitle = (string) ($navItem['title'] ?? $homeTitle);
+            }
+            if ($href === $navSlug && isset($navItem['title'])) {
+                $listTitle = (string) $navItem['title'];
+            }
+        }
+
+        $items = [
+            ['name' => $homeTitle, 'url' => '/'],
+            ['name' => $listTitle, 'url' => '/' . $navSlug],
+        ];
+
+        $path = '/' . $navSlug;
+        if (isset($filter['season'])) {
+            $seasons = (array) ($collConfig['filters']['season'] ?? []);
+            $season = $seasons[$filter['season']] ?? null;
+            $season = is_array($season) ? $season : ['label' => (string) $season];
+            $path .= '/' . $filter['season'];
+            $items[] = ['name' => (string) ($season['label'] ?? $filter['season']), 'url' => $path];
+        }
+        if (isset($filter['width'], $filter['profile'], $filter['diameter'])) {
+            $path .= '/' . $filter['width'] . '-' . $filter['profile'] . '-r' . $filter['diameter'];
+            $items[] = [
+                'name' => $filter['width'] . '/' . $filter['profile'] . ' R' . $filter['diameter'],
+                'url' => $path,
+            ];
+        }
+
+        return $items;
+    }
+
     private function buildEntityBreadcrumb(array $global, string $langCode, array $entity, array $config, string $pageJsonDir = '', string $baseUrl = ''): array
     {
         $navSlug = (string) ($config['nav_slug'] ?? '');
@@ -292,7 +399,7 @@ final class PageAction
         $nav = $global['nav'][$langCode]['items'] ?? [];
         $homeTitle = 'Главная';
         $listTitle = '';
-        $listHref = '/' . $navSlug . '/';
+        $listHref = '/' . $navSlug;
         foreach ($nav as $navItem) {
             if (!is_array($navItem)) {
                 continue;
@@ -303,7 +410,7 @@ final class PageAction
             }
             if ($href === $navSlug) {
                 $listTitle = (string) ($navItem['title'] ?? '');
-                $listHref = '/' . $href . '/';
+                $listHref = '/' . $href;
             }
         }
 
@@ -325,7 +432,7 @@ final class PageAction
         return [
             ['name' => $homeTitle, 'url' => '/'],
             ['name' => $listTitle, 'url' => $listHref],
-            ['name' => $name, 'url' => '/' . $slug . '/'],
+            ['name' => $name, 'url' => rtrim($listHref, '/') . '/' . $slug],
         ];
     }
 
@@ -446,6 +553,52 @@ final class PageAction
         }
 
         return null;
+    }
+
+    /**
+     * Разбирает сегменты адреса в пресет фильтра каталога.
+     * Возвращает null, если сегменты не описывают фильтр — тогда работает обычная логика сущности.
+     *
+     * @param array<int, string> $routeParams
+     * @param array<string, mixed> $collConfig
+     * @return array<string, string>|null
+     */
+    private function parseFilterParams(array $routeParams, array $collConfig): ?array
+    {
+        $filters = (array) ($collConfig['filters'] ?? []);
+        if ($filters === [] || $routeParams === [] || count($routeParams) > 2) {
+            return null;
+        }
+
+        $seasons = (array) ($filters['season'] ?? []);
+        $sizePattern = (string) ($filters['size_pattern'] ?? '');
+        $preset = [];
+
+        foreach ($routeParams as $param) {
+            $param = strtolower((string) $param);
+
+            if (isset($seasons[$param]) && !isset($preset['season'])) {
+                $preset['season'] = $param;
+                continue;
+            }
+
+            if ($sizePattern !== '' && !isset($preset['width']) && preg_match($sizePattern, $param, $m) === 1) {
+                $size = ['width' => $m[1], 'profile' => $m[2], 'diameter' => $m[3]];
+                $ranges = (array) ($filters['size_ranges'] ?? []);
+                foreach ($ranges as $key => $range) {
+                    $value = (int) ($size[$key] ?? 0);
+                    if ($value < (int) ($range[0] ?? 0) || $value > (int) ($range[1] ?? 0)) {
+                        return null;
+                    }
+                }
+                $preset += $size;
+                continue;
+            }
+
+            return null;
+        }
+
+        return $preset === [] ? null : $preset;
     }
 
     private function dispatch(object $event): void

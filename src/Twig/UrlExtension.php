@@ -39,9 +39,11 @@ class UrlExtension extends AbstractExtension
             return $path;
         }
 
+        // Канонический адрес — без хвостового слеша (его срезает TrailingSlashMiddleware).
+        // Пока url() дописывал слеш, каждая внутренняя ссылка сайта шла через 301.
         $trimmedPath = ltrim($path, '/');
         if ($trimmedPath !== '' && strpos((string) basename($trimmedPath), '.') === false) {
-            $trimmedPath = rtrim($trimmedPath, '/') . '/';
+            $trimmedPath = rtrim($trimmedPath, '/');
         }
 
         // Статика (data/, assets/) всегда от корня документа (public/), иначе на /ru/ картинки 404

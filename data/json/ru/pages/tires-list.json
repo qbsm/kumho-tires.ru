@@ -50,6 +50,25 @@
       }
     },
     {
+      "name": "cta",
+      "visible": true,
+      "data": {
+        "plate": true,
+        "container": "container",
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Конфигуратор подбора шин"
+        },
+        "desc": "Четыре вопроса — тип автомобиля, сезон, приоритет и размер — и в подборке останутся только подходящие модели Kumho из этого каталога.",
+        "button": {
+          "href": "/podbor",
+          "title": "Подобрать шины",
+          "data_tag": "podbor_cta_tires"
+        }
+      }
+    },
+    {
       "name": "content-container",
       "visible": true,
       "data": {

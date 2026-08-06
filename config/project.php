@@ -22,6 +22,23 @@ return [
             'slugs_source' => 'items',
             'og_type'      => 'website',
             'extras_key'   => 'tire',
+            // Человечные адреса фильтра: /tires/summer, /tires/205-55-r16, /tires/summer/205-55-r16.
+            // Значения сезонов совпадают с токенами фильтра каталога.
+            'filters'      => [
+                'season' => [
+                    'summer'    => ['label' => 'Летние', 'genitive' => 'летних', 'h1' => 'Летние шины Kumho'],
+                    'allseason' => ['label' => 'Всесезонные', 'genitive' => 'всесезонных', 'h1' => 'Всесезонные шины Kumho'],
+                    'winter'    => ['label' => 'Зимние', 'genitive' => 'зимних', 'h1' => 'Зимние шины Kumho'],
+                    'studded'   => ['label' => 'Шипованные', 'genitive' => 'шипованных', 'h1' => 'Шипованные шины Kumho'],
+                ],
+                'size_pattern' => '/^(\\d{3})-(\\d{2,3})-r(\\d{2})$/i',
+                // Границы реального каталога: за ними адрес — мусор, отдаём 404, а не пустой фильтр
+                'size_ranges'  => [
+                    'width'    => [125, 325],
+                    'profile'  => [25, 85],
+                    'diameter' => [12, 22],
+                ],
+            ],
         ],
         'news' => [
             'nav_slug'     => 'news',
@@ -75,6 +92,14 @@ return [
             // Директория сущностей: slug исключается из sitemap, если {lang}/tires/<slug>.json скрыт (visible:false)
             'entity_dir' => 'tires',
         ],
+    ],
+
+    // Дополнительные статические адреса в sitemap.xml (человечные страницы фильтра каталога).
+    'sitemap_extra_paths' => [
+        'tires/summer',
+        'tires/allseason',
+        'tires/winter',
+        'tires/studded',
     ],
 
     // Внешние интеграции (флаги включения)

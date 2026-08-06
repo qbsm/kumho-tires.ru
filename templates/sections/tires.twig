@@ -82,6 +82,8 @@
         {% set allModelsLinkHref = data.all_models_link.href | default('/tires/') %}
       {% endif %}
 
+      {# Пресет из человечного адреса (/tires/summer/205-55-r16) — фильтр стартует выставленным #}
+      {% set preset = filter_preset | default({}) %}
       {% if filterVisible %}
         {% set diameterOptions = [{'value': '', 'label': 'Все'}] %}
         {% for value in allDiameters|sort %}
@@ -143,6 +145,13 @@
             }
           ]
         } %}
+        <div
+          class="js-filter-preset hidden"
+          data-season="{{ preset.season | default('') }}"
+          data-width="{{ preset.width | default('') }}"
+          data-profile="{{ preset.profile | default('') }}"
+          data-diameter="{{ preset.diameter | default('') }}"
+        ></div>
         {% include 'components/filter.twig' with {'filter': tiresFilter} %}
       {% endif %}
 

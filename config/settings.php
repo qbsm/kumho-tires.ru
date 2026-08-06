@@ -77,6 +77,8 @@ return [
     'sitemap_pages' => (array) ($projectConfig['sitemap_pages'] ?? ['index']),
     // Динамические подпути для sitemap (из project.php): page => {data_page, list_key, value_key, slugger}
     'sitemap_dynamic_pages' => (array) ($projectConfig['sitemap_dynamic_pages'] ?? []),
+    // Дополнительные статические адреса sitemap (страницы фильтра каталога)
+    'sitemap_extra_paths' => (array) ($projectConfig['sitemap_extra_paths'] ?? []),
     // Rate limiting для POST /api/send (по IP, файловое хранилище в cache/rate_limit)
     'rate_limit_api_send' => [
         'max_requests' => 10,

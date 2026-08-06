@@ -131,9 +131,11 @@ onReady(() => {
     select.addEventListener('change', applyFilter);
   });
 
-  // Пресет из query-параметров: переход из конфигуратора подбора (/podbor)
+  // Пресет фильтра: человечный адрес (/tires/summer/205-55-r16) или query-параметры
+  const presetEl = root.querySelector('.js-filter-preset');
   const presetParams = new URLSearchParams(window.location.search);
-  const presetSeason = presetParams.get('season') || '';
+  const presetValue = (key) => (presetEl && presetEl.dataset[key]) || presetParams.get(key) || '';
+  const presetSeason = presetValue('season');
   if (presetSeason) {
     const presetButton = seasonButtons.find((btn) => btn.dataset.season === presetSeason);
     if (presetButton && !presetButton.disabled && !presetButton.classList.contains('disabled')) {
@@ -146,7 +148,7 @@ onReady(() => {
     [profileSelect, 'profile'],
     [diameterSelect, 'diameter'],
   ].forEach(([select, param]) => {
-    const value = presetParams.get(param);
+    const value = presetValue(param);
     if (!select || !value) return;
     if (Array.from(select.options).some((option) => option.value === value)) {
       select.value = value;

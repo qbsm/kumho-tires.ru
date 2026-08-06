@@ -162,14 +162,27 @@ const initSelector = (root) => {
 
   const updateCatalogLink = () => {
     if (!catalogEl || !catalogHref) return;
-    const params = new URLSearchParams();
+    const base = catalogHref.replace(/\/$/, '');
     // Фильтр каталога принимает один сезон — передаём только при однозначном выборе
-    if (answers.season.length === 1) params.set('season', catalogSeason(answers.season[0]));
+    const season = answers.season.length === 1 ? catalogSeason(answers.season[0]) : '';
+    const full = SIZE_KEYS.every((key) => size[key]);
+    const segments = [];
+    if (season) segments.push(season);
+    if (full) segments.push(`${size.width}-${size.profile}-r${size.diameter}`);
+
+    // Человечный адрес доступен для сезона и полного типоразмера, частичный размер — параметрами
+    if (segments.length > 0 && (full || SIZE_KEYS.every((key) => !size[key]))) {
+      catalogEl.href = `${base}/${segments.join('/')}`;
+      return;
+    }
+
+    const params = new URLSearchParams();
+    if (season) params.set('season', season);
     SIZE_KEYS.forEach((key) => {
       if (size[key]) params.set(key, size[key]);
     });
     const query = params.toString();
-    catalogEl.href = query ? `${catalogHref}?${query}` : catalogHref;
+    catalogEl.href = query ? `${base}?${query}` : base;
   };
 
   const renderResult = () => {

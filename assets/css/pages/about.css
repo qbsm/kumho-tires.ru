@@ -1,7 +1,8 @@
 /* Страница «О компании» */
 
 /* Обложка (frame) выше в 1.5 раза, чем на остальных страницах */
-.page-about .frame {
+.page-about .frame,
+.page-contacts .frame {
   height: 52.5rem;
 }
 

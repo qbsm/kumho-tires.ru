@@ -132,7 +132,8 @@ if (selectorSteps.length > 1) {
 const projectConfig = fs.readFileSync(path.join(ROOT, 'config/project.php'), 'utf8');
 const sitemapBlock = projectConfig.match(/'sitemap_pages'\s*=>\s*\[([\s\S]*?)\]/);
 const llms = fs.readFileSync(path.join(ROOT, 'public/llms.txt'), 'utf8');
-const ROUTE_BY_PAGE = { index: '/', 'tires-list': '/tires/' };
+// Канонические адреса — без хвостового слеша (его срезает TrailingSlashMiddleware)
+const ROUTE_BY_PAGE = { index: '/', 'tires-list': '/tires' };
 const SKIP = new Set(['404', 'policy', 'cookies-policy']);
 if (sitemapBlock) {
   sitemapBlock[1]
@@ -141,8 +142,8 @@ if (sitemapBlock) {
     .filter(Boolean)
     .forEach((pageId) => {
       if (SKIP.has(pageId)) return;
-      const route = ROUTE_BY_PAGE[pageId] || `/${pageId}/`;
-      if (!llms.includes(route)) {
+      const route = ROUTE_BY_PAGE[pageId] || `/${pageId}`;
+      if (!new RegExp(`${route.replace(/[/]/g, '\\/')}(?![\\w-])`).test(llms)) {
         fail(`public/llms.txt: страница ${route} (${pageId}) не перечислена — LLM-краулеры её не увидят`);
       }
     });
