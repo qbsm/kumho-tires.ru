@@ -88,6 +88,8 @@ final class SitemapAction
         $reverseMap = array_flip($routeMap);
         $urls = [];
 
+        $jsonBaseDir = (string) ($this->settings['paths']['json_base'] ?? '');
+
         foreach ($sitemapPages as $pageId) {
             $pathSegment = $this->pageIdToPathSegment($pageId, $reverseMap);
 
@@ -97,7 +99,16 @@ final class SitemapAction
                 foreach ($langs as $altLang) {
                     $alternates[$altLang] = $this->buildLangPath($base, $altLang, $defaultLang, $pathSegment);
                 }
-                $urls[] = ['loc' => $loc, 'alternates' => $alternates];
+                $url = ['loc' => $loc, 'alternates' => $alternates];
+                // Дата правки контента страницы — подсказка роботу, что переобходить
+                $pageFile = $jsonBaseDir . '/' . $lang . '/pages/' . $pageId . '.json';
+                if ($jsonBaseDir !== '' && is_file($pageFile)) {
+                    $mtime = filemtime($pageFile);
+                    if ($mtime !== false) {
+                        $url['lastmod'] = date('Y-m-d', $mtime);
+                    }
+                }
+                $urls[] = $url;
             }
         }
 
@@ -230,7 +241,8 @@ final class SitemapAction
      */
     private function entityLastmod(string $jsonBaseDir, string $lang, string $entityDir, string $slug): ?string
     {
-        $data = Json::load($jsonBaseDir . '/' . $lang . '/' . $entityDir . '/' . $slug . '.json');
+        $file = $jsonBaseDir . '/' . $lang . '/' . $entityDir . '/' . $slug . '.json';
+        $data = Json::load($file);
         if ($data === null) {
             return null;
         }
@@ -241,11 +253,21 @@ final class SitemapAction
             }
         }
         foreach ($candidates as $candidate) {
-            if (is_string($candidate) && preg_match('/^\d{4}(-\d{2}){1,2}$/', $candidate) === 1) {
+            if (!is_string($candidate)) {
+                continue;
+            }
+            // Sitemap требует дату в формате W3C Datetime; «2026-03» без дня Яндекс отбраковывает
+            if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $candidate) === 1) {
                 return $candidate;
             }
+            if (preg_match('/^\d{4}-\d{2}$/', $candidate) === 1) {
+                return $candidate . '-01';
+            }
         }
-        return null;
+
+        // У сущностей без даты в данных (модели шин) ориентир — время правки их файла
+        $mtime = is_file($file) ? filemtime($file) : false;
+        return $mtime === false ? null : date('Y-m-d', $mtime);
     }
 
     /**
@@ -303,8 +325,17 @@ final class SitemapAction
      */
     private function renderSitemap(string $base, array $urls): string
     {
+        $hasAlternates = false;
+        foreach ($urls as $u) {
+            if (count($u['alternates']) > 1) {
+                $hasAlternates = true;
+                break;
+            }
+        }
+
         $out = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-        $out .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' . "\n";
+        $out .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
+            . ($hasAlternates ? ' xmlns:xhtml="http://www.w3.org/1999/xhtml"' : '') . '>' . "\n";
 
         foreach ($urls as $u) {
             $out .= '  <url>' . "\n";
@@ -312,7 +343,8 @@ final class SitemapAction
             if (isset($u['lastmod']) && $u['lastmod'] !== '') {
                 $out .= '    <lastmod>' . htmlspecialchars($u['lastmod'], ENT_XML1, 'UTF-8') . '</lastmod>' . "\n";
             }
-            foreach ($u['alternates'] as $hreflang => $href) {
+            // Одноязычный сайт: alternate сам на себя — лишний узел, который валидаторы считают ошибкой
+            foreach (count($u['alternates']) > 1 ? $u['alternates'] : [] as $hreflang => $href) {
                 $out .= '    <xhtml:link rel="alternate" hreflang="' . htmlspecialchars($hreflang, ENT_XML1, 'UTF-8') . '" href="' . htmlspecialchars($href, ENT_XML1, 'UTF-8') . '"/>' . "\n";
             }
             $out .= '  </url>' . "\n";

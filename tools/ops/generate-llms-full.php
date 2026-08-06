@@ -26,6 +26,7 @@ if (is_readable($configPath)) {
 }
 
 $collections = (array) ($config['collections'] ?? []);
+$siteUrl = rtrim((string) ($config['site_url'] ?? ''), '/');
 $title = (string) ($config['title'] ?? 'Platform');
 $intro = (string) ($config['intro'] ?? 'Детальная информация о разделах платформы.');
 
@@ -99,6 +100,11 @@ foreach ($langs as $lang) {
             $name = getByPath($json, $nameKey);
             $lines[] = '### ' . (is_string($name) ? $name : $slug);
             $lines[] = 'Slug: ' . $slug;
+            // Полный адрес страницы: без него LLM знает модель, но не может дать на неё ссылку
+            $urlPattern = (string) ($coll['url_pattern'] ?? '');
+            if ($urlPattern !== '' && $siteUrl !== '') {
+                $lines[] = 'URL: ' . $siteUrl . str_replace('{slug}', (string) $slug, $urlPattern);
+            }
             if ($descKey !== null) {
                 $desc = getByPath($json, $descKey);
                 if ($desc !== null && $desc !== '') {

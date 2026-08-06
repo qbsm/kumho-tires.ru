@@ -50,7 +50,17 @@ final class TireSeoBuilder implements SeoBuilderInterface
             $titleParts[] = $sizeStr;
         }
         $title = trim(implode(' ', $titleParts));
-        $title = $title !== '' ? ($title . ' — характеристики и размеры') : $name;
+        if ($title !== '') {
+            // Длинные названия моделей вместе с полным хвостом вылезают за 65 символов и
+            // обрезаются в выдаче — для них берём короткий хвост.
+            $suffix = ' — характеристики и размеры';
+            if (mb_strlen($title . $suffix) > 65) {
+                $suffix = ' — характеристики';
+            }
+            $title .= $suffix;
+        } else {
+            $title = $name;
+        }
 
         $imgSrc = '';
         foreach (['30deg', 'front', 'side', 'back'] as $k) {

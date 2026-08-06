@@ -150,6 +150,7 @@
   {% set _org = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': _base_secure_domain_for_seo ~ '/#organization',
     'name': global.name|default('Company'),
     'url': _base_secure_domain_for_seo
   } %}
@@ -199,8 +200,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "{{ _base_secure_domain_for_seo ~ '/#website' }}",
     "name": "{{ global.name|default(site.name|default('Company')) }}",
-    "url": "{{ _base_secure_domain_for_seo ~ '/' }}"
+    "url": "{{ _base_secure_domain_for_seo ~ '/' }}",
+    "inLanguage": "{{ lang_code|default('ru') }}",
+    "publisher": { "@id": "{{ _base_secure_domain_for_seo ~ '/#organization' }}" }
   }
   </script>
 

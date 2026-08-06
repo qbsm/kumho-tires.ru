@@ -19,6 +19,10 @@ final class NewsSeoBuilder implements SeoBuilderInterface
         $inner = $itemKey !== '' ? (array) ($entity[$itemKey] ?? []) : $entity;
 
         $title = (string) ($inner['title'] ?? $entity['slug'] ?? '');
+        // Длинный заголовок новости обрезается в выдаче: seo_title даёт короткий вариант для
+        // <title> и og:title, а в headline и на самой странице остаётся полный заголовок.
+        $seoTitle = trim((string) ($inner['seo_title'] ?? ''));
+        $metaTitle = $seoTitle !== '' ? $seoTitle : $title;
         $desc = (string) ($inner['desc'] ?? $inner['lead'] ?? '');
         $siteName = (string) ($global['name'] ?? $global['site_name'] ?? '');
         $origin = rtrim($baseUrl, '/');
@@ -44,7 +48,7 @@ final class NewsSeoBuilder implements SeoBuilderInterface
         $meta = [
             ['name' => 'description', 'content' => $desc],
             ['property' => 'og:type', 'content' => (string) ($config['og_type'] ?? 'article')],
-            ['property' => 'og:title', 'content' => $title],
+            ['property' => 'og:title', 'content' => $metaTitle],
             ['property' => 'og:description', 'content' => $desc],
             ['property' => 'og:image', 'content' => $image],
         ];
@@ -88,7 +92,7 @@ final class NewsSeoBuilder implements SeoBuilderInterface
         $jsonLd = json_encode($article, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
         return [
-            'title' => $title,
+            'title' => $metaTitle,
             'meta' => $meta,
             'json_ld' => $jsonLd !== false ? $jsonLd : null,
             'json_ld_faq' => null,
