@@ -9,15 +9,19 @@
 /* Компактные вертикальные отступы: базовые .section дают по 6rem сверху и снизу,
    на короткой странице контактов они складываются в огромные пустоты. */
 .page-contacts .promo.section {
-  padding-bottom: 1.5rem;
+  padding-bottom: 3rem;
+
+  @media (--lg) {
+    padding-bottom: 4rem;
+  }
 }
 
 .page-contacts .content-container.section {
-  padding-top: 1.5rem;
+  padding-top: 0;
   padding-bottom: 1.5rem;
 }
 
-/* Последняя секция не должна упираться в футер — компактность нужна между блоками, а не перед ним */
+/* Последняя секция не должна упираться в футер */
 .page-contacts .content-container.section + .footer {
   margin-top: 4.5rem;
 
@@ -26,176 +30,189 @@
   }
 }
 
-
 .content-contacts {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-}
-
-.content-contacts .section__item.content-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.content-contacts .section__item.content-wrap:empty {
-  display: none;
-}
-
-/* Легаси-правила страницы восстановлены: блоки идут колонкой, кнопки — в строку */
-.content-contacts .section__subitem {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.content-contacts .section__inner.block-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.content-contacts .section__inner.button-wrap {
-  display: inline-flex;
-}
-
-.content-contacts .section__inner.block-wrap.buttons-wrap {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-/* Пояснения под заголовками блоков */
-.content-contacts .section__inner.heading-wrap {
-  gap: 0.6rem;
-}
-
-.contacts-note {
-  display: block;
-  max-width: 62rem;
-  color: var(--color-5);
-}
-
-/* Значения контактов — главное на странице: крупнее подписей и Manrope,
-   как заголовки карточек в каталоге. Иконки крупнее и в акценте. */
-.content-contacts .icon-text {
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.content-contacts .icon-text__icon {
-  width: 2rem;
-  flex: 0 0 auto;
-}
-
-.content-contacts .icon-text__icon img {
-  width: 100%;
-  height: auto;
-}
-
-.content-contacts .icon-text__link,
-.content-contacts .icon-text__title {
-  font-family: var(--font-2);
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.4;
-
-  @media (--lg) {
-    font-size: 2rem;
-  }
-}
-
-/* Ритм: между смысловыми группами воздуха больше, чем внутри группы */
-.content-contacts {
-  gap: 4.5rem;
+  gap: 4rem;
 
   @media (--lg) {
     gap: 6rem;
   }
 }
 
-.content-contacts .section__inner.block-wrap {
-  gap: 2rem;
+.content-contacts .section__item.content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @media (--lg) {
+    gap: 6rem;
+  }
 }
 
-.content-contacts .section__subitem {
-  gap: 2.5rem;
+/* Контакты и форма рядом: слева данные, справа обращение.
+   Пропорция 7/5 — данные шире, форма компактнее. */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+
+  @media (--md) {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 4rem;
+  }
+
+  @media (--lg) {
+    gap: 6rem;
+  }
 }
 
-/* Тонкие разделители между строками контактов — список читается как список,
-   а не как набор строк подряд. Тот же приём, что у карточек сайта. */
-.content-contacts .section__inner.block-wrap .section__inner.icon-text-wrap {
-  padding-bottom: 2rem;
+.contacts-main,
+.contacts-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.contacts-main__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.contacts-note {
+  display: block;
+  max-width: 54rem;
+  color: var(--color-5);
+}
+
+/* Список контактов: подпись мелким капсом, значение — основным текстом,
+   строка целиком кликабельна, разделители тонкие как у карточек сайта */
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-4);
+}
+
+.contacts-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+  padding: 1.8rem 0;
   border-bottom: 1px solid var(--color-4);
+  color: inherit;
 }
 
-.content-contacts .section__inner.block-wrap .section__inner.icon-text-wrap:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
+.contacts-item__icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  margin-top: 0.2rem;
 }
 
-.content-contacts .section__inner.block-wrap.buttons-wrap .section__inner.icon-text-wrap {
-  padding-bottom: 0;
-  border-bottom: 0;
+.contacts-item__icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contacts-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.contacts-item__label {
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-5);
+}
+
+.contacts-item__value {
+  font-family: var(--font-2);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .contacts-item:hover .contacts-item__value {
+    color: var(--color-3);
+  }
+}
+
+.contacts-buyers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 3.5rem;
+}
+
+.contacts-buyers__label {
+  font-family: var(--font-2);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-5);
+}
+
+.contacts-buyers__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+/* Форма — на светлой плашке, тем же приёмом, что выделен конфигуратор на главной */
+.contacts-aside {
+  gap: 0.8rem;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  background: #f8f9fb;
+
+  @media (--lg) {
+    padding: 4rem 3.5rem;
+    border-radius: 2rem;
+  }
+}
+
+.contacts-aside__form {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.contacts-map {
+  position: relative;
+  width: 100%;
+  height: 32rem;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  @media (--lg) {
+    height: 44rem;
+    border-radius: 2rem;
+  }
+}
+
+.contacts-map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .contacts-legal__text {
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--color-5);
-}
-
-/* Вложенный container-sm добавлял вторые 2rem: на мобильном заголовок стоял на 20px,
-   а контент на 40px. Ниже --lg внутренние отступы обнуляем — левый край один. */
-.content-contacts .container-sm {
-  padding-left: 0;
-  padding-right: 0;
-
-  @media (--lg) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/* Иконка выравнивается по первой строке значения, а не по центру блока:
-   у трёхстрочного адреса она уезжала в середину */
-.content-contacts .icon-text {
-  align-items: flex-start;
-}
-
-.content-contacts .icon-text__icon {
-  margin-top: 0.2rem;
-}
-
-/* Воздух между заголовком страницы и первым блоком */
-.page-contacts .promo.section {
-  padding-bottom: 3rem;
-
-  @media (--lg) {
-    padding-bottom: 4rem;
-  }
-}
-
-/* На узких экранах кнопки занимают строку целиком, а не встают вразнобой */
-.content-contacts .section__inner.block-wrap.buttons-wrap .button {
-  width: 100%;
-
-  @media (--xm) {
-    width: auto;
-  }
-}
-
-/* Второй смысловой блок отделяется от списка контактов, а не примыкает к нему */
-.content-contacts .section__inner.heading-wrap ~ .section__inner.heading-wrap {
-  margin-top: 3rem;
-
-  @media (--lg) {
-    margin-top: 4rem;
-  }
-}
-
-/* Иконка соразмерна значению рядом: при 20px значении 20px иконка читалась мелкой */
-.content-contacts .icon-text__icon {
-  width: 2.2rem;
 }
