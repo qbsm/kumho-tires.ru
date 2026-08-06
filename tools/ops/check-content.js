@@ -193,6 +193,30 @@ if (sitemapBlock) {
     });
 }
 
+// --- 5c. Условия гарантии пересказаны верно ------------------------------------
+// Периоды акции меняются на странице /warranty, а пересказ живёт в FAQ на главной и в
+// llms-фидах: без сверки они расходятся и сайт начинает противоречить сам себе.
+{
+  const warrantyPage = path.join(DATA, LANG, 'pages/warranty.json');
+  if (fs.existsSync(warrantyPage)) {
+    const raw = fs.readFileSync(warrantyPage, 'utf8');
+    const periods = [...raw.matchAll(/\d{2}\.\d{2}\.\d{4}/g)].map((m) => m[0]);
+    const canonical = [...new Set(periods)];
+    const retellings = [
+      { label: 'FAQ на главной', text: fs.readFileSync(path.join(DATA, LANG, 'pages/index.json'), 'utf8') },
+      { label: 'public/llms.txt', text: fs.readFileSync(path.join(ROOT, 'public/llms.txt'), 'utf8') },
+      { label: 'config/llms-full.php', text: fs.readFileSync(path.join(ROOT, 'config/llms-full.php'), 'utf8') },
+    ];
+    retellings.forEach(({ label, text }) => {
+      const mentioned = [...new Set([...text.matchAll(/\d{2}\.\d{2}\.\d{4}/g)].map((m) => m[0]))];
+      const stale = mentioned.filter((date) => !canonical.includes(date));
+      if (stale.length > 0) {
+        fail(`${label}: даты ${stale.join(', ')} не встречаются в условиях на /warranty — пересказ программы устарел`);
+      }
+    });
+  }
+}
+
 // --- 6. llms-full.txt не протух --------------------------------------------------
 try {
   const generated = execFileSync('php', [path.join(ROOT, 'tools/ops/generate-llms-full.php'), ROOT], {

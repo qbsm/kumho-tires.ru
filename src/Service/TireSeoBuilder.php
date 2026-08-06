@@ -123,6 +123,35 @@ final class TireSeoBuilder implements SeoBuilderInterface
         if ($sizeStr !== '') {
             $props[] = ['@type' => 'PropertyValue', 'name' => 'Посадочный диаметр', 'value' => $sizeStr];
         }
+        // Полный перечень типоразмеров и тип транспорта — машиночитаемые факты для поисковых
+        // ассистентов: по ним отвечают на «есть ли 205/55 R16» и «подойдёт ли на кроссовер».
+        $labels = [];
+        foreach ((array) ($entity['sizes'] ?? []) as $size) {
+            if (is_array($size) && isset($size['label']) && is_string($size['label']) && $size['label'] !== '') {
+                $labels[] = $size['label'];
+            }
+        }
+        if ($labels !== []) {
+            $props[] = [
+                '@type' => 'PropertyValue',
+                'name' => 'Типоразмеры',
+                'value' => implode(', ', array_values(array_unique($labels))),
+            ];
+        }
+        $vehicleLabels = [
+            'passenger' => 'легковые автомобили',
+            'suv' => 'кроссоверы и внедорожники',
+            'commercial' => 'коммерческий транспорт',
+        ];
+        $vehicles = [];
+        foreach ((array) ($entity['filter']['vehicle'] ?? []) as $vehicle) {
+            if (is_string($vehicle) && isset($vehicleLabels[$vehicle])) {
+                $vehicles[] = $vehicleLabels[$vehicle];
+            }
+        }
+        if ($vehicles !== []) {
+            $props[] = ['@type' => 'PropertyValue', 'name' => 'Тип транспорта', 'value' => implode(', ', $vehicles)];
+        }
         if ($props !== []) {
             $product['additionalProperty'] = $props;
         }
