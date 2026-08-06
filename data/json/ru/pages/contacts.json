@@ -34,7 +34,7 @@
           "items": [
             {
               "class": "content-wrap",
-              "content": "<div class='section__subitem contacts-stack'><div class='contacts-card'>{% include 'components/heading.twig' with {'item': item.business.heading} %}<span class='contacts-card__desc'>{{ item.business.desc }}</span><div class='contacts-card__list'>{% for row in item.rows %}<a class='contacts-card__row link' href='{{ row.href }}'{% if row.external is defined %} target='_blank' rel='noopener'{% endif %}><span class='contacts-card__icon'><img src='{{ url(row.icon) }}' alt='' loading='lazy'></span><span class='contacts-card__body'><span class='contacts-card__label'>{{ row.label }}</span><span class='contacts-card__value'>{{ row.value }}</span></span></a>{% endfor %}</div></div><div class='contacts-card'>{% include 'components/heading.twig' with {'item': item.retail.heading} %}<span class='contacts-card__desc'>{{ item.retail.desc }}</span><div class='contacts-card__actions'>{% for link in item.retail.items %}<a href='{{ url(link.href) }}' class='button button-sm {{ loop.first ? 'button-3' : 'outline-color-2' }} button-animated animation-shift uppercase link contacts-btn'>{{ link.title }}</a>{% endfor %}</div></div><div class='contacts-card contacts-card--map'>{% include 'components/heading.twig' with {'item': item.map.heading} %}<div class='contacts-card__map'><iframe src='{{ item.map.src }}' title='{{ item.map.alt }}' loading='lazy' allowfullscreen></iframe></div></div><div class='contacts-card'>{% include 'components/heading.twig' with {'item': item.form.heading} %}<span class='contacts-card__desc'>{{ item.form.desc }}</span><div class='contacts-card__form'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': item.form.button}}} %}</div></div><span class='contacts-legal__text'>{{ global.owner[lang_code] }}</span></div>",
+              "content": "<div class='section__subitem contacts-stack'><div class='contacts-card'>{% include 'components/heading.twig' with {'item': item.business.heading} %}<span class='contacts-card__desc'>{{ item.business.desc }}</span><div class='contacts-card__list'>{% for row in item.rows %}{% if row.href is defined %}<a class='contacts-card__row link' href='{{ row.href }}'>{% else %}<div class='contacts-card__row'>{% endif %}<span class='contacts-card__icon'><img src='{{ url(row.icon) }}' alt='' loading='lazy'></span><span class='contacts-card__body'><span class='contacts-card__label'>{{ row.label }}</span><span class='contacts-card__value'>{{ row.value }}</span></span>{% if row.href is defined %}</a>{% else %}</div>{% endif %}{% endfor %}</div></div><div class='contacts-card'>{% include 'components/heading.twig' with {'item': item.retail.heading} %}<span class='contacts-card__desc'>{{ item.retail.desc }}</span><div class='contacts-card__actions'>{% for link in item.retail.items %}<a href='{{ url(link.href) }}' class='button button-sm {{ loop.first ? 'button-3' : 'outline-color-2' }} button-animated animation-shift uppercase link contacts-btn'>{{ link.title }}</a>{% endfor %}</div></div><div class='contacts-card contacts-card--map'>{% include 'components/heading.twig' with {'item': item.map.heading} %}<div class='contacts-card__map'><iframe src='{{ item.map.src }}' title='{{ item.map.alt }}' loading='lazy' allowfullscreen></iframe></div></div><div class='contacts-card'>{% include 'components/heading.twig' with {'item': item.form.heading} %}<span class='contacts-card__desc'>{{ item.form.desc }}</span><div class='contacts-card__form'>{% include 'components/form-callback.twig' with {'data': {'button': {'title': item.form.button}, 'fields': [{'type': 'text', 'name': 'name', 'autocomplete': 'name', 'validation': {'required': true, 'minLength': 2}}, {'type': 'tel', 'name': 'phone', 'inputmode': 'tel', 'autocomplete': 'tel', 'validation': {'required': true, 'validator': 'phone'}}, {'type': 'textarea', 'name': 'message', 'validation': {'required': false, 'maxLength': 2000}}, {'type': 'checkbox', 'name': 'policy', 'validation': {'required': true}}, {'type': 'hidden', 'name': 'current_url'}, {'type': 'hidden', 'name': 'csrf_token'}]}} %}</div></div></div>",
               "business": {
                 "heading": {
                   "tag": "h2",
@@ -47,9 +47,7 @@
                 {
                   "icon": "data/img/ui/icons/icon-locate-color-2.svg",
                   "label": "Адрес",
-                  "value": "143900, Московская область, город Балашиха, шоссе Энтузиастов, дом 84, помещение 5",
-                  "href": "https://yandex.ru/maps/?text=Московская%20область%2C%20Балашиха%2C%20шоссе%20Энтузиастов%2C%2084",
-                  "external": true
+                  "value": "143900, Московская область, город Балашиха, шоссе Энтузиастов, дом 84, помещение 5"
                 },
                 {
                   "icon": "data/img/ui/icons/icon-phone-color-2.svg",
@@ -88,7 +86,7 @@
                   "class": "h3 heading font-2 weight-700 heading-flex uppercase",
                   "title": "На карте"
                 },
-                "src": "https://yandex.ru/map-widget/v1/?text=Московская%20область%2C%20Балашиха%2C%20шоссе%20Энтузиастов%2C%2084&z=16",
+                "src": "https://yandex.ru/map-widget/v1/?text=Московская%20область%2C%20Балашиха%2C%20шоссе%20Энтузиастов%2C%2084&z=16&scroll=false",
                 "alt": "143900, Московская область, город Балашиха, шоссе Энтузиастов, дом 84, помещение 5"
               },
               "form": {
