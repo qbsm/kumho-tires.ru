@@ -91,30 +91,41 @@ return [
         'allow_credentials' => false,
     ],
     'mail' => [
-        'dsn' => (string) (getenv('MAILER_DSN') ?: 'sendmail://default'),
+        'dsn' => (string) (getenv('MAIL_DSN') ?: 'sendmail://default'),
         'to' => (string) (getenv('MAIL_TO') ?: ''),
         'from' => (string) (getenv('MAIL_FROM') ?: 'noreply@localhost'),
         'from_name' => (string) (getenv('MAIL_FROM_NAME') ?: ''),
         'subject_prefix' => (string) (getenv('MAIL_SUBJECT_PREFIX') ?: ''),
     ],
+    // Резервный сбор заявок (rescue-канал): дублирует заявку в наш сервис, который сначала её
+    // сохраняет, а потом раздаёт по каналам с повторами — упавший канал не теряет лид.
+    // Подтверждение отправителя — по домену: заявку шлёт бэкенд, значит с адреса, на который
+    // домен резолвится. Секрета в .env нет; ключ нужен только хостингам вне нашего периметра.
+    'rescue' => [
+        'enable' => filter_var((string) (getenv('RESCUE_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'url' => (string) (getenv('RESCUE_URL') ?: 'https://api.ismart.pro/v1/rescue'),
+        'site' => (string) (getenv('RESCUE_SITE') ?: ''),
+        'key' => (string) (getenv('RESCUE_KEY') ?: ''),
+        'timeout' => (int) (getenv('RESCUE_TIMEOUT') ?: 10),
+    ],
     'calltouch' => [
-        'enable' => filter_var((string) (getenv('CT_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
-        'route_key' => (string) (getenv('CT_ROUTE_KEY') ?: ''),
-        'token' => (string) (getenv('CT_TOKEN') ?: ''),
-        'timeout' => (int) (getenv('CT_TIMEOUT') ?: 10),
+        'enable' => filter_var((string) (getenv('CALLTOUCH_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'route_key' => (string) (getenv('CALLTOUCH_ROUTE_KEY') ?: ''),
+        'token' => (string) (getenv('CALLTOUCH_TOKEN') ?: ''),
+        'timeout' => (int) (getenv('CALLTOUCH_TIMEOUT') ?: 10),
     ],
     'telegram' => [
-        'enable' => filter_var((string) (getenv('TG_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
-        'bot_token' => (string) (getenv('TG_BOT_TOKEN') ?: ''),
-        'chat_id' => (string) (getenv('TG_CHAT_ID') ?: ''),
-        'timeout' => (int) (getenv('TG_TIMEOUT') ?: 10),
+        'enable' => filter_var((string) (getenv('TELEGRAM_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'bot_token' => (string) (getenv('TELEGRAM_BOT_TOKEN') ?: ''),
+        'chat_id' => (string) (getenv('TELEGRAM_CHAT_ID') ?: ''),
+        'timeout' => (int) (getenv('TELEGRAM_TIMEOUT') ?: 10),
     ],
     'google_sheets' => [
-        'enable' => filter_var((string) (getenv('GS_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
-        'spreadsheet_id' => (string) (getenv('GS_SPREADSHEET_ID') ?: ''),
-        'sheet_name' => (string) (getenv('GS_SHEET_NAME') ?: 'Заявки'),
-        'credentials_path' => (string) (getenv('GS_CREDENTIALS_PATH') ?: 'config/secrets/google-service-account.json'),
-        'timeout' => (int) (getenv('GS_TIMEOUT') ?: 10),
+        'enable' => filter_var((string) (getenv('SHEETS_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'spreadsheet_id' => (string) (getenv('SHEETS_SPREADSHEET_ID') ?: ''),
+        'sheet_name' => (string) (getenv('SHEETS_SHEET_NAME') ?: 'Заявки'),
+        'credentials_path' => (string) (getenv('SHEETS_CREDENTIALS_PATH') ?: 'config/secrets/google-service-account.json'),
+        'timeout' => (int) (getenv('SHEETS_TIMEOUT') ?: 10),
     ],
     'errors' => require __DIR__ . '/errors.php',
     'twig' => [
