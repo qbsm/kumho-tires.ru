@@ -1,3 +1,11 @@
+.form-callback__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* ==========================================================================
    form-callback — современная форма обратной связи
    Floating labels, анимации, единообразные поля, drag-and-drop зона файлов
