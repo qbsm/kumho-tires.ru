@@ -100,6 +100,8 @@ return [
         'allow_credentials' => false,
     ],
     'mail' => [
+        // Пусто — флага в .env нет, поведение прежнее: канал включён, если задан адрес.
+        'enable' => (string) (getenv('MAIL_ENABLE') ?: ''),
         'dsn' => (string) (getenv('MAIL_DSN') ?: 'sendmail://default'),
         'to' => (string) (getenv('MAIL_TO') ?: ''),
         'from' => (string) (getenv('MAIL_FROM') ?: 'noreply@localhost'),
