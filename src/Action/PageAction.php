@@ -51,7 +51,6 @@ final class PageAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
-        $csrfToken = $this->ensureCsrfToken();
         $segments = $request->getAttribute('segments', []);
         $baseUrl = (string) $request->getAttribute('base_url', '/');
         $global = $request->getAttribute('global', []);
@@ -282,7 +281,6 @@ final class PageAction
                 'route_params' => $routeParams,
                 'base_url' => $baseUrl,
                 'is_lang_in_url' => $isLangInUrl,
-                'csrf_token' => $csrfToken,
             ],
             $extras
         );
@@ -649,19 +647,4 @@ final class PageAction
         $this->dispatcher?->dispatch($event);
     }
 
-    private function ensureCsrfToken(): string
-    {
-        if (session_status() !== PHP_SESSION_ACTIVE) {
-            // cache_limiter '' — иначе PHP шлёт Cache-Control: no-store/no-cache + Pragma + Expires
-            // на каждой странице, и мессенджеры (Telegram/WhatsApp) не строят превью ссылок:
-            // им запрещено кэшировать страницу.
-            session_start(['cache_limiter' => '']);
-        }
-
-        if (!isset($_SESSION['csrf_token']) || !is_string($_SESSION['csrf_token']) || $_SESSION['csrf_token'] === '') {
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-        }
-
-        return $_SESSION['csrf_token'];
-    }
 }

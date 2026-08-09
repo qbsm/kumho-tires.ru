@@ -43,7 +43,6 @@ final class TemplateDataBuilder
             'route_params' => $ctx['route_params'] ?? [],
             'base_url' => $ctx['base_url'] ?? '/',
             'is_lang_in_url' => $ctx['is_lang_in_url'] ?? false,
-            'csrf_token' => $ctx['csrf_token'] ?? '',
             'pageData' => $pageData,
             'pageSeoData' => $seo,
             'pageTitle' => $pageTitle,
