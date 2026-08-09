@@ -13,6 +13,7 @@ return static function (App $app): void {
     $app->get('/health', HealthAction::class);
     $app->post('/api/send[/]', ApiSendAction::class);
     $app->post('/api/widget-rescue[/]', ApiWidgetRescueAction::class);
+    $app->get('/_f', static fn($request, $response) => $response->withStatus(204));
     $app->get('/sitemap.xml', SitemapAction::class);
     $app->get('/', PageAction::class);
     $app->get('/{page}[/{params:.*}]', PageAction::class);
