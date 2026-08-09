@@ -81,6 +81,7 @@ return [
     'sitemap_extra_paths' => (array) ($projectConfig['sitemap_extra_paths'] ?? []),
     // Rate limiting для POST /api/send (по IP, файловое хранилище в cache/rate_limit)
     'rate_limit_api_send' => [
+        'paths' => ['/api/send', '/api/widget-rescue'],
         'max_requests' => 10,
         'window_seconds' => 60,
     ],
