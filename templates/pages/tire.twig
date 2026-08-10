@@ -114,6 +114,10 @@
           </div>
           <div class="section__subitem">
             <div class="tire-detail__table-wrap">
+              {% set _hasEuLabel = false %}
+              {% for size in tire.sizes %}
+                {% if size.eu is defined %}{% set _hasEuLabel = true %}{% endif %}
+              {% endfor %}
               <table class="tire-detail__table">
                 <thead>
                   <tr>
@@ -121,6 +125,11 @@
                     <th>Диаметр</th>
                     <th>Индекс нагрузки/скорости</th>
                     <th>C</th>
+                    {% if _hasEuLabel %}
+                      <th title="Класс топливной экономичности, от A до E">Экономичность</th>
+                      <th title="Класс сцепления на мокрой дороге, от A до E">Сцепление</th>
+                      <th title="Уровень внешнего шума качения">Шум, дБ</th>
+                    {% endif %}
                   </tr>
                 </thead>
                 <tbody>
@@ -130,11 +139,23 @@
                     <td>R{{ size.diameter }}</td>
                     <td>{{ size.index|default('') }}</td>
                     <td>{{ size.commercial|default(false) ? 'C' : '' }}</td>
+                    {% if _hasEuLabel %}
+                      <td>{{ size.eu.energy|default('—') }}</td>
+                      <td>{{ size.eu.wet|default('—') }}</td>
+                      <td>{{ size.eu.noise is defined ? size.eu.noise : '—' }}</td>
+                    {% endif %}
                   </tr>
                   {% endfor %}
                 </tbody>
               </table>
             </div>
+            {% if _hasEuLabel %}
+              <p class="tire-detail__note">
+                Классы экономичности и сцепления, уровень шума — по регистрациям шины в
+                <a href="https://eprel.ec.europa.eu/screen/product/tyres?search=KUMHO%20{{ tire.item.code|url_encode }}" target="_blank" rel="noopener">реестре ЕС EPREL</a>.
+                Прочерк означает, что типоразмер в реестре не зарегистрирован.
+              </p>
+            {% endif %}
           </div>
         </div>
         {% endif %}

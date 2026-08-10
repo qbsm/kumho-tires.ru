@@ -39,7 +39,8 @@
       "label": "175/55R15",
       "diameter": 15,
       "index": "77T",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "D", "noise": 70, "noiseClass": "B", "eprel": "442595"}
     }
   ],
   "features": [

@@ -37,13 +37,15 @@
       "label": "195/55R16",
       "diameter": 16,
       "index": "87V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "651793"}
     },
     {
       "label": "225/55R16",
       "diameter": 16,
       "index": "95W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "B", "noise": 68, "noiseClass": "A", "eprel": "465134"}
     }
   ],
   "features": [

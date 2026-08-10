@@ -33,13 +33,15 @@
       "label": "225/65R17",
       "diameter": 17,
       "index": "102H",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "B", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "442706"}
     },
     {
       "label": "265/60R18",
       "diameter": 18,
       "index": "110H",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "B", "wet": "D", "noise": 72, "noiseClass": "B", "eprel": "442716"}
     }
   ],
   "features": [

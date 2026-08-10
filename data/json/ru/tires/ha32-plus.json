@@ -42,31 +42,36 @@
       "label": "195/55R16",
       "diameter": 16,
       "index": "91V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1497446"}
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "94V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1594341"}
     },
     {
       "label": "215/60R16",
       "diameter": 16,
       "index": "99V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1497450"}
     },
     {
       "label": "215/55R17",
       "diameter": 17,
       "index": "98W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1497449"}
     },
     {
       "label": "225/45R17",
       "diameter": 17,
       "index": "94W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1594343"}
     },
     {
       "label": "225/50R17",
@@ -78,25 +83,29 @@
       "label": "215/50R18",
       "diameter": 18,
       "index": "96W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1950752"}
     },
     {
       "label": "225/40R18",
       "diameter": 18,
       "index": "92W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1636324"}
     },
     {
       "label": "225/45R18",
       "diameter": 18,
       "index": "95W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1594344"}
     },
     {
       "label": "235/55R18",
       "diameter": 18,
       "index": "104V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1497445"}
     }
   ],
   "features": [

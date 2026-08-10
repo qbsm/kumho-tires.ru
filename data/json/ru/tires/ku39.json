@@ -37,13 +37,15 @@
       "label": "225/35R17",
       "diameter": 17,
       "index": "86Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "B", "noise": 70, "noiseClass": "B", "eprel": "443195"}
     },
     {
       "label": "235/50R17",
       "diameter": 17,
       "index": "96Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "C", "noise": 70, "noiseClass": "B", "eprel": "443202"}
     },
     {
       "label": "215/35R19",

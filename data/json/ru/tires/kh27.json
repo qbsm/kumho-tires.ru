@@ -73,7 +73,8 @@
       "label": "185/55R15",
       "diameter": 15,
       "index": "86H",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "A", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "1383142"}
     },
     {
       "label": "185/65R15",

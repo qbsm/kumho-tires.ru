@@ -33,7 +33,8 @@
       "label": "205/60R16",
       "diameter": 16,
       "index": "96H",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "B", "wet": "B", "noise": 70, "noiseClass": "B", "eprel": "1090442"}
     }
   ],
   "features": [

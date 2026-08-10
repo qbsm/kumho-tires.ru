@@ -33,13 +33,15 @@
       "label": "195/45R15",
       "diameter": 15,
       "index": "78V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "B", "noise": 69, "noiseClass": "B", "eprel": "444149"}
     },
     {
       "label": "205/50R15",
       "diameter": 15,
       "index": "86V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "444385"}
     },
     {
       "label": "205/55R15",
@@ -51,49 +53,57 @@
       "label": "225/60R15",
       "diameter": 15,
       "index": "96W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "444395"}
     },
     {
       "label": "205/60R16",
       "diameter": 16,
       "index": "92H",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "B", "wet": "B", "noise": 70, "noiseClass": "B", "eprel": "444453"}
     },
     {
       "label": "215/40R16",
       "diameter": 16,
       "index": "86W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "B", "noise": 69, "noiseClass": "A", "eprel": "444701"}
     },
     {
       "label": "215/45R16",
       "diameter": 16,
       "index": "86H",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "2262837"}
     },
     {
       "label": "225/50R16",
       "diameter": 16,
       "index": "92W",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 69, "noiseClass": "B", "eprel": "444423"}
     },
     {
       "label": "205/45R17",
       "diameter": 17,
       "index": "88V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "eprel": "445157"}
     },
     {
       "label": "215/55R17",
       "diameter": 17,
       "index": "94V",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "444457"}
     },
     {
       "label": "215/60R17",
       "diameter": 17,
       "index": "96H",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "A", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "613334"}
     },
     {
       "label": "215/55R18",

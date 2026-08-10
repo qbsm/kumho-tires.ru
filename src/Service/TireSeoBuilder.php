@@ -165,6 +165,22 @@ final class TireSeoBuilder implements SeoBuilderInterface
         if ($vehicles !== []) {
             $props[] = ['@type' => 'PropertyValue', 'name' => 'Тип транспорта', 'value' => implode(', ', $vehicles)];
         }
+        // Евромаркировка: классы привязаны к типоразмеру, поэтому у модели их корректно
+        // показывать только диапазоном по зарегистрированным размерам.
+        $eu = $this->euSummary($entity);
+        if ($eu !== null) {
+            $props[] = ['@type' => 'PropertyValue', 'name' => 'Класс топливной экономичности', 'value' => $eu['energy']];
+            $props[] = ['@type' => 'PropertyValue', 'name' => 'Класс сцепления на мокрой дороге', 'value' => $eu['wet']];
+            if ($eu['noise'] !== '') {
+                $props[] = ['@type' => 'PropertyValue', 'name' => 'Внешний шум качения', 'value' => $eu['noise']];
+            }
+            if ($eu['snow']) {
+                $props[] = ['@type' => 'PropertyValue', 'name' => 'Маркировка 3PMSF', 'value' => 'да'];
+            }
+            if ($eu['ice']) {
+                $props[] = ['@type' => 'PropertyValue', 'name' => 'Маркировка ice grip', 'value' => 'да'];
+            }
+        }
         if ($props !== []) {
             $product['additionalProperty'] = $props;
         }
@@ -243,6 +259,24 @@ final class TireSeoBuilder implements SeoBuilderInterface
             $faq[] = ['q' => 'Для каких автомобилей и условий подходит ' . $name . '?', 'a' => $answer];
         }
 
+        $eu = $this->euSummary($entity);
+        if ($eu !== null) {
+            $answer = 'Класс топливной экономичности — ' . $eu['energy']
+                . ', класс сцепления на мокрой дороге — ' . $eu['wet'];
+            if ($eu['noise'] !== '') {
+                $answer .= ', внешний шум качения — ' . $eu['noise'];
+            }
+            $answer .= '.';
+            if ($eu['snow']) {
+                $answer .= ' Подтверждена маркировка 3PMSF (три горных пика со снежинкой)'
+                    . ($eu['ice'] ? ' и ice grip.' : '.');
+            }
+            $answer .= ' Значения приведены по ' . $eu['covered'] . ' из ' . $eu['total'] . ' '
+                . $this->plural($eu['total'], 'типоразмера', 'типоразмеров', 'типоразмеров')
+                . ', зарегистрированным в реестре ЕС EPREL: у разных размеров классы отличаются.';
+            $faq[] = ['q' => 'Какая евромаркировка у ' . $name . '?', 'a' => $answer];
+        }
+
         $cyrillic = null;
         $latinAlt = null;
         foreach ($altNames as $alt) {
@@ -266,6 +300,71 @@ final class TireSeoBuilder implements SeoBuilderInterface
         ];
 
         return $faq;
+    }
+
+    /**
+     * Сводка евромаркировки по типоразмерам: классы регистрируются на каждый размер отдельно,
+     * поэтому у модели честен только диапазон и число охваченных размеров.
+     *
+     * @param array<string,mixed> $entity
+     * @return array{energy:string,wet:string,noise:string,snow:bool,ice:bool,covered:int,total:int}|null
+     */
+    private function euSummary(array $entity): ?array
+    {
+        $sizes = (array) ($entity['sizes'] ?? []);
+        $energy = [];
+        $wet = [];
+        $noise = [];
+        $snow = false;
+        $ice = false;
+        $covered = 0;
+
+        foreach ($sizes as $size) {
+            $eu = is_array($size) ? ($size['eu'] ?? null) : null;
+            if (!is_array($eu)) {
+                continue;
+            }
+            $covered++;
+            if (is_string($eu['energy'] ?? null)) {
+                $energy[$eu['energy']] = true;
+            }
+            if (is_string($eu['wet'] ?? null)) {
+                $wet[$eu['wet']] = true;
+            }
+            if (is_numeric($eu['noise'] ?? null)) {
+                $noise[] = (int) $eu['noise'];
+            }
+            $snow = $snow || ($eu['snow'] ?? false) === true;
+            $ice = $ice || ($eu['ice'] ?? false) === true;
+        }
+
+        if ($covered === 0 || $energy === [] || $wet === []) {
+            return null;
+        }
+
+        $range = static function (array $classes): string {
+            $keys = array_keys($classes);
+            sort($keys);
+
+            return count($keys) === 1 ? $keys[0] : $keys[0] . '–' . end($keys);
+        };
+
+        $noiseStr = '';
+        if ($noise !== []) {
+            $noiseStr = min($noise) === max($noise)
+                ? min($noise) . ' дБ'
+                : min($noise) . '–' . max($noise) . ' дБ';
+        }
+
+        return [
+            'energy' => $range($energy),
+            'wet' => $range($wet),
+            'noise' => $noiseStr,
+            'snow' => $snow,
+            'ice' => $ice,
+            'covered' => $covered,
+            'total' => count($sizes),
+        ];
     }
 
     /**

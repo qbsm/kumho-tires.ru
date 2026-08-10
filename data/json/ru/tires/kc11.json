@@ -79,7 +79,8 @@
       "label": "195/60R16C",
       "diameter": 16,
       "index": "99/97T",
-      "commercial": true
+      "commercial": true,
+      "eu": {"energy": "D", "wet": "D", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "450430"}
     },
     {
       "label": "205/80R16C",

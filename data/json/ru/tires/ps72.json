@@ -65,19 +65,22 @@
       "label": "225/45R17",
       "diameter": 17,
       "index": "91Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406098"}
     },
     {
       "label": "225/45R17",
       "diameter": 17,
       "index": "94Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406098"}
     },
     {
       "label": "225/50R17",
       "diameter": 17,
       "index": "98Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406103"}
     },
     {
       "label": "225/55R17",
@@ -125,19 +128,22 @@
       "label": "225/40R18",
       "diameter": 18,
       "index": "92Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406105"}
     },
     {
       "label": "225/40R18",
       "diameter": 18,
       "index": "92(Y)",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406115"}
     },
     {
       "label": "225/45R18",
       "diameter": 18,
       "index": "95Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 70, "noiseClass": "B", "eprel": "2111064"}
     },
     {
       "label": "235/40R18",
@@ -167,13 +173,15 @@
       "label": "245/40R18",
       "diameter": 18,
       "index": "97Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406113"}
     },
     {
       "label": "245/45R18",
       "diameter": 18,
       "index": "100Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406092"}
     },
     {
       "label": "245/50R18",
@@ -191,7 +199,8 @@
       "label": "255/40R18",
       "diameter": 18,
       "index": "99Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 71, "noiseClass": "B", "eprel": "2406094"}
     },
     {
       "label": "255/45R18",
@@ -239,13 +248,15 @@
       "label": "235/35R19",
       "diameter": 19,
       "index": "91Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406078"}
     },
     {
       "label": "235/35R19",
       "diameter": 19,
       "index": "91(Y)",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 72, "noiseClass": "B", "eprel": "2406078"}
     },
     {
       "label": "235/40R19",
@@ -275,7 +286,8 @@
       "label": "245/40R19",
       "diameter": 19,
       "index": "98Y",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "C", "wet": "A", "noise": 71, "noiseClass": "B", "eprel": "2406076"}
     },
     {
       "label": "245/45R19",
@@ -335,7 +347,8 @@
       "label": "265/45R19",
       "diameter": 19,
       "index": "",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "A", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "2406072"}
     },
     {
       "label": "275/30R19",

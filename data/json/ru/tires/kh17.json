@@ -33,13 +33,15 @@
       "label": "135/80R13",
       "diameter": 13,
       "index": "70T",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "B", "noise": 68, "noiseClass": "B", "eprel": "441682"}
     },
     {
       "label": "165/80R13",
       "diameter": 13,
       "index": "87T",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "D", "noise": 71, "noiseClass": "B", "eprel": "441754"}
     }
   ],
   "features": [

@@ -47,7 +47,8 @@
       "label": "205/75R15",
       "diameter": 15,
       "index": "97S",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "D", "noise": 71, "noiseClass": "B", "eprel": "443890"}
     },
     {
       "label": "215/80R15",
@@ -59,7 +60,8 @@
       "label": "255/75R15",
       "diameter": 15,
       "index": "110S",
-      "commercial": false
+      "commercial": false,
+      "eu": {"energy": "D", "wet": "D", "noise": 72, "noiseClass": "B", "eprel": "443913"}
     },
     {
       "label": "205/80R16",
