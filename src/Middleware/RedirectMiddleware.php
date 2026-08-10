@@ -54,12 +54,21 @@ final class RedirectMiddleware implements MiddlewareInterface
 
             $from = rtrim((string) $rule['from'], '/');
             $from = $from === '' ? '/' : $from;
-            if ($from !== $requestPath) {
+            $to = (string) $rule['to'];
+            $status = (int) ($rule['status'] ?? 301);
+
+            // Правило вида "/old-section/*" переносит на новый префикс весь хвост пути:
+            // устаревшую структуру адресов не приходится перечислять по одному URL.
+            if (str_ends_with($from, '/*')) {
+                $prefix = rtrim(substr($from, 0, -2), '/');
+                if ($prefix === '' || ($requestPath !== $prefix && !str_starts_with($requestPath, $prefix . '/'))) {
+                    continue;
+                }
+                $to = rtrim($to, '/') . substr($requestPath, strlen($prefix));
+            } elseif ($from !== $requestPath) {
                 continue;
             }
 
-            $to = (string) $rule['to'];
-            $status = (int) ($rule['status'] ?? 301);
             if (str_starts_with($to, 'http://') || str_starts_with($to, 'https://')) {
                 return ['to' => $to, 'status' => $status];
             }

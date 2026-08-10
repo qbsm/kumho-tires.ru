@@ -8,5 +8,15 @@
     "from": "/buy/saint",
     "to": "/buy/saint-petersburg",
     "status": 301
+  },
+  {
+    "from": "/tires-list/*",
+    "to": "/tires",
+    "status": 301
+  },
+  {
+    "from": "/tires-list",
+    "to": "/tires",
+    "status": 301
   }
 ]
