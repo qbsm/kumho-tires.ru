@@ -59,9 +59,6 @@
                     <span class="heading-accent self-start" aria-hidden="true"></span>
                     <h1 class="h1 heading font-2 weight-700 heading-flex uppercase">{{ t.name|default(t.code) }}</h1>
                   </div>
-                  {% if t.series is defined and t.series %}
-                    <p class="tire-detail__series h5 font-2 weight-400">{{ t.series }}</p>
-                  {% endif %}
                   {% if tire.season is defined and tire.season %}
                     <span class="tire-detail__badge">{{ tire.season }}</span>
                   {% endif %}
@@ -145,6 +142,22 @@
         </div>{# /tire-detail__grid #}
       </div>
     </section>
+
+    {% set _faqItems = [] %}
+    {% for _pair in pageSeoData.faq_items | default([]) %}
+      {% set _faqItems = _faqItems | merge([{
+        'icon': {'src': 'data/img/ui/icons/icon-arrow-down-color-2.svg'},
+        'title': _pair.q,
+        'answerText': _pair.a,
+        'desc': _pair.a
+      }]) %}
+    {% endfor %}
+    {% if _faqItems | length > 0 %}
+      {% include 'sections/faq.twig' with {'data': {
+        'heading': {'tag': 'h2', 'class': 'h2 heading font-2 weight-700 heading-flex uppercase', 'title': 'Вопросы и ответы'},
+        'items': _faqItems
+      }} %}
+    {% endif %}
 
     {# Похожие модели: ранжирование по близости, до 4 карточек — перелинковка каталога.
        Только пересечение сезона давало один и тот же блок для 12 моделей из 36 (порядок items

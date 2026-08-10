@@ -84,6 +84,10 @@ final class TireSeoBuilder implements SeoBuilderInterface
                 ? substr($imageUrl, 0, -5) . '-og.jpg'
                 : $imageUrl;
         }
+        $slug = (string) ($entity['slug'] ?? '');
+        $navSlug = (string) ($config['nav_slug'] ?? 'tires');
+        $pageUrl = $slug !== '' ? $origin . '/' . $navSlug . '/' . $slug : '';
+
         $meta = [
             ['name' => 'description', 'content' => $desc],
             ['property' => 'og:type', 'content' => (string) ($config['og_type'] ?? 'website')],
@@ -91,6 +95,9 @@ final class TireSeoBuilder implements SeoBuilderInterface
             ['property' => 'og:description', 'content' => $desc],
             ['property' => 'og:image', 'content' => $ogImage],
         ];
+        if ($pageUrl !== '') {
+            $meta[] = ['property' => 'og:url', 'content' => $pageUrl];
+        }
         if ($siteName !== '') {
             $meta[] = ['property' => 'og:site_name', 'content' => $siteName];
         }
@@ -108,10 +115,16 @@ final class TireSeoBuilder implements SeoBuilderInterface
         if ($code !== '') {
             $product['mpn'] = $code;
         }
-        $slug = (string) ($entity['slug'] ?? '');
-        $navSlug = (string) ($config['nav_slug'] ?? 'tires');
-        if ($slug !== '') {
-            $product['url'] = $origin . '/' . $navSlug . '/' . $slug;
+        // Синонимы названия (кириллица, форма «Plus») — по ним модель ищут чаще, чем по написанию из каталога.
+        $altNames = array_values(array_filter(
+            (array) ($inner['alt_names'] ?? []),
+            static fn ($v): bool => is_string($v) && $v !== ''
+        ));
+        if ($altNames !== []) {
+            $product['alternateName'] = $altNames;
+        }
+        if ($pageUrl !== '') {
+            $product['url'] = $pageUrl;
         }
         if ($imageUrl !== '') {
             $product['image'] = $imageUrl;
@@ -158,11 +171,130 @@ final class TireSeoBuilder implements SeoBuilderInterface
 
         $jsonLd = json_encode($product, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
+        // FAQPage-разметку отдаёт компонент accordion по видимому блоку — второй JSON-LD был бы дублем.
         return [
             'title' => $title,
             'meta' => $meta,
             'json_ld' => $jsonLd !== false ? $jsonLd : null,
             'json_ld_faq' => null,
+            'faq_items' => $this->buildFaq($entity, $name, $season, $sizeStr, $vehicles, $altNames),
         ];
+    }
+
+    /**
+     * Вопросы-ответы собираются только из данных модели: выдуманных характеристик в FAQ быть не должно.
+     *
+     * @param array<string,mixed> $entity
+     * @param array<int,string> $vehicles
+     * @param array<int,string> $altNames
+     * @return array<int,array{q:string,a:string}>
+     */
+    private function buildFaq(
+        array $entity,
+        string $name,
+        string $season,
+        string $sizeStr,
+        array $vehicles,
+        array $altNames
+    ): array {
+        if ($name === '') {
+            return [];
+        }
+
+        $faq = [];
+
+        $count = count((array) ($entity['sizes'] ?? []));
+        if ($count > 0) {
+            $parts = [];
+            if ($sizeStr !== '') {
+                $parts[] = str_contains($sizeStr, '–')
+                    ? 'посадочные диаметры ' . $sizeStr
+                    : 'посадочный диаметр ' . $sizeStr;
+            }
+            $widths = $this->minMax((array) ($entity['filter']['widths'] ?? []));
+            if ($widths !== null) {
+                $parts[] = $widths[0] === $widths[1]
+                    ? 'ширина профиля ' . $widths[0] . ' мм'
+                    : 'ширина профиля от ' . $widths[0] . ' до ' . $widths[1] . ' мм';
+            }
+            $profiles = $this->minMax((array) ($entity['filter']['profiles'] ?? []));
+            if ($profiles !== null) {
+                $parts[] = $profiles[0] === $profiles[1]
+                    ? 'высота профиля ' . $profiles[0] . '%'
+                    : 'высота профиля от ' . $profiles[0] . ' до ' . $profiles[1] . '%';
+            }
+            $answer = 'Модель выпускается в ' . $count . ' '
+                . $this->plural($count, 'типоразмере', 'типоразмерах', 'типоразмерах');
+            if ($parts !== []) {
+                $answer .= ': ' . implode(', ', $parts);
+            }
+            $answer .= '. Полный перечень с индексами нагрузки и скорости — в таблице «Доступные размеры» на этой странице.';
+            $faq[] = ['q' => 'Какие типоразмеры есть у ' . $name . '?', 'a' => $answer];
+        }
+
+        if ($season !== '' || $vehicles !== []) {
+            $answer = '';
+            if ($season !== '') {
+                $answer .= 'Сезонность — ' . mb_strtolower($season) . '.';
+            }
+            if ($vehicles !== []) {
+                $answer .= ($answer !== '' ? ' ' : '') . 'Модель рассчитана на ' . implode(', ', $vehicles) . '.';
+            }
+            $faq[] = ['q' => 'Для каких автомобилей и условий подходит ' . $name . '?', 'a' => $answer];
+        }
+
+        $cyrillic = null;
+        $latinAlt = null;
+        foreach ($altNames as $alt) {
+            if ($cyrillic === null && preg_match('/[А-Яа-яЁё]/u', $alt) === 1) {
+                $cyrillic = $alt;
+            } elseif ($latinAlt === null && preg_match('/[А-Яа-яЁё]/u', $alt) === 0) {
+                $latinAlt = $alt;
+            }
+        }
+        if ($cyrillic !== null) {
+            $answer = 'По-русски — «' . $cyrillic . '», латиницей — ' . $name . '.';
+            if ($latinAlt !== null) {
+                $answer .= ' Встречается также написание ' . $latinAlt . '.';
+            }
+            $faq[] = ['q' => 'Как пишется ' . $name . ' по-русски?', 'a' => $answer];
+        }
+
+        $faq[] = [
+            'q' => 'Где купить ' . $name . '?',
+            'a' => 'Шины продаются в авторизованных шинных центрах в городах России — адреса и контакты в разделе «Где купить».',
+        ];
+
+        return $faq;
+    }
+
+    /**
+     * @param array<int,mixed> $values
+     * @return array{0:int,1:int}|null
+     */
+    private function minMax(array $values): ?array
+    {
+        $ints = [];
+        foreach ($values as $value) {
+            if (is_int($value) || (is_string($value) && ctype_digit($value))) {
+                $ints[] = (int) $value;
+            }
+        }
+
+        return $ints === [] ? null : [min($ints), max($ints)];
+    }
+
+    private function plural(int $count, string $one, string $few, string $many): string
+    {
+        $mod100 = $count % 100;
+        if ($mod100 >= 11 && $mod100 <= 14) {
+            return $many;
+        }
+
+        return match ($count % 10) {
+            1 => $one,
+            2, 3, 4 => $few,
+            default => $many,
+        };
     }
 }
