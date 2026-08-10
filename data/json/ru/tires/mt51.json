@@ -12,24 +12,27 @@
   "item": {
     "code": "MT51",
     "series": "Road Venture",
-    "name": "Kumho MT51 Road Venture"
+    "name": "Kumho Road Venture MT51",
+    "alt_names": [
+      "Кумхо Роуд Венчур MT51"
+    ]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho MT51 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho MT51 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R18."
+    "short": "Всесезонная шина Kumho Road Venture MT51 для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
+    "full": "Kumho Road Venture MT51 — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R18."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/mt51/raw/mt51-30deg.webp",
-      "alt": "Kumho MT51 Road Venture"
+      "alt": "Kumho Road Venture MT51"
     },
     "front": {
       "src": "data/img/tires/mt51/raw/mt51-front.webp",
-      "alt": "Kumho MT51 Road Venture, вид спереди"
+      "alt": "Kumho Road Venture MT51, вид спереди"
     },
     "side": {
       "src": "data/img/tires/mt51/raw/mt51-side.webp",
-      "alt": "Kumho MT51 Road Venture, вид сбоку"
+      "alt": "Kumho Road Venture MT51, вид сбоку"
     }
   },
   "season": "Внедорожная",

@@ -12,20 +12,23 @@
   "item": {
     "code": "KL71",
     "series": "Road Venture",
-    "name": "Kumho KL71 Road Venture"
+    "name": "Kumho Road Venture KL71",
+    "alt_names": [
+      "Кумхо Роуд Венчур KL71"
+    ]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho KL71 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho KL71 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R14–R20."
+    "short": "Всесезонная шина Kumho Road Venture KL71 для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
+    "full": "Kumho Road Venture KL71 — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R14–R20."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/kl71/raw/kl71-30deg.webp",
-      "alt": "Kumho KL71 Road Venture"
+      "alt": "Kumho Road Venture KL71"
     },
     "front": {
       "src": "data/img/tires/kl71/raw/kl71-front.webp",
-      "alt": "Kumho KL71 Road Venture, вид спереди"
+      "alt": "Kumho Road Venture KL71, вид спереди"
     }
   },
   "season": "Внедорожная",

@@ -12,20 +12,23 @@
   "item": {
     "code": "KH31",
     "series": "Ecowing",
-    "name": "Kumho KH31 Ecowing"
+    "name": "Kumho Ecowing KH31",
+    "alt_names": [
+      "Кумхо Эковинг KH31"
+    ]
   },
   "desc": {
-    "short": "Летняя шина Kumho KH31 Ecowing для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума.",
-    "full": "Kumho KH31 Ecowing — летняя шина из линейки Ecowing, предназначенная для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума. Доступна в диаметрах R16–R16."
+    "short": "Летняя шина Kumho Ecowing KH31 для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума.",
+    "full": "Kumho Ecowing KH31 — летняя шина из линейки Ecowing, предназначенная для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума. Доступна в диаметрах R16–R16."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/kh31/raw/kh31-30deg.webp",
-      "alt": "Kumho KH31 Ecowing"
+      "alt": "Kumho Ecowing KH31"
     },
     "front": {
       "src": "data/img/tires/kh31/raw/kh31-front.webp",
-      "alt": "Kumho KH31 Ecowing, вид спереди"
+      "alt": "Kumho Ecowing KH31, вид спереди"
     }
   },
   "season": "Летняя",

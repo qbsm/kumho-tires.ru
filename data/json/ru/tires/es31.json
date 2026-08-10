@@ -12,24 +12,27 @@
   "item": {
     "code": "ES31",
     "series": "Ecowing",
-    "name": "Kumho ES31 Ecowing"
+    "name": "Kumho Ecowing ES31",
+    "alt_names": [
+      "Кумхо Эковинг ES31"
+    ]
   },
   "desc": {
-    "short": "Летняя шина Kumho ES31 Ecowing для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума.",
-    "full": "Kumho ES31 Ecowing — летняя шина из линейки Ecowing, предназначенная для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума. Доступна в диаметрах R13–R18."
+    "short": "Летняя шина Kumho Ecowing ES31 для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума.",
+    "full": "Kumho Ecowing ES31 — летняя шина из линейки Ecowing, предназначенная для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума. Доступна в диаметрах R13–R18."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/es31/raw/es31-30deg.webp",
-      "alt": "Kumho ES31 Ecowing"
+      "alt": "Kumho Ecowing ES31"
     },
     "front": {
       "src": "data/img/tires/es31/raw/es31-front.webp",
-      "alt": "Kumho ES31 Ecowing, вид спереди"
+      "alt": "Kumho Ecowing ES31, вид спереди"
     },
     "side": {
       "src": "data/img/tires/es31/raw/es31-side.webp",
-      "alt": "Kumho ES31 Ecowing, вид сбоку"
+      "alt": "Kumho Ecowing ES31, вид сбоку"
     }
   },
   "season": "Летняя",

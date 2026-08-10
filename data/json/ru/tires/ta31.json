@@ -12,24 +12,27 @@
   "item": {
     "code": "TA31",
     "series": "Road Venture",
-    "name": "Kumho TA31 Road Venture"
+    "name": "Kumho Road Venture TA31",
+    "alt_names": [
+      "Кумхо Роуд Венчур TA31"
+    ]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho TA31 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho TA31 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R16–R18."
+    "short": "Всесезонная шина Kumho Road Venture TA31 для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
+    "full": "Kumho Road Venture TA31 — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R16–R18."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/ta31/raw/ta31-30deg.webp",
-      "alt": "Kumho TA31 Road Venture"
+      "alt": "Kumho Road Venture TA31"
     },
     "front": {
       "src": "data/img/tires/ta31/raw/ta31-front.webp",
-      "alt": "Kumho TA31 Road Venture, вид спереди"
+      "alt": "Kumho Road Venture TA31, вид спереди"
     },
     "side": {
       "src": "data/img/tires/ta31/raw/ta31-side.webp",
-      "alt": "Kumho TA31 Road Venture, вид сбоку"
+      "alt": "Kumho Road Venture TA31, вид сбоку"
     }
   },
   "season": "Всесезонная",

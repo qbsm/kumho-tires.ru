@@ -12,25 +12,28 @@
   "item": {
     "code": "HP91",
     "series": "CRUGEN",
-    "name": "Kumho HP91 CRUGEN"
+    "name": "Kumho CRUGEN HP91",
+    "alt_names": [
+      "Кумхо Круген HP91"
+    ]
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/hp91/raw/hp91-30deg.webp",
-      "alt": "Kumho HP91 CRUGEN"
+      "alt": "Kumho CRUGEN HP91"
     },
     "front": {
       "src": "data/img/tires/hp91/raw/hp91-front.webp",
-      "alt": "Kumho HP91 CRUGEN, вид спереди"
+      "alt": "Kumho CRUGEN HP91, вид спереди"
     },
     "side": {
       "src": "data/img/tires/hp91/raw/hp91-side.webp",
-      "alt": "Kumho HP91 CRUGEN, вид сбоку"
+      "alt": "Kumho CRUGEN HP91, вид сбоку"
     }
   },
   "desc": {
-    "short": "Летняя шина Kumho HP91 CRUGEN для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах.",
-    "full": "Kumho HP91 CRUGEN — летняя шина из линейки CRUGEN, предназначенная для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах. Доступна в диаметрах R16–R19."
+    "short": "Летняя шина Kumho CRUGEN HP91 для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах.",
+    "full": "Kumho CRUGEN HP91 — летняя шина из линейки CRUGEN, предназначенная для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах. Доступна в диаметрах R16–R19."
   },
   "season": "Летняя",
   "sizes": [

@@ -12,24 +12,27 @@
   "item": {
     "code": "HS52",
     "series": "ECSTA",
-    "name": "Kumho HS52 ECSTA"
+    "name": "Kumho ECSTA HS52",
+    "alt_names": [
+      "Кумхо Экста HS52"
+    ]
   },
   "desc": {
-    "short": "Летняя шина Kumho HS52 ECSTA для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление.",
-    "full": "Kumho HS52 ECSTA — летняя шина из линейки ECSTA, предназначенная для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление. Доступна в диаметрах R14–R20."
+    "short": "Летняя шина Kumho ECSTA HS52 для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление.",
+    "full": "Kumho ECSTA HS52 — летняя шина из линейки ECSTA, предназначенная для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление. Доступна в диаметрах R14–R20."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/hs52/raw/hs52-30deg.webp",
-      "alt": "Kumho HS52 ECSTA"
+      "alt": "Kumho ECSTA HS52"
     },
     "front": {
       "src": "data/img/tires/hs52/raw/hs52-front.webp",
-      "alt": "Kumho HS52 ECSTA, вид спереди"
+      "alt": "Kumho ECSTA HS52, вид спереди"
     },
     "side": {
       "src": "data/img/tires/hs52/raw/hs52-side.webp",
-      "alt": "Kumho HS52 ECSTA, вид сбоку"
+      "alt": "Kumho ECSTA HS52, вид сбоку"
     }
   },
   "season": "Летняя",

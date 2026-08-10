@@ -12,24 +12,27 @@
   "item": {
     "code": "PS71",
     "series": "ECSTA",
-    "name": "Kumho PS71 ECSTA"
+    "name": "Kumho ECSTA PS71",
+    "alt_names": [
+      "Кумхо Экста PS71"
+    ]
   },
   "desc": {
-    "short": "Летняя шина Kumho PS71 ECSTA для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление.",
-    "full": "Kumho PS71 ECSTA — летняя шина из линейки ECSTA, предназначенная для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление. Доступна в диаметрах R16–R22."
+    "short": "Летняя шина Kumho ECSTA PS71 для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление.",
+    "full": "Kumho ECSTA PS71 — летняя шина из линейки ECSTA, предназначенная для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление. Доступна в диаметрах R16–R22."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/ps71/raw/ps71-30deg.webp",
-      "alt": "Kumho PS71 ECSTA"
+      "alt": "Kumho ECSTA PS71"
     },
     "front": {
       "src": "data/img/tires/ps71/raw/ps71-front.webp",
-      "alt": "Kumho PS71 ECSTA, вид спереди"
+      "alt": "Kumho ECSTA PS71, вид спереди"
     },
     "side": {
       "src": "data/img/tires/ps71/raw/ps71-side.webp",
-      "alt": "Kumho PS71 ECSTA, вид сбоку"
+      "alt": "Kumho ECSTA PS71, вид сбоку"
     }
   },
   "season": "Летняя",

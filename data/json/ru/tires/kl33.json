@@ -12,24 +12,27 @@
   "item": {
     "code": "KL33",
     "series": "Road Venture",
-    "name": "Kumho KL33 Road Venture"
+    "name": "Kumho Road Venture KL33",
+    "alt_names": [
+      "Кумхо Роуд Венчур KL33"
+    ]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho KL33 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho KL33 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R19."
+    "short": "Всесезонная шина Kumho Road Venture KL33 для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
+    "full": "Kumho Road Venture KL33 — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R19."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/kl33/raw/kl33-30deg.webp",
-      "alt": "Kumho KL33 Road Venture"
+      "alt": "Kumho Road Venture KL33"
     },
     "front": {
       "src": "data/img/tires/kl33/raw/kl33-front.webp",
-      "alt": "Kumho KL33 Road Venture, вид спереди"
+      "alt": "Kumho Road Venture KL33, вид спереди"
     },
     "side": {
       "src": "data/img/tires/kl33/raw/kl33-side.webp",
-      "alt": "Kumho KL33 Road Venture, вид сбоку"
+      "alt": "Kumho Road Venture KL33, вид сбоку"
     }
   },
   "season": "Всесезонная",

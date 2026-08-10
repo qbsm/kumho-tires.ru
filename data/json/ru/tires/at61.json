@@ -12,24 +12,27 @@
   "item": {
     "code": "AT61",
     "series": "Road Venture",
-    "name": "Kumho AT61 Road Venture"
+    "name": "Kumho Road Venture AT61",
+    "alt_names": [
+      "Кумхо Роуд Венчур AT61"
+    ]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho AT61 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho AT61 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R16."
+    "short": "Всесезонная шина Kumho Road Venture AT61 для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
+    "full": "Kumho Road Venture AT61 — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R16."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/at61/raw/at61-30deg.webp",
-      "alt": "Kumho AT61 Road Venture"
+      "alt": "Kumho Road Venture AT61"
     },
     "front": {
       "src": "data/img/tires/at61/raw/at61-front.webp",
-      "alt": "Kumho AT61 Road Venture, вид спереди"
+      "alt": "Kumho Road Venture AT61, вид спереди"
     },
     "side": {
       "src": "data/img/tires/at61/raw/at61-side.webp",
-      "alt": "Kumho AT61 Road Venture, вид сбоку"
+      "alt": "Kumho Road Venture AT61, вид сбоку"
     }
   },
   "season": "Всесезонная",

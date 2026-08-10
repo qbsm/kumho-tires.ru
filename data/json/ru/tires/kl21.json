@@ -12,16 +12,19 @@
   "item": {
     "code": "KL21",
     "series": "Road Venture",
-    "name": "Kumho KL21 Road Venture"
+    "name": "Kumho Road Venture KL21",
+    "alt_names": [
+      "Кумхо Роуд Венчур KL21"
+    ]
   },
   "desc": {
-    "short": "Летняя шина Kumho KL21 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho KL21 Road Venture — летняя шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R17–R18."
+    "short": "Летняя шина Kumho Road Venture KL21 для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
+    "full": "Kumho Road Venture KL21 — летняя шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R17–R18."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/kl21/raw/kl21-30deg.webp",
-      "alt": "Kumho KL21 Road Venture"
+      "alt": "Kumho Road Venture KL21"
     }
   },
   "season": "Летняя",

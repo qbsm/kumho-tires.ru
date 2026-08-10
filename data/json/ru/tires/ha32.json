@@ -12,24 +12,27 @@
   "item": {
     "code": "HA32",
     "series": "SOLUS",
-    "name": "Kumho HA32 SOLUS"
+    "name": "Kumho SOLUS HA32",
+    "alt_names": [
+      "Кумхо Солус HA32"
+    ]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho HA32 SOLUS для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год.",
-    "full": "Kumho HA32 SOLUS — всесезонная шина из линейки SOLUS, предназначенная для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год. Доступна в диаметрах R13–R20."
+    "short": "Всесезонная шина Kumho SOLUS HA32 для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год.",
+    "full": "Kumho SOLUS HA32 — всесезонная шина из линейки SOLUS, предназначенная для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год. Доступна в диаметрах R13–R20."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/ha32/raw/ha32-30deg.webp",
-      "alt": "Kumho HA32 SOLUS"
+      "alt": "Kumho SOLUS HA32"
     },
     "front": {
       "src": "data/img/tires/ha32/raw/ha32-front.webp",
-      "alt": "Kumho HA32 SOLUS, вид спереди"
+      "alt": "Kumho SOLUS HA32, вид спереди"
     },
     "side": {
       "src": "data/img/tires/ha32/raw/ha32-side.webp",
-      "alt": "Kumho HA32 SOLUS, вид сбоку"
+      "alt": "Kumho SOLUS HA32, вид сбоку"
     }
   },
   "season": "Всесезонная",

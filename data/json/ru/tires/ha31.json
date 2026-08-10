@@ -12,24 +12,27 @@
   "item": {
     "code": "HA31",
     "series": "SOLUS",
-    "name": "Kumho HA31 SOLUS"
+    "name": "Kumho SOLUS HA31",
+    "alt_names": [
+      "Кумхо Солус HA31"
+    ]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho HA31 SOLUS для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год.",
-    "full": "Kumho HA31 SOLUS — всесезонная шина из линейки SOLUS, предназначенная для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год. Доступна в диаметрах R13–R18."
+    "short": "Всесезонная шина Kumho SOLUS HA31 для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год.",
+    "full": "Kumho SOLUS HA31 — всесезонная шина из линейки SOLUS, предназначенная для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год. Доступна в диаметрах R13–R18."
   },
   "images": {
     "30deg": {
       "src": "data/img/tires/ha31/raw/ha31-30deg.webp",
-      "alt": "Kumho HA31 SOLUS"
+      "alt": "Kumho SOLUS HA31"
     },
     "front": {
       "src": "data/img/tires/ha31/raw/ha31-front.webp",
-      "alt": "Kumho HA31 SOLUS, вид спереди"
+      "alt": "Kumho SOLUS HA31, вид спереди"
     },
     "side": {
       "src": "data/img/tires/ha31/raw/ha31-side.webp",
-      "alt": "Kumho HA31 SOLUS, вид сбоку"
+      "alt": "Kumho SOLUS HA31, вид сбоку"
     }
   },
   "season": "Всесезонная",
