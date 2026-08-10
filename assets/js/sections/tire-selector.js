@@ -198,7 +198,15 @@ const initSelector = (root) => {
       entry.card.el.style.order = String(index);
     });
 
-    if (emptyEl) emptyEl.classList.toggle('hidden', matched.length > 0);
+    if (emptyEl) {
+      const isEmpty = matched.length === 0;
+      const note = emptyEl.querySelector('.js-selector-empty-note');
+      if (isEmpty && note) {
+        emptyEl.appendChild(note.content.cloneNode(true));
+        note.remove();
+      }
+      emptyEl.classList.toggle('hidden', !isEmpty);
+    }
     renderSummary();
     updateCatalogLink();
   };

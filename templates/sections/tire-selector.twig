@@ -182,8 +182,12 @@
             {% endfor %}
           </div>
 
+          {# Текст пустого результата держим в template: иначе он попадает в индексируемый текст страницы,
+             хотя пользователю показывается только при неудачном подборе. #}
           <div class="tire-selector__empty hidden js-selector-empty">
-            <span class="tire-selector__note">Под такие параметры моделей не нашлось. Измените ответы или посмотрите весь каталог.</span>
+            <template class="js-selector-empty-note">
+              <span class="tire-selector__note">Под такие параметры моделей не нашлось. Измените ответы или посмотрите весь каталог.</span>
+            </template>
           </div>
 
           <div class="tire-selector__step-actions">
