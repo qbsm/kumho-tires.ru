@@ -14,7 +14,7 @@ final class RedirectMiddleware implements MiddlewareInterface
 {
     /** @var array<string,mixed> */
     private array $settings;
-    /** @var array<int,array{from?:string,to?:string,status?:int}>|null */
+    /** @var array<int,array{from?:string,to?:string,from_prefix?:string,to_prefix?:string,status?:int}>|null */
     private ?array $map = null;
 
     /**
@@ -48,24 +48,24 @@ final class RedirectMiddleware implements MiddlewareInterface
     private function getRedirectTarget(string $requestPath, string $baseUrl): ?array
     {
         foreach ($this->loadMap() as $rule) {
-            if (!isset($rule['from'], $rule['to'])) {
-                continue;
-            }
-
-            $from = rtrim((string) $rule['from'], '/');
-            $from = $from === '' ? '/' : $from;
-            $to = (string) $rule['to'];
             $status = (int) ($rule['status'] ?? 301);
 
-            // Правило вида "/old-section/*" переносит на новый префикс весь хвост пути:
-            // устаревшую структуру адресов не приходится перечислять по одному URL.
-            if (str_ends_with($from, '/*')) {
-                $prefix = rtrim(substr($from, 0, -2), '/');
+            // Префиксное правило переносит на новый раздел весь хвост пути: устаревшую
+            // структуру адресов не приходится перечислять по одному URL.
+            if (isset($rule['from_prefix'], $rule['to_prefix'])) {
+                $prefix = rtrim((string) $rule['from_prefix'], '/');
                 if ($prefix === '' || ($requestPath !== $prefix && !str_starts_with($requestPath, $prefix . '/'))) {
                     continue;
                 }
-                $to = rtrim($to, '/') . substr($requestPath, strlen($prefix));
-            } elseif ($from !== $requestPath) {
+                $to = rtrim((string) $rule['to_prefix'], '/') . substr($requestPath, strlen($prefix));
+            } elseif (isset($rule['from'], $rule['to'])) {
+                $from = rtrim((string) $rule['from'], '/');
+                $from = $from === '' ? '/' : $from;
+                if ($from !== $requestPath) {
+                    continue;
+                }
+                $to = (string) $rule['to'];
+            } else {
                 continue;
             }
 
@@ -80,7 +80,7 @@ final class RedirectMiddleware implements MiddlewareInterface
     }
 
     /**
-     * @return array<int,array{from?:string,to?:string,status?:int}>
+     * @return array<int,array{from?:string,to?:string,from_prefix?:string,to_prefix?:string,status?:int}>
      */
     private function loadMap(): array
     {

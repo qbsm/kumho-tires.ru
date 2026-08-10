@@ -10,13 +10,8 @@
     "status": 301
   },
   {
-    "from": "/tires-list/*",
-    "to": "/tires",
-    "status": 301
-  },
-  {
-    "from": "/tires-list",
-    "to": "/tires",
+    "from_prefix": "/tires-list/",
+    "to_prefix": "/tires",
     "status": 301
   }
 ]
