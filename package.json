@@ -44,7 +44,7 @@
     "fix-permissions": "sudo bash tools/ops/fix-permissions.sh",
     "distill": "node tools/distill/distill.mjs",
     "distill:scan": "node tools/distill/distill.mjs scan",
-    "distill:inventory": "node tools/distill/build-inventory.mjs > docs/inventory/core.md",
+    "distill:inventory": "node tools/distill/build-inventory.mjs",
     "orchestrate": "node tools/orchestrator/orchestrate.mjs",
     "prepare": "husky",
     "check:content": "node tools/ops/check-content.js"
