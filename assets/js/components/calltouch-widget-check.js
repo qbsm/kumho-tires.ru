@@ -76,7 +76,13 @@ function attach(doc) {
   };
 
   doc.addEventListener('click', grab, true);
-  doc.addEventListener('keydown', (e) => { if (e.key === 'Enter') grab(); }, true);
+  doc.addEventListener(
+    'keydown',
+    (e) => {
+      if (e.key === 'Enter') grab();
+    },
+    true
+  );
   doc.addEventListener('submit', grab, true);
 }
 

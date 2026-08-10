@@ -53,35 +53,50 @@ function sectionOf(el) {
 function watchVisibility() {
   const targets = [...document.querySelectorAll('form, .form-callback, [data-form]')];
   if (!targets.length) return;
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) {
-        funnelStep(STEPS.seen, 'form', sectionOf(e.target));
-        io.disconnect();
-        return;
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          funnelStep(STEPS.seen, 'form', sectionOf(e.target));
+          io.disconnect();
+          return;
+        }
       }
-    }
-  }, { threshold: 0.3 });
+    },
+    { threshold: 0.3 }
+  );
   targets.forEach((t) => io.observe(t));
 }
 
 function watchForms() {
-  document.addEventListener('focusin', (e) => {
-    const el = e.target;
-    if (!el.matches || !el.matches('input, textarea, select')) return;
-    if (el.type === 'hidden') return;
-    funnelStep(STEPS.open, 'form', sectionOf(el));
-  }, true);
+  document.addEventListener(
+    'focusin',
+    (e) => {
+      const el = e.target;
+      if (!el.matches || !el.matches('input, textarea, select')) return;
+      if (el.type === 'hidden') return;
+      funnelStep(STEPS.open, 'form', sectionOf(el));
+    },
+    true
+  );
 
-  document.addEventListener('input', () => {
-    inputStarted = true;
-    funnelStep(STEPS.input, 'form');
-  }, true);
+  document.addEventListener(
+    'input',
+    () => {
+      inputStarted = true;
+      funnelStep(STEPS.input, 'form');
+    },
+    true
+  );
 
-  document.addEventListener('submit', () => {
-    submitted = true;
-    funnelStep(STEPS.submit, 'form');
-  }, true);
+  document.addEventListener(
+    'submit',
+    () => {
+      submitted = true;
+      funnelStep(STEPS.submit, 'form');
+    },
+    true
+  );
 }
 
 function watchWidget() {
@@ -100,17 +115,25 @@ function watchWidget() {
       seen.add(doc);
       funnelStep(STEPS.open, 'widget');
       widgetTouched = true;
-      doc.addEventListener('input', () => {
-        inputStarted = true;
-        widgetTouched = true;
-        funnelStep(STEPS.input, 'widget');
-      }, true);
-      doc.addEventListener('click', () => {
-        if (inputStarted) {
-          submitted = true;
-          funnelStep(STEPS.submit, 'widget');
-        }
-      }, true);
+      doc.addEventListener(
+        'input',
+        () => {
+          inputStarted = true;
+          widgetTouched = true;
+          funnelStep(STEPS.input, 'widget');
+        },
+        true
+      );
+      doc.addEventListener(
+        'click',
+        () => {
+          if (inputStarted) {
+            submitted = true;
+            funnelStep(STEPS.submit, 'widget');
+          }
+        },
+        true
+      );
     }
   };
   scan();

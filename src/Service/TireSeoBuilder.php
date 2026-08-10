@@ -118,7 +118,7 @@ final class TireSeoBuilder implements SeoBuilderInterface
         // Синонимы названия (кириллица, форма «Plus») — по ним модель ищут чаще, чем по написанию из каталога.
         $altNames = array_values(array_filter(
             (array) ($inner['alt_names'] ?? []),
-            static fn ($v): bool => is_string($v) && $v !== ''
+            static fn($v): bool => is_string($v) && $v !== ''
         ));
         if ($altNames !== []) {
             $product['alternateName'] = $altNames;

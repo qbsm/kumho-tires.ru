@@ -246,9 +246,9 @@ return static function (): ContainerInterface {
                 }
                 if ($secret === '') {
                     $secret = bin2hex(random_bytes(32));
-                    @mkdir(dirname($file), 0775, true);
+                    @mkdir(dirname($file), 0o775, true);
                     @file_put_contents($file, $secret, LOCK_EX);
-                    @chmod($file, 0600);
+                    @chmod($file, 0o600);
                 }
             }
 

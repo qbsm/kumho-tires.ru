@@ -16,11 +16,14 @@ function remember(el) {
   const text = clean(el.dataset.tag || el.getAttribute('aria-label') || el.textContent);
   if (!text) return;
   try {
-    sessionStorage.setItem(KEY, JSON.stringify({
-      text,
-      section: sectionOf(el),
-      at: Math.floor(Date.now() / 1000),
-    }));
+    sessionStorage.setItem(
+      KEY,
+      JSON.stringify({
+        text,
+        section: sectionOf(el),
+        at: Math.floor(Date.now() / 1000),
+      })
+    );
   } catch {
     return;
   }
@@ -66,13 +69,21 @@ function attachToForm(form) {
 }
 
 export function initLeadContext() {
-  document.addEventListener('click', (e) => {
-    const el = e.target.closest('button, a, [role="button"], .btn, [data-tag]');
-    if (!el || el.type === 'submit') return;
-    remember(el);
-  }, true);
+  document.addEventListener(
+    'click',
+    (e) => {
+      const el = e.target.closest('button, a, [role="button"], .btn, [data-tag]');
+      if (!el || el.type === 'submit') return;
+      remember(el);
+    },
+    true
+  );
 
-  document.addEventListener('submit', (e) => {
-    if (e.target instanceof HTMLFormElement) attachToForm(e.target);
-  }, true);
+  document.addEventListener(
+    'submit',
+    (e) => {
+      if (e.target instanceof HTMLFormElement) attachToForm(e.target);
+    },
+    true
+  );
 }
