@@ -212,7 +212,7 @@ final class PageAction
             $label = (string) ($season['label'] ?? '');
             if ($label !== '') {
                 $genitive = (string) ($season['genitive'] ?? mb_strtolower($label));
-                $seoData['title'] = $label . ' шины Kumho (Кумхо, Камхо) — каталог, купить в России';
+                $seoData['title'] = $label . ' шины Kumho (Кумхо) — каталог, купить в России';
                 $description = 'Каталог ' . $genitive . ' шин Kumho: модели и типоразмеры для легковых автомобилей, '
                     . 'кроссоверов, внедорожников и коммерческого транспорта. Фильтр по диаметру, ширине и профилю.';
                 $meta = isset($seoData['meta']) && is_array($seoData['meta']) ? $seoData['meta'] : [];
