@@ -29,27 +29,30 @@
   {% set imageAlt = tireImage and tireImage.alt is defined and tireImage.alt
     ? tireImage.alt
     : (name ? name ~ ', ракурс 30°' : '') %}
-  {% if item.item.logo is defined and item.item.logo %}
-    <div class="card-tire__logo-wrap">
-      <img
-        src="{{ item.item.logo }}"
-        alt="{{ item.item.series|default('') }}"
-        class="card-tire__series-logo card-tire__series-logo--{{ item.item.logo|split('/')|last|replace({'.svg': ''}) }}"
-        loading="lazy"
-      >
-    </div>
-  {% endif %}
-  <div class="card-tire__img-wrap">
-    {% if tireImage %}
-      {% include 'components/picture.twig' with {
-        image: tireImage,
-        alt: imageAlt,
-        class: 'card-tire__img img-responsive',
-        sizes_preset: 'card',
-        loading: 'lazy',
-        width: 400,
-        height: 400
-      } %}
+  {# Низ карточки — одна строка: логотип линейки слева, шина справа #}
+  <div class="card-tire__bottom">
+    {% if item.item.logo is defined and item.item.logo %}
+      <div class="card-tire__logo-wrap">
+        <img
+          src="{{ item.item.logo }}"
+          alt="{{ item.item.series|default('') }}"
+          class="card-tire__series-logo card-tire__series-logo--{{ item.item.logo|split('/')|last|replace({'.svg': ''}) }}"
+          loading="lazy"
+        >
+      </div>
     {% endif %}
+    <div class="card-tire__img-wrap">
+      {% if tireImage %}
+        {% include 'components/picture.twig' with {
+          image: tireImage,
+          alt: imageAlt,
+          class: 'card-tire__img img-responsive',
+          sizes_preset: 'card',
+          loading: 'lazy',
+          width: 400,
+          height: 400
+        } %}
+      {% endif %}
+    </div>
   </div>
 </a>

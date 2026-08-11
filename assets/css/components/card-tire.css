@@ -1,5 +1,4 @@
 .card-tire {
-  position: relative;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -20,9 +19,23 @@
   border-color: var(--color-3);
 }
 
+/* Текст держится вверху, графика прижата к низу карточки и выровнена по нижнему краю */
+.card-tire__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
 .card-tire__img-wrap {
   width: 60%;
-  align-self: flex-end;
+  flex: 0 0 auto;
+}
+
+.card-tire__logo-wrap {
+  min-width: 0;
 }
 
 .card-tire .card__title {
@@ -35,19 +48,6 @@
 
 .card-tire .card__desc {
   color: var(--color-5);
-}
-
-/* Логотип линейки — в левом нижнем углу, на уровне шины */
-.card-tire__logo-wrap {
-  position: absolute;
-  left: 1.5rem;
-  bottom: 1.5rem;
-  max-width: 45%;
-
-  @media (--lg) {
-    left: 2rem;
-    bottom: 2rem;
-  }
 }
 
 /* Логотипы линеек очень разной пропорции (5:1 … 11:1): при равной высоте длинный CRUGEN
