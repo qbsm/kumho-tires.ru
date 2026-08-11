@@ -271,9 +271,17 @@ final class TireSeoBuilder implements SeoBuilderInterface
                 $answer .= ' Подтверждена маркировка 3PMSF (три горных пика со снежинкой)'
                     . ($eu['ice'] ? ' и ice grip.' : '.');
             }
-            $answer .= ' Значения приведены по ' . $eu['covered'] . ' из ' . $eu['total'] . ' '
-                . $this->plural($eu['total'], 'типоразмера', 'типоразмеров', 'типоразмеров')
-                . ', зарегистрированным в реестре ЕС EPREL: у разных размеров классы отличаются.';
+            if ($eu['total'] === 1) {
+                $answer .= ' Данные — из реестра ЕС EPREL.';
+            } else {
+                $answer .= ' Значения приведены по ' . $eu['covered'] . ' из ' . $eu['total'] . ' '
+                    . $this->plural($eu['total'], 'типоразмера', 'типоразмеров', 'типоразмеров')
+                    . ', зарегистрированным в реестре ЕС EPREL';
+                // Оговорка о разбросе уместна только там, где классы и правда разные.
+                $varies = str_contains($eu['energy'], '–') || str_contains($eu['wet'], '–')
+                    || str_contains($eu['noise'], '–');
+                $answer .= $varies ? ': у разных размеров классы отличаются.' : '.';
+            }
             $faq[] = ['q' => 'Какая евромаркировка у ' . $name . '?', 'a' => $answer];
         }
 
