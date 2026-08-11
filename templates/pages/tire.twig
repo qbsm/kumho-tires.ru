@@ -24,7 +24,7 @@
             {% endfor %}
 
             {% if galleryImages|length > 0 %}
-              <div class="tire-detail__main-image">
+              <div class="tire-detail__main-image{% if t.logo is defined and t.logo %} tire-detail__main-image--with-logo{% endif %}">
                 {% if t.logo is defined and t.logo %}
                   <img
                     src="{{ t.logo }}"
