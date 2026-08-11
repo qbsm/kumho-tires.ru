@@ -12,6 +12,7 @@
   "item": {
     "code": "KH11",
     "series": "Ecowing",
+    "caption": "Летняя шина для легковых автомобилей",
     "logo": "data/img/series/ecowing.svg",
     "name": "Kumho Ecowing KH11",
     "alt_names": [

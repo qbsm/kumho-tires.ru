@@ -5,9 +5,11 @@
   <div class="card__item title-wrap">
     <span class="card__title font-2 weight-600">{{ item.item.code }}</span>
   </div>
-  {% if item.item.series is defined and item.item.series %}
+  {# Подпись производителя («Зимняя шина класса UHP») говорит покупателю больше, чем имя линейки #}
+  {% set cardCaption = item.official.tagline | default(item.item.caption) | default(item.item.series) | default('') %}
+  {% if cardCaption %}
     <div class="card__item desc-wrap">
-      <span class="card__desc">{{ item.item.series }}</span>
+      <span class="card__desc">{{ cardCaption }}</span>
     </div>
   {% endif %}
   {% if item.item.frame is defined and item.item.frame %}

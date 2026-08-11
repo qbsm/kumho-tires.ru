@@ -34,6 +34,7 @@
   "item": {
     "code": "WS51",
     "series": "WinterCraft ice",
+    "caption": "Зимняя нешипованная шина для кроссоверов и внедорожников",
     "logo": "data/img/series/wintercraft.svg",
     "name": "Kumho WinterCraft ice WS51",
     "alt_names": [
