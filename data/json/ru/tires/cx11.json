@@ -12,6 +12,7 @@
   "item": {
     "code": "CX11",
     "series": "PorTran",
+    "logo": "data/img/series/portran.svg",
     "name": "Kumho PorTran CX11",
     "alt_names": [
       "Кумхо ПорТран CX11"

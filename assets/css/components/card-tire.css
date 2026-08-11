@@ -1,4 +1,5 @@
 .card-tire {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -34,6 +35,29 @@
 
 .card-tire .card__desc {
   color: var(--color-5);
+}
+
+/* Логотип линейки стоит в левом нижнем углу — на уровне шины, а не под ней */
+.card-tire__logo-wrap {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  max-width: 40%;
+
+  @media (--lg) {
+    left: 2rem;
+    bottom: 2rem;
+  }
+}
+
+/* Высота у всех линеек одна; ширину отдаём пропорции самой картинки */
+.card-tire__series-logo {
+  height: 1.6rem;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
 }
 
 .card-tire .frame-wrap {

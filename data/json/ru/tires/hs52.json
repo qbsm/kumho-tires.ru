@@ -12,6 +12,7 @@
   "item": {
     "code": "HS52",
     "series": "ECSTA",
+    "logo": "data/img/series/ecsta.svg",
     "name": "Kumho ECSTA HS52",
     "alt_names": [
       "Кумхо Экста HS52"

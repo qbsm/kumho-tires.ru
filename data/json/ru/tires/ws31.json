@@ -37,6 +37,7 @@
   "item": {
     "code": "WS31",
     "series": "WinterCraft ice",
+    "logo": "data/img/series/wintercraft.svg",
     "name": "Kumho WinterCraft ice WS31",
     "alt_names": [
       "Кумхо ВинтерКрафт айс WS31"

@@ -12,6 +12,7 @@
   "item": {
     "code": "KH31",
     "series": "Ecowing",
+    "logo": "data/img/series/ecowing.svg",
     "name": "Kumho Ecowing KH31",
     "alt_names": [
       "Кумхо Эковинг KH31"

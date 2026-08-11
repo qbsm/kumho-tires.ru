@@ -34,6 +34,7 @@
   "item": {
     "code": "CW11",
     "series": "WinterPorTran",
+    "logo": "data/img/series/portran.svg",
     "name": "Kumho WinterPorTran CW11",
     "alt_names": [
       "Кумхо ВинтерПорТран CW11"

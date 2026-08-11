@@ -41,6 +41,7 @@
   "item": {
     "code": "WI51",
     "series": "WinterCraft ice",
+    "logo": "data/img/series/wintercraft.svg",
     "name": "Kumho WinterCraft ice WI51",
     "alt_names": [
       "Кумхо ВинтерКрафт айс WI51"

@@ -12,6 +12,7 @@
   "item": {
     "code": "KC53",
     "series": "PorTran",
+    "logo": "data/img/series/portran.svg",
     "name": "Kumho PorTran KC53",
     "alt_names": [
       "Кумхо ПорТран KC53"

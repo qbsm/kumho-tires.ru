@@ -125,6 +125,20 @@
   margin-bottom: 0.25rem;
 }
 
+/* Высота фиксирована, ширина следует за пропорцией конкретного логотипа */
+.tire-detail__series-logo {
+  height: 2.8rem;
+  width: auto;
+
+  /* На узком экране длинный логотип упирается в max-width — object-fit не даёт его сплющить */
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
 .tire-detail__series {
   color: var(--color-5);
 }

@@ -12,6 +12,7 @@
   "item": {
     "code": "HP91",
     "series": "CRUGEN",
+    "logo": "data/img/series/crugen.svg",
     "name": "Kumho CRUGEN HP91",
     "alt_names": [
       "Кумхо Круген HP91"

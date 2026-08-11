@@ -46,6 +46,7 @@
   "item": {
     "code": "WS71",
     "series": "WinterCraft",
+    "logo": "data/img/series/wintercraft.svg",
     "name": "Kumho WinterCraft WS71",
     "alt_names": [
       "Кумхо ВинтерКрафт WS71"

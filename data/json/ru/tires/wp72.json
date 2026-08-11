@@ -34,6 +34,7 @@
   "item": {
     "code": "WP72",
     "series": "WinterCraft",
+    "logo": "data/img/series/wintercraft.svg",
     "name": "Kumho WinterCraft WP72",
     "alt_names": [
       "Кумхо ВинтерКрафт WP72"

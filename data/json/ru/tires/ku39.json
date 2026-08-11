@@ -12,6 +12,7 @@
   "item": {
     "code": "KU39",
     "series": "ECSTA",
+    "logo": "data/img/series/ecsta.svg",
     "name": "Kumho ECSTA KU39",
     "alt_names": [
       "Кумхо Экста KU39"

@@ -12,6 +12,7 @@
   "item": {
     "code": "PS71",
     "series": "ECSTA",
+    "logo": "data/img/series/ecsta.svg",
     "name": "Kumho ECSTA PS71",
     "alt_names": [
       "Кумхо Экста PS71"

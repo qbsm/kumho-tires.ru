@@ -55,6 +55,13 @@
             <div class="section__item block-wrap">
               <div class="tire-detail__header">
                 <div class="tire-detail__title-group">
+                  {% if t.logo is defined and t.logo %}
+                    <img
+                      src="{{ t.logo }}"
+                      alt="{{ t.series|default('') }}"
+                      class="tire-detail__series-logo"
+                    >
+                  {% endif %}
                   <div class="section__subitem heading-wrap">
                     <span class="heading-accent self-start" aria-hidden="true"></span>
                     <h1 class="h1 heading font-2 weight-700 heading-flex uppercase">{{ t.name|default(t.code) }}</h1>
