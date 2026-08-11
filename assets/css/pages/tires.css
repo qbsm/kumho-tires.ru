@@ -185,8 +185,8 @@
 /* Телефон: фотография меньше, логотип в полном размере наезжал на шину */
 @media (--xs) {
   .tire-detail__series-logo {
-    top: 2rem;
-    left: 1.5rem;
+    top: 3rem;
+    left: 2rem;
     height: calc(var(--series-logo-height) * 0.62);
     max-width: calc(100% - 3rem);
   }
