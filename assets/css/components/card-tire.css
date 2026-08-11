@@ -37,16 +37,16 @@
   color: var(--color-5);
 }
 
-/* Логотип линейки стоит в левом нижнем углу — на уровне шины, а не под ней */
+/* Логотип линейки — в правом верхнем углу карточки */
 .card-tire__logo-wrap {
   position: absolute;
-  left: 1.5rem;
-  bottom: 1.5rem;
-  max-width: 40%;
+  top: 1.5rem;
+  right: 1.5rem;
+  max-width: 45%;
 
   @media (--lg) {
-    left: 2rem;
-    bottom: 2rem;
+    top: 2rem;
+    right: 2rem;
   }
 }
 
@@ -56,8 +56,9 @@
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  object-position: left center;
+  object-position: right center;
   display: block;
+  margin-left: auto;
 }
 
 .card-tire .frame-wrap {
