@@ -102,6 +102,36 @@
               </div>
             </div>
             {% endif %}
+
+            {# Формулировки производителя — первоисточник, поэтому приводим их отдельно и со ссылкой #}
+            {% if tire.official is defined and tire.official.features is defined %}
+            <div class="section__item block-wrap">
+              <div class="section__subitem heading-wrap">
+                <span class="heading-accent self-start" aria-hidden="true"></span>
+                <h2 class="h3 heading font-2 weight-700 heading-flex uppercase">Технологии по данным Kumho</h2>
+              </div>
+              {% if tire.official.tagline is defined and tire.official.tagline %}
+                <div class="section__subitem">
+                  <p class="tire-detail__desc">{{ tire.official.tagline }}</p>
+                </div>
+              {% endif %}
+              <div class="section__subitem">
+                {% include 'components/custom-list.twig' with { 'items': tire.official.features } %}
+              </div>
+              {% if tire.official.tests is defined and tire.official.tests|length > 0 %}
+                <div class="section__subitem">
+                  <p class="tire-detail__note">
+                    Независимые тесты, указанные производителем: {{ tire.official.tests|join('; ') }}.
+                  </p>
+                </div>
+              {% endif %}
+              <div class="section__subitem">
+                <p class="tire-detail__note">
+                  Источник — <a href="{{ tire.official.source }}" target="_blank" rel="noopener">карточка модели на сайте Kumho Tire</a>.
+                </p>
+              </div>
+            </div>
+            {% endif %}
           </div>
 
 
