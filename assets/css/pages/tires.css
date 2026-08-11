@@ -58,15 +58,15 @@
 .tire-detail__main-image picture {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 
   /* На широком экране блок выше картинки: центрирование оставляло пустую полосу под шиной,
      поэтому прижимаем её к низу, а место сверху занимает логотип линейки */
   @media (width >= 1200px) {
     align-items: flex-end;
   }
-  justify-content: center;
-  width: 100%;
-  height: 100%;
 }
 
 .tire-detail__img {
