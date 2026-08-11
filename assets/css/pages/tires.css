@@ -47,12 +47,23 @@
   .tire-detail__main-image {
     height: 500px;
     aspect-ratio: auto;
+
+    /* Блок выше картинки: центрирование оставляло пустую полосу под шиной,
+       поэтому прижимаем её к низу — свободное место сверху занимает логотип линейки */
+    align-items: flex-end;
   }
+
 }
 
 .tire-detail__main-image picture {
   display: flex;
   align-items: center;
+
+  /* На широком экране блок выше картинки: центрирование оставляло пустую полосу под шиной,
+     поэтому прижимаем её к низу, а место сверху занимает логотип линейки */
+  @media (width >= 1200px) {
+    align-items: flex-end;
+  }
   justify-content: center;
   width: 100%;
   height: 100%;
@@ -126,19 +137,19 @@
   margin-bottom: 0.25rem;
 }
 
-/* На телефоне фотография мельче и логотип ложился на кромку шины — отводим ему полосу.
-   На десктопе места хватает, отступ там не нужен. */
+/* Телефон: под логотип отводим полосу, чтобы он не ложился на кромку шины.
+   На десктопе места хватает — там отступ не нужен. */
 @media (--xs) {
   .tire-detail__main-image--with-logo {
-    padding-top: 5.5rem;
+    padding-top: 3.4rem;
   }
 }
 
 /* Логотип линейки — в левом верхнем углу блока с фотографией шины */
 .tire-detail__series-logo {
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 2.2rem;
+  left: 2.2rem;
   z-index: 1;
 
   /* Высота — через переменную: модификаторы ниже задают её, а мобильный масштаб применяется
@@ -155,8 +166,8 @@
   display: block;
 
   @media (--lg) {
-    top: 2rem;
-    left: 2rem;
+    top: 4.4rem;
+    left: 3rem;
   }
 
 }
@@ -193,7 +204,7 @@
 /* Телефон: фотография меньше, логотип в полном размере наезжал на шину */
 @media (--xs) {
   .tire-detail__series-logo {
-    top: 3rem;
+    top: 1.5rem;
     left: 1.5rem;
     height: calc(var(--series-logo-height) * 0.62);
     max-width: calc(100% - 3rem);
