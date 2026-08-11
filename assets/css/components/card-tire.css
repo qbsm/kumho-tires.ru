@@ -36,6 +36,11 @@
 
 .card-tire__logo-wrap {
   min-width: 0;
+
+  /* Узкая карточка: отдаём картинке больше места, логотип не должен её теснить */
+  @media (--xs) {
+    max-width: 45%;
+  }
 }
 
 .card-tire .card__title {
