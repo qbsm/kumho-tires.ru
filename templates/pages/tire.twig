@@ -103,28 +103,15 @@
             </div>
             {% endif %}
 
-            {# Формулировки производителя — первоисточник, поэтому приводим их отдельно и со ссылкой #}
-            {% if tire.official is defined and tire.official.features is defined %}
+            {# Тесты производителя — проверяемый факт, в отличие от его же маркетинговых формулировок:
+               те оказались общими фразами (местами с опечатками источника) и на страницу не идут. #}
+            {% if tire.official is defined and tire.official.tests is defined and tire.official.tests|length > 0 %}
             <div class="section__item block-wrap">
-              <div class="section__subitem heading-wrap">
-                <span class="heading-accent self-start" aria-hidden="true"></span>
-                <h2 class="h3 heading font-2 weight-700 heading-flex uppercase">Технологии по данным Kumho Tires</h2>
-              </div>
-              {% if tire.official.tagline is defined and tire.official.tagline %}
-                <div class="section__subitem">
-                  <p class="tire-detail__desc">{{ tire.official.tagline }}</p>
-                </div>
-              {% endif %}
               <div class="section__subitem">
-                {% include 'components/custom-list.twig' with { 'items': tire.official.features } %}
+                <p class="tire-detail__note">
+                  Независимые тесты, указанные производителем: {{ tire.official.tests|join('; ') }}.
+                </p>
               </div>
-              {% if tire.official.tests is defined and tire.official.tests|length > 0 %}
-                <div class="section__subitem">
-                  <p class="tire-detail__note">
-                    Независимые тесты, указанные производителем: {{ tire.official.tests|join('; ') }}.
-                  </p>
-                </div>
-              {% endif %}
             </div>
             {% endif %}
           </div>

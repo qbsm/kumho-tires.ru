@@ -259,21 +259,6 @@ final class TireSeoBuilder implements SeoBuilderInterface
             $faq[] = ['q' => 'Для каких автомобилей и условий подходит ' . $name . '?', 'a' => $answer];
         }
 
-        $official = (array) ($entity['official'] ?? []);
-        $officialFeatures = array_values(array_filter(
-            (array) ($official['features'] ?? []),
-            static fn($v): bool => is_string($v) && $v !== ''
-        ));
-        if ($officialFeatures !== []) {
-            $tagline = (string) ($official['tagline'] ?? '');
-            $answer = $tagline !== '' ? rtrim($tagline, '.') . '. ' : '';
-            $answer .= implode('; ', array_map(
-                static fn(string $f): string => rtrim($f, '.'),
-                $officialFeatures
-            )) . '.';
-            $faq[] = ['q' => 'Какие технологии применены в ' . $name . '?', 'a' => $answer];
-        }
-
         $eu = $this->euSummary($entity);
         if ($eu !== null) {
             $answer = 'Класс топливной экономичности — ' . $eu['energy']
