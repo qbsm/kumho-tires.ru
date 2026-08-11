@@ -3638,5 +3638,21 @@
   "actions/1280/warranty.avif": {
     "width": 1280,
     "height": 1280
+  },
+  "tires/wi32/400/wi32-30deg-og.webp": {
+    "width": 400,
+    "height": 210
+  },
+  "tires/wi32/400/wi32-30deg-og.avif": {
+    "width": 400,
+    "height": 210
+  },
+  "tires/wi32/800/wi32-30deg-og.webp": {
+    "width": 800,
+    "height": 420
+  },
+  "tires/wi32/800/wi32-30deg-og.avif": {
+    "width": 800,
+    "height": 420
   }
 }

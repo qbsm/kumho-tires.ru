@@ -65,6 +65,10 @@
     "30deg": {
       "src": "data/img/tires/wi32/raw/wi32-30deg.webp",
       "alt": "Kumho WinterCraft ice WI32"
+    },
+    "front": {
+      "src": "data/img/tires/wi32/raw/wi32-front.webp",
+      "alt": "Kumho WinterCraft ice WI32, вид спереди"
     }
   },
   "season": "Зимняя, шипованная",
