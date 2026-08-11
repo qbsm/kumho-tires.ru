@@ -139,6 +139,35 @@
   margin-bottom: 0.5rem;
 }
 
+/* Те же пропорции, что в карточке, но крупнее: эталон — ecowing */
+.tire-detail__series-logo--crugen {
+  height: 2rem;
+}
+
+.tire-detail__series-logo--road-venture {
+  height: 2.24rem;
+}
+
+.tire-detail__series-logo--ecsta {
+  height: 2.43rem;
+}
+
+.tire-detail__series-logo--wintercraft {
+  height: 2.75rem;
+}
+
+.tire-detail__series-logo--ecowing {
+  height: 2.8rem;
+}
+
+.tire-detail__series-logo--solus {
+  height: 3.2rem;
+}
+
+.tire-detail__series-logo--portran {
+  height: 3.4rem;
+}
+
 .tire-detail__series {
   color: var(--color-5);
 }

@@ -34,7 +34,7 @@
       <img
         src="{{ item.item.logo }}"
         alt="{{ item.item.series|default('') }}"
-        class="card-tire__series-logo"
+        class="card-tire__series-logo card-tire__series-logo--{{ item.item.logo|split('/')|last|replace({'.svg': ''}) }}"
         loading="lazy"
       >
     </div>

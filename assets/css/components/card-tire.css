@@ -50,7 +50,10 @@
   }
 }
 
-/* Высота у всех линеек одна; ширину отдаём пропорции самой картинки */
+/* Логотипы линеек очень разной пропорции (5:1 … 11:1): при равной высоте длинный CRUGEN
+   выглядит крупнее короткого PorTran. Поэтому высота у каждого своя — подобрана так, чтобы
+   закрашенная площадь совпадала с ecowing, он взят за эталон восприятия.
+   В покое логотип одноцветный тёмный, цвет линейки проявляется при наведении на карточку. */
 .card-tire__series-logo {
   height: 1.6rem;
   width: auto;
@@ -58,6 +61,41 @@
   object-fit: contain;
   object-position: left center;
   display: block;
+  filter: brightness(0) opacity(0.75);
+  transition: filter 0.25s ease-out;
+}
+
+.card-tire__series-logo--crugen {
+  height: 1.14rem;
+}
+
+.card-tire__series-logo--road-venture {
+  height: 1.28rem;
+}
+
+.card-tire__series-logo--ecsta {
+  height: 1.39rem;
+}
+
+.card-tire__series-logo--wintercraft {
+  height: 1.57rem;
+}
+
+.card-tire__series-logo--ecowing {
+  height: 1.6rem;
+}
+
+.card-tire__series-logo--solus {
+  height: 1.83rem;
+}
+
+.card-tire__series-logo--portran {
+  height: 1.94rem;
+}
+
+.card-tire:hover .card-tire__series-logo,
+.card-tire:focus-visible .card-tire__series-logo {
+  filter: none;
 }
 
 .card-tire .frame-wrap {

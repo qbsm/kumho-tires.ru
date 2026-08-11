@@ -59,7 +59,7 @@
                     <img
                       src="{{ t.logo }}"
                       alt="{{ t.series|default('') }}"
-                      class="tire-detail__series-logo"
+                      class="tire-detail__series-logo tire-detail__series-logo--{{ t.logo|split('/')|last|replace({'.svg': ''}) }}"
                     >
                   {% endif %}
                   <div class="section__subitem heading-wrap">
