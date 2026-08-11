@@ -188,6 +188,14 @@
   border-collapse: collapse;
 }
 
+/* Селектор с родителем: рядом лежит `.tire-detail p { margin: 0 }`, он специфичнее */
+.tire-detail .tire-detail__note {
+  margin-top: 2rem;
+  font-size: 0.9375em;
+  line-height: 1.6;
+  color: var(--color-5);
+}
+
 .tire-detail__table th,
 .tire-detail__table td {
   padding: 1.15rem 1.5rem;

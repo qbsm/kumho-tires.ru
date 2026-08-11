@@ -108,7 +108,7 @@
             <div class="section__item block-wrap">
               <div class="section__subitem heading-wrap">
                 <span class="heading-accent self-start" aria-hidden="true"></span>
-                <h2 class="h3 heading font-2 weight-700 heading-flex uppercase">Технологии по данным Kumho</h2>
+                <h2 class="h3 heading font-2 weight-700 heading-flex uppercase">Технологии по данным Kumho Tires</h2>
               </div>
               {% if tire.official.tagline is defined and tire.official.tagline %}
                 <div class="section__subitem">
@@ -125,11 +125,6 @@
                   </p>
                 </div>
               {% endif %}
-              <div class="section__subitem">
-                <p class="tire-detail__note">
-                  Источник — <a href="{{ tire.official.source }}" target="_blank" rel="noopener">карточка модели на сайте Kumho Tire</a>.
-                </p>
-              </div>
             </div>
             {% endif %}
           </div>
@@ -156,9 +151,9 @@
                     <th>Индекс нагрузки/скорости</th>
                     <th>C</th>
                     {% if _hasEuLabel %}
-                      <th title="Класс топливной экономичности, от A до E">Экономичность</th>
-                      <th title="Класс сцепления на мокрой дороге, от A до E">Сцепление</th>
-                      <th title="Уровень внешнего шума качения">Шум, дБ</th>
+                      <th title="Класс топливной экономичности, от A до E">Экономичность<sup>*</sup></th>
+                      <th title="Класс сцепления на мокрой дороге, от A до E">Сцепление<sup>*</sup></th>
+                      <th title="Уровень внешнего шума качения">Шум, дБ<sup>*</sup></th>
                     {% endif %}
                   </tr>
                 </thead>
@@ -181,9 +176,8 @@
             </div>
             {% if _hasEuLabel %}
               <p class="tire-detail__note">
-                Классы экономичности и сцепления, уровень шума — по регистрациям шины в
-                <a href="https://eprel.ec.europa.eu/screen/product/tyres?search=KUMHO%20{{ tire.item.code|url_encode }}" target="_blank" rel="noopener">реестре ЕС EPREL</a>.
-                Прочерк означает, что типоразмер в реестре не зарегистрирован.
+                <sup>*</sup> Классы экономичности и сцепления, уровень шума — по регистрациям шины
+                в реестре ЕС EPREL. Прочерк означает, что типоразмер в реестре не зарегистрирован.
               </p>
             {% endif %}
           </div>
@@ -197,7 +191,7 @@
     {% set _faqItems = [] %}
     {% for _pair in pageSeoData.faq_items | default([]) %}
       {% set _faqItems = _faqItems | merge([{
-        'icon': {'src': 'data/img/ui/icons/icon-arrow-down-color-2.svg'},
+        'icon': {'src': url('/data/img/ui/icons/icon-arrow-down-color-2.svg')},
         'title': _pair.q,
         'answerText': _pair.a,
         'desc': _pair.a
