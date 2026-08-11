@@ -56,8 +56,13 @@ onReady(() => {
         img.loading = 'eager';
       }
 
-      mainImage.innerHTML = '';
-      mainImage.appendChild(newPicture);
+      // Меняем только саму картинку: в контейнере лежит ещё логотип линейки
+      const current = mainImage.querySelector('picture');
+      if (current) {
+        current.replaceWith(newPicture);
+      } else {
+        mainImage.appendChild(newPicture);
+      }
     });
   });
 
