@@ -8,6 +8,11 @@
   }
 }
 
+/* Переход между шагами прокручивает к блоку — держим его ниже липкой шапки */
+.tire-selector__app {
+  scroll-margin-top: calc(var(--header-top-offset) + var(--header-fixed-height) + 1rem);
+}
+
 .tire-selector .section__item.block-wrap {
   display: flex;
   flex-direction: column;

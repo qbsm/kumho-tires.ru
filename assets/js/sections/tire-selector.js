@@ -74,10 +74,9 @@ const initSelector = (root) => {
     stepEls.forEach((el, i) => el.classList.toggle('hidden', i !== index));
     resultEl.classList.toggle('hidden', index < stepEls.length);
 
-    const header = document.querySelector('.header');
-    const offset = header ? header.offsetHeight : 0;
-    const top = root.getBoundingClientRect().top + window.pageYOffset - offset - 16;
-    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    // Отступ под липкую шапку задан в CSS (scroll-margin-top), браузер учитывает его сам:
+    // ручной расчёт промахивался, потому что шапка в момент клика ещё едет.
+    root.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const fillSelect = (select, values, selected) => {

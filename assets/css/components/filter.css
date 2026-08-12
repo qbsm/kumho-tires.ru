@@ -3,12 +3,24 @@
 
   width: 100%;
   padding: 1rem;
-  border: 0.1rem solid var(--color-4);
-  border-radius: 1rem;
+
+  /* Как карточки на сайте: рамки нет, панель держит мягкая тень */
+  border-radius: 1.6rem;
+  background: var(--color-1);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 6%),
+    0 24px 48px rgb(0 0 0 / 4%);
 
   @media (--lg) {
-    padding: 1.5rem;
-    border-radius: 2rem;
+    /* По бокам просторнее: панель по содержимому и воздух вокруг кнопок читается лучше */
+    padding: 1.5rem 3rem;
+    border-radius: 2.4rem;
+
+    /* Панель по содержимому, а не во всю строку — и по центру колонки */
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
   }
 }
 
@@ -20,6 +32,9 @@
 
   @media (--lg) {
     gap: 1rem;
+
+    /* На широком экране панель шире содержимого — держим кнопки по центру */
+    justify-content: center;
   }
 }
 
