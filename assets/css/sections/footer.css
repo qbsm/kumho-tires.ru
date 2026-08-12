@@ -86,12 +86,13 @@
   }
 }
 
-.footer {
-  --underline-color: rgb(255 255 255 / 35%);
-}
-
 .footer__link {
   font-size: 1em;
+}
+
+/* На тёмном фоне общее затухание в 10% не читается — ссылки футера гаснут заметнее */
+.footer .link:hover {
+  opacity: 0.6;
 }
 
 .footer .section__item.policy-agree-wrap {
