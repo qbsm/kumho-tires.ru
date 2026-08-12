@@ -212,14 +212,14 @@
       "ru": {
         "phone": "Телефон",
         "name": "Ваше имя",
-        "policy": "Я ознакомился с&nbsp;<a href='/data/docs/personal-data-policy.pdf' target='_blank'>Политикой обработки персональных данных</a> и&nbsp;согласен с&nbsp;обработкой моих персональных данных способами и&nbsp;для целей, указанных в&nbsp;Политике.",
+        "policy": "Я ознакомился с&nbsp;<a href='/data/docs/personal-data-policy.pdf' target='_blank' class='link inline weight-400 underline-static'>Политикой обработки персональных данных</a> и&nbsp;согласен с&nbsp;обработкой моих персональных данных способами и&nbsp;для целей, указанных в&nbsp;Политике.",
         "photos": "Прикрепите изображения",
         "message": "Сообщение"
       },
       "en": {
         "phone": "Phone",
         "name": "Your name",
-        "policy": "I consent to the processing of personal data in&nbsp;accordance with the&nbsp;<a href='/en/policy/' target='_blank'>Privacy Policy</a>",
+        "policy": "I consent to the processing of personal data in&nbsp;accordance with the&nbsp;<a href='/en/policy/' target='_blank' class='link inline weight-400 underline-static'>Privacy Policy</a>",
         "photos": "Attach images",
         "message": "Message"
       }
@@ -337,14 +337,14 @@
   },
   "cookie-panel": {
     "ru": {
-      "desc": "Мы используем <a href='/cookies-policy/' class='link color-2 weight-400'>cookie-файлы</a> для вашего удобства пользования сайтом",
+      "desc": "Мы используем <a href='/cookies-policy/' class='link color-2 weight-400 underline-static'>cookie-файлы</a> для вашего удобства пользования сайтом",
       "button": {
         "title": "Принять",
         "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"
       }
     },
     "en": {
-      "desc": "We use <a href='/cookies-policy/' class='link color-2 weight-400'>cookies</a> to improve your experience on our website",
+      "desc": "We use <a href='/cookies-policy/' class='link color-2 weight-400 underline-static'>cookies</a> to improve your experience on our website",
       "button": {
         "title": "Accept",
         "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"

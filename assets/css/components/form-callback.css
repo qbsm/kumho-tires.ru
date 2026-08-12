@@ -473,8 +473,9 @@
 .form-callback__checkbox-text a {
   color: var(--color-6);
   text-decoration: underline;
-  text-underline-offset: 0.2rem;
-  transition: color var(--fc-speed) var(--fc-ease);
+  text-decoration-color: var(--color-4);
+  text-underline-offset: 0.3rem;
+  transition: text-decoration-color var(--fc-speed) var(--fc-ease);
 }
 
 .form-callback__checkbox-text a:hover {
@@ -669,12 +670,13 @@
 .form-callback__rules-text a {
   color: var(--color-6);
   text-decoration: underline;
-  text-underline-offset: 0.2rem;
-  transition: color var(--fc-speed) var(--fc-ease);
+  text-decoration-color: var(--color-4);
+  text-underline-offset: 0.3rem;
+  transition: text-decoration-color var(--fc-speed) var(--fc-ease);
 }
 
 .form-callback__rules-text a:hover {
-  color: var(--color-3);
+  text-decoration-color: var(--color-3);
 }
 
 /* ==========================================================================
