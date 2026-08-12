@@ -29,7 +29,7 @@
     {% if phoneTitle and phoneHref %}
       <div class="card-dealer__item opacity-80">
         <div class="link-wrap">
-          <a href="tel:{{ phoneHref|replace({'tel:': ''}) }}" class="link link-a font-1-demi nowrap">{{ phoneTitle | raw }}</a>
+          <a href="tel:{{ phoneHref|replace({'tel:': ''}) }}" class="link font-1-demi nowrap underline-static">{{ phoneTitle | raw }}</a>
         </div>
       </div>
     {% endif %}
