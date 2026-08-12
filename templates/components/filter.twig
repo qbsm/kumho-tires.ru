@@ -54,6 +54,9 @@
         {% set toggleClass = (groupClass ~ ' filter__selector') | trim %}
         <label class="{{ toggleClass }}">
           <input type="checkbox" class="{{ group.input_class | default('filter__checkbox') }}">
+          {% if group.icon is defined and group.icon %}
+            <span class="filter__icon" style="--filter-icon: url('{{ url(group.icon) }}')" aria-hidden="true"></span>
+          {% endif %}
           <span class="filter__option-label">{{ group.label | default('') }}</span>
         </label>
       {% endif %}

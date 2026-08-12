@@ -45,16 +45,36 @@
   gap: 0.5rem;
 }
 
+/* Оформление как у чипов конфигуратора: тот же контур, радиус и посадка текста */
 .card-dealer__badge {
   display: inline-flex;
   align-items: center;
-  min-height: 1.75rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999rem;
-  font-size: 0.75em;
-  line-height: 1.2;
+  gap: 0.6rem;
+  min-height: 2.6rem;
+  padding: 0 1rem;
   border: 0.1rem solid var(--color-4);
-  color: var(--color-3);
+  border-radius: 0.75rem;
+  background: var(--color-1);
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: var(--color-2);
+}
+
+/* Иконка маской — как у кнопок фильтра и чипов конфигуратора */
+.card-dealer__badge-icon {
+  flex: 0 0 auto;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: var(--color-3);
+  mask: var(--badge-icon) center / contain no-repeat;
+}
+
+.card-dealer__badge[data-filter="guarantee"] {
+  --badge-icon: url("/data/img/ui/icons/icon-doc-color-2.svg");
+}
+
+.card-dealer__badge[data-filter="bshm"] {
+  --badge-icon: url("/data/img/ui/icons/icon-check-sm-color-2.svg");
 }
 
 .card-dealer__subitem.address-wrap {

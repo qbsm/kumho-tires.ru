@@ -54,15 +54,24 @@
   font-size: 0.9em;
 }
 
-/* Иконка рисуется маской, а не <img>: цвет берётся из currentColor,
-   поэтому на активной кнопке инвертируется вместе с текстом. */
+/* Иконка рисуется маской, а не <img>: цветом управляем через background-color.
+   Как у чипов конфигуратора — фирменный красный; на активной кнопке фон красный,
+   поэтому там иконка становится белой. */
 .filter .filter__icon {
   flex: 0 0 auto;
   width: 1.15em;
   height: 1.15em;
   margin-right: 0.5em;
-  background-color: currentcolor;
+  background-color: var(--color-3);
   mask: var(--filter-icon) center / contain no-repeat;
+
+  /* Кнопка перекрашивается за 0.2s — иконка должна догонять её, а не прыгать мгновенно */
+  transition: background-color 0.2s ease;
+}
+
+.filter .filter__selector:hover .filter__icon,
+.filter .filter__selector.active .filter__icon {
+  background-color: var(--color-1);
 }
 
 /* Оптическая компенсация: gap группы (0.5rem) отодвигает иконку от своего лейбла ровно
@@ -71,7 +80,6 @@
 .filter .filter__icon--select {
   margin-right: -0.2rem;
   margin-left: 0.3rem;
-  color: var(--color-5);
 }
 
 .filter .custom-select {
@@ -86,17 +94,19 @@
   padding: 0 0.8rem;
 }
 
+/* Посадка и размер — как у чипов конфигуратора, чтобы элементы выбора выглядели одинаково */
 .filter .filter__selector {
   height: var(--filter-control-height);
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
+  gap: 0.6rem;
   border: 0.1rem solid var(--color-4);
   border-radius: 0.75rem;
   background: var(--color-1);
   color: var(--color-2);
-  padding: 0 0.9rem;
-  font-size: 0.95em;
+  padding: 0 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.2;
   cursor: pointer;
   transition: all 0.2s ease;
