@@ -96,7 +96,7 @@
                     {% endif %}
                     {% if option.icon is defined and option.icon %}
                       <span class="tire-selector__option-icon-wrap">
-                        <span class="tire-selector__option-icon" style="--selector-icon: url('{{ url(option.icon) }}')" aria-hidden="true"></span>
+                        <span class="tire-selector__option-icon" style="--tire-selector-icon: url('{{ url(option.icon) }}')" aria-hidden="true"></span>
                       </span>
                     {% endif %}
                   </button>
@@ -122,7 +122,7 @@
               <div class="tire-selector__sizes">
                 {% for control in sizeControls %}
                   <div class="tire-selector__size-field">
-                    <span class="tire-selector__size-icon" style="--selector-icon: url('{{ url(control.icon) }}')" aria-hidden="true"></span>
+                    <span class="tire-selector__size-icon" style="--tire-selector-icon: url('{{ url(control.icon) }}')" aria-hidden="true"></span>
                     <label class="tire-selector__size-label" for="{{ selectorId }}-{{ control.key }}">{{ control.label }}</label>
                     <select
                       id="{{ selectorId }}-{{ control.key }}"

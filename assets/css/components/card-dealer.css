@@ -55,7 +55,7 @@
   border: 0.1rem solid var(--color-4);
   border-radius: 0.75rem;
   background: var(--color-1);
-  font-size: 1.3rem;
+  font-size: 0.9em;
   line-height: 1.2;
   color: var(--color-2);
 }
@@ -66,15 +66,12 @@
   width: 1.15em;
   height: 1.15em;
   background-color: var(--color-3);
-  mask: var(--badge-icon) center / contain no-repeat;
+  mask: var(--card-dealer-badge-icon) center / contain no-repeat;
 }
 
-.card-dealer__badge[data-filter="guarantee"] {
-  --badge-icon: url("/data/img/ui/icons/icon-doc-color-2.svg");
-}
-
+.card-dealer__badge[data-filter="guarantee"],
 .card-dealer__badge[data-filter="bshm"] {
-  --badge-icon: url("/data/img/ui/icons/icon-check-sm-color-2.svg");
+  --card-dealer-badge-icon: url("/data/img/ui/icons/icon-check-sm-color-2.svg");
 }
 
 .card-dealer__subitem.address-wrap {

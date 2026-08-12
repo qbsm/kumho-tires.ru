@@ -154,9 +154,9 @@
 
   /* Высота — через переменную: модификаторы ниже задают её, а мобильный масштаб применяется
      после них (иначе более поздний модификатор перебивал бы медиазапрос) */
-  --series-logo-height: 2.8rem;
+  --tire-detail-logo-height: 2.8rem;
 
-  height: var(--series-logo-height);
+  height: var(--tire-detail-logo-height);
   width: auto;
 
   /* На узком экране длинный логотип упирается в max-width — object-fit не даёт его сплющить */
@@ -174,31 +174,31 @@
 
 /* Те же пропорции, что в карточке, но крупнее: эталон — ecowing */
 .tire-detail__series-logo--crugen {
-  --series-logo-height: 2rem;
+  --tire-detail-logo-height: 2rem;
 }
 
 .tire-detail__series-logo--road-venture {
-  --series-logo-height: 2.24rem;
+  --tire-detail-logo-height: 2.24rem;
 }
 
 .tire-detail__series-logo--ecsta {
-  --series-logo-height: 2.43rem;
+  --tire-detail-logo-height: 2.43rem;
 }
 
 .tire-detail__series-logo--wintercraft {
-  --series-logo-height: 2.75rem;
+  --tire-detail-logo-height: 2.75rem;
 }
 
 .tire-detail__series-logo--ecowing {
-  --series-logo-height: 2.8rem;
+  --tire-detail-logo-height: 2.8rem;
 }
 
 .tire-detail__series-logo--solus {
-  --series-logo-height: 3.2rem;
+  --tire-detail-logo-height: 3.2rem;
 }
 
 .tire-detail__series-logo--portran {
-  --series-logo-height: 2.98rem;
+  --tire-detail-logo-height: 2.98rem;
 }
 
 /* Телефон: фотография меньше, логотип в полном размере наезжал на шину */
@@ -206,7 +206,7 @@
   .tire-detail__series-logo {
     top: 1.5rem;
     left: 1.5rem;
-    height: calc(var(--series-logo-height) * 0.62);
+    height: calc(var(--tire-detail-logo-height) * 0.62);
     max-width: calc(100% - 3rem);
   }
 }

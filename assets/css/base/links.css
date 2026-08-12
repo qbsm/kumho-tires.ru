@@ -49,6 +49,21 @@
   display: inline;
 }
 
+/* Ссылка внутри текста: линия видна всегда и становится фирменной при наведении.
+   В лонгридах ссылки приходят из контента без классов — им то же оформление. */
+.link.underline-static,
+.longread a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-4);
+  text-underline-offset: 0.3rem;
+}
+
+.link.underline-static:hover,
+.longread a:hover {
+  color: var(--color-3);
+  text-decoration-color: var(--color-3);
+}
+
 .link.underline::after {
   content: '';
   position: absolute;

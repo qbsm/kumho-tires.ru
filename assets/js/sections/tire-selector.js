@@ -147,7 +147,7 @@ const initSelector = (root) => {
       if (chip.icon) {
         const icon = document.createElement('span');
         icon.className = 'tire-selector__chip-icon';
-        icon.style.setProperty('--selector-icon', `url('${chip.icon}')`);
+        icon.style.setProperty('--tire-selector-icon', `url('${chip.icon}')`);
         icon.setAttribute('aria-hidden', 'true');
         el.appendChild(icon);
       }

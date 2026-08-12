@@ -42,13 +42,13 @@
 
 .tire-selector__counter {
   font-family: var(--font-2);
-  font-size: 1.2rem;
+  font-size: 0.8em;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--color-5);
 
   @media (--lg) {
-    font-size: 1.4rem;
+    font-size: 0.9em;
   }
 }
 
@@ -80,7 +80,7 @@
   border: 0.1rem solid var(--color-4);
   border-radius: 0.75rem;
   background: var(--color-1);
-  font-size: 1.4rem;
+  font-size: 0.9em;
   line-height: 1.2;
   color: var(--color-2);
 }
@@ -90,7 +90,7 @@
   width: 1.6rem;
   height: 1.6rem;
   background-color: var(--color-3);
-  mask: var(--selector-icon) center / contain no-repeat;
+  mask: var(--tire-selector-icon) center / contain no-repeat;
 }
 
 .tire-selector__options {
@@ -198,7 +198,7 @@
   width: 6.4rem;
   height: 6.4rem;
   background-color: var(--color-3);
-  mask: var(--selector-icon) center / contain no-repeat;
+  mask: var(--tire-selector-icon) center / contain no-repeat;
 
   @media (--lg) {
     width: 8rem;
@@ -280,12 +280,12 @@
   width: 1.8rem;
   height: 1.8rem;
   background-color: var(--color-5);
-  mask: var(--selector-icon) center / contain no-repeat;
+  mask: var(--tire-selector-icon) center / contain no-repeat;
 }
 
 .tire-selector__size-label {
   flex: 0 0 auto;
-  font-size: 1.4rem;
+  font-size: 0.9em;
   color: var(--color-5);
 }
 
@@ -296,7 +296,7 @@
   border: 0;
   background: transparent;
   font-family: var(--font-2);
-  font-size: 1.5rem;
+  font-size: 0.95em;
   font-weight: 600;
   color: var(--color-2);
   cursor: pointer;
@@ -327,7 +327,7 @@
   border: 0;
   background: transparent;
   font-family: inherit;
-  font-size: 1.5rem;
+  font-size: 0.95em;
   letter-spacing: 0.04em;
   color: var(--color-5);
   cursor: pointer;

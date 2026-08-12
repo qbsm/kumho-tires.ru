@@ -28,16 +28,6 @@
   margin-block-end: 0;
 }
 
-.content-tires .longread a {
-  text-decoration: underline;
-  text-decoration-color: var(--color-4);
-  text-underline-offset: 0.3rem;
-}
-
-.content-tires .longread a:hover {
-  color: var(--color-3);
-  text-decoration-color: var(--color-3);
-}
 
 @media (--lg) {
   .content-warranty {
