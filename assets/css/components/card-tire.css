@@ -2,21 +2,32 @@
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+
+  /* Мягкая тень и скруглении как у карточек контактов — карточки стали объёмнее */
   border: 1px solid var(--color-4);
-  border-radius: 1rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  border-radius: 1.6rem;
+  background: var(--color-1);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 6%),
+    0 24px 48px rgb(0 0 0 / 4%);
+  transition: border-color 0.2s ease, box-shadow 0.25s ease-out, background 0.2s ease;
   min-height: 100%;
   color: inherit;
   text-decoration: none;
 
   @media (--lg) {
     padding: 2rem;
-    border-radius: 2rem;
+    border-radius: 2.4rem;
   }
 }
 
 .card-tire:hover {
   border-color: var(--color-3);
+  box-shadow:
+    0 2px 4px rgb(0 0 0 / 6%),
+    0 12px 32px rgb(0 0 0 / 10%),
+    0 32px 64px rgb(0 0 0 / 6%);
 }
 
 /* Текст держится вверху, графика прижата к низу карточки и выровнена по нижнему краю */
