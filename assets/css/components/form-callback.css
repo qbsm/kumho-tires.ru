@@ -479,7 +479,7 @@
 }
 
 .form-callback__checkbox-text a:hover {
-  color: var(--color-3);
+  text-decoration-color: var(--color-3);
 }
 
 @keyframes checkPop {

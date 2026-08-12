@@ -126,13 +126,6 @@
   transition: color 0.2s ease;
 }
 
-/* Подсветка только у кликабельных строк: у адреса ссылки нет, и подсвечиваться он не должен */
-@media (hover: hover) {
-  a.contacts-card__row:hover .contacts-card__value {
-    color: var(--color-3);
-  }
-}
-
 .contacts-card__actions {
   display: flex;
   flex-wrap: wrap;

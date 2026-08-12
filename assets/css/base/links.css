@@ -29,10 +29,6 @@
   color: var(--color-2);
 }
 
-.link.color-2:hover {
-  color: var(--color-3);
-}
-
 .link.color-3:hover {
   color: var(--color-6);
 }
