@@ -55,7 +55,7 @@
 .underline-static,
 .longread a:not(.button) {
   text-decoration: underline;
-  text-decoration-color: var(--color-4);
+  text-decoration-color: var(--underline-color, var(--color-4));
   text-underline-offset: 0.3rem;
 }
 

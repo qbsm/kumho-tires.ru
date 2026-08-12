@@ -86,6 +86,10 @@
   }
 }
 
+.footer {
+  --underline-color: rgb(255 255 255 / 35%);
+}
+
 .footer__link {
   font-size: 1em;
 }

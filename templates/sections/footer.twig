@@ -14,7 +14,7 @@
         {% for link in global.nav[lang_code].items %}
           {% if link.visible is not defined or link.visible %}
           <div class="footer__link-wrap">
-            <a href="{{ url(link.href) }}" class="link footer__link">{{ link.title }}</a>
+            <a href="{{ url(link.href) }}" class="link footer__link underline-static">{{ link.title }}</a>
           </div>
           {% endif %}
         {% endfor %}
@@ -22,7 +22,7 @@
       {# Ссылки только для футера: пункт может быть скрыт в шапке, но переход нужен #}
       {% for link in global['footer-links'][lang_code] | default([]) %}
         <div class="footer__link-wrap">
-          <a href="{{ url(link.href) }}" class="link footer__link">{{ link.title }}</a>
+          <a href="{{ url(link.href) }}" class="link footer__link underline-static">{{ link.title }}</a>
         </div>
       {% endfor %}
     </div>
@@ -36,11 +36,11 @@
     </div>
     <div class="section__item policy-agree-wrap">
       {% if global.policy[lang_code] is defined %}
-<a href="{{ url(global.policy[lang_code].href) }}" class="link footer__disclaimer-link opacity-80"{% if global.policy[lang_code].target is defined %} target="{{ global.policy[lang_code].target }}" rel="noopener"{% endif %}>{{ global.policy[lang_code].title }}</a>
+<a href="{{ url(global.policy[lang_code].href) }}" class="link footer__disclaimer-link opacity-80 underline-static"{% if global.policy[lang_code].target is defined %} target="{{ global.policy[lang_code].target }}" rel="noopener"{% endif %}>{{ global.policy[lang_code].title }}</a>
 
       {% endif %}
       {% if global['cookies-policy'][lang_code] is defined %}
-<a href="{{ url(global['cookies-policy'][lang_code].href) }}" class="link footer__disclaimer-link opacity-80">{{ global['cookies-policy'][lang_code].title }}</a>
+<a href="{{ url(global['cookies-policy'][lang_code].href) }}" class="link footer__disclaimer-link opacity-80 underline-static">{{ global['cookies-policy'][lang_code].title }}</a>
 
       {% endif %}
     </div>

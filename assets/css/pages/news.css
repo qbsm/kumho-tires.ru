@@ -210,11 +210,10 @@
 .news-detail__body a:not(.glightbox) {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: var(--color-4);
+  text-decoration-color: var(--underline-color, var(--color-4));
   text-underline-offset: 0.3rem;
 }
 
 .news-detail__body a:not(.glightbox):hover {
-  color: var(--color-3);
   text-decoration-color: var(--color-3);
 }
