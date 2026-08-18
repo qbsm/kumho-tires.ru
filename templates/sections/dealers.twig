@@ -212,5 +212,22 @@
         {% endfor %}
       </div>
     {% endif %}
+
+    {% if urlSyncCity and cityOptions | length > 1 %}
+      <nav class="section__item cities-nav" aria-label="Города, где купить шины Kumho">
+        <span class="cities-nav__title">{{ pageCitySlug ? 'Купить в других городах' : 'Купить по городам' }}</span>
+        <ul class="cities-nav__list">
+          {% if pageCitySlug %}
+            <li><a class="cities-nav__link cities-nav__link--all" href="{{ url('buy') }}">Все точки продаж</a></li>
+          {% endif %}
+          {% for city in cityOptions | sort %}
+            {% set citySlug = city_to_slug(city) %}
+            {% if citySlug and citySlug != pageCitySlug %}
+              <li><a class="cities-nav__link" href="{{ url('buy/' ~ citySlug) }}">{{ city }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
   </div>
 </section>
