@@ -26,7 +26,7 @@ final class TelegramChannel implements ChannelInterface
         'message' => 'Сообщение',
     ];
 
-    private const SKIP_FIELDS = ['phone_shown', 'phone_digits', 
+    private const SKIP_FIELDS = ['phone_shown', 'phone_digits',
         'csrf_token',
         'form_token',
         'company_site',
