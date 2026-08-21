@@ -1,5 +1,7 @@
 <?php
 
+use App\Support\Env;
+
 $projectRoot = dirname(__DIR__);
 
 // APP_ENV: production | development — разделение окружений (кэш Twig, уровень логов)
@@ -93,6 +95,20 @@ return [
         'max_age' => 7200,
         'secret_file' => $cacheDir . '/form-token-secret',
     ],
+    'form_guard' => [
+        'enable' => Env::bool('FORM_GUARD_ENABLE', true),
+        'trap_field' => Env::get('FORM_GUARD_TRAP_FIELD') ?: 'company_site, website',
+        'min_age_sec' => Env::int('FORM_GUARD_MIN_AGE_SEC', 3),
+        // Обязательные поля формы — свойство площадки: форма подписки живёт без телефона.
+        'required_fields' => Env::get('FORM_REQUIRED_FIELDS') ?: 'phone',
+    ],
+    'captcha' => [
+        'enable' => Env::bool('CAPTCHA_ENABLE'),
+        'client_key' => Env::get('CAPTCHA_CLIENT_KEY'),
+        'server_key' => Env::get('CAPTCHA_SERVER_KEY'),
+        'timeout' => Env::int('CAPTCHA_TIMEOUT', 5),
+    ],
+
     'cors' => [
         'allowed_origins' => [], // например ['https://example.com'] или ['*'] для любого
         'allowed_methods' => ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],

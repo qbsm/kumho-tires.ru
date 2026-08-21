@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Action\ApiFormTokenAction;
 use App\Action\ApiSendAction;
+use App\Security\CaptchaVerifier;
 use App\Action\ApiWidgetRescueAction;
 use App\Action\HealthAction;
 use App\Action\PageAction;
@@ -260,7 +261,14 @@ return static function (): ContainerInterface {
         },
 
         ApiFormTokenAction::class => \DI\autowire(),
-        ApiSendAction::class => \DI\autowire(),
+        CaptchaVerifier::class => static fn(ContainerInterface $c) => new CaptchaVerifier(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['captcha'] ?? [],
+        ),
+
+        ApiSendAction::class => \DI\autowire()
+            ->constructorParameter('formGuard', \DI\factory(static fn ($c) => $c->get('settings')['form_guard'] ?? [])),
         ApiWidgetRescueAction::class => \DI\autowire(),
     ]);
 
