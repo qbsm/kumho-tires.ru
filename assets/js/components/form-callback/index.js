@@ -1,6 +1,7 @@
 import { FormApi } from './api.js';
 import { primeFormToken, primeAllTokenFields, ensureFormToken, refreshFormToken } from './token.js';
 import { formTitle } from './form-title.js';
+import { initCaptcha, appendCaptchaToken } from './captcha.js';
 import { FormValidator } from './validation.js';
 import { PhoneMask } from './mask.js';
 import { FormUI } from './ui.js';
@@ -85,6 +86,7 @@ export class CallbackForm {
       this.ui.showFormError(
         validation.firstError || this.i18n.get('error', 'form_errors', DEFAULT_ERROR_TEXTS[this.lang].form_errors)
       );
+      this._reportOutcome('validation_failed', validation.firstError || '');
       return;
     }
 
@@ -96,7 +98,12 @@ export class CallbackForm {
     try {
       this._setCurrentUrl();
       const formData = this._buildFormData();
+      // Ключ сессии формы от сниппета маячков: заявка и попытка сшиваются в приёмнике по нему.
+      if (this.form.dataset.ismartSession) {
+        formData.set('idempotency_key', this.form.dataset.ismartSession);
+      }
       await ensureFormToken(formData, this.form);
+      await appendCaptchaToken(formData);
       const response = await this._sendWithRetry(formData);
 
       if (response.processing === true) {
@@ -113,17 +120,39 @@ export class CallbackForm {
       hasSucceeded = true;
     } catch (error) {
       if (error && error.name === 'AbortError') {
+        this._reportOutcome('network_error', 'timeout');
         return;
       }
+
+      const status = error && typeof error.status === 'number' ? error.status : null;
+      let outcome = 'js_error';
+      if (status === 0) {
+        outcome = 'network_error';
+      } else if (status) {
+        outcome = `http_${status}`;
+      }
+      this._reportOutcome(outcome, (error && error.message) || '');
 
       this._handleError(error);
     } finally {
       this.isSubmitting = false;
+      if (hasSucceeded) {
+        this._reportOutcome('sent');
+      }
       if (!hasSucceeded) {
         this.ui.setErrorState();
       }
       this.abortController = null;
     }
+  }
+
+  /**
+   * Исход попытки — сниппету маячков: он живёт отдельно от бандла и сам исхода не знает.
+   */
+  _reportOutcome(outcome, error = '') {
+    this.form.dispatchEvent(
+      new CustomEvent('ismart:send-result', { bubbles: true, detail: { outcome, error } })
+    );
   }
 
   _handleInput(event) {
@@ -345,4 +374,5 @@ function bootstrapCallbackForms() {
 
 window.initCallbackForms = initCallbackForms;
 primeAllTokenFields();
+initCaptcha();
 document.addEventListener('DOMContentLoaded', bootstrapCallbackForms);
