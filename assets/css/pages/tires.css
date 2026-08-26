@@ -233,9 +233,14 @@
   transition: var(--transition-1);
 }
 
+/* Затемняющий слой поверх заливки — та же механика, что у кнопок: бейдж остаётся красным */
 a.tire-detail__badge:hover,
 a.tire-detail__badge:focus-visible {
-  background: var(--color-2);
+  box-shadow: inset 0 0 0 100rem rgb(0 0 0 / 8%);
+}
+
+a.tire-detail__badge:active {
+  box-shadow: inset 0 0 0 100rem rgb(0 0 0 / 16%);
 }
 
 .tire-detail__desc {
