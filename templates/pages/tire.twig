@@ -66,7 +66,21 @@
                     <span class="heading-accent self-start" aria-hidden="true"></span>
                     <h1 class="h1 heading font-2 weight-700 heading-flex uppercase">{{ t.name|default(t.code) }}</h1>
                   </div>
-                  {% if tire.season is defined and tire.season %}
+                  {% set seasonMap = config.settings.collections.tires.filters.season | default({}) %}
+                  {% set seasonBadges = [] %}
+                  {% for code in tire.filter.season | default([]) %}
+                    {% set norm = code|lower|trim|replace({'all season': 'allseason', 'all-season': 'allseason'}) %}
+                    {% if seasonMap[norm] is defined and seasonMap[norm].label is defined %}
+                      {% set seasonBadges = seasonBadges | merge([{'label': seasonMap[norm].label, 'href': '/tires/' ~ norm}]) %}
+                    {% endif %}
+                  {% endfor %}
+                  {% if seasonBadges is not empty %}
+                    <div class="tire-detail__badges">
+                      {% for badge in seasonBadges %}
+                        <a href="{{ url(badge.href) }}" class="tire-detail__badge">{{ badge.label }}</a>
+                      {% endfor %}
+                    </div>
+                  {% elseif tire.season is defined and tire.season %}
                     <span class="tire-detail__badge">{{ tire.season }}</span>
                   {% endif %}
                 </div>

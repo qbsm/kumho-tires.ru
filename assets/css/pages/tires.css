@@ -215,6 +215,13 @@
   color: var(--color-5);
 }
 
+.tire-detail__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-self: flex-start;
+}
+
 .tire-detail__badge {
   display: inline-block;
   padding: 0.4rem 1rem;
@@ -222,6 +229,13 @@
   background: var(--color-3);
   color: #fff;
   align-self: flex-start;
+  text-decoration: none;
+  transition: var(--transition-1);
+}
+
+a.tire-detail__badge:hover,
+a.tire-detail__badge:focus-visible {
+  background: var(--color-2);
 }
 
 .tire-detail__desc {

@@ -376,11 +376,43 @@
   "footer-links": {
     "ru": [
       {
+        "title": "Зимние шины",
+        "href": "/tires/winter"
+      },
+      {
+        "title": "Летние шины",
+        "href": "/tires/summer"
+      },
+      {
+        "title": "Всесезонные шины",
+        "href": "/tires/allseason"
+      },
+      {
+        "title": "Шипованные шины",
+        "href": "/tires/studded"
+      },
+      {
         "title": "Контакты",
         "href": "/contacts"
       }
     ],
     "en": [
+      {
+        "title": "Winter tires",
+        "href": "/tires/winter"
+      },
+      {
+        "title": "Summer tires",
+        "href": "/tires/summer"
+      },
+      {
+        "title": "All-season tires",
+        "href": "/tires/allseason"
+      },
+      {
+        "title": "Studded tires",
+        "href": "/tires/studded"
+      },
       {
         "title": "Contacts",
         "href": "/contacts"
