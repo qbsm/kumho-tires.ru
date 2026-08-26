@@ -126,6 +126,37 @@ foreach ($langs as $lang) {
             $lines[] = '';
         }
     }
+
+    // Разделы каталога (сезоны и линейки): их тексты — самая цитируемая часть для
+    // генеративных движков, а сущностями они не являются и в цикл выше не попадают.
+    $filtersDir = $langDir . '/filters';
+    if (is_dir($filtersDir)) {
+        $filterFiles = glob($filtersDir . '/*.json') ?: [];
+        sort($filterFiles);
+        foreach ($filterFiles as $filterFile) {
+            $json = json_decode((string) file_get_contents($filterFile), true);
+            $items = $json['content']['items'] ?? null;
+            if (!is_array($items)) {
+                continue;
+            }
+            $slug = str_replace(['tires-', '.json'], '', basename($filterFile));
+            $lines[] = '### Раздел каталога: ' . $slug;
+            if ($siteUrl !== '') {
+                $lines[] = 'URL: ' . $siteUrl . '/tires/' . $slug;
+            }
+            foreach ($items as $item) {
+                $title = (string) ($item['heading']['title'] ?? '');
+                if ($title !== '') {
+                    $lines[] = $title;
+                }
+                $text = trim(preg_replace('/\s+/', ' ', strip_tags((string) ($item['desc'] ?? ''))));
+                if ($text !== '') {
+                    $lines[] = $text;
+                }
+            }
+            $lines[] = '';
+        }
+    }
 }
 
 echo implode("\n", $lines);
