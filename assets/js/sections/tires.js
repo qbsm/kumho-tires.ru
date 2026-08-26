@@ -112,8 +112,9 @@ onReady(() => {
     updateSelectOptions(widthSelect, availWidths, width);
   };
 
-  // Сезонная кнопка — ссылка на /tires/<сезон>: роботу нужен адрес, человеку — мгновенный
-  // фильтр без перезагрузки. Клик отрабатываем на месте и синхронизируем адрес.
+  const catalogBase = (root.dataset.catalogPath || '').replace(/\/$/, '');
+
+  // Сезонная кнопка без ссылки (витрина на главной) фильтрует на месте и правит адрес.
   const syncSeasonUrl = (season) => {
     const base = (root.dataset.catalogPath || window.location.pathname).replace(
       /\/(summer|allseason|winter|studded)$/,
@@ -127,8 +128,20 @@ onReady(() => {
 
   seasonButtons.forEach((btn) => {
     btn.addEventListener('click', (event) => {
-      if (btn.disabled || btn.classList.contains('disabled')) return;
-      if (btn.tagName === 'A') event.preventDefault();
+      if (btn.disabled || btn.classList.contains('disabled')) {
+        event.preventDefault();
+        return;
+      }
+      // Сезонный раздел — отдельная страница: список моделей режет сервер, поэтому по ссылке
+      // переходим, а не фильтруем на месте. Повторный клик по активному сезону снимает выборку
+      // и возвращает в общий каталог.
+      if (btn.tagName === 'A' && btn.getAttribute('href')) {
+        if (btn.classList.contains('active') && catalogBase) {
+          event.preventDefault();
+          window.location.assign(catalogBase);
+        }
+        return;
+      }
       const wasActive = btn.classList.contains('active');
       seasonButtons.forEach((item) => item.classList.remove('active'));
       if (!wasActive) btn.classList.add('active');
