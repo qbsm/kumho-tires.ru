@@ -6,7 +6,10 @@
       "winter",
       "studded"
     ],
-    "vehicle": ["passenger", "suv"],
+    "vehicle": [
+      "passenger",
+      "suv"
+    ],
     "priority": [],
     "diameters": [
       13,
@@ -43,7 +46,8 @@
       65,
       70,
       80
-    ]
+    ],
+    "family": "wintercraft"
   },
   "item": {
     "code": "WI32",

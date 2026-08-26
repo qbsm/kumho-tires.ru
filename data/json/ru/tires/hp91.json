@@ -2,12 +2,39 @@
   "slug": "hp91",
   "visible": true,
   "filter": {
-    "season": ["summer"],
-    "vehicle": ["suv"],
-    "priority": ["comfort"],
-    "diameters": [16, 17, 18, 19],
-    "widths": [215, 235, 245, 255, 265, 275, 285],
-    "profiles": [45, 50, 55, 60, 65, 70]
+    "season": [
+      "summer"
+    ],
+    "vehicle": [
+      "suv"
+    ],
+    "priority": [
+      "comfort"
+    ],
+    "diameters": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "widths": [
+      215,
+      235,
+      245,
+      255,
+      265,
+      275,
+      285
+    ],
+    "profiles": [
+      45,
+      50,
+      55,
+      60,
+      65,
+      70
+    ],
+    "family": "crugen"
   },
   "item": {
     "code": "HP91",
@@ -43,14 +70,26 @@
       "diameter": 16,
       "index": "98H",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "440395"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "440395"
+      }
     },
     {
       "label": "265/70R16",
       "diameter": 16,
       "index": "112V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "441083"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441083"
+      }
     },
     {
       "label": "255/60R17",
@@ -69,63 +108,117 @@
       "diameter": 18,
       "index": "100H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "441131"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441131"
+      }
     },
     {
       "label": "235/60R18",
       "diameter": 18,
       "index": "107V",
       "commercial": false,
-      "eu": {"energy": "B", "wet": "B", "noise": 72, "noiseClass": "B", "eprel": "443004"}
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "443004"
+      }
     },
     {
       "label": "245/60R18",
       "diameter": 18,
       "index": "105V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "A", "noise": 71, "noiseClass": "B", "eprel": "2401095"}
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2401095"
+      }
     },
     {
       "label": "255/60R18",
       "diameter": 18,
       "index": "112V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 73, "noiseClass": "B", "eprel": "2000400"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 73,
+        "noiseClass": "B",
+        "eprel": "2000400"
+      }
     },
     {
       "label": "285/55R18",
       "diameter": 18,
       "index": "113V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 71, "noiseClass": "A", "eprel": "442657"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "A",
+        "eprel": "442657"
+      }
     },
     {
       "label": "235/55R19",
       "diameter": 19,
       "index": "101V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "441103"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441103"
+      }
     },
     {
       "label": "245/50R19",
       "diameter": 19,
       "index": "105W",
       "commercial": false,
-      "eu": {"energy": "B", "wet": "B", "noise": 72, "noiseClass": "B", "eprel": "443002"}
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "443002"
+      }
     },
     {
       "label": "265/50R19",
       "diameter": 19,
       "index": "110Y",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "442680"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "442680"
+      }
     },
     {
       "label": "275/45R19",
       "diameter": 19,
       "index": "108Y",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 72, "noiseClass": "B", "eprel": "442683"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "442683"
+      }
     }
   ],
   "features": [

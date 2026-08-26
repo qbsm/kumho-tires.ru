@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Линейка Ecowing в каталоге"
+        },
+        "desc": "<p>Ecowing — летняя линейка Kumho с упором на экономичность: <b>6 моделей и 78 типоразмеров</b>, посадочные диаметры <b>от R13 до R18</b>.</p><p>Основная модель — <a href='/tires/es31' class='link inline weight-400'>Ecowing ES31</a>: 60 типоразмеров от R13 до R18, самый ходовой набор размеров для компактных и среднеразмерных легковых автомобилей.</p><p>Остальные модели линейки — <a href='/tires/kh27' class='link inline weight-400'>KH27</a> (11 типоразмеров, R14–R16), <a href='/tires/kh11' class='link inline weight-400'>KH11</a>, <a href='/tires/kh17' class='link inline weight-400'>KH17</a>, <a href='/tires/kh31' class='link inline weight-400'>KH31</a> и <a href='/tires/kh25' class='link inline weight-400'>KH25</a> — представлены единичными размерами и берутся под конкретную замену.</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Ecowing или Ecsta"
+        },
+        "desc": "<p>Ecowing проектировалась вокруг сопротивления качению: чем оно ниже, тем меньше расход топлива на трассе. Платой становится меньший запас по скорости и не такая острая реакция на руль.</p><p>Ecsta решает обратную задачу — управляемость и сцепление на высокой скорости. Для спокойной городской езды разница в поведении почти не чувствуется, а вот в расходе — да.</p><p>Сравнить весь летний ассортимент можно в разделе <a href='/tires/summer' class='link inline weight-400'>летних шин</a>, подобрать размер — через <a href='/podbor' class='link inline weight-400'>конфигуратор</a>.</p>"
+      }
+    ]
+  }
+}

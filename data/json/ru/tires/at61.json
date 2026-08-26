@@ -2,12 +2,30 @@
   "slug": "at61",
   "visible": true,
   "filter": {
-    "season": ["all-season"],
-    "vehicle": ["suv"],
-    "priority": ["offroad"],
-    "diameters": [15, 16],
-    "widths": [195, 205, 215, 255],
-    "profiles": [75, 80]
+    "season": [
+      "all-season"
+    ],
+    "vehicle": [
+      "suv"
+    ],
+    "priority": [
+      "offroad"
+    ],
+    "diameters": [
+      15,
+      16
+    ],
+    "widths": [
+      195,
+      205,
+      215,
+      255
+    ],
+    "profiles": [
+      75,
+      80
+    ],
+    "family": "road-venture"
   },
   "item": {
     "code": "AT61",
@@ -49,7 +67,13 @@
       "diameter": 15,
       "index": "97S",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "D", "noise": 71, "noiseClass": "B", "eprel": "443890"}
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "443890"
+      }
     },
     {
       "label": "215/80R15",
@@ -62,7 +86,13 @@
       "diameter": 15,
       "index": "110S",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "D", "noise": 72, "noiseClass": "B", "eprel": "443913"}
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "443913"
+      }
     },
     {
       "label": "205/80R16",

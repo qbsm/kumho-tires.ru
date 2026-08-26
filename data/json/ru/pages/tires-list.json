@@ -92,6 +92,16 @@
               "heading": {
                 "tag": "h2",
                 "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Линейки Kumho"
+              },
+              "desc": "<p>Каталог разбит на семь линеек — у каждой своя задача и своя страница со всеми моделями и типоразмерами.</p><p><b><a href='/tires/wintercraft' class='link inline weight-400'>WinterCraft</a></b> — зимняя линейка, 7 моделей и 391 типоразмер, шипованные и нешипованные. <b><a href='/tires/ecsta' class='link inline weight-400'>Ecsta</a></b> — летняя асфальтовая, 6 моделей и 284 типоразмера, с упором на управляемость. <b><a href='/tires/ecowing' class='link inline weight-400'>Ecowing</a></b> — летняя экономичная, 6 моделей и 78 типоразмеров.</p><p><b><a href='/tires/crugen' class='link inline weight-400'>Crugen</a></b> — летние шины для кроссоверов, 2 модели и 57 типоразмеров. <b><a href='/tires/road-venture' class='link inline weight-400'>Road Venture</a></b> — внедорожная линейка, 8 моделей и 104 типоразмера, A/T и M/T. <b><a href='/tires/solus' class='link inline weight-400'>Solus</a></b> — всесезонная для легковых автомобилей, 3 модели и 126 типоразмеров.</p><p><b><a href='/tires/portran' class='link inline weight-400'>PorTran</a></b> — коммерческая линейка для фургонов и микроавтобусов: 4 модели, 108 типоразмеров, включая усиленные C-типоразмеры.</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
                 "title": "Оригинальная продукция и гарантия"
               },
               "desc": "<p>«Север Авто» — <b>официальный дистрибьютор</b> шин Kumho | Кумхо компании Kumho Tire в России. Шины поставляются напрямую и продаются через авторизованные шинные центры, поэтому на них действует <b>гарантия производителя</b>.</p><p>Дополнительно работает программа <a href='/warranty' class='link inline weight-400'>«Расширенная гарантия Kumho»</a> — <b>ещё один год защиты</b> от эксплуатационных повреждений сверх заводской гарантии. Оформить её можно <b>только на шины, купленные у авторизованных партнёров</b>: их список и карта — в разделе <a href='/buy' class='link inline weight-400'>«Где купить»</a>, там же отмечены центры, принимающие обращения по гарантии.</p><p>На боковине любой шины Kumho есть <b>заводская маркировка с датой производства</b> — по ней видно, что шина не залежалась на складе.</p>"

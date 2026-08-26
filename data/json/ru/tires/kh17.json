@@ -2,12 +2,27 @@
   "slug": "kh17",
   "visible": true,
   "filter": {
-    "season": ["summer"],
-    "vehicle": ["passenger"],
-    "priority": ["economy", "comfort"],
-    "diameters": [13],
-    "widths": [135, 165],
-    "profiles": [80]
+    "season": [
+      "summer"
+    ],
+    "vehicle": [
+      "passenger"
+    ],
+    "priority": [
+      "economy",
+      "comfort"
+    ],
+    "diameters": [
+      13
+    ],
+    "widths": [
+      135,
+      165
+    ],
+    "profiles": [
+      80
+    ],
+    "family": "ecowing"
   },
   "item": {
     "code": "KH17",
@@ -36,14 +51,26 @@
       "diameter": 13,
       "index": "70T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 68, "noiseClass": "B", "eprel": "441682"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 68,
+        "noiseClass": "B",
+        "eprel": "441682"
+      }
     },
     {
       "label": "165/80R13",
       "diameter": 13,
       "index": "87T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "D", "noise": 71, "noiseClass": "B", "eprel": "441754"}
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441754"
+      }
     }
   ],
   "features": [

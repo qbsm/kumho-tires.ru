@@ -2,12 +2,28 @@
   "slug": "kl21",
   "visible": true,
   "filter": {
-    "season": ["summer"],
-    "vehicle": ["suv"],
-    "priority": ["handling"],
-    "diameters": [17, 18],
-    "widths": [225, 265],
-    "profiles": [60, 65]
+    "season": [
+      "summer"
+    ],
+    "vehicle": [
+      "suv"
+    ],
+    "priority": [
+      "handling"
+    ],
+    "diameters": [
+      17,
+      18
+    ],
+    "widths": [
+      225,
+      265
+    ],
+    "profiles": [
+      60,
+      65
+    ],
+    "family": "road-venture"
   },
   "item": {
     "code": "KL21",
@@ -36,14 +52,26 @@
       "diameter": 17,
       "index": "102H",
       "commercial": false,
-      "eu": {"energy": "B", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "442706"}
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "442706"
+      }
     },
     {
       "label": "265/60R18",
       "diameter": 18,
       "index": "110H",
       "commercial": false,
-      "eu": {"energy": "B", "wet": "D", "noise": 72, "noiseClass": "B", "eprel": "442716"}
+      "eu": {
+        "energy": "B",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "442716"
+      }
     }
   ],
   "features": [

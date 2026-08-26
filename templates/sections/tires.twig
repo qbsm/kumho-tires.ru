@@ -18,6 +18,7 @@
       {% endif %}
       {% set tiresItems = [] %}
       {% set seasonBySlug = {} %}
+      {% set familyBySlug = {} %}
       {% set allDiameters = [] %}
       {% set allWidths = [] %}
       {% set allProfiles = [] %}
@@ -51,6 +52,7 @@
               {% set seasonCodes = seasonCodes | merge(['friction']) %}
             {% endif %}
             {% set seasonBySlug = seasonBySlug | merge({(tireItem.slug | default(slug)): seasonCodes}) %}
+            {% set familyBySlug = familyBySlug | merge({(tireItem.slug | default(slug)): filterData.family | default('')}) %}
             {% set diameters = filterData.diameters | default(filterData.diameter | default([])) %}
             {% set widths = filterData.widths | default(filterData.width | default([])) %}
             {% set profiles = filterData.profiles | default(filterData.profile | default(filterData.heights | default(filterData.height | default([])))) %}
@@ -79,12 +81,14 @@
       {% set presetWidth = preset.width | default('') %}
       {% set presetProfile = preset.profile | default('') %}
       {% set presetDiameter = preset.diameter | default('') %}
+      {% set presetFamily = preset.family | default('') %}
       {% set presetSize = presetWidth or presetProfile or presetDiameter %}
-      {% if presetSeason or presetSize %}
+      {% if presetSeason or presetFamily or presetSize %}
         {% set matchedItems = [] %}
         {% for tireItem in tiresItems %}
           {% set itemSeasons = seasonBySlug[tireItem.slug | default('')] | default([]) %}
           {% set seasonOk = presetSeason ? (presetSeason in itemSeasons) : true %}
+          {% set familyOk = presetFamily ? (familyBySlug[tireItem.slug | default('')] | default('') == presetFamily) : true %}
           {% set sizeOk = true %}
           {% if presetSize %}
             {% set sizeOk = false %}
@@ -101,7 +105,7 @@
               {% if hit %}{% set sizeOk = true %}{% endif %}
             {% endfor %}
           {% endif %}
-          {% if seasonOk and sizeOk %}
+          {% if seasonOk and familyOk and sizeOk %}
             {% set matchedItems = matchedItems | merge([tireItem]) %}
           {% endif %}
         {% endfor %}

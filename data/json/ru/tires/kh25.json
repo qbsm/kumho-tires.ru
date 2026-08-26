@@ -2,12 +2,26 @@
   "slug": "kh25",
   "visible": true,
   "filter": {
-    "season": ["summer"],
-    "vehicle": ["passenger"],
-    "priority": ["economy", "comfort"],
-    "diameters": [17],
-    "widths": [205],
-    "profiles": [55]
+    "season": [
+      "summer"
+    ],
+    "vehicle": [
+      "passenger"
+    ],
+    "priority": [
+      "economy",
+      "comfort"
+    ],
+    "diameters": [
+      17
+    ],
+    "widths": [
+      205
+    ],
+    "profiles": [
+      55
+    ],
+    "family": "ecowing"
   },
   "item": {
     "code": "KH25",
@@ -36,7 +50,13 @@
       "diameter": 17,
       "index": "91V",
       "commercial": false,
-      "eu": {"energy": "A", "wet": "C", "noise": 70, "noiseClass": "B", "eprel": "444102"}
+      "eu": {
+        "energy": "A",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "444102"
+      }
     }
   ],
   "features": [

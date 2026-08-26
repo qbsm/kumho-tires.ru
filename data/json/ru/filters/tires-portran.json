@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Линейка PorTran в каталоге"
+        },
+        "desc": "<p>PorTran — линейка Kumho для коммерческого транспорта: фургонов, микроавтобусов и лёгких грузовиков. <b>4 модели и 108 типоразмеров</b>, посадочные диаметры <b>от R12 до R18</b>, включая усиленные C-типоразмеры.</p><p><b>Лето</b> — <a href='/tires/kc53' class='link inline weight-400'>PorTran KC53</a> (42 типоразмера, R12–R18). <b>Всесезон</b> — <a href='/tires/cx11' class='link inline weight-400'>PorTran CX11</a> (25 типоразмеров, R15–R17).</p><p><b>Зима</b> — шипованная <a href='/tires/cw11' class='link inline weight-400'>WinterPorTran CW11</a> (18 типоразмеров, R14–R17) и нешипованная <a href='/tires/cw51' class='link inline weight-400'>WinterPorTran CW51</a> (23 типоразмера, R14–R17).</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Что означает индекс C"
+        },
+        "desc": "<p>Буква <b>C</b> после диаметра — commercial: усиленный каркас и повышенный индекс нагрузки. Такие шины рассчитаны на постоянную работу с грузом и выдерживают более высокое давление.</p><p>Ставить на гружёный фургон легковую шину того же размера нельзя: индекс нагрузки окажется ниже паспортного, и шина будет перегреваться. Нужный индекс указан в руководстве по эксплуатации автомобиля.</p><p>Зимние коммерческие модели входят и в общий раздел <a href='/tires/winter' class='link inline weight-400'>зимних шин</a>, подобрать размер помогает <a href='/podbor' class='link inline weight-400'>конфигуратор</a>.</p>"
+      }
+    ]
+  }
+}

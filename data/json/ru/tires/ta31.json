@@ -2,12 +2,28 @@
   "slug": "ta31",
   "visible": true,
   "filter": {
-    "season": ["all-season"],
-    "vehicle": ["suv"],
-    "priority": ["offroad"],
-    "diameters": [16, 18],
-    "widths": [205, 215],
-    "profiles": [50, 65]
+    "season": [
+      "all-season"
+    ],
+    "vehicle": [
+      "suv"
+    ],
+    "priority": [
+      "offroad"
+    ],
+    "diameters": [
+      16,
+      18
+    ],
+    "widths": [
+      205,
+      215
+    ],
+    "profiles": [
+      50,
+      65
+    ],
+    "family": "road-venture"
   },
   "item": {
     "code": "TA31",
@@ -44,14 +60,26 @@
       "diameter": 16,
       "index": "95H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 69, "noiseClass": "B", "eprel": "444820"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 69,
+        "noiseClass": "B",
+        "eprel": "444820"
+      }
     },
     {
       "label": "215/50R18",
       "diameter": 18,
       "index": "92H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "444831"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "444831"
+      }
     }
   ],
   "features": [

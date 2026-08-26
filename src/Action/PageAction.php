@@ -203,18 +203,29 @@ final class PageAction
             $seoData = ['title' => '', 'meta' => [], 'json_ld' => null];
         }
 
-        // Сезонная страница фильтра — самостоятельная посадочная: свой title, description и h1,
-        // иначе четыре адреса делят заголовок с общим каталогом
-        if ($extrasFilter !== null && isset($extrasFilter['season']) && !isset($extrasFilter['width'])) {
-            $seasons = (array) ($this->settings['collections']['tires']['filters']['season'] ?? []);
-            $season = $seasons[$extrasFilter['season']] ?? null;
-            $season = is_array($season) ? $season : ['label' => (string) $season];
-            $label = (string) ($season['label'] ?? '');
+        // Страница фильтра — сезонная или по линейке моделей — самостоятельная посадочная:
+        // свой title, description и h1, иначе адреса делят заголовок с общим каталогом
+        $filterGroup = '';
+        if ($extrasFilter !== null && !isset($extrasFilter['width'])) {
+            $filterGroup = isset($extrasFilter['season']) ? 'season' : (isset($extrasFilter['family']) ? 'family' : '');
+        }
+        if ($filterGroup !== '') {
+            $filterKey = (string) $extrasFilter[$filterGroup];
+            $variants = (array) ($this->settings['collections']['tires']['filters'][$filterGroup] ?? []);
+            $variant = $variants[$filterKey] ?? null;
+            $variant = is_array($variant) ? $variant : ['label' => (string) $variant];
+            $label = (string) ($variant['label'] ?? '');
             if ($label !== '') {
-                $genitive = (string) ($season['genitive'] ?? mb_strtolower($label));
-                $seoData['title'] = $label . ' шины Kumho (Кумхо) — каталог, купить в России';
-                $description = 'Каталог ' . $genitive . ' шин Kumho: модели и типоразмеры для легковых автомобилей, '
-                    . 'кроссоверов, внедорожников и коммерческого транспорта. Фильтр по диаметру, ширине и профилю.';
+                $genitive = (string) ($variant['genitive'] ?? mb_strtolower($label));
+                if ($filterGroup === 'family') {
+                    $seoData['title'] = 'Шины Kumho ' . $label . ' — все модели линейки и типоразмеры';
+                    $description = 'Линейка Kumho ' . $label . ' в каталоге официального дистрибьютора: модели, '
+                        . 'типоразмеры и характеристики. Фильтр по диаметру, ширине и профилю.';
+                } else {
+                    $seoData['title'] = $label . ' шины Kumho (Кумхо) — каталог, купить в России';
+                    $description = 'Каталог ' . $genitive . ' шин Kumho: модели и типоразмеры для легковых автомобилей, '
+                        . 'кроссоверов, внедорожников и коммерческого транспорта. Фильтр по диаметру, ширине и профилю.';
+                }
                 $meta = isset($seoData['meta']) && is_array($seoData['meta']) ? $seoData['meta'] : [];
                 foreach ($meta as $index => $tag) {
                     if (!is_array($tag)) {
@@ -229,16 +240,16 @@ final class PageAction
                 }
                 $seoData['meta'] = $meta;
 
-                $heading = (string) ($season['h1'] ?? ($label . ' шины Kumho'));
+                $heading = (string) ($variant['h1'] ?? ($label . ' шины Kumho'));
                 foreach (($pageData['sections'] ?? []) as $idx => $section) {
                     if (($section['name'] ?? '') === 'tires' && isset($section['data']['heading']['title'])) {
                         $pageData['sections'][$idx]['data']['heading']['title'] = $heading;
                     }
                 }
 
-                // Свой текст сезонной страницы вместо общего текста каталога: иначе четыре
-                // посадочные страницы отличались бы только заголовком.
-                $contentFile = $jsonBaseDir . '/' . $langCode . '/filters/tires-' . $extrasFilter['season'] . '.json';
+                // Свой текст страницы фильтра вместо общего текста каталога: иначе посадочные
+                // отличались бы только заголовком.
+                $contentFile = $jsonBaseDir . '/' . $langCode . '/filters/tires-' . $filterKey . '.json';
                 $seasonContent = $this->dataLoader->loadJson($contentFile, $baseUrl);
                 if (is_array($seasonContent) && isset($seasonContent['content']) && is_array($seasonContent['content'])) {
                     foreach (($pageData['sections'] ?? []) as $idx => $section) {
@@ -598,6 +609,7 @@ final class PageAction
         }
 
         $seasons = (array) ($filters['season'] ?? []);
+        $families = (array) ($filters['family'] ?? []);
         $sizePattern = (string) ($filters['size_pattern'] ?? '');
         $preset = [];
 
@@ -606,6 +618,11 @@ final class PageAction
 
             if (isset($seasons[$param]) && !isset($preset['season'])) {
                 $preset['season'] = $param;
+                continue;
+            }
+
+            if (isset($families[$param]) && !isset($preset['family'])) {
+                $preset['family'] = $param;
                 continue;
             }
 

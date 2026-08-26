@@ -6,8 +6,12 @@
       "winter",
       "studded"
     ],
-    "vehicle": ["suv"],
-    "priority": ["offroad"],
+    "vehicle": [
+      "suv"
+    ],
+    "priority": [
+      "offroad"
+    ],
     "diameters": [
       16,
       17,
@@ -32,7 +36,8 @@
       60,
       65,
       70
-    ]
+    ],
+    "family": "wintercraft"
   },
   "item": {
     "code": "WS31",

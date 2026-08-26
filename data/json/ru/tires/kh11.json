@@ -2,12 +2,28 @@
   "slug": "kh11",
   "visible": true,
   "filter": {
-    "season": ["summer"],
-    "vehicle": ["passenger"],
-    "priority": ["economy", "comfort"],
-    "diameters": [15],
-    "widths": [155, 175],
-    "profiles": [55, 60]
+    "season": [
+      "summer"
+    ],
+    "vehicle": [
+      "passenger"
+    ],
+    "priority": [
+      "economy",
+      "comfort"
+    ],
+    "diameters": [
+      15
+    ],
+    "widths": [
+      155,
+      175
+    ],
+    "profiles": [
+      55,
+      60
+    ],
+    "family": "ecowing"
   },
   "item": {
     "code": "KH11",
@@ -42,7 +58,13 @@
       "diameter": 15,
       "index": "77T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "D", "noise": 70, "noiseClass": "B", "eprel": "442595"}
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "442595"
+      }
     }
   ],
   "features": [

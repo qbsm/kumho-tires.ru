@@ -2,12 +2,36 @@
   "slug": "kl33",
   "visible": true,
   "filter": {
-    "season": ["all-season"],
-    "vehicle": ["suv"],
-    "priority": ["offroad"],
-    "diameters": [15, 16, 17, 18, 19],
-    "widths": [205, 215, 225, 235, 265],
-    "profiles": [55, 60, 65, 70]
+    "season": [
+      "all-season"
+    ],
+    "vehicle": [
+      "suv"
+    ],
+    "priority": [
+      "offroad"
+    ],
+    "diameters": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "widths": [
+      205,
+      215,
+      225,
+      235,
+      265
+    ],
+    "profiles": [
+      55,
+      60,
+      65,
+      70
+    ],
+    "family": "road-venture"
   },
   "item": {
     "code": "KL33",
@@ -43,56 +67,104 @@
       "diameter": 15,
       "index": "96T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "D", "noise": 71, "noiseClass": "B", "eprel": "441095"}
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441095"
+      }
     },
     {
       "label": "215/65R16",
       "diameter": 16,
       "index": "98H",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "D", "noise": 71, "noiseClass": "B", "eprel": "441101"}
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441101"
+      }
     },
     {
       "label": "225/60R17",
       "diameter": 17,
       "index": "99H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "441208"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441208"
+      }
     },
     {
       "label": "235/65R17",
       "diameter": 17,
       "index": "104H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "1246472"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1246472"
+      }
     },
     {
       "label": "225/55R18",
       "diameter": 18,
       "index": "98H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "1294738"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1294738"
+      }
     },
     {
       "label": "265/60R18",
       "diameter": 18,
       "index": "110H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "D", "noise": 69, "noiseClass": "A", "eprel": "441263"}
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 69,
+        "noiseClass": "A",
+        "eprel": "441263"
+      }
     },
     {
       "label": "225/55R19",
       "diameter": 19,
       "index": "99H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "D", "noise": 71, "noiseClass": "B", "eprel": "441267"}
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441267"
+      }
     },
     {
       "label": "235/55R19",
       "diameter": 19,
       "index": "101H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "616939"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "616939"
+      }
     }
   ],
   "features": [

@@ -2,12 +2,36 @@
   "slug": "kh27",
   "visible": true,
   "filter": {
-    "season": ["summer"],
-    "vehicle": ["passenger"],
-    "priority": ["economy", "comfort"],
-    "diameters": [14, 15, 16],
-    "widths": [145, 175, 185, 195, 205, 215],
-    "profiles": [55, 60, 65, 70]
+    "season": [
+      "summer"
+    ],
+    "vehicle": [
+      "passenger"
+    ],
+    "priority": [
+      "economy",
+      "comfort"
+    ],
+    "diameters": [
+      14,
+      15,
+      16
+    ],
+    "widths": [
+      145,
+      175,
+      185,
+      195,
+      205,
+      215
+    ],
+    "profiles": [
+      55,
+      60,
+      65,
+      70
+    ],
+    "family": "ecowing"
   },
   "item": {
     "code": "KH27",
@@ -75,7 +99,13 @@
       "diameter": 15,
       "index": "86H",
       "commercial": false,
-      "eu": {"energy": "A", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "1383142"}
+      "eu": {
+        "energy": "A",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1383142"
+      }
     },
     {
       "label": "185/65R15",

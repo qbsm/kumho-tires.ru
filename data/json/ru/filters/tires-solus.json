@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Линейка Solus в каталоге"
+        },
+        "desc": "<p>Solus — всесезонная линейка Kumho для легковых автомобилей: <b>3 модели и 126 типоразмеров</b>, посадочные диаметры <b>от R13 до R20</b>.</p><p><a href='/tires/ha32' class='link inline weight-400'>Solus HA32</a> — основная модель, 97 типоразмеров от R13 до R20. <a href='/tires/ha32-plus' class='link inline weight-400'>Solus HA32+</a> (10 типоразмеров, R16–R18) — её обновлённая версия, <a href='/tires/ha31' class='link inline weight-400'>Solus HA31</a> (19 типоразмеров, R13–R18) остаётся в каталоге для распространённых размеров.</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Когда всесезонная шина оправдана"
+        },
+        "desc": "<p>Всесезонные модели имеют смысл там, где зима мягкая и снег на дорогах держится недолго: юг России, крупные города с быстрой уборкой улиц, автомобили с небольшим годовым пробегом.</p><p>В устойчивый мороз и на льду всесезонная шина уступает зимней — состав смеси рассчитан на компромисс, а не на экстремальный холод. В жару она изнашивается быстрее летней.</p><p>Весь всесезонный ассортимент — в разделе <a href='/tires/allseason' class='link inline weight-400'>всесезонных шин</a>; если зима серьёзная, смотрите <a href='/tires/winter' class='link inline weight-400'>зимние шины</a>.</p>"
+      }
+    ]
+  }
+}

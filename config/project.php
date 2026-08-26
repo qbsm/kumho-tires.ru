@@ -32,6 +32,16 @@ return [
                     'studded'   => ['label' => 'Шипованные', 'genitive' => 'шипованных', 'h1' => 'Шипованные шины Kumho'],
                     'friction'  => ['label' => 'Нешипованные', 'genitive' => 'нешипованных', 'h1' => 'Нешипованные зимние шины Kumho'],
                 ],
+                // Линейки моделей: отдельные посадочные под запросы вида «шины kumho wintercraft»
+                'family' => [
+                    'wintercraft'  => ['label' => 'WinterCraft', 'h1' => 'Шины Kumho WinterCraft'],
+                    'ecsta'        => ['label' => 'Ecsta', 'h1' => 'Шины Kumho Ecsta'],
+                    'ecowing'      => ['label' => 'Ecowing', 'h1' => 'Шины Kumho Ecowing'],
+                    'crugen'       => ['label' => 'Crugen', 'h1' => 'Шины Kumho Crugen'],
+                    'solus'        => ['label' => 'Solus', 'h1' => 'Шины Kumho Solus'],
+                    'road-venture' => ['label' => 'Road Venture', 'h1' => 'Шины Kumho Road Venture'],
+                    'portran'      => ['label' => 'PorTran', 'h1' => 'Шины Kumho PorTran для коммерческого транспорта'],
+                ],
                 'size_pattern' => '/^(\\d{3})-(\\d{2,3})-r(\\d{2})$/i',
                 // Границы реального каталога: за ними адрес — мусор, отдаём 404, а не пустой фильтр
                 'size_ranges'  => [
@@ -97,6 +107,13 @@ return [
 
     // Дополнительные статические адреса в sitemap.xml (человечные страницы фильтра каталога).
     'sitemap_extra_paths' => [
+        'tires/wintercraft',
+        'tires/ecsta',
+        'tires/ecowing',
+        'tires/crugen',
+        'tires/solus',
+        'tires/road-venture',
+        'tires/portran',
         'tires/friction',
         'tires/summer',
         'tires/allseason',

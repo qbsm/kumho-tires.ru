@@ -2,12 +2,36 @@
   "slug": "ha32-plus",
   "visible": true,
   "filter": {
-    "season": ["all-season"],
-    "vehicle": ["passenger"],
-    "priority": ["comfort", "economy"],
-    "diameters": [16, 17, 18],
-    "widths": [195, 205, 215, 225, 235],
-    "profiles": [40, 45, 50, 55, 60]
+    "season": [
+      "all-season"
+    ],
+    "vehicle": [
+      "passenger"
+    ],
+    "priority": [
+      "comfort",
+      "economy"
+    ],
+    "diameters": [
+      16,
+      17,
+      18
+    ],
+    "widths": [
+      195,
+      205,
+      215,
+      225,
+      235
+    ],
+    "profiles": [
+      40,
+      45,
+      50,
+      55,
+      60
+    ],
+    "family": "solus"
   },
   "item": {
     "code": "HA32+",
@@ -45,35 +69,70 @@
       "diameter": 16,
       "index": "91V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1497446"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1497446"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "94V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1594341"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594341"
+      }
     },
     {
       "label": "215/60R16",
       "diameter": 16,
       "index": "99V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1497450"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1497450"
+      }
     },
     {
       "label": "215/55R17",
       "diameter": 17,
       "index": "98W",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1497449"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1497449"
+      }
     },
     {
       "label": "225/45R17",
       "diameter": 17,
       "index": "94W",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1594343"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594343"
+      }
     },
     {
       "label": "225/50R17",
@@ -86,28 +145,56 @@
       "diameter": 18,
       "index": "96W",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1950752"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1950752"
+      }
     },
     {
       "label": "225/40R18",
       "diameter": 18,
       "index": "92W",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1636324"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1636324"
+      }
     },
     {
       "label": "225/45R18",
       "diameter": 18,
       "index": "95W",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1594344"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594344"
+      }
     },
     {
       "label": "235/55R18",
       "diameter": 18,
       "index": "104V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1497445"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1497445"
+      }
     }
   ],
   "features": [

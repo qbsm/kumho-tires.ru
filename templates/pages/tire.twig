@@ -26,11 +26,14 @@
             {% if galleryImages|length > 0 %}
               <div class="tire-detail__main-image{% if t.logo is defined and t.logo %} tire-detail__main-image--with-logo{% endif %}">
                 {% if t.logo is defined and t.logo %}
+                  {% set familySlug = tire.filter.family | default('') %}
+                  {% if familySlug %}<a href="{{ url('/tires/' ~ familySlug) }}" class="tire-detail__series-link" title="Все модели линейки {{ t.series|default('') }}">{% endif %}
                   <img
                     src="{{ t.logo }}"
                     alt="{{ t.series|default('') }}"
                     class="tire-detail__series-logo tire-detail__series-logo--{{ t.logo|split('/')|last|replace({'.svg': ''}) }}"
                   >
+                  {% if familySlug %}</a>{% endif %}
                 {% endif %}
                 {% include 'components/picture.twig' with {
                   'image': galleryImages[0],

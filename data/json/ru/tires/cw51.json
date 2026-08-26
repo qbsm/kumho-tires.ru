@@ -5,8 +5,12 @@
     "season": [
       "winter"
     ],
-    "vehicle": ["commercial"],
-    "priority": ["offroad"],
+    "vehicle": [
+      "commercial"
+    ],
+    "priority": [
+      "offroad"
+    ],
     "diameters": [
       14,
       15,
@@ -30,7 +34,8 @@
       75,
       80,
       85
-    ]
+    ],
+    "family": "portran"
   },
   "item": {
     "code": "CW51",
@@ -96,14 +101,28 @@
       "diameter": 15,
       "index": "106/104R",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "D", "noise": 71, "noiseClass": "B", "snow": true, "eprel": "451486"}
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "451486"
+      }
     },
     {
       "label": "215/70R15C",
       "diameter": 15,
       "index": "109/107R",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "D", "noise": 71, "noiseClass": "B", "snow": true, "eprel": "451488"}
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "451488"
+      }
     },
     {
       "label": "225/70R15C",
@@ -116,56 +135,112 @@
       "diameter": 16,
       "index": "99/97T",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2030328"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2030328"
+      }
     },
     {
       "label": "195/65R16C",
       "diameter": 16,
       "index": "104/102T",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 70, "noiseClass": "A", "snow": true, "eprel": "451491"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "A",
+        "snow": true,
+        "eprel": "451491"
+      }
     },
     {
       "label": "195/75R16C",
       "diameter": 16,
       "index": "107/105R",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2030330"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2030330"
+      }
     },
     {
       "label": "195/75R16C",
       "diameter": 16,
       "index": "110/108R",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2030330"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2030330"
+      }
     },
     {
       "label": "205/65R16C",
       "diameter": 16,
       "index": "107/105T",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2030332"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2030332"
+      }
     },
     {
       "label": "205/75R16C",
       "diameter": 16,
       "index": "110/108R",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2030333"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2030333"
+      }
     },
     {
       "label": "215/65R16C",
       "diameter": 16,
       "index": "109/107R",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2030334"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2030334"
+      }
     },
     {
       "label": "215/75R16C",
       "diameter": 16,
       "index": "116/114R",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2030336"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2030336"
+      }
     },
     {
       "label": "225/65R16C",
@@ -184,7 +259,14 @@
       "diameter": 16,
       "index": "115/113R",
       "commercial": true,
-      "eu": {"energy": "C", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2030339"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2030339"
+      }
     },
     {
       "label": "235/85R16C",
@@ -203,14 +285,28 @@
       "diameter": 17,
       "index": "108/105R",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2224470"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2224470"
+      }
     },
     {
       "label": "225/55R17C",
       "diameter": 17,
       "index": "109/107T",
       "commercial": true,
-      "eu": {"energy": "D", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "1036750"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1036750"
+      }
     }
   ],
   "features": [

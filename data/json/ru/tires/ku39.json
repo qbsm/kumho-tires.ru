@@ -2,12 +2,29 @@
   "slug": "ku39",
   "visible": true,
   "filter": {
-    "season": ["summer"],
-    "vehicle": ["passenger"],
-    "priority": ["handling"],
-    "diameters": [17, 19],
-    "widths": [215, 225, 235],
-    "profiles": [35, 50]
+    "season": [
+      "summer"
+    ],
+    "vehicle": [
+      "passenger"
+    ],
+    "priority": [
+      "handling"
+    ],
+    "diameters": [
+      17,
+      19
+    ],
+    "widths": [
+      215,
+      225,
+      235
+    ],
+    "profiles": [
+      35,
+      50
+    ],
+    "family": "ecsta"
   },
   "item": {
     "code": "KU39",
@@ -40,14 +57,26 @@
       "diameter": 17,
       "index": "86Y",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 70, "noiseClass": "B", "eprel": "443195"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "443195"
+      }
     },
     {
       "label": "235/50R17",
       "diameter": 17,
       "index": "96Y",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 70, "noiseClass": "B", "eprel": "443202"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "443202"
+      }
     },
     {
       "label": "215/35R19",

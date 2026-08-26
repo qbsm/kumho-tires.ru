@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Линейка Ecsta в каталоге"
+        },
+        "desc": "<p>Ecsta — летняя асфальтовая линейка Kumho: <b>6 моделей и 284 типоразмера</b>, посадочные диаметры <b>от R14 до R22</b>.</p><p>Основа линейки — <a href='/tires/ps71' class='link inline weight-400'>Ecsta PS71</a> (112 типоразмеров, R16–R22) для легковых автомобилей и <a href='/tires/ps72' class='link inline weight-400'>Ecsta Sport S PS72</a> (93 типоразмера, R17–R22) для мощных и высокоскоростных машин.</p><p>Комфортную часть закрывает <a href='/tires/hs52' class='link inline weight-400'>Ecsta HS52</a> (62 типоразмера, R14–R20), рядом с ней в каталоге остаётся <a href='/tires/hs51' class='link inline weight-400'>Ecsta HS51</a> (13 типоразмеров, R15–R18).</p><p><a href='/tires/ku39' class='link inline weight-400'>Ecsta KU39</a> и <a href='/tires/hs63' class='link inline weight-400'>Ecsta HS63</a> представлены единичными размерами — их берут под конкретную замену.</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "PS или HS: что выбрать"
+        },
+        "desc": "<p><b>Индекс PS</b> — модели с упором на управляемость и скорость: жёстче каркас, крупнее блоки протектора, выше скоростной индекс. Их ставят на мощные машины и там, где важна точность руля.</p><p><b>Индекс HS</b> — упор на комфорт и тишину при повседневной езде. Разница заметнее всего на неровном асфальте и на скоростях до 120 км/ч.</p><p>Если приоритет — экономичность, а не динамика, смотрите линейку <a href='/tires/ecowing' class='link inline weight-400'>Ecowing</a>. Для кроссоверов летние модели собраны в <a href='/tires/crugen' class='link inline weight-400'>Crugen</a>. Весь летний ассортимент — в разделе <a href='/tires/summer' class='link inline weight-400'>летних шин</a>.</p>"
+      }
+    ]
+  }
+}

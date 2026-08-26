@@ -5,8 +5,12 @@
     "season": [
       "winter"
     ],
-    "vehicle": ["suv"],
-    "priority": ["comfort"],
+    "vehicle": [
+      "suv"
+    ],
+    "priority": [
+      "comfort"
+    ],
     "diameters": [
       15,
       16,
@@ -41,7 +45,8 @@
       65,
       70,
       75
-    ]
+    ],
+    "family": "wintercraft"
   },
   "item": {
     "code": "WS71",
@@ -83,98 +88,196 @@
       "diameter": 15,
       "index": "98T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443779"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443779"
+      }
     },
     {
       "label": "225/70R15",
       "diameter": 15,
       "index": "100T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443780"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443780"
+      }
     },
     {
       "label": "255/70R15",
       "diameter": 15,
       "index": "108T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443782"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443782"
+      }
     },
     {
       "label": "195/70R16",
       "diameter": 16,
       "index": "94H",
       "commercial": false,
-      "eu": {"energy": "E", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443813"}
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443813"
+      }
     },
     {
       "label": "215/70R16",
       "diameter": 16,
       "index": "100T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443772"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443772"
+      }
     },
     {
       "label": "225/75R16",
       "diameter": 16,
       "index": "104T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443774"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443774"
+      }
     },
     {
       "label": "235/70R16",
       "diameter": 16,
       "index": "106H",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443788"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443788"
+      }
     },
     {
       "label": "245/70R16",
       "diameter": 16,
       "index": "107H",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443789"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443789"
+      }
     },
     {
       "label": "255/65R16",
       "diameter": 16,
       "index": "109H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443758"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443758"
+      }
     },
     {
       "label": "255/70R16",
       "diameter": 16,
       "index": "111H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443760"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443760"
+      }
     },
     {
       "label": "265/70R16",
       "diameter": 16,
       "index": "112H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443764"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443764"
+      }
     },
     {
       "label": "215/65R17",
       "diameter": 17,
       "index": "104T",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443824"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443824"
+      }
     },
     {
       "label": "235/60R17",
       "diameter": 17,
       "index": "102H",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443795"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443795"
+      }
     },
     {
       "label": "245/55R17",
       "diameter": 17,
       "index": "106V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443826"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443826"
+      }
     },
     {
       "label": "245/65R17",
@@ -187,56 +290,112 @@
       "diameter": 17,
       "index": "110H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443846"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443846"
+      }
     },
     {
       "label": "255/65R17",
       "diameter": 17,
       "index": "114H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443847"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443847"
+      }
     },
     {
       "label": "265/65R17",
       "diameter": 17,
       "index": "116H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443848"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443848"
+      }
     },
     {
       "label": "215/55R18",
       "diameter": 18,
       "index": "99V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443827"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443827"
+      }
     },
     {
       "label": "225/50R18",
       "diameter": 18,
       "index": "99V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443849"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443849"
+      }
     },
     {
       "label": "235/65R18",
       "diameter": 18,
       "index": "106H",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443802"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443802"
+      }
     },
     {
       "label": "245/60R18",
       "diameter": 18,
       "index": "105H",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443805"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443805"
+      }
     },
     {
       "label": "255/55R18",
       "diameter": 18,
       "index": "109H",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443832"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443832"
+      }
     },
     {
       "label": "255/60R18",
@@ -249,56 +408,112 @@
       "diameter": 18,
       "index": "114H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443850"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443850"
+      }
     },
     {
       "label": "255/50R19",
       "diameter": 19,
       "index": "107V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443837"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443837"
+      }
     },
     {
       "label": "255/55R19",
       "diameter": 19,
       "index": "111V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443851"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443851"
+      }
     },
     {
       "label": "265/50R19",
       "diameter": 19,
       "index": "110V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443838"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443838"
+      }
     },
     {
       "label": "265/55R19",
       "diameter": 19,
       "index": "113V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "1594348"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594348"
+      }
     },
     {
       "label": "275/45R19",
       "diameter": 19,
       "index": "108V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443852"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443852"
+      }
     },
     {
       "label": "285/45R19",
       "diameter": 19,
       "index": "111V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 75, "noiseClass": "B", "snow": true, "eprel": "443856"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443856"
+      }
     },
     {
       "label": "235/45R20",
       "diameter": 20,
       "index": "100W",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "1555862"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1555862"
+      }
     },
     {
       "label": "235/50R20",
@@ -317,14 +532,28 @@
       "diameter": 20,
       "index": "109V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443840"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443840"
+      }
     },
     {
       "label": "255/55R20",
       "diameter": 20,
       "index": "110V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443853"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443853"
+      }
     },
     {
       "label": "265/45R20",
@@ -337,7 +566,14 @@
       "diameter": 20,
       "index": "111V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443841"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443841"
+      }
     },
     {
       "label": "275/40R20",
@@ -350,49 +586,98 @@
       "diameter": 20,
       "index": "110W",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443843"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443843"
+      }
     },
     {
       "label": "285/45R20",
       "diameter": 20,
       "index": "112V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 75, "noiseClass": "B", "snow": true, "eprel": "1555864"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1555864"
+      }
     },
     {
       "label": "295/40R20",
       "diameter": 20,
       "index": "110V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 75, "noiseClass": "B", "snow": true, "eprel": "443857"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443857"
+      }
     },
     {
       "label": "315/35R20",
       "diameter": 20,
       "index": "110W",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "C", "noise": 75, "noiseClass": "B", "snow": true, "eprel": "443821"}
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443821"
+      }
     },
     {
       "label": "255/40R21",
       "diameter": 21,
       "index": "102W",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "1594356"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594356"
+      }
     },
     {
       "label": "265/40R21",
       "diameter": 21,
       "index": "105V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 72, "noiseClass": "B", "snow": true, "eprel": "443855"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443855"
+      }
     },
     {
       "label": "275/40R21",
       "diameter": 21,
       "index": "107W",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "2111916"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2111916"
+      }
     },
     {
       "label": "275/45R21",
@@ -411,7 +696,14 @@
       "diameter": 22,
       "index": "106V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "C", "noise": 73, "noiseClass": "B", "snow": true, "eprel": "1594347"}
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594347"
+      }
     }
   ],
   "features": [

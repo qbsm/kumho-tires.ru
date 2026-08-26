@@ -2,12 +2,36 @@
   "slug": "hs51",
   "visible": true,
   "filter": {
-    "season": ["summer"],
-    "vehicle": ["passenger"],
-    "priority": ["handling"],
-    "diameters": [15, 16, 17, 18],
-    "widths": [195, 205, 215, 225, 235],
-    "profiles": [40, 45, 50, 55, 60]
+    "season": [
+      "summer"
+    ],
+    "vehicle": [
+      "passenger"
+    ],
+    "priority": [
+      "handling"
+    ],
+    "diameters": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "widths": [
+      195,
+      205,
+      215,
+      225,
+      235
+    ],
+    "profiles": [
+      40,
+      45,
+      50,
+      55,
+      60
+    ],
+    "family": "ecsta"
   },
   "item": {
     "code": "HS51",
@@ -36,14 +60,26 @@
       "diameter": 15,
       "index": "78V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 69, "noiseClass": "B", "eprel": "444149"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 69,
+        "noiseClass": "B",
+        "eprel": "444149"
+      }
     },
     {
       "label": "205/50R15",
       "diameter": 15,
       "index": "86V",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "444385"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "444385"
+      }
     },
     {
       "label": "205/55R15",
@@ -56,56 +92,104 @@
       "diameter": 15,
       "index": "96W",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "444395"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "444395"
+      }
     },
     {
       "label": "205/60R16",
       "diameter": 16,
       "index": "92H",
       "commercial": false,
-      "eu": {"energy": "B", "wet": "B", "noise": 70, "noiseClass": "B", "eprel": "444453"}
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "444453"
+      }
     },
     {
       "label": "215/40R16",
       "diameter": 16,
       "index": "86W",
       "commercial": false,
-      "eu": {"energy": "D", "wet": "B", "noise": 69, "noiseClass": "A", "eprel": "444701"}
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 69,
+        "noiseClass": "A",
+        "eprel": "444701"
+      }
     },
     {
       "label": "215/45R16",
       "diameter": 16,
       "index": "86H",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "2262837"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2262837"
+      }
     },
     {
       "label": "225/50R16",
       "diameter": 16,
       "index": "92W",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 69, "noiseClass": "B", "eprel": "444423"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 69,
+        "noiseClass": "B",
+        "eprel": "444423"
+      }
     },
     {
       "label": "205/45R17",
       "diameter": 17,
       "index": "88V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 72, "noiseClass": "B", "eprel": "445157"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "445157"
+      }
     },
     {
       "label": "215/55R17",
       "diameter": 17,
       "index": "94V",
       "commercial": false,
-      "eu": {"energy": "C", "wet": "B", "noise": 71, "noiseClass": "B", "eprel": "444457"}
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "444457"
+      }
     },
     {
       "label": "215/60R17",
       "diameter": 17,
       "index": "96H",
       "commercial": false,
-      "eu": {"energy": "A", "wet": "C", "noise": 71, "noiseClass": "B", "eprel": "613334"}
+      "eu": {
+        "energy": "A",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "613334"
+      }
     },
     {
       "label": "215/55R18",
