@@ -17,6 +17,7 @@
         {% endif %}
       {% endif %}
       {% set tiresItems = [] %}
+      {% set seasonBySlug = {} %}
       {% set allDiameters = [] %}
       {% set allWidths = [] %}
       {% set allProfiles = [] %}
@@ -26,6 +27,26 @@
           {% if tireItem and tireItem.visible | default(false) %}
             {% set tiresItems = tiresItems | merge([tireItem]) %}
             {% set filterData = tireItem.filter | default({}) %}
+            {% set seasonRaw = filterData.season | default(['summer']) %}
+            {% set seasonList = seasonRaw is iterable ? seasonRaw : [seasonRaw] %}
+            {% set seasonCodes = [] %}
+            {% for season in seasonList %}
+              {% set seasonNorm = season|lower|trim %}
+              {% set code = '' %}
+              {% if seasonNorm in ['лето', 'summer'] %}
+                {% set code = 'summer' %}
+              {% elseif seasonNorm in ['зима', 'winter'] %}
+                {% set code = 'winter' %}
+              {% elseif seasonNorm in ['всесезонные', 'всесезонная', 'allseason', 'all season', 'all-season'] %}
+                {% set code = 'allseason' %}
+              {% elseif seasonNorm in ['шипованные', 'шипы', 'studded'] %}
+                {% set code = 'studded' %}
+              {% endif %}
+              {% if code and code not in seasonCodes %}
+                {% set seasonCodes = seasonCodes | merge([code]) %}
+              {% endif %}
+            {% endfor %}
+            {% set seasonBySlug = seasonBySlug | merge({(tireItem.slug | default(slug)): seasonCodes}) %}
             {% set diameters = filterData.diameters | default(filterData.diameter | default([])) %}
             {% set widths = filterData.widths | default(filterData.width | default([])) %}
             {% set profiles = filterData.profiles | default(filterData.profile | default(filterData.heights | default(filterData.height | default([])))) %}
@@ -46,6 +67,41 @@
             {% endfor %}
           {% endif %}
         {% endfor %}
+      {% endif %}
+      {# Сезон и размер из адреса режут каталог на сервере: страница фильтра, отдающая весь
+         список, для поиска неотличима от /tires — именно из-за этого выигрывала главная #}
+      {% set preset = filter_preset | default({}) %}
+      {% set presetSeason = preset.season | default('') %}
+      {% set presetWidth = preset.width | default('') %}
+      {% set presetProfile = preset.profile | default('') %}
+      {% set presetDiameter = preset.diameter | default('') %}
+      {% set presetSize = presetWidth or presetProfile or presetDiameter %}
+      {% if presetSeason or presetSize %}
+        {% set matchedItems = [] %}
+        {% for tireItem in tiresItems %}
+          {% set itemSeasons = seasonBySlug[tireItem.slug | default('')] | default([]) %}
+          {% set seasonOk = presetSeason ? (presetSeason in itemSeasons) : true %}
+          {% set sizeOk = true %}
+          {% if presetSize %}
+            {% set sizeOk = false %}
+            {% for size in tireItem.sizes | default([]) %}
+              {% set parts = size.label | default('') | lower | split('r') %}
+              {% set wp = parts[0] | default('') | split('/') %}
+              {% set sizeWidth = wp[0] | default('') | trim %}
+              {% set sizeProfile = wp[1] | default('') | trim %}
+              {% set sizeDiameter = parts[1] | default('') | trim | replace({'c': ''}) %}
+              {% set hit = true %}
+              {% if presetWidth and sizeWidth != presetWidth %}{% set hit = false %}{% endif %}
+              {% if presetProfile and sizeProfile != presetProfile %}{% set hit = false %}{% endif %}
+              {% if presetDiameter and sizeDiameter != presetDiameter %}{% set hit = false %}{% endif %}
+              {% if hit %}{% set sizeOk = true %}{% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if seasonOk and sizeOk %}
+            {% set matchedItems = matchedItems | merge([tireItem]) %}
+          {% endif %}
+        {% endfor %}
+        {% set tiresItems = matchedItems %}
       {% endif %}
       {% set previewLimit = data.preview_limit | default(0) %}
       {% set hasPreviewLimit = previewLimit > 0 %}
@@ -82,8 +138,6 @@
         {% set allModelsLinkHref = data.all_models_link.href | default('/tires/') %}
       {% endif %}
 
-      {# Пресет из человечного адреса (/tires/summer/205-55-r16) — фильтр стартует выставленным #}
-      {% set preset = filter_preset | default({}) %}
       {% if filterVisible %}
         {% set diameterOptions = [{'value': '', 'label': 'Все'}] %}
         {% for value in allDiameters|sort %}
@@ -163,26 +217,7 @@
       {% if renderedItems is not empty %}
         <div class="section__subitem cards-tire-wrap">
           {% for tireItem in renderedItems %}
-            {% set filterData = tireItem.filter | default({}) %}
-            {% set seasonRaw = filterData.season | default(['summer']) %}
-            {% set seasons = seasonRaw is iterable ? seasonRaw : [seasonRaw] %}
-            {% set seasonCodes = [] %}
-            {% for season in seasons %}
-              {% set seasonNorm = season|lower|trim %}
-              {% set code = '' %}
-              {% if seasonNorm in ['лето', 'summer'] %}
-                {% set code = 'summer' %}
-              {% elseif seasonNorm in ['зима', 'winter'] %}
-                {% set code = 'winter' %}
-              {% elseif seasonNorm in ['всесезонные', 'всесезонная', 'allseason', 'all season', 'all-season'] %}
-                {% set code = 'allseason' %}
-              {% elseif seasonNorm in ['шипованные', 'шипы', 'studded'] %}
-                {% set code = 'studded' %}
-              {% endif %}
-              {% if code and code not in seasonCodes %}
-                {% set seasonCodes = seasonCodes | merge([code]) %}
-              {% endif %}
-            {% endfor %}
+            {% set seasonCodes = seasonBySlug[tireItem.slug | default('')] | default([]) %}
             {% set dataSeasons = '|' %}
             {% for value in seasonCodes %}
               {% set dataSeasons = dataSeasons ~ value ~ '|' %}
