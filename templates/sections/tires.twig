@@ -46,6 +46,10 @@
                 {% set seasonCodes = seasonCodes | merge([code]) %}
               {% endif %}
             {% endfor %}
+            {# «Нешипованные» — не отдельный сезон в данных, а зимние без шипов #}
+            {% if 'winter' in seasonCodes and 'studded' not in seasonCodes %}
+              {% set seasonCodes = seasonCodes | merge(['friction']) %}
+            {% endif %}
             {% set seasonBySlug = seasonBySlug | merge({(tireItem.slug | default(slug)): seasonCodes}) %}
             {% set diameters = filterData.diameters | default(filterData.diameter | default([])) %}
             {% set widths = filterData.widths | default(filterData.width | default([])) %}

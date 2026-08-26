@@ -392,6 +392,10 @@
         "href": "/tires/studded"
       },
       {
+        "title": "Нешипованные шины",
+        "href": "/tires/friction"
+      },
+      {
         "title": "Контакты",
         "href": "/contacts"
       }
@@ -412,6 +416,10 @@
       {
         "title": "Studded tires",
         "href": "/tires/studded"
+      },
+      {
+        "title": "Studless tires",
+        "href": "/tires/friction"
       },
       {
         "title": "Contacts",

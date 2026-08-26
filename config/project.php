@@ -30,6 +30,7 @@ return [
                     'allseason' => ['label' => 'Всесезонные', 'genitive' => 'всесезонных', 'h1' => 'Всесезонные шины Kumho'],
                     'winter'    => ['label' => 'Зимние', 'genitive' => 'зимних', 'h1' => 'Зимние шины Kumho'],
                     'studded'   => ['label' => 'Шипованные', 'genitive' => 'шипованных', 'h1' => 'Шипованные шины Kumho'],
+                    'friction'  => ['label' => 'Нешипованные', 'genitive' => 'нешипованных', 'h1' => 'Нешипованные зимние шины Kumho'],
                 ],
                 'size_pattern' => '/^(\\d{3})-(\\d{2,3})-r(\\d{2})$/i',
                 // Границы реального каталога: за ними адрес — мусор, отдаём 404, а не пустой фильтр
@@ -96,6 +97,7 @@ return [
 
     // Дополнительные статические адреса в sitemap.xml (человечные страницы фильтра каталога).
     'sitemap_extra_paths' => [
+        'tires/friction',
         'tires/summer',
         'tires/allseason',
         'tires/winter',

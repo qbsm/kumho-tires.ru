@@ -67,9 +67,16 @@
                     <h1 class="h1 heading font-2 weight-700 heading-flex uppercase">{{ t.name|default(t.code) }}</h1>
                   </div>
                   {% set seasonMap = config.settings.collections.tires.filters.season | default({}) %}
-                  {% set seasonBadges = [] %}
+                  {% set seasonCodes = [] %}
                   {% for code in tire.filter.season | default([]) %}
-                    {% set norm = code|lower|trim|replace({'all season': 'allseason', 'all-season': 'allseason'}) %}
+                    {% set seasonCodes = seasonCodes | merge([code|lower|trim|replace({'all season': 'allseason', 'all-season': 'allseason'})]) %}
+                  {% endfor %}
+                  {# «Нешипованные» — не отдельный сезон в данных, а зимние без шипов #}
+                  {% if 'winter' in seasonCodes and 'studded' not in seasonCodes %}
+                    {% set seasonCodes = seasonCodes | merge(['friction']) %}
+                  {% endif %}
+                  {% set seasonBadges = [] %}
+                  {% for norm in seasonCodes %}
                     {% if seasonMap[norm] is defined and seasonMap[norm].label is defined %}
                       {% set seasonBadges = seasonBadges | merge([{'label': seasonMap[norm].label, 'href': '/tires/' ~ norm}]) %}
                     {% endif %}
