@@ -413,6 +413,13 @@ final class PageAction
             $path .= '/' . $filter['season'];
             $items[] = ['name' => (string) ($season['label'] ?? $filter['season']), 'url' => $path];
         }
+        if (isset($filter['family'])) {
+            $families = (array) ($collConfig['filters']['family'] ?? []);
+            $family = $families[$filter['family']] ?? null;
+            $family = is_array($family) ? $family : ['label' => (string) $family];
+            $path .= '/' . $filter['family'];
+            $items[] = ['name' => (string) ($family['label'] ?? $filter['family']), 'url' => $path];
+        }
         if (isset($filter['width'], $filter['profile'], $filter['diameter'])) {
             $path .= '/' . $filter['width'] . '-' . $filter['profile'] . '-r' . $filter['diameter'];
             $items[] = [
