@@ -134,17 +134,6 @@
             </div>
             {% endif %}
 
-            {# Тесты производителя — проверяемый факт, в отличие от его же маркетинговых формулировок:
-               те оказались общими фразами (местами с опечатками источника) и на страницу не идут. #}
-            {% if tire.official is defined and tire.official.tests is defined and tire.official.tests|length > 0 %}
-            <div class="section__item block-wrap">
-              <div class="section__subitem">
-                <p class="tire-detail__note">
-                  Независимые тесты, указанные производителем: {{ tire.official.tests|join('; ') }}.
-                </p>
-              </div>
-            </div>
-            {% endif %}
           </div>
 
 
