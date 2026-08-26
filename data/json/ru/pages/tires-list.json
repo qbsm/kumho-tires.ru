@@ -31,11 +31,6 @@
               "icon": "data/img/ui/icons/icon-season-allseason.svg"
             },
             {
-              "label": "Зима",
-              "value": "winter",
-              "icon": "data/img/ui/icons/icon-season-winter.svg"
-            },
-            {
               "label": "Шипованные",
               "value": "studded",
               "icon": "data/img/ui/icons/icon-season-studded.svg"
