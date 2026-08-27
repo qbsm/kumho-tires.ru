@@ -5,3 +5,27 @@
 .burger-menu .container {
   /* Стили для контейнера в burger-menu */
 }
+
+/* Подпункты каталога в мобильном меню */
+.burger-menu .burger-menu__sub {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 0.5rem 1rem;
+  padding-inline-start: 1rem;
+}
+
+.burger-menu .burger-menu__sub-title {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.burger-menu .burger-menu__sub-title:not(:first-child) {
+  margin-block-start: 0.75rem;
+}
+
+.burger-menu .burger-menu__sub-item {
+  font-size: 0.9375em;
+}

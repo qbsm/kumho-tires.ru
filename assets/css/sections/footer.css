@@ -81,8 +81,9 @@
 .footer .nav-wrap .footer__link-wrap {
   width: 100%;
 
+  /* Три колонки на десктопе: ссылок стало больше, в две они уходили в длинный столбец */
   @media (--lg) {
-    width: calc(35% - 1.5rem);
+    width: calc(33.333% - 2rem);
   }
 }
 

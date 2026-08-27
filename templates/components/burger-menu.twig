@@ -15,6 +15,18 @@
       <a href="{{ url(nav_path) }}" class="burger-menu__item link">
         <span class="burger-menu__title uppercase">{{ item.title }}</span>
       </a>
+      {% if item.children is defined and item.children is not empty %}
+        <div class="burger-menu__sub">
+          {% for group in item.children %}
+            {% if group.group is defined and group.group %}
+              <span class="burger-menu__sub-title uppercase">{{ group.group }}</span>
+            {% endif %}
+            {% for sub in group.items | default([]) %}
+              <a href="{{ url(sub.href) }}" class="burger-menu__sub-item link">{{ sub.title }}</a>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      {% endif %}
       {% endif %}
     {% endfor %}
   </div>

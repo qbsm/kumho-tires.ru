@@ -116,3 +116,67 @@
     display: none;
   }
 }
+
+/* Выпадающие подпункты: каталог разросся до сезонов и линеек, плоской шапкой их не показать.
+   Открывается наведением и фокусом с клавиатуры — без JS. */
+.header .nav-link-wrap.has-submenu {
+  position: relative;
+}
+
+.header .header__submenu {
+  position: absolute;
+  inset-inline-start: 50%;
+  top: 100%;
+  translate: -50% 0;
+  padding-top: 1.4rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-1), visibility var(--transition-1);
+  z-index: var(--z-index-2);
+}
+
+.header .nav-link-wrap.has-submenu:hover .header__submenu,
+.header .nav-link-wrap.has-submenu:focus-within .header__submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header .header__submenu-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(8.5rem, 1fr));
+  gap: 1.5rem 3rem;
+  padding: 1.75rem 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--color-1);
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 12%);
+}
+
+.header .header__submenu-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.header .header__submenu-title {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-5);
+  white-space: nowrap;
+}
+
+.header .header__submenu-link {
+  white-space: nowrap;
+  color: var(--color-2);
+}
+
+.header .header__submenu-link:hover,
+.header .header__submenu-link:focus-visible {
+  color: var(--color-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header .header__submenu {
+    transition: none;
+  }
+}

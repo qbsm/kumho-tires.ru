@@ -38,6 +38,70 @@
           "active_for": [
             "tires-list",
             "tire"
+          ],
+          "children": [
+            {
+              "group": "По сезону",
+              "items": [
+                {
+                  "title": "Весь каталог",
+                  "href": "/tires"
+                },
+                {
+                  "title": "Летние",
+                  "href": "/tires/summer"
+                },
+                {
+                  "title": "Всесезонные",
+                  "href": "/tires/allseason"
+                },
+                {
+                  "title": "Зимние",
+                  "href": "/tires/winter"
+                },
+                {
+                  "title": "Шипованные",
+                  "href": "/tires/studded"
+                },
+                {
+                  "title": "Нешипованные",
+                  "href": "/tires/friction"
+                }
+              ]
+            },
+            {
+              "group": "По линейке",
+              "items": [
+                {
+                  "title": "WinterCraft",
+                  "href": "/tires/wintercraft"
+                },
+                {
+                  "title": "Ecsta",
+                  "href": "/tires/ecsta"
+                },
+                {
+                  "title": "Ecowing",
+                  "href": "/tires/ecowing"
+                },
+                {
+                  "title": "Crugen",
+                  "href": "/tires/crugen"
+                },
+                {
+                  "title": "Solus",
+                  "href": "/tires/solus"
+                },
+                {
+                  "title": "Road Venture",
+                  "href": "/tires/road-venture"
+                },
+                {
+                  "title": "PorTran",
+                  "href": "/tires/portran"
+                }
+              ]
+            }
           ]
         },
         {
@@ -87,6 +151,70 @@
           "active_for": [
             "tires-list",
             "tire"
+          ],
+          "children": [
+            {
+              "group": "By season",
+              "items": [
+                {
+                  "title": "All tires",
+                  "href": "/tires"
+                },
+                {
+                  "title": "Summer",
+                  "href": "/tires/summer"
+                },
+                {
+                  "title": "All-season",
+                  "href": "/tires/allseason"
+                },
+                {
+                  "title": "Winter",
+                  "href": "/tires/winter"
+                },
+                {
+                  "title": "Studded",
+                  "href": "/tires/studded"
+                },
+                {
+                  "title": "Studless",
+                  "href": "/tires/friction"
+                }
+              ]
+            },
+            {
+              "group": "By line",
+              "items": [
+                {
+                  "title": "WinterCraft",
+                  "href": "/tires/wintercraft"
+                },
+                {
+                  "title": "Ecsta",
+                  "href": "/tires/ecsta"
+                },
+                {
+                  "title": "Ecowing",
+                  "href": "/tires/ecowing"
+                },
+                {
+                  "title": "Crugen",
+                  "href": "/tires/crugen"
+                },
+                {
+                  "title": "Solus",
+                  "href": "/tires/solus"
+                },
+                {
+                  "title": "Road Venture",
+                  "href": "/tires/road-venture"
+                },
+                {
+                  "title": "PorTran",
+                  "href": "/tires/portran"
+                }
+              ]
+            }
           ]
         },
         {
