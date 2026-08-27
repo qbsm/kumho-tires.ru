@@ -159,7 +159,7 @@
 .header .header__submenu-groups {
   display: grid;
   grid-template-columns: repeat(2, minmax(9rem, auto));
-  gap: 4rem;
+  gap: 6rem;
 }
 
 .header .header__submenu-group {

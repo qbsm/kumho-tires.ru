@@ -39,12 +39,12 @@
               "group": "Каталог",
               "items": [
                 {
-                  "title": "Весь каталог",
-                  "href": "/tires"
-                },
-                {
                   "title": "Подбор шин",
                   "href": "/podbor"
+                },
+                {
+                  "title": "Весь каталог",
+                  "href": "/tires"
                 },
                 {
                   "title": "Летние",
@@ -150,12 +150,12 @@
               "group": "Catalog",
               "items": [
                 {
-                  "title": "All tires",
-                  "href": "/tires"
-                },
-                {
                   "title": "Tire selector",
                   "href": "/podbor"
+                },
+                {
+                  "title": "All tires",
+                  "href": "/tires"
                 },
                 {
                   "title": "Summer",
