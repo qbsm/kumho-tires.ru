@@ -234,3 +234,12 @@
     transition: none;
   }
 }
+
+/* Кнопка целевого действия в шапке: выше строчных пунктов, поэтому меню выравнивается по ней */
+.header .nav-link-wrap:has(.header__cta) {
+  margin-inline-start: 0.8rem;
+}
+
+.header .header__cta {
+  color: var(--color-1);
+}

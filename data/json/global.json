@@ -126,7 +126,8 @@
         {
           "title": "Где купить",
           "href": "/buy",
-          "visible": true
+          "visible": true,
+          "accent": true
         },
         {
           "title": "Контакты",
@@ -239,7 +240,8 @@
         {
           "title": "Where to buy",
           "href": "/buy",
-          "visible": true
+          "visible": true,
+          "accent": true
         },
         {
           "title": "Contacts",
