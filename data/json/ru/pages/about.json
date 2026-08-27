@@ -46,7 +46,7 @@
             {
               "class": "content-wrap container-sm",
               "content": "<div class='section__subitem desc-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
-              "desc": "Широкий продуктовый портфель, включающий надёжные шины и&nbsp;диски от&nbsp;известных брендов. <strong>Присутствие на&nbsp;российском рынке с&nbsp;2013 года</strong> обеспечивает доверие и&nbsp;узнаваемость бренда «Север Авто»."
+              "desc": "Широкий продуктовый портфель, включающий надёжные шины и&nbsp;диски от&nbsp;известных брендов. <strong>Присутствие на&nbsp;российском рынке с&nbsp;2013 года</strong> обеспечивает доверие и&nbsp;узнаваемость бренда «Север Авто». О&nbsp;самом бренде Kumho&nbsp;— кто его производит, где находятся заводы и&nbsp;как определить страну выпуска&nbsp;— <a href='/brand' class='link inline weight-400'>на отдельной странице</a>."
             },
             {
               "class": "content-wrap container-sm",

@@ -67,6 +67,7 @@ return [
     'sitemap_pages' => [
         'index',
         'about',
+        'brand',
         'contacts',
         'policy',
         'cookies-policy',

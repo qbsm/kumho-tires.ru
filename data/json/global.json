@@ -27,7 +27,10 @@
         {
           "title": "Бренд",
           "href": "/brand",
-          "visible": false
+          "visible": true,
+          "active_for": [
+            "brand"
+          ]
         },
         {
           "title": "Шины",
@@ -73,7 +76,10 @@
         {
           "title": "Brand",
           "href": "/brand",
-          "visible": false
+          "visible": true,
+          "active_for": [
+            "brand"
+          ]
         },
         {
           "title": "Tires",
@@ -398,6 +404,10 @@
       {
         "title": "Контакты",
         "href": "/contacts"
+      },
+      {
+        "title": "О бренде Kumho",
+        "href": "/brand"
       }
     ],
     "en": [
@@ -424,6 +434,10 @@
       {
         "title": "Contacts",
         "href": "/contacts"
+      },
+      {
+        "title": "About Kumho",
+        "href": "/brand"
       }
     ]
   }
