@@ -28,17 +28,12 @@
           "title": "Бренд",
           "href": "/brand",
           "visible": false,
-          "active_for": [
-            "brand"
-          ]
+          "active_for": ["brand"]
         },
         {
           "title": "Шины",
           "href": "/tires",
-          "active_for": [
-            "tires-list",
-            "tire"
-          ],
+          "active_for": ["tires-list", "tire"],
           "children": [
             {
               "group": "По сезону",
@@ -114,9 +109,7 @@
         {
           "title": "Подбор шин",
           "href": "/podbor",
-          "active_for": [
-            "podbor"
-          ],
+          "active_for": ["podbor"],
           "visible": false
         },
         {
@@ -126,8 +119,7 @@
         {
           "title": "Где купить",
           "href": "/buy",
-          "visible": true,
-          "accent": true
+          "visible": true
         },
         {
           "title": "Контакты",
@@ -150,17 +142,12 @@
           "title": "Brand",
           "href": "/brand",
           "visible": false,
-          "active_for": [
-            "brand"
-          ]
+          "active_for": ["brand"]
         },
         {
           "title": "Tires",
           "href": "/tires",
-          "active_for": [
-            "tires-list",
-            "tire"
-          ],
+          "active_for": ["tires-list", "tire"],
           "children": [
             {
               "group": "By season",
@@ -240,8 +227,7 @@
         {
           "title": "Where to buy",
           "href": "/buy",
-          "visible": true,
-          "accent": true
+          "visible": true
         },
         {
           "title": "Contacts",
@@ -448,14 +434,7 @@
       ]
     },
     "en": {
-      "items": [
-        "kids friendly",
-        "with a beautiful view",
-        "italian cuisine",
-        "breakfast",
-        "every day",
-        "pets friendly"
-      ]
+      "items": ["kids friendly", "with a beautiful view", "italian cuisine", "breakfast", "every day", "pets friendly"]
     }
   },
   "icons": {
@@ -520,10 +499,7 @@
     "title": "B2B@svrauto.ru",
     "href": "mailto:B2B@svrauto.ru"
   },
-  "brand-alternate-names": [
-    "Кумхо",
-    "Kumho Tire"
-  ],
+  "brand-alternate-names": ["Кумхо", "Kumho Tire"],
   "footer-links": {
     "ru": [
       {

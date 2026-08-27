@@ -21,12 +21,7 @@
         {% endif %}
         {% set hasSubmenu = item.children is defined and item.children is not empty %}
         <div class="section__inner nav-link-wrap{{ hasSubmenu ? ' has-submenu' : '' }}">
-          {% if item.accent is defined and item.accent %}
-            {# Целевое действие каталога выделено кнопкой: остальные пункты — навигация #}
-            <a href="{{ url(itemHref) }}" class="button button-sm button-3 uppercase link header__cta">{{ item.title }}</a>
-          {% else %}
-            <a href="{{ url(itemHref) }}" class="link color-2 underline-center header__nav-link{{ isActive ? ' active' : '' }}"{{ hasSubmenu ? ' aria-haspopup="true"' : '' }}>{{ item.title }}</a>
-          {% endif %}
+          <a href="{{ url(itemHref) }}" class="link color-2 underline-center header__nav-link{{ isActive ? ' active' : '' }}"{{ hasSubmenu ? ' aria-haspopup="true"' : '' }}>{{ item.title }}</a>
           {% if hasSubmenu %}
             <div class="header__submenu">
               <div class="header__submenu-inner">
@@ -53,8 +48,8 @@
                   {% endfor %}
                 </div>
                 {% if item.featured is defined and item.featured %}
-                  <a href="{{ url(item.featured.href) }}" class="link header__submenu-featured">
-                    <span class="header__submenu-featured-title">{{ item.featured.title }}</span>
+                  <a href="{{ url(item.featured.href) }}" class="link color-2 header__submenu-featured">
+                    <span class="link underline-center header__submenu-featured-title">{{ item.featured.title }}</span>
                     {% if item.featured.note is defined and item.featured.note %}
                       <span class="header__submenu-featured-note">{{ item.featured.note }}</span>
                     {% endif %}
