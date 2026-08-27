@@ -235,7 +235,7 @@
   align-items: center;
   gap: 0.8rem;
   height: 4rem;
-  padding: 0 2rem 0 1.2rem;
+  padding: 0 2rem 0 1rem;
   background: var(--color-3);
   border-radius: 4rem;
   font-size: 1.3rem;
@@ -265,8 +265,8 @@
   content: "";
   display: block;
   flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   background-color: currentcolor;
-  mask: url("/data/img/ui/icons/icon-wheel-color-2.svg") center / contain no-repeat;
+  mask: url("/data/img/ui/icons/icon-tire-color-2.svg") center / contain no-repeat;
 }
