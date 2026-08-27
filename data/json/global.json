@@ -102,14 +102,20 @@
                 }
               ]
             }
-          ]
+          ],
+          "featured": {
+            "title": "Подбор шин",
+            "href": "/podbor",
+            "note": "По автомобилю и размеру"
+          }
         },
         {
           "title": "Подбор шин",
           "href": "/podbor",
           "active_for": [
             "podbor"
-          ]
+          ],
+          "visible": false
         },
         {
           "title": "Расширенная гарантия",
@@ -215,7 +221,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "featured": {
+            "title": "Tire selector",
+            "href": "/podbor",
+            "note": "By vehicle and size"
+          }
         },
         {
           "title": "Extended warranty",
@@ -510,6 +521,10 @@
   "footer-links": {
     "ru": [
       {
+        "title": "Подбор шин",
+        "href": "/podbor"
+      },
+      {
         "title": "Зимние шины",
         "href": "/tires/winter"
       },
@@ -539,6 +554,10 @@
       }
     ],
     "en": [
+      {
+        "title": "Tire selector",
+        "href": "/podbor"
+      },
       {
         "title": "Winter tires",
         "href": "/tires/winter"

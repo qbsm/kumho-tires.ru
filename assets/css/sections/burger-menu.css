@@ -29,3 +29,9 @@
 .burger-menu .burger-menu__sub-item {
   font-size: 0.9375em;
 }
+
+.burger-menu .burger-menu__sub-item--featured {
+  margin-block-start: 0.75rem;
+  font-weight: 700;
+  color: var(--color-3);
+}

@@ -128,7 +128,7 @@
   inset-inline-start: 50%;
   top: 100%;
   translate: -50% 0;
-  padding-top: 1.4rem;
+  padding-top: 1.25rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition-1), visibility var(--transition-1);
@@ -142,30 +142,44 @@
 }
 
 .header .header__submenu-inner {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(8.5rem, 1fr));
-  gap: 1.5rem 3rem;
-  padding: 1.75rem 2rem;
-  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 20rem;
+  padding: 1.75rem;
+  border-radius: 1.25rem;
   background-color: var(--color-1);
-  box-shadow: 0 1rem 3rem rgb(0 0 0 / 12%);
+  box-shadow: 0 1.5rem 3.5rem rgb(0 0 0 / 14%);
+}
+
+.header .header__submenu-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(9rem, auto));
+  gap: 2.75rem;
 }
 
 .header .header__submenu-group {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.875rem;
 }
 
 .header .header__submenu-title {
-  font-size: 0.75em;
+  font-size: 0.6875em;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--color-5);
   white-space: nowrap;
 }
 
+.header .header__submenu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
 .header .header__submenu-link {
+  font-size: 0.9375em;
+  line-height: 1.2;
   white-space: nowrap;
   color: var(--color-2);
 }
@@ -173,6 +187,34 @@
 .header .header__submenu-link:hover,
 .header .header__submenu-link:focus-visible {
   color: var(--color-3);
+}
+
+/* Подбор — действие, а не раздел каталога: отделён линией и подписью */
+.header .header__submenu-featured {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-block-start: 1.5rem;
+  padding-block-start: 1.25rem;
+  border-block-start: 1px solid var(--color-4);
+}
+
+.header .header__submenu-featured-title {
+  font-family: var(--font-2);
+  font-size: 0.9375em;
+  font-weight: 700;
+  color: var(--color-3);
+}
+
+.header .header__submenu-featured-note {
+  font-size: 0.8125em;
+  line-height: 1.3;
+  color: var(--color-5);
+}
+
+.header .header__submenu-featured:hover .header__submenu-featured-title,
+.header .header__submenu-featured:focus-visible .header__submenu-featured-title {
+  color: var(--color-2);
 }
 
 @media (prefers-reduced-motion: reduce) {

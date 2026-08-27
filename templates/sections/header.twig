@@ -25,16 +25,28 @@
           {% if hasSubmenu %}
             <div class="header__submenu">
               <div class="header__submenu-inner">
-                {% for group in item.children %}
-                  <div class="header__submenu-group">
-                    {% if group.group is defined and group.group %}
-                      <span class="header__submenu-title uppercase">{{ group.group }}</span>
+                <div class="header__submenu-groups">
+                  {% for group in item.children %}
+                    <div class="header__submenu-group">
+                      {% if group.group is defined and group.group %}
+                        <span class="header__submenu-title uppercase">{{ group.group }}</span>
+                      {% endif %}
+                      <div class="header__submenu-list">
+                        {% for sub in group.items | default([]) %}
+                          <a href="{{ url(sub.href) }}" class="link header__submenu-link">{{ sub.title }}</a>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+                {% if item.featured is defined and item.featured %}
+                  <a href="{{ url(item.featured.href) }}" class="link header__submenu-featured">
+                    <span class="header__submenu-featured-title">{{ item.featured.title }}</span>
+                    {% if item.featured.note is defined and item.featured.note %}
+                      <span class="header__submenu-featured-note">{{ item.featured.note }}</span>
                     {% endif %}
-                    {% for sub in group.items | default([]) %}
-                      <a href="{{ url(sub.href) }}" class="link header__submenu-link">{{ sub.title }}</a>
-                    {% endfor %}
-                  </div>
-                {% endfor %}
+                  </a>
+                {% endif %}
               </div>
             </div>
           {% endif %}
