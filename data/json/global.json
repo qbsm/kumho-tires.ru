@@ -57,15 +57,17 @@
                 },
                 {
                   "title": "Зимние",
-                  "href": "/tires/winter"
-                },
-                {
-                  "title": "Шипованные",
-                  "href": "/tires/studded"
-                },
-                {
-                  "title": "Нешипованные",
-                  "href": "/tires/friction"
+                  "href": "/tires/winter",
+                  "items": [
+                    {
+                      "title": "Шипованные",
+                      "href": "/tires/studded"
+                    },
+                    {
+                      "title": "Нешипованные",
+                      "href": "/tires/friction"
+                    }
+                  ]
                 }
               ]
             },
@@ -176,15 +178,17 @@
                 },
                 {
                   "title": "Winter",
-                  "href": "/tires/winter"
-                },
-                {
-                  "title": "Studded",
-                  "href": "/tires/studded"
-                },
-                {
-                  "title": "Studless",
-                  "href": "/tires/friction"
+                  "href": "/tires/winter",
+                  "items": [
+                    {
+                      "title": "Studded",
+                      "href": "/tires/studded"
+                    },
+                    {
+                      "title": "Studless",
+                      "href": "/tires/friction"
+                    }
+                  ]
                 }
               ]
             },

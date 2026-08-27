@@ -23,6 +23,9 @@
             {% endif %}
             {% for sub in group.items | default([]) %}
               <a href="{{ url(sub.href) }}" class="burger-menu__sub-item link">{{ sub.title }}</a>
+              {% for leaf in sub.items | default([]) %}
+                <a href="{{ url(leaf.href) }}" class="burger-menu__sub-item burger-menu__sub-item--nested link">{{ leaf.title }}</a>
+              {% endfor %}
             {% endfor %}
           {% endfor %}
           {% if item.featured is defined and item.featured %}

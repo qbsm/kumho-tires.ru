@@ -35,3 +35,9 @@
   font-weight: 700;
   color: var(--color-3);
 }
+
+.burger-menu .burger-menu__sub-item--nested {
+  padding-inline-start: 1rem;
+  font-size: 0.875em;
+  opacity: 0.75;
+}

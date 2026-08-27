@@ -34,6 +34,14 @@
                       <div class="header__submenu-list">
                         {% for sub in group.items | default([]) %}
                           <a href="{{ url(sub.href) }}" class="link header__submenu-link">{{ sub.title }}</a>
+                          {# Шипованные и нешипованные — часть зимних, а не соседний сезон #}
+                          {% if sub.items is defined and sub.items is not empty %}
+                            <div class="header__submenu-list header__submenu-list--nested">
+                              {% for leaf in sub.items %}
+                                <a href="{{ url(leaf.href) }}" class="link header__submenu-link header__submenu-link--nested">{{ leaf.title }}</a>
+                              {% endfor %}
+                            </div>
+                          {% endif %}
                         {% endfor %}
                       </div>
                     </div>
