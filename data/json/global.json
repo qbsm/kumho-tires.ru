@@ -27,7 +27,7 @@
         {
           "title": "Бренд",
           "href": "/brand",
-          "visible": true,
+          "visible": false,
           "active_for": [
             "brand"
           ]
@@ -76,7 +76,7 @@
         {
           "title": "Brand",
           "href": "/brand",
-          "visible": true,
+          "visible": false,
           "active_for": [
             "brand"
           ]
