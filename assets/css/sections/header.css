@@ -179,6 +179,9 @@
 .header .header__submenu-list {
   display: flex;
   flex-direction: column;
+
+  /* Ссылка сжимается по тексту: растянутая на колонку подчёркивалась целиком */
+  align-items: flex-start;
   gap: 0.625rem;
 }
 
