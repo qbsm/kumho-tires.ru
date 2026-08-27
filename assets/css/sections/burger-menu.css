@@ -30,3 +30,7 @@
   font-size: 0.9375em;
 }
 
+.burger-menu .burger-menu__sub-item--nested {
+  padding-inline-start: 1.2rem;
+}
+

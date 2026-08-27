@@ -190,6 +190,11 @@
   white-space: nowrap;
 }
 
+/* Сдвиг задан внешним полем: внутреннее попало бы под линию подчёркивания */
+.header .header__submenu-link--nested {
+  margin-inline-start: 1.2rem;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .header .header__submenu {

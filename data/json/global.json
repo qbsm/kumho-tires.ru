@@ -60,11 +60,13 @@
                 },
                 {
                   "title": "Шипованные",
-                  "href": "/tires/studded"
+                  "href": "/tires/studded",
+                  "nested": true
                 },
                 {
                   "title": "Нешипованные",
-                  "href": "/tires/friction"
+                  "href": "/tires/friction",
+                  "nested": true
                 }
               ]
             },
@@ -171,11 +173,13 @@
                 },
                 {
                   "title": "Studded",
-                  "href": "/tires/studded"
+                  "href": "/tires/studded",
+                  "nested": true
                 },
                 {
                   "title": "Studless",
-                  "href": "/tires/friction"
+                  "href": "/tires/friction",
+                  "nested": true
                 }
               ]
             },

@@ -22,7 +22,7 @@
               <span class="burger-menu__sub-title uppercase">{{ group.group }}</span>
             {% endif %}
             {% for sub in group.items | default([]) %}
-              <a href="{{ url(sub.href) }}" class="burger-menu__sub-item link">{{ sub.title }}</a>
+              <a href="{{ url(sub.href) }}" class="burger-menu__sub-item link{{ sub.nested is defined and sub.nested ? ' burger-menu__sub-item--nested' : '' }}">{{ sub.title }}</a>
             {% endfor %}
           {% endfor %}
         </div>

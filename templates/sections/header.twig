@@ -33,7 +33,8 @@
                       {% endif %}
                       <div class="header__submenu-list">
                         {% for sub in group.items | default([]) %}
-                          <a href="{{ url(sub.href) }}" class="link color-2 underline-center header__submenu-link">{{ sub.title }}</a>
+                          {# Шипованные и нешипованные — подразделы зимних: сдвиг вместо отдельного уровня #}
+                          <a href="{{ url(sub.href) }}" class="link color-2 underline-center header__submenu-link{{ sub.nested is defined and sub.nested ? ' header__submenu-link--nested' : '' }}">{{ sub.title }}</a>
                         {% endfor %}
                       </div>
                     </div>
