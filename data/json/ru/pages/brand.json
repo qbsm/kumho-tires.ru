@@ -21,7 +21,7 @@
           "class": "content-about",
           "items": [
             {
-              "class": "content-wrap container-sm",
+              "class": "content-wrap",
               "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h1",
@@ -31,7 +31,7 @@
               "desc": "<p>Шины Kumho выпускает <b>Kumho Tire Co., Inc.</b> — компания из Республики Корея. Штаб-квартира и головной завод находятся в Кванджу, на юго-западе страны. По объёму выпуска это второй производитель шин в Корее.</p><p>Компания основана <b>5 сентября 1960 года</b> под названием «Самъян Тайер» (Samyang Tire). В 1984 году она вошла в группу Kumho, а с 2003 года шины выпускаются под маркой Kumho Tire. Русское написание бренда — «Кумхо».</p>"
             },
             {
-              "class": "content-wrap container-sm",
+              "class": "content-wrap",
               "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
@@ -41,7 +41,7 @@
               "desc": "<p>У компании восемь шинных заводов в четырёх странах.</p><p><b>Республика Корея</b> — Кванджу, Коксон и Пхёнтхэк. <b>Китай</b> — Нанкин, Тяньцзинь и Чанчунь. <b>Вьетнам</b> — провинция Биньзыонг. <b>США</b> — Мейкон, штат Джорджия.</p><p>Разработка и испытания ведутся в Корее; на разные рынки шины отгружаются с разных площадок, поэтому страна производства у двух одинаковых моделей может отличаться.</p>"
             },
             {
-              "class": "content-wrap container-sm",
+              "class": "content-wrap",
               "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
@@ -51,7 +51,7 @@
               "desc": "<p>С 2018 года крупнейший акционер Kumho Tire — компания Singwey Korea, созданная китайской Doublestar совместно с Qingdao Guoxin. На конец 2024 года ей принадлежало <b>45 % акций</b>. В феврале 2026 года изменение структуры владения получило одобрение регулятора.</p><p>При этом сама Kumho Tire остаётся корейским юридическим лицом со штаб-квартирой в Кванджу, здесь же находятся исследовательский центр и головное производство. Поэтому корректный ответ на вопрос «какой страны бренд» — Республика Корея, а «китайская» относится к составу акционеров, а не к происхождению марки.</p>"
             },
             {
-              "class": "content-wrap container-sm",
+              "class": "content-wrap",
               "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",
@@ -61,7 +61,7 @@
               "desc": "<p>Страна и завод зашифрованы в <b>DOT-коде на боковине</b>: первые два знака после букв DOT — код завода-изготовителя, последние четыре цифры — неделя и год выпуска. Рядом с DOT часто нанесена и прямая надпись <b>Made in</b> с названием страны.</p><p>Та же маркировка показывает свежесть комплекта: по неделе и году видно, сколько шины пролежали на складе. Проверять её стоит до оплаты — на любой шине, в любом магазине.</p>"
             },
             {
-              "class": "content-wrap container-sm",
+              "class": "content-wrap",
               "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
               "heading": {
                 "tag": "h2",

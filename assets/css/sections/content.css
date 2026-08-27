@@ -266,3 +266,8 @@
 .content-container .container-md {
   transform: none;
 }
+
+/* Текстовый блок и вопросы подряд дают двойной вертикальный отступ: 60 снизу и 60 сверху */
+.content-container + .faq {
+  padding-top: 0;
+}
