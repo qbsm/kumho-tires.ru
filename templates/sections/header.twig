@@ -23,7 +23,7 @@
         <div class="section__inner nav-link-wrap{{ hasSubmenu ? ' has-submenu' : '' }}">
           {% if item.accent is defined and item.accent %}
             {# Целевое действие каталога выделено кнопкой: остальные пункты — навигация #}
-            <a href="{{ url(itemHref) }}" class="button button-sm button-3 button-animated animation-shift uppercase link header__cta">{{ item.title }}</a>
+            <a href="{{ url(itemHref) }}" class="button button-sm button-3 uppercase link header__cta">{{ item.title }}</a>
           {% else %}
             <a href="{{ url(itemHref) }}" class="link color-2 underline-center header__nav-link{{ isActive ? ' active' : '' }}"{{ hasSubmenu ? ' aria-haspopup="true"' : '' }}>{{ item.title }}</a>
           {% endif %}

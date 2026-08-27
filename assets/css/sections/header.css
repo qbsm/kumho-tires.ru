@@ -144,11 +144,16 @@
 .header .header__submenu-inner {
   display: flex;
   flex-direction: column;
-  min-width: 20rem;
-  padding: 1.75rem;
-  border-radius: 1.25rem;
-  background-color: var(--color-1);
-  box-shadow: 0 1.5rem 3.5rem rgb(0 0 0 / 14%);
+  min-width: 22rem;
+  padding: 2rem 2.4rem;
+  border-radius: 2.4rem;
+  background: var(--color-1);
+
+  /* Как карточки и панель фильтра: рамки нет, держит мягкая многослойная тень */
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 6%),
+    0 24px 48px rgb(0 0 0 / 4%);
 }
 
 .header .header__submenu-groups {
@@ -164,9 +169,10 @@
 }
 
 .header .header__submenu-title {
-  font-size: 0.6875em;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-family: var(--font-2);
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--color-5);
   white-space: nowrap;
 }
@@ -178,7 +184,7 @@
 }
 
 .header .header__submenu-link {
-  font-size: 0.9375em;
+  font-size: 0.9em;
   line-height: 1.2;
   white-space: nowrap;
   color: var(--color-2);
@@ -206,9 +212,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  margin-block-start: 1.5rem;
-  padding-block-start: 1.25rem;
-  border-block-start: 1px solid var(--color-4);
+  margin-block-start: 1.6rem;
+  padding-block-start: 1.4rem;
+  border-block-start: 0.1rem solid var(--color-4);
 }
 
 .header .header__submenu-featured-title {
@@ -242,4 +248,15 @@
 
 .header .header__cta {
   color: var(--color-1);
+}
+
+/* Иконка рисуется маской, а не <img>: цветом управляет currentcolor — как стрелка кнопок */
+.header .header__cta::before {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: currentcolor;
+  mask: url("/data/img/ui/icons/icon-locate-color-2.svg") center / contain no-repeat;
 }
