@@ -88,8 +88,7 @@
 }
 
 .header .header__nav-link.underline-center::after,
-.header .header__submenu-link.underline-center::after,
-.header .header__submenu-featured-title.underline-center::after {
+.header .header__submenu-link.underline-center::after {
   background-color: var(--color-3);
 }
 
@@ -188,39 +187,6 @@
   white-space: nowrap;
 }
 
-.header .header__submenu-list--nested {
-  gap: 0.5rem;
-  margin-block-start: 0.5rem;
-  padding-inline-start: 0.875rem;
-  border-inline-start: 1px solid var(--color-4);
-}
-
-
-/* Подбор — действие, а не раздел каталога: отделён линией и подписью */
-.header .header__submenu-featured {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-block-start: 1.6rem;
-  padding-block-start: 1.4rem;
-  border-block-start: 0.1rem solid var(--color-4);
-}
-
-.header .header__submenu-featured-title {
-  align-self: flex-start;
-  line-height: 1.2;
-}
-
-.header .header__submenu-featured-note {
-  font-size: 0.8125em;
-  line-height: 1.3;
-  color: var(--color-5);
-}
-
-.header .header__submenu-featured:hover .header__submenu-featured-title::after,
-.header .header__submenu-featured:focus-visible .header__submenu-featured-title::after {
-  transform: scaleX(1);
-}
 
 @media (prefers-reduced-motion: reduce) {
   .header .header__submenu {
@@ -241,8 +207,9 @@
   content: "";
   order: 1;
   flex-shrink: 0;
-  width: 1.1rem;
-  height: 0.7rem;
+  width: 0.9rem;
+  height: 0.55rem;
+  translate: 0 -0.1rem;
   background-color: currentcolor;
   mask: url("/data/img/ui/icons/icon-chevron-down-color-2.svg") center / contain no-repeat;
   transition: rotate 0.25s ease-out;
@@ -255,16 +222,12 @@
 
 /* Целевое действие — последний пункт ряда: оформление задаётся местом в меню,
    отдельного флага в данных для этого нет. Ссылка, а не кнопка. */
-.header .nav-wrap .nav-link-wrap:last-child {
-  margin-inline-start: 0.8rem;
-}
-
 .header .nav-wrap .nav-link-wrap:last-child .header__nav-link {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   height: 4rem;
-  padding: 0 2rem;
+  padding: 0 2rem 0 1.2rem;
   background: var(--color-3);
   border-radius: 4rem;
   font-size: 1.3rem;

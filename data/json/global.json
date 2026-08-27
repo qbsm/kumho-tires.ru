@@ -36,11 +36,15 @@
           "active_for": ["tires-list", "tire"],
           "children": [
             {
-              "group": "По сезону",
+              "group": "Каталог",
               "items": [
                 {
                   "title": "Весь каталог",
                   "href": "/tires"
+                },
+                {
+                  "title": "Подбор шин",
+                  "href": "/podbor"
                 },
                 {
                   "title": "Летние",
@@ -52,22 +56,20 @@
                 },
                 {
                   "title": "Зимние",
-                  "href": "/tires/winter",
-                  "items": [
-                    {
-                      "title": "Шипованные",
-                      "href": "/tires/studded"
-                    },
-                    {
-                      "title": "Нешипованные",
-                      "href": "/tires/friction"
-                    }
-                  ]
+                  "href": "/tires/winter"
+                },
+                {
+                  "title": "Шипованные",
+                  "href": "/tires/studded"
+                },
+                {
+                  "title": "Нешипованные",
+                  "href": "/tires/friction"
                 }
               ]
             },
             {
-              "group": "По линейке",
+              "group": "Линейки",
               "items": [
                 {
                   "title": "WinterCraft",
@@ -99,12 +101,7 @@
                 }
               ]
             }
-          ],
-          "featured": {
-            "title": "Подбор шин",
-            "href": "/podbor",
-            "note": "По автомобилю и размеру"
-          }
+          ]
         },
         {
           "title": "Подбор шин",
@@ -150,11 +147,15 @@
           "active_for": ["tires-list", "tire"],
           "children": [
             {
-              "group": "By season",
+              "group": "Catalog",
               "items": [
                 {
                   "title": "All tires",
                   "href": "/tires"
+                },
+                {
+                  "title": "Tire selector",
+                  "href": "/podbor"
                 },
                 {
                   "title": "Summer",
@@ -166,22 +167,20 @@
                 },
                 {
                   "title": "Winter",
-                  "href": "/tires/winter",
-                  "items": [
-                    {
-                      "title": "Studded",
-                      "href": "/tires/studded"
-                    },
-                    {
-                      "title": "Studless",
-                      "href": "/tires/friction"
-                    }
-                  ]
+                  "href": "/tires/winter"
+                },
+                {
+                  "title": "Studded",
+                  "href": "/tires/studded"
+                },
+                {
+                  "title": "Studless",
+                  "href": "/tires/friction"
                 }
               ]
             },
             {
-              "group": "By line",
+              "group": "Families",
               "items": [
                 {
                   "title": "WinterCraft",
@@ -213,12 +212,7 @@
                 }
               ]
             }
-          ],
-          "featured": {
-            "title": "Tire selector",
-            "href": "/podbor",
-            "note": "By vehicle and size"
-          }
+          ]
         },
         {
           "title": "Extended warranty",
