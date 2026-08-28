@@ -288,12 +288,12 @@
         <div class="section__subitem filter-empty-wrap hidden js-filter-empty">
           <span class="filter-empty-text">Такие модели не найдены</span>
         </div>
-        {# Ходовые типоразмеры — единственный путь к этим страницам, кроме sitemap:
+        {# Популярные типоразмеры — единственный путь к этим страницам, кроме sitemap:
            селекты фильтра меняют адрес скриптом, ссылками их не обойти #}
         {% set indexableSizes = config.settings.collections.tires.filters.indexable_sizes | default([]) %}
         {% if not hasPreviewLimit and not presetSize and indexableSizes | length > 0 %}
-          <nav class="section__subitem tires__sizes" aria-label="Ходовые типоразмеры">
-            <span class="tires__sizes-title uppercase">Ходовые типоразмеры</span>
+          <nav class="section__subitem tires__sizes" aria-label="Популярные типоразмеры">
+            <span class="tires__sizes-title uppercase">Популярные типоразмеры</span>
             <div class="tires__sizes-list">
               {% for sizeSlug in indexableSizes %}
                 {% set sizeParts = sizeSlug | split('-') %}
