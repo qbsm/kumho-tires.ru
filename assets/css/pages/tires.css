@@ -358,3 +358,17 @@ a.tire-detail__badge:active {
 .tires .tires__sizes-link.underline-center::after {
   background-color: var(--color-3);
 }
+
+/* Подмена списка на месте: пока грузится новый раздел, старый гасим и блокируем
+   повторные клики — иначе на медленной сети видно два подряд переключения */
+.tires.is-swapping {
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tires.is-swapping {
+    transition: none;
+  }
+}
