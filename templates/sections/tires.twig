@@ -111,6 +111,42 @@
         {% endfor %}
         {% set tiresItems = matchedItems %}
       {% endif %}
+      {# Страница типоразмера: состав каталога в этом размере — из того же
+         отфильтрованного списка, чтобы текст не расходился с выдачей #}
+      {% if presetSize and tiresItems | length > 0 %}
+        {% set sizeTitle = presetWidth ~ '/' ~ presetProfile ~ ' R' ~ presetDiameter %}
+        {% set sizeGroupLabels = {'summer': 'летние', 'allseason': 'всесезонные', 'studded': 'шипованные', 'friction': 'нешипованные'} %}
+        {% set sizeGroups = [] %}
+        {% for code, groupLabel in sizeGroupLabels %}
+          {% set groupLinks = [] %}
+          {% for tireItem in tiresItems %}
+            {% if code in (seasonBySlug[tireItem.slug | default('')] | default([])) %}
+              {% set groupLinks = groupLinks | merge([
+                '<a href="' ~ url('/tires/' ~ tireItem.slug) ~ '" class="link inline weight-400">'
+                ~ (tireItem.item.name | default(tireItem.slug) | replace({'Kumho ': ''})) ~ '</a>'
+              ]) %}
+            {% endif %}
+          {% endfor %}
+          {% if groupLinks | length > 0 %}
+            {% set sizeGroups = sizeGroups | merge([groupLabel ~ ' — ' ~ groupLinks | join(', ')]) %}
+          {% endif %}
+        {% endfor %}
+        {% set sizeCount = tiresItems | length %}
+        {% set sizeCount10 = sizeCount % 10 %}
+        {% set sizeCount100 = sizeCount % 100 %}
+        {% if sizeCount10 == 1 and sizeCount100 != 11 %}
+          {% set sizeCountWord = 'модель' %}
+        {% elseif sizeCount10 >= 2 and sizeCount10 <= 4 and (sizeCount100 < 12 or sizeCount100 > 14) %}
+          {% set sizeCountWord = 'модели' %}
+        {% else %}
+          {% set sizeCountWord = 'моделей' %}
+        {% endif %}
+        <div class="section__subitem longread-wrap">
+          <span class="longread">
+            <p>В размере <b>{{ sizeTitle }}</b> в каталоге <b>{{ sizeCount }} {{ sizeCountWord }}</b> Kumho: {{ sizeGroups | join('; ') | raw }}.</p>
+          </span>
+        </div>
+      {% endif %}
       {% set previewLimit = data.preview_limit | default(0) %}
       {% set hasPreviewLimit = previewLimit > 0 %}
       {# JSON-LD: каталог моделей (ItemList) — только на полной странице каталога, для поисковиков и LLM #}
@@ -252,6 +288,20 @@
         <div class="section__subitem filter-empty-wrap hidden js-filter-empty">
           <span class="filter-empty-text">Такие модели не найдены</span>
         </div>
+        {# Ходовые типоразмеры — единственный путь к этим страницам, кроме sitemap:
+           селекты фильтра меняют адрес скриптом, ссылками их не обойти #}
+        {% set indexableSizes = config.settings.collections.tires.filters.indexable_sizes | default([]) %}
+        {% if not hasPreviewLimit and not presetSize and indexableSizes | length > 0 %}
+          <nav class="section__subitem tires__sizes" aria-label="Ходовые типоразмеры">
+            <span class="tires__sizes-title uppercase">Ходовые типоразмеры</span>
+            <div class="tires__sizes-list">
+              {% for sizeSlug in indexableSizes %}
+                {% set sizeParts = sizeSlug | split('-') %}
+                <a href="{{ url('/tires/' ~ sizeSlug) }}" class="link color-2 underline-center tires__sizes-link">{{ sizeParts[0] }}/{{ sizeParts[1] }} {{ sizeParts[2] | upper }}</a>
+              {% endfor %}
+            </div>
+          </nav>
+        {% endif %}
       {% endif %}
     </div>
   </div>

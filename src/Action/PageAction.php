@@ -203,59 +203,92 @@ final class PageAction
             $seoData = ['title' => '', 'meta' => [], 'json_ld' => null];
         }
 
-        // Страница фильтра — сезонная или по линейке моделей — самостоятельная посадочная:
-        // свой title, description и h1, иначе адреса делят заголовок с общим каталогом
+        // Страница фильтра — сезонная, по линейке моделей или по типоразмеру — самостоятельная
+        // посадочная: свой title, description и h1, иначе адреса делят заголовок с общим каталогом
+        $filterVariants = (array) ($this->settings['collections']['tires']['filters'] ?? []);
         $filterGroup = '';
         if ($extrasFilter !== null && !isset($extrasFilter['width'])) {
             $filterGroup = isset($extrasFilter['season']) ? 'season' : (isset($extrasFilter['family']) ? 'family' : '');
         }
+
+        $title = '';
+        $description = '';
+        $heading = '';
+        $contentKey = '';
+
         if ($filterGroup !== '') {
             $filterKey = (string) $extrasFilter[$filterGroup];
-            $variants = (array) ($this->settings['collections']['tires']['filters'][$filterGroup] ?? []);
+            $variants = (array) ($filterVariants[$filterGroup] ?? []);
             $variant = $variants[$filterKey] ?? null;
             $variant = is_array($variant) ? $variant : ['label' => (string) $variant];
             $label = (string) ($variant['label'] ?? '');
             if ($label !== '') {
                 $genitive = (string) ($variant['genitive'] ?? mb_strtolower($label));
                 if ($filterGroup === 'family') {
-                    $seoData['title'] = 'Шины Kumho ' . $label . ' — все модели линейки и типоразмеры';
+                    $title = 'Шины Kumho ' . $label . ' — все модели линейки и типоразмеры';
                     $description = 'Линейка Kumho ' . $label . ' в каталоге официального дистрибьютора: модели, '
                         . 'типоразмеры и характеристики. Фильтр по диаметру, ширине и профилю.';
                 } else {
-                    $seoData['title'] = $label . ' шины Kumho (Кумхо) — каталог, купить в России';
+                    $title = $label . ' шины Kumho (Кумхо) — каталог, купить в России';
                     $description = 'Каталог ' . $genitive . ' шин Kumho: модели и типоразмеры для легковых автомобилей, '
                         . 'кроссоверов, внедорожников и коммерческого транспорта. Фильтр по диаметру, ширине и профилю.';
                 }
-                $meta = isset($seoData['meta']) && is_array($seoData['meta']) ? $seoData['meta'] : [];
-                foreach ($meta as $index => $tag) {
-                    if (!is_array($tag)) {
-                        continue;
-                    }
-                    if (($tag['name'] ?? '') === 'description' || ($tag['property'] ?? '') === 'og:description') {
-                        $meta[$index]['content'] = $description;
-                    }
-                    if (($tag['property'] ?? '') === 'og:title') {
-                        $meta[$index]['content'] = $seoData['title'];
-                    }
-                }
-                $seoData['meta'] = $meta;
-
                 $heading = (string) ($variant['h1'] ?? ($label . ' шины Kumho'));
-                foreach (($pageData['sections'] ?? []) as $idx => $section) {
-                    if (($section['name'] ?? '') === 'tires' && isset($section['data']['heading']['title'])) {
-                        $pageData['sections'][$idx]['data']['heading']['title'] = $heading;
-                    }
-                }
+                $contentKey = $filterKey;
+            }
+        } elseif ($extrasFilter !== null && isset($extrasFilter['width'])) {
+            // Типоразмер в адресе: посадочная под запросы вида «шины кумхо 205 55 r16»
+            $sizeLabel = $extrasFilter['width'] . '/' . $extrasFilter['profile'] . ' R' . $extrasFilter['diameter'];
+            $seasonKey = (string) ($extrasFilter['season'] ?? '');
+            $seasons = (array) ($filterVariants['season'] ?? []);
+            $seasonVariant = $seasons[$seasonKey] ?? null;
+            $seasonLabel = '';
+            $seasonGenitive = '';
+            if (is_array($seasonVariant)) {
+                $seasonLabel = (string) ($seasonVariant['label'] ?? '');
+                $seasonGenitive = (string) ($seasonVariant['genitive'] ?? mb_strtolower($seasonLabel));
+            }
 
-                // Свой текст страницы фильтра вместо общего текста каталога: иначе посадочные
-                // отличались бы только заголовком.
-                $contentFile = $jsonBaseDir . '/' . $langCode . '/filters/tires-' . $filterKey . '.json';
-                $seasonContent = $this->dataLoader->loadJson($contentFile, $baseUrl);
-                if (is_array($seasonContent) && isset($seasonContent['content']) && is_array($seasonContent['content'])) {
-                    foreach (($pageData['sections'] ?? []) as $idx => $section) {
-                        if (($section['name'] ?? '') === 'content-container') {
-                            $pageData['sections'][$idx]['data']['content'] = $seasonContent['content'];
-                        }
+            $heading = ($seasonLabel !== '' ? $seasonLabel . ' шины' : 'Шины') . ' Kumho ' . $sizeLabel;
+            $title = $heading . ' — все модели в этом размере';
+            $description = ($seasonGenitive !== '' ? 'Каталог ' . $seasonGenitive . ' шин' : 'Каталог шин')
+                . ' Kumho в размере ' . $sizeLabel . ': модели официального дистрибьютора, характеристики, '
+                . 'индексы нагрузки и скорости. Где купить в России.';
+        }
+
+        if ($title !== '') {
+            $seoData['title'] = $title;
+            $meta = isset($seoData['meta']) && is_array($seoData['meta']) ? $seoData['meta'] : [];
+            foreach ($meta as $index => $tag) {
+                if (!is_array($tag)) {
+                    continue;
+                }
+                if (($tag['name'] ?? '') === 'description' || ($tag['property'] ?? '') === 'og:description') {
+                    $meta[$index]['content'] = $description;
+                }
+                if (($tag['property'] ?? '') === 'og:title') {
+                    $meta[$index]['content'] = $seoData['title'];
+                }
+            }
+            $seoData['meta'] = $meta;
+
+            foreach (($pageData['sections'] ?? []) as $idx => $section) {
+                if (($section['name'] ?? '') === 'tires' && isset($section['data']['heading']['title'])) {
+                    $pageData['sections'][$idx]['data']['heading']['title'] = $heading;
+                }
+            }
+        }
+
+        // Свой текст страницы фильтра вместо общего текста каталога: иначе посадочные
+        // отличались бы только заголовком. У типоразмеров своего файла нет — там текст
+        // собирается из отфильтрованного списка моделей в шаблоне.
+        if ($contentKey !== '') {
+            $contentFile = $jsonBaseDir . '/' . $langCode . '/filters/tires-' . $contentKey . '.json';
+            $seasonContent = $this->dataLoader->loadJson($contentFile, $baseUrl);
+            if (is_array($seasonContent) && isset($seasonContent['content']) && is_array($seasonContent['content'])) {
+                foreach (($pageData['sections'] ?? []) as $idx => $section) {
+                    if (($section['name'] ?? '') === 'content-container') {
+                        $pageData['sections'][$idx]['data']['content'] = $seasonContent['content'];
                     }
                 }
             }
@@ -304,11 +337,17 @@ final class PageAction
             $response = $response->withHeader('X-Robots-Tag', 'noindex, follow');
         }
 
-        // Сезонные страницы фильтра индексируются: это осмысленные посадочные.
-        // Комбинации с типоразмером — noindex, follow: их сотни, в индексе они лишние,
-        // но вес по ссылкам на модели передаётся.
+        // Сезонные страницы фильтра и страницы линеек индексируются: это осмысленные посадочные.
+        // Из типоразмеров открыт только белый список ходовых — остальные сотни комбинаций
+        // дублируют друг друга и уходят в noindex, follow: вес по ссылкам на модели передаётся.
+        // Связка «сезон + размер» закрыта всегда: она повторяет страницу размера.
         if ($extrasFilter !== null && isset($extrasFilter['width'])) {
-            $response = $response->withHeader('X-Robots-Tag', 'noindex, follow');
+            $sizeSlug = $extrasFilter['width'] . '-' . $extrasFilter['profile'] . '-r' . $extrasFilter['diameter'];
+            $indexableSizes = (array) ($this->settings['collections']['tires']['filters']['indexable_sizes'] ?? []);
+            $sizeIsOpen = count($extrasFilter) === 3 && in_array($sizeSlug, $indexableSizes, true);
+            if (!$sizeIsOpen) {
+                $response = $response->withHeader('X-Robots-Tag', 'noindex, follow');
+            }
         }
 
         return $this->twig->render($response, $template, $data);

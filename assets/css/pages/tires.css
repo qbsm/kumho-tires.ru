@@ -326,3 +326,35 @@ a.tire-detail__badge:active {
 .tire-detail__table tbody tr:nth-child(even) {
   background: #fafafa;
 }
+
+/* Ходовые типоразмеры под каталогом: ряд ссылок, а не карточки — это навигация,
+   а не витрина, и она не должна спорить со списком моделей */
+.tires .tires__sizes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-block-start: 4rem;
+  padding-block-start: 3rem;
+  border-block-start: 0.1rem solid var(--color-4);
+}
+
+.tires .tires__sizes-title {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-5);
+}
+
+.tires .tires__sizes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.tires .tires__sizes-link {
+  white-space: nowrap;
+}
+
+.tires .tires__sizes-link.underline-center::after {
+  background-color: var(--color-3);
+}
