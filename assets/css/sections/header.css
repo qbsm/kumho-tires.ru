@@ -207,17 +207,17 @@
 /* Пункт с панелью помечен стрелкой: иначе выпадашка не видна до наведения */
 .header .nav-link-wrap.has-submenu .header__nav-link {
   display: inline-flex;
-  align-items: center;
+
+  /* У svg базовая линия — нижняя кромка, поэтому стрелка встаёт на строку текста */
+  align-items: baseline;
   gap: 0.5rem;
 }
 
-/* Строчный бокс включает выносные элементы, поэтому стрелка по его середине
-   садится ниже заглавных — поднимаем на оптический центр */
 .header .header__nav-caret {
   flex-shrink: 0;
-  width: 1rem;
-  height: 0.6rem;
-  translate: 0 -0.1rem;
+  width: 0.9rem;
+  height: 0.54rem;
+  color: var(--color-5);
   transition: transform 0.25s ease;
 }
 
