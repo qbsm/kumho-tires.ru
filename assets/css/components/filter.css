@@ -61,7 +61,6 @@
   flex: 0 0 auto;
   width: 1.15em;
   height: 1.15em;
-  margin-right: 0.5em;
   background-color: var(--color-3);
   mask: var(--filter-icon) center / contain no-repeat;
 
@@ -74,11 +73,11 @@
   background-color: var(--color-1);
 }
 
-/* Оптическая компенсация: gap группы (0.5rem) отодвигает иконку от своего лейбла ровно
-   так же, как от соседней группы, и она читается как ничья. Отрицательный margin
-   прижимает её к лейблу, левый — отыгрывает воздух до предыдущей группы. */
+/* Иконка отбита от своего лейбла ровно так же, как в кнопках сезонов (0.8rem):
+   до правки у селектов расстояние набиралось из gap группы и было заметно теснее.
+   Левый margin отыгрывает воздух до предыдущей группы. */
 .filter .filter__icon--select {
-  margin-right: -0.2rem;
+  margin-right: 0.3rem;
   margin-left: 0.3rem;
 }
 
@@ -100,7 +99,7 @@
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   border: 0.1rem solid var(--color-4);
   border-radius: 0.75rem;
   background: var(--color-1);

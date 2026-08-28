@@ -28,7 +28,10 @@
     width: 116rem;
     margin-left: calc((100vw - 116rem) / 2);
     margin-right: calc((100vw - 116rem) / 2);
-    padding: 1rem 2rem;
+
+    /* Справа плашка отбита ровно так же, как сверху и снизу: поле шапки 1rem
+       плюс полразницы высот ряда и кнопки */
+    padding: 1rem 1.6rem 1rem 2rem;
     border-radius: 4rem;
   }
 
@@ -49,7 +52,6 @@
 
   @media (--lg) {
     margin-left: 2rem;
-    margin-right: 2rem;
   }
 }
 
@@ -237,6 +239,9 @@
   background: var(--color-3);
   border-radius: 4rem;
   font-size: 1.3rem;
+
+  /* Кегль, насыщенность и разрядка — как у кнопок сайта: плашка одна из них */
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-1);
