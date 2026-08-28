@@ -1,4 +1,17 @@
-<section class="tires section"{% if page_id is defined and page_id == 'tires-list' %} data-catalog-path="/tires"{% endif %}>
+{% set preset = filter_preset | default({}) %}
+{% set presetSeason = preset.season | default('') %}
+{% set presetWidth = preset.width | default('') %}
+{% set presetProfile = preset.profile | default('') %}
+{% set presetDiameter = preset.diameter | default('') %}
+{% set presetFamily = preset.family | default('') %}
+{% set presetSize = presetWidth or presetProfile or presetDiameter %}
+{# Размер держится при смене сезона: со страницы размера сезонный чип ведёт на
+   /tires/<сезон>/<размер>, а повторный клик снимает сезон и возвращает к размеру,
+   а не в общий каталог #}
+{% set sizeSegment = presetSize ? presetWidth ~ '-' ~ presetProfile ~ '-r' ~ presetDiameter : '' %}
+{% set catalogRoot = '/tires' ~ (presetSeason ? '/' ~ presetSeason : '') %}
+{% set catalogPath = '/tires' ~ (sizeSegment ? '/' ~ sizeSegment : '') %}
+<section class="tires section"{% if page_id is defined and page_id == 'tires-list' %} data-catalog-path="{{ catalogPath }}" data-catalog-root="{{ catalogRoot }}"{% endif %}>
   <div class="container">
     <div class="section__item block-wrap">
       {% if data.heading is defined %}
@@ -76,13 +89,6 @@
       {% endif %}
       {# Сезон и размер из адреса режут каталог на сервере: страница фильтра, отдающая весь
          список, для поиска неотличима от /tires — именно из-за этого выигрывала главная #}
-      {% set preset = filter_preset | default({}) %}
-      {% set presetSeason = preset.season | default('') %}
-      {% set presetWidth = preset.width | default('') %}
-      {% set presetProfile = preset.profile | default('') %}
-      {% set presetDiameter = preset.diameter | default('') %}
-      {% set presetFamily = preset.family | default('') %}
-      {% set presetSize = presetWidth or presetProfile or presetDiameter %}
       {% if presetSeason or presetFamily or presetSize %}
         {% set matchedItems = [] %}
         {% for tireItem in tiresItems %}
@@ -202,7 +208,7 @@
         {% for s in data.filter.seasons | default([]) %}
           {% set btn = {'label': s.label, 'class': 'js-select-season', 'data_attr_name': 'data-season', 'data_attr': s.value} %}
           {% if seasonHrefBase %}
-            {% set btn = btn | merge({'href': seasonHrefBase ~ '/' ~ s.value}) %}
+            {% set btn = btn | merge({'href': seasonHrefBase ~ '/' ~ s.value ~ (sizeSegment ? '/' ~ sizeSegment : '')}) %}
           {% endif %}
           {% if s.disabled is defined and s.disabled %}
             {% set btn = btn | merge({'disabled': true}) %}

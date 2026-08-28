@@ -154,9 +154,27 @@ onReady(() => {
     });
   });
 
+  // Полный типоразмер — отдельная страница: список режет сервер, поэтому при выборе всех трёх
+  // значений переходим на неё, а не фильтруем на месте. Иначе адрес и h1 показывали бы один
+  // размер, а карточки — другой, да ещё и из подмножества уже отфильтрованного сервером.
+  const catalogRoot = (root.dataset.catalogRoot || '').replace(/\/$/, '');
+  const syncSizeUrl = () => {
+    if (!catalogRoot) return false;
+    const width = widthSelect ? widthSelect.value : '';
+    const profile = profileSelect ? profileSelect.value : '';
+    const diameter = diameterSelect ? diameterSelect.value : '';
+    const target = width && profile && diameter ? `${catalogRoot}/${width}-${profile}-r${diameter}` : catalogRoot;
+    if (target === window.location.pathname) return false;
+    window.location.assign(target);
+    return true;
+  };
+
   [diameterSelect, profileSelect, widthSelect].forEach((select) => {
     if (!select) return;
-    select.addEventListener('change', applyFilter);
+    select.addEventListener('change', () => {
+      if (syncSizeUrl()) return;
+      applyFilter();
+    });
   });
 
   // Пресет фильтра: человечный адрес (/tires/summer/205-55-r16) или query-параметры
