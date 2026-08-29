@@ -108,3 +108,9 @@
   margin-inline: auto;
   margin-block-start: 2rem;
 }
+
+/* Атрибут hidden сам по себе кнопку не убирает: правило браузера [hidden] слабее
+   класса .button с его display, и скрытая кнопка оставалась пустым местом в потоке */
+.dealers .dealers__more[hidden] {
+  display: none;
+}
