@@ -194,6 +194,12 @@ Object.values(globalData.nav || {}).forEach((navLang) => {
     linked.add(String(item.href || '').replace(/\/$/, '') || '/');
   });
 });
+// Ссылки футера — тоже навигация: они выводятся на каждой странице сайта.
+Object.values(globalData['footer-links'] || {}).forEach((links) => {
+  (links || []).forEach((item) => {
+    if (item && item.href) linked.add(String(item.href).replace(/\/$/, ''));
+  });
+});
 ['policy', 'cookies-policy'].forEach((key) => {
   Object.values(globalData[key] || {}).forEach((entry) => {
     if (entry && entry.href) linked.add(String(entry.href).replace(/\/$/, ''));

@@ -1,0 +1,118 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div id="page-content">
+  {% include 'sections/header.twig' with {'data': {}} %}
+  {% set a = article.article %}
+  {% if a.cover is defined and a.cover %}
+    {% include 'sections/frame.twig' with {'data': {'cover': a.cover}} %}
+  {% endif %}
+
+  <main class="article-detail" role="main">
+    <article>
+      <section class="content-container section">
+        <div class="container-sm">
+          {% if breadcrumb is defined and breadcrumb|length > 0 %}
+            <nav class="section__item article-detail__breadcrumb" aria-label="Хлебные крошки">
+              {% for item in breadcrumb %}
+                <a href="{{ item.url }}" class="link">{{ item.name }}</a>{% if not loop.last %} <span class="article-detail__breadcrumb-sep" aria-hidden="true">/</span> {% endif %}
+              {% endfor %}
+            </nav>
+          {% endif %}
+
+          {# Время чтения считается по тексту статьи: 180 слов в минуту, отдельного поля в данных нет #}
+          {% set _words = (a.lead|default('') ~ ' ' ~ a.body|default(''))|striptags|trim|split(' ')|filter(w => w|trim != '')|length %}
+          {% set _minutes = max(1, (_words / 180)|round(0, 'ceil')) %}
+          {% set _m10 = _minutes % 10 %}{% set _m100 = _minutes % 100 %}
+          {% set _mWord = (_m10 == 1 and _m100 != 11) ? 'минута' : ((_m10 >= 2 and _m10 <= 4 and (_m100 < 12 or _m100 > 14)) ? 'минуты' : 'минут') %}
+          <div class="section__item article-detail__meta">
+            {% if a.hex is defined %}<span class="article-detail__hex" style="background: {{ a.hex }};"></span>{% endif %}
+            {% if a.category is defined and a.category %}<span class="article-detail__category uppercase">{{ a.category }}</span>{% endif %}
+            <span class="article-detail__reading">{{ _minutes }} {{ _mWord }} чтения</span>
+            {% if a.date is defined and a.date %}<time class="article-detail__date"{% if a.date_iso is defined %} datetime="{{ a.date_iso }}"{% endif %}>{{ a.date | raw }}</time>{% endif %}
+          </div>
+
+          <div class="section__item heading-wrap items-start text-left">
+            <span class="heading-accent self-start" aria-hidden="true"></span>
+            {% include 'components/heading.twig' with {'item': {
+              'tag': 'h1',
+              'class': 'h1 heading font-2 weight-700 heading-flex uppercase',
+              'title': a.title
+            }} %}
+          </div>
+
+          {% if a.lead is defined and a.lead %}
+            <div class="section__item article-detail__lead-wrap">
+              <span class="longread article-detail__lead">{{ a.lead | raw }}</span>
+            </div>
+          {% endif %}
+
+          {% if a.toc is defined and a.toc|length > 1 %}
+            <nav class="section__item article-detail__toc" aria-label="Содержание статьи">
+              <span class="article-detail__toc-title uppercase">Содержание</span>
+              {% include 'components/numbered-list.twig' with {'items': a.toc|map(i => "<a href='#" ~ i.anchor ~ "' class='link underline-static'>" ~ i.title ~ "</a>")} %}
+            </nav>
+          {% endif %}
+
+          {% if a.body is defined and a.body %}
+            <div class="section__item article-detail__body longread">{{ include(template_from_string(a.body)) }}</div>
+          {% endif %}
+
+          {% if a.sources is defined and a.sources|length > 0 %}
+            <div class="section__item article-detail__sources">
+              <span class="article-detail__sources-title uppercase">Источники</span>
+              {% include 'components/custom-list.twig' with {'items': a.sources|map(s => s.href is defined and s.href
+                ? "<a href='" ~ s.href ~ "' class='link underline-static' target='_blank' rel='nofollow noopener'>" ~ s.title ~ "</a>"
+                : s.title)} %}
+            </div>
+          {% endif %}
+        </div>
+      </section>
+    </article>
+
+    {% if a.faq is defined and a.faq|length > 0 %}
+      {% include 'sections/faq.twig' with {'data': {
+        'heading': {'tag': 'h2', 'class': 'h2 heading font-2 weight-700 heading-flex uppercase', 'title': a.faq_title|default('Коротко о главном')},
+        'items': a.faq
+      }} %}
+    {% endif %}
+
+    {% if a.cta is defined and a.cta.href is defined %}
+      {% include 'sections/cta.twig' with {'data': {
+        'plate': true,
+        'container': 'container-sm',
+        'heading': {'tag': 'h2', 'class': 'h2 heading font-2 weight-700 heading-flex uppercase', 'title': a.cta.title},
+        'desc': a.cta.desc|default(''),
+        'button': {'href': a.cta.href, 'title': a.cta.label|default('Открыть каталог')}
+      }} %}
+    {% endif %}
+
+    {% set _lang = currentLang.code|default('ru') %}
+    {% set _related = [] %}
+    {% for _slug in a.related|default([]) %}
+      {% set _raw = load_json('data/json/' ~ _lang ~ '/articles/' ~ _slug ~ '.json') %}
+      {% set _r = _raw.article is defined ? _raw.article : null %}
+      {% if _r and (_raw.visible is not defined or _raw.visible) %}
+        {% set _related = _related|merge([{
+          'slug': _slug,
+          'title': _r.title,
+          'desc': _r.desc|default(_r.lead),
+          'cover': _r.cover|default(''),
+          'date': _r.date|default(''),
+          'hex': _r.hex|default(''),
+          'category': _r.category|default('')
+        }]) %}
+      {% endif %}
+    {% endfor %}
+    {% if _related|length > 0 %}
+      {% include 'sections/articles.twig' with {'data': {
+        'heading': {'tag': 'h2', 'class': 'h2 heading font-2 weight-700 heading-flex uppercase', 'title': 'Читайте также'},
+        'all_link': {'href': '/articles', 'title': 'Все статьи'},
+        'items': _related
+      }} %}
+    {% endif %}
+  </main>
+
+  {% include 'sections/footer.twig' with {'data': global.footer|default({})} %}
+</div>
+{% endblock %}

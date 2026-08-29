@@ -25,6 +25,7 @@ use App\Notification\Channel\TelegramChannel;
 use App\Notification\NotificationDispatcher;
 use App\Support\FormToken;
 use App\Service\DataLoaderService;
+use App\Service\ArticleSeoBuilder;
 use App\Service\DefaultSeoBuilder;
 use App\Service\MailService;
 use App\Service\NewsSeoBuilder;
@@ -147,10 +148,12 @@ return static function (): ContainerInterface {
         DefaultSeoBuilder::class => \DI\autowire(),
         TireSeoBuilder::class => \DI\autowire(),
         NewsSeoBuilder::class => \DI\autowire(),
+        ArticleSeoBuilder::class => \DI\autowire(),
         SeoBuilderRegistry::class => static fn(ContainerInterface $c) => new SeoBuilderRegistry(
             [
                 'tires' => $c->get(TireSeoBuilder::class),
                 'news' => $c->get(NewsSeoBuilder::class),
+                'articles' => $c->get(ArticleSeoBuilder::class),
             ],
             $c->get(DefaultSeoBuilder::class),
         ),
@@ -268,7 +271,7 @@ return static function (): ContainerInterface {
         ),
 
         ApiSendAction::class => \DI\autowire()
-            ->constructorParameter('formGuard', \DI\factory(static fn ($c) => $c->get('settings')['form_guard'] ?? [])),
+            ->constructorParameter('formGuard', \DI\factory(static fn($c) => $c->get('settings')['form_guard'] ?? [])),
         ApiWidgetRescueAction::class => \DI\autowire(),
     ]);
 

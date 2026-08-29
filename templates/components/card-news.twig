@@ -1,4 +1,4 @@
-<a href="{% if item.slug is defined %}{{ url('/news/' ~ item.slug) }}{% else %}#{% endif %}" class="card-news card-news-link link">
+<a href="{% if item.slug is defined %}{{ url((base|default('/news/')) ~ item.slug) }}{% else %}#{% endif %}" class="card-news card-news-link link">
   <div class="card-news__item cover-wrap">
     {# Новый контракт (ADR-0007): cover — raw-path (string или {src}). Фон — DPR-адаптивный image-set. #}
     {% set _coverRaw = '' %}
@@ -33,10 +33,12 @@
   </div>
   <div class="card-news__item content-wrap">
     <div class="card-news__item date-link-wrap">
-      <div class="card-news__subitem date-wrap">
-        <div class="card-news__hex-cube"{% if item.hex is defined %} style="background: {{ item.hex }};"{% endif %}></div>
-        <span class="card-news__date">{{ item.date | raw }}</span>
-      </div>
+      {% if item.date is defined and item.date %}
+        <div class="card-news__subitem date-wrap">
+          <div class="card-news__hex-cube"{% if item.hex is defined %} style="background: {{ item.hex }};"{% endif %}></div>
+          <span class="card-news__date">{{ item.date | raw }}</span>
+        </div>
+      {% endif %}
       <div class="card-news__subitem link-wrap">
         <span class="card-news__link nowrap uppercase">Читать статью</span>
       </div>

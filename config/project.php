@@ -8,6 +8,7 @@ return [
     'route_map' => [
         'tires' => 'tires-list',
         'news' => 'news',
+        'articles' => 'articles',
     ],
 
     // Параметризация коллекций: каждая коллекция описывается полностью через конфиг.
@@ -97,6 +98,16 @@ return [
             'og_type'      => 'article',
             'extras_key'   => 'news',
         ],
+        'articles' => [
+            'nav_slug'     => 'articles',
+            'list_page_id' => 'articles',
+            'template'     => 'pages/article.twig',
+            'item_key'     => 'article',
+            'data_dir'     => 'articles',
+            'slugs_source' => 'items',
+            'og_type'      => 'article',
+            'extras_key'   => 'article',
+        ],
     ],
 
     // page_id страниц для sitemap.xml (без 404)
@@ -111,6 +122,7 @@ return [
         'podbor',
         'buy',
         'news',
+        'articles',
         'warranty',
     ],
 
@@ -130,6 +142,15 @@ return [
             'value_key' => 'slug',
             'slugger' => 'identity',
             'entity_dir' => 'news',
+        ],
+
+        // Статьи: порядок и состав раздела — ключ items верхнего уровня в pages/articles.json.
+        'articles' => [
+            'data_page' => 'articles',
+            'list_key' => 'items',
+            'value_key' => '',
+            'slugger' => 'identity',
+            'entity_dir' => 'articles',
         ],
 
         'tires-list' => [

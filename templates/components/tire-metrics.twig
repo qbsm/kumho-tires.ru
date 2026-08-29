@@ -1,0 +1,164 @@
+{#
+  Таблица характеристик моделей каталога, собранная из data/json/{lang}/tires/*.json на рендере.
+  Цифры в статье не могут разойтись с каталогом: источник у них один и тот же.
+
+  Параметры:
+    mode    — eu (полный свод) | noise | wet | energy | snow | summary (строка со сводкой)
+    season  — фильтр по сезону: summer | winter | allseason | studded | friction
+    vehicle — фильтр по типу авто: passenger | suv | commercial
+    limit   — сколько строк показать (0 — все)
+    caption — подпись таблицы
+#}
+{% set _lang = currentLang.code|default('ru') %}
+{% set _mode = mode|default('eu') %}
+{% set _limit = limit|default(0) %}
+{% set _catalog = load_json('data/json/' ~ _lang ~ '/pages/tires.json') %}
+{% set _rows = [] %}
+{% set _totalModels = 0 %}{% set _totalSizes = 0 %}{% set _totalEu = 0 %}{% set _totalSnow = 0 %}
+
+{% for _slug in _catalog.items|default([]) %}
+  {% set _raw = load_json('data/json/' ~ _lang ~ '/tires/' ~ _slug ~ '.json') %}
+  {% set _t = _raw.tire is defined ? _raw.tire : _raw %}
+  {% if _t and _t.item is defined and (_t.visible is not defined or _t.visible) %}
+    {% set _seasons = _t.filter.season|default([]) %}
+    {% set _isStudded = 'studded' in _seasons %}
+    {% set _pass = true %}
+    {% if season is defined and season %}
+      {% if season == 'studded' %}
+        {% set _pass = _isStudded %}
+      {% elseif season == 'friction' %}
+        {% set _pass = ('winter' in _seasons) and not _isStudded %}
+      {% else %}
+        {% set _pass = season in _seasons %}
+      {% endif %}
+    {% endif %}
+    {% if _pass and vehicle is defined and vehicle %}
+      {% set _pass = vehicle in (_t.filter.vehicle|default([])) %}
+    {% endif %}
+    {% if _pass %}
+      {% set _noises = [] %}{% set _noiseClasses = [] %}{% set _wets = [] %}{% set _energies = [] %}{% set _snow = 0 %}{% set _eu = 0 %}
+      {% for _s in _t.sizes|default([]) %}
+        {% if _s.eu is defined %}
+          {% set _eu = _eu + 1 %}
+          {% if _s.eu.noise is defined %}{% set _noises = _noises|merge([_s.eu.noise]) %}{% endif %}
+          {% if _s.eu.noiseClass is defined %}{% set _noiseClasses = _noiseClasses|merge([_s.eu.noiseClass]) %}{% endif %}
+          {% if _s.eu.wet is defined %}{% set _wets = _wets|merge([_s.eu.wet]) %}{% endif %}
+          {% if _s.eu.energy is defined %}{% set _energies = _energies|merge([_s.eu.energy]) %}{% endif %}
+          {% if _s.eu.snow is defined and _s.eu.snow %}{% set _snow = _snow + 1 %}{% endif %}
+        {% endif %}
+      {% endfor %}
+      {% set _totalModels = _totalModels + 1 %}
+      {% set _totalSizes = _totalSizes + (_t.sizes|default([])|length) %}
+      {% set _totalEu = _totalEu + _eu %}
+      {% set _totalSnow = _totalSnow + _snow %}
+      {% if _eu > 0 %}
+        {% set _wetsSorted = _wets|sort %}
+        {% set _noiseClassesSorted = _noiseClasses|sort %}
+        {% set _energiesSorted = _energies|sort %}
+        {% set _rows = _rows|merge([{
+          'slug': _slug,
+          'name': _t.item.name,
+          'season': _t.season|default(''),
+          'sizes': _t.sizes|default([])|length,
+          'eu': _eu,
+          'noiseMin': _noises|length ? min(_noises) : null,
+          'noiseMax': _noises|length ? max(_noises) : null,
+          'noiseClassBest': _noiseClassesSorted|length ? _noiseClassesSorted|first : '',
+          'noiseClassWorst': _noiseClassesSorted|length ? _noiseClassesSorted|last : '',
+          'wetBest': _wetsSorted|length ? _wetsSorted|first : '',
+          'wetWorst': _wetsSorted|length ? _wetsSorted|last : '',
+          'energyBest': _energiesSorted|length ? _energiesSorted|first : '',
+          'energyWorst': _energiesSorted|length ? _energiesSorted|last : '',
+          'snow': _snow
+        }]) %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if _mode == 'summary' %}
+  {% set _m10 = _totalModels % 10 %}{% set _m100 = _totalModels % 100 %}
+  {% set _mWord = (_m10 == 1 and _m100 != 11) ? 'модель' : ((_m10 >= 2 and _m10 <= 4 and (_m100 < 12 or _m100 > 14)) ? 'модели' : 'моделей') %}
+  {% set _s10 = _totalSizes % 10 %}{% set _s100 = _totalSizes % 100 %}
+  {% set _sWord = (_s10 == 1 and _s100 != 11) ? 'типоразмер' : ((_s10 >= 2 and _s10 <= 4 and (_s100 < 12 or _s100 > 14)) ? 'типоразмера' : 'типоразмеров') %}
+  <p>В каталоге <b>{{ _totalModels }} {{ _mWord }}</b> Kumho и <b>{{ _totalSizes }} {{ _sWord }}</b>. Европейская этикетка указана у <b>{{ _totalEu }}</b> из них, маркировку 3PMSF несут <b>{{ _totalSnow }}</b>.</p>
+{% elseif _mode == 'noise' %}
+  {% set _rows = _rows|sort((a, b) => a.noiseMin <=> b.noiseMin) %}
+{% elseif _mode == 'wet' %}
+  {% set _rows = _rows|filter(r => r.wetBest in ['A', 'B'])|sort((a, b) => a.wetBest <=> b.wetBest) %}
+{% elseif _mode == 'energy' %}
+  {% set _rows = _rows|filter(r => r.energyBest in ['A', 'B', 'C'])|sort((a, b) => a.energyBest <=> b.energyBest) %}
+{% elseif _mode == 'snow' %}
+  {% set _rows = _rows|filter(r => r.snow > 0)|sort((a, b) => b.snow <=> a.snow) %}
+{% else %}
+  {% set _rows = _rows|sort((a, b) => a.name <=> b.name) %}
+{% endif %}
+
+{% if _limit > 0 %}{% set _rows = _rows|slice(0, _limit) %}{% endif %}
+
+{% if _mode != 'summary' and _rows|length > 0 %}
+  <div class="data-table-wrap">
+    <table class="data-table">
+      {% if caption is defined and caption %}<caption class="data-table__caption">{{ caption }}</caption>{% endif %}
+      <thead>
+        <tr>
+          <th scope="col">Модель</th>
+          {% if _mode == 'eu' %}
+            <th scope="col">Сезон</th>
+            <th scope="col" class="data-table__num">Экономичность</th>
+            <th scope="col" class="data-table__num">Сцепление</th>
+            <th scope="col" class="data-table__num">Шум, дБ</th>
+            <th scope="col" class="data-table__num">3PMSF</th>
+          {% elseif _mode == 'noise' %}
+            <th scope="col">Сезон</th>
+            <th scope="col" class="data-table__num">Шум, дБ</th>
+            <th scope="col" class="data-table__num">Класс шума</th>
+          {% elseif _mode == 'wet' %}
+            <th scope="col">Сезон</th>
+            <th scope="col" class="data-table__num">Сцепление</th>
+            <th scope="col" class="data-table__num">Всего размеров</th>
+          {% elseif _mode == 'energy' %}
+            <th scope="col">Сезон</th>
+            <th scope="col" class="data-table__num">Экономичность</th>
+            <th scope="col" class="data-table__num">Всего размеров</th>
+          {% elseif _mode == 'snow' %}
+            <th scope="col">Сезон</th>
+            <th scope="col" class="data-table__num">Размеров с 3PMSF</th>
+            <th scope="col" class="data-table__num">Всего размеров</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for _r in _rows %}
+          <tr>
+            <th scope="row"><a href="{{ url('/tires/' ~ _r.slug) }}" class="link underline-static">{{ _r.name }}</a></th>
+            {% if _mode == 'eu' %}
+              <td>{{ _r.season }}</td>
+              <td class="data-table__num">{{ _r.energyBest == _r.energyWorst ? _r.energyBest : _r.energyBest ~ '–' ~ _r.energyWorst }}</td>
+              <td class="data-table__num">{{ _r.wetBest == _r.wetWorst ? _r.wetBest : _r.wetBest ~ '–' ~ _r.wetWorst }}</td>
+              <td class="data-table__num">{{ _r.noiseMin == _r.noiseMax ? _r.noiseMin : _r.noiseMin ~ '–' ~ _r.noiseMax }}</td>
+              <td class="data-table__num">{{ _r.snow > 0 ? 'да' : '—' }}</td>
+            {% elseif _mode == 'noise' %}
+              <td>{{ _r.season }}</td>
+              <td class="data-table__num">{{ _r.noiseMin == _r.noiseMax ? _r.noiseMin : _r.noiseMin ~ '–' ~ _r.noiseMax }}</td>
+              <td class="data-table__num">{{ _r.noiseClassBest == _r.noiseClassWorst ? _r.noiseClassBest : _r.noiseClassBest ~ '–' ~ _r.noiseClassWorst }}</td>
+            {% elseif _mode == 'wet' %}
+              <td>{{ _r.season }}</td>
+              <td class="data-table__num">{{ _r.wetBest == _r.wetWorst ? _r.wetBest : _r.wetBest ~ '–' ~ _r.wetWorst }}</td>
+              <td class="data-table__num">{{ _r.sizes }}</td>
+            {% elseif _mode == 'energy' %}
+              <td>{{ _r.season }}</td>
+              <td class="data-table__num">{{ _r.energyBest == _r.energyWorst ? _r.energyBest : _r.energyBest ~ '–' ~ _r.energyWorst }}</td>
+              <td class="data-table__num">{{ _r.sizes }}</td>
+            {% elseif _mode == 'snow' %}
+              <td>{{ _r.season }}</td>
+              <td class="data-table__num">{{ _r.snow }}</td>
+              <td class="data-table__num">{{ _r.sizes }}</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="data-table__note">Экономичность и сцепление — классы европейской этикетки от A (лучший) до E, шум — уровень внешнего шума в децибелах.</p>
+{% endif %}

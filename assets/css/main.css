@@ -33,6 +33,7 @@
 @import "sections/cta.css";
 @import "sections/dealers.css";
 @import "sections/news.css";
+@import "sections/articles.css";
 @import "sections/faq.css";
 @import "sections/error.css";
 
@@ -46,6 +47,7 @@
 @import "components/cover.css";
 @import "components/custom-checkbox.css";
 @import "components/custom-list.css";
+@import "components/data-table.css";
 @import "components/features-list.css";
 @import "components/form-callback.css";
 @import "components/glightbox-custom.css";
@@ -76,3 +78,4 @@
 @import "sections/logoline.css";
 @import "pages/tires.css";
 @import "pages/news.css";
+@import "pages/article.css";
