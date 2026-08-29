@@ -1,8 +1,7 @@
-{% set rootClass = filter.root_class | default('filter-wrap') %}
-<div class="filter {{ rootClass }}">
-  <div class="filter-container">
-    {% for group in filter.groups | default([]) %}
-      {% set groupClass = ('filter-group ' ~ (group.class | default(''))) | trim %}
+{# Группа фильтра рендерится макросом: соседние группы с одним ключом row
+   собираются в общую обёртку и переносятся на новую строку вместе, а не по одной #}
+{% macro filter_group(group) %}
+    {% set groupClass = ('filter-group ' ~ (group.class | default(''))) | trim %}
 
       {% if group.type == 'buttons' %}
         <div class="{{ groupClass }}">
@@ -59,6 +58,27 @@
           {% endif %}
           <span class="filter__option-label">{{ group.label | default('') }}</span>
         </label>
+      {% endif %}
+{% endmacro %}
+{% import _self as filter_parts %}
+
+{% set rootClass = filter.root_class | default('filter-wrap') %}
+<div class="filter {{ rootClass }}">
+  <div class="filter-container">
+    {% set renderedRows = [] %}
+    {% for group in filter.groups | default([]) %}
+      {% set rowKey = group.row | default('') %}
+      {% if rowKey == '' %}
+        {{ filter_parts.filter_group(group) }}
+      {% elseif rowKey not in renderedRows %}
+        {% set renderedRows = renderedRows | merge([rowKey]) %}
+        <div class="filter-row filter-row--{{ rowKey }}">
+          {% for rowGroup in filter.groups %}
+            {% if (rowGroup.row | default('')) == rowKey %}
+              {{ filter_parts.filter_group(rowGroup) }}
+            {% endif %}
+          {% endfor %}
+        </div>
       {% endif %}
     {% endfor %}
   </div>
