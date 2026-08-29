@@ -1,0 +1,30 @@
+{
+  "name": "articles",
+  "title": "Статьи о шинах Kumho — характеристики, этикетка, тесты",
+  "meta": [
+    {
+      "name": "description",
+      "content": "Статьи о шинах Kumho (Кумхо): расшифровка европейской этикетки, уровень шума и сцепление моделей каталога, результаты независимых тестов Auto Bild и ADAC."
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Статьи о шинах Kumho — характеристики, этикетка, тесты"
+    },
+    {
+      "property": "og:site_name",
+      "content": "Kumho Tire"
+    },
+    {
+      "property": "og:description",
+      "content": "Статьи о шинах Kumho (Кумхо): расшифровка европейской этикетки, уровень шума и сцепление моделей каталога, результаты независимых тестов Auto Bild и ADAC."
+    },
+    {
+      "property": "og:image",
+      "content": "https://kumho-tires.ru/data/img/seo/og.jpg?v=3"
+    }
+  ]
+}

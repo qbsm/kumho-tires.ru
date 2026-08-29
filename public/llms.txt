@@ -82,6 +82,15 @@ kumho-tires.ru — сайт официального дистрибьютора 
 - О бренде и производителе: /brand — страна-производитель, заводы, владелец, как определить
   страну выпуска по DOT-коду
 - Новости: /news
+- Статьи о шинах: /articles — разбор характеристик по документам и результаты независимых тестов:
+    европейская этикетка /articles/eu-tyre-label, уровень шума по моделям /articles/quiet-tires,
+    классы сцепления на мокрой дороге /articles/wet-grip-classes, маркировка 3PMSF /articles/3pmsf-marking,
+    топливная эффективность /articles/fuel-efficiency, WinterCraft WP52+ в тесте Auto Bild 2025
+    /articles/wp52-plus-auto-bild-2025, ECSTA PS71 в летних тестах /articles/ecsta-ps71-summer-tests-2025,
+    сводка результатов независимых тестов /articles/independent-tests,
+    шипы или липучка /articles/studded-vs-friction, WP52+ или WS71 /articles/wp52-plus-vs-ws71,
+    когда оправдана всесезонка /articles/all-season-ha32, PS71 или HS52 /articles/ps71-vs-hs52,
+    шины для кроссовера /articles/tires-for-suv, шины для фургона /articles/tires-for-van
 - Контакты: /contacts
 - Политика конфиденциальности: /policy
 

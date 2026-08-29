@@ -531,6 +531,10 @@
       {
         "title": "О бренде Kumho",
         "href": "/brand"
+      },
+      {
+        "title": "Статьи о шинах",
+        "href": "/articles"
       }
     ],
     "en": [
@@ -565,6 +569,10 @@
       {
         "title": "About Kumho",
         "href": "/brand"
+      },
+      {
+        "title": "Tire articles",
+        "href": "/articles"
       }
     ]
   }
