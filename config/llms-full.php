@@ -54,5 +54,17 @@ return [
                 ['label' => 'Доступные размеры', 'key' => 'sizes'],
             ],
         ],
+        [
+            'list_path' => '{lang}/pages/articles.json',
+            'list_key' => 'items',
+            'item_dir' => '{lang}/articles',
+            'name_key' => 'article.title',
+            'desc_key' => 'article.desc',
+            'visible_key' => 'visible',
+            'url_pattern' => '/articles/{slug}',
+            'fields' => [
+                ['label' => 'Рубрика', 'key' => 'article.category'],
+            ],
+        ],
     ],
 ];
