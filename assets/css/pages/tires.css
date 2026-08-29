@@ -281,16 +281,19 @@ a.tire-detail__badge:active {
   overflow: hidden;
 }
 
-/* Size table */
+/* Size table — оформление общее со статьями (components/data-table.css):
+   тонкие линии и красная черта под шапкой вместо заливки. */
 .tire-detail__table-wrap {
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
-  border-radius: 2rem 2rem 0 0;
 }
 
 .tire-detail__table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.9em;
+  line-height: 1.4;
 }
 
 /* Селектор с родителем: рядом лежит `.tire-detail p { margin: 0 }`, он специфичнее */
@@ -303,28 +306,46 @@ a.tire-detail__badge:active {
 
 .tire-detail__table th,
 .tire-detail__table td {
-  padding: 1.15rem 1.5rem;
+  padding: 0.9rem 1.2rem 0.9rem 0;
   text-align: left;
   border-bottom: 1px solid var(--color-4);
   white-space: nowrap;
 }
 
-.tire-detail__table th {
-  font-weight: 600;
-  background: var(--color-3);
-  color: var(--color-1);
-  font-size: 0.9375em;
+/* Числовые и классовые колонки — по центру, по левому краю остаётся только размер */
+.tire-detail__table th:not(:first-child),
+.tire-detail__table td:not(:first-child) {
+  text-align: center;
+}
+
+/* Шапка залипает при прокрутке длинного списка размеров, поэтому фон непрозрачный */
+.tire-detail__table thead th {
+  padding-block: 0.8rem;
+  border-bottom: 2px solid var(--color-3);
+  background: var(--color-1);
+  font-family: var(--font-2);
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.tire-detail__table tbody tr:hover {
-  background: #f7f7f7;
+.tire-detail__table tbody td {
+  color: var(--color-6);
 }
 
-.tire-detail__table tbody tr:nth-child(even) {
-  background: #fafafa;
+.tire-detail__table tbody tr:last-child th,
+.tire-detail__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tire-detail__table tbody tr:hover td {
+    background-color: rgb(0 0 0 / 3%);
+  }
 }
 
 /* Ходовые типоразмеры под каталогом: ряд ссылок, а не карточки — это навигация,
