@@ -545,9 +545,16 @@ onReady(() => {
       cards.forEach((cardEl) => cardEl.classList.toggle('hidden', !shown.has(cardEl)));
       const rest = matchedCards.length - limit;
       if (!moreButton) return;
-      moreButton.hidden = rest <= 0;
+      // Подпись ставится только когда есть что догружать: иначе в разметке оставалось
+      // «Показать ещё 0 из 0» — скрытое, но видное в инспекторе и в поиске по странице
+      if (rest <= 0) {
+        moreButton.hidden = true;
+        moreButton.textContent = '';
+        return;
+      }
+      moreButton.hidden = false;
       moreButton.textContent = `Показать ещё ${Math.min(rest, CARDS_BATCH)} из ${rest}`;
-      if (rest > 0 && moreObserver) moreObserver.observe(moreButton);
+      if (moreObserver) moreObserver.observe(moreButton);
     };
 
     const showMore = () => {
