@@ -21,7 +21,7 @@
           "visible": true,
           "seasons": [
             {
-              "label": "Лето",
+              "label": "Летние",
               "value": "summer",
               "icon": "data/img/ui/icons/icon-season-summer.svg"
             },
