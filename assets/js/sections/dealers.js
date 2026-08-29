@@ -274,7 +274,13 @@ function isPointInBounds(coords, bounds) {
   const [lat, lon] = coords;
   const [south, west] = southWest;
   const [north, east] = northEast;
-  return lat >= south && lat <= north && lon >= west && lon <= east;
+  if (lat < south || lat > north) {
+    return false;
+  }
+  // На мелком масштабе вид пересекает 180-й меридиан, и карта отдаёт границы, где восточная
+  // долгота меньше западной. Прямое сравнение «больше west и меньше east» тогда невыполнимо,
+  // и в выдачу не попадала ни одна точка — карточки не показывались вовсе.
+  return west <= east ? lon >= west && lon <= east : lon >= west || lon <= east;
 }
 
 function getVisibleIdsInMapBounds(mapState, allowedIds) {
@@ -525,7 +531,52 @@ onReady(() => {
     const cards = Array.from(sectionEl.querySelectorAll('.js-dealer-card'));
     let mapState = null;
 
-    const applyFilters = ({ syncMap = true } = {}) => {
+    // Подгрузка карточек порциями: в выдачу может попасть полторы сотни точек, и вываливать
+    // их разом незачем — показываем первую порцию, остальные по кнопке или при подходе к ней
+    const CARDS_BATCH = 12;
+    let matchedCards = [];
+    let shownCount = CARDS_BATCH;
+    let moreButton = null;
+    let moreObserver = null;
+
+    const renderBatch = () => {
+      const limit = Math.min(shownCount, matchedCards.length);
+      const shown = new Set(matchedCards.slice(0, limit));
+      cards.forEach((cardEl) => cardEl.classList.toggle('hidden', !shown.has(cardEl)));
+      const rest = matchedCards.length - limit;
+      if (!moreButton) return;
+      moreButton.hidden = rest <= 0;
+      moreButton.textContent = `Показать ещё ${Math.min(rest, CARDS_BATCH)} из ${rest}`;
+      if (rest > 0 && moreObserver) moreObserver.observe(moreButton);
+    };
+
+    const showMore = () => {
+      shownCount += CARDS_BATCH;
+      renderBatch();
+    };
+
+    const cardsWrap = sectionEl.querySelector('.cards-wrap');
+    if (cardsWrap && cards.length > CARDS_BATCH) {
+      moreButton = document.createElement('button');
+      moreButton.type = 'button';
+      moreButton.className = 'button button-sm outline-color-2 uppercase dealers__more js-dealers-more';
+      moreButton.hidden = true;
+      moreButton.addEventListener('click', showMore);
+      cardsWrap.insertAdjacentElement('afterend', moreButton);
+      if ('IntersectionObserver' in window) {
+        moreObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              moreObserver.unobserve(moreButton);
+              showMore();
+            }
+          },
+          { rootMargin: '200px' }
+        );
+      }
+    }
+
+    const applyFilters = ({ syncMap = true, resetBatch = true } = {}) => {
       const selectedCity = normalize(citySelect?.value || '');
       const requireGuarantee = Boolean(guaranteeCheckbox?.checked);
       const requireBshm = Boolean(bshmCheckbox?.checked);
@@ -554,10 +605,9 @@ onReady(() => {
       }
 
       const visibleIds = getVisibleIdsInMapBounds(mapState, matchedIds);
-      cards.forEach((cardEl) => {
-        const id = String(cardEl.dataset.id || '');
-        cardEl.classList.toggle('hidden', !visibleIds.has(id));
-      });
+      matchedCards = cards.filter((cardEl) => visibleIds.has(String(cardEl.dataset.id || '')));
+      if (resetBatch) shownCount = CARDS_BATCH;
+      renderBatch();
     };
 
     if (mapEl) {
@@ -565,7 +615,9 @@ onReady(() => {
         createDealerMap(mapEl, (state) => {
           mapState = state;
           applyFilters();
-          mapState?.map?.events?.add('boundschange', () => applyFilters({ syncMap: false }));
+          mapState?.map?.events?.add('boundschange', () =>
+            applyFilters({ syncMap: false, resetBatch: false })
+          );
           applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
         });
       };

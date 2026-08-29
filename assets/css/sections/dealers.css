@@ -102,3 +102,9 @@
   color: var(--color-2);
   font-weight: 500;
 }
+
+/* Кнопка догрузки карточек: появляется под сеткой, когда точек больше первой порции */
+.dealers .dealers__more {
+  margin-inline: auto;
+  margin-block-start: 2rem;
+}
