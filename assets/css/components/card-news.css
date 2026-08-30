@@ -182,3 +182,13 @@ a.card-news-link {
 .card-news.full-cover .card-news__item.delimiter {
   display: block;
 }
+
+/* Время чтения — рядом с датой, тем же тоном */
+.card-news__reading {
+  color: var(--color-5);
+}
+
+.card-news__date + .card-news__reading::before {
+  content: "·";
+  margin-inline: 0.5rem;
+}

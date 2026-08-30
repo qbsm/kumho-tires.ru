@@ -90,7 +90,10 @@ kumho-tires.ru — сайт официального дистрибьютора 
     сводка результатов независимых тестов /articles/independent-tests,
     шипы или липучка /articles/studded-vs-friction, WP52+ или WS71 /articles/wp52-plus-vs-ws71,
     когда оправдана всесезонка /articles/all-season-ha32, PS71 или HS52 /articles/ps71-vs-hs52,
-    шины для кроссовера /articles/tires-for-suv, шины для фургона /articles/tires-for-van
+    шины для кроссовера /articles/tires-for-suv, шины для фургона /articles/tires-for-van,
+    индексы нагрузки и скорости /articles/load-speed-index, проверка шины в реестре EPREL
+    /articles/eprel-check, как отличить оригинал /articles/original-check,
+    расширенная гарантия /articles/extended-warranty
 - Контакты: /contacts
 - Политика конфиденциальности: /policy
 

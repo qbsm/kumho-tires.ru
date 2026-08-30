@@ -299,6 +299,37 @@
     </section>
     {% endif %}
 
+    {# Статьи, в которых разобрана эта модель: обратный ход к разделу /articles.
+       Совпадение ищем по ссылке в теле статьи — отдельного списка моделей в данных нет. #}
+    {% set _lang = currentLang.code|default('ru') %}
+    {% set _artIndex = load_json('data/json/' ~ _lang ~ '/pages/articles.json') %}
+    {% set _artItems = [] %}
+    {% for _artSlug in _artIndex.items|default([]) %}
+      {% if _artItems|length < 3 %}
+        {% set _artRaw = load_json('data/json/' ~ _lang ~ '/articles/' ~ _artSlug ~ '.json') %}
+        {% set _a = _artRaw.article is defined ? _artRaw.article : null %}
+        {% if _a and (_artRaw.visible is not defined or _artRaw.visible) %}
+          {% if ("/tires/" ~ tire.slug ~ "'") in (_a.body|default('')) %}
+            {% set _artItems = _artItems|merge([{
+              'slug': _artSlug,
+              'title': _a.title,
+              'desc': _a.desc|default(_a.lead),
+              'cover': _a.cover|default(''),
+              'date': _a.date|default(''),
+              'category': _a.category|default('')
+            }]) %}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if _artItems|length > 0 %}
+      {% include 'sections/articles.twig' with {'data': {
+        'heading': {'tag': 'h2', 'class': 'h3 heading font-2 weight-700 heading-flex uppercase', 'title': 'Статьи об этой модели'},
+        'all_link': {'href': '/articles', 'title': 'Все статьи'},
+        'items': _artItems
+      }} %}
+    {% endif %}
+
   </main>
   {% include 'sections/footer.twig' with {'data': global.footer|default({})} %}
 </div>

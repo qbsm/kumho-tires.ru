@@ -26,6 +26,16 @@
 
       {% if data.items is defined and data.items is not empty %}
         {% set _items = data.items|filter(i => i.visible is not defined or i.visible) %}
+        {# Время чтения считаем по тексту статьи — отдельного поля в данных нет #}
+        {% set _lang = currentLang.code|default('ru') %}
+        {% set _withReading = [] %}
+        {% for _i in _items %}
+          {% set _raw = _i.slug is defined ? load_json('data/json/' ~ _lang ~ '/articles/' ~ _i.slug ~ '.json') : null %}
+          {% set _a = (_raw and _raw.article is defined) ? _raw.article : null %}
+          {% set _words = _a ? ((_a.lead|default('') ~ ' ' ~ _a.body|default(''))|striptags|trim|split(' ')|filter(w => w|trim != '')|length) : 0 %}
+          {% set _withReading = _withReading|merge([_i|merge({'reading': _words > 0 ? max(1, (_words / 180)|round(0, 'ceil')) : 0})]) %}
+        {% endfor %}
+        {% set _items = _withReading %}
         {% set _declared = data.categories|default([]) %}
         {% set _seen = [] %}
         {% for _item in _items %}
