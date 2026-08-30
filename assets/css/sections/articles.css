@@ -57,3 +57,8 @@
     flex: 0 0 calc((100% - 4rem) / 3);
   }
 }
+
+/* Маркер в карточке статьи — фирменный красный; в данных цвет не держим */
+.articles .card-news__hex-cube {
+  background: var(--color-3);
+}

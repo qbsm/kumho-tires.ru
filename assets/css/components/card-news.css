@@ -183,12 +183,15 @@ a.card-news-link {
   display: block;
 }
 
-/* Время чтения — рядом с датой, тем же тоном */
+/* Время чтения — рядом с датой, тем же размером и тоном */
 .card-news__reading {
+  display: inline-block;
+  font-size: 0.9em;
   color: var(--color-5);
 }
 
 .card-news__date + .card-news__reading::before {
-  content: "·";
-  margin-inline: 0.5rem;
+  content: "|";
+  margin-inline: 0.7rem;
+  color: var(--color-4);
 }

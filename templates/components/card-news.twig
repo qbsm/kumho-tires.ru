@@ -35,7 +35,7 @@
     <div class="card-news__item date-link-wrap">
       {% if (item.date is defined and item.date) or (item.reading is defined and item.reading > 0) %}
         <div class="card-news__subitem date-wrap">
-          <div class="card-news__hex-cube"{% if item.hex is defined %} style="background: {{ item.hex }};"{% endif %}></div>
+          <div class="card-news__hex-cube"{% if item.hex is defined and item.hex %} style="background: {{ item.hex }};"{% endif %}></div>
           {% if item.date is defined and item.date %}<span class="card-news__date">{{ item.date | raw }}</span>{% endif %}
           {% if item.reading is defined and item.reading > 0 %}<span class="card-news__reading">{{ item.reading }} мин чтения</span>{% endif %}
         </div>
