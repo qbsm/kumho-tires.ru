@@ -213,7 +213,7 @@ onReady(() => {
     // Сезонная кнопка без ссылки (витрина на главной) фильтрует на месте и правит адрес.
     const syncSeasonUrl = (season) => {
       const base = (root.dataset.catalogPath || window.location.pathname).replace(
-        /\/(summer|allseason|winter|studded)$/,
+        /\/(summer|allseason|winter|studded|friction)$/,
         ''
       );
       const next = season ? `${base.replace(/\/$/, '')}/${season}` : base.replace(/\/$/, '') || '/';

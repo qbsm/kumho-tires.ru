@@ -10,8 +10,12 @@
    а не в общий каталог #}
 {% set sizeSegment = presetSize ? presetWidth ~ '-' ~ presetProfile ~ '-r' ~ presetDiameter : '' %}
 {% set catalogRoot = '/tires' ~ (presetSeason ? '/' ~ presetSeason : '') %}
+{# Ссылки типоразмеров держат контекст раздела: со страницы нешипованных ведут
+   на /tires/friction/<размер>, со страницы линейки — на /tires/<линейка>/<размер>.
+   Раньше вели в общий каталог и сбрасывали фильтр. #}
+{% set sizesBase = '/tires' ~ (presetSeason ? '/' ~ presetSeason : (presetFamily ? '/' ~ presetFamily : '')) %}
 {% set catalogPath = '/tires' ~ (sizeSegment ? '/' ~ sizeSegment : '') %}
-<section class="tires section"{% if page_id is defined and page_id == 'tires-list' %} data-catalog-path="{{ catalogPath }}" data-catalog-root="{{ catalogRoot }}"{% endif %}>
+<section class="tires section"{% if page_id is defined and page_id == 'tires-list' %} data-catalog-path="{{ catalogPath }}" data-catalog-root="{{ sizesBase }}"{% endif %}>
   <div class="container">
     <div class="section__item block-wrap">
       {% if data.heading is defined %}
@@ -306,7 +310,7 @@
             <div class="tires__sizes-list">
               {% for sizeSlug in indexableSizes %}
                 {% set sizeParts = sizeSlug | split('-') %}
-                <a href="{{ url('/tires/' ~ sizeSlug) }}" class="link color-2 underline-center tires__sizes-link">{{ sizeParts[0] }}/{{ sizeParts[1] }} {{ sizeParts[2] | upper }}</a>
+                <a href="{{ url(sizesBase ~ '/' ~ sizeSlug) }}" class="link color-2 underline-center tires__sizes-link">{{ sizeParts[0] }}/{{ sizeParts[1] }} {{ sizeParts[2] | upper }}</a>
               {% endfor %}
             </div>
           </nav>

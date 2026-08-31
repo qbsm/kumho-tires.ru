@@ -249,11 +249,19 @@ final class PageAction
                 $seasonGenitive = (string) ($seasonVariant['genitive'] ?? mb_strtolower($seasonLabel));
             }
 
-            $heading = ($seasonLabel !== '' ? $seasonLabel . ' шины' : 'Шины') . ' Kumho ' . $sizeLabel;
+            // Линейка в адресе вместе с размером (/tires/wintercraft/205-55-r16): каталог
+            // фильтруется по обоим признакам, поэтому и заголовок обязан называть оба.
+            $familyKey = (string) ($extrasFilter['family'] ?? '');
+            $familyVariant = ((array) ($filterVariants['family'] ?? []))[$familyKey] ?? null;
+            $familyLabel = is_array($familyVariant) ? (string) ($familyVariant['label'] ?? '') : '';
+            $familySuffix = $familyLabel !== '' ? ' ' . $familyLabel : '';
+
+            $heading = ($seasonLabel !== '' ? $seasonLabel . ' шины' : 'Шины') . ' Kumho'
+                . $familySuffix . ' ' . $sizeLabel;
             $title = $heading . ' — все модели в этом размере';
             $description = ($seasonGenitive !== '' ? 'Каталог ' . $seasonGenitive . ' шин' : 'Каталог шин')
-                . ' Kumho в размере ' . $sizeLabel . ': модели официального дистрибьютора, характеристики, '
-                . 'индексы нагрузки и скорости. Где купить в России.';
+                . ' Kumho' . $familySuffix . ' в размере ' . $sizeLabel . ': модели официального дистрибьютора, '
+                . 'характеристики, индексы нагрузки и скорости. Где купить в России.';
         }
 
         if ($title !== '') {
