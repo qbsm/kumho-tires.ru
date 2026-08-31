@@ -114,3 +114,20 @@
 .dealers .dealers__more[hidden] {
   display: none;
 }
+
+/* Городская страница: сводка и вопросы — свой ритм, чтобы не липли к списку точек */
+.dealers__city-intro {
+  margin-block-end: 3rem;
+}
+
+.dealers__city-faq {
+  margin-block-start: 4rem;
+}
+
+.dealers__city-faq-title {
+  display: block;
+  margin-block-end: 1.5rem;
+  font-family: var(--font-2);
+  font-size: 1.15em;
+  font-weight: 700;
+}

@@ -109,6 +109,39 @@
       </div>
     {% endif %}
 
+    {# Городская страница: сводка и вопросы собираются из данных точек этого города.
+       Без них 55 адресов отличались от общего /buy только заголовком и списком. #}
+    {% if pageCitySlug and renderDealerItems | length > 0 %}
+      {% set _cityCase = initialHeadingCityCase != '' ? initialHeadingCityCase : pageCitySlug %}
+      {% set _count = renderDealerItems | length %}
+      {% set _c10 = _count % 10 %}{% set _c100 = _count % 100 %}
+      {% set _pointWord = (_c10 == 1 and _c100 != 11) ? 'точка' : ((_c10 >= 2 and _c10 <= 4 and (_c100 < 12 or _c100 > 14)) ? 'точки' : 'точек') %}
+      {% set _authWord = (_c10 == 1 and _c100 != 11) ? 'авторизованная' : ((_c10 >= 2 and _c10 <= 4 and (_c100 < 12 or _c100 > 14)) ? 'авторизованные' : 'авторизованных') %}
+      {% set _nets = [] %}
+      {% set _guarantee = 0 %}
+      {% set _sites = 0 %}
+      {% for _d in renderDealerItems %}
+        {% set _n = _d.name | default('') | trim %}
+        {% if _n and _n not in _nets %}{% set _nets = _nets|merge([_n]) %}{% endif %}
+        {% if _d.guarantee.visible | default(false) %}{% set _guarantee = _guarantee + 1 %}{% endif %}
+        {% if _d.site.href | default('') %}{% set _sites = _sites + 1 %}{% endif %}
+      {% endfor %}
+      {% set _netCount = _nets | length %}
+      {% set _n10 = _netCount % 10 %}{% set _n100 = _netCount % 100 %}
+      {% set _netWord = (_n10 == 1 and _n100 != 11) ? 'сеть' : ((_n10 >= 2 and _n10 <= 4 and (_n100 < 12 or _n100 > 14)) ? 'сети' : 'сетей') %}
+
+      <div class="section__item longread-wrap dealers__city-intro">
+        <span class="longread">
+          <p>В {{ _cityCase }} шины Kumho продают <b>{{ _count }} {{ _authWord }} {{ _pointWord }}</b>
+          {%- if _netCount > 1 %} — это {{ _netCount }} {{ _netWord }}: {{ _nets | slice(0, 5) | join(', ') }}{% if _netCount > 5 %} и другие{% endif %}{% endif %}.
+          {% if _guarantee == _count %}Во всех действует программа <a href="/warranty">«Расширенная гарантия Kumho»</a> — дополнительный год защиты от эксплуатационных повреждений.{% elseif _guarantee > 0 %}В {{ _guarantee }} из них действует программа <a href="/warranty">«Расширенная гарантия Kumho»</a>.{% endif %}</p>
+          <p>Адреса, телефоны и часы работы — в списке ниже, расположение точек видно на карте.
+          Подобрать модель под свой автомобиль можно в <a href="/tires">каталоге</a> или
+          <a href="/podbor">конфигуратором</a>.</p>
+        </span>
+      </div>
+    {% endif %}
+
     {% if filterVisible %}
       {% set citySelectOptions = [{'value': '', 'label': 'Все'}] %}
       {% for city in cityOptions | sort %}
@@ -210,6 +243,40 @@
             </div>
           {% endif %}
         {% endfor %}
+      </div>
+    {% endif %}
+
+    {# Вопросы городской страницы: ответы собираются из тех же данных, что и список точек,
+       поэтому не расходятся с ним и не повторяются между городами дословно. #}
+    {% if pageCitySlug and renderDealerItems | length > 0 %}
+      {% set _faqCity = initialHeadingCityCase != '' ? initialHeadingCityCase : pageCitySlug %}
+      {% set _faqItems = [
+        {
+          'icon': {'src': url('data/img/ui/icons/icon-arrow-down-color-2.svg')},
+          'title': 'Где купить шины Kumho в ' ~ _faqCity ~ '?',
+          'desc': 'В ' ~ _faqCity ~ ' работает ' ~ _count ~ ' ' ~ _authWord ~ ' ' ~ _pointWord
+            ~ (_netCount > 1 ? ' — ' ~ (_nets | slice(0, 5) | join(', ')) : ' сети ' ~ (_nets | first))
+            ~ '. Адреса, телефоны и часы работы перечислены на этой странице, расположение видно на карте.'
+        },
+        {
+          'icon': {'src': url('data/img/ui/icons/icon-arrow-down-color-2.svg')},
+          'title': 'Действует ли расширенная гарантия в ' ~ _faqCity ~ '?',
+          'desc': (_guarantee == _count
+            ? 'Да, программа «Расширенная гарантия Kumho» действует во всех ' ~ _count ~ ' ' ~ _pointWord ~ ' города'
+            : (_guarantee > 0
+              ? 'Да, программа действует в ' ~ _guarantee ~ ' ' ~ _pointWord ~ ' из ' ~ _count
+              : 'Программа оформляется в авторизованных шинных центрах — участниках'))
+            ~ '. Она добавляет год защиты от эксплуатационных повреждений сверх гарантии производителя; чек нужно зарегистрировать на сайте в течение 30 дней после покупки.'
+        },
+        {
+          'icon': {'src': url('data/img/ui/icons/icon-arrow-down-color-2.svg')},
+          'title': 'Как подобрать модель под свой автомобиль?',
+          'desc': 'В каталоге есть фильтр по сезону и типоразмеру, а конфигуратор подбирает модель по типу авто, сезону и приоритету — комфорт, управляемость, экономичность или проходимость. Типоразмер указан на боковине текущей шины и на табличке в проёме водительской двери.'
+        }
+      ] %}
+      <div class="section__item dealers__city-faq">
+        <span class="dealers__city-faq-title uppercase">Вопросы о покупке в {{ _faqCity }}</span>
+        {% include 'components/accordion.twig' with {'items': _faqItems, 'accordion_id': 'city-faq'} %}
       </div>
     {% endif %}
 
