@@ -1,3 +1,12 @@
+/* Вводный текст и первая рубрика стояли впритык — тот же шаг, что между группами */
+.articles .longread-wrap {
+  margin-block-end: 3rem;
+
+  @media (--lg) {
+    margin-block-end: 4rem;
+  }
+}
+
 /* Листинг раздела: рубрика — заголовок группы карточек */
 .articles__header {
   display: flex;
