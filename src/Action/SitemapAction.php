@@ -61,11 +61,16 @@ final class SitemapAction
             foreach ($langs as $altLang) {
                 $alternates[$altLang] = $this->buildLangPath($base, $altLang, $defaultLang, $extraPath);
             }
+            $extraLastmod = $this->sourceLastmod($jsonBaseDir, $defaultLang, $extraPath);
             foreach ($langs as $lang) {
-                $urls[] = [
+                $url = [
                     'loc' => $this->buildLangPath($base, $lang, $defaultLang, $extraPath),
                     'alternates' => $alternates,
                 ];
+                if ($extraLastmod !== null) {
+                    $url['lastmod'] = $extraLastmod;
+                }
+                $urls[] = $url;
             }
         }
 
@@ -168,7 +173,9 @@ final class SitemapAction
             }
 
             foreach ($slugs as $subSlug) {
-                $lastmod = $entityDir !== '' ? $this->entityLastmod($jsonBaseDir, $defaultLang, $entityDir, $subSlug) : null;
+                $lastmod = $entityDir !== ''
+                    ? $this->entityLastmod($jsonBaseDir, $defaultLang, $entityDir, $subSlug)
+                    : $this->fileLastmod($jsonBaseDir . '/' . $defaultLang . '/pages/' . $dataPage . '.json');
                 foreach ($langs as $lang) {
                     $loc = $this->buildLangPath($base, $lang, $defaultLang, $pathSegment . '/' . $subSlug);
                     $alternates = [];
@@ -202,6 +209,37 @@ final class SitemapAction
      * item-объекте (news.date_iso). W3C Datetime допускает точность до месяца (YYYY-MM).
      * Не выдумываем дату из mtime файлов: на FTP-проде mtime отражает выкладку, не правку.
      */
+    /**
+     * Дата правки файла-источника. Для страниц, собираемых из данных (города, разделы фильтра),
+     * своей даты в контенте нет: честный признак изменения — когда поменялись сами данные.
+     */
+    private function fileLastmod(string $file): ?string
+    {
+        if (!is_file($file)) {
+            return null;
+        }
+        $ts = @filemtime($file);
+
+        return $ts === false ? null : date('Y-m-d', $ts);
+    }
+
+    /**
+     * Дата для человечного адреса фильтра: сначала файл текста раздела (filters/<коллекция>-<slug>.json),
+     * иначе список сущностей коллекции — состав раздела меняется вместе с ним.
+     */
+    private function sourceLastmod(string $jsonBaseDir, string $lang, string $extraPath): ?string
+    {
+        $parts = explode('/', trim($extraPath, '/'));
+        if (count($parts) < 2) {
+            return null;
+        }
+        $collection = $parts[0];
+        $slug = $parts[count($parts) - 1];
+
+        return $this->fileLastmod($jsonBaseDir . '/' . $lang . '/filters/' . $collection . '-' . $slug . '.json')
+            ?? $this->fileLastmod($jsonBaseDir . '/' . $lang . '/pages/' . $collection . '.json');
+    }
+
     private function entityLastmod(string $jsonBaseDir, string $lang, string $entityDir, string $slug): ?string
     {
         $file = $jsonBaseDir . '/' . $lang . '/' . $entityDir . '/' . $slug . '.json';

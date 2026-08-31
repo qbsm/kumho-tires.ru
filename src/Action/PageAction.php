@@ -67,6 +67,13 @@ final class PageAction
             $routeParams = array_slice($segments, 1);
         }
 
+        // Наследие query-фильтра (?season=summer&diameter=17): такие адреса остались в индексе
+        // с прошлой схемы каталога и вели на общий /tires, забирая сигналы у сезонных посадочных.
+        $legacy = $this->legacyFilterRedirect($pageId, $routeParams, $request->getQueryParams());
+        if ($legacy !== null) {
+            return $response->withStatus(301)->withHeader('Location', rtrim($baseUrl, '/') . $legacy);
+        }
+
         $pageDirTemplate = (string) ($this->settings['paths']['json_pages_dir'] ?? '');
         $pageJsonDir = str_replace('{lang}', $langCode, $pageDirTemplate);
         $pageData = $this->dataLoader->loadPage($pageJsonDir, $pageId, $baseUrl);
@@ -655,6 +662,65 @@ final class PageAction
      * @param array<string, mixed> $collConfig
      * @return array<string, string>|null
      */
+    /**
+     * Человечный адрес для фильтра, пришедшего query-параметрами: /tires?season=winter → /tires/winter.
+     * Возвращает null, если параметры не распознаны или путь уже содержит сегменты фильтра —
+     * тогда страница обрабатывается как обычно.
+     *
+     * @param array<int,string>   $routeParams
+     * @param array<string,mixed> $query
+     */
+    private function legacyFilterRedirect(string $pageId, array $routeParams, array $query): ?string
+    {
+        if ($routeParams !== [] || $query === []) {
+            return null;
+        }
+
+        foreach ((array) ($this->settings['collections'] ?? []) as $collConfig) {
+            $collConfig = (array) $collConfig;
+            if ($pageId !== (string) ($collConfig['list_page_id'] ?? '')) {
+                continue;
+            }
+
+            $filters = (array) ($collConfig['filters'] ?? []);
+            if ($filters === []) {
+                return null;
+            }
+
+            $navSlug = (string) ($collConfig['nav_slug'] ?? '');
+            if ($navSlug === '') {
+                return null;
+            }
+
+            $segments = [];
+
+            $season = strtolower(trim((string) ($query['season'] ?? '')));
+            if ($season !== '' && isset(((array) ($filters['season'] ?? []))[$season])) {
+                $segments[] = $season;
+            }
+
+            // Размер собирается только целиком: по одной ширине человечного адреса не существует.
+            $width = trim((string) ($query['width'] ?? ''));
+            $profile = trim((string) ($query['profile'] ?? ''));
+            $diameter = trim((string) ($query['diameter'] ?? ''));
+            if ($width !== '' && $profile !== '' && $diameter !== '') {
+                $size = strtolower($width . '-' . $profile . '-r' . $diameter);
+                $pattern = (string) ($filters['size_pattern'] ?? '');
+                if ($pattern !== '' && preg_match($pattern, $size) === 1) {
+                    $segments[] = $size;
+                }
+            }
+
+            if ($segments === []) {
+                return null;
+            }
+
+            return '/' . $navSlug . '/' . implode('/', $segments);
+        }
+
+        return null;
+    }
+
     private function parseFilterParams(array $routeParams, array $collConfig): ?array
     {
         $filters = (array) ($collConfig['filters'] ?? []);
