@@ -3,6 +3,8 @@
 const SENT_KEY = 'fn_state';
 const STEPS = {
   seen: 'seen',
+  cta: 'cta',
+  modal: 'modal',
   open: 'open',
   input: 'input',
   abandon: 'abandon',
@@ -66,6 +68,44 @@ function watchVisibility() {
     { threshold: 0.3 }
   );
   targets.forEach((t) => io.observe(t));
+}
+
+/**
+ * Клик по кнопке заявки и открытие нашей формы. Раньше воронка начиналась с фокуса в поле,
+ * и «сколько людей вообще нажали» мы не знали: у виджета CallTouch есть автопоказ, и его
+ * открытия смешивались с нажатиями.
+ */
+function watchCta() {
+  const CTA = '[data-modal-target], [data-modal], .js-show-modal, a[href="#callback"]';
+  document.addEventListener(
+    'click',
+    (e) => {
+      if (e.target.closest && e.target.closest(CTA)) funnelStep(STEPS.cta, 'form');
+    },
+    true
+  );
+}
+
+function watchModal() {
+  const counted = new WeakSet();
+  const check = () => {
+    for (const m of document.querySelectorAll('[class*="modal"], [class*="popup"]')) {
+      if (counted.has(m)) continue;
+      const cs = getComputedStyle(m);
+      const r = m.getBoundingClientRect();
+      const visible =
+        cs.display !== 'none' &&
+        cs.visibility !== 'hidden' &&
+        Number(cs.opacity) > 0.1 &&
+        r.width > 100 &&
+        r.height > 100;
+      if (!visible || !m.querySelector('input')) continue;
+      counted.add(m);
+      funnelStep(STEPS.modal, 'form', (m.id || m.className || '').slice(0, 40));
+    }
+  };
+  document.addEventListener('click', () => setTimeout(check, 400), true);
+  setInterval(check, 3000);
 }
 
 function watchForms() {
@@ -143,6 +183,8 @@ function watchWidget() {
 
 export function initFunnel() {
   watchVisibility();
+  watchCta();
+  watchModal();
   watchForms();
   watchWidget();
 

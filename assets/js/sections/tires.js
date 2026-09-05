@@ -257,10 +257,7 @@ onReady(() => {
       const width = widthSelect ? widthSelect.value : '';
       const profile = profileSelect ? profileSelect.value : '';
       const diameter = diameterSelect ? diameterSelect.value : '';
-      const target =
-        width && profile && diameter
-          ? `${catalogRoot}/${width}-${profile}-r${diameter}`
-          : catalogRoot;
+      const target = width && profile && diameter ? `${catalogRoot}/${width}-${profile}-r${diameter}` : catalogRoot;
       if (target === window.location.pathname) return false;
       go(target);
       return true;

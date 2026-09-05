@@ -622,9 +622,7 @@ onReady(() => {
         createDealerMap(mapEl, (state) => {
           mapState = state;
           applyFilters();
-          mapState?.map?.events?.add('boundschange', () =>
-            applyFilters({ syncMap: false, resetBatch: false })
-          );
+          mapState?.map?.events?.add('boundschange', () => applyFilters({ syncMap: false, resetBatch: false }));
           applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
         });
       };
