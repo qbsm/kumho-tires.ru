@@ -38,6 +38,7 @@ class DataExtension extends AbstractExtension
             new TwigFunction('resolve_city_by_slug', [$this, 'resolveCityBySlug']),
             new TwigFunction('resolve_section_meta', [$this, 'resolveSectionMeta']),
             new TwigFunction('dealer_cities', [$this, 'dealerCities']),
+            new TwigFunction('inline_svg', [$this, 'inlineSvg'], ['is_safe' => ['html']]),
         ];
     }
 
@@ -328,6 +329,34 @@ class DataExtension extends AbstractExtension
         $manifestPath = $this->baseDir . '/assets/img/build/image-dimensions.json';
         $this->imageManifestExists = is_file($manifestPath);
         $this->imageDimensionsManifest = Json::load($manifestPath) ?? [];
+    }
+
+    /**
+     * Встраивает SVG-схему в разметку: текст внутри остаётся живым и наследует шрифты сайта.
+     */
+    public function inlineSvg(string $relativePath): string
+    {
+        // JsonProcessor уже превратил data/* в абсолютный URL — возвращаем к пути от корня проекта
+        if (str_starts_with($relativePath, $this->baseUrl)) {
+            $relativePath = substr($relativePath, strlen($this->baseUrl));
+        }
+        $relativePath = ltrim($relativePath, '/');
+        if (!preg_match('#^data/img/[A-Za-z0-9/_-]+\.svg$#', $relativePath)) {
+            return '';
+        }
+
+        $path = $this->baseDir . '/' . $relativePath;
+        $real = realpath($path);
+        if ($real === false || !str_starts_with($real, $this->baseDir . '/data/img/')) {
+            return '';
+        }
+
+        $markup = file_get_contents($real);
+        if ($markup === false) {
+            return '';
+        }
+
+        return preg_replace('/<\?xml.*?\?>\s*/s', '', $markup) ?? '';
     }
 
     public function loadJson(string $relativePath): ?array

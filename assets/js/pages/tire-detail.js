@@ -111,3 +111,38 @@ onReady(() => {
     lightbox.openAt(index);
   });
 });
+
+// --- Технологии: переключение оглавления и стенда ---
+onReady(() => {
+  document.querySelectorAll('[data-tire-tech]').forEach((root) => {
+    const tabs = Array.from(root.querySelectorAll('.tire-tech__navitem'));
+    const panes = Array.from(root.querySelectorAll('.tire-tech__pane'));
+    const counter = root.querySelector('[data-tire-tech-current]');
+    if (tabs.length < 2 || tabs.length !== panes.length) return;
+
+    root.classList.add('is-ready');
+
+    const show = (index, focus) => {
+      tabs.forEach((tab, i) => {
+        const on = i === index;
+        tab.classList.toggle('is-active', on);
+        tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        tab.tabIndex = on ? 0 : -1;
+        panes[i].classList.toggle('is-active', on);
+      });
+      if (counter) counter.textContent = String(index + 1);
+      if (focus) tabs[index].focus();
+    };
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => show(i));
+      tab.addEventListener('keydown', (e) => {
+        const step =
+          e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+        if (!step) return;
+        e.preventDefault();
+        show((i + step + tabs.length) % tabs.length, true);
+      });
+    });
+  });
+});

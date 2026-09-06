@@ -29,19 +29,7 @@
       "name": "logoline",
       "visible": false,
       "data": {
-        "tires": [
-          "at52",
-          "at61",
-          "cx11",
-          "es31",
-          "ha31",
-          "hp91",
-          "hs51",
-          "kl71",
-          "mt51",
-          "ps72",
-          "ta31"
-        ]
+        "tires": ["at52", "at61", "cx11", "es31", "ha31", "hp91", "hs51", "kl71", "mt51", "ps72", "ta31"]
       }
     },
     {
@@ -227,6 +215,23 @@
         },
         "items_from": "news",
         "limit": 2
+      }
+    },
+    {
+      "name": "articles",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Статьи о шинах"
+        },
+        "all_link": {
+          "href": "/articles",
+          "title": "Все статьи"
+        },
+        "items_from": "articles",
+        "limit": 3
       }
     },
     {

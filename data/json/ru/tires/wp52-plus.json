@@ -19,7 +19,7 @@
   },
   "desc": {
     "short": "Зимняя нешипованная шина Kumho WinterCraft WP52+ для легковых автомобилей. Самоблокирующиеся 3D-ламели обеспечивают уверенное торможение на снегу и льду.",
-    "full": "Kumho WinterCraft WP52+ — зимняя нешипованная шина из линейки WinterCraft, обеспечивающая оптимальную безопасность вождения в зимних условиях. Самоблокирующиеся 3D-ламели улучшают управляемость и торможение на снегу и льду, а конструкция протектора сохраняет отличные характеристики на сухих и мокрых дорогах при низкой температуре. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают соответствие требованиям к шинам для суровых зимних условий."
+    "full": "Kumho WinterCraft WP52+ — зимняя нешипованная шина из линейки WinterCraft для уверенной езды зимой. Самоблокирующиеся 3D-ламели улучшают управляемость и торможение на снегу и льду, а конструкция протектора сохраняет сцепление на сухих и мокрых дорогах при низкой температуре. Шина имеет маркировку M+S и 3PMSF: снег и лёд она держит без шипов, а на чистом асфальте остаётся тихой."
   },
   "images": {
     "30deg": {
@@ -47,6 +47,7 @@
       "label": "155/70R13",
       "diameter": 13,
       "index": "75T",
+      "art": "2389133",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -61,6 +62,7 @@
       "label": "155/80R13",
       "diameter": 13,
       "index": "79T",
+      "art": "2388933",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -81,6 +83,7 @@
       "label": "175/70R13",
       "diameter": 13,
       "index": "82T",
+      "art": "2388263",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -95,6 +98,7 @@
       "label": "155/65R14",
       "diameter": 14,
       "index": "75T",
+      "art": "2389153",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -109,6 +113,7 @@
       "label": "165/60R14",
       "diameter": 14,
       "index": "79T",
+      "art": "2388283",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -123,12 +128,21 @@
       "label": "165/65R14",
       "diameter": 14,
       "index": "79T",
-      "commercial": false
+      "art": "2388953",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2365797"
+      }
     },
     {
       "label": "165/70R14",
       "diameter": 14,
       "index": "81T",
+      "art": "2389123",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -143,6 +157,7 @@
       "label": "175/65R14",
       "diameter": 14,
       "index": "82T",
+      "art": "2389113",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -157,6 +172,7 @@
       "label": "175/70R14",
       "diameter": 14,
       "index": "84T",
+      "art": "2389143",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -183,6 +199,7 @@
       "label": "185/60R14",
       "diameter": 14,
       "index": "82T",
+      "art": "2388293",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -197,6 +214,7 @@
       "label": "185/65R14",
       "diameter": 14,
       "index": "86T",
+      "art": "2388303",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -211,6 +229,7 @@
       "label": "185/70R14",
       "diameter": 14,
       "index": "88T",
+      "art": "2388273",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -231,6 +250,7 @@
       "label": "165/65R15",
       "diameter": 15,
       "index": "81T",
+      "art": "2388323",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -263,6 +283,7 @@
       "label": "175/65R15",
       "diameter": 15,
       "index": "84T",
+      "art": "2388983",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -291,6 +312,7 @@
       "label": "185/55R15",
       "diameter": 15,
       "index": "86H",
+      "art": "2388343",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -305,6 +327,7 @@
       "label": "185/60R15",
       "diameter": 15,
       "index": "84T",
+      "art": "2388863",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -347,6 +370,7 @@
       "label": "185/65R15",
       "diameter": 15,
       "index": "88T",
+      "art": "2390123",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -361,6 +385,7 @@
       "label": "195/50R15",
       "diameter": 15,
       "index": "82H",
+      "art": "2389243",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -375,6 +400,7 @@
       "label": "195/55R15",
       "diameter": 15,
       "index": "85H",
+      "art": "2388353",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -389,6 +415,7 @@
       "label": "195/60R15",
       "diameter": 15,
       "index": "88T",
+      "art": "2388973",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -417,6 +444,7 @@
       "label": "195/65R15",
       "diameter": 15,
       "index": "91T",
+      "art": "2390133",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -445,6 +473,7 @@
       "label": "205/65R15",
       "diameter": 15,
       "index": "94H",
+      "art": "2388333",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -459,6 +488,7 @@
       "label": "185/50R16",
       "diameter": 16,
       "index": "81H",
+      "art": "2388423",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -473,6 +503,7 @@
       "label": "185/55R16",
       "diameter": 16,
       "index": "83H",
+      "art": "2388253",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -487,6 +518,7 @@
       "label": "185/60R16",
       "diameter": 16,
       "index": "86H",
+      "art": "2389253",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -501,6 +533,7 @@
       "label": "195/45R16",
       "diameter": 16,
       "index": "84H",
+      "art": "2388503",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -515,6 +548,7 @@
       "label": "195/50R16",
       "diameter": 16,
       "index": "88H",
+      "art": "2388433",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -529,6 +563,7 @@
       "label": "195/55R16",
       "diameter": 16,
       "index": "87H",
+      "art": "2388893",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -571,6 +606,7 @@
       "label": "195/60R16",
       "diameter": 16,
       "index": "89H",
+      "art": "2388483",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -585,13 +621,29 @@
       "label": "195/65R16",
       "diameter": 16,
       "index": "92H",
-      "commercial": false
+      "art": "2388493",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "2363954"
+      }
     },
     {
       "label": "205/45R16",
       "diameter": 16,
       "index": "87H",
-      "commercial": false
+      "art": "2388473",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "2363952"
+      }
     },
     {
       "label": "205/50R16",
@@ -603,6 +655,7 @@
       "label": "205/55R16",
       "diameter": 16,
       "index": "91H",
+      "art": "2390143",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -617,6 +670,7 @@
       "label": "205/55R16",
       "diameter": 16,
       "index": "91T",
+      "art": "2388883",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -673,6 +727,7 @@
       "label": "205/60R16",
       "diameter": 16,
       "index": "96H",
+      "art": "2388913",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -687,6 +742,7 @@
       "label": "205/65R16",
       "diameter": 16,
       "index": "95H",
+      "art": "2389173",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -701,6 +757,7 @@
       "label": "215/45R16",
       "diameter": 16,
       "index": "90V",
+      "art": "2388543",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -715,6 +772,7 @@
       "label": "215/55R16",
       "diameter": 16,
       "index": "93H",
+      "art": "2388363",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -743,6 +801,7 @@
       "label": "215/60R16",
       "diameter": 16,
       "index": "99H",
+      "art": "2388873",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -757,6 +816,7 @@
       "label": "215/65R16",
       "diameter": 16,
       "index": "98H",
+      "art": "2389103",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -771,6 +831,7 @@
       "label": "225/55R16",
       "diameter": 16,
       "index": "99V",
+      "art": "2388403",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -791,6 +852,7 @@
       "label": "235/60R16",
       "diameter": 16,
       "index": "100H",
+      "art": "2388313",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -805,6 +867,7 @@
       "label": "205/45R17",
       "diameter": 17,
       "index": "88V",
+      "art": "2388513",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -819,6 +882,7 @@
       "label": "205/50R17",
       "diameter": 17,
       "index": "93V",
+      "art": "2388593",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -833,6 +897,7 @@
       "label": "205/55R17",
       "diameter": 17,
       "index": "95V",
+      "art": "2389023",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -847,7 +912,13 @@
       "label": "205/60R17",
       "diameter": 17,
       "index": "97H",
-      "commercial": false
+      "art": "2388563",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "eprel": "2363962"
+      }
     },
     {
       "label": "215/40R17",
@@ -871,6 +942,7 @@
       "label": "215/55R17",
       "diameter": 17,
       "index": "98V",
+      "art": "2373113",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -885,6 +957,7 @@
       "label": "215/60R17",
       "diameter": 17,
       "index": "100V",
+      "art": "2388903",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -899,6 +972,7 @@
       "label": "215/65R17",
       "diameter": 17,
       "index": "99V",
+      "art": "2388943",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -927,6 +1001,7 @@
       "label": "225/45R17",
       "diameter": 17,
       "index": "94V",
+      "art": "2389073",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -941,6 +1016,7 @@
       "label": "225/45R17",
       "diameter": 17,
       "index": "94H",
+      "art": "2373103",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -969,6 +1045,7 @@
       "label": "225/50R17",
       "diameter": 17,
       "index": "98V",
+      "art": "2373083",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -983,6 +1060,7 @@
       "label": "225/55R17",
       "diameter": 17,
       "index": "101V",
+      "art": "2389033",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -997,12 +1075,21 @@
       "label": "225/60R17",
       "diameter": 17,
       "index": "103V",
-      "commercial": false
+      "art": "2389093",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "2366286"
+      }
     },
     {
       "label": "225/65R17",
       "diameter": 17,
       "index": "106H",
+      "art": "2389083",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1017,6 +1104,7 @@
       "label": "235/45R17",
       "diameter": 17,
       "index": "97V",
+      "art": "2388523",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1031,6 +1119,7 @@
       "label": "235/50R17",
       "diameter": 17,
       "index": "100V",
+      "art": "2388463",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1045,6 +1134,7 @@
       "label": "235/55R17",
       "diameter": 17,
       "index": "103V",
+      "art": "2389183",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1059,6 +1149,7 @@
       "label": "235/65R17",
       "diameter": 17,
       "index": "108V",
+      "art": "2388553",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1079,6 +1170,7 @@
       "label": "215/40R18",
       "diameter": 18,
       "index": "89V",
+      "art": "2388533",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -1093,6 +1185,7 @@
       "label": "215/50R18",
       "diameter": 18,
       "index": "92V",
+      "art": "2388443",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1121,6 +1214,7 @@
       "label": "215/55R18",
       "diameter": 18,
       "index": "95H",
+      "art": "2371683",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1149,6 +1243,7 @@
       "label": "225/40R18",
       "diameter": 18,
       "index": "92W",
+      "art": "2367173",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -1163,6 +1258,7 @@
       "label": "225/45R18",
       "diameter": 18,
       "index": "95V",
+      "art": "2389063",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -1177,18 +1273,35 @@
       "label": "225/55R18",
       "diameter": 18,
       "index": "102V",
-      "commercial": false
+      "art": "2389043",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "2366281"
+      }
     },
     {
       "label": "225/60R18",
       "diameter": 18,
       "index": "104V",
-      "commercial": false
+      "art": "2389203",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "2366300"
+      }
     },
     {
       "label": "235/40R18",
       "diameter": 18,
       "index": "95W",
+      "art": "2388573",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1217,6 +1330,7 @@
       "label": "235/45R18",
       "diameter": 18,
       "index": "98V",
+      "art": "2371693",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1231,6 +1345,7 @@
       "label": "235/50R18",
       "diameter": 18,
       "index": "101V",
+      "art": "2389263",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1245,6 +1360,7 @@
       "label": "235/55R18",
       "diameter": 18,
       "index": "104V",
+      "art": "2373073",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1273,6 +1389,7 @@
       "label": "235/60R18",
       "diameter": 18,
       "index": "107H",
+      "art": "2371703",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1287,6 +1404,7 @@
       "label": "235/60R18",
       "diameter": 18,
       "index": "107V",
+      "art": "2389273",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1301,6 +1419,7 @@
       "label": "245/40R18",
       "diameter": 18,
       "index": "97W",
+      "art": "2388583",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1315,6 +1434,7 @@
       "label": "245/45R18",
       "diameter": 18,
       "index": "100V",
+      "art": "2390113",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1335,6 +1455,7 @@
       "label": "205/55R19",
       "diameter": 19,
       "index": "97H",
+      "art": "2386893",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1363,6 +1484,7 @@
       "label": "215/50R19",
       "diameter": 19,
       "index": "93T",
+      "art": "2371713",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1376,7 +1498,7 @@
     {
       "label": "225/35R19",
       "diameter": 19,
-      "index": "W",
+      "index": "88W",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -1391,6 +1513,7 @@
       "label": "225/55R19",
       "diameter": 19,
       "index": "99V",
+      "art": "2388613",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1419,6 +1542,7 @@
       "label": "225/55R19",
       "diameter": 19,
       "index": "103V",
+      "art": "6303533",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1447,6 +1571,7 @@
       "label": "235/40R19",
       "diameter": 19,
       "index": "96V",
+      "art": "2371723",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1461,6 +1586,7 @@
       "label": "235/50R19",
       "diameter": 19,
       "index": "103V",
+      "art": "2389053",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1489,6 +1615,7 @@
       "label": "235/55R19",
       "diameter": 19,
       "index": "108V",
+      "art": "2371733",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -1523,6 +1650,7 @@
       "label": "245/45R19",
       "diameter": 19,
       "index": "102V",
+      "art": "2369043",
       "commercial": false
     },
     {
@@ -1543,6 +1671,7 @@
       "label": "255/45R19",
       "diameter": 19,
       "index": "104V",
+      "art": "2371743",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1571,6 +1700,7 @@
       "label": "255/50R19",
       "diameter": 19,
       "index": "107H",
+      "art": "2371143",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1584,7 +1714,7 @@
     {
       "label": "215/45R20",
       "diameter": 20,
-      "index": "V",
+      "index": "95V",
       "commercial": false
     },
     {
@@ -1605,6 +1735,7 @@
       "label": "235/35R20",
       "diameter": 20,
       "index": "92W",
+      "art": "2371763",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1633,6 +1764,7 @@
       "label": "235/50R20",
       "diameter": 20,
       "index": "104V",
+      "art": "2371773",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1661,6 +1793,7 @@
       "label": "255/40R20",
       "diameter": 20,
       "index": "104V",
+      "art": "2371783",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1689,6 +1822,7 @@
       "label": "255/45R20",
       "diameter": 20,
       "index": "105V",
+      "art": "2371803",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -1702,13 +1836,13 @@
     {
       "label": "255/35R21",
       "diameter": 21,
-      "index": "W",
+      "index": "101W",
       "commercial": false
     },
     {
       "label": "255/40R21",
       "diameter": 21,
-      "index": "V",
+      "index": "105V",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1722,7 +1856,7 @@
     {
       "label": "275/35R21",
       "diameter": 21,
-      "index": "W",
+      "index": "105W",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -1757,6 +1891,51 @@
       "Специальная резиновая смесь для зимних шин обеспечивает лучшие характеристики даже при низких температурах",
       "Состав смеси и дизайн шины был специально создан для использования на электромобилях",
       "Маркировка M+S и символ снежинки с тремя горными пиками (3PMSF)"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?iditem=4328",
+    "items": [
+      {
+        "title": "Канавки под углом против аквапланирования",
+        "text": "Широкие канавки с большим углом наклона выбрасывают воду вбок. Растёт и запас до аквапланирования, и боковой хват на мокром и заснеженном покрытии.",
+        "image": {
+          "src": "data/img/tires/wp52-plus/raw/wp52-plus-tech-aqua.webp",
+          "alt": "Отвод воды из канавок Kumho WinterCraft WP52+"
+        }
+      },
+      {
+        "title": "Пятно контакта больше на 27 процентов",
+        "text": "Форму пятна пересчитали так, чтобы давление легло ровнее. Плечевые блоки перестают стираться раньше остальных, комфорт при этом не теряется.",
+        "image": {
+          "src": "data/img/tires/wp52-plus/raw/wp52-plus-tech-contact.webp",
+          "alt": "Пятно контакта Kumho WinterCraft WP52+ в сравнении с обычным"
+        }
+      },
+      {
+        "title": "Смесь с высокой вязкостью",
+        "text": "Резина сделана так, чтобы сильнее рассеивать энергию при деформации. Это прямо переводится в сцепление и торможение на мокром и снежном покрытии.",
+        "image": {
+          "src": "data/img/tires/wp52-plus/raw/wp52-plus-tech-compound.webp",
+          "alt": "Структура резиновой смеси Kumho WinterCraft WP52+"
+        }
+      },
+      {
+        "title": "Усиленный каркас под большую нагрузку",
+        "text": "Высокопрочный стальной брекер и усиленный каркас держат форму под тяжёлым авто. Меньше деформация — устойчивее поведение на скорости.",
+        "image": {
+          "src": "data/img/tires/wp52-plus/raw/wp52-plus-tech-belt.webp",
+          "alt": "Усиленный брекер и каркас Kumho WinterCraft WP52+"
+        }
+      },
+      {
+        "title": "Маркировка HL на боковине",
+        "text": "HL означает повышенную грузоподъёмность при том же давлении. Замена 235/55R19 XL на версию HL добавляет 300 кг на авто: 105-й индекс это 925 кг, 108-й — 1000 кг.",
+        "image": {
+          "src": "data/img/tires/wp52-plus/raw/wp52-plus-tech-hl.webp",
+          "alt": "Маркировка HL на боковине Kumho WinterCraft WP52+"
+        }
+      }
     ]
   }
 }

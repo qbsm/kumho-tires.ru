@@ -5,7 +5,7 @@
   {% include 'sections/header.twig' with {'data': {}} %}
   {% set a = article.article %}
   {% if a.cover is defined and a.cover %}
-    {% include 'sections/frame.twig' with {'data': {'cover': a.cover}} %}
+    {% include 'sections/frame.twig' with {'data': {'cover': a.cover, 'cover_position': a.cover_position|default('')}} %}
   {% endif %}
 
   <main class="article-detail" role="main">

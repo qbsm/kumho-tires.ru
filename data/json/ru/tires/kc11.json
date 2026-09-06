@@ -32,12 +32,14 @@
       "label": "185/80R14C",
       "diameter": 14,
       "index": "102/100Q",
+      "art": "2145333",
       "commercial": true
     },
     {
       "label": "205/70R15C",
       "diameter": 15,
       "index": "106/104Q",
+      "art": "2145633",
       "commercial": true
     },
     {
@@ -56,6 +58,7 @@
       "label": "195/60R16C",
       "diameter": 16,
       "index": "99/97T",
+      "art": "2145603",
       "commercial": true,
       "eu": {
         "energy": "D",
@@ -94,6 +97,7 @@
       "label": "215/60R17C",
       "diameter": 17,
       "index": "104/102H",
+      "art": "2145913",
       "commercial": true
     }
   ],

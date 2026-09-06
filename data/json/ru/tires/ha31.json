@@ -18,8 +18,8 @@
     "alt_names": ["Кумхо Солус HA31"]
   },
   "desc": {
-    "short": "Всесезонные шины Kumho SOLUS HA31 для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год.",
-    "full": "Kumho SOLUS HA31 — всесезонная шина из линейки SOLUS, предназначенная для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год. Доступна в диаметрах R13–R18."
+    "short": "Kumho SOLUS HA31 — всесезонная шина с маркировкой 3PMSF для мягкой зимы: направленный V-образный протектор, 19 размеров от R13 до R18.",
+    "full": "Kumho SOLUS HA31 — всесезонная шина для регионов с мягкой зимой. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают допуск к зимней эксплуатации: колёса можно не менять при сезонном похолодании. Направленный V-образный рисунок протектора выбрасывает воду и слякоть из-под колеса назад, а трёхмерные канавки цепляются за снег и лёд.<br><br>Блоки протектора собраны в сотовую структуру с максимальным переплетением — такая раскладка держит блок от заваливания и делает реакцию на руль однозначной. Смесь на основе технологии S-SBR отвечает за сцепление и торможение на мокром асфальте. Размерный ряд — 19 типоразмеров от 165/70R13 до 255/60R18, от малолитражки до среднего кроссовера."
   },
   "images": {
     "30deg": {
@@ -41,6 +41,7 @@
       "label": "165/70R13",
       "diameter": 13,
       "index": "79T",
+      "art": "2165363",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -55,6 +56,7 @@
       "label": "175/65R13",
       "diameter": 13,
       "index": "80T",
+      "art": "2165403",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -69,6 +71,7 @@
       "label": "175/70R13",
       "diameter": 13,
       "index": "82T",
+      "art": "2165303",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -83,6 +86,7 @@
       "label": "175/80R14",
       "diameter": 14,
       "index": "88T",
+      "art": "2165423",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -97,6 +101,7 @@
       "label": "185/55R14",
       "diameter": 14,
       "index": "80H",
+      "art": "2165513",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -111,6 +116,7 @@
       "label": "185/70R14",
       "diameter": 14,
       "index": "88T",
+      "art": "2183773",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -125,6 +131,7 @@
       "label": "195/70R14",
       "diameter": 14,
       "index": "91T",
+      "art": "2183793",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -139,6 +146,7 @@
       "label": "155/60R15",
       "diameter": 15,
       "index": "74T",
+      "art": "2183783",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -153,6 +161,7 @@
       "label": "205/60R15",
       "diameter": 15,
       "index": "91H",
+      "art": "2165463",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -167,6 +176,7 @@
       "label": "205/60R15",
       "diameter": 15,
       "index": "91V",
+      "art": "2165533",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -181,6 +191,7 @@
       "label": "215/65R15",
       "diameter": 15,
       "index": "96H",
+      "art": "2183763",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -195,6 +206,7 @@
       "label": "185/50R16",
       "diameter": 16,
       "index": "81H",
+      "art": "2208033",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -209,6 +221,7 @@
       "label": "225/60R16",
       "diameter": 16,
       "index": "102H",
+      "art": "2231703",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -223,6 +236,7 @@
       "label": "225/70R16",
       "diameter": 16,
       "index": "103H",
+      "art": "2231713",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -237,6 +251,7 @@
       "label": "245/70R16",
       "diameter": 16,
       "index": "107H",
+      "art": "2231723",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -251,6 +266,7 @@
       "label": "255/60R17",
       "diameter": 17,
       "index": "106V",
+      "art": "2231733",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -265,6 +281,7 @@
       "label": "265/70R17",
       "diameter": 17,
       "index": "115H",
+      "art": "2243583",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -279,12 +296,14 @@
       "label": "275/55R17",
       "diameter": 17,
       "index": "109V",
+      "art": "2231743",
       "commercial": false
     },
     {
       "label": "255/60R18",
       "diameter": 18,
       "index": "112V",
+      "art": "2206703",
       "commercial": false,
       "eu": {
         "energy": "C",

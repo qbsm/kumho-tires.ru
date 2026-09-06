@@ -50,7 +50,7 @@
 }
 
 .article-detail__lead {
-  font-size: 1.1em;
+  font-size: 1.25em;
   line-height: 1.55;
   text-wrap: pretty;
 }
@@ -76,8 +76,11 @@
   font-weight: 700;
 }
 
+/* Кегль тела статьи — как в описании модели (1.125em): 1em читался мелко
+   в длинном тексте. */
 .article-detail__body {
-  line-height: 1.65;
+  font-size: 1.125em;
+  line-height: 1.7;
   text-wrap: pretty;
 }
 
@@ -148,4 +151,14 @@
 
 .article-detail__sources .custom-list__item {
   font-size: 0.9em;
+}
+
+/* Последняя секция статьи упиралась в подвал: сверху блока «Читайте также» воздуха вдвое больше,
+   потому что там складываются отступы двух соседних секций. */
+.article-detail > .section:last-child {
+  padding-bottom: 6rem;
+
+  @media (--lg) {
+    padding-bottom: 12rem;
+  }
 }

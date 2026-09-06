@@ -137,6 +137,64 @@
           </div>
 
 
+        {# --- Технологии: заголовок и оглавление слева, стенд справа на уровне заголовка --- #}
+        {% if tire.tech is defined and tire.tech.items is defined and tire.tech.items|length > 0 %}
+        <div class="section__item block-wrap" style="grid-column: 1 / -1">
+          <div class="section__subitem">
+            <div class="tire-tech{{ tire.tech.fill|default(false) ? ' tire-tech--fill' : '' }}" data-tire-tech>
+              <div class="tire-tech__aside">
+                <div class="heading-wrap">
+                  <span class="heading-accent self-start" aria-hidden="true"></span>
+                  <h2 class="h2 heading font-2 weight-700 heading-flex uppercase">Технологии</h2>
+                </div>
+                <div class="tire-tech__nav" role="tablist" aria-label="Технологии шины">
+                  {% for item in tire.tech.items %}
+                    <button
+                      type="button"
+                      role="tab"
+                      id="tech-tab-{{ loop.index }}"
+                      aria-controls="tech-pane-{{ loop.index }}"
+                      aria-selected="{{ loop.first ? 'true' : 'false' }}"
+                      tabindex="{{ loop.first ? '0' : '-1' }}"
+                      class="tire-tech__navitem{{ loop.first ? ' is-active' : '' }}"
+                    >
+                      <span class="tire-tech__navtext">{{ item.title }}</span>
+                    </button>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="tire-tech__stage">
+                {% for item in tire.tech.items %}
+                  <div
+                    class="tire-tech__pane{{ loop.first ? ' is-active' : '' }}"
+                    id="tech-pane-{{ loop.index }}"
+                    role="tabpanel"
+                    aria-labelledby="tech-tab-{{ loop.index }}"
+                  >
+                    <div class="tire-tech__figure">
+                      {% if item.svg is defined and item.svg %}
+                        {{ inline_svg(item.svg) }}
+                      {% elseif item.image is defined and item.image.src is defined %}
+                        {% include 'components/picture.twig' with {
+                          'image': item.image,
+                          'alt': item.image.alt|default(item.title),
+                          'sizes_preset': 'content',
+                          'loading': 'lazy',
+                          'class': 'img-responsive'
+                        } %}
+                      {% endif %}
+                    </div>
+                    <p class="tire-tech__text">{{ item.text }}</p>
+                  </div>
+                {% endfor %}
+                <p class="tire-tech__count" aria-hidden="true"><b data-tire-tech-current>1</b> / {{ tire.tech.items|length }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
         {# --- Таблица размеров (на всю ширину грида) --- #}
         {% if tire.sizes is defined and tire.sizes|length > 0 %}
         <div class="section__item block-wrap" style="grid-column: 1 / -1">

@@ -19,7 +19,7 @@
   },
   "desc": {
     "short": "Зимние шипованные шины Kumho WinterCraft ice WI32 для экстремальных зимних условий. Новый дизайн шипа обеспечивает отличное торможение на льду и снегу.",
-    "full": "Kumho WinterCraft ice WI32 — зимняя шипованная шина из линейки WinterCraft ice, предназначенная для экстремальных зимних условий. Новый дизайн шипа обеспечивает прекрасное торможение и управляемость на льду и снегу, а сбалансированная конструкция — уверенное поведение на сухих и мокрых дорогах. Низкий уровень шума и плавный ход делают поездку комфортной. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают соответствие требованиям к шинам для суровых зимних условий."
+    "full": "Kumho WinterCraft ice WI32 — зимняя шипованная шина из линейки WinterCraft ice, предназначенная для экстремальных зимних условий. Новый дизайн шипа даёт уверенное торможение и управляемость на льду и снегу, а сбалансированная конструкция — уверенное поведение на сухих и мокрых дорогах. Низкий уровень шума и плавный ход делают поездку комфортной. Маркировка M+S и снежинка на фоне трёх горных пиков подтверждают зимний класс, а шипы добавляют то, что снежный тест не проверяет, — сцепление на голом льду."
   },
   "images": {
     "30deg": {
@@ -41,168 +41,195 @@
       "label": "155/70R13",
       "diameter": 13,
       "index": "75T",
+      "art": "2294563",
       "commercial": false
     },
     {
       "label": "155/80R13",
       "diameter": 13,
       "index": "79T",
+      "art": "2294573",
       "commercial": false
     },
     {
       "label": "175/70R13",
       "diameter": 13,
       "index": "82T",
+      "art": "2294583",
       "commercial": false
     },
     {
       "label": "155/65R14",
       "diameter": 14,
       "index": "75T",
+      "art": "2294593",
       "commercial": false
     },
     {
       "label": "165/65R14",
       "diameter": 14,
       "index": "79T",
+      "art": "2294603",
       "commercial": false
     },
     {
       "label": "175/65R14",
       "diameter": 14,
-      "index": "T",
+      "index": "86T",
       "commercial": false
     },
     {
       "label": "175/70R14",
       "diameter": 14,
       "index": "88T",
+      "art": "2305533",
       "commercial": false
     },
     {
       "label": "185/60R14",
       "diameter": 14,
       "index": "82T",
+      "art": "2294623",
       "commercial": false
     },
     {
       "label": "185/65R14",
       "diameter": 14,
       "index": "90T",
+      "art": "2305553",
       "commercial": false
     },
     {
       "label": "185/70R14",
       "diameter": 14,
       "index": "92T",
+      "art": "2305543",
       "commercial": false
     },
     {
       "label": "175/65R15",
       "diameter": 15,
       "index": "88T",
+      "art": "2294653",
       "commercial": false
     },
     {
       "label": "185/55R15",
       "diameter": 15,
       "index": "86T",
+      "art": "2294663",
       "commercial": false
     },
     {
       "label": "185/60R15",
       "diameter": 15,
       "index": "88T",
+      "art": "2294673",
       "commercial": false
     },
     {
       "label": "185/65R15",
       "diameter": 15,
       "index": "92T",
+      "art": "2286183",
       "commercial": false
     },
     {
       "label": "195/55R15",
       "diameter": 15,
       "index": "89T",
+      "art": "2294683",
       "commercial": false
     },
     {
       "label": "195/60R15",
       "diameter": 15,
       "index": "92T",
+      "art": "2294693",
       "commercial": false
     },
     {
       "label": "195/65R15",
       "diameter": 15,
       "index": "95T",
+      "art": "2286193",
       "commercial": false
     },
     {
       "label": "205/65R15",
       "diameter": 15,
       "index": "99T",
+      "art": "2294703",
       "commercial": false
     },
     {
       "label": "205/70R15",
       "diameter": 15,
       "index": "96T",
+      "art": "2354173",
       "commercial": false
     },
     {
       "label": "195/50R16",
       "diameter": 16,
       "index": "88T",
+      "art": "2294713",
       "commercial": false
     },
     {
       "label": "195/55R16",
       "diameter": 16,
       "index": "91T",
+      "art": "2286203",
       "commercial": false
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "94T",
+      "art": "2286213",
       "commercial": false
     },
     {
       "label": "205/60R16",
       "diameter": 16,
       "index": "96T",
+      "art": "2286223",
       "commercial": false
     },
     {
       "label": "205/65R16",
       "diameter": 16,
       "index": "99T",
+      "art": "2294723",
       "commercial": false
     },
     {
       "label": "215/55R16",
       "diameter": 16,
       "index": "97T",
+      "art": "2294733",
       "commercial": false
     },
     {
       "label": "215/60R16",
       "diameter": 16,
       "index": "99T",
+      "art": "2286233",
       "commercial": false
     },
     {
       "label": "215/65R16",
       "diameter": 16,
       "index": "102T",
+      "art": "2286243",
       "commercial": false
     },
     {
       "label": "215/70R16",
       "diameter": 16,
       "index": "100T",
+      "art": "2354193",
       "commercial": false
     },
     {
@@ -227,30 +254,35 @@
       "label": "205/50R17",
       "diameter": 17,
       "index": "93T",
+      "art": "2294743",
       "commercial": false
     },
     {
       "label": "205/55R17",
       "diameter": 17,
       "index": "95T",
+      "art": "2294753",
       "commercial": false
     },
     {
       "label": "215/50R17",
       "diameter": 17,
       "index": "95T",
+      "art": "2294763",
       "commercial": false
     },
     {
       "label": "215/55R17",
       "diameter": 17,
       "index": "98T",
+      "art": "2286253",
       "commercial": false
     },
     {
       "label": "215/60R17",
       "diameter": 17,
       "index": "100T",
+      "art": "2352213",
       "commercial": false
     },
     {
@@ -263,48 +295,56 @@
       "label": "215/65R17",
       "diameter": 17,
       "index": "103T",
+      "art": "2352233",
       "commercial": false
     },
     {
       "label": "225/45R17",
       "diameter": 17,
       "index": "94T",
+      "art": "2286263",
       "commercial": false
     },
     {
       "label": "225/50R17",
       "diameter": 17,
       "index": "98T",
+      "art": "2286273",
       "commercial": false
     },
     {
       "label": "225/55R17",
       "diameter": 17,
       "index": "101T",
+      "art": "2286283",
       "commercial": false
     },
     {
       "label": "225/60R17",
       "diameter": 17,
       "index": "103T",
+      "art": "2354253",
       "commercial": false
     },
     {
       "label": "225/65R17",
       "diameter": 17,
       "index": "106T",
+      "art": "2354273",
       "commercial": false
     },
     {
       "label": "235/45R17",
       "diameter": 17,
       "index": "97T",
+      "art": "2294793",
       "commercial": false
     },
     {
       "label": "235/55R17",
       "diameter": 17,
       "index": "103T",
+      "art": "2294803",
       "commercial": false
     },
     {
@@ -317,6 +357,7 @@
       "label": "245/45R17",
       "diameter": 17,
       "index": "99T",
+      "art": "2294813",
       "commercial": false
     },
     {
@@ -329,18 +370,21 @@
       "label": "215/55R18",
       "diameter": 18,
       "index": "99H",
+      "art": "2305973",
       "commercial": false
     },
     {
       "label": "225/40R18",
       "diameter": 18,
       "index": "92T",
+      "art": "2294823",
       "commercial": false
     },
     {
       "label": "225/45R18",
       "diameter": 18,
       "index": "95T",
+      "art": "2294833",
       "commercial": false
     },
     {
@@ -353,30 +397,35 @@
       "label": "225/55R18",
       "diameter": 18,
       "index": "102T",
+      "art": "2352293",
       "commercial": false
     },
     {
       "label": "225/60R18",
       "diameter": 18,
       "index": "104T",
+      "art": "2354333",
       "commercial": false
     },
     {
       "label": "235/45R18",
       "diameter": 18,
       "index": "98T",
+      "art": "2294853",
       "commercial": false
     },
     {
       "label": "235/50R18",
       "diameter": 18,
       "index": "101T",
+      "art": "2294863",
       "commercial": false
     },
     {
       "label": "235/55R18",
       "diameter": 18,
       "index": "104T",
+      "art": "2354353",
       "commercial": false
     },
     {
@@ -389,18 +438,21 @@
       "label": "245/40R18",
       "diameter": 18,
       "index": "97T",
+      "art": "2294873",
       "commercial": false
     },
     {
       "label": "245/45R18",
       "diameter": 18,
       "index": "100T",
+      "art": "2294883",
       "commercial": false
     },
     {
       "label": "245/50R18",
       "diameter": 18,
       "index": "104T",
+      "art": "2349693",
       "commercial": false
     },
     {
@@ -431,6 +483,7 @@
       "label": "205/55R19",
       "diameter": 19,
       "index": "97T",
+      "art": "2360683",
       "commercial": false
     },
     {
@@ -443,24 +496,26 @@
       "label": "225/55R19",
       "diameter": 19,
       "index": "99H",
+      "art": "2354453",
       "commercial": false
     },
     {
       "label": "235/55R19",
       "diameter": 19,
       "index": "105T",
+      "art": "2354473",
       "commercial": false
     },
     {
       "label": "245/45R19",
       "diameter": 19,
-      "index": "T",
+      "index": "102T",
       "commercial": false
     },
     {
       "label": "255/40R19",
       "diameter": 19,
-      "index": "T",
+      "index": "100T",
       "commercial": false
     },
     {

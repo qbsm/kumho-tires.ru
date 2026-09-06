@@ -18,8 +18,8 @@
     "alt_names": ["Кумхо Круген HP71"]
   },
   "desc": {
-    "short": "Летние шины Kumho CRUGEN HP71 для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах.",
-    "full": "Kumho CRUGEN HP71 — летняя шина из линейки CRUGEN, предназначенная для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах. Доступна в диаметрах R16–R20."
+    "short": "Kumho CRUGEN HP71 — премиальная шина для кроссоверов: 44 типоразмера от R16 до R20, упор на тишину, ресурс и торможение на мокром.",
+    "full": "Kumho CRUGEN HP71 — премиальная шина для кроссоверов и внедорожников с широким размерным рядом: 44 типоразмера от 215/70R16 100H до 265/50R20 111V закрывают практически любой современный CUV или SUV. Ставка сделана на комфорт, тишину и пробег: модель рассчитана на тяжёлый автомобиль с высоким центром тяжести, который большую часть времени проводит на асфальте.<br><br>Новый состав резиновой смеси отвечает за торможение на мокрой и заснеженной дороге: у кроссовера с его массой запас по тормозному пути особенно важен. Лучшие типоразмеры ряда имеют класс сцепления на мокрой дороге B по европейской маркировке, уровень шума держится в диапазоне 71–72 дБ."
   },
   "images": {
     "30deg": {
@@ -47,12 +47,14 @@
       "label": "215/70R16",
       "diameter": 16,
       "index": "100H",
+      "art": "2248213",
       "commercial": false
     },
     {
       "label": "225/70R16",
       "diameter": 16,
       "index": "103H",
+      "art": "2248253",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -79,6 +81,7 @@
       "label": "235/70R16",
       "diameter": 16,
       "index": "109H",
+      "art": "2230133",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -92,6 +95,7 @@
       "label": "245/70R16",
       "diameter": 16,
       "index": "107H",
+      "art": "2231143",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -105,6 +109,7 @@
       "label": "255/65R16",
       "diameter": 16,
       "index": "109V",
+      "art": "2230043",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -118,6 +123,7 @@
       "label": "225/60R17",
       "diameter": 17,
       "index": "99H",
+      "art": "2259083",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -131,6 +137,7 @@
       "label": "225/60R17",
       "diameter": 17,
       "index": "99V",
+      "art": "2230253",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -144,6 +151,7 @@
       "label": "225/65R17",
       "diameter": 17,
       "index": "102V",
+      "art": "2230233",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -170,6 +178,7 @@
       "label": "235/60R17",
       "diameter": 17,
       "index": "102V",
+      "art": "2230163",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -183,6 +192,7 @@
       "label": "235/65R17",
       "diameter": 17,
       "index": "104V",
+      "art": "2230143",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -196,6 +206,7 @@
       "label": "245/55R17",
       "diameter": 17,
       "index": "106V",
+      "art": "2230113",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -209,6 +220,7 @@
       "label": "245/65R17",
       "diameter": 17,
       "index": "107V",
+      "art": "2230093",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -235,6 +247,7 @@
       "label": "225/55R18",
       "diameter": 18,
       "index": "98V",
+      "art": "2230263",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -248,6 +261,7 @@
       "label": "225/60R18",
       "diameter": 18,
       "index": "104V",
+      "art": "2230243",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -274,6 +288,7 @@
       "label": "235/55R18",
       "diameter": 18,
       "index": "100H",
+      "art": "2259103",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -287,6 +302,7 @@
       "label": "235/55R18",
       "diameter": 18,
       "index": "104V",
+      "art": "2230193",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -300,6 +316,7 @@
       "label": "235/60R18",
       "diameter": 18,
       "index": "107V",
+      "art": "2227843",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -319,6 +336,7 @@
       "label": "245/55R18",
       "diameter": 18,
       "index": "103V",
+      "art": "2229933",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -332,6 +350,7 @@
       "label": "245/60R18",
       "diameter": 18,
       "index": "105V",
+      "art": "2230103",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -345,6 +364,7 @@
       "label": "255/55R18",
       "diameter": 18,
       "index": "109V",
+      "art": "2230063",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -358,6 +378,7 @@
       "label": "255/60R18",
       "diameter": 18,
       "index": "108V",
+      "art": "2230053",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -371,6 +392,7 @@
       "label": "265/60R18",
       "diameter": 18,
       "index": "110V",
+      "art": "2228113",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -384,6 +406,7 @@
       "label": "225/55R19",
       "diameter": 19,
       "index": "99V",
+      "art": "2267843",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -403,6 +426,7 @@
       "label": "235/50R19",
       "diameter": 19,
       "index": "99H",
+      "art": "2259093",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -416,6 +440,7 @@
       "label": "235/50R19",
       "diameter": 19,
       "index": "103V",
+      "art": "2230213",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -429,6 +454,7 @@
       "label": "235/55R19",
       "diameter": 19,
       "index": "101V",
+      "art": "2230183",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -455,6 +481,7 @@
       "label": "245/50R19",
       "diameter": 19,
       "index": "105V",
+      "art": "2230123",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -520,6 +547,7 @@
       "label": "265/50R19",
       "diameter": 19,
       "index": "110V",
+      "art": "2230033",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -559,6 +587,7 @@
       "label": "255/50R20",
       "diameter": 20,
       "index": "109V",
+      "art": "2230073",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -578,6 +607,7 @@
       "label": "265/50R20",
       "diameter": 20,
       "index": "111V",
+      "art": "2230023",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -596,6 +626,43 @@
       "Исключительные характеристики торможения на мокрой и заснеженной дороге благодаря новому составу резиновой смеси",
       "M+S",
       "Вседорожников CUV / SUV"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumho.com.au/tyres/4x4/crugen-hp71/",
+    "items": [
+      {
+        "title": "Широкие канавки и микроламели",
+        "text": "Широкие плечевые и продольные канавки в связке с диагональными микроламелями уводят воду из пятна контакта. Тяжёлый кроссовер позже всплывает на мокрой дороге и увереннее тормозит.",
+        "image": {
+          "src": "data/img/tires/hp71/raw/hp71-tech-wet.webp",
+          "alt": "Kumho CRUGEN HP71: широкие канавки и микроламели отводят воду"
+        }
+      },
+      {
+        "title": "3D-ламели и профиль борта",
+        "text": "Трёхмерные ламели держат блок от заваливания, а пересчитанный профиль борта увеличивает пятно контакта. Кроссовер стабильнее в повороте и при перестроении на скорости.",
+        "image": {
+          "src": "data/img/tires/hp71/raw/hp71-tech-sipe.webp",
+          "alt": "Kumho CRUGEN HP71: 3D-ламели и профиль борта"
+        }
+      },
+      {
+        "title": "Смесь с микросиликой и смолой",
+        "text": "Микросилика и смола высокого сцепления в смеси плюс оптимизированный каркас: протектор изнашивается медленнее, пробег до замены выше.",
+        "image": {
+          "src": "data/img/tires/hp71/raw/hp71-tech-compound.webp",
+          "alt": "Kumho CRUGEN HP71: смесь с микросиликой и смолой высокого сцепления"
+        }
+      },
+      {
+        "title": "Голографическая боковина",
+        "text": "На боковину нанесён голографический рисунок: под углом к свету он переливается, и шина читается как премиальная даже на стоянке.",
+        "image": {
+          "src": "data/img/tires/hp71/raw/hp71-tech-sidewall.webp",
+          "alt": "Kumho CRUGEN HP71: голографический рисунок на боковине"
+        }
+      }
     ]
   }
 }

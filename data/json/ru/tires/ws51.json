@@ -20,7 +20,7 @@
   },
   "desc": {
     "short": "Зимняя нешипованная шина Kumho WinterCraft ice WS51 для SUV и внедорожников. Оптимизированная смесь протектора для отличного торможения на льду и снегу.",
-    "full": "Kumho WinterCraft ice WS51 — зимняя нешипованная шина из линейки WinterCraft ice для SUV и широкого спектра современных внедорожников. Оптимизированная смесь протектора обеспечивает отличное торможение на мокрых, заснеженных и обледенелых дорогах, а дизайн протектора с 3D-ламелями — улучшенное сцепление на льду и снегу. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают соответствие требованиям к шинам для суровых зимних условий."
+    "full": "Kumho WinterCraft ice WS51 — зимняя нешипованная шина из линейки WinterCraft ice для кроссоверов и внедорожников. Смесь протектора рассчитана на торможение на мокрых, заснеженных и обледенелых дорогах, а дизайн протектора с 3D-ламелями — улучшенное сцепление на льду и снегу. Символ трёх горных пиков со снежинкой рядом с M+S подтверждает зимний класс: тяжёлый кроссовер трогается и тормозит на снегу без сюрпризов."
   },
   "images": {
     "30deg": {
@@ -42,12 +42,14 @@
       "label": "205/70R15",
       "diameter": 15,
       "index": "100T",
+      "art": "2248653",
       "commercial": false
     },
     {
       "label": "215/65R16",
       "diameter": 16,
       "index": "102T",
+      "art": "2248493",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -63,6 +65,7 @@
       "label": "215/70R16",
       "diameter": 16,
       "index": "100T",
+      "art": "2248593",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -78,6 +81,7 @@
       "label": "245/70R16",
       "diameter": 16,
       "index": "111T",
+      "art": "2248713",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -93,6 +97,7 @@
       "label": "215/60R17",
       "diameter": 17,
       "index": "100T",
+      "art": "2248573",
       "commercial": false
     },
     {
@@ -114,6 +119,7 @@
       "label": "225/60R17",
       "diameter": 17,
       "index": "103T",
+      "art": "2248513",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -129,6 +135,7 @@
       "label": "225/65R17",
       "diameter": 17,
       "index": "106T",
+      "art": "2248533",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -144,6 +151,7 @@
       "label": "235/65R17",
       "diameter": 17,
       "index": "108T",
+      "art": "2248553",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -159,6 +167,7 @@
       "label": "255/65R17",
       "diameter": 17,
       "index": "114T",
+      "art": "2263723",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -174,6 +183,7 @@
       "label": "265/65R17",
       "diameter": 17,
       "index": "116T",
+      "art": "2248693",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -189,6 +199,7 @@
       "label": "225/55R18",
       "diameter": 18,
       "index": "102T",
+      "art": "2248733",
       "commercial": false,
       "eu": {
         "energy": "D",
@@ -204,18 +215,21 @@
       "label": "225/60R18",
       "diameter": 18,
       "index": "104T",
+      "art": "2248803",
       "commercial": false
     },
     {
       "label": "235/55R18",
       "diameter": 18,
       "index": "104T",
+      "art": "2248633",
       "commercial": false
     },
     {
       "label": "235/60R18",
       "diameter": 18,
       "index": "107T",
+      "art": "2248613",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -231,6 +245,7 @@
       "label": "255/55R18",
       "diameter": 18,
       "index": "109T",
+      "art": "2248673",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -246,6 +261,7 @@
       "label": "265/60R18",
       "diameter": 18,
       "index": "114T",
+      "art": "2248753",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -261,12 +277,14 @@
       "label": "235/55R19",
       "diameter": 19,
       "index": "105T",
+      "art": "2263683",
       "commercial": false
     },
     {
       "label": "245/55R19",
       "diameter": 19,
       "index": "107T",
+      "art": "2248773",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -282,12 +300,14 @@
       "label": "255/50R19",
       "diameter": 19,
       "index": "107T",
+      "art": "2248783",
       "commercial": false
     },
     {
       "label": "255/55R19",
       "diameter": 19,
       "index": "111T",
+      "art": "2263703",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -321,6 +341,44 @@
       "Оптимизированный дизайн протектора и 3D ламели для улучшенного сцепления на льду и снегу",
       "M+S и Символ «Alpine» (3PMSF)",
       "Вседорожников CUV / SUV"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/en/tire/view.do?seq=860",
+    "items": [
+      {
+        "title": "Новая форма центральной зоны",
+        "text": "Центр протектора стал длиннее и шире в пятне контакта. Это дало 6 процентов на снегу и 8 процентов на льду.",
+        "image": {
+          "src": "data/img/tires/ws51/raw/ws51-tech-cavity.webp",
+          "alt": "Пятно контакта Kumho WinterCraft ice WS51 до и после изменения центральной зоны"
+        }
+      },
+      {
+        "title": "Микронасечка на блоках",
+        "text": "Поверхность блоков покрыта микрорельефом. Принцип тот же, что у лапы геккона: множество мелких контактов держат лучше, чем одна гладкая площадка.",
+        "image": {
+          "src": "data/img/tires/ws51/raw/ws51-tech-knurl.webp",
+          "alt": "Микронасечка на блоках протектора Kumho WinterCraft ice WS51"
+        }
+      },
+      {
+        "title": "Индикатор остатка протектора",
+        "text": "В канавке отлиты песочные часы: точек внутри становится меньше по мере износа. Четыре — шина новая, ни одной — пора менять. Остаток видно без глубиномера.",
+        "image": {
+          "src": "data/img/tires/ws51/raw/ws51-tech-indicator.webp",
+          "alt": "Kumho WinterCraft ice WS51: индикатор остатка протектора в канавке"
+        },
+        "wide": true
+      },
+      {
+        "title": "Шумопоглощающее плечо",
+        "text": "Блоки в плечевой зоне разной высоты. Сдвинутый рисунок гасит гул, который зимняя шина обычно даёт на одной частоте.",
+        "image": {
+          "src": "data/img/tires/ws51/raw/ws51-tech-shoulder.webp",
+          "alt": "Шумопоглощающая плечевая зона Kumho WinterCraft ice WS51"
+        }
+      }
     ]
   }
 }

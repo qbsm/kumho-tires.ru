@@ -18,8 +18,8 @@
     "alt_names": ["Кумхо Эковинг ES31"]
   },
   "desc": {
-    "short": "Летние шины Kumho Ecowing ES31 для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума.",
-    "full": "Kumho Ecowing ES31 — летняя шина из линейки Ecowing, предназначенная для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума. Доступна в диаметрах R13–R18."
+    "short": "Kumho Ecowing ES31 — летняя шина с упором на экономию топлива: аэродинамическое плечо, класс топливной экономичности до A, 60 размеров R13–R18.",
+    "full": "Kumho Ecowing ES31 — летняя шина, сделанная в первую очередь под экономию топлива. Наружное плечо спрофилировано под обтекание воздухом, а профиль каркаса пересчитан так, чтобы убрать пики давления по краям рёбер: нагрузка ложится ровнее по всей ширине, сопротивление качению падает, износ идёт равномернее. Часть типоразмеров получила высший класс топливной экономичности A по европейской маркировке.<br><br>За поведение в дождь отвечают четыре широкие продольные канавки и диагональные ламели — вода уходит из пятна контакта, риск аквапланирования снижается. На внутреннем плече отлиты лунки: они увеличивают площадь обдува и снимают нагрев, который на длинной трассе съедает ресурс. Размерный ряд — 60 типоразмеров от 145/80R13 до 215/50R18. Рисунок пчелиных сот на боковине — фирменный мотив линейки Ecowing."
   },
   "images": {
     "30deg": {
@@ -41,12 +41,14 @@
       "label": "145/80R13",
       "diameter": 13,
       "index": "75T",
+      "art": "2261473",
       "commercial": false
     },
     {
       "label": "155/65R13",
       "diameter": 13,
       "index": "73T",
+      "art": "2261483",
       "commercial": false
     },
     {
@@ -85,6 +87,7 @@
       "label": "155/65R14",
       "diameter": 14,
       "index": "75T",
+      "art": "2231953",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -98,6 +101,7 @@
       "label": "165/60R14",
       "diameter": 14,
       "index": "75H",
+      "art": "2250023",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -111,6 +115,7 @@
       "label": "165/65R14",
       "diameter": 14,
       "index": "79T",
+      "art": "2231963",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -124,6 +129,7 @@
       "label": "165/70R14",
       "diameter": 14,
       "index": "81T",
+      "art": "2231973",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -137,6 +143,7 @@
       "label": "165/70R14",
       "diameter": 14,
       "index": "85T",
+      "art": "2231983",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -150,6 +157,7 @@
       "label": "175/65R14",
       "diameter": 14,
       "index": "82T",
+      "art": "2231993",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -176,6 +184,7 @@
       "label": "175/70R14",
       "diameter": 14,
       "index": "84T",
+      "art": "2232013",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -189,6 +198,7 @@
       "label": "175/70R14",
       "diameter": 14,
       "index": "88T",
+      "art": "2232023",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -202,6 +212,7 @@
       "label": "175/80R14",
       "diameter": 14,
       "index": "88T",
+      "art": "2232033",
       "commercial": false
     },
     {
@@ -214,6 +225,7 @@
       "label": "185/60R14",
       "diameter": 14,
       "index": "82T",
+      "art": "2232053",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -227,6 +239,7 @@
       "label": "185/60R14",
       "diameter": 14,
       "index": "82H",
+      "art": "2232043",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -240,6 +253,7 @@
       "label": "185/65R14",
       "diameter": 14,
       "index": "86T",
+      "art": "2232063",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -253,6 +267,7 @@
       "label": "185/65R14",
       "diameter": 14,
       "index": "86H",
+      "art": "2250043",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -266,6 +281,7 @@
       "label": "185/70R14",
       "diameter": 14,
       "index": "88T",
+      "art": "2232073",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -279,6 +295,7 @@
       "label": "165/65R15",
       "diameter": 15,
       "index": "81T",
+      "art": "2232083",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -292,6 +309,7 @@
       "label": "165/65R15",
       "diameter": 15,
       "index": "81H",
+      "art": "2250063",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -318,6 +336,7 @@
       "label": "175/60R15",
       "diameter": 15,
       "index": "81H",
+      "art": "2250083",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -331,6 +350,7 @@
       "label": "175/65R15",
       "diameter": 15,
       "index": "84T",
+      "art": "2232093",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -344,6 +364,7 @@
       "label": "175/65R15",
       "diameter": 15,
       "index": "84H",
+      "art": "2250033",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -357,6 +378,7 @@
       "label": "185/60R15",
       "diameter": 15,
       "index": "84T",
+      "art": "2232103",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -370,6 +392,7 @@
       "label": "185/60R15",
       "diameter": 15,
       "index": "88T",
+      "art": "2232113",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -383,6 +406,7 @@
       "label": "185/60R15",
       "diameter": 15,
       "index": "84H",
+      "art": "2232123",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -396,6 +420,7 @@
       "label": "185/60R15",
       "diameter": 15,
       "index": "88H",
+      "art": "2232133",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -409,6 +434,7 @@
       "label": "185/65R15",
       "diameter": 15,
       "index": "88T",
+      "art": "2232153",
       "commercial": false,
       "eu": {
         "energy": "A",
@@ -422,6 +448,7 @@
       "label": "185/65R15",
       "diameter": 15,
       "index": "92T",
+      "art": "2232163",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -435,6 +462,7 @@
       "label": "185/65R15",
       "diameter": 15,
       "index": "88H",
+      "art": "2232143",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -448,6 +476,7 @@
       "label": "195/60R15",
       "diameter": 15,
       "index": "88H",
+      "art": "2232173",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -461,6 +490,7 @@
       "label": "195/60R15",
       "diameter": 15,
       "index": "88V",
+      "art": "2264403",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -474,6 +504,7 @@
       "label": "195/65R15",
       "diameter": 15,
       "index": "91T",
+      "art": "2232193",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -487,6 +518,7 @@
       "label": "195/65R15",
       "diameter": 15,
       "index": "95T",
+      "art": "2232203",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -500,6 +532,7 @@
       "label": "195/65R15",
       "diameter": 15,
       "index": "91H",
+      "art": "2232183",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -526,6 +559,7 @@
       "label": "195/65R15",
       "diameter": 15,
       "index": "91V",
+      "art": "2232213",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -539,18 +573,21 @@
       "label": "215/65R15",
       "diameter": 15,
       "index": "96H",
+      "art": "2250073",
       "commercial": false
     },
     {
       "label": "185/60R16",
       "diameter": 16,
       "index": "86H",
+      "art": "2263613",
       "commercial": false
     },
     {
       "label": "195/60R16",
       "diameter": 16,
       "index": "89H",
+      "art": "2261503",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -577,6 +614,7 @@
       "label": "205/55R16",
       "diameter": 16,
       "index": "91H",
+      "art": "2232223",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -590,6 +628,7 @@
       "label": "205/55R16",
       "diameter": 16,
       "index": "94H",
+      "art": "2232233",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -603,6 +642,7 @@
       "label": "205/55R16",
       "diameter": 16,
       "index": "91V",
+      "art": "2232243",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -616,6 +656,7 @@
       "label": "205/55R16",
       "diameter": 16,
       "index": "94V",
+      "art": "2232253",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -629,6 +670,7 @@
       "label": "205/60R16",
       "diameter": 16,
       "index": "92H",
+      "art": "2231613",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -642,6 +684,7 @@
       "label": "215/60R16",
       "diameter": 16,
       "index": "95V",
+      "art": "2232263",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -655,6 +698,7 @@
       "label": "215/60R16",
       "diameter": 16,
       "index": "99V",
+      "art": "2249923",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -668,6 +712,7 @@
       "label": "215/65R16",
       "diameter": 16,
       "index": "98H",
+      "art": "2261493",
       "commercial": false
     },
     {
@@ -687,6 +732,7 @@
       "label": "205/50R17",
       "diameter": 17,
       "index": "93W",
+      "art": "2232273",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -700,6 +746,7 @@
       "label": "205/55R17",
       "diameter": 17,
       "index": "91W",
+      "art": "2232283",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -713,6 +760,7 @@
       "label": "225/45R17",
       "diameter": 17,
       "index": "91W",
+      "art": "2232293",
       "commercial": false,
       "eu": {
         "energy": "C",
@@ -726,12 +774,14 @@
       "label": "225/50R17",
       "diameter": 17,
       "index": "98W",
+      "art": "2232303",
       "commercial": false
     },
     {
       "label": "225/55R17",
       "diameter": 17,
       "index": "101W",
+      "art": "2232313",
       "commercial": false,
       "eu": {
         "energy": "B",
@@ -745,6 +795,7 @@
       "label": "215/50R18",
       "diameter": 18,
       "index": "92H",
+      "art": "2262293",
       "commercial": false
     }
   ],
@@ -770,6 +821,43 @@
       "Комфортное сцепление и управляемость",
       "Улучшенное сцепление на мокром покрытии и износостойкость",
       "Компактные, средние и верхние средние автомобили"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/en/tire/view.do?seq=854",
+    "items": [
+      {
+        "title": "Аэродинамическое плечо",
+        "text": "Наружное плечо спрофилировано под обтекание воздухом. Меньше аэродинамических потерь на скорости — меньше расход топлива.",
+        "image": {
+          "src": "data/img/tires/es31/raw/es31-tech-shoulder.webp",
+          "alt": "Аэродинамический профиль плечевой зоны Kumho Ecowing ES31"
+        }
+      },
+      {
+        "title": "Лунки для отвода тепла",
+        "text": "На внутреннем плече отлиты лунки. Они увеличивают площадь обдува и снимают нагрев, который на длинной трассе съедает ресурс.",
+        "image": {
+          "src": "data/img/tires/es31/raw/es31-tech-dimple.webp",
+          "alt": "Лунки для отвода тепла на плече Kumho Ecowing ES31"
+        }
+      },
+      {
+        "title": "Ровное давление в пятне контакта",
+        "text": "Профиль каркаса пересчитан так, чтобы убрать пики давления по краям рёбер. Нагрузка ложится ровнее по всей ширине, износ идёт равномернее, сопротивление качению падает.",
+        "image": {
+          "src": "data/img/tires/es31/raw/es31-tech-footprint.webp",
+          "alt": "Распределение давления в пятне контакта Kumho Ecowing ES31 до и после доработки"
+        }
+      },
+      {
+        "title": "Соты на боковине",
+        "text": "Рисунок боковины повторяет пчелиные соты. Мотив выбран не случайно: сотовая структура — природный пример максимальной прочности при минимуме материала, а вся линейка Ecowing построена вокруг экономии.",
+        "image": {
+          "src": "data/img/tires/es31/raw/es31-tech-honeycomb.webp",
+          "alt": "Сотовый рисунок боковины Kumho Ecowing ES31"
+        }
+      }
     ]
   }
 }

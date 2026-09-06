@@ -30,13 +30,19 @@ class UrlExtension extends AbstractExtension
         }
 
         if (
-            str_starts_with($path, 'http://')
-            || str_starts_with($path, 'https://')
-            || str_starts_with($path, '#')
+            str_starts_with($path, '#')
             || str_starts_with($path, 'tel:')
             || str_starts_with($path, 'mailto:')
         ) {
             return $path;
+        }
+
+        // Пути data/* из JSON приходят сюда уже абсолютными (JsonProcessor), и без этой ветки
+        // cache-busting их не касался: обложка статьи оставалась в кэше после замены файла.
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return str_starts_with($path, $this->baseUrl)
+                ? $this->withImgVersion($path, $path)
+                : $path;
         }
 
         // Канонический адрес — без хвостового слеша (его срезает TrailingSlashMiddleware).
