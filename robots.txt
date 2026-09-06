@@ -8,6 +8,11 @@ Allow: /*.png
 Allow: /*.gif
 Allow: /llms.txt
 Allow: /llms-full.txt
+# Собранные бандлы обязаны быть доступны краулерам: Google рендерит страницы и при
+# заблокированных CSS/JS считает их сломанными (правило длиннее Disallow — Allow побеждает)
+Allow: /assets/css/build/
+Allow: /assets/js/build/
+Allow: /assets/js/utils/
 Disallow: /src/
 Disallow: /config/
 Disallow: /tools/
@@ -15,7 +20,6 @@ Disallow: /cache/
 Disallow: /node_modules/
 Disallow: /vendor/
 Disallow: /assets/js/components/
-Disallow: /assets/js/build/
 Disallow: /assets/js/sections/
 Disallow: /assets/js/base/
 Disallow: /assets/css/
@@ -23,6 +27,8 @@ Disallow: /data/json/
 Disallow: /.git/
 Disallow: *.php$
 Disallow: /.htaccess
+
+Sitemap: https://kumho-tires.ru/sitemap.xml
 
 # AI / LLM-краулеры (GEO)
 # По умолчанию разрешаем индексацию для AI-поисковиков. Чтобы запретить бота — добавьте блок с Disallow: /

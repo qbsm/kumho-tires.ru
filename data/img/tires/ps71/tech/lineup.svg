@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420" role="img"
+     aria-label="Положение ECSTA PS71 в линейке: по вертикали скорость, по горизонтали от спорта к комфорту. PS91 быстрее и спортивнее, PS71 в середине, V720 самая спортивная, HS51 и PS31 ближе к комфорту.">
+  <style>
+    .ax   { stroke: #c9ccd2; stroke-width: 2; }
+    .cap  { font: 600 13px/1 'TT Norms Pro','Inter',system-ui,sans-serif; fill: #6b7078; }
+    .name { font: 700 15px/1 'TT Norms Pro','Inter',system-ui,sans-serif; fill: #16181d; }
+    .me   { fill: #d81f26; }
+    .dot  { fill: #b9bec7; }
+    .dot-me { fill: #d81f26; }
+  </style>
+
+  <line class="ax" x1="60" y1="20" x2="60" y2="360"/>
+  <line class="ax" x1="60" y1="360" x2="500" y2="360"/>
+  <path d="M60 14 l-5 10 h10 z" fill="#c9ccd2"/>
+  <path d="M506 360 l-10 -5 v10 z" fill="#c9ccd2"/>
+
+  <text class="cap" x="72" y="30">Скорость</text>
+  <text class="cap" x="72" y="382">Спорт</text>
+  <text class="cap" x="500" y="382" text-anchor="end">Комфорт</text>
+
+  <g>
+    <circle class="dot" cx="188" cy="72" r="7"/>
+    <text class="name" x="204" y="77">ECSTA PS91</text>
+
+    <circle class="dot-me" cx="268" cy="158" r="9"/>
+    <text class="name me" x="286" y="163">ECSTA PS71</text>
+
+    <circle class="dot" cx="112" cy="214" r="7"/>
+    <text class="name" x="128" y="219">ECSTA V720</text>
+
+    <circle class="dot" cx="330" cy="252" r="7"/>
+    <text class="name" x="346" y="257">ECSTA HS51</text>
+
+    <circle class="dot" cx="236" cy="316" r="7"/>
+    <text class="name" x="252" y="321">ECSTA PS31</text>
+  </g>
+</svg>

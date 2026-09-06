@@ -1,0 +1,22 @@
+<section class="cta section{% if data.plate is defined and data.plate %} cta--plate{% endif %}">
+  <div class="{{ data.container|default('container') }}">
+    <div class="section__item cta__block">
+      <div class="section__subitem cta__text">
+        {% if data.heading is defined %}
+          <div class="cta__heading-wrap">
+            <span class="heading-accent self-start" aria-hidden="true"></span>
+            {% include 'components/heading.twig' with {'item': data.heading} %}
+          </div>
+        {% endif %}
+        {% if data.desc is defined and data.desc %}
+          <span class="cta__desc">{{ data.desc|raw }}</span>
+        {% endif %}
+      </div>
+      {% if data.button is defined and data.button.href is defined %}
+        <div class="section__subitem cta__actions">
+          <a href="{{ url(data.button.href) }}" class="button button-sm button-3 button-animated animation-shift uppercase link"{% if data.button.data_tag is defined %} data-tag="{{ data.button.data_tag }}"{% endif %}>{{ data.button.title }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

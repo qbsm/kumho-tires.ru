@@ -2,54 +2,35 @@
   "slug": "hp71",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      16,
-      17,
-      18,
-      19,
-      20
-    ],
-    "widths": [
-      215,
-      225,
-      235,
-      245,
-      255,
-      265
-    ],
-    "profiles": [
-      45,
-      50,
-      55,
-      60,
-      65,
-      70
-    ]
+    "season": ["summer"],
+    "vehicle": ["suv"],
+    "priority": ["comfort"],
+    "diameters": [16, 17, 18, 19, 20],
+    "widths": [215, 225, 235, 245, 255, 265],
+    "profiles": [45, 50, 55, 60, 65, 70],
+    "family": "crugen"
   },
   "item": {
     "code": "HP71",
     "series": "CRUGEN",
-    "name": "Kumho HP71 CRUGEN"
+    "logo": "data/img/series/crugen.svg",
+    "name": "Kumho CRUGEN HP71",
+    "alt_names": ["Кумхо Круген HP71"]
   },
   "desc": {
-    "short": "Летняя шина Kumho HP71 CRUGEN для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах.",
-    "full": "Kumho HP71 CRUGEN — летняя шина из линейки CRUGEN, предназначенная для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах. Доступна в диаметрах R16–R20."
+    "short": "Kumho CRUGEN HP71 — премиальная шина для кроссоверов: 44 типоразмера от R16 до R20, упор на тишину, ресурс и торможение на мокром.",
+    "full": "Kumho CRUGEN HP71 — премиальная шина для кроссоверов и внедорожников с широким размерным рядом: 44 типоразмера от 215/70R16 100H до 265/50R20 111V закрывают практически любой современный CUV или SUV. Ставка сделана на комфорт, тишину и пробег: модель рассчитана на тяжёлый автомобиль с высоким центром тяжести, который большую часть времени проводит на асфальте.<br><br>Новый состав резиновой смеси отвечает за торможение на мокрой и заснеженной дороге: у кроссовера с его массой запас по тормозному пути особенно важен. Лучшие типоразмеры ряда имеют класс сцепления на мокрой дороге B по европейской маркировке, уровень шума держится в диапазоне 71–72 дБ."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/hp71/400/hp71-30deg.webp",
-      "800": "data/img/tires/hp71/800/hp71-30deg.webp",
-      "1280": "data/img/tires/hp71/1280/hp71-30deg.webp",
-      "alt": "Kumho HP71 CRUGEN, ракурс 30°"
+      "src": "data/img/tires/hp71/raw/hp71-30deg.webp",
+      "alt": "Kumho CRUGEN HP71"
     }
   },
   "season": "Летняя",
   "features": [
     {
-      "text": "Новая премиальная всесезонная шина для вседорожников (SUV)"
+      "text": "Новые премиальные всесезонные шины для вседорожников (SUV)"
     },
     {
       "text": "Применение новых технологий, ориентированных на комфорт и низким уровнем шума, а так же увеличенного пробега"
@@ -66,127 +47,284 @@
       "label": "215/70R16",
       "diameter": 16,
       "index": "100H",
+      "art": "2248213",
       "commercial": false
     },
     {
       "label": "225/70R16",
       "diameter": 16,
       "index": "103H",
-      "commercial": false
+      "art": "2248253",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1122260"
+      }
     },
     {
       "label": "235/60R16",
       "diameter": 16,
       "index": "100V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438433"
+      }
     },
     {
       "label": "235/70R16",
       "diameter": 16,
       "index": "109H",
-      "commercial": false
+      "art": "2230133",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438436"
+      }
     },
     {
       "label": "245/70R16",
       "diameter": 16,
       "index": "107H",
-      "commercial": false
+      "art": "2231143",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438437"
+      }
     },
     {
       "label": "255/65R16",
       "diameter": 16,
       "index": "109V",
-      "commercial": false
+      "art": "2230043",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438442"
+      }
     },
     {
       "label": "225/60R17",
       "diameter": 17,
       "index": "99H",
-      "commercial": false
+      "art": "2259083",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438688"
+      }
     },
     {
       "label": "225/60R17",
       "diameter": 17,
       "index": "99V",
-      "commercial": false
+      "art": "2230253",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438457"
+      }
     },
     {
       "label": "225/65R17",
       "diameter": 17,
       "index": "102V",
-      "commercial": false
+      "art": "2230233",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438463"
+      }
     },
     {
       "label": "235/55R17",
       "diameter": 17,
       "index": "103V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438485"
+      }
     },
     {
       "label": "235/60R17",
       "diameter": 17,
       "index": "102V",
-      "commercial": false
+      "art": "2230163",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438502"
+      }
     },
     {
       "label": "235/65R17",
       "diameter": 17,
       "index": "104V",
-      "commercial": false
+      "art": "2230143",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438523"
+      }
     },
     {
       "label": "245/55R17",
       "diameter": 17,
       "index": "106V",
-      "commercial": false
+      "art": "2230113",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438529"
+      }
     },
     {
       "label": "245/65R17",
       "diameter": 17,
       "index": "107V",
-      "commercial": false
+      "art": "2230093",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438535"
+      }
     },
     {
       "label": "215/55R18",
       "diameter": 18,
       "index": "95V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438541"
+      }
     },
     {
       "label": "225/55R18",
       "diameter": 18,
       "index": "98V",
-      "commercial": false
+      "art": "2230263",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438548"
+      }
     },
     {
       "label": "225/60R18",
       "diameter": 18,
       "index": "104V",
-      "commercial": false
+      "art": "2230243",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438573"
+      }
     },
     {
       "label": "235/50R18",
       "diameter": 18,
       "index": "97V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438583"
+      }
     },
     {
       "label": "235/55R18",
       "diameter": 18,
       "index": "100H",
-      "commercial": false
+      "art": "2259103",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438694"
+      }
     },
     {
       "label": "235/55R18",
       "diameter": 18,
       "index": "104V",
-      "commercial": false
+      "art": "2230193",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438694"
+      }
     },
     {
       "label": "235/60R18",
       "diameter": 18,
       "index": "107V",
-      "commercial": false
+      "art": "2227843",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438591"
+      }
     },
     {
       "label": "235/65R18",
@@ -198,37 +336,85 @@
       "label": "245/55R18",
       "diameter": 18,
       "index": "103V",
-      "commercial": false
+      "art": "2229933",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438593"
+      }
     },
     {
       "label": "245/60R18",
       "diameter": 18,
       "index": "105V",
-      "commercial": false
+      "art": "2230103",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438594"
+      }
     },
     {
       "label": "255/55R18",
       "diameter": 18,
       "index": "109V",
-      "commercial": false
+      "art": "2230063",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438595"
+      }
     },
     {
       "label": "255/60R18",
       "diameter": 18,
       "index": "108V",
-      "commercial": false
+      "art": "2230053",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438596"
+      }
     },
     {
       "label": "265/60R18",
       "diameter": 18,
       "index": "110V",
-      "commercial": false
+      "art": "2228113",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438597"
+      }
     },
     {
       "label": "225/55R19",
       "diameter": 19,
       "index": "99V",
-      "commercial": false
+      "art": "2267843",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1246473"
+      }
     },
     {
       "label": "235/45R19",
@@ -240,79 +426,176 @@
       "label": "235/50R19",
       "diameter": 19,
       "index": "99H",
-      "commercial": false
+      "art": "2259093",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438698"
+      }
     },
     {
       "label": "235/50R19",
       "diameter": 19,
       "index": "103V",
-      "commercial": false
+      "art": "2230213",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438603"
+      }
     },
     {
       "label": "235/55R19",
       "diameter": 19,
       "index": "101V",
-      "commercial": false
+      "art": "2230183",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438608"
+      }
     },
     {
       "label": "245/45R19",
       "diameter": 19,
       "index": "98H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438617"
+      }
     },
     {
       "label": "245/50R19",
       "diameter": 19,
       "index": "105V",
-      "commercial": false
+      "art": "2230123",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438621"
+      }
     },
     {
       "label": "245/55R19",
       "diameter": 19,
       "index": "103H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438627"
+      }
     },
     {
       "label": "255/50R19",
       "diameter": 19,
       "index": "107V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438633"
+      }
     },
     {
       "label": "255/55R19",
       "diameter": 19,
       "index": "111V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438639"
+      }
     },
     {
       "label": "255/60R19",
       "diameter": 19,
       "index": "109H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438641"
+      }
     },
     {
       "label": "265/50R19",
       "diameter": 19,
       "index": "110V",
-      "commercial": false
+      "art": "2230033",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438643"
+      }
     },
     {
       "label": "235/55R20",
       "diameter": 20,
       "index": "102H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "438647"
+      }
     },
     {
       "label": "255/45R20",
       "diameter": 20,
       "index": "101H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438664"
+      }
     },
     {
       "label": "255/50R20",
       "diameter": 20,
       "index": "109V",
-      "commercial": false
+      "art": "2230073",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438671"
+      }
     },
     {
       "label": "255/55R20",
@@ -324,7 +607,62 @@
       "label": "265/50R20",
       "diameter": 20,
       "index": "111V",
-      "commercial": false
+      "art": "2230023",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "438682"
+      }
     }
-  ]
+  ],
+  "official": {
+    "tagline": "Премиальные шины для кроссоверов",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000631&idcate=MC000734&iditem=821",
+    "features": [
+      "Применение новых технологий, ориентированных на комфорт и низким уровнем шума, а так же увеличенного пробега",
+      "Исключительные характеристики торможения на мокрой и заснеженной дороге благодаря новому составу резиновой смеси",
+      "M+S",
+      "Вседорожников CUV / SUV"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumho.com.au/tyres/4x4/crugen-hp71/",
+    "items": [
+      {
+        "title": "Широкие канавки и микроламели",
+        "text": "Широкие плечевые и продольные канавки в связке с диагональными микроламелями уводят воду из пятна контакта. Тяжёлый кроссовер позже всплывает на мокрой дороге и увереннее тормозит.",
+        "image": {
+          "src": "data/img/tires/hp71/raw/hp71-tech-wet.webp",
+          "alt": "Kumho CRUGEN HP71: широкие канавки и микроламели отводят воду"
+        }
+      },
+      {
+        "title": "3D-ламели и профиль борта",
+        "text": "Трёхмерные ламели держат блок от заваливания, а пересчитанный профиль борта увеличивает пятно контакта. Кроссовер стабильнее в повороте и при перестроении на скорости.",
+        "image": {
+          "src": "data/img/tires/hp71/raw/hp71-tech-sipe.webp",
+          "alt": "Kumho CRUGEN HP71: 3D-ламели и профиль борта"
+        }
+      },
+      {
+        "title": "Смесь с микросиликой и смолой",
+        "text": "Микросилика и смола высокого сцепления в смеси плюс оптимизированный каркас: протектор изнашивается медленнее, пробег до замены выше.",
+        "image": {
+          "src": "data/img/tires/hp71/raw/hp71-tech-compound.webp",
+          "alt": "Kumho CRUGEN HP71: смесь с микросиликой и смолой высокого сцепления"
+        }
+      },
+      {
+        "title": "Голографическая боковина",
+        "text": "На боковину нанесён голографический рисунок: под углом к свету он переливается, и шина читается как премиальная даже на стоянке.",
+        "image": {
+          "src": "data/img/tires/hp71/raw/hp71-tech-sidewall.webp",
+          "alt": "Kumho CRUGEN HP71: голографический рисунок на боковине"
+        }
+      }
+    ]
+  }
 }

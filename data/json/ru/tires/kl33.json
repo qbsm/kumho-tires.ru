@@ -2,57 +2,37 @@
   "slug": "kl33",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "widths": [
-      205,
-      215,
-      225,
-      235,
-      265
-    ],
-    "profiles": [
-      55,
-      60,
-      65,
-      70
-    ]
+    "season": ["all-season"],
+    "vehicle": ["suv"],
+    "priority": ["offroad"],
+    "diameters": [15, 16, 17, 18, 19],
+    "widths": [205, 215, 225, 235, 265],
+    "profiles": [55, 60, 65, 70],
+    "family": "road-venture"
   },
   "item": {
     "code": "KL33",
     "series": "Road Venture",
-    "name": "Kumho KL33 Road Venture"
+    "logo": "data/img/series/road-venture.svg",
+    "name": "Kumho Road Venture KL33",
+    "alt_names": ["Кумхо Роуд Венчур KL33"]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho KL33 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho KL33 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R19."
+    "short": "Kumho Road Venture KL33 — тихая всесезонная шина для кроссоверов: уровень шума от 69 дБ, маркировка M+S и запас на лёгкое бездорожье.",
+    "full": "Kumho Road Venture KL33 — всесезонная шина для кроссоверов и внедорожников, у которой на первом месте тишина. Уровень шума в размерном ряду начинается с 69 дБ: для шины с маркировкой M+S это тихо, и разница слышна на трассе. Симметричный рисунок повышенной прочности соединяет комфорт на шоссе с запасом на гравий, грязь, снег и песок.<br><br>Восемь типоразмеров от 205/70R15 96T до 235/55R19 101H покрывают компактные и средние кроссоверы. Состав смеси подобран против износа — протектор рассчитан на долгую эксплуатацию без сезонной смены комплекта. Лучшие размеры ряда получили класс сцепления на мокрой дороге B по европейской маркировке."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/kl33/400/kl33-30deg.webp",
-      "800": "data/img/tires/kl33/800/kl33-30deg.webp",
-      "1280": "data/img/tires/kl33/1280/kl33-30deg.webp",
-      "alt": "Kumho KL33 Road Venture, ракурс 30°"
+      "src": "data/img/tires/kl33/raw/kl33-30deg.webp",
+      "alt": "Kumho Road Venture KL33"
     },
     "front": {
-      "400": "data/img/tires/kl33/400/kl33-front.webp",
-      "800": "data/img/tires/kl33/800/kl33-front.webp",
-      "1280": "data/img/tires/kl33/1280/kl33-front.webp",
-      "alt": "Kumho KL33 Road Venture, вид спереди"
+      "src": "data/img/tires/kl33/raw/kl33-front.webp",
+      "alt": "Kumho Road Venture KL33, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/kl33/400/kl33-side.webp",
-      "800": "data/img/tires/kl33/800/kl33-side.webp",
-      "1280": "data/img/tires/kl33/1280/kl33-side.webp",
-      "alt": "Kumho KL33 Road Venture, вид сбоку"
+      "src": "data/img/tires/kl33/raw/kl33-side.webp",
+      "alt": "Kumho Road Venture KL33, вид сбоку"
     }
   },
   "season": "Всесезонная",
@@ -61,54 +41,118 @@
       "label": "205/70R15",
       "diameter": 15,
       "index": "96T",
-      "commercial": false
+      "art": "2233143",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441095"
+      }
     },
     {
       "label": "215/65R16",
       "diameter": 16,
       "index": "98H",
-      "commercial": false
+      "art": "2230003",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441101"
+      }
     },
     {
       "label": "225/60R17",
       "diameter": 17,
       "index": "99H",
-      "commercial": false
+      "art": "2172063",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441208"
+      }
     },
     {
       "label": "235/65R17",
       "diameter": 17,
       "index": "104H",
-      "commercial": false
+      "art": "2172153",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1246472"
+      }
     },
     {
       "label": "225/55R18",
       "diameter": 18,
       "index": "98H",
-      "commercial": false
+      "art": "2176223",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1294738"
+      }
     },
     {
       "label": "265/60R18",
       "diameter": 18,
       "index": "110H",
-      "commercial": false
+      "art": "2158543",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 69,
+        "noiseClass": "A",
+        "eprel": "441263"
+      }
     },
     {
       "label": "225/55R19",
       "diameter": 19,
       "index": "99H",
-      "commercial": false
+      "art": "2171863",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441267"
+      }
     },
     {
       "label": "235/55R19",
       "diameter": 19,
       "index": "101H",
-      "commercial": false
+      "art": "2172213",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "616939"
+      }
     }
   ],
   "features": [
     {
-      "text": "Премиальная шина для SUV с симметричным рисунком протектора повышенной прочности"
+      "text": "Премиальные шины для SUV с симметричным рисунком протектора повышенной прочности"
     },
     {
       "text": "Уверенное движение по гравию, грязи, снегу и песку"
@@ -116,5 +160,16 @@
     {
       "text": "Комфорт и стабильность на шоссе с возможностями лёгкого бездорожья"
     }
-  ]
+  ],
+  "official": {
+    "tagline": "Тихие всесезонные шины для внедорожников",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000631&idcate=MC000734&iditem=822",
+    "features": [
+      "Сниженный уровень шума и превосходный комфорт",
+      "Тихо и комфортно",
+      "Низкий износ протектора благодаря уникальному составу смеси",
+      "M+S",
+      "Вседорожников CUV / SUV"
+    ]
+  }
 }

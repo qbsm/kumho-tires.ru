@@ -1,0 +1,384 @@
+{
+  "slug": "ws51",
+  "visible": true,
+  "filter": {
+    "season": ["winter"],
+    "vehicle": ["suv"],
+    "priority": ["comfort"],
+    "diameters": [15, 16, 17, 18, 19],
+    "widths": [205, 215, 225, 235, 245, 255, 265],
+    "profiles": [50, 55, 60, 65, 70],
+    "family": "wintercraft"
+  },
+  "item": {
+    "code": "WS51",
+    "series": "WinterCraft ice",
+    "caption": "Зимние шины Ice grip для внедорожников",
+    "logo": "data/img/series/wintercraft.svg",
+    "name": "Kumho WinterCraft ice WS51",
+    "alt_names": ["Кумхо ВинтерКрафт айс WS51"]
+  },
+  "desc": {
+    "short": "Зимняя нешипованная шина Kumho WinterCraft ice WS51 для SUV и внедорожников. Оптимизированная смесь протектора для отличного торможения на льду и снегу.",
+    "full": "Kumho WinterCraft ice WS51 — зимняя нешипованная шина из линейки WinterCraft ice для кроссоверов и внедорожников. Смесь протектора рассчитана на торможение на мокрых, заснеженных и обледенелых дорогах, а дизайн протектора с 3D-ламелями — улучшенное сцепление на льду и снегу. Символ трёх горных пиков со снежинкой рядом с M+S подтверждает зимний класс: тяжёлый кроссовер трогается и тормозит на снегу без сюрпризов."
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/ws51/raw/ws51-30deg.webp",
+      "alt": "Kumho WinterCraft ice WS51"
+    },
+    "front": {
+      "src": "data/img/tires/ws51/raw/ws51-front.webp",
+      "alt": "Kumho WinterCraft ice WS51, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/ws51/raw/ws51-side.webp",
+      "alt": "Kumho WinterCraft ice WS51, вид сбоку"
+    }
+  },
+  "season": "Зимняя",
+  "sizes": [
+    {
+      "label": "205/70R15",
+      "diameter": 15,
+      "index": "100T",
+      "art": "2248653",
+      "commercial": false
+    },
+    {
+      "label": "215/65R16",
+      "diameter": 16,
+      "index": "102T",
+      "art": "2248493",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442114"
+      }
+    },
+    {
+      "label": "215/70R16",
+      "diameter": 16,
+      "index": "100T",
+      "art": "2248593",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442120"
+      }
+    },
+    {
+      "label": "245/70R16",
+      "diameter": 16,
+      "index": "111T",
+      "art": "2248713",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442125"
+      }
+    },
+    {
+      "label": "215/60R17",
+      "diameter": 17,
+      "index": "100T",
+      "art": "2248573",
+      "commercial": false
+    },
+    {
+      "label": "215/65R17",
+      "diameter": 17,
+      "index": "103T",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "1438264"
+      }
+    },
+    {
+      "label": "225/60R17",
+      "diameter": 17,
+      "index": "103T",
+      "art": "2248513",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442129"
+      }
+    },
+    {
+      "label": "225/65R17",
+      "diameter": 17,
+      "index": "106T",
+      "art": "2248533",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442130"
+      }
+    },
+    {
+      "label": "235/65R17",
+      "diameter": 17,
+      "index": "108T",
+      "art": "2248553",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442136"
+      }
+    },
+    {
+      "label": "255/65R17",
+      "diameter": 17,
+      "index": "114T",
+      "art": "2263723",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442142"
+      }
+    },
+    {
+      "label": "265/65R17",
+      "diameter": 17,
+      "index": "116T",
+      "art": "2248693",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442143"
+      }
+    },
+    {
+      "label": "225/55R18",
+      "diameter": 18,
+      "index": "102T",
+      "art": "2248733",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442145"
+      }
+    },
+    {
+      "label": "225/60R18",
+      "diameter": 18,
+      "index": "104T",
+      "art": "2248803",
+      "commercial": false
+    },
+    {
+      "label": "235/55R18",
+      "diameter": 18,
+      "index": "104T",
+      "art": "2248633",
+      "commercial": false
+    },
+    {
+      "label": "235/60R18",
+      "diameter": 18,
+      "index": "107T",
+      "art": "2248613",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442156"
+      }
+    },
+    {
+      "label": "255/55R18",
+      "diameter": 18,
+      "index": "109T",
+      "art": "2248673",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442160"
+      }
+    },
+    {
+      "label": "265/60R18",
+      "diameter": 18,
+      "index": "114T",
+      "art": "2248753",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442162"
+      }
+    },
+    {
+      "label": "235/55R19",
+      "diameter": 19,
+      "index": "105T",
+      "art": "2263683",
+      "commercial": false
+    },
+    {
+      "label": "245/55R19",
+      "diameter": 19,
+      "index": "107T",
+      "art": "2248773",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442169"
+      }
+    },
+    {
+      "label": "255/50R19",
+      "diameter": 19,
+      "index": "107T",
+      "art": "2248783",
+      "commercial": false
+    },
+    {
+      "label": "255/55R19",
+      "diameter": 19,
+      "index": "111T",
+      "art": "2263703",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "ice": true,
+        "eprel": "442178"
+      }
+    }
+  ],
+  "features": [
+    {
+      "text": "Оптимизированная смесь протектора для отличного торможения на мокрых, заснеженных и обледенелых дорогах"
+    },
+    {
+      "text": "Оптимизированный дизайн протектора и 3D-ламели для улучшенного сцепления на льду и снегу"
+    },
+    {
+      "text": "Для автомобилей класса SUV и широкого спектра современных внедорожников"
+    },
+    {
+      "text": "Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF)"
+    }
+  ],
+  "official": {
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000631&idcate=MC000735&iditem=824",
+    "features": [
+      "Оптимизированная смесь протектора для обеспечения отличного торможения на мокрых, заснеженных и заледенелых дорогах",
+      "Оптимизированный дизайн протектора и 3D ламели для улучшенного сцепления на льду и снегу",
+      "M+S и Символ «Alpine» (3PMSF)",
+      "Вседорожников CUV / SUV"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/en/tire/view.do?seq=860",
+    "items": [
+      {
+        "title": "Новая форма центральной зоны",
+        "text": "Центр протектора стал длиннее и шире в пятне контакта. Это дало 6 процентов на снегу и 8 процентов на льду.",
+        "image": {
+          "src": "data/img/tires/ws51/raw/ws51-tech-cavity.webp",
+          "alt": "Пятно контакта Kumho WinterCraft ice WS51 до и после изменения центральной зоны"
+        }
+      },
+      {
+        "title": "Микронасечка на блоках",
+        "text": "Поверхность блоков покрыта микрорельефом. Принцип тот же, что у лапы геккона: множество мелких контактов держат лучше, чем одна гладкая площадка.",
+        "image": {
+          "src": "data/img/tires/ws51/raw/ws51-tech-knurl.webp",
+          "alt": "Микронасечка на блоках протектора Kumho WinterCraft ice WS51"
+        }
+      },
+      {
+        "title": "Индикатор остатка протектора",
+        "text": "В канавке отлиты песочные часы: точек внутри становится меньше по мере износа. Четыре — шина новая, ни одной — пора менять. Остаток видно без глубиномера.",
+        "image": {
+          "src": "data/img/tires/ws51/raw/ws51-tech-indicator.webp",
+          "alt": "Kumho WinterCraft ice WS51: индикатор остатка протектора в канавке"
+        },
+        "wide": true
+      },
+      {
+        "title": "Шумопоглощающее плечо",
+        "text": "Блоки в плечевой зоне разной высоты. Сдвинутый рисунок гасит гул, который зимняя шина обычно даёт на одной частоте.",
+        "image": {
+          "src": "data/img/tires/ws51/raw/ws51-tech-shoulder.webp",
+          "alt": "Шумопоглощающая плечевая зона Kumho WinterCraft ice WS51"
+        }
+      }
+    ]
+  }
+}

@@ -2,50 +2,33 @@
   "slug": "kh27",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      14,
-      15,
-      16
-    ],
-    "widths": [
-      145,
-      175,
-      185,
-      195,
-      205,
-      215
-    ],
-    "profiles": [
-      55,
-      60,
-      65,
-      70
-    ]
+    "season": ["summer"],
+    "vehicle": ["passenger"],
+    "priority": ["economy", "comfort"],
+    "diameters": [14, 15, 16],
+    "widths": [145, 175, 185, 195, 205, 215],
+    "profiles": [55, 60, 65, 70],
+    "family": "ecowing"
   },
   "item": {
     "code": "KH27",
     "series": "Ecowing",
-    "name": "Kumho KH27 Ecowing"
+    "logo": "data/img/series/ecowing.svg",
+    "name": "Kumho Ecowing KH27",
+    "alt_names": ["Кумхо Эковинг KH27"]
   },
   "desc": {
-    "short": "Летняя шина Kumho KH27 Ecowing для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума.",
-    "full": "Kumho KH27 Ecowing — летняя шина из линейки Ecowing, предназначенная для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума. Доступна в диаметрах R14–R16."
+    "short": "Kumho Ecowing KH27 — предшественник ES31: асимметричный протектор, класс топливной экономичности A и сцепление на мокрой дороге B во всех размерах.",
+    "full": "Kumho Ecowing KH27 — летняя шина среднего класса, предшественник ES31 с проверенной временем конструкцией. Одиннадцать типоразмеров от 175/60R14 до 205/65R16 адресованы малым и средним автомобилям. Рисунок протектора асимметричный и ненаправленный: колёса можно переставлять по любой схеме, не сверяясь с направлением вращения.<br><br>Весь размерный ряд имеет одинаковую европейскую маркировку — класс топливной экономичности A и класс сцепления на мокрой дороге B: экономия топлива здесь не куплена ценой тормозного пути в дождь. Каналы протектора отводят воду и защищают от аквапланирования, уровень шума держится на отметке 71 дБ."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/kh27/400/kh27-30deg.webp",
-      "800": "data/img/tires/kh27/800/kh27-30deg.webp",
-      "1280": "data/img/tires/kh27/1280/kh27-30deg.webp",
-      "alt": "Kumho KH27 Ecowing, ракурс 30°"
+      "src": "data/img/tires/kh27/raw/kh27-30deg.webp",
+      "alt": "Kumho Ecowing KH27"
     },
     "side": {
-      "400": "data/img/tires/kh27/400/kh27-side.webp",
-      "800": "data/img/tires/kh27/800/kh27-side.webp",
-      "1280": "data/img/tires/kh27/1280/kh27-side.webp",
-      "alt": "Kumho KH27 Ecowing, вид сбоку"
+      "src": "data/img/tires/kh27/raw/kh27-side.webp",
+      "alt": "Kumho Ecowing KH27, вид сбоку"
     }
   },
   "season": "Летняя",
@@ -54,72 +37,90 @@
       "label": "175/60R14",
       "diameter": 14,
       "index": "79H",
+      "art": "2180123",
       "commercial": false
     },
     {
       "label": "175/65R14",
       "diameter": 14,
       "index": "86T",
+      "art": "2211973",
       "commercial": false
     },
     {
       "label": "195/65R14",
       "diameter": 14,
       "index": "89H",
+      "art": "2180133",
       "commercial": false
     },
     {
       "label": "195/70R14",
       "diameter": 14,
       "index": "91H",
+      "art": "2189183",
       "commercial": false
     },
     {
       "label": "145/65R15",
       "diameter": 15,
       "index": "72T",
+      "art": "2180143",
       "commercial": false
     },
     {
       "label": "175/55R15",
       "diameter": 15,
       "index": "77T",
+      "art": "2179863",
       "commercial": false
     },
     {
       "label": "185/55R15",
       "diameter": 15,
       "index": "86H",
-      "commercial": false
+      "art": "2211983",
+      "commercial": false,
+      "eu": {
+        "energy": "A",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1383142"
+      }
     },
     {
       "label": "185/65R15",
       "diameter": 15,
       "index": "88H",
+      "art": "2153003",
       "commercial": false
     },
     {
       "label": "215/60R15",
       "diameter": 15,
       "index": "94V",
+      "art": "2189263",
       "commercial": false
     },
     {
       "label": "205/60R16",
       "diameter": 16,
       "index": "92V",
+      "art": "2158283",
       "commercial": false
     },
     {
       "label": "205/65R16",
       "diameter": 16,
       "index": "95W",
+      "art": "2202133",
       "commercial": false
     }
   ],
   "features": [
     {
-      "text": "Летняя шина среднего класса с асимметричным ненаправленным рисунком протектора"
+      "text": "Летние шины среднего класса с асимметричным ненаправленным рисунком протектора"
     },
     {
       "text": "Низкий уровень шума и комфортная езда для малых и средних автомобилей"
@@ -130,5 +131,16 @@
     {
       "text": "Предшественник модели ES31, проверенная временем конструкция"
     }
-  ]
+  ],
+  "official": {
+    "tagline": "Экономичные шины для города",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000629&idcate=MC000729&iditem=806",
+    "features": [
+      "Разработано для снижения расхода топлива",
+      "Для комфортного использования со сниженным шумообразованием",
+      "Приемлемые характеристики управляемости и сцепления",
+      "Улучшенное сцепление на мокром покрытии",
+      "Компактные, средние и верхние средние автомобили"
+    ]
+  }
 }

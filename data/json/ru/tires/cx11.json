@@ -2,51 +2,35 @@
   "slug": "cx11",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16,
-      17
-    ],
-    "widths": [
-      185,
-      195,
-      205,
-      215,
-      225,
-      235
-    ],
-    "profiles": [
-      55,
-      60,
-      65,
-      70,
-      75
-    ]
+    "season": ["all-season"],
+    "vehicle": ["commercial"],
+    "priority": ["offroad", "economy"],
+    "diameters": [15, 16, 17],
+    "widths": [185, 195, 205, 215, 225, 235],
+    "profiles": [55, 60, 65, 70, 75],
+    "family": "portran"
   },
   "item": {
     "code": "CX11",
     "series": "PorTran",
-    "name": "Kumho CX11 PorTran"
+    "logo": "data/img/series/portran.svg",
+    "name": "Kumho PorTran CX11",
+    "alt_names": ["Кумхо ПорТран CX11"]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho CX11 PorTran для коммерческого транспорта и микроавтобусов. Серия PorTran рассчитана на высокие нагрузки и интенсивную эксплуатацию.",
-    "full": "Kumho CX11 PorTran — всесезонная шина из линейки PorTran, предназначенная для коммерческого транспорта и микроавтобусов. Серия PorTran рассчитана на высокие нагрузки и интенсивную эксплуатацию. Доступна в диаметрах R15–R17."
+    "short": "Kumho PorTran CX11 — всесезонная шина для фургонов и лёгких грузовиков с маркировкой 3PMSF: 25 усиленных типоразмеров C-класса.",
+    "full": "Kumho PorTran CX11 — всесезонная шина для коммерческого транспорта, минивэнов и лёгких грузовиков. Все 25 типоразмеров усиленные — с индексом C и сдвоенным индексом нагрузки, от 195/70R15C 104/102R до 235/60R17C 117/115S. Конструкция рассчитана на постоянную работу с полной загрузкой, а не на редкие выезды.<br><br>Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) позволяют не менять комплект зимой — для развозного парка это экономия и на резине, и на простое авто. Смесь и рисунок настроены на увеличенный пробег и уверенное поведение на снегу. Весь размерный ряд имеет одинаковую европейскую маркировку: класс сцепления на мокрой дороге B, класс топливной экономичности C."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/cx11/400/cx11-30deg.webp",
-      "800": "data/img/tires/cx11/800/cx11-30deg.webp",
-      "1280": "data/img/tires/cx11/1280/cx11-30deg.webp",
-      "alt": "Kumho CX11 PorTran, ракурс 30°"
+      "src": "data/img/tires/cx11/raw/cx11-30deg.webp",
+      "alt": "Kumho PorTran CX11"
     }
   },
   "season": "Всесезонная",
   "features": [
     {
-      "text": "Всесезонная шина для Коммерческого транспорта, минивэнов и легких грузовиков"
+      "text": "Всесезонные шины для Коммерческого транспорта, минивэнов и легких грузовиков"
     },
     {
       "text": "Увеличенный пробег и улучшенные характеристики на снегу"
@@ -63,7 +47,15 @@
       "label": "195/70R15C",
       "diameter": 15,
       "index": "104/102R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "682210"
+      }
     },
     {
       "label": "205/65R15C",
@@ -75,19 +67,43 @@
       "label": "205/70R15C",
       "diameter": 15,
       "index": "106/104R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2186223"
+      }
     },
     {
       "label": "215/65R15C",
       "diameter": 15,
       "index": "104/102T",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "682211"
+      }
     },
     {
       "label": "215/70R15C",
       "diameter": 15,
       "index": "109/107R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "682214"
+      }
     },
     {
       "label": "225/70R15C",
@@ -99,7 +115,15 @@
       "label": "185/75R16C",
       "diameter": 16,
       "index": "104/102R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2186224"
+      }
     },
     {
       "label": "195/60R16C",
@@ -117,31 +141,71 @@
       "label": "195/75R16C",
       "diameter": 16,
       "index": "110/108R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1334182"
+      }
     },
     {
       "label": "195/75R16C",
       "diameter": 16,
       "index": "107/105R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1334182"
+      }
     },
     {
       "label": "205/65R16C",
       "diameter": 16,
       "index": "107/105T",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "682241"
+      }
     },
     {
       "label": "205/75R16C",
       "diameter": 16,
       "index": "113/111R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1334183"
+      }
     },
     {
       "label": "205/75R16C",
       "diameter": 16,
       "index": "110/108R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1334183"
+      }
     },
     {
       "label": "215/60R16C",
@@ -153,43 +217,99 @@
       "label": "215/65R16C",
       "diameter": 16,
       "index": "109/107T",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "682246"
+      }
     },
     {
       "label": "215/75R16C",
       "diameter": 16,
       "index": "116/114R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "682250"
+      }
     },
     {
       "label": "225/65R16C",
       "diameter": 16,
       "index": "112/110R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "682267"
+      }
     },
     {
       "label": "225/75R16C",
       "diameter": 16,
       "index": "121/120R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "682281"
+      }
     },
     {
       "label": "235/65R16C",
       "diameter": 16,
       "index": "121/119R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1334186"
+      }
     },
     {
       "label": "235/65R16C",
       "diameter": 16,
       "index": "115/113R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1334186"
+      }
     },
     {
       "label": "205/70R17C",
       "diameter": 17,
       "index": "115/113R",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1288650"
+      }
     },
     {
       "label": "215/60R17C",
@@ -201,13 +321,39 @@
       "label": "225/55R17C",
       "diameter": 17,
       "index": "109/107H",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1082774"
+      }
     },
     {
       "label": "235/60R17C",
       "diameter": 17,
       "index": "117/115S",
-      "commercial": true
+      "commercial": true,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1288651"
+      }
     }
-  ]
+  ],
+  "official": {
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000633&idcate=MC003180&iditem=4398",
+    "tagline": "Всесезонные шины для фургонов",
+    "features": [
+      "Всесезонная шина для коммерческого транспорта, минивэнов и легких грузовиков",
+      "Увеличенный пробег и улучшенные характеристики на снегу",
+      "Безопасность и комфорт в любую погоду",
+      "Маркировка M+S и снежинка с тремя горными пиками (3PMSF) для шин, предназначенных для использования в зимних условиях"
+    ]
+  }
 }

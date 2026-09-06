@@ -40,6 +40,8 @@ export class FormUI {
     this.form.classList.remove('is-loading');
     this.form.classList.add('is-success');
 
+    this.form.dispatchEvent(new CustomEvent('form-callback:success', { bubbles: true }));
+
     this._showSuccessOverlay();
   }
 

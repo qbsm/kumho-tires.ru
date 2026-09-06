@@ -2,26 +2,55 @@
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  border: 1px solid var(--color-4);
-  border-radius: 1rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
+
+  /* Как у карточек контактов: рамки нет, карточку держит мягкая многослойная тень */
+  border-radius: 1.6rem;
+  background: var(--color-1);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 6%),
+    0 24px 48px rgb(0 0 0 / 4%);
+  transition: box-shadow 0.25s ease-out, transform 0.25s ease-out;
   min-height: 100%;
   color: inherit;
   text-decoration: none;
 
   @media (--lg) {
     padding: 2rem;
-    border-radius: 2rem;
+    border-radius: 2.4rem;
   }
 }
 
 .card-tire:hover {
-  border-color: var(--color-3);
+  box-shadow:
+    0 2px 4px rgb(0 0 0 / 6%),
+    0 14px 36px rgb(0 0 0 / 12%),
+    0 36px 72px rgb(0 0 0 / 8%);
+  transform: translateY(-2px);
+}
+
+/* Текст держится вверху, графика прижата к низу карточки и выровнена по нижнему краю */
+.card-tire__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
 .card-tire__img-wrap {
   width: 60%;
-  align-self: flex-end;
+  flex: 0 0 auto;
+}
+
+.card-tire__logo-wrap {
+  min-width: 0;
+
+  /* Узкая карточка: отдаём картинке больше места, логотип не должен её теснить */
+  @media (--xs) {
+    max-width: 45%;
+  }
 }
 
 .card-tire .card__title {
@@ -34,6 +63,54 @@
 
 .card-tire .card__desc {
   color: var(--color-5);
+}
+
+/* Логотипы линеек очень разной пропорции (5:1 … 11:1): при равной высоте длинный CRUGEN
+   выглядит крупнее короткого PorTran. Поэтому высота у каждого своя — подобрана так, чтобы
+   закрашенная площадь совпадала с ecowing, он взят за эталон восприятия.
+   В покое логотип одноцветный тёмный, цвет линейки проявляется при наведении на карточку. */
+.card-tire__series-logo {
+  height: 1.6rem;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  filter: brightness(0) opacity(0.75);
+  transition: filter 0.25s ease-out;
+}
+
+.card-tire__series-logo--crugen {
+  height: 1.14rem;
+}
+
+.card-tire__series-logo--road-venture {
+  height: 1.28rem;
+}
+
+.card-tire__series-logo--ecsta {
+  height: 1.39rem;
+}
+
+.card-tire__series-logo--wintercraft {
+  height: 1.57rem;
+}
+
+.card-tire__series-logo--ecowing {
+  height: 1.6rem;
+}
+
+.card-tire__series-logo--solus {
+  height: 1.83rem;
+}
+
+.card-tire__series-logo--portran {
+  height: 1.7rem;
+}
+
+.card-tire:hover .card-tire__series-logo,
+.card-tire:focus-visible .card-tire__series-logo {
+  filter: none;
 }
 
 .card-tire .frame-wrap {

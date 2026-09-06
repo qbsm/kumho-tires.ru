@@ -26,6 +26,7 @@ if (is_readable($configPath)) {
 }
 
 $collections = (array) ($config['collections'] ?? []);
+$siteUrl = rtrim((string) ($config['site_url'] ?? ''), '/');
 $title = (string) ($config['title'] ?? 'Platform');
 $intro = (string) ($config['intro'] ?? 'Детальная информация о разделах платформы.');
 
@@ -99,6 +100,11 @@ foreach ($langs as $lang) {
             $name = getByPath($json, $nameKey);
             $lines[] = '### ' . (is_string($name) ? $name : $slug);
             $lines[] = 'Slug: ' . $slug;
+            // Полный адрес страницы: без него LLM знает модель, но не может дать на неё ссылку
+            $urlPattern = (string) ($coll['url_pattern'] ?? '');
+            if ($urlPattern !== '' && $siteUrl !== '') {
+                $lines[] = 'URL: ' . $siteUrl . str_replace('{slug}', (string) $slug, $urlPattern);
+            }
             if ($descKey !== null) {
                 $desc = getByPath($json, $descKey);
                 if ($desc !== null && $desc !== '') {
@@ -115,6 +121,37 @@ foreach ($langs as $lang) {
                 $formatted = formatValue($value, $key);
                 if ($formatted !== '') {
                     $lines[] = $label . ': ' . $formatted;
+                }
+            }
+            $lines[] = '';
+        }
+    }
+
+    // Разделы каталога (сезоны и линейки): их тексты — самая цитируемая часть для
+    // генеративных движков, а сущностями они не являются и в цикл выше не попадают.
+    $filtersDir = $langDir . '/filters';
+    if (is_dir($filtersDir)) {
+        $filterFiles = glob($filtersDir . '/*.json') ?: [];
+        sort($filterFiles);
+        foreach ($filterFiles as $filterFile) {
+            $json = json_decode((string) file_get_contents($filterFile), true);
+            $items = $json['content']['items'] ?? null;
+            if (!is_array($items)) {
+                continue;
+            }
+            $slug = str_replace(['tires-', '.json'], '', basename($filterFile));
+            $lines[] = '### Раздел каталога: ' . $slug;
+            if ($siteUrl !== '') {
+                $lines[] = 'URL: ' . $siteUrl . '/tires/' . $slug;
+            }
+            foreach ($items as $item) {
+                $title = (string) ($item['heading']['title'] ?? '');
+                if ($title !== '') {
+                    $lines[] = $title;
+                }
+                $text = trim(preg_replace('/\s+/', ' ', strip_tags((string) ($item['desc'] ?? ''))));
+                if ($text !== '') {
+                    $lines[] = $text;
                 }
             }
             $lines[] = '';
@@ -175,6 +212,14 @@ function formatValue($value, string $key): string
     // array of strings
     if (array_values($value) === $value && (empty($value) || is_string($value[0] ?? null))) {
         return implode(', ', $value);
+    }
+    // array of objects with 'label' (например, таблица размеров шин)
+    if (isset($value[0]) && is_array($value[0]) && array_key_exists('label', $value[0])) {
+        $labels = array_filter(array_map(
+            static fn($v) => is_array($v) ? (string) ($v['label'] ?? '') : '',
+            $value
+        ));
+        return implode(', ', $labels);
     }
     return '';
 }

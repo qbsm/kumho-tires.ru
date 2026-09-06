@@ -11,8 +11,23 @@
 .content-policy {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.content-tires {
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
 }
+
+.content-tires .longread p {
+  margin-block-end: 1rem;
+}
+
+.content-tires .longread p:last-child {
+  margin-block-end: 0;
+}
+
 
 @media (--lg) {
   .content-warranty {
@@ -33,6 +48,210 @@
   }
 }
 
+.content-about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-about .about-lead {
+  display: block;
+  font-family: var(--font-2);
+  font-size: 1.375em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+@media (--md) {
+  .content-about .about-lead {
+    font-size: 1.625em;
+  }
+}
+
+/* Крупные цифры-показатели */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (--md) {
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.5rem;
+  background: var(--gradient-3);
+}
+
+.about-stat__num {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-2);
+  font-size: 3.25em;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-3);
+}
+
+@media (--md) {
+  .about-stat__num {
+    font-size: 3.75em;
+  }
+}
+
+.about-stat__plus {
+  align-self: center;
+  margin-left: 0.02em;
+  font-size: 0.55em;
+}
+
+.about-stat__label {
+  font-family: var(--font-2);
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--color-2);
+}
+
+/* Акцентный блок «8 млн = 22 000» */
+.about-highlight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  text-align: center;
+  color: var(--color-1);
+  background:
+    radial-gradient(120% 150% at 12% 15%, hsl(357deg 100% 47% / 55%), transparent 55%),
+    radial-gradient(130% 160% at 88% 90%, hsl(357deg 100% 47% / 35%), transparent 52%),
+    linear-gradient(135deg, #2b2f34 0%, #0c0d0f 58%, #191a1d 100%);
+}
+
+/* Мягкое размытое свечение поверх градиента */
+.about-highlight::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  width: 70%;
+  height: 120%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, hsl(357deg 100% 47% / 30%), transparent);
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-highlight > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (--md) {
+  .about-highlight {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 2.75rem 2rem;
+  }
+}
+
+.about-highlight__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-highlight__num {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.12em;
+  font-family: var(--font-2);
+  font-size: 3em;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-1);
+}
+
+@media (--md) {
+  .about-highlight__num {
+    font-size: 4em;
+  }
+}
+
+.about-highlight__unit {
+  font-size: 0.42em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about-highlight__label {
+  font-family: var(--font-2);
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.about-highlight__eq {
+  font-family: var(--font-2);
+  font-size: 2.5em;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-7);
+}
+
+/* Финальный слоган */
+.about-slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2.25rem 1.75rem;
+  border-radius: 1.5rem;
+  background: var(--gradient-3);
+}
+
+.about-slogan__accent {
+  display: block;
+  width: 1.2rem;
+  height: 1.25rem;
+  background-color: var(--color-3);
+  transform: skewX(-45deg);
+}
+
+.about-slogan__text {
+  font-family: var(--font-2);
+  font-size: 1.5em;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-2);
+}
+
+@media (--md) {
+  .about-slogan {
+    padding: 3rem 2.5rem;
+  }
+
+  .about-slogan__text {
+    font-size: 2em;
+  }
+}
+
 .content .container {
   /* Стили для контейнера в content */
 }
@@ -46,4 +265,9 @@
 .content-container .container-sm,
 .content-container .container-md {
   transform: none;
+}
+
+/* Текстовый блок и вопросы подряд дают двойной вертикальный отступ: 60 снизу и 60 сверху */
+.content-container + .faq {
+  padding-top: 0;
 }

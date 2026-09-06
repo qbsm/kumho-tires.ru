@@ -1,0 +1,135 @@
+{
+  "name": "brand",
+  "sections": [
+    {
+      "name": "header",
+      "data": {}
+    },
+    {
+      "name": "frame",
+      "visible": true,
+      "data": {
+        "cover": "data/img/frames/raw/news.webp",
+        "cover_position": "center center"
+      }
+    },
+    {
+      "name": "content-container",
+      "data": {
+        "container": "container-sm",
+        "content": {
+          "class": "content-about",
+          "items": [
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h1",
+                "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Кто производит шины Kumho"
+              },
+              "desc": "<p>Шины Kumho выпускает <b>Kumho Tire Co., Inc.</b> — компания из Республики Корея. Штаб-квартира и головной завод находятся в Кванджу, на юго-западе страны. По объёму выпуска это второй производитель шин в Корее.</p><p>Компания основана <b>5 сентября 1960 года</b> под названием «Самъян Тайер» (Samyang Tire). В 1984 году она вошла в группу Kumho, а с 2003 года шины выпускаются под маркой Kumho Tire. Русское написание бренда — «Кумхо».</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Где находятся заводы Kumho"
+              },
+              "desc": "<p>У компании восемь шинных заводов в четырёх странах.</p><p><b>Республика Корея</b> — Кванджу, Коксон и Пхёнтхэк. <b>Китай</b> — Нанкин, Тяньцзинь и Чанчунь. <b>Вьетнам</b> — провинция Биньзыонг. <b>США</b> — Мейкон, штат Джорджия.</p><p>Разработка и испытания ведутся в Корее; на разные рынки шины отгружаются с разных площадок, поэтому страна производства у двух одинаковых моделей может отличаться.</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Кому принадлежит Kumho Tire"
+              },
+              "desc": "<p>С 2018 года крупнейший акционер Kumho Tire — компания Singwey Korea, созданная китайской Doublestar совместно с Qingdao Guoxin. На конец 2024 года ей принадлежало <b>45 % акций</b>. В феврале 2026 года изменение структуры владения получило одобрение регулятора.</p><p>При этом сама Kumho Tire остаётся корейским юридическим лицом со штаб-квартирой в Кванджу, здесь же находятся исследовательский центр и головное производство. Поэтому корректный ответ на вопрос «какой страны бренд» — Республика Корея, а «китайская» относится к составу акционеров, а не к происхождению марки.</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Как узнать страну производства своей шины"
+              },
+              "desc": "<p>Страна и завод зашифрованы в <b>DOT-коде на боковине</b>: первые два знака после букв DOT — код завода-изготовителя, последние четыре цифры — неделя и год выпуска. Рядом с DOT часто нанесена и прямая надпись <b>Made in</b> с названием страны.</p><p>Та же маркировка показывает свежесть комплекта: по неделе и году видно, сколько шины пролежали на складе. Проверять её стоит до оплаты — на любой шине, в любом магазине.</p>"
+            },
+            {
+              "class": "content-wrap",
+              "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+              "heading": {
+                "tag": "h2",
+                "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+                "title": "Kumho в России"
+              },
+              "desc": "<p>Официальный дистрибьютор шин Kumho в России — компания «Север Авто», подробнее о ней на странице <a href='/about' class='link inline weight-400'>о компании</a>. Продукция поставляется напрямую и продаётся через авторизованные точки — их <a href='/buy' class='link inline weight-400'>155 в 55 городах</a>.</p><p>На шины, купленные в авторизованных точках, распространяется программа <a href='/warranty' class='link inline weight-400'>«Расширенная гарантия Kumho»</a>. Весь модельный ряд, доступный в России, собран в <a href='/tires' class='link inline weight-400'>каталоге</a>: летние, зимние, всесезонные и коммерческие линейки.</p>"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "faq",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Вопросы и ответы"
+        },
+        "items": [
+          {
+            "icon": {
+              "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+            },
+            "title": "Kumho — какой страны бренд?",
+            "answerText": "Республика Корея. Kumho Tire Co., Inc. зарегистрирована в Корее, штаб-квартира и головной завод — в городе Кванджу. Компания основана в 1960 году как «Самъян Тайер», марка Kumho Tire используется с 2003 года.",
+            "desc": "Республика Корея. Kumho Tire Co., Inc. зарегистрирована в Корее, штаб-квартира и головной завод — в городе Кванджу. Компания основана в 1960 году как «Самъян Тайер», марка Kumho Tire используется с 2003 года."
+          },
+          {
+            "icon": {
+              "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+            },
+            "title": "Kumho — это Корея или Китай?",
+            "answerText": "Бренд корейский, но крупнейший акционер компании — китайский: с 2018 года 45 % акций принадлежат Singwey Korea, совместному предприятию Doublestar и Qingdao Guoxin. Штаб-квартира, исследовательский центр и головное производство остаются в Корее.",
+            "desc": "Бренд корейский, но крупнейший акционер компании — китайский: с 2018 года 45 % акций принадлежат Singwey Korea, совместному предприятию Doublestar и Qingdao Guoxin. Штаб-квартира, исследовательский центр и головное производство остаются в Корее."
+          },
+          {
+            "icon": {
+              "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+            },
+            "title": "Где производят шины Kumho?",
+            "answerText": "На восьми заводах в четырёх странах: Кванджу, Коксон и Пхёнтхэк в Республике Корея; Нанкин, Тяньцзинь и Чанчунь в Китае; провинция Биньзыонг во Вьетнаме; Мейкон, штат Джорджия, в США.",
+            "desc": "На восьми заводах в четырёх странах: Кванджу, Коксон и Пхёнтхэк в Республике Корея; Нанкин, Тяньцзинь и Чанчунь в Китае; провинция Биньзыонг во Вьетнаме; Мейкон, штат Джорджия, в США."
+          },
+          {
+            "icon": {
+              "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+            },
+            "title": "Как понять, в какой стране сделана конкретная шина?",
+            "answerText": "По DOT-коду на боковине: первые два знака после букв DOT — код завода, последние четыре цифры — неделя и год выпуска. Часто рядом нанесена и надпись Made in с названием страны.",
+            "desc": "По DOT-коду на боковине: первые два знака после букв DOT — код завода, последние четыре цифры — неделя и год выпуска. Часто рядом нанесена и надпись Made in с названием страны."
+          },
+          {
+            "icon": {
+              "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+            },
+            "title": "Сколько лет бренду Kumho?",
+            "answerText": "Компания работает с 1960 года — больше 65 лет. Под маркой Kumho Tire шины выпускаются с 2003 года.",
+            "desc": "Компания работает с 1960 года — больше 65 лет. Под маркой Kumho Tire шины выпускаются с 2003 года."
+          }
+        ]
+      }
+    },
+    {
+      "name": "footer",
+      "data": {}
+    }
+  ]
+}

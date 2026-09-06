@@ -2,49 +2,38 @@
   "slug": "ta31",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      16,
-      18
-    ],
-    "widths": [
-      205,
-      215
-    ],
-    "profiles": [
-      50,
-      65
-    ]
+    "season": ["all-season"],
+    "vehicle": ["suv"],
+    "priority": ["offroad"],
+    "diameters": [16, 18],
+    "widths": [205, 215],
+    "profiles": [50, 65],
+    "family": "road-venture"
   },
   "item": {
     "code": "TA31",
     "series": "Road Venture",
-    "name": "Kumho TA31 Road Venture"
+    "caption": "Всесезонные шины для лёгкого бездорожья",
+    "logo": "data/img/series/road-venture.svg",
+    "name": "Kumho Road Venture TA31",
+    "alt_names": ["Кумхо Роуд Венчур TA31"]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho TA31 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho TA31 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R16–R18."
+    "short": "Kumho TA31 — всесезонная шина для седанов, купе и компактных кроссоверов с гарантией пробега до 100 000 км.",
+    "full": "Kumho TA31 — всесезонная туринговая шина для седанов, купе и компактных кроссоверов. Размерный ряд из двух позиций — 205/65R16 95H и 215/50R18 92H — легковой, никаких дюймовых внедорожных посадок здесь нет. Симметричный рисунок протектора разделён на четыре ряда, широкие плечевые блоки отвечают за сцепление в повороте и на мокрой дороге.<br><br>Ресурс — сильная сторона модели: на неё действует гарантия пробега до 100 000 км. Сниженное сопротивление качению работает на расход топлива, а уровень шума 69 дБ у размера 205/65R16 держит салон тихим на трассе. Оба размера имеют класс сцепления на мокрой дороге C и класс топливной экономичности C по европейской маркировке."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/ta31/400/ta31-30deg.webp",
-      "800": "data/img/tires/ta31/800/ta31-30deg.webp",
-      "1280": "data/img/tires/ta31/1280/ta31-30deg.webp",
-      "alt": "Kumho TA31 Road Venture, ракурс 30°"
+      "src": "data/img/tires/ta31/raw/ta31-30deg.webp",
+      "alt": "Kumho Road Venture TA31"
     },
     "front": {
-      "400": "data/img/tires/ta31/400/ta31-front.webp",
-      "800": "data/img/tires/ta31/800/ta31-front.webp",
-      "1280": "data/img/tires/ta31/1280/ta31-front.webp",
-      "alt": "Kumho TA31 Road Venture, вид спереди"
+      "src": "data/img/tires/ta31/raw/ta31-front.webp",
+      "alt": "Kumho Road Venture TA31, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/ta31/400/ta31-side.webp",
-      "800": "data/img/tires/ta31/800/ta31-side.webp",
-      "1280": "data/img/tires/ta31/1280/ta31-side.webp",
-      "alt": "Kumho TA31 Road Venture, вид сбоку"
+      "src": "data/img/tires/ta31/raw/ta31-side.webp",
+      "alt": "Kumho Road Venture TA31, вид сбоку"
     }
   },
   "season": "Всесезонная",
@@ -53,18 +42,32 @@
       "label": "205/65R16",
       "diameter": 16,
       "index": "95H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 69,
+        "noiseClass": "B",
+        "eprel": "444820"
+      }
     },
     {
       "label": "215/50R18",
       "diameter": 18,
       "index": "92H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "444831"
+      }
     }
   ],
   "features": [
     {
-      "text": "Всесезонная шина для седанов и купе с симметричным рисунком протектора"
+      "text": "Всесезонные шины для седанов и купе с симметричным рисунком протектора"
     },
     {
       "text": "Широкие плечевые блоки и четырёхрядный протектор для надёжного сцепления"
@@ -73,7 +76,7 @@
       "text": "Сниженное сопротивление качению для экономии топлива и комфортной езды"
     },
     {
-      "text": "Высокая износостойкость — гарантия производителя до 100 000 км пробега"
+      "text": "Высокая износостойкость — гарантия на пробег до 100 000 км"
     }
   ]
 }

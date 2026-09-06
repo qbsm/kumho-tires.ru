@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ismart.pro/schemas/distill-state-v1.json",
+  "platform_repo": "github:qbsm/ismart-platform",
+  "platform_version": "1.0.0",
+  "platform_commit": "b30b57d",
+  "platform_branch": "distill/initial-baseline",
+  "last_sync": "2026-05-23T23:56:56.456Z",
+  "overrides": {
+    "src/Support/CitySlugger.php": {
+      "reason": "kumho-only: транслитерация городов для /buy/{city}/ — только у kumho есть dealers по городам",
+      "accepted_drift": true,
+      "first_seen": "2026-05-20"
+    },
+    "templates/pages/tire.twig": {
+      "reason": "kumho-only: layout детальной страницы шины",
+      "accepted_drift": true,
+      "first_seen": "2026-05-20"
+    },
+    "templates/pages/news.twig": {
+      "reason": "kumho-only: layout новости (в baseline удалён — generic page.twig покрывает)",
+      "accepted_drift": true,
+      "first_seen": "2026-05-20"
+    },
+    "config/project.php": {
+      "reason": "deployment-specific: route_map (tires, news), collections (tires, news), sitemap_pages",
+      "accepted_drift": true,
+      "first_seen": "2026-05-20"
+    },
+    "config/llms-full.php": {
+      "reason": "deployment-specific: коллекция tires для GEO-краулеров",
+      "accepted_drift": true,
+      "first_seen": "2026-05-20"
+    },
+    "templates/sections/tires.twig": {
+      "reason": "kumho-only: секция списка шин на главной",
+      "accepted_drift": true,
+      "first_seen": "2026-05-20",
+      "last_review": "2026-05-20"
+    }
+  },
+  "drift": {},
+  "notes": [
+    "overrides — намеренные kumho-only расхождения, distill sync их не предлагает.",
+    "drift с status='ready-to-sync' — улучшения CORE в baseline, ждут применения через distill sync.",
+    "data/json/, data/img/, assets/{css,js}/sections/, templates/sections/ — deployment-specific контент, не отслеживается."
+  ]
+}

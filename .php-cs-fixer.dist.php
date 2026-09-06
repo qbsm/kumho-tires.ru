@@ -1,11 +1,19 @@
 <?php
 
-$finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__ . '/src')
-    ->name('*.php');
+declare(strict_types=1);
 
-return (new PhpCsFixer\Config())
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
+return (new Config())
+    ->setRiskyAllowed(false)
     ->setRules([
-        '@PSR12' => true,
+        '@auto' => true
     ])
-    ->setFinder($finder);
+    // 💡 by default, Fixer looks for `*.php` files excluding `./vendor/` - here, you can groom this config
+    ->setFinder(
+        (new Finder())
+            ->in(__DIR__)
+            ->exclude(['node_modules', 'vendor', 'cache', 'public/assets', 'public/data'])
+    )
+;

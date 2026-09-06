@@ -1,20 +1,16 @@
 {
+  "name": "Север Авто",
   "lang": [
     {
       "title": "Русский",
       "code": "ru",
       "direction": "ltr"
-    },
-    {
-      "title": "English",
-      "code": "en",
-      "direction": "ltr"
     }
   ],
   "phones": [
     {
-      "title": "+7 (000) 000-00-00",
-      "href": "tel:+70000000000"
+      "title": "8 800 100 77 00",
+      "href": "tel:88001007700"
     }
   ],
   "nav": {
@@ -25,17 +21,95 @@
           "href": "/"
         },
         {
+          "title": "О компании",
+          "href": "/about"
+        },
+        {
           "title": "Бренд",
           "href": "/brand",
-          "visible": false
+          "visible": false,
+          "active_for": ["brand"]
         },
         {
           "title": "Шины",
           "href": "/tires",
-          "active_for": [
-            "tires-list",
-            "tire"
+          "active_for": ["tires-list", "tire"],
+          "children": [
+            {
+              "group": "Каталог",
+              "items": [
+                {
+                  "title": "Подбор шин",
+                  "href": "/podbor"
+                },
+                {
+                  "title": "Весь каталог",
+                  "href": "/tires"
+                },
+                {
+                  "title": "Летние",
+                  "href": "/tires/summer"
+                },
+                {
+                  "title": "Всесезонные",
+                  "href": "/tires/allseason"
+                },
+                {
+                  "title": "Зимние",
+                  "href": "/tires/winter"
+                },
+                {
+                  "title": "Шипованные",
+                  "href": "/tires/studded",
+                  "nested": true
+                },
+                {
+                  "title": "Нешипованные",
+                  "href": "/tires/friction",
+                  "nested": true
+                }
+              ]
+            },
+            {
+              "group": "Линейки",
+              "items": [
+                {
+                  "title": "WinterCraft",
+                  "href": "/tires/wintercraft"
+                },
+                {
+                  "title": "Ecsta",
+                  "href": "/tires/ecsta"
+                },
+                {
+                  "title": "Ecowing",
+                  "href": "/tires/ecowing"
+                },
+                {
+                  "title": "Crugen",
+                  "href": "/tires/crugen"
+                },
+                {
+                  "title": "Solus",
+                  "href": "/tires/solus"
+                },
+                {
+                  "title": "Road Venture",
+                  "href": "/tires/road-venture"
+                },
+                {
+                  "title": "PorTran",
+                  "href": "/tires/portran"
+                }
+              ]
+            }
           ]
+        },
+        {
+          "title": "Подбор шин",
+          "href": "/podbor",
+          "active_for": ["podbor"],
+          "visible": false
         },
         {
           "title": "Расширенная гарантия",
@@ -45,6 +119,11 @@
           "title": "Где купить",
           "href": "/buy",
           "visible": true
+        },
+        {
+          "title": "Контакты",
+          "href": "/contacts",
+          "visible": false
         }
       ]
     },
@@ -55,16 +134,88 @@
           "href": "/"
         },
         {
+          "title": "About",
+          "href": "/about"
+        },
+        {
           "title": "Brand",
           "href": "/brand",
-          "visible": false
+          "visible": false,
+          "active_for": ["brand"]
         },
         {
           "title": "Tires",
           "href": "/tires",
-          "active_for": [
-            "tires-list",
-            "tire"
+          "active_for": ["tires-list", "tire"],
+          "children": [
+            {
+              "group": "Catalog",
+              "items": [
+                {
+                  "title": "Tire selector",
+                  "href": "/podbor"
+                },
+                {
+                  "title": "All tires",
+                  "href": "/tires"
+                },
+                {
+                  "title": "Summer",
+                  "href": "/tires/summer"
+                },
+                {
+                  "title": "All-season",
+                  "href": "/tires/allseason"
+                },
+                {
+                  "title": "Winter",
+                  "href": "/tires/winter"
+                },
+                {
+                  "title": "Studded",
+                  "href": "/tires/studded",
+                  "nested": true
+                },
+                {
+                  "title": "Studless",
+                  "href": "/tires/friction",
+                  "nested": true
+                }
+              ]
+            },
+            {
+              "group": "Families",
+              "items": [
+                {
+                  "title": "WinterCraft",
+                  "href": "/tires/wintercraft"
+                },
+                {
+                  "title": "Ecsta",
+                  "href": "/tires/ecsta"
+                },
+                {
+                  "title": "Ecowing",
+                  "href": "/tires/ecowing"
+                },
+                {
+                  "title": "Crugen",
+                  "href": "/tires/crugen"
+                },
+                {
+                  "title": "Solus",
+                  "href": "/tires/solus"
+                },
+                {
+                  "title": "Road Venture",
+                  "href": "/tires/road-venture"
+                },
+                {
+                  "title": "PorTran",
+                  "href": "/tires/portran"
+                }
+              ]
+            }
           ]
         },
         {
@@ -75,13 +226,18 @@
           "title": "Where to buy",
           "href": "/buy",
           "visible": true
+        },
+        {
+          "title": "Contacts",
+          "href": "/contacts",
+          "visible": false
         }
       ]
     }
   },
   "email": {
-    "title": "info@example.com",
-    "href": "mailto:info@example.com"
+    "title": "info@kumho-tires.ru",
+    "href": "mailto:info@kumho-tires.ru"
   },
   "logo": {
     "horizontal": {
@@ -96,11 +252,11 @@
     },
     "vertical": {
       "white": {
-        "src": "data/img/ui/logos/logo-v-color-1.svg",
+        "src": "data/img/ui/logos/dealer-brand-logo-color-1.svg",
         "alt": "Logo"
       },
       "black": {
-        "src": "data/img/ui/logos/logo-v-color-2.svg",
+        "src": "data/img/ui/logos/dealer-brand-logo-color-2.svg",
         "alt": "Logo"
       }
     }
@@ -136,6 +292,10 @@
     "ru": "Все права защищены",
     "en": "All rights reserved"
   },
+  "owner": {
+    "ru": "Права на сайт принадлежат ООО «Сталкер» (ИНН 7719614965, ОГРН 1067761249654).",
+    "en": "All rights to the website belong to LLC «Stalker» (INN 7719614965, OGRN 1067761249654)."
+  },
   "form-callback": {
     "fields": [
       {
@@ -158,13 +318,6 @@
         }
       },
       {
-        "type": "text",
-        "name": "square",
-        "validation": {
-          "required": true
-        }
-      },
-      {
         "type": "checkbox",
         "name": "policy",
         "validation": {
@@ -174,24 +327,18 @@
       {
         "type": "hidden",
         "name": "current_url"
-      },
-      {
-        "type": "hidden",
-        "name": "csrf_token"
       }
     ],
     "placeholder": {
       "ru": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Ваше имя",
-        "square": "Площадь, м²",
         "photos": "Нажмите или перетащите фотографии шин(-ы)",
         "message": "Опишите ситуацию: что произошло, модель и размер шин, номер расширенной гарантии и др."
       },
       "en": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Your name",
-        "square": "Area, m²",
         "photos": "Click or drag & drop photos",
         "message": "Describe the issue: what happened, tire model and size, warranty number, etc."
       }
@@ -200,16 +347,14 @@
       "ru": {
         "phone": "Телефон",
         "name": "Ваше имя",
-        "square": "Площадь, м²",
-        "policy": "Я ознакомился с&nbsp;<a href='/data/docs/personal-data-policy.pdf' target='_blank'>Политикой обработки персональных данных</a> и&nbsp;согласен с&nbsp;обработкой моих персональных данных способами и&nbsp;для целей, указанных в&nbsp;Политике.",
+        "policy": "Я ознакомился с&nbsp;<a href='/data/docs/personal-data-policy.pdf' target='_blank' class='link inline weight-400 underline-static'>Политикой обработки персональных данных</a> и&nbsp;согласен с&nbsp;обработкой моих персональных данных способами и&nbsp;для целей, указанных в&nbsp;Политике.",
         "photos": "Прикрепите изображения",
         "message": "Сообщение"
       },
       "en": {
         "phone": "Phone",
         "name": "Your name",
-        "square": "Area, m²",
-        "policy": "I consent to the processing of personal data in&nbsp;accordance with the&nbsp;<a href='/en/policy/' target='_blank'>Privacy Policy</a>",
+        "policy": "I consent to the processing of personal data in&nbsp;accordance with the&nbsp;<a href='/en/policy/' target='_blank' class='link inline weight-400 underline-static'>Privacy Policy</a>",
         "photos": "Attach images",
         "message": "Message"
       }
@@ -287,14 +432,7 @@
       ]
     },
     "en": {
-      "items": [
-        "kids friendly",
-        "with a beautiful view",
-        "italian cuisine",
-        "breakfast",
-        "every day",
-        "pets friendly"
-      ]
+      "items": ["kids friendly", "with a beautiful view", "italian cuisine", "breakfast", "every day", "pets friendly"]
     }
   },
   "icons": {
@@ -327,18 +465,115 @@
   },
   "cookie-panel": {
     "ru": {
-      "desc": "Мы используем <a href='/cookies-policy/' class='link color-2 weight-400'>cookie-файлы</a> для вашего удобства пользования сайтом",
+      "desc": "Мы используем <a href='/cookies-policy/' class='link color-2 weight-400 underline-static'>cookie-файлы</a> для вашего удобства пользования сайтом",
       "button": {
         "title": "Принять",
         "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"
       }
     },
     "en": {
-      "desc": "We use <a href='/cookies-policy/' class='link color-2 weight-400'>cookies</a> to improve your experience on our website",
+      "desc": "We use <a href='/cookies-policy/' class='link color-2 weight-400 underline-static'>cookies</a> to improve your experience on our website",
       "button": {
         "title": "Accept",
         "class": "button button-sm outline-color-2 button-animated animation-shift uppercase link nowrap js-cookie"
       }
     }
+  },
+  "address": {
+    "ru": [
+      {
+        "title": "143900, Московская область, город Балашиха, шоссе Энтузиастов, дом 84, помещение 5",
+        "href": "https://yandex.ru/maps/?text=143900%2C%20Московская%20область%2C%20Балашиха%2C%20шоссе%20Энтузиастов%2C%2084"
+      }
+    ],
+    "en": [
+      {
+        "title": "143900, Moscow Region, Balashikha, Shosse Entuziastov 84, room 5",
+        "href": "https://yandex.ru/maps/?text=143900%2C%20Московская%20область%2C%20Балашиха%2C%20шоссе%20Энтузиастов%2C%2084"
+      }
+    ]
+  },
+  "email-b2b": {
+    "title": "B2B@svrauto.ru",
+    "href": "mailto:B2B@svrauto.ru"
+  },
+  "brand-alternate-names": ["Кумхо", "Kumho Tire"],
+  "footer-links": {
+    "ru": [
+      {
+        "title": "Подбор шин",
+        "href": "/podbor"
+      },
+      {
+        "title": "Зимние шины",
+        "href": "/tires/winter"
+      },
+      {
+        "title": "Летние шины",
+        "href": "/tires/summer"
+      },
+      {
+        "title": "Всесезонные шины",
+        "href": "/tires/allseason"
+      },
+      {
+        "title": "Шипованные шины",
+        "href": "/tires/studded"
+      },
+      {
+        "title": "Нешипованные шины",
+        "href": "/tires/friction"
+      },
+      {
+        "title": "Контакты",
+        "href": "/contacts"
+      },
+      {
+        "title": "О бренде Kumho",
+        "href": "/brand"
+      },
+      {
+        "title": "Статьи о шинах",
+        "href": "/articles"
+      }
+    ],
+    "en": [
+      {
+        "title": "Tire selector",
+        "href": "/podbor"
+      },
+      {
+        "title": "Winter tires",
+        "href": "/tires/winter"
+      },
+      {
+        "title": "Summer tires",
+        "href": "/tires/summer"
+      },
+      {
+        "title": "All-season tires",
+        "href": "/tires/allseason"
+      },
+      {
+        "title": "Studded tires",
+        "href": "/tires/studded"
+      },
+      {
+        "title": "Studless tires",
+        "href": "/tires/friction"
+      },
+      {
+        "title": "Contacts",
+        "href": "/contacts"
+      },
+      {
+        "title": "About Kumho",
+        "href": "/brand"
+      },
+      {
+        "title": "Tire articles",
+        "href": "/articles"
+      }
+    ]
   }
 }

@@ -4,7 +4,7 @@
       <div class="section__subitem">
         {% if global.logo.vertical.white is defined %}
           <a href="{{ url('/') }}" class="link footer__logo-link" itemprop="url">
-            <img src="{{ url(global.logo.vertical.white.src) }}" alt="{{ global.logo.vertical.white.alt|default('') }}" class="footer__logo img-responsive" loading="lazy" itemprop="logo" width="284" height="74">
+            <img src="{{ url(global.logo.vertical.white.src) }}" alt="{{ global.logo.vertical.white.alt|default('') }}" class="footer__logo" loading="lazy" itemprop="logo" width="852" height="75">
           </a>
         {% endif %}
       </div>
@@ -19,10 +19,19 @@
           {% endif %}
         {% endfor %}
       {% endif %}
+      {# Ссылки только для футера: пункт может быть скрыт в шапке, но переход нужен #}
+      {% for link in global['footer-links'][lang_code] | default([]) %}
+        <div class="footer__link-wrap">
+          <a href="{{ url(link.href) }}" class="link footer__link">{{ link.title }}</a>
+        </div>
+      {% endfor %}
     </div>
     <div class="section__item copyright-wrap">
       {% if global.copyright[lang_code] is defined %}
-        <span class="footer__copyright opacity-80">© {{ "now"|date("Y") }}. {{ global.copyright[lang_code] }}</span>
+        <span class="footer__copyright opacity-80">© {{ "now"|date("Y") }}{% if global.name is defined %} {{ global.name }}{% endif %}. {{ global.copyright[lang_code] }}</span>
+      {% endif %}
+      {% if global.owner[lang_code] is defined %}
+        <span class="footer__owner opacity-80">{{ global.owner[lang_code] }}</span>
       {% endif %}
     </div>
     <div class="section__item policy-agree-wrap">

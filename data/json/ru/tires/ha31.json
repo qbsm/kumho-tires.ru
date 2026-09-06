@@ -2,67 +2,37 @@
   "slug": "ha31",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
-    "widths": [
-      155,
-      165,
-      175,
-      185,
-      195,
-      205,
-      215,
-      225,
-      245,
-      255,
-      265,
-      275
-    ],
-    "profiles": [
-      50,
-      55,
-      60,
-      65,
-      70,
-      80
-    ]
+    "season": ["all-season"],
+    "vehicle": ["passenger"],
+    "priority": ["comfort", "economy"],
+    "diameters": [13, 14, 15, 16, 17, 18],
+    "widths": [155, 165, 175, 185, 195, 205, 215, 225, 245, 255, 265, 275],
+    "profiles": [50, 55, 60, 65, 70, 80],
+    "family": "solus"
   },
   "item": {
     "code": "HA31",
     "series": "SOLUS",
-    "name": "Kumho HA31 SOLUS"
+    "logo": "data/img/series/solus.svg",
+    "name": "Kumho SOLUS HA31",
+    "alt_names": ["Кумхо Солус HA31"]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho HA31 SOLUS для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год.",
-    "full": "Kumho HA31 SOLUS — всесезонная шина из линейки SOLUS, предназначенная для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год. Доступна в диаметрах R13–R18."
+    "short": "Kumho SOLUS HA31 — всесезонная шина с маркировкой 3PMSF для мягкой зимы: направленный V-образный протектор, 19 размеров от R13 до R18.",
+    "full": "Kumho SOLUS HA31 — всесезонная шина для регионов с мягкой зимой. Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF) подтверждают допуск к зимней эксплуатации: колёса можно не менять при сезонном похолодании. Направленный V-образный рисунок протектора выбрасывает воду и слякоть из-под колеса назад, а трёхмерные канавки цепляются за снег и лёд.<br><br>Блоки протектора собраны в сотовую структуру с максимальным переплетением — такая раскладка держит блок от заваливания и делает реакцию на руль однозначной. Смесь на основе технологии S-SBR отвечает за сцепление и торможение на мокром асфальте. Размерный ряд — 19 типоразмеров от 165/70R13 до 255/60R18, от малолитражки до среднего кроссовера."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/ha31/400/ha31-30deg.webp",
-      "800": "data/img/tires/ha31/800/ha31-30deg.webp",
-      "1280": "data/img/tires/ha31/1280/ha31-30deg.webp",
-      "alt": "Kumho HA31 SOLUS, ракурс 30°"
+      "src": "data/img/tires/ha31/raw/ha31-30deg.webp",
+      "alt": "Kumho SOLUS HA31"
     },
     "front": {
-      "400": "data/img/tires/ha31/400/ha31-front.webp",
-      "800": "data/img/tires/ha31/800/ha31-front.webp",
-      "1280": "data/img/tires/ha31/1280/ha31-front.webp",
-      "alt": "Kumho HA31 SOLUS, вид спереди"
+      "src": "data/img/tires/ha31/raw/ha31-front.webp",
+      "alt": "Kumho SOLUS HA31, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/ha31/400/ha31-side.webp",
-      "800": "data/img/tires/ha31/800/ha31-side.webp",
-      "1280": "data/img/tires/ha31/1280/ha31-side.webp",
-      "alt": "Kumho HA31 SOLUS, вид сбоку"
+      "src": "data/img/tires/ha31/raw/ha31-side.webp",
+      "alt": "Kumho SOLUS HA31, вид сбоку"
     }
   },
   "season": "Всесезонная",
@@ -71,120 +41,283 @@
       "label": "165/70R13",
       "diameter": 13,
       "index": "79T",
-      "commercial": false
+      "art": "2165363",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440687"
+      }
     },
     {
       "label": "175/65R13",
       "diameter": 13,
       "index": "80T",
-      "commercial": false
+      "art": "2165403",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440704"
+      }
     },
     {
       "label": "175/70R13",
       "diameter": 13,
       "index": "82T",
-      "commercial": false
+      "art": "2165303",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440705"
+      }
     },
     {
       "label": "175/80R14",
       "diameter": 14,
       "index": "88T",
-      "commercial": false
+      "art": "2165423",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440760"
+      }
     },
     {
       "label": "185/55R14",
       "diameter": 14,
       "index": "80H",
-      "commercial": false
+      "art": "2165513",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440767"
+      }
     },
     {
       "label": "185/70R14",
       "diameter": 14,
       "index": "88T",
-      "commercial": false
+      "art": "2183773",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440786"
+      }
     },
     {
       "label": "195/70R14",
       "diameter": 14,
       "index": "91T",
-      "commercial": false
+      "art": "2183793",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440792"
+      }
     },
     {
       "label": "155/60R15",
       "diameter": 15,
       "index": "74T",
-      "commercial": false
+      "art": "2183783",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440796"
+      }
     },
     {
       "label": "205/60R15",
       "diameter": 15,
       "index": "91H",
-      "commercial": false
+      "art": "2165463",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440883"
+      }
     },
     {
       "label": "205/60R15",
       "diameter": 15,
       "index": "91V",
-      "commercial": false
+      "art": "2165533",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440884"
+      }
     },
     {
       "label": "215/65R15",
       "diameter": 15,
       "index": "96H",
-      "commercial": false
+      "art": "2183763",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440890"
+      }
     },
     {
       "label": "185/50R16",
       "diameter": 16,
       "index": "81H",
-      "commercial": false
+      "art": "2208033",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "440892"
+      }
     },
     {
       "label": "225/60R16",
       "diameter": 16,
       "index": "102H",
-      "commercial": false
+      "art": "2231703",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "441051"
+      }
     },
     {
       "label": "225/70R16",
       "diameter": 16,
       "index": "103H",
-      "commercial": false
+      "art": "2231713",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "441065"
+      }
     },
     {
       "label": "245/70R16",
       "diameter": 16,
       "index": "107H",
-      "commercial": false
+      "art": "2231723",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "441067"
+      }
     },
     {
       "label": "255/60R17",
       "diameter": 17,
       "index": "106V",
-      "commercial": false
+      "art": "2231733",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "441070"
+      }
     },
     {
       "label": "265/70R17",
       "diameter": 17,
       "index": "115H",
-      "commercial": false
+      "art": "2243583",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "A",
+        "snow": true,
+        "eprel": "441071"
+      }
     },
     {
       "label": "275/55R17",
       "diameter": 17,
       "index": "109V",
+      "art": "2231743",
       "commercial": false
     },
     {
       "label": "255/60R18",
       "diameter": 18,
       "index": "112V",
-      "commercial": false
+      "art": "2206703",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "A",
+        "snow": true,
+        "eprel": "441075"
+      }
     }
   ],
   "features": [
     {
-      "text": "Всесезонная шина с маркировкой M+S и символом снежинки (3PMSF) для круглогодичной эксплуатации"
+      "text": "Всесезонные шины с маркировкой M+S и символом снежинки (3PMSF) для круглогодичной эксплуатации"
     },
     {
       "text": "Направленный V-образный рисунок протектора для эффективного отвода воды и слякоти"
@@ -195,5 +328,16 @@
     {
       "text": "Технология S-SBR для улучшенного сцепления на мокрой поверхности и эффективности торможения"
     }
-  ]
+  ],
+  "official": {
+    "tagline": "Всесезонные шины для мягкой зимы",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000629&idcate=MC000731&iditem=818",
+    "features": [
+      "Оптимальная эффективность для круглогодичной эксплуатации",
+      "Отличная управляемость на мокрой дороге и улучшенные тяговые характеристики на заснеженной дороге",
+      "Улучшенная стабильность управления достигнута за счёт максимального переплетения блоков протектора в наиболее устойчивой сотовой структуры",
+      "M+S и Символ «Alpine» (3PMSF)",
+      "Небольших и компактных автомобилей, а также автомобилей среднего размера"
+    ]
+  }
 }

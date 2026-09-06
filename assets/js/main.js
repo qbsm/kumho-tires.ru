@@ -30,7 +30,9 @@ import './sections/contacts.js';
 import './sections/headline.js';
 import './sections/us.js';
 import './sections/tires.js';
+import './sections/tire-selector.js';
 import './sections/dealers.js';
+import './sections/contacts-map.js';
 
 // --- Components ---
 import './components/button.js';
@@ -48,6 +50,9 @@ import './components/features-list.js';
 import './components/card-number.js';
 import setupSliders from './components/slider.js';
 import './components/burger-icon.js';
+import { initCalltouchWidgetCheck } from './components/calltouch-widget-check.js';
+import { initLeadContext } from './components/lead-context.js';
+import { initFunnel } from './components/funnel.js';
 
 // --- Pages ---
 import './pages/404.js';
@@ -58,6 +63,9 @@ import './pages/tire-detail.js';
 
 // --- Init ---
 onReady(() => {
+  initFunnel();
+  initLeadContext();
+  initCalltouchWidgetCheck();
   if (typeof setupSliders === 'function') {
     setupSliders();
   }

@@ -1,0 +1,786 @@
+{
+  "slug": "ws71",
+  "visible": true,
+  "filter": {
+    "season": ["winter"],
+    "vehicle": ["suv"],
+    "priority": ["comfort"],
+    "diameters": [15, 16, 17, 18, 19, 20, 21, 22],
+    "widths": [195, 205, 215, 225, 235, 245, 255, 265, 275, 285, 295, 315],
+    "profiles": [35, 40, 45, 50, 55, 60, 65, 70, 75],
+    "family": "wintercraft"
+  },
+  "item": {
+    "code": "WS71",
+    "series": "WinterCraft",
+    "logo": "data/img/series/wintercraft.svg",
+    "name": "Kumho WinterCraft WS71",
+    "alt_names": ["Кумхо ВинтерКрафт WS71"]
+  },
+  "desc": {
+    "short": "Зимняя нешипованная шина Kumho WinterCraft WS71 для мощных SUV. Смесь протектора последнего поколения для отличного торможения на снегу и льду.",
+    "full": "Kumho WinterCraft WS71 — зимняя нешипованная шина из линейки WinterCraft для высокоскоростных автомобилей класса SUV и современных внедорожников. Смесь протектора нового поколения отвечает за торможение на мокрых, заснеженных и обледенелых дорогах, а рисунок протектора с 3D-ламелями — за сцепление на льду и снегу."
+  },
+  "images": {
+    "side": {
+      "src": "data/img/tires/ws71/raw/ws71-side.webp",
+      "alt": "Kumho WinterCraft WS71, вид сбоку"
+    },
+    "30deg": {
+      "src": "data/img/tires/ws71/raw/ws71-30deg.webp",
+      "alt": "Kumho WinterCraft WS71"
+    },
+    "front": {
+      "src": "data/img/tires/ws71/raw/ws71-front.webp",
+      "alt": "Kumho WinterCraft WS71, вид спереди"
+    }
+  },
+  "season": "Зимняя",
+  "sizes": [
+    {
+      "label": "205/70R15",
+      "diameter": 15,
+      "index": "96T",
+      "art": "2207823",
+      "commercial": false
+    },
+    {
+      "label": "215/70R15",
+      "diameter": 15,
+      "index": "98T",
+      "art": "2230563",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443779"
+      }
+    },
+    {
+      "label": "225/70R15",
+      "diameter": 15,
+      "index": "100T",
+      "art": "2230523",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443780"
+      }
+    },
+    {
+      "label": "255/70R15",
+      "diameter": 15,
+      "index": "108T",
+      "art": "2230343",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443782"
+      }
+    },
+    {
+      "label": "195/70R16",
+      "diameter": 16,
+      "index": "94H",
+      "art": "2207843",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443813"
+      }
+    },
+    {
+      "label": "215/70R16",
+      "diameter": 16,
+      "index": "100T",
+      "art": "2248823",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443772"
+      }
+    },
+    {
+      "label": "225/75R16",
+      "diameter": 16,
+      "index": "104T",
+      "art": "2207863",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443774"
+      }
+    },
+    {
+      "label": "235/70R16",
+      "diameter": 16,
+      "index": "106H",
+      "art": "2230433",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443788"
+      }
+    },
+    {
+      "label": "245/70R16",
+      "diameter": 16,
+      "index": "107H",
+      "art": "2230403",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443789"
+      }
+    },
+    {
+      "label": "255/65R16",
+      "diameter": 16,
+      "index": "109H",
+      "art": "2230353",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443758"
+      }
+    },
+    {
+      "label": "255/70R16",
+      "diameter": 16,
+      "index": "111H",
+      "art": "2261253",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443760"
+      }
+    },
+    {
+      "label": "265/70R16",
+      "diameter": 16,
+      "index": "112H",
+      "art": "2261233",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443764"
+      }
+    },
+    {
+      "label": "215/65R17",
+      "diameter": 17,
+      "index": "104T",
+      "art": "2264763",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443824"
+      }
+    },
+    {
+      "label": "235/60R17",
+      "diameter": 17,
+      "index": "102H",
+      "art": "2230473",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443795"
+      }
+    },
+    {
+      "label": "245/55R17",
+      "diameter": 17,
+      "index": "106V",
+      "art": "2230423",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443826"
+      }
+    },
+    {
+      "label": "245/65R17",
+      "diameter": 17,
+      "index": "111H",
+      "art": "2207803",
+      "commercial": false
+    },
+    {
+      "label": "255/60R17",
+      "diameter": 17,
+      "index": "110H",
+      "art": "2249023",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443846"
+      }
+    },
+    {
+      "label": "255/65R17",
+      "diameter": 17,
+      "index": "114H",
+      "art": "2248943",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443847"
+      }
+    },
+    {
+      "label": "265/65R17",
+      "diameter": 17,
+      "index": "116H",
+      "art": "2261213",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443848"
+      }
+    },
+    {
+      "label": "215/55R18",
+      "diameter": 18,
+      "index": "99V",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443827"
+      }
+    },
+    {
+      "label": "225/50R18",
+      "diameter": 18,
+      "index": "99V",
+      "art": "2271343",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443849"
+      }
+    },
+    {
+      "label": "235/65R18",
+      "diameter": 18,
+      "index": "106H",
+      "art": "2230443",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443802"
+      }
+    },
+    {
+      "label": "245/60R18",
+      "diameter": 18,
+      "index": "105H",
+      "art": "2230413",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443805"
+      }
+    },
+    {
+      "label": "255/55R18",
+      "diameter": 18,
+      "index": "109H",
+      "art": "2230373",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443832"
+      }
+    },
+    {
+      "label": "255/60R18",
+      "diameter": 18,
+      "index": "112H",
+      "art": "2230363",
+      "commercial": false
+    },
+    {
+      "label": "265/60R18",
+      "diameter": 18,
+      "index": "114H",
+      "art": "2230313",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443850"
+      }
+    },
+    {
+      "label": "255/50R19",
+      "diameter": 19,
+      "index": "107V",
+      "art": "2230393",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443837"
+      }
+    },
+    {
+      "label": "255/55R19",
+      "diameter": 19,
+      "index": "111V",
+      "art": "2249063",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443851"
+      }
+    },
+    {
+      "label": "265/50R19",
+      "diameter": 19,
+      "index": "110V",
+      "art": "2261453",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443838"
+      }
+    },
+    {
+      "label": "265/55R19",
+      "diameter": 19,
+      "index": "113V",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594348"
+      }
+    },
+    {
+      "label": "275/45R19",
+      "diameter": 19,
+      "index": "108V",
+      "art": "2249083",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443852"
+      }
+    },
+    {
+      "label": "285/45R19",
+      "diameter": 19,
+      "index": "111V",
+      "art": "2249123",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443856"
+      }
+    },
+    {
+      "label": "235/45R20",
+      "diameter": 20,
+      "index": "100W",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1555862"
+      }
+    },
+    {
+      "label": "235/50R20",
+      "diameter": 20,
+      "index": "104V",
+      "commercial": false
+    },
+    {
+      "label": "255/45R20",
+      "diameter": 20,
+      "index": "105V",
+      "art": "2207763",
+      "commercial": false
+    },
+    {
+      "label": "255/50R20",
+      "diameter": 20,
+      "index": "109V",
+      "art": "2262013",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443840"
+      }
+    },
+    {
+      "label": "255/55R20",
+      "diameter": 20,
+      "index": "110V",
+      "art": "2271333",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443853"
+      }
+    },
+    {
+      "label": "265/45R20",
+      "diameter": 20,
+      "index": "108V",
+      "art": "2207783",
+      "commercial": false
+    },
+    {
+      "label": "265/50R20",
+      "diameter": 20,
+      "index": "111V",
+      "art": "2262033",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443841"
+      }
+    },
+    {
+      "label": "275/40R20",
+      "diameter": 20,
+      "index": "106W",
+      "art": "2262053",
+      "commercial": false
+    },
+    {
+      "label": "275/45R20",
+      "diameter": 20,
+      "index": "110W",
+      "art": "2262073",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443843"
+      }
+    },
+    {
+      "label": "285/45R20",
+      "diameter": 20,
+      "index": "112V",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1555864"
+      }
+    },
+    {
+      "label": "295/40R20",
+      "diameter": 20,
+      "index": "110V",
+      "art": "2249143",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443857"
+      }
+    },
+    {
+      "label": "315/35R20",
+      "diameter": 20,
+      "index": "110W",
+      "art": "2262093",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443821"
+      }
+    },
+    {
+      "label": "255/40R21",
+      "diameter": 21,
+      "index": "102W",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594356"
+      }
+    },
+    {
+      "label": "265/40R21",
+      "diameter": 21,
+      "index": "105V",
+      "art": "2249043",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "443855"
+      }
+    },
+    {
+      "label": "275/40R21",
+      "diameter": 21,
+      "index": "107W",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2111916"
+      }
+    },
+    {
+      "label": "275/45R21",
+      "diameter": 21,
+      "index": "110V",
+      "art": "2249103",
+      "commercial": false
+    },
+    {
+      "label": "295/35R21",
+      "diameter": 21,
+      "index": "107V",
+      "art": "2207743",
+      "commercial": false
+    },
+    {
+      "label": "265/40R22",
+      "diameter": 22,
+      "index": "106V",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594347"
+      }
+    }
+  ],
+  "features": [
+    {
+      "text": "Смесь протектора последнего поколения для отличного торможения на мокрых, заснеженных и обледенелых дорогах"
+    },
+    {
+      "text": "Оптимизированный дизайн протектора и 3D-ламели для улучшенного сцепления на льду и снегу"
+    },
+    {
+      "text": "Для высокоскоростных автомобилей класса SUV и широкого спектра современных внедорожников"
+    }
+  ],
+  "official": {
+    "tagline": "Зимние шины класса UHP для внедорожников",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000631&idcate=MC000735&iditem=825",
+    "features": [
+      "Смесь протектора была разработана с использованием последних технологических достижений для обеспечения отличного торможения на мокрых, заснеженных и заледенелых дорогах",
+      "Оптимизированный дизайн протектора и 3D ламели для улучшенного сцепления на льду и снегу",
+      "Для высокоскоростных автомобилей класса SUV и широкого спектра современных внедорожных автомобилей",
+      "M+S и Символ «Alpine» (3PMSF)",
+      "Премиум внедорожники"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/en/tire/view.do?seq=859",
+    "items": [
+      {
+        "title": "Индикатор остатка протектора",
+        "text": "В канавке отлиты песочные часы: точек внутри становится меньше по мере износа. Четыре — шина новая, ни одной — пора менять. Остаток видно без глубиномера.",
+        "image": {
+          "src": "data/img/tires/ws71/raw/ws71-tech-wear.webp",
+          "alt": "Индикатор износа в виде песочных часов на протекторе Kumho WinterCraft WS71"
+        }
+      },
+      {
+        "title": "Жёсткая 3D-ламель",
+        "text": "Ламели сцепляются друг с другом стенками, поэтому блок протектора не заваливается под нагрузкой. Торсионная жёсткость выше на 30 процентов — точнее руль и короче тормозной путь.",
+        "image": {
+          "src": "data/img/tires/ws71/raw/ws71-tech-sipe.webp",
+          "alt": "Трёхмерная ламель Kumho WinterCraft WS71 в разрезе"
+        }
+      },
+      {
+        "title": "Отвод воды и выброс снега",
+        "text": "Продольная канавка работает как жёлоб: вода уходит из пятна контакта, а спрессованный снег выталкивается из грунтозацепов и не забивает рисунок.",
+        "image": {
+          "src": "data/img/tires/ws71/raw/ws71-tech-aqua.webp",
+          "alt": "Водоотводящая канавка и выброс снега на протекторе Kumho WinterCraft WS71"
+        }
+      },
+      {
+        "title": "Усиленный борт",
+        "text": "Пересчитанный объём борта и дополнительное армирование. Шина держит форму под тяжёлым кроссовером и не ведёт себя вяло в повороте.",
+        "image": {
+          "src": "data/img/tires/ws71/raw/ws71-tech-bead.webp",
+          "alt": "Конструкция усиленного борта Kumho WinterCraft WS71"
+        }
+      },
+      {
+        "title": "Ступенчатое плечо",
+        "text": "Блоки в плечевой зоне идут неравномерной чередой. Это разбивает резонанс на одной частоте, из-за которого зимняя шина гудит на скорости.",
+        "image": {
+          "src": "data/img/tires/ws71/raw/ws71-tech-shoulder.webp",
+          "alt": "Ступенчатый рисунок плечевой зоны Kumho WinterCraft WS71"
+        }
+      },
+      {
+        "title": "Полимер S-SBR пятого поколения",
+        "text": "Концы полимерных цепей закреплены на частицах силики с двух сторон. Смесь меньше греется впустую, лучше цепляется за мокрый асфальт и дольше ходит.",
+        "image": {
+          "src": "data/img/tires/ws71/raw/ws71-tech-ssbr.webp",
+          "alt": "Полимер S-SBR пятого поколения и частицы силики в смеси Kumho WinterCraft WS71"
+        }
+      }
+    ]
+  }
+}

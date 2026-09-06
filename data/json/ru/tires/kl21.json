@@ -2,37 +2,30 @@
   "slug": "kl21",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      17,
-      18
-    ],
-    "widths": [
-      225,
-      265
-    ],
-    "profiles": [
-      60,
-      65
-    ]
+    "season": ["summer"],
+    "vehicle": ["suv"],
+    "priority": ["handling"],
+    "diameters": [17, 18],
+    "widths": [225, 265],
+    "profiles": [60, 65],
+    "family": "road-venture"
   },
   "item": {
     "code": "KL21",
     "series": "Road Venture",
-    "name": "Kumho KL21 Road Venture"
+    "caption": "Летние шины для кроссоверов",
+    "logo": "data/img/series/road-venture.svg",
+    "name": "Kumho Road Venture KL21",
+    "alt_names": ["Кумхо Роуд Венчур KL21"]
   },
   "desc": {
-    "short": "Летняя шина Kumho KL21 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho KL21 Road Venture — летняя шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R17–R18."
+    "short": "Kumho Road Venture KL21 — летняя туринговая шина для SUV с упором на шоссе: плавный ход, тихий асфальт, размеры R17 и R18.",
+    "full": "Kumho Road Venture KL21 — премиальная туринговая шина для SUV, ориентированная на шоссейную езду. В отличие от вседорожных моделей линейки, здесь нет крупных грунтозацепов: рисунок настроен на асфальт, где важнее плавность хода и тишина, чем проходимость. Два типоразмера — 225/65R17 102H и 265/60R18 110H — закрывают средние и крупные кроссоверы.<br><br>Оба размера имеют класс топливной экономичности B по европейской маркировке: для тяжёлой шины под SUV это заметный результат, и на трассовых пробегах разница видна по расходу. Сцепление держится в любую погоду, а комфорт остаётся легковым: крупных блоков нет, поэтому нет ни гула, ни вибраций."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/kl21/400/kl21-30deg.webp",
-      "800": "data/img/tires/kl21/800/kl21-30deg.webp",
-      "1280": "data/img/tires/kl21/1280/kl21-30deg.webp",
-      "alt": "Kumho KL21 Road Venture, ракурс 30°"
+      "src": "data/img/tires/kl21/raw/kl21-30deg.webp",
+      "alt": "Kumho Road Venture KL21"
     }
   },
   "season": "Летняя",
@@ -41,18 +34,32 @@
       "label": "225/65R17",
       "diameter": 17,
       "index": "102H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "442706"
+      }
     },
     {
       "label": "265/60R18",
       "diameter": 18,
       "index": "110H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "442716"
+      }
     }
   ],
   "features": [
     {
-      "text": "Премиальная туринговая шина для SUV, ориентированная на шоссейную езду"
+      "text": "Премиальные туринговые шины для SUV, ориентированные на шоссейную езду"
     },
     {
       "text": "Высокий уровень комфорта и плавности хода"

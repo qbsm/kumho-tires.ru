@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "from": "/tires/kc11",
+    "to": "/tires",
+    "status": 301
+  },
+  {
+    "from": "/buy/saint",
+    "to": "/buy/saint-petersburg",
+    "status": 301
+  },
+  {
+    "from_prefix": "/tires-list/",
+    "to_prefix": "/tires",
+    "status": 301
+  }
+]

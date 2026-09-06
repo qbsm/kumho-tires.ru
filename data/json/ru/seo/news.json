@@ -1,10 +1,10 @@
 {
   "name": "news",
-  "title": "Новости Kumho",
+  "title": "Новости Kumho (Кумхо) — бренд шин и дилерская сеть",
   "meta": [
     {
       "name": "description",
-      "content": "Актуальные новости и события бренда шин Kumho: запуск новых моделей, расширение сети дилеров, акции."
+      "content": "Новости бренда шин Kumho (Кумхо) и дистрибьютора «Север Авто»: новые модели, расширение дилерской сети, выставки и акции."
     },
     {
       "property": "og:type",
@@ -12,7 +12,7 @@
     },
     {
       "property": "og:title",
-      "content": "Новости Kumho"
+      "content": "Новости Kumho (Кумхо) — бренд шин и дилерская сеть"
     },
     {
       "property": "og:site_name",
@@ -20,11 +20,11 @@
     },
     {
       "property": "og:description",
-      "content": "Актуальные новости и события бренда шин Kumho: запуск новых моделей, расширение сети дилеров, акции."
+      "content": "Новости бренда шин Kumho (Кумхо) и дистрибьютора «Север Авто»: новые модели, расширение дилерской сети, выставки и акции."
     },
     {
       "property": "og:image",
-      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+      "content": "https://kumho-tires.ru/data/img/seo/og.jpg?v=3"
     }
   ]
 }

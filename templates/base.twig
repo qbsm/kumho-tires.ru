@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
   <title>{{ pageTitle|default('Заголовок страницы по умолчанию')|raw }}</title>
   
   {% if pageSeoData and pageSeoData.meta %}
@@ -145,46 +146,52 @@
   
   {% include 'components/scripts.twig' %}
   
-  {# Микроразметка Schema.org Organization #}
+  {# Микроразметка Schema.org Organization (собираем через json_encode — гарантированно валидный JSON) #}
+  {% set _org = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': _base_secure_domain_for_seo ~ '/#organization',
+    'name': global.name|default('Company'),
+    'url': _base_secure_domain_for_seo
+  } %}
+  {% if global['brand-alternate-names'] is defined and global['brand-alternate-names']|length > 0 %}
+    {% set _org = _org|merge({'alternateName': global['brand-alternate-names']}) %}
+  {% endif %}
+  {% if global.logo.horizontal.black.src is defined %}
+    {% set _org = _org|merge({'logo': global.logo.horizontal.black.src}) %}
+  {% endif %}
+  {% if global.email.title is defined %}
+    {% set _org = _org|merge({'email': global.email.title|replace({'<span>': '', '</span>': ''})}) %}
+  {% endif %}
+  {% set _phones = [] %}
+  {% for phone in global.phones|default([]) %}
+    {% if '000-00-00' not in phone.title %}
+      {% set _phones = _phones|merge([phone.title|replace({'<span>': '', '</span>': ''})]) %}
+    {% endif %}
+  {% endfor %}
+  {% if _phones|length > 0 %}
+    {% set _org = _org|merge({'telephone': _phones}) %}
+  {% endif %}
+  {% if global.address[lang_code] is defined and global.address[lang_code]|length > 0 %}
+    {% set _addresses = [] %}
+    {% for address in global.address[lang_code] %}
+      {% set _addresses = _addresses|merge([{'@type': 'PostalAddress', 'streetAddress': address.title|replace({'<span>': '', '</span>': ''})}]) %}
+    {% endfor %}
+    {% set _org = _org|merge({'address': _addresses}) %}
+  {% endif %}
+  {% set _cities = dealer_cities(lang_code) %}
+  {% if _cities|length > 0 %}
+    {% set _org = _org|merge({'areaServed': _cities}) %}
+  {% endif %}
+  {% if global.socials is defined and global.socials|length > 0 %}
+    {% set _sameas = [] %}
+    {% for social in global.socials %}
+      {% if social.visible %}{% set _sameas = _sameas|merge([social.href]) %}{% endif %}
+    {% endfor %}
+    {% if _sameas|length > 0 %}{% set _org = _org|merge({'sameAs': _sameas}) %}{% endif %}
+  {% endif %}
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "{{ site.name|default('Company') }}",
-    {% if global.logo.horizontal.black is defined %}
-    "logo": "{{ _base_secure_domain_for_seo ~ '/' ~ global.logo.horizontal.black.src }}",
-    {% endif %}
-    "url": "{{ _base_secure_domain_for_seo }}",
-    {% if global.email is defined %}
-    "email": "{{ global.email.title|replace({'<span>': '', '</span>': ''})|raw }}",
-    {% endif %}
-    {% if global.phones is defined and global.phones|length > 0 %}
-    "telephone": [
-      {% for phone in global.phones %}
-      "{{ phone.title|replace({'<span>': '', '</span>': ''})|raw }}"{% if not loop.last %},{% endif %}
-      {% endfor %}
-    ],
-    {% endif %}
-    {% if global.address[lang_code] is defined and global.address[lang_code]|length > 0 %}
-    "address": [
-      {% for address in global.address[lang_code] %}
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "{{ address.title|replace({'<span>': '', '</span>': ''})|raw }}"
-      }{% if not loop.last %},{% endif %}
-      {% endfor %}
-    ],
-    {% endif %}
-    {% if global.socials is defined and global.socials|length > 0 %}
-    "sameAs": [
-      {% for social in global.socials %}
-      {% if social.visible %}
-      "{{ social.href }}"{% if not loop.last %},{% endif %}
-      {% endif %}
-      {% endfor %}
-    ]
-    {% endif %}
-  }
+  {{ _org|json_encode|raw }}
   </script>
 
   {# Schema.org WebSite для GEO / LLM #}
@@ -192,10 +199,33 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "{{ site.name|default('Company') }}",
-    "url": "{{ _base_secure_domain_for_seo ~ '/' }}"
+    "@id": "{{ _base_secure_domain_for_seo ~ '/#website' }}",
+    "name": "{{ global.name|default(site.name|default('Company')) }}",
+    "url": "{{ _base_secure_domain_for_seo ~ '/' }}",
+    "inLanguage": "{{ lang_code|default('ru') }}",
+    "publisher": { "@id": "{{ _base_secure_domain_for_seo ~ '/#organization' }}" }
   }
   </script>
+
+  {# Быстрые ссылки (SiteNavigationElement) — подсказка поисковику по основным разделам сайта (только на главной) #}
+  {% if page_id == 'index' %}
+    {% set _quicklinks = [] %}
+    {% for link in global.nav[lang_code].items|default([]) %}
+      {% if (link.visible is not defined or link.visible) and link.href != '/' %}
+        {% set _quicklinks = _quicklinks|merge([{'name': link.title, 'href': link.href}]) %}
+      {% endif %}
+    {% endfor %}
+    {% set _quicklinks = _quicklinks|merge([{'name': 'Новости', 'href': '/news'}, {'name': 'Контакты', 'href': '/contacts'}]) %}
+    {% set _navItems = [] %}
+    {% for ql in _quicklinks %}
+      {% set _navItems = _navItems|merge([{'@type': 'SiteNavigationElement', 'position': loop.index, 'name': ql.name, 'url': _base_secure_domain_for_seo ~ ql.href}]) %}
+    {% endfor %}
+    {% if _navItems|length > 0 %}
+    <script type="application/ld+json">
+    {{ {'@context': 'https://schema.org', '@type': 'ItemList', 'name': global.name|default('Company') ~ ' — разделы сайта', 'itemListElement': _navItems}|json_encode|raw }}
+    </script>
+    {% endif %}
+  {% endif %}
 
   {% if breadcrumb is defined and breadcrumb is iterable and breadcrumb|length > 0 %}
   {# Schema.org BreadcrumbList для GEO / LLM #}

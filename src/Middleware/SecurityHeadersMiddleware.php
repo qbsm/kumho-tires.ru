@@ -14,14 +14,17 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class SecurityHeadersMiddleware implements MiddlewareInterface
 {
-    /** Базовая CSP: default self, скрипты/стили с self + unsafe-inline, картинки self/data/https, шрифты self */
-    private const DEFAULT_CSP = "default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self' https: wss:; base-uri 'self'; form-action 'self' https:; frame-ancestors 'self'";
+    /**
+     * Базовая CSP: скрипты/стили/картинки — self + любой https (счётчики, карты и виджеты
+     * подключаются без правки ядра, см. ADR-0012). object-src и form-action закрыты:
+     * плагинов на страницах нет, а action формы приходит из JSON-контента.
+     */
+    private const DEFAULT_CSP = "default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https: wss:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'";
 
     public function __construct(
         private readonly bool $addHsts = true,
         private readonly ?string $contentSecurityPolicy = self::DEFAULT_CSP,
-    ) {
-    }
+    ) {}
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
@@ -31,7 +34,9 @@ final class SecurityHeadersMiddleware implements MiddlewareInterface
             ->withHeader('X-Content-Type-Options', 'nosniff')
             ->withHeader('X-Frame-Options', 'SAMEORIGIN')
             ->withHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
-            ->withHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+            // geolocation=(self) — карта дилеров на /buy запрашивает геопозицию у самого сайта;
+            // при geolocation=() браузер блокирует запрос молча, без промпта пользователю.
+            ->withHeader('Permissions-Policy', 'geolocation=(self), microphone=(), camera=()');
 
         if ($this->addHsts) {
             $response = $response->withHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
@@ -39,6 +44,11 @@ final class SecurityHeadersMiddleware implements MiddlewareInterface
 
         if ($this->contentSecurityPolicy !== null && $this->contentSecurityPolicy !== '') {
             $response = $response->withHeader('Content-Security-Policy', $this->contentSecurityPolicy);
+        }
+
+        $host = $request->getUri()->getHost();
+        if (str_ends_with($host, '.ismart.pro') || ($_ENV['APP_ENV'] ?? '') === 'staging') {
+            $response = $response->withHeader('X-Robots-Tag', 'noindex, nofollow');
         }
 
         return $response;

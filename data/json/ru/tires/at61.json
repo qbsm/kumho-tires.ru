@@ -2,51 +2,37 @@
   "slug": "at61",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16
-    ],
-    "widths": [
-      195,
-      205,
-      215,
-      255
-    ],
-    "profiles": [
-      75,
-      80
-    ]
+    "season": ["all-season"],
+    "vehicle": ["suv"],
+    "priority": ["offroad"],
+    "diameters": [15, 16],
+    "widths": [195, 205, 215, 255],
+    "profiles": [75, 80],
+    "family": "road-venture"
   },
   "item": {
     "code": "AT61",
     "series": "Road Venture",
-    "name": "Kumho AT61 Road Venture"
+    "logo": "data/img/series/road-venture.svg",
+    "name": "Kumho Road Venture AT61",
+    "alt_names": ["Кумхо Роуд Венчур AT61"]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho AT61 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho AT61 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R16."
+    "short": "Kumho Road Venture AT61 — вседорожная шина A/T с маркировкой M+S: арамидный слой в каркасе и крупные самоочищающиеся блоки протектора.",
+    "full": "Kumho Road Venture AT61 — универсальная вседорожная шина класса All Terrain для внедорожников и полноприводных автомобилей. Пять типоразмеров от 195/80R15 100S до 205/80R16 104S — размерность классических рамных внедорожников и лёгких вседорожников. Симметричный рисунок собран из крупных блоков: они очищаются от грязи при вращении, а на мокром асфальте не дают шине всплывать.<br><br>Каркас рассчитан на удары: стальной корд, нейлоновый брекер и арамидный внутренний слой держат подошву и боковину при езде по камням и разбитой грунтовке. Маркировка M+S допускает движение по грязи и снегу, а специальные добавки в резиновой смеси повышают износостойкость на твёрдом покрытии, где такая шина проводит большую часть пробега."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/at61/400/at61-30deg.webp",
-      "800": "data/img/tires/at61/800/at61-30deg.webp",
-      "1280": "data/img/tires/at61/1280/at61-30deg.webp",
-      "alt": "Kumho AT61 Road Venture, ракурс 30°"
+      "src": "data/img/tires/at61/raw/at61-30deg.webp",
+      "alt": "Kumho Road Venture AT61"
     },
     "front": {
-      "400": "data/img/tires/at61/400/at61-front.webp",
-      "800": "data/img/tires/at61/800/at61-front.webp",
-      "1280": "data/img/tires/at61/1280/at61-front.webp",
-      "alt": "Kumho AT61 Road Venture, вид спереди"
+      "src": "data/img/tires/at61/raw/at61-front.webp",
+      "alt": "Kumho Road Venture AT61, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/at61/400/at61-side.webp",
-      "800": "data/img/tires/at61/800/at61-side.webp",
-      "1280": "data/img/tires/at61/1280/at61-side.webp",
-      "alt": "Kumho AT61 Road Venture, вид сбоку"
+      "src": "data/img/tires/at61/raw/at61-side.webp",
+      "alt": "Kumho Road Venture AT61, вид сбоку"
     }
   },
   "season": "Всесезонная",
@@ -55,13 +41,22 @@
       "label": "195/80R15",
       "diameter": 15,
       "index": "100S",
+      "art": "2247403",
       "commercial": false
     },
     {
       "label": "205/75R15",
       "diameter": 15,
       "index": "97S",
-      "commercial": false
+      "art": "2247373",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "443890"
+      }
     },
     {
       "label": "215/80R15",
@@ -73,18 +68,27 @@
       "label": "255/75R15",
       "diameter": 15,
       "index": "110S",
-      "commercial": false
+      "art": "2247413",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "443913"
+      }
     },
     {
       "label": "205/80R16",
       "diameter": 16,
       "index": "104S",
+      "art": "2247393",
       "commercial": false
     }
   ],
   "features": [
     {
-      "text": "Летняя шина для внедорожников и полноприводных автомобилей с симметричным протектором"
+      "text": "Летние шины для внедорожников и полноприводных автомобилей с симметричным протектором"
     },
     {
       "text": "Стальной корд, нейлоновый брекер и арамидный внутренний слой для ударопрочности"
@@ -95,5 +99,16 @@
     {
       "text": "Высокая износостойкость благодаря специальным добавкам в составе резиновой смеси"
     }
-  ]
+  ],
+  "official": {
+    "tagline": "Вседорожная шина нового поколения",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000632&idcate=MC000738&iditem=830",
+    "features": [
+      "Оптимизированный универсальный рисунок протектора",
+      "Безопасное управление на сухих и мокрых дорогах",
+      "Адаптировано для езды по легкому бездорожью",
+      "M+S",
+      "Off-road - All Terrain"
+    ]
+  }
 }

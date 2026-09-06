@@ -1,0 +1,275 @@
+{
+  "slug": "cw11",
+  "visible": true,
+  "filter": {
+    "season": ["winter", "studded"],
+    "vehicle": ["commercial"],
+    "priority": ["offroad"],
+    "diameters": [14, 15, 16, 17],
+    "widths": [185, 195, 205, 215, 225, 235, 285],
+    "profiles": [60, 65, 70, 75, 80],
+    "family": "portran"
+  },
+  "item": {
+    "code": "CW11",
+    "series": "WinterPorTran",
+    "logo": "data/img/series/portran.svg",
+    "name": "Kumho WinterPorTran CW11",
+    "alt_names": ["Кумхо ВинтерПорТран CW11"]
+  },
+  "desc": {
+    "short": "Зимние шипованные шины Kumho WinterPorTran CW11 для лёгкого коммерческого транспорта. Диагональные блоки и 3D-ламели обеспечивают уверенное торможение на льду.",
+    "full": "Kumho WinterPorTran CW11 — зимняя шипованная шина из линейки WinterPorTran, разработанная для микроавтобусов, фургонов и лёгких грузовиков. Диагональный рисунок протектора и 3D-ламели дают короткий тормозной путь на льду, а прочная конструкция — высокую износостойкость и большой пробег. Шина имеет маркировку M+S и знак трёх горных пиков со снежинкой, то есть допущена к настоящей зиме: авто выходит на маршрут в снегопад, а не ждёт расчистки дорог."
+  },
+  "images": {
+    "front": {
+      "src": "data/img/tires/cw11/raw/cw11-front.webp",
+      "alt": "Kumho WinterPorTran CW11, вид спереди"
+    },
+    "side": {
+      "src": "data/img/tires/cw11/raw/cw11-side.webp",
+      "alt": "Kumho WinterPorTran CW11, вид сбоку"
+    },
+    "30deg": {
+      "src": "data/img/tires/cw11/raw/cw11-30deg.webp",
+      "alt": "Kumho WinterPorTran CW11"
+    }
+  },
+  "season": "Зимняя, шипованная",
+  "sizes": [
+    {
+      "label": "285/70R17C",
+      "diameter": 17,
+      "index": "121/118R",
+      "commercial": true
+    },
+    {
+      "label": "185/80R14C",
+      "diameter": 14,
+      "index": "102/100R",
+      "commercial": true
+    },
+    {
+      "label": "195/70R15C",
+      "diameter": 15,
+      "index": "104/102R",
+      "art": "2357463",
+      "commercial": true,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452073"
+      }
+    },
+    {
+      "label": "205/65R15C",
+      "diameter": 15,
+      "index": "102/100R",
+      "art": "2356583",
+      "commercial": true,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1391792"
+      }
+    },
+    {
+      "label": "205/70R15C",
+      "diameter": 15,
+      "index": "106/104R",
+      "commercial": true
+    },
+    {
+      "label": "215/65R15C",
+      "diameter": 15,
+      "index": "104/102R",
+      "art": "2356593",
+      "commercial": true,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1223924"
+      }
+    },
+    {
+      "label": "215/70R15C",
+      "diameter": 15,
+      "index": "109/107R",
+      "art": "2357263",
+      "commercial": true,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452074"
+      }
+    },
+    {
+      "label": "225/70R15C",
+      "diameter": 15,
+      "index": "112/110R",
+      "art": "2357363",
+      "commercial": true,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452075"
+      }
+    },
+    {
+      "label": "185/75R16C",
+      "diameter": 16,
+      "index": "104/102R",
+      "art": "2357443",
+      "commercial": true
+    },
+    {
+      "label": "195/75R16C",
+      "diameter": 16,
+      "index": "107/105R",
+      "art": "2357383",
+      "commercial": true,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452077"
+      }
+    },
+    {
+      "label": "205/65R16C",
+      "diameter": 16,
+      "index": "107/105R",
+      "art": "2357343",
+      "commercial": true,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452079"
+      }
+    },
+    {
+      "label": "205/75R16C",
+      "diameter": 16,
+      "index": "110/108R",
+      "art": "2357403",
+      "commercial": true
+    },
+    {
+      "label": "215/65R16C",
+      "diameter": 16,
+      "index": "109/107R",
+      "art": "2357423",
+      "commercial": true,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452089"
+      }
+    },
+    {
+      "label": "215/75R16C",
+      "diameter": 16,
+      "index": "116/114R",
+      "art": "2357303",
+      "commercial": true,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452092"
+      }
+    },
+    {
+      "label": "225/65R16C",
+      "diameter": 16,
+      "index": "112/110R",
+      "art": "2357323",
+      "commercial": true,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452093"
+      }
+    },
+    {
+      "label": "225/75R16C",
+      "diameter": 16,
+      "index": "121/120R",
+      "art": "2268153",
+      "commercial": true,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "452094"
+      }
+    },
+    {
+      "label": "235/65R16C",
+      "diameter": 16,
+      "index": "115/113R",
+      "art": "2357283",
+      "commercial": true
+    },
+    {
+      "label": "215/60R17C",
+      "diameter": 17,
+      "index": "109/107R",
+      "commercial": true
+    }
+  ],
+  "features": [
+    {
+      "text": "Зимние шипованные шины для коммерческого транспорта, минивэнов и лёгких грузовиков"
+    },
+    {
+      "text": "Превосходное торможение на льду благодаря диагональным блокам и 3D-ламелям"
+    },
+    {
+      "text": "Высокая износостойкость и большой пробег"
+    },
+    {
+      "text": "Маркировка M+S и символ трёх горных пиков со снежинкой (3PMSF)"
+    }
+  ],
+  "official": {
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000633&idcate=MC000740&iditem=4397",
+    "tagline": "Шипованные зимние шины для фургонов",
+    "features": [
+      "Зимняя шипуемая шина для коммерческого транспорта, минивэнов и лёгких грузовиков",
+      "Превосходное торможение на льду, благодаря диагональным блокам и 3D-ламелям",
+      "Высокая износостойкость и пробег",
+      "Маркировка M+S и снежинка с тремя горными пиками (3PMSF) для шин, предназначенных для использования в зимних условиях"
+    ]
+  }
+}

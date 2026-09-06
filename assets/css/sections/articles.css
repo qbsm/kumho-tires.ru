@@ -1,0 +1,80 @@
+/* Вводный текст и первая рубрика стояли впритык — тот же шаг, что между группами */
+.articles .longread-wrap {
+  margin-block-end: 3rem;
+
+  @media (--lg) {
+    margin-block-end: 4rem;
+  }
+}
+
+/* Листинг раздела: рубрика — заголовок группы карточек */
+.articles__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-block-end: 3rem;
+}
+
+@media (--lg) {
+  .articles__header {
+    margin-block-end: 4rem;
+  }
+}
+
+.articles__group + .articles__group {
+  margin-block-start: 4rem;
+
+  @media (--lg) {
+    margin-block-start: 6rem;
+  }
+}
+
+.articles__group-title {
+  margin-block-end: 2rem;
+  font-family: var(--font-2);
+  font-size: 1.3em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.articles__group-title::before {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.25rem;
+  margin-bottom: 0.75rem;
+  margin-left: 0.4em;
+  background-color: var(--color-3);
+  transform: skewX(-45deg);
+}
+
+/* Сетка карточек повторяет новости: две колонки на десктопе, одна на мобильном */
+.articles .cards-news-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (--lg) {
+    flex-flow: row wrap;
+  }
+}
+
+.articles .card-news-wrap {
+  width: 100%;
+  min-width: 0;
+
+  @media (--sm) {
+    flex: 0 0 calc((100% - 2rem) / 2);
+  }
+
+  @media (--lg) {
+    flex: 0 0 calc((100% - 4rem) / 3);
+  }
+}
+
+/* Маркер в карточке статьи — фирменный красный; в данных цвет не держим */
+.articles .card-news__hex-cube {
+  background: var(--color-3);
+}

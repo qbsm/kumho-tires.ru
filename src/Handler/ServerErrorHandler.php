@@ -6,6 +6,7 @@ namespace App\Handler;
 
 use App\Middleware\CorrelationIdMiddleware;
 use App\Support\BaseUrlResolver;
+use App\Support\RespondsToContent;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -21,14 +22,15 @@ use Throwable;
  */
 final class ServerErrorHandler
 {
+    use RespondsToContent;
+
     public function __construct(
         private ResponseFactoryInterface $responseFactory,
         private Twig $twig,
         private BaseUrlResolver $baseUrlResolver,
         private LoggerInterface $logger,
         private bool $displayErrorDetails,
-    ) {
-    }
+    ) {}
 
     public function __invoke(
         ServerRequestInterface $request,
@@ -73,26 +75,4 @@ final class ServerErrorHandler
         return $response->withHeader('Content-Type', 'text/html; charset=utf-8');
     }
 
-    private function wantsJson(ServerRequestInterface $request): bool
-    {
-        $accept = $request->getHeaderLine('Accept');
-        if ($accept === '') {
-            return false;
-        }
-        foreach (array_map('trim', explode(',', $accept)) as $part) {
-            $type = strtolower(explode(';', $part)[0]);
-            if ($type === 'application/json') {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private function withRequestIdHeader(ResponseInterface $response, string $requestId): ResponseInterface
-    {
-        if ($requestId !== '') {
-            return $response->withHeader('X-Request-Id', $requestId);
-        }
-        return $response;
-    }
 }

@@ -2,45 +2,30 @@
   "slug": "hs51",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      15,
-      16,
-      17,
-      18
-    ],
-    "widths": [
-      195,
-      205,
-      215,
-      225,
-      235
-    ],
-    "profiles": [
-      40,
-      45,
-      50,
-      55,
-      60
-    ]
+    "season": ["summer"],
+    "vehicle": ["passenger"],
+    "priority": ["handling"],
+    "diameters": [15, 16, 17, 18],
+    "widths": [195, 205, 215, 225, 235],
+    "profiles": [40, 45, 50, 55, 60],
+    "family": "ecsta"
   },
   "item": {
     "code": "HS51",
     "series": "ECSTA",
-    "name": "Kumho HS51 ECSTA"
+    "caption": "Летние шины для активной езды",
+    "logo": "data/img/series/ecsta.svg",
+    "name": "Kumho ECSTA HS51",
+    "alt_names": ["Кумхо Экста HS51"]
   },
   "desc": {
-    "short": "Летняя шина Kumho HS51 ECSTA для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление.",
-    "full": "Kumho HS51 ECSTA — летняя шина из линейки ECSTA, предназначенная для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление. Доступна в диаметрах R15–R18."
+    "short": "Kumho ECSTA HS51 — летняя шина для компактных и средних автомобилей. Победитель сравнительного теста Auto Bild среди 52 моделей с вердиктом «образцовая».",
+    "full": "Kumho ECSTA HS51 закрывает тринадцать типоразмеров от 195/45R15 до 235/45R18 — размерность компактных и средних седанов и хэтчбеков. Центр протектора собран из сплошных рёбер без поперечных разрезов: блок не гуляет под нагрузкой, поэтому руль отзывается предсказуемо, а тормозной путь на мокром асфальте короче. В плечевой зоне канавки идут поперёк — в повороте вода уходит вбок и не остаётся под нагруженным наружным плечом.<br><br>Смесь протектора построена на полимере S-SBR пятого поколения: концы полимерных цепей закреплены на частицах силики с двух сторон, поэтому резина меньше греется впустую. Отсюда и сцепление на мокром, и экономия топлива, и ресурс. В сравнительном тесте Auto Bild модель обошла 52 конкурента и получила вердикт «образцовая». По европейской маркировке класс сцепления на мокрой дороге — B, уровень шума 69–72 дБ."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/hs51/400/hs51-30deg.webp",
-      "800": "data/img/tires/hs51/800/hs51-30deg.webp",
-      "1280": "data/img/tires/hs51/1280/hs51-30deg.webp",
-      "alt": "Kumho HS51 ECSTA, ракурс 30°"
+      "src": "data/img/tires/hs51/raw/hs51-30deg.webp",
+      "alt": "Kumho ECSTA HS51"
     }
   },
   "season": "Летняя",
@@ -49,67 +34,147 @@
       "label": "195/45R15",
       "diameter": 15,
       "index": "78V",
-      "commercial": false
+      "art": "2186893",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 69,
+        "noiseClass": "B",
+        "eprel": "444149"
+      }
     },
     {
       "label": "205/50R15",
       "diameter": 15,
       "index": "86V",
-      "commercial": false
+      "art": "2165713",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "444385"
+      }
     },
     {
       "label": "205/55R15",
       "diameter": 15,
       "index": "88V",
+      "art": "2165693",
       "commercial": false
     },
     {
       "label": "225/60R15",
       "diameter": 15,
       "index": "96W",
-      "commercial": false
+      "art": "2165913",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "444395"
+      }
     },
     {
       "label": "205/60R16",
       "diameter": 16,
       "index": "92H",
-      "commercial": false
+      "art": "2270353",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "444453"
+      }
     },
     {
       "label": "215/40R16",
       "diameter": 16,
       "index": "86W",
-      "commercial": false
+      "art": "2187343",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 69,
+        "noiseClass": "A",
+        "eprel": "444701"
+      }
     },
     {
       "label": "215/45R16",
       "diameter": 16,
       "index": "86H",
-      "commercial": false
+      "art": "2243983",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2262837"
+      }
     },
     {
       "label": "225/50R16",
       "diameter": 16,
       "index": "92W",
-      "commercial": false
+      "art": "2187273",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 69,
+        "noiseClass": "B",
+        "eprel": "444423"
+      }
     },
     {
       "label": "205/45R17",
       "diameter": 17,
       "index": "88V",
-      "commercial": false
+      "art": "2204143",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "445157"
+      }
     },
     {
       "label": "215/55R17",
       "diameter": 17,
       "index": "94V",
-      "commercial": false
+      "art": "2254463",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "444457"
+      }
     },
     {
       "label": "215/60R17",
       "diameter": 17,
       "index": "96H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "A",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "613334"
+      }
     },
     {
       "label": "215/55R18",
@@ -121,12 +186,13 @@
       "label": "235/45R18",
       "diameter": 18,
       "index": "94V",
+      "art": "2161643",
       "commercial": false
     }
   ],
   "features": [
     {
-      "text": "Высокопроизводительная летняя шина с асимметричным рисунком протектора"
+      "text": "Высокопроизводительные летние шины с асимметричным рисунком протектора"
     },
     {
       "text": "Победитель сравнительного теста Auto Bild среди 52 конкурентов с вердиктом «Образцовая»"
@@ -137,5 +203,53 @@
     {
       "text": "Оптимальный баланс спортивных характеристик и комфорта"
     }
-  ]
+  ],
+  "official": {
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000629&idcate=MC000728&iditem=804",
+    "features": [
+      "Шина с хорошим балансом характеристик, обеспечивающим максимальный комфорт и безопасность",
+      "Улучшенные тормозные характеристики",
+      "Превосходное сцепление на мокром и сухом покрытии",
+      "Повышенная долговечность и равномерный износ протектора",
+      "Компактные, средние и верхние средние автомобили"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/en/tire/view.do?seq=780",
+    "items": [
+      {
+        "title": "Сплошные центральные рёбра",
+        "text": "Центр протектора собран из непрерывных рёбер без поперечных разрезов. Блок не гуляет под нагрузкой: короче тормозной путь на мокром, точнее реакция на руль.",
+        "image": {
+          "src": "data/img/tires/hs51/raw/hs51-tech-rib.webp",
+          "alt": "Сплошные центральные рёбра протектора Kumho ECSTA HS51"
+        }
+      },
+      {
+        "title": "Широкие поперечные канавки",
+        "text": "В плечевой зоне канавки идут поперёк. В повороте вода уходит вбок, а не остаётся под нагруженным наружным плечом.",
+        "image": {
+          "src": "data/img/tires/hs51/raw/hs51-tech-lateral.webp",
+          "alt": "Поперечные канавки в плечевой зоне Kumho ECSTA HS51"
+        }
+      },
+      {
+        "title": "Четыре продольные канавки",
+        "text": "Четыре прямые канавки по всей окружности — основной путь отвода воды. Чем быстрее вода уходит из пятна контакта, тем позже шина всплывает.",
+        "image": {
+          "src": "data/img/tires/hs51/raw/hs51-tech-grooves.webp",
+          "alt": "Четыре продольные канавки Kumho ECSTA HS51"
+        }
+      },
+      {
+        "title": "Полимер S-SBR пятого поколения",
+        "text": "Концы полимерных цепей закреплены на частицах силики с двух сторон. Смесь меньше греется впустую: это и сцепление на мокром, и расход топлива, и ресурс.",
+        "image": {
+          "src": "data/img/tires/hs51/raw/hs51-tech-ssbr.webp",
+          "alt": "Kumho ECSTA HS51: полимер S-SBR пятого поколения"
+        },
+        "wide": true
+      }
+    ]
+  }
 }

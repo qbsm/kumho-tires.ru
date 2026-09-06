@@ -2,61 +2,38 @@
   "slug": "mt71",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16,
-      17,
-      20
-    ],
-    "widths": [
-      "31",
-      "33",
-      "35",
-      "235",
-      "255",
-      "265",
-      "285",
-      "295",
-      "315"
-    ],
-    "profiles": [
-      "10.5",
-      "12.5",
-      "70",
-      "75",
-      "85"
-    ]
+    "season": ["all-season"],
+    "vehicle": ["suv"],
+    "priority": ["offroad"],
+    "diameters": [15, 16, 17, 20],
+    "widths": ["31", "33", "35", "235", "255", "265", "285", "295", "315"],
+    "profiles": ["10.5", "12.5", "70", "75", "85"],
+    "family": "road-venture"
   },
   "item": {
     "code": "MT71",
     "series": "Road Venture",
-    "name": "Kumho MT71 Road Venture"
+    "caption": "Грязевая шина Mud Terrain",
+    "logo": "data/img/series/road-venture.svg",
+    "name": "Kumho Road Venture MT71",
+    "alt_names": ["Кумхо Роуд Венчур MT71"]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho MT71 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho MT71 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R20."
+    "short": "Kumho Road Venture MT71 — грязевая шина для горных и каменистых дорог: одиннадцать дюймовых размеров от 31 до 33 дюймов на диски R15–R20.",
+    "full": "Kumho Road Venture MT71 — грязевая шина для горных и каменистых дорог с агрессивным рисунком, вынесенным на боковину: там, где колесо опирается на стенку колеи, работу берут на себя плечевые грунтозацепы. Каркас собран в три слоя, схема протектора симметричная — вместе это даёт стойкость к износу на абразивном грунте.<br><br>Размерный ряд полностью дюймовый: одиннадцать позиций от 31/10.5R15 109Q до 33/12.5R20 119Q, посадочный диаметр от 15 до 20 дюймов. Индекс скорости Q ограничивает шину 160 км/ч — обычное значение для внедорожной резины такого класса. На дорогах общего пользования модель сохраняет предсказуемую управляемость, что для MT-шины редкость."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/mt71/400/mt71-30deg.webp",
-      "800": "data/img/tires/mt71/800/mt71-30deg.webp",
-      "1280": "data/img/tires/mt71/1280/mt71-30deg.webp",
-      "alt": "Kumho MT71 Road Venture, ракурс 30°"
+      "src": "data/img/tires/mt71/raw/mt71-30deg.webp",
+      "alt": "Kumho Road Venture MT71"
     },
     "front": {
-      "400": "data/img/tires/mt71/400/mt71-front.webp",
-      "800": "data/img/tires/mt71/800/mt71-front.webp",
-      "1280": "data/img/tires/mt71/1280/mt71-front.webp",
-      "alt": "Kumho MT71 Road Venture, вид спереди"
+      "src": "data/img/tires/mt71/raw/mt71-front.webp",
+      "alt": "Kumho Road Venture MT71, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/mt71/400/mt71-side.webp",
-      "800": "data/img/tires/mt71/800/mt71-side.webp",
-      "1280": "data/img/tires/mt71/1280/mt71-side.webp",
-      "alt": "Kumho MT71 Road Venture, вид сбоку"
+      "src": "data/img/tires/mt71/raw/mt71-side.webp",
+      "alt": "Kumho Road Venture MT71, вид сбоку"
     }
   },
   "season": "Внедорожная",

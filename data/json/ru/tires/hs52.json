@@ -2,63 +2,37 @@
   "slug": "hs52",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20
-    ],
-    "widths": [
-      175,
-      185,
-      195,
-      205,
-      215,
-      225,
-      235,
-      245
-    ],
-    "profiles": [
-      45,
-      50,
-      55,
-      60,
-      65
-    ]
+    "season": ["summer"],
+    "vehicle": ["passenger"],
+    "priority": ["handling"],
+    "diameters": [14, 15, 16, 17, 18, 19, 20],
+    "widths": [175, 185, 195, 205, 215, 225, 235, 245],
+    "profiles": [45, 50, 55, 60, 65],
+    "family": "ecsta"
   },
   "item": {
     "code": "HS52",
     "series": "ECSTA",
-    "name": "Kumho HS52 ECSTA"
+    "logo": "data/img/series/ecsta.svg",
+    "name": "Kumho ECSTA HS52",
+    "alt_names": ["Кумхо Экста HS52"]
   },
   "desc": {
-    "short": "Летняя шина Kumho HS52 ECSTA для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление.",
-    "full": "Kumho HS52 ECSTA — летняя шина из линейки ECSTA, предназначенная для легковых автомобилей. Серия ECSTA ориентирована на динамичное вождение с акцентом на управляемость и сцепление. Доступна в диаметрах R14–R20."
+    "short": "Летняя шина Kumho ECSTA HS52: 62 типоразмера от R14 до R20, класс сцепления на мокрой дороге до A и усиленная плечевая зона для курсовой устойчивости.",
+    "full": "Kumho ECSTA HS52 — самая широкая по размерному ряду летняя модель линейки: 62 типоразмера от 175/65R14 до 195/55R20 закрывают и компактный городской хэтчбек, и семейный кроссовер. Асимметричный рисунок протектора разделён по зонам — внутренняя половина отвечает за отвод воды, внешняя — за опору в повороте. Конструкция плечевой зоны удерживает автомобиль на прямой при перестроении и на колейном асфальте.<br><br>Развитая дренажная система выводит воду из-под колеса по продольным и поперечным каналам: часть типоразмеров получила высший класс сцепления на мокрой дороге — A по европейской маркировке. Обновлённый состав смеси повышает стойкость к абразивному износу, рисунок дольше держится на грубом покрытии. Сам рисунок протектора отмечен премией iF Design Award 2022. Уровень шума в размерном ряду — от 69 до 72 дБ."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/hs52/400/hs52-30deg.webp",
-      "800": "data/img/tires/hs52/800/hs52-30deg.webp",
-      "1280": "data/img/tires/hs52/1280/hs52-30deg.webp",
-      "alt": "Kumho HS52 ECSTA, ракурс 30°"
+      "src": "data/img/tires/hs52/raw/hs52-30deg.webp",
+      "alt": "Kumho ECSTA HS52"
     },
     "front": {
-      "400": "data/img/tires/hs52/400/hs52-front.webp",
-      "800": "data/img/tires/hs52/800/hs52-front.webp",
-      "1280": "data/img/tires/hs52/1280/hs52-front.webp",
-      "alt": "Kumho HS52 ECSTA, вид спереди"
+      "src": "data/img/tires/hs52/raw/hs52-front.webp",
+      "alt": "Kumho ECSTA HS52, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/hs52/400/hs52-side.webp",
-      "800": "data/img/tires/hs52/800/hs52-side.webp",
-      "1280": "data/img/tires/hs52/1280/hs52-side.webp",
-      "alt": "Kumho HS52 ECSTA, вид сбоку"
+      "src": "data/img/tires/hs52/raw/hs52-side.webp",
+      "alt": "Kumho ECSTA HS52, вид сбоку"
     }
   },
   "season": "Летняя",
@@ -67,253 +41,547 @@
       "label": "175/65R14",
       "diameter": 14,
       "index": "82H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1497483"
+      }
     },
     {
       "label": "185/60R14",
       "diameter": 14,
       "index": "82H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "2079184"
+      }
     },
     {
       "label": "185/55R15",
       "diameter": 15,
       "index": "82H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1679885"
+      }
     },
     {
       "label": "185/55R15",
       "diameter": 15,
       "index": "82V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1683088"
+      }
     },
     {
       "label": "185/60R15",
       "diameter": 15,
       "index": "88H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2103908"
+      }
     },
     {
       "label": "185/65R15",
       "diameter": 15,
       "index": "88H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1497487"
+      }
     },
     {
       "label": "195/50R15",
       "diameter": 15,
       "index": "82H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497488"
+      }
     },
     {
       "label": "195/50R15",
       "diameter": 15,
       "index": "82V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497490"
+      }
     },
     {
       "label": "195/55R15",
       "diameter": 15,
       "index": "85H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497491"
+      }
     },
     {
       "label": "195/55R15",
       "diameter": 15,
       "index": "85V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497511"
+      }
     },
     {
       "label": "195/65R15",
       "diameter": 15,
       "index": "91H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497512"
+      }
     },
     {
       "label": "195/65R15",
       "diameter": 15,
       "index": "91V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2079191"
+      }
     },
     {
       "label": "205/60R15",
       "diameter": 15,
       "index": "91V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2079189"
+      }
     },
     {
       "label": "205/65R15",
       "diameter": 15,
       "index": "94H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2198341"
+      }
     },
     {
       "label": "205/65R15",
       "diameter": 15,
       "index": "94V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2079193"
+      }
     },
     {
       "label": "185/50R16",
       "diameter": 16,
       "index": "81V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "A",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "2061085"
+      }
     },
     {
       "label": "195/45R16",
       "diameter": 16,
       "index": "84V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497517"
+      }
     },
     {
       "label": "195/50R16",
       "diameter": 16,
       "index": "84H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1594299"
+      }
     },
     {
       "label": "195/50R16",
       "diameter": 16,
       "index": "88V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497518"
+      }
     },
     {
       "label": "195/55R16",
       "diameter": 16,
       "index": "87V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497519"
+      }
     },
     {
       "label": "195/55R16",
       "diameter": 16,
       "index": "91V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "2186227"
+      }
     },
     {
       "label": "195/55R16",
       "diameter": 16,
       "index": "87W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497521"
+      }
     },
     {
       "label": "205/50R16",
       "diameter": 16,
       "index": "87W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2112979"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "91V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "A",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2281207"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "94V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497523"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "91W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497525"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "94W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497526"
+      }
     },
     {
       "label": "205/60R16",
       "diameter": 16,
       "index": "96W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497528"
+      }
     },
     {
       "label": "215/45R16",
       "diameter": 16,
       "index": "90V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497530"
+      }
     },
     {
       "label": "215/55R16",
       "diameter": 16,
       "index": "93V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497535"
+      }
     },
     {
       "label": "215/55R16",
       "diameter": 16,
       "index": "97W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497536"
+      }
     },
     {
       "label": "215/60R16",
       "diameter": 16,
       "index": "95V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "A",
+        "wet": "A",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1831868"
+      }
     },
     {
       "label": "215/60R16",
       "diameter": 16,
       "index": "99W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1438225"
+      }
     },
     {
       "label": "225/55R16",
       "diameter": 16,
       "index": "95W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2061078"
+      }
     },
     {
       "label": "225/55R16",
       "diameter": 16,
       "index": "99W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "2061082"
+      }
     },
     {
       "label": "225/60R16",
       "diameter": 16,
       "index": "98W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1016078"
+      }
     },
     {
       "label": "235/60R16",
       "diameter": 16,
       "index": "104V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1294744"
+      }
     },
     {
       "label": "205/50R17",
       "diameter": 17,
       "index": "93W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1438222"
+      }
     },
     {
       "label": "205/55R17",
       "diameter": 17,
       "index": "95V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497524"
+      }
     },
     {
       "label": "215/45R17",
       "diameter": 17,
       "index": "91W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497532"
+      }
     },
     {
       "label": "215/50R17",
       "diameter": 17,
       "index": "95W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497534"
+      }
     },
     {
       "label": "215/55R17",
       "diameter": 17,
       "index": "98W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497537"
+      }
     },
     {
       "label": "215/60R17",
@@ -337,97 +605,209 @@
       "label": "225/45R17",
       "diameter": 17,
       "index": "91W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1497540"
+      }
     },
     {
       "label": "225/45R17",
       "diameter": 17,
       "index": "94W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1594340"
+      }
     },
     {
       "label": "225/50R17",
       "diameter": 17,
       "index": "98W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497542"
+      }
     },
     {
       "label": "225/55R17",
       "diameter": 17,
       "index": "101W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497543"
+      }
     },
     {
       "label": "225/60R17",
       "diameter": 17,
       "index": "99V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1294742"
+      }
     },
     {
       "label": "225/65R17",
       "diameter": 17,
       "index": "102V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1294743"
+      }
     },
     {
       "label": "235/45R17",
       "diameter": 17,
       "index": "97W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1016195"
+      }
     },
     {
       "label": "235/55R17",
       "diameter": 17,
       "index": "103W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497545"
+      }
     },
     {
       "label": "235/55R17",
       "diameter": 17,
       "index": "103H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "A",
+        "wet": "A",
+        "noise": 69,
+        "noiseClass": "A",
+        "eprel": "1831871"
+      }
     },
     {
       "label": "235/60R17",
       "diameter": 17,
       "index": "102V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1334166"
+      }
     },
     {
       "label": "225/50R18",
       "diameter": 18,
       "index": "99W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1294740"
+      }
     },
     {
       "label": "225/55R18",
       "diameter": 18,
       "index": "102W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497513"
+      }
     },
     {
       "label": "235/45R18",
       "diameter": 18,
       "index": "98W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1497514"
+      }
     },
     {
       "label": "235/50R18",
       "diameter": 18,
       "index": "101H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "A",
+        "wet": "A",
+        "noise": 69,
+        "noiseClass": "A",
+        "eprel": "1438217"
+      }
     },
     {
       "label": "245/45R18",
       "diameter": 18,
       "index": "100W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1016201"
+      }
     },
     {
       "label": "205/55R19",
       "diameter": 19,
       "index": "97V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1833189"
+      }
     },
     {
       "label": "195/55R20",
@@ -438,7 +818,7 @@
   ],
   "features": [
     {
-      "text": "Летняя шина нового поколения с асимметричным рисунком протектора для легковых автомобилей"
+      "text": "Летние шины нового поколения с асимметричным рисунком протектора для легковых автомобилей"
     },
     {
       "text": "Инновационная конструкция плечевой зоны для улучшенной курсовой устойчивости"
@@ -448,6 +828,48 @@
     },
     {
       "text": "Повышенная устойчивость к абразивному износу"
+    },
+    {
+      "text": "Рисунок протектора — лауреат iF Design Award 2022"
     }
-  ]
+  ],
+  "official": {
+    "source": "https://www.kumhotire.com/uk/eu/tire/view.do?menuCd=MN000421&idcate=MC000584&iditem=4138",
+    "tagline": "Универсальные летние шины",
+    "features": [
+      "Safe and reliable summer comfort",
+      "Exceptional braking performance on both wet and dry roads",
+      "Excellent wet grip for safety",
+      "Increased mileage with new compound"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumho.com.au/tyres/passenger/hs52/",
+    "items": [
+      {
+        "title": "Асимметричный рисунок",
+        "text": "Внутренняя и внешняя половины протектора работают по-разному: одна отводит воду, другая держит в повороте. Широкие канавки не дают шине всплыть в дождь.",
+        "image": {
+          "src": "data/img/tires/hs52/raw/hs52-tech-asym.webp",
+          "alt": "Kumho ECSTA HS52: асимметричный рисунок протектора"
+        }
+      },
+      {
+        "title": "Переменный шаг блоков",
+        "text": "Блоки протектора идут с разным шагом, поэтому не гудят на одной частоте. В салоне тише, ход мягче.",
+        "image": {
+          "src": "data/img/tires/hs52/raw/hs52-tech-pitch.webp",
+          "alt": "Kumho ECSTA HS52: переменный шаг блоков протектора"
+        }
+      },
+      {
+        "title": "Смесь с силикой и смолами",
+        "text": "Смолы высокого сцепления, высокодисперсная силика и полифункциональные полимеры в одной смеси: сцепление на мокром и сухом выше, а пробег больше, чем у HS51.",
+        "image": {
+          "src": "data/img/tires/hs52/raw/hs52-tech-compound.webp",
+          "alt": "Kumho ECSTA HS52: смесь с силикой, смолами и полимерами"
+        }
+      }
+    ]
+  }
 }

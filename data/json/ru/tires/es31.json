@@ -2,65 +2,37 @@
   "slug": "es31",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
-    "widths": [
-      145,
-      155,
-      165,
-      175,
-      185,
-      195,
-      205,
-      215,
-      225
-    ],
-    "profiles": [
-      45,
-      50,
-      55,
-      60,
-      65,
-      70,
-      80
-    ]
+    "season": ["summer"],
+    "vehicle": ["passenger"],
+    "priority": ["economy", "comfort"],
+    "diameters": [13, 14, 15, 16, 17, 18],
+    "widths": [145, 155, 165, 175, 185, 195, 205, 215, 225],
+    "profiles": [45, 50, 55, 60, 65, 70, 80],
+    "family": "ecowing"
   },
   "item": {
     "code": "ES31",
     "series": "Ecowing",
-    "name": "Kumho ES31 Ecowing"
+    "logo": "data/img/series/ecowing.svg",
+    "name": "Kumho Ecowing ES31",
+    "alt_names": ["Кумхо Эковинг ES31"]
   },
   "desc": {
-    "short": "Летняя шина Kumho ES31 Ecowing для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума.",
-    "full": "Kumho ES31 Ecowing — летняя шина из линейки Ecowing, предназначенная для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума. Доступна в диаметрах R13–R18."
+    "short": "Kumho Ecowing ES31 — летняя шина с упором на экономию топлива: аэродинамическое плечо, класс топливной экономичности до A, 60 размеров R13–R18.",
+    "full": "Kumho Ecowing ES31 — летняя шина, сделанная в первую очередь под экономию топлива. Наружное плечо спрофилировано под обтекание воздухом, а профиль каркаса пересчитан так, чтобы убрать пики давления по краям рёбер: нагрузка ложится ровнее по всей ширине, сопротивление качению падает, износ идёт равномернее. Часть типоразмеров получила высший класс топливной экономичности A по европейской маркировке.<br><br>За поведение в дождь отвечают четыре широкие продольные канавки и диагональные ламели — вода уходит из пятна контакта, риск аквапланирования снижается. На внутреннем плече отлиты лунки: они увеличивают площадь обдува и снимают нагрев, который на длинной трассе съедает ресурс. Размерный ряд — 60 типоразмеров от 145/80R13 до 215/50R18. Рисунок пчелиных сот на боковине — фирменный мотив линейки Ecowing."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/es31/400/es31-30deg.webp",
-      "800": "data/img/tires/es31/800/es31-30deg.webp",
-      "1280": "data/img/tires/es31/1280/es31-30deg.webp",
-      "alt": "Kumho ES31 Ecowing, ракурс 30°"
+      "src": "data/img/tires/es31/raw/es31-30deg.webp",
+      "alt": "Kumho Ecowing ES31"
     },
     "front": {
-      "400": "data/img/tires/es31/400/es31-front.webp",
-      "800": "data/img/tires/es31/800/es31-front.webp",
-      "1280": "data/img/tires/es31/1280/es31-front.webp",
-      "alt": "Kumho ES31 Ecowing, вид спереди"
+      "src": "data/img/tires/es31/raw/es31-front.webp",
+      "alt": "Kumho Ecowing ES31, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/es31/400/es31-side.webp",
-      "800": "data/img/tires/es31/800/es31-side.webp",
-      "1280": "data/img/tires/es31/1280/es31-side.webp",
-      "alt": "Kumho ES31 Ecowing, вид сбоку"
+      "src": "data/img/tires/es31/raw/es31-side.webp",
+      "alt": "Kumho Ecowing ES31, вид сбоку"
     }
   },
   "season": "Летняя",
@@ -69,19 +41,28 @@
       "label": "145/80R13",
       "diameter": 13,
       "index": "75T",
+      "art": "2261473",
       "commercial": false
     },
     {
       "label": "155/65R13",
       "diameter": 13,
       "index": "73T",
+      "art": "2261483",
       "commercial": false
     },
     {
       "label": "155/70R13",
       "diameter": 13,
       "index": "75T",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1334152"
+      }
     },
     {
       "label": "155/80R13",
@@ -93,66 +74,145 @@
       "label": "165/70R13",
       "diameter": 13,
       "index": "79T",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1334158"
+      }
     },
     {
       "label": "155/65R14",
       "diameter": 14,
       "index": "75T",
-      "commercial": false
+      "art": "2231953",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432106"
+      }
     },
     {
       "label": "165/60R14",
       "diameter": 14,
       "index": "75H",
-      "commercial": false
+      "art": "2250023",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432111"
+      }
     },
     {
       "label": "165/65R14",
       "diameter": 14,
       "index": "79T",
-      "commercial": false
+      "art": "2231963",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432113"
+      }
     },
     {
       "label": "165/70R14",
       "diameter": 14,
       "index": "81T",
-      "commercial": false
+      "art": "2231973",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432117"
+      }
     },
     {
       "label": "165/70R14",
       "diameter": 14,
       "index": "85T",
-      "commercial": false
+      "art": "2231983",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432119"
+      }
     },
     {
       "label": "175/65R14",
       "diameter": 14,
       "index": "82T",
-      "commercial": false
+      "art": "2231993",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1090381"
+      }
     },
     {
       "label": "175/65R14",
       "diameter": 14,
       "index": "86T",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432218"
+      }
     },
     {
       "label": "175/70R14",
       "diameter": 14,
       "index": "84T",
-      "commercial": false
+      "art": "2232013",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432231"
+      }
     },
     {
       "label": "175/70R14",
       "diameter": 14,
       "index": "88T",
-      "commercial": false
+      "art": "2232023",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432231"
+      }
     },
     {
       "label": "175/80R14",
       "diameter": 14,
       "index": "88T",
+      "art": "2232033",
       "commercial": false
     },
     {
@@ -165,270 +225,583 @@
       "label": "185/60R14",
       "diameter": 14,
       "index": "82T",
-      "commercial": false
+      "art": "2232053",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432252"
+      }
     },
     {
       "label": "185/60R14",
       "diameter": 14,
       "index": "82H",
-      "commercial": false
+      "art": "2232043",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432252"
+      }
     },
     {
       "label": "185/65R14",
       "diameter": 14,
       "index": "86T",
-      "commercial": false
+      "art": "2232063",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432344"
+      }
     },
     {
       "label": "185/65R14",
       "diameter": 14,
       "index": "86H",
-      "commercial": false
+      "art": "2250043",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432354"
+      }
     },
     {
       "label": "185/70R14",
       "diameter": 14,
       "index": "88T",
-      "commercial": false
+      "art": "2232073",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432370"
+      }
     },
     {
       "label": "165/65R15",
       "diameter": 15,
       "index": "81T",
-      "commercial": false
+      "art": "2232083",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432511"
+      }
     },
     {
       "label": "165/65R15",
       "diameter": 15,
       "index": "81H",
-      "commercial": false
+      "art": "2250063",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "432672"
+      }
     },
     {
       "label": "175/50R15",
       "diameter": 15,
       "index": "75H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "435941"
+      }
     },
     {
       "label": "175/60R15",
       "diameter": 15,
       "index": "81H",
-      "commercial": false
+      "art": "2250083",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "435945"
+      }
     },
     {
       "label": "175/65R15",
       "diameter": 15,
       "index": "84T",
-      "commercial": false
+      "art": "2232093",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "435955"
+      }
     },
     {
       "label": "175/65R15",
       "diameter": 15,
       "index": "84H",
-      "commercial": false
+      "art": "2250033",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "435955"
+      }
     },
     {
       "label": "185/60R15",
       "diameter": 15,
       "index": "84T",
-      "commercial": false
+      "art": "2232103",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "435957"
+      }
     },
     {
       "label": "185/60R15",
       "diameter": 15,
       "index": "88T",
-      "commercial": false
+      "art": "2232113",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "435964"
+      }
     },
     {
       "label": "185/60R15",
       "diameter": 15,
       "index": "84H",
-      "commercial": false
+      "art": "2232123",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "436986"
+      }
     },
     {
       "label": "185/60R15",
       "diameter": 15,
       "index": "88H",
-      "commercial": false
+      "art": "2232133",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "436986"
+      }
     },
     {
       "label": "185/65R15",
       "diameter": 15,
       "index": "88T",
-      "commercial": false
+      "art": "2232153",
+      "commercial": false,
+      "eu": {
+        "energy": "A",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437286"
+      }
     },
     {
       "label": "185/65R15",
       "diameter": 15,
       "index": "92T",
-      "commercial": false
+      "art": "2232163",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437073"
+      }
     },
     {
       "label": "185/65R15",
       "diameter": 15,
       "index": "88H",
-      "commercial": false
+      "art": "2232143",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1479452"
+      }
     },
     {
       "label": "195/60R15",
       "diameter": 15,
       "index": "88H",
-      "commercial": false
+      "art": "2232173",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437076"
+      }
     },
     {
       "label": "195/60R15",
       "diameter": 15,
       "index": "88V",
-      "commercial": false
+      "art": "2264403",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437076"
+      }
     },
     {
       "label": "195/65R15",
       "diameter": 15,
       "index": "91T",
-      "commercial": false
+      "art": "2232193",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437083"
+      }
     },
     {
       "label": "195/65R15",
       "diameter": 15,
       "index": "95T",
-      "commercial": false
+      "art": "2232203",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437086"
+      }
     },
     {
       "label": "195/65R15",
       "diameter": 15,
       "index": "91H",
-      "commercial": false
+      "art": "2232183",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1594381"
+      }
     },
     {
       "label": "195/65R15",
       "diameter": 15,
       "index": "95H",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1594381"
+      }
     },
     {
       "label": "195/65R15",
       "diameter": 15,
       "index": "91V",
-      "commercial": false
+      "art": "2232213",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1594381"
+      }
     },
     {
       "label": "215/65R15",
       "diameter": 15,
       "index": "96H",
+      "art": "2250073",
       "commercial": false
     },
     {
       "label": "185/60R16",
       "diameter": 16,
       "index": "86H",
+      "art": "2263613",
       "commercial": false
     },
     {
       "label": "195/60R16",
       "diameter": 16,
       "index": "89H",
-      "commercial": false
+      "art": "2261503",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437118"
+      }
     },
     {
       "label": "195/65R16",
       "diameter": 16,
       "index": "92V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1438263"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "91H",
-      "commercial": false
+      "art": "2232223",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1479456"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "94H",
-      "commercial": false
+      "art": "2232233",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437130"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "91V",
-      "commercial": false
+      "art": "2232243",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "1479456"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "94V",
-      "commercial": false
+      "art": "2232253",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437138"
+      }
     },
     {
       "label": "205/60R16",
       "diameter": 16,
       "index": "92H",
-      "commercial": false
+      "art": "2231613",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437144"
+      }
     },
     {
       "label": "215/60R16",
       "diameter": 16,
       "index": "95V",
-      "commercial": false
+      "art": "2232263",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437257"
+      }
     },
     {
       "label": "215/60R16",
       "diameter": 16,
       "index": "99V",
-      "commercial": false
+      "art": "2249923",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437262"
+      }
     },
     {
       "label": "215/65R16",
       "diameter": 16,
       "index": "98H",
+      "art": "2261493",
       "commercial": false
     },
     {
       "label": "195/60R17",
       "diameter": 17,
       "index": "90V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "1438262"
+      }
     },
     {
       "label": "205/50R17",
       "diameter": 17,
       "index": "93W",
-      "commercial": false
+      "art": "2232273",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437267"
+      }
     },
     {
       "label": "205/55R17",
       "diameter": 17,
       "index": "91W",
-      "commercial": false
+      "art": "2232283",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437270"
+      }
     },
     {
       "label": "225/45R17",
       "diameter": 17,
       "index": "91W",
-      "commercial": false
+      "art": "2232293",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437273"
+      }
     },
     {
       "label": "225/50R17",
       "diameter": 17,
       "index": "98W",
+      "art": "2232303",
       "commercial": false
     },
     {
       "label": "225/55R17",
       "diameter": 17,
       "index": "101W",
-      "commercial": false
+      "art": "2232313",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "C",
+        "noise": 70,
+        "noiseClass": "B",
+        "eprel": "437279"
+      }
     },
     {
       "label": "215/50R18",
       "diameter": 18,
       "index": "92H",
+      "art": "2262293",
       "commercial": false
     }
   ],
   "features": [
     {
-      "text": "Экологичная летняя шина с пониженным сопротивлением качению и улучшенной топливной экономичностью"
+      "text": "Экологичные летние шины с пониженным сопротивлением качению и улучшенной топливной экономичностью"
     },
     {
       "text": "Четыре широкие продольные канавки и диагональные ламели эффективно отводят воду, снижая риск аквапланирования"
@@ -439,5 +812,52 @@
     {
       "text": "Асимметричный рисунок протектора для стабильной управляемости на сухом покрытии"
     }
-  ]
+  ],
+  "official": {
+    "tagline": "Летние шины с акцентом на экономичность",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000629&idcate=MC000729&iditem=805",
+    "features": [
+      "Разработано для снижения расхода топлива и сохранения окружающей среды посредством использования высокотехнологичных материалов и смесей",
+      "Комфортное сцепление и управляемость",
+      "Улучшенное сцепление на мокром покрытии и износостойкость",
+      "Компактные, средние и верхние средние автомобили"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/en/tire/view.do?seq=854",
+    "items": [
+      {
+        "title": "Аэродинамическое плечо",
+        "text": "Наружное плечо спрофилировано под обтекание воздухом. Меньше аэродинамических потерь на скорости — меньше расход топлива.",
+        "image": {
+          "src": "data/img/tires/es31/raw/es31-tech-shoulder.webp",
+          "alt": "Аэродинамический профиль плечевой зоны Kumho Ecowing ES31"
+        }
+      },
+      {
+        "title": "Лунки для отвода тепла",
+        "text": "На внутреннем плече отлиты лунки. Они увеличивают площадь обдува и снимают нагрев, который на длинной трассе съедает ресурс.",
+        "image": {
+          "src": "data/img/tires/es31/raw/es31-tech-dimple.webp",
+          "alt": "Лунки для отвода тепла на плече Kumho Ecowing ES31"
+        }
+      },
+      {
+        "title": "Ровное давление в пятне контакта",
+        "text": "Профиль каркаса пересчитан так, чтобы убрать пики давления по краям рёбер. Нагрузка ложится ровнее по всей ширине, износ идёт равномернее, сопротивление качению падает.",
+        "image": {
+          "src": "data/img/tires/es31/raw/es31-tech-footprint.webp",
+          "alt": "Распределение давления в пятне контакта Kumho Ecowing ES31 до и после доработки"
+        }
+      },
+      {
+        "title": "Соты на боковине",
+        "text": "Рисунок боковины повторяет пчелиные соты. Мотив выбран не случайно: сотовая структура — природный пример максимальной прочности при минимуме материала, а вся линейка Ecowing построена вокруг экономии.",
+        "image": {
+          "src": "data/img/tires/es31/raw/es31-tech-honeycomb.webp",
+          "alt": "Сотовый рисунок боковины Kumho Ecowing ES31"
+        }
+      }
+    ]
+  }
 }

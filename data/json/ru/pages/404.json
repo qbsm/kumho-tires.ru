@@ -6,16 +6,32 @@
       "data": {}
     },
     {
-      "name": "promo",
+      "name": "error",
       "data": {
-        "background": {
-          "src": "data/img/ui/bg1.webp"
-        }
+        "code": {
+          "image": {
+            "src": "data/img/tires/ha32/raw/ha32-side.webp"
+          }
+        },
+        "heading": {
+          "tag": "h1",
+          "class": "h1 heading font-2 weight-700 heading-flex uppercase",
+          "title": "<span>Страница</span> <span>не найдена</span>"
+        },
+        "desc": "Такой страницы на сайте нет: её могли удалить или в адресе опечатка.",
+        "actions": [
+          {
+            "href": "/tires",
+            "title": "В каталог шин",
+            "class": "button button-sm button-3 uppercase"
+          },
+          {
+            "href": "/buy",
+            "title": "Где купить",
+            "class": "button button-sm outline-color-2 uppercase"
+          }
+        ]
       }
-    },
-    {
-      "name": "form-container",
-      "data": {}
     },
     {
       "name": "footer",

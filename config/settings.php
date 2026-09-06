@@ -1,5 +1,7 @@
 <?php
 
+use App\Support\Env;
+
 $projectRoot = dirname(__DIR__);
 
 // APP_ENV: production | development — разделение окружений (кэш Twig, уровень логов)
@@ -66,14 +68,9 @@ return [
     'default_lang' => $default_lang,
     'available_langs' => $available_langs,
     'yandex_metric_id' => (int) (getenv('YANDEX_METRIC_ID') ?: 0),
-    'photoroom' => [
-        'api_key' => (string) (getenv('PHOTOROOM_API_KEY') ?: ''),
-        'sandbox_api_key' => (string) (getenv('PHOTOROOM_SANDBOX_API_KEY') ?: ''),
-        'base_url' => (string) (getenv('PHOTOROOM_API_BASE_URL') ?: 'https://image-api.photoroom.com'),
-        'timeout' => (int) (getenv('PHOTOROOM_API_TIMEOUT') ?: 60),
-        'connect_timeout' => (int) (getenv('PHOTOROOM_API_CONNECT_TIMEOUT') ?: 10),
-        'internal_token' => (string) (getenv('PHOTOROOM_INTERNAL_TOKEN') ?: ''),
-    ],
+    // Cache-busting изображений: ?v=<версия> к путям data/ и assets/ (см. UrlExtension).
+    // Бампится вручную при замене картинки под тем же именем.
+    'img_cache_version' => (string) (getenv('IMG_CACHE_VERSION') ?: '1'),
     // slug в URL => page_id (из project.php)
     'route_map' => (array) ($projectConfig['route_map'] ?? []),
     // Конфигурация коллекций (из project.php)
@@ -82,11 +79,36 @@ return [
     'sitemap_pages' => (array) ($projectConfig['sitemap_pages'] ?? ['index']),
     // Динамические подпути для sitemap (из project.php): page => {data_page, list_key, value_key, slugger}
     'sitemap_dynamic_pages' => (array) ($projectConfig['sitemap_dynamic_pages'] ?? []),
+    // Дополнительные статические адреса sitemap (страницы фильтра каталога)
+    'sitemap_extra_paths' => (array) ($projectConfig['sitemap_extra_paths'] ?? []),
     // Rate limiting для POST /api/send (по IP, файловое хранилище в cache/rate_limit)
     'rate_limit_api_send' => [
+        'paths' => ['/api/send', '/api/widget-rescue'],
         'max_requests' => 10,
         'window_seconds' => 60,
     ],
+    // Токен формы выдаётся браузеру по запросу, а не вместе с HTML: страница, скачанная
+    // роботом, не даёт возможности отправить заявку. min_age — сколько секунд между выдачей
+    // токена и отправкой считаем нижней границей для живого человека.
+    'form_token' => [
+        'min_age' => 3,
+        'max_age' => 7200,
+        'secret_file' => $cacheDir . '/form-token-secret',
+    ],
+    'form_guard' => [
+        'enable' => Env::bool('FORM_GUARD_ENABLE', true),
+        'trap_field' => Env::get('FORM_GUARD_TRAP_FIELD') ?: 'company_site, website',
+        'min_age_sec' => Env::int('FORM_GUARD_MIN_AGE_SEC', 3),
+        // Обязательные поля формы — свойство площадки: форма подписки живёт без телефона.
+        'required_fields' => Env::get('FORM_REQUIRED_FIELDS') ?: 'phone',
+    ],
+    'captcha' => [
+        'enable' => Env::bool('CAPTCHA_ENABLE'),
+        'client_key' => Env::get('CAPTCHA_CLIENT_KEY'),
+        'server_key' => Env::get('CAPTCHA_SERVER_KEY'),
+        'timeout' => Env::int('CAPTCHA_TIMEOUT', 5),
+    ],
+
     'cors' => [
         'allowed_origins' => [], // например ['https://example.com'] или ['*'] для любого
         'allowed_methods' => ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
@@ -94,11 +116,43 @@ return [
         'allow_credentials' => false,
     ],
     'mail' => [
-        'dsn' => (string) (getenv('MAILER_DSN') ?: 'sendmail://default'),
+        // Пусто — флага в .env нет, поведение прежнее: канал включён, если задан адрес.
+        'enable' => (string) (getenv('MAIL_ENABLE') ?: ''),
+        'dsn' => (string) (getenv('MAIL_DSN') ?: 'sendmail://default'),
         'to' => (string) (getenv('MAIL_TO') ?: ''),
         'from' => (string) (getenv('MAIL_FROM') ?: 'noreply@localhost'),
         'from_name' => (string) (getenv('MAIL_FROM_NAME') ?: ''),
         'subject_prefix' => (string) (getenv('MAIL_SUBJECT_PREFIX') ?: ''),
+    ],
+    // Резервный сбор заявок (rescue-канал): дублирует заявку в наш сервис, который сначала её
+    // сохраняет, а потом раздаёт по каналам с повторами — упавший канал не теряет лид.
+    // Подтверждение отправителя — по домену: заявку шлёт бэкенд, значит с адреса, на который
+    // домен резолвится. Секрета в .env нет; ключ нужен только хостингам вне нашего периметра.
+    'rescue' => [
+        'enable' => filter_var((string) (getenv('RESCUE_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'url' => (string) (getenv('RESCUE_URL') ?: 'https://api.ismart.pro/v1/rescue'),
+        'site' => (string) (getenv('RESCUE_SITE') ?: ''),
+        'key' => (string) (getenv('RESCUE_KEY') ?: ''),
+        'timeout' => (int) (getenv('RESCUE_TIMEOUT') ?: 10),
+    ],
+    'calltouch' => [
+        'enable' => filter_var((string) (getenv('CALLTOUCH_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'route_key' => (string) (getenv('CALLTOUCH_ROUTE_KEY') ?: ''),
+        'token' => (string) (getenv('CALLTOUCH_TOKEN') ?: ''),
+        'timeout' => (int) (getenv('CALLTOUCH_TIMEOUT') ?: 10),
+    ],
+    'telegram' => [
+        'enable' => filter_var((string) (getenv('TELEGRAM_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'bot_token' => (string) (getenv('TELEGRAM_BOT_TOKEN') ?: ''),
+        'chat_id' => (string) (getenv('TELEGRAM_CHAT_ID') ?: ''),
+        'timeout' => (int) (getenv('TELEGRAM_TIMEOUT') ?: 10),
+    ],
+    'google_sheets' => [
+        'enable' => filter_var((string) (getenv('SHEETS_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
+        'spreadsheet_id' => (string) (getenv('SHEETS_SPREADSHEET_ID') ?: ''),
+        'sheet_name' => (string) (getenv('SHEETS_SHEET_NAME') ?: 'Заявки'),
+        'credentials_path' => (string) (getenv('SHEETS_CREDENTIALS_PATH') ?: 'config/secrets/google-service-account.json'),
+        'timeout' => (int) (getenv('SHEETS_TIMEOUT') ?: 10),
     ],
     'errors' => require __DIR__ . '/errors.php',
     'twig' => [

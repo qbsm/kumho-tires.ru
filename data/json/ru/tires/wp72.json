@@ -1,0 +1,588 @@
+{
+  "slug": "wp72",
+  "visible": true,
+  "filter": {
+    "season": ["winter"],
+    "vehicle": ["passenger"],
+    "priority": ["comfort"],
+    "diameters": [18, 19, 20, 21],
+    "widths": [215, 225, 235, 245, 255, 265, 275, 285],
+    "profiles": [30, 35, 40, 45, 50],
+    "family": "wintercraft"
+  },
+  "item": {
+    "code": "WP72",
+    "series": "WinterCraft",
+    "logo": "data/img/series/wintercraft.svg",
+    "name": "Kumho WinterCraft WP72",
+    "alt_names": ["Кумхо ВинтерКрафт WP72"]
+  },
+  "desc": {
+    "short": "Зимняя нешипованная шина Kumho WinterCraft WP72 для бизнес и премиального класса. Протектор с 3D-ламелями для отличного торможения на снегу и льду.",
+    "full": "Kumho WinterCraft WP72 — зимняя нешипованная шина из линейки WinterCraft для среднего и люксового класса, а также спортивных автомобилей. Рисунок протектора с 3D-ламелями обеспечивает отличное торможение на мокрой, заснеженной и обледенелой дороге, а точная и стабильная управляемость сохраняется на заснеженном покрытии. Низкий уровень шума и мягкий ход держат комфорт в любых зимних условиях."
+  },
+  "images": {
+    "30deg": {
+      "src": "data/img/tires/wp72/raw/wp72-30deg.webp",
+      "alt": "Kumho WinterCraft WP72"
+    },
+    "side": {
+      "src": "data/img/tires/wp72/raw/wp72-side.webp",
+      "alt": "Kumho WinterCraft WP72, вид сбоку"
+    },
+    "front": {
+      "src": "data/img/tires/wp72/raw/wp72-front.webp",
+      "alt": "Kumho WinterCraft WP72, вид спереди"
+    }
+  },
+  "season": "Зимняя",
+  "sizes": [
+    {
+      "label": "215/45R18",
+      "diameter": 18,
+      "index": "93V",
+      "art": "8808956320683",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1223940"
+      }
+    },
+    {
+      "label": "245/50R18",
+      "diameter": 18,
+      "index": "104V",
+      "art": "8808956253059",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1224297"
+      }
+    },
+    {
+      "label": "255/40R18",
+      "diameter": 18,
+      "index": "99V",
+      "art": "8808956252939",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1224298"
+      }
+    },
+    {
+      "label": "265/35R18",
+      "diameter": 18,
+      "index": "97V",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1534790"
+      }
+    },
+    {
+      "label": "275/40R18",
+      "diameter": 18,
+      "index": "103V",
+      "art": "8808956253240",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449555"
+      }
+    },
+    {
+      "label": "275/45R18",
+      "diameter": 18,
+      "index": "107V",
+      "art": "8808956268701",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449557"
+      }
+    },
+    {
+      "label": "285/35R18",
+      "diameter": 18,
+      "index": "101V",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "D",
+        "noise": 75,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594361"
+      }
+    },
+    {
+      "label": "225/40R19",
+      "diameter": 19,
+      "index": "93V",
+      "art": "8808956252823",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449559"
+      }
+    },
+    {
+      "label": "225/45R19",
+      "diameter": 19,
+      "index": "96V",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1534795"
+      }
+    },
+    {
+      "label": "235/35R19",
+      "diameter": 19,
+      "index": "91W",
+      "art": "8808956252816",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1223928"
+      }
+    },
+    {
+      "label": "235/40R19",
+      "diameter": 19,
+      "index": "96V",
+      "art": "8808956253165",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1223930"
+      }
+    },
+    {
+      "label": "235/45R19",
+      "diameter": 19,
+      "index": "99V",
+      "art": "8808956253134",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "1223931"
+      }
+    },
+    {
+      "label": "245/35R19",
+      "diameter": 19,
+      "index": "93W",
+      "art": "8808956253233",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449563"
+      }
+    },
+    {
+      "label": "245/40R19",
+      "diameter": 19,
+      "index": "98V",
+      "art": "8808956252809",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1223932"
+      }
+    },
+    {
+      "label": "245/45R19",
+      "diameter": 19,
+      "index": "102V",
+      "art": "8808956253158",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1223933"
+      }
+    },
+    {
+      "label": "245/50R19",
+      "diameter": 19,
+      "index": "105V",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1534783"
+      }
+    },
+    {
+      "label": "255/35R19",
+      "diameter": 19,
+      "index": "96V",
+      "art": "8808956253202",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1223936"
+      }
+    },
+    {
+      "label": "255/40R19",
+      "diameter": 19,
+      "index": "100V",
+      "art": "8808956253271",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1223937"
+      }
+    },
+    {
+      "label": "255/45R19",
+      "diameter": 19,
+      "index": "104V",
+      "art": "8808956253264",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "eprel": "449646"
+      }
+    },
+    {
+      "label": "265/35R19",
+      "diameter": 19,
+      "index": "98W",
+      "art": "8808956253196",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449649"
+      }
+    },
+    {
+      "label": "275/30R19",
+      "diameter": 19,
+      "index": "96W",
+      "art": "8808956253219",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "eprel": "449650"
+      }
+    },
+    {
+      "label": "275/35R19",
+      "diameter": 19,
+      "index": "100V",
+      "art": "8808956253257",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1223938"
+      }
+    },
+    {
+      "label": "275/40R19",
+      "diameter": 19,
+      "index": "105W",
+      "art": "8808956252908",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449653"
+      }
+    },
+    {
+      "label": "245/35R20",
+      "diameter": 20,
+      "index": "95W",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594363"
+      }
+    },
+    {
+      "label": "245/40R20",
+      "diameter": 20,
+      "index": "99W",
+      "art": "8808956253318",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449661"
+      }
+    },
+    {
+      "label": "245/45R20",
+      "diameter": 20,
+      "index": "103V",
+      "art": "8808956253141",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449664"
+      }
+    },
+    {
+      "label": "255/35R20",
+      "diameter": 20,
+      "index": "97W",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1534784"
+      }
+    },
+    {
+      "label": "255/40R20",
+      "diameter": 20,
+      "index": "101W",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1534788"
+      }
+    },
+    {
+      "label": "265/35R20",
+      "diameter": 20,
+      "index": "99V",
+      "art": "8808956253172",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "449668"
+      }
+    },
+    {
+      "label": "265/40R20",
+      "diameter": 20,
+      "index": "104W",
+      "art": "8808956253288",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "eprel": "449669"
+      }
+    },
+    {
+      "label": "275/30R20",
+      "diameter": 20,
+      "index": "97W",
+      "commercial": false
+    },
+    {
+      "label": "275/35R20",
+      "diameter": 20,
+      "index": "102W",
+      "art": "8808956253226",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "eprel": "449671"
+      }
+    },
+    {
+      "label": "255/35R21",
+      "diameter": 21,
+      "index": "98W",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1534785"
+      }
+    }
+  ],
+  "features": [
+    {
+      "text": "Инновационный дизайн протектора с 3D-ламелями для отличного торможения на мокрой, заснеженной и обледенелой дороге"
+    },
+    {
+      "text": "Точное и стабильное поведение при вождении на заснеженной дороге"
+    },
+    {
+      "text": "Низкий уровень шума и комфортный ход"
+    },
+    {
+      "text": "Для среднего и люксового класса, а также спортивных автомобилей"
+    }
+  ],
+  "official": {
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000629&idcate=MC000730&iditem=4394",
+    "tagline": "Премиальные зимние шины класса UHP",
+    "features": [
+      "Инновационный дизайн протектора с 3D ламелями для отличного торможения на мокрой, заснеженной и обледенелой дороге.",
+      "Точное и стабильное поведение при вождении на заснеженной дороге",
+      "Тихие и комфортные зимние шины для среднего и люксового класса, а также для спортивных автомобилей"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/en/tire/view.do?seq=856",
+    "items": [
+      {
+        "title": "Асимметричный рисунок",
+        "text": "Две половины протектора работают на разные задачи: внутренняя отвечает за снег и воду, наружная — за устойчивость в повороте на сухом асфальте.",
+        "image": {
+          "src": "data/img/tires/wp72/raw/wp72-tech-pattern.webp",
+          "alt": "Асимметричный рисунок протектора Kumho WinterCraft WP72"
+        }
+      },
+      {
+        "title": "Зигзагообразные канавки",
+        "text": "Ломаная линия канавки цепляется за снег кромками с обеих сторон. Снежный брусок, спрессованный в канавке, работает как дополнительный зацеп.",
+        "image": {
+          "src": "data/img/tires/wp72/raw/wp72-tech-snow.webp",
+          "alt": "Зигзагообразные канавки протектора Kumho WinterCraft WP72"
+        }
+      },
+      {
+        "title": "Продольные и поперечные канавки",
+        "text": "Широкие канавки в двух направлениях уводят воду из пятна контакта. Шина позже срывается в аквапланирование на слякоти и мокром асфальте.",
+        "image": {
+          "src": "data/img/tires/wp72/raw/wp72-tech-wet.webp",
+          "alt": "Водоотводящие канавки Kumho WinterCraft WP72"
+        }
+      },
+      {
+        "title": "Жёсткая 3D-ламель",
+        "text": "Ламели новой формы цепляются стенками друг за друга. Блок не заваливается под нагрузкой: точнее руль, короче тормозной путь на любом зимнем покрытии.",
+        "image": {
+          "src": "data/img/tires/wp72/raw/wp72-tech-sipe.webp",
+          "alt": "Трёхмерная ламель Kumho WinterCraft WP72 в сравнении с прежней"
+        }
+      },
+      {
+        "title": "Продольная ламель в плече",
+        "text": "Дополнительная ламель вдоль плечевой зоны добавляет боковой хват. Заметно на переставке и в повороте по укатанному снегу.",
+        "image": {
+          "src": "data/img/tires/wp72/raw/wp72-tech-longsipe.webp",
+          "alt": "Продольная ламель в плечевой зоне Kumho WinterCraft WP72"
+        }
+      },
+      {
+        "title": "Рисунок боковины",
+        "text": "Мотив снежинки на боковине — опознавательный знак зимней линейки WinterCraft.",
+        "image": {
+          "src": "data/img/tires/wp72/raw/wp72-tech-sidewall.webp",
+          "alt": "Мотив снежинки на боковине Kumho WinterCraft WP72"
+        }
+      }
+    ]
+  }
+}

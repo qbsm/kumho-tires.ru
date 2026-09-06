@@ -2,56 +2,38 @@
   "slug": "ha32-plus",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      16,
-      17,
-      18
-    ],
-    "widths": [
-      195,
-      205,
-      215,
-      225,
-      235
-    ],
-    "profiles": [
-      40,
-      45,
-      50,
-      55,
-      60
-    ]
+    "season": ["all-season"],
+    "vehicle": ["passenger"],
+    "priority": ["comfort", "economy"],
+    "diameters": [16, 17, 18],
+    "widths": [195, 205, 215, 225, 235],
+    "profiles": [40, 45, 50, 55, 60],
+    "family": "solus"
   },
   "item": {
     "code": "HA32+",
     "series": "SOLUS",
-    "name": "Kumho HA32+ SOLUS"
+    "caption": "Усиленные всесезонные шины для кроссоверов",
+    "logo": "data/img/series/solus.svg",
+    "name": "Kumho SOLUS HA32+",
+    "alt_names": ["Кумхо Солус HA32+", "Kumho SOLUS HA32 Plus"]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho HA32+ SOLUS для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год.",
-    "full": "Kumho HA32+ SOLUS — всесезонная шина из линейки SOLUS, предназначенная для легковых автомобилей. Серия SOLUS обеспечивает стабильное поведение в любых погодных условиях круглый год. Доступна в диаметрах R16–R18."
+    "short": "Kumho SOLUS HA32+ — обновление HA32 с изменённым протектором. Десять размеров R16–R18 для компактных автомобилей и кроссоверов.",
+    "full": "Kumho SOLUS HA32+ — версия HA32 с переработанным рисунком протектора: изменения нацелены на сцепные свойства и характер износа при том же круглогодичном назначении. Размерный ряд короче базовой модели — десять типоразмеров от 195/55R16 91V до 235/55R18 104V, то есть шина адресована компактным и средним автомобилям и кроссоверам.<br><br>Вся десятка размеров идёт с одинаковой европейской маркировкой: класс сцепления на мокрой дороге B, класс топливной экономичности C, уровень шума 72 дБ. Каждый размер прошёл снежный тест: на боковине стоит символ трёх горных пиков со снежинкой (3PMSF), и комплект можно не менять на зиму."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/ha32-plus/400/ha32-plus-30deg.webp",
-      "800": "data/img/tires/ha32-plus/800/ha32-plus-30deg.webp",
-      "1280": "data/img/tires/ha32-plus/1280/ha32-plus-30deg.webp",
-      "alt": "Kumho HA32+ SOLUS, ракурс 30°"
+      "src": "data/img/tires/ha32-plus/raw/ha32-plus-30deg.webp",
+      "alt": "Kumho SOLUS HA32+"
     },
     "front": {
-      "400": "data/img/tires/ha32-plus/400/ha32-plus-front.webp",
-      "800": "data/img/tires/ha32-plus/800/ha32-plus-front.webp",
-      "1280": "data/img/tires/ha32-plus/1280/ha32-plus-front.webp",
-      "alt": "Kumho HA32+ SOLUS, вид спереди"
+      "src": "data/img/tires/ha32-plus/raw/ha32-plus-front.webp",
+      "alt": "Kumho SOLUS HA32+, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/ha32-plus/400/ha32-plus-side.webp",
-      "800": "data/img/tires/ha32-plus/800/ha32-plus-side.webp",
-      "1280": "data/img/tires/ha32-plus/1280/ha32-plus-side.webp",
-      "alt": "Kumho HA32+ SOLUS, вид сбоку"
+      "src": "data/img/tires/ha32-plus/raw/ha32-plus-side.webp",
+      "alt": "Kumho SOLUS HA32+, вид сбоку"
     }
   },
   "season": "Всесезонная",
@@ -60,31 +42,71 @@
       "label": "195/55R16",
       "diameter": 16,
       "index": "91V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1497446"
+      }
     },
     {
       "label": "205/55R16",
       "diameter": 16,
       "index": "94V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594341"
+      }
     },
     {
       "label": "215/60R16",
       "diameter": 16,
       "index": "99V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1497450"
+      }
     },
     {
       "label": "215/55R17",
       "diameter": 17,
       "index": "98W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1497449"
+      }
     },
     {
       "label": "225/45R17",
       "diameter": 17,
       "index": "94W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594343"
+      }
     },
     {
       "label": "225/50R17",
@@ -96,25 +118,57 @@
       "label": "215/50R18",
       "diameter": 18,
       "index": "96W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1950752"
+      }
     },
     {
       "label": "225/40R18",
       "diameter": 18,
       "index": "92W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1636324"
+      }
     },
     {
       "label": "225/45R18",
       "diameter": 18,
       "index": "95W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1594344"
+      }
     },
     {
       "label": "235/55R18",
       "diameter": 18,
       "index": "104V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1497445"
+      }
     }
   ],
   "features": [
