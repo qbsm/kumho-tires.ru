@@ -11,7 +11,10 @@
 #
 # Прод — ПЛОСКАЯ структура: index.php (self-locating: projectRoot = is_dir(__DIR__/config)?__DIR__:dirname),
 # рядом config/ data/ assets/ src/ templates/ vendor/, без public/. Поэтому деплой = заливка контент/код-
-# каталогов в корень докрута. НЕ трогаем: .env/.htaccess/index.php/vendor/cache/logs/llms*.txt/yandex_*.html.
+# каталогов в корень докрута. НЕ трогаем: .env/.htaccess/index.php/vendor/cache/logs/yandex_*.html.
+# llms.txt и llms-full.txt лежат в public/ и на прод едут в корень: llms.txt ведётся руками в репозитории,
+# llms-full.txt генерится `npm run generate-llms`. Раньше оба были в списке исключений, и на проде
+# висели версии месячной давности — новые статьи ИИ-краулеры не видели.
 #
 # Креды — через env (задаёт трекер deployFtp из /home/promo/.credentials/sever-avto-shiny.md либо вручную):
 #   FTP_HOST=31.31.196.72 FTP_USER=... FTP_PASS=... FTP_DIR=www/kumho-tires.ru/ bash tools/deploy/ftp-deploy.sh --apply
@@ -35,13 +38,15 @@ command -v lftp >/dev/null 2>&1 || { echo "lftp не установлен"; exit
 
 MARKER="logs/ftp-last-deployed"
 
-echo "==> Прод-сборка ассетов (critical + CSS + JS + манифест картинок)"
+echo "==> Прод-сборка ассетов (critical + CSS + JS + манифест картинок + llms-full)"
 npm run build:critical
 npm run build:css:prod
 npm run build:js:prod
 # Манифест размеров — build-артефакт (не в git): без пересчёта он протухает на стейдже,
 # и фаза 2 зеркалит устаревший на прод (пропавшая обложка новости, 2026-08-03).
 npm run build:image-manifest
+# Описание для ИИ-краулеров собирается из контента: без пересборки на прод уедет вчерашний срез.
+npm run generate-llms > public/llms-full.txt
 
 HEAD_SHA="$(git rev-parse HEAD 2>/dev/null || true)"
 
@@ -100,7 +105,7 @@ echo "==> Фаза 1: сборка + ${#CHANGED[@]} изменённых фай�
 } | lftp -u "${FTP_USER},${FTP_PASS}" "${FTP_HOST}"
 
 if [[ $APPLY -eq 1 ]]; then
-  lftp -u "${FTP_USER},${FTP_PASS}" "${FTP_HOST}" -e "set ssl:verify-certificate no; set ftp:ssl-allow true; put robots.txt -o ${FTP_DIR}robots.txt; rm -r ${FTP_DIR}cache/twig; bye" >/dev/null 2>&1 || true
+  lftp -u "${FTP_USER},${FTP_PASS}" "${FTP_HOST}" -e "set ssl:verify-certificate no; set ftp:ssl-allow true; put robots.txt -o ${FTP_DIR}robots.txt; put public/llms.txt -o ${FTP_DIR}llms.txt; put public/llms-full.txt -o ${FTP_DIR}llms-full.txt; rm -r ${FTP_DIR}cache/twig; bye" >/dev/null 2>&1 || true
   echo "==> Фаза 1 готова: залито ${#CHANGED[@]} изменённых файлов + сборка, twig-кэш сброшен."
 else
   echo "(DRY-RUN — фаза 1 залила бы ${#CHANGED[@]} изменённых файлов + сборку; для реальной выкладки --apply)"
