@@ -2,6 +2,8 @@
   "name": "articles",
   "title": "Статьи",
   "items": [
+    "tire-storage",
+    "tire-pressure",
     "winter-switch",
     "tread-depth",
     "oem-fitment",

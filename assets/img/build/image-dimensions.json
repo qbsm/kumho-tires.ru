@@ -6454,5 +6454,85 @@
   "articles/winter-switch/1920/winter-switch-cover.avif": {
     "width": 1920,
     "height": 1015
+  },
+  "articles/tire-pressure/400/tire-pressure-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tire-pressure/400/tire-pressure-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tire-pressure/800/tire-pressure-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tire-pressure/800/tire-pressure-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tire-pressure/1280/tire-pressure-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tire-pressure/1280/tire-pressure-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tire-pressure/1600/tire-pressure-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tire-pressure/1600/tire-pressure-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tire-pressure/1920/tire-pressure-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/tire-pressure/1920/tire-pressure-cover.avif": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/tire-storage/400/tire-storage-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tire-storage/400/tire-storage-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tire-storage/800/tire-storage-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tire-storage/800/tire-storage-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tire-storage/1280/tire-storage-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tire-storage/1280/tire-storage-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tire-storage/1600/tire-storage-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tire-storage/1600/tire-storage-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tire-storage/1920/tire-storage-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/tire-storage/1920/tire-storage-cover.avif": {
+    "width": 1920,
+    "height": 1015
   }
 }

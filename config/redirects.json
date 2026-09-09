@@ -13,5 +13,15 @@
     "from_prefix": "/tires-list/",
     "to_prefix": "/tires",
     "status": 301
+  },
+  {
+    "from": "/en",
+    "to": "/",
+    "status": 301
+  },
+  {
+    "from_prefix": "/en/",
+    "to_prefix": "/",
+    "status": 301
   }
 ]
