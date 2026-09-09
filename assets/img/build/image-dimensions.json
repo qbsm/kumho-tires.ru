@@ -6574,5 +6574,165 @@
   "articles/sidewall-marking/1920/sidewall-marking-cover.avif": {
     "width": 1920,
     "height": 1015
+  },
+  "articles/korean-tires/400/korean-tires-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/korean-tires/400/korean-tires-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/korean-tires/800/korean-tires-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/korean-tires/800/korean-tires-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/korean-tires/1280/korean-tires-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/korean-tires/1280/korean-tires-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/korean-tires/1600/korean-tires-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/korean-tires/1600/korean-tires-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/korean-tires/1920/korean-tires-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/korean-tires/1920/korean-tires-cover.avif": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/tire-size-change/400/tire-size-change-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tire-size-change/400/tire-size-change-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tire-size-change/800/tire-size-change-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tire-size-change/800/tire-size-change-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tire-size-change/1280/tire-size-change-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tire-size-change/1280/tire-size-change-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tire-size-change/1600/tire-size-change-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tire-size-change/1600/tire-size-change-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tire-size-change/1920/tire-size-change-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/tire-size-change/1920/tire-size-change-cover.avif": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/tire-direction/400/tire-direction-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tire-direction/400/tire-direction-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tire-direction/800/tire-direction-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tire-direction/800/tire-direction-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tire-direction/1280/tire-direction-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tire-direction/1280/tire-direction-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tire-direction/1600/tire-direction-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tire-direction/1600/tire-direction-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tire-direction/1920/tire-direction-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/tire-direction/1920/tire-direction-cover.avif": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/ev-tires/400/ev-tires-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/ev-tires/400/ev-tires-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/ev-tires/800/ev-tires-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/ev-tires/800/ev-tires-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/ev-tires/1280/ev-tires-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/ev-tires/1280/ev-tires-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/ev-tires/1600/ev-tires-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/ev-tires/1600/ev-tires-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/ev-tires/1920/ev-tires-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/ev-tires/1920/ev-tires-cover.avif": {
+    "width": 1920,
+    "height": 1015
   }
 }
