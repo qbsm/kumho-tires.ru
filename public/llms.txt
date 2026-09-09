@@ -93,7 +93,17 @@ kumho-tires.ru — сайт официального дистрибьютора 
     шины для кроссовера /articles/tires-for-suv, шины для фургона /articles/tires-for-van,
     индексы нагрузки и скорости /articles/load-speed-index, проверка шины в реестре EPREL
     /articles/eprel-check, как отличить оригинал /articles/original-check,
-    расширенная гарантия /articles/extended-warranty
+    расширенная гарантия /articles/extended-warranty,
+    Kumho на конвейере автопроизводителей /articles/oem-fitment,
+    все обозначения на боковине /articles/sidewall-marking,
+    глубина протектора и индикатор износа /articles/tread-depth,
+    давление в шинах /articles/tire-pressure,
+    хранение комплекта между сезонами /articles/tire-storage,
+    сроки перехода на зимние шины /articles/winter-switch,
+    смена типоразмера и что значит XL /articles/tire-size-change,
+    направленные и асимметричные шины /articles/tire-direction,
+    шины для электромобиля /articles/ev-tires,
+    корейские производители шин /articles/korean-tires
 - Контакты: /contacts
 - Политика конфиденциальности: /policy
 
