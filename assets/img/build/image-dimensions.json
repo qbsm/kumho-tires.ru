@@ -6414,5 +6414,45 @@
   "articles/tread-depth/1920/tread-depth-cover.avif": {
     "width": 1920,
     "height": 1015
+  },
+  "articles/winter-switch/400/winter-switch-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/winter-switch/400/winter-switch-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/winter-switch/800/winter-switch-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/winter-switch/800/winter-switch-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/winter-switch/1280/winter-switch-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/winter-switch/1280/winter-switch-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/winter-switch/1600/winter-switch-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/winter-switch/1600/winter-switch-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/winter-switch/1920/winter-switch-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/winter-switch/1920/winter-switch-cover.avif": {
+    "width": 1920,
+    "height": 1015
   }
 }
