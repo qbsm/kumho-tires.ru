@@ -6374,5 +6374,45 @@
   "tires/ws51/800/ws51-tech-shoulder.avif": {
     "width": 800,
     "height": 533
+  },
+  "articles/tread-depth/400/tread-depth-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tread-depth/400/tread-depth-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/tread-depth/800/tread-depth-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tread-depth/800/tread-depth-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/tread-depth/1280/tread-depth-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tread-depth/1280/tread-depth-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/tread-depth/1600/tread-depth-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tread-depth/1600/tread-depth-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/tread-depth/1920/tread-depth-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/tread-depth/1920/tread-depth-cover.avif": {
+    "width": 1920,
+    "height": 1015
   }
 }

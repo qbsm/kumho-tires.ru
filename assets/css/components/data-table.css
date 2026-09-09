@@ -14,6 +14,11 @@
   line-height: 1.4;
 }
 
+/* Узкая таблица на несколько коротких колонок: помещается в экран телефона без прокрутки. */
+.data-table--compact {
+  min-width: 26rem;
+}
+
 .data-table__caption {
   margin-block-end: 1rem;
   font-size: 0.95em;

@@ -26,59 +26,6 @@
       }
     },
     {
-      "name": "logoline",
-      "visible": false,
-      "data": {
-        "tires": ["at52", "at61", "cx11", "es31", "ha31", "hp91", "hs51", "kl71", "mt51", "ps72", "ta31"]
-      }
-    },
-    {
-      "name": "headline",
-      "visible": false,
-      "data": {}
-    },
-    {
-      "name": "actions",
-      "visible": true,
-      "data": {
-        "heading": {
-          "tag": "h2",
-          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
-          "title": "Действующие акции"
-        },
-        "items": [
-          {
-            "href": "/warranty",
-            "title": "Расширенная гарантия",
-            "desc": "1 год дополнительной гарантии от повреждений на шины Kumho",
-            "class": "button",
-            "target": "_self",
-            "cover": "data/img/actions/raw/warranty.jpg"
-          }
-        ]
-      }
-    },
-    {
-      "name": "tires",
-      "visible": true,
-      "data": {
-        "filter": {
-          "visible": false
-        },
-        "preview_limit": 8,
-        "all_models_link": {
-          "visible": true,
-          "title": "Все модели",
-          "href": "/tires"
-        },
-        "heading": {
-          "tag": "h2",
-          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
-          "title": "Модельный ряд Kumho"
-        }
-      }
-    },
-    {
       "name": "tire-selector",
       "visible": true,
       "data": {
@@ -197,6 +144,59 @@
           "catalog_href": "/tires",
           "catalog_title": "Перейти в каталог",
           "restart_title": "Подобрать заново"
+        }
+      }
+    },
+    {
+      "name": "logoline",
+      "visible": false,
+      "data": {
+        "tires": ["at52", "at61", "cx11", "es31", "ha31", "hp91", "hs51", "kl71", "mt51", "ps72", "ta31"]
+      }
+    },
+    {
+      "name": "headline",
+      "visible": false,
+      "data": {}
+    },
+    {
+      "name": "actions",
+      "visible": true,
+      "data": {
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Действующие акции"
+        },
+        "items": [
+          {
+            "href": "/warranty",
+            "title": "Расширенная гарантия",
+            "desc": "1 год дополнительной гарантии от повреждений на шины Kumho",
+            "class": "button",
+            "target": "_self",
+            "cover": "data/img/actions/raw/warranty.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "name": "tires",
+      "visible": true,
+      "data": {
+        "filter": {
+          "visible": false
+        },
+        "preview_limit": 8,
+        "all_models_link": {
+          "visible": true,
+          "title": "Все модели",
+          "href": "/tires"
+        },
+        "heading": {
+          "tag": "h2",
+          "class": "h2 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Модельный ряд Kumho"
         }
       }
     },
