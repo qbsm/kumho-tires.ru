@@ -6534,5 +6534,45 @@
   "articles/tire-storage/1920/tire-storage-cover.avif": {
     "width": 1920,
     "height": 1015
+  },
+  "articles/sidewall-marking/400/sidewall-marking-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/sidewall-marking/400/sidewall-marking-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/sidewall-marking/800/sidewall-marking-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/sidewall-marking/800/sidewall-marking-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/sidewall-marking/1280/sidewall-marking-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/sidewall-marking/1280/sidewall-marking-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/sidewall-marking/1600/sidewall-marking-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/sidewall-marking/1600/sidewall-marking-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/sidewall-marking/1920/sidewall-marking-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/sidewall-marking/1920/sidewall-marking-cover.avif": {
+    "width": 1920,
+    "height": 1015
   }
 }
