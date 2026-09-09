@@ -345,11 +345,20 @@ final class PageAction
         );
 
         $response = $response->withStatus($status);
+        // Директива для поисковых роботов дублируется в <meta name="robots">: заголовок
+        // читают не все краулеры, а мета видна и при сохранённой копии страницы.
+        // max-image-preview:large разрешает крупную картинку в выдаче — у статей и карточек
+        // моделей есть свои обложки, мелкий эскиз их обесценивает.
+        $robots = 'max-image-preview:large';
+        if ($status === 404) {
+            $robots = 'noindex, follow';
+        }
         // Скрытая сущность (visible:false) доступна по прямой ссылке, но убирается из индекса:
         // noindex вместо 404 — поисковик деиндексирует URL без ошибок обхода; follow — чтобы вес
         // ссылок со страницы не терялся.
         if ($entity !== null && !empty($entity['_hidden'])) {
             $response = $response->withHeader('X-Robots-Tag', 'noindex, follow');
+            $robots = 'noindex, follow';
         }
 
         // Сезонные страницы фильтра и страницы линеек индексируются: это осмысленные посадочные.
@@ -362,8 +371,11 @@ final class PageAction
             $sizeIsOpen = count($extrasFilter) === 3 && in_array($sizeSlug, $indexableSizes, true);
             if (!$sizeIsOpen) {
                 $response = $response->withHeader('X-Robots-Tag', 'noindex, follow');
+                $robots = 'noindex, follow';
             }
         }
+
+        $data['seo_robots'] = $robots;
 
         return $this->twig->render($response, $template, $data);
     }

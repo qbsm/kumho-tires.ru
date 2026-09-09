@@ -6,6 +6,16 @@
   }
 }
 
+/* Блок задумывался первым после интро и потому шёл без верхнего отступа. Когда над ним
+   встаёт другая секция, отступ нужен обычный — тот же шаг, что между всеми секциями. */
+.tire-selector + .actions {
+  padding-top: 2rem;
+
+  @media (--lg) {
+    padding-top: 6rem;
+  }
+}
+
 .actions .section__item.block-wrap {
   display: flex;
   flex-direction: column;
