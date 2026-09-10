@@ -68,7 +68,7 @@
             "type": "options",
             "multiple": true,
             "question": "Для какого сезона нужны шины?",
-            "note": "Порядок и названия — как в фильтре каталога. Можно выбрать несколько.",
+            "note": "Можно выбрать несколько вариантов.",
             "options": [
               {
                 "value": "summer",
@@ -87,12 +87,6 @@
                 "label": "Зимние",
                 "note": "Снег, холод и реагенты",
                 "icon": "data/img/ui/icons/icon-season-winter.svg"
-              },
-              {
-                "value": "studded",
-                "label": "Шипованные",
-                "note": "Лёд и укатанный снег",
-                "icon": "data/img/ui/icons/icon-season-studded.svg"
               }
             ]
           },
@@ -124,7 +118,7 @@
               {
                 "value": "offroad",
                 "label": "Проходимость и нагрузка",
-                "note": "Грунт, бездорожье, вес",
+                "note": "Грунт, бездорожье, большой вес",
                 "icon": "data/img/ui/icons/icon-sel-offroad.svg"
               }
             ]
