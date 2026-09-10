@@ -2,6 +2,7 @@
   "name": "articles",
   "title": "Статьи",
   "items": [
+    "model-naming",
     "tire-storage",
     "winter-switch",
     "ev-tires",

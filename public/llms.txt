@@ -103,7 +103,8 @@ kumho-tires.ru — сайт официального дистрибьютора 
     смена типоразмера и что значит XL /articles/tire-size-change,
     направленные и асимметричные шины /articles/tire-direction,
     шины для электромобиля /articles/ev-tires,
-    корейские производители шин /articles/korean-tires
+    корейские производители шин /articles/korean-tires,
+    расшифровка названий моделей /articles/model-naming
 - Контакты: /contacts
 - Политика конфиденциальности: /policy
 

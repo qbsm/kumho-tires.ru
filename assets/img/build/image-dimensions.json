@@ -6734,5 +6734,45 @@
   "articles/ev-tires/1920/ev-tires-cover.avif": {
     "width": 1920,
     "height": 1015
+  },
+  "articles/model-naming/400/model-naming-cover.webp": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/model-naming/400/model-naming-cover.avif": {
+    "width": 400,
+    "height": 211
+  },
+  "articles/model-naming/800/model-naming-cover.webp": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/model-naming/800/model-naming-cover.avif": {
+    "width": 800,
+    "height": 423
+  },
+  "articles/model-naming/1280/model-naming-cover.webp": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/model-naming/1280/model-naming-cover.avif": {
+    "width": 1280,
+    "height": 677
+  },
+  "articles/model-naming/1600/model-naming-cover.webp": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/model-naming/1600/model-naming-cover.avif": {
+    "width": 1600,
+    "height": 846
+  },
+  "articles/model-naming/1920/model-naming-cover.webp": {
+    "width": 1920,
+    "height": 1015
+  },
+  "articles/model-naming/1920/model-naming-cover.avif": {
+    "width": 1920,
+    "height": 1015
   }
 }
