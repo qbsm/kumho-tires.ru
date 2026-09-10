@@ -8,7 +8,7 @@ onReady(function () {
     const items = accordion.querySelectorAll('.accordion__item.question-wrap');
     const showAllItem = accordion.querySelector('.accordion__item.show-all');
     const showAllButton = showAllItem ? showAllItem.querySelector('.accordion__show-all') : null;
-    const initialItemsCount = 10;
+    const initialItemsCount = parseInt(accordion.dataset.previewLimit || '10', 10);
 
     if (items.length > initialItemsCount) {
       items.forEach((item, index) => {

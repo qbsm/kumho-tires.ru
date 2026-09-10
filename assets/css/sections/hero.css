@@ -201,6 +201,12 @@
   font-weight: 500;
 }
 
-.hero__login-help a:hover {
+.hero__login-help a {
   text-decoration: underline;
+  text-decoration-color: var(--underline-color, var(--color-4));
+  text-underline-offset: 0.3rem;
+}
+
+.hero__login-help a:hover {
+  text-decoration-color: var(--color-3);
 }

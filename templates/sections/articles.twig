@@ -1,0 +1,88 @@
+{#
+  Листинг статей, сгруппированный по рубрикам. Рубрика — видимый заголовок раздела, а не
+  клиентский фильтр: без JS структура читается и роботом, и в выдаче.
+  Порядок рубрик задаётся data.categories; статьи вне этого списка идут в конец.
+#}
+<section class="articles section">
+  <div class="container">
+    <div class="section__item block-wrap">
+      <div class="section__subitem articles__header">
+        {% if data.heading is defined %}
+          <div class="heading-wrap">
+            <span class="heading-accent self-start" aria-hidden="true"></span>
+            {% include 'components/heading.twig' with {'item': data.heading} %}
+          </div>
+        {% endif %}
+        {% if data.all_link is defined %}
+          <a href="{{ url(data.all_link.href | default('/articles/')) }}" class="link underline-static articles__all-link">{{ data.all_link.title | default('Все статьи') }}</a>
+        {% endif %}
+      </div>
+
+      {% if data.lead is defined and data.lead %}
+        <div class="section__subitem longread-wrap">
+          <span class="longread">{{ data.lead | raw }}</span>
+        </div>
+      {% endif %}
+
+      {% if data.items is defined and data.items is not empty %}
+        {% set _items = data.items|filter(i => i.visible is not defined or i.visible) %}
+        {# Время чтения считаем по тексту статьи — отдельного поля в данных нет #}
+        {% set _lang = currentLang.code|default('ru') %}
+        {% set _withReading = [] %}
+        {% for _i in _items %}
+          {% set _raw = _i.slug is defined ? load_json('data/json/' ~ _lang ~ '/articles/' ~ _i.slug ~ '.json') : null %}
+          {% set _a = (_raw and _raw.article is defined) ? _raw.article : null %}
+          {% set _words = _a ? ((_a.lead|default('') ~ ' ' ~ _a.body|default(''))|striptags|trim|split(' ')|filter(w => w|trim != '')|length) : 0 %}
+          {% set _withReading = _withReading|merge([_i|merge({'reading': _words > 0 ? max(1, (_words / 180)|round(0, 'ceil')) : 0})]) %}
+        {% endfor %}
+        {% set _items = _withReading %}
+        {% set _declared = data.categories|default([]) %}
+        {% set _seen = [] %}
+        {% for _item in _items %}
+          {% set _cat = _item.category|default('') %}
+          {% if _cat and _cat not in _declared and _cat not in _seen %}{% set _seen = _seen|merge([_cat]) %}{% endif %}
+        {% endfor %}
+        {% set _groups = _declared|merge(_seen) %}
+        {% set _grouped = data.grouped|default(false) and _groups|length > 0 %}
+
+        {% if _grouped %}
+          {% for _cat in _groups %}
+            {% set _catItems = _items|filter(i => (i.category|default('')) == _cat) %}
+            {% if _catItems|length > 0 %}
+              <div class="section__subitem articles__group">
+                <h2 class="articles__group-title font-1">{{ _cat }}</h2>
+                <div class="cards-news-wrap">
+                  {% for item in _catItems %}
+                    <div class="section__inner card-news-wrap">
+                      {% include 'components/card-news.twig' with {'item': item, 'base': '/articles/', 'heading_tag': 'h3'} %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% set _rest = _items|filter(i => (i.category|default('')) == '') %}
+          {% if _rest|length > 0 %}
+            <div class="section__subitem articles__group">
+              <div class="cards-news-wrap">
+                {% for item in _rest %}
+                  <div class="section__inner card-news-wrap">
+                    {% include 'components/card-news.twig' with {'item': item, 'base': '/articles/', 'heading_tag': 'h3'} %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="section__subitem cards-news-wrap">
+            {% for item in (data.limit|default(0) > 0 ? _items|slice(0, data.limit) : _items) %}
+              <div class="section__inner card-news-wrap">
+                {% include 'components/card-news.twig' with {'item': item, 'base': '/articles/', 'heading_tag': 'span'} %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</section>

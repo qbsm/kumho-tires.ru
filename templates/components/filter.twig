@@ -1,25 +1,45 @@
-{% set rootClass = filter.root_class | default('filter-wrap') %}
-<div class="filter {{ rootClass }}">
-  <div class="filter-container">
-    {% for group in filter.groups | default([]) %}
-      {% set groupClass = ('filter-group ' ~ (group.class | default(''))) | trim %}
+{# Группа фильтра рендерится макросом: соседние группы с одним ключом row
+   собираются в общую обёртку и переносятся на новую строку вместе, а не по одной #}
+{% macro filter_group(group) %}
+    {% set groupClass = ('filter-group ' ~ (group.class | default(''))) | trim %}
 
       {% if group.type == 'buttons' %}
         <div class="{{ groupClass }}">
           {% for button in group.buttons | default([]) %}
             {% set buttonClass = ('filter__selector ' ~ (button.class | default('')) ~ (button.disabled ? ' disabled' : '')) | trim %}
-            <button
-              type="button"
-              class="{{ buttonClass }}"
-              {% if button.data_attr is defined and button.data_attr_name is defined %}
-                {{ button.data_attr_name }}="{{ button.data_attr }}"
-              {% endif %}
-              {% if button.disabled %}disabled{% endif %}
-            >{{ button.label | default('') }}</button>
+            {% set buttonInner %}
+              {%- if button.icon is defined and button.icon -%}
+                <span class="filter__icon" style="--filter-icon: url('{{ url(button.icon) }}')" aria-hidden="true"></span>
+              {%- endif -%}
+              {{- button.label | default('') -}}
+            {% endset %}
+            {# С href кнопка рендерится ссылкой: у отфильтрованного списка есть свой адрес,
+               и робот доходит до него по обычной ссылке, а не только через sitemap. #}
+            {% if button.href is defined and button.href and not button.disabled %}
+              <a
+                href="{{ url(button.href) }}"
+                class="{{ buttonClass }} link"
+                {% if button.data_attr is defined and button.data_attr_name is defined %}
+                  {{ button.data_attr_name }}="{{ button.data_attr }}"
+                {% endif %}
+              >{{ buttonInner }}</a>
+            {% else %}
+              <button
+                type="button"
+                class="{{ buttonClass }}"
+                {% if button.data_attr is defined and button.data_attr_name is defined %}
+                  {{ button.data_attr_name }}="{{ button.data_attr }}"
+                {% endif %}
+                {% if button.disabled %}disabled{% endif %}
+              >{{ buttonInner }}</button>
+            {% endif %}
           {% endfor %}
         </div>
       {% elseif group.type == 'select' %}
         <div class="{{ groupClass }}">
+          {% if group.icon is defined and group.icon %}
+            <span class="filter__icon filter__icon--select" style="--filter-icon: url('{{ url(group.icon) }}')" aria-hidden="true"></span>
+          {% endif %}
           {% if group.label is defined and group.id is defined %}
             <label class="filter__label" for="{{ group.id }}">{{ group.label }}</label>
           {% endif %}
@@ -33,8 +53,32 @@
         {% set toggleClass = (groupClass ~ ' filter__selector') | trim %}
         <label class="{{ toggleClass }}">
           <input type="checkbox" class="{{ group.input_class | default('filter__checkbox') }}">
+          {% if group.icon is defined and group.icon %}
+            <span class="filter__icon" style="--filter-icon: url('{{ url(group.icon) }}')" aria-hidden="true"></span>
+          {% endif %}
           <span class="filter__option-label">{{ group.label | default('') }}</span>
         </label>
+      {% endif %}
+{% endmacro %}
+{% import _self as filter_parts %}
+
+{% set rootClass = filter.root_class | default('filter-wrap') %}
+<div class="filter {{ rootClass }}">
+  <div class="filter-container">
+    {% set renderedRows = [] %}
+    {% for group in filter.groups | default([]) %}
+      {% set rowKey = group.row | default('') %}
+      {% if rowKey == '' %}
+        {{ filter_parts.filter_group(group) }}
+      {% elseif rowKey not in renderedRows %}
+        {% set renderedRows = renderedRows | merge([rowKey]) %}
+        <div class="filter-row filter-row--{{ rowKey }}">
+          {% for rowGroup in filter.groups %}
+            {% if (rowGroup.row | default('')) == rowKey %}
+              {{ filter_parts.filter_group(rowGroup) }}
+            {% endif %}
+          {% endfor %}
+        </div>
       {% endif %}
     {% endfor %}
   </div>

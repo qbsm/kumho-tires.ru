@@ -12,7 +12,8 @@ module.exports = [
     },
   },
   {
-    files: ['tests/js/**/*.js'],
+    // Скрипты на ESM среди CommonJS-инструментов: правило для tools/** их не разбирает.
+    files: ['tests/js/**/*.js', 'tools/ops/check-permissions.js'],
     languageOptions: {
       sourceType: 'module',
       ecmaVersion: 'latest',

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 210" width="660" height="210" role="img"
+     aria-label="Индикатор износа в виде песочных часов: четыре точки у новой шины, три при износе на четверть, две на половине, одна на трёх четвертях, ни одной — пора менять">
+  <defs>
+    <linearGradient id="wi-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4c525b"/>
+      <stop offset="0.45" stop-color="#33383f"/>
+      <stop offset="1" stop-color="#20242a"/>
+    </linearGradient>
+    <linearGradient id="wi-wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2e34"/>
+      <stop offset="1" stop-color="#14171b"/>
+    </linearGradient>
+    <linearGradient id="wi-base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a616b"/>
+      <stop offset="1" stop-color="#363b42"/>
+    </linearGradient>
+    <filter id="wi-shadow" x="-40%" y="-20%" width="180%" height="170%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#0b0d10" flood-opacity="0.22"/>
+    </filter>
+    <style>
+      .wi-lbl {
+        font-family: var(--font-2), 'Manrope', system-ui, sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        fill: var(--color-6, #4a4a49);
+        text-anchor: middle;
+      }
+      .wi-lbl--last {
+        font-weight: 700;
+        fill: var(--color-3, #ef0010);
+      }
+      .wi-rule { stroke: var(--color-4, #d6d6d6); stroke-width: 2; stroke-dasharray: 3 6; }
+    </style>
+  </defs>
+
+  <line class="wi-rule" x1="34" y1="24" x2="626" y2="24"/>
+
+  <g filter="url(#wi-shadow)">
+    <g transform="translate(34,40)">
+      <rect fill="url(#wi-body)" x="10" y="0" width="52" height="96" rx="5"/>
+      <path fill="url(#wi-wall)" d="M4 0 h13 c0 22 -13 26 -13 48 c0 22 13 26 13 48 h-13 c0 -22 -4 -26 -4 -48 c0 -22 4 -26 4 -48 z"/>
+      <path fill="url(#wi-wall)" d="M68 0 h-13 c0 22 13 26 13 48 c0 22 -13 26 -13 48 h13 c0 -22 4 -26 4 -48 c0 -22 -4 -26 -4 -48 z"/>
+      <circle fill="#3fbf6a" cx="36" cy="20" r="4.6"/>
+      <circle fill="#3fbf6a" cx="36" cy="38" r="4.6"/>
+      <circle fill="#3fbf6a" cx="36" cy="58" r="4.6"/>
+      <circle fill="#3fbf6a" cx="36" cy="76" r="4.6"/>
+      <rect fill="url(#wi-base)" x="0" y="98" width="72" height="10" rx="5"/>
+    </g>
+
+    <g transform="translate(164,40)">
+      <rect fill="url(#wi-body)" x="10" y="0" width="52" height="96" rx="5"/>
+      <path fill="url(#wi-wall)" d="M4 0 h13 c0 22 -13 26 -13 48 c0 22 13 26 13 48 h-13 c0 -22 -4 -26 -4 -48 c0 -22 4 -26 4 -48 z"/>
+      <path fill="url(#wi-wall)" d="M68 0 h-13 c0 22 13 26 13 48 c0 22 -13 26 -13 48 h13 c0 -22 4 -26 4 -48 c0 -22 -4 -26 -4 -48 z"/>
+      <circle fill="#7cc24a" cx="36" cy="34" r="4.6"/>
+      <circle fill="#7cc24a" cx="36" cy="56" r="4.6"/>
+      <circle fill="#7cc24a" cx="36" cy="76" r="4.6"/>
+      <rect fill="url(#wi-base)" x="0" y="98" width="72" height="10" rx="5"/>
+    </g>
+
+    <g transform="translate(294,40)">
+      <rect fill="url(#wi-body)" x="10" y="0" width="52" height="96" rx="5"/>
+      <path fill="url(#wi-wall)" d="M4 0 h13 c0 22 -13 26 -13 48 c0 22 13 26 13 48 h-13 c0 -22 -4 -26 -4 -48 c0 -22 4 -26 4 -48 z"/>
+      <path fill="url(#wi-wall)" d="M68 0 h-13 c0 22 13 26 13 48 c0 22 -13 26 -13 48 h13 c0 -22 4 -26 4 -48 c0 -22 -4 -26 -4 -48 z"/>
+      <circle fill="#e8b23a" cx="36" cy="54" r="4.6"/>
+      <circle fill="#e8b23a" cx="36" cy="76" r="4.6"/>
+      <rect fill="url(#wi-base)" x="0" y="98" width="72" height="10" rx="5"/>
+    </g>
+
+    <g transform="translate(424,40)">
+      <rect fill="url(#wi-body)" x="10" y="0" width="52" height="96" rx="5"/>
+      <path fill="url(#wi-wall)" d="M4 0 h13 c0 22 -13 26 -13 48 c0 22 13 26 13 48 h-13 c0 -22 -4 -26 -4 -48 c0 -22 4 -26 4 -48 z"/>
+      <path fill="url(#wi-wall)" d="M68 0 h-13 c0 22 13 26 13 48 c0 22 -13 26 -13 48 h13 c0 -22 4 -26 4 -48 c0 -22 -4 -26 -4 -48 z"/>
+      <circle fill="#e8843a" cx="36" cy="76" r="4.6"/>
+      <rect fill="url(#wi-base)" x="0" y="98" width="72" height="10" rx="5"/>
+    </g>
+
+    <g transform="translate(554,40)">
+      <rect fill="url(#wi-body)" x="10" y="0" width="52" height="96" rx="5"/>
+      <path fill="url(#wi-wall)" d="M4 0 h13 c0 22 -13 26 -13 48 c0 22 13 26 13 48 h-13 c0 -22 -4 -26 -4 -48 c0 -22 4 -26 4 -48 z"/>
+      <path fill="url(#wi-wall)" d="M68 0 h-13 c0 22 13 26 13 48 c0 22 -13 26 -13 48 h13 c0 -22 4 -26 4 -48 c0 -22 -4 -26 -4 -48 z"/>
+      <rect fill="url(#wi-base)" x="0" y="98" width="72" height="10" rx="5"/>
+    </g>
+  </g>
+
+  <text class="wi-lbl" x="70" y="176">новая</text>
+  <text class="wi-lbl" x="200" y="176">25%</text>
+  <text class="wi-lbl" x="330" y="176">50%</text>
+  <text class="wi-lbl" x="460" y="176">75%</text>
+  <text class="wi-lbl wi-lbl--last" x="590" y="176">замена</text>
+</svg>

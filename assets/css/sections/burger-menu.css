@@ -2,6 +2,48 @@
   /* Стили для burger-menu */
 }
 
-.burger-menu .container {
-  /* Стили для контейнера в burger-menu */
+/* Разделители — тонкая линия списка, а не граница блока: тёмно-серый ядра
+   на белом фоне читался как рамка и спорил с самими пунктами */
+.burger-menu .burger-menu__item {
+  align-items: center;
+  min-height: 5.2rem;
+  font-size: 1.5rem;
+  border-bottom-color: var(--color-4);
+}
+
+/* Раздел и его подпункты — один блок: линия идёт после списка, а не между
+   заголовком и тем, что ему подчинено */
+.burger-menu .burger-menu__item:has(+ .burger-menu__sub) {
+  border-bottom: 0;
+}
+
+/* Подпункты каталога в мобильном меню */
+.burger-menu .burger-menu__sub {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 1rem;
+  padding-inline-start: 1.2rem;
+  border-bottom: 0.1rem solid var(--color-4);
+}
+
+.burger-menu .burger-menu__sub-title {
+  padding-block: 1.4rem 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-5);
+}
+
+/* Строка списка — цель для пальца, поэтому высота задаётся, а не набирается
+   строкой текста: у ссылок каталога своих отступов не было вовсе */
+.burger-menu .burger-menu__sub-item {
+  display: flex;
+  align-items: center;
+  min-height: 4.4rem;
+  font-size: 1.3rem;
+}
+
+.burger-menu .burger-menu__sub-item--nested {
+  padding-inline-start: 1.2rem;
 }

@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Всесезонные шины Kumho в каталоге"
+        },
+        "desc": "<p>Во всесезонной линейке <b>11 моделей и 253 типоразмера</b>, посадочные диаметры <b>от R13 до R20</b>. Всесезонная резина — компромисс для мягкой зимы и небольшого пробега: не нужен второй комплект и двойной шиномонтаж.</p><p>Для легковых автомобилей — серия SOLUS: <a href='/tires/ha32' class='link inline weight-400'>SOLUS HA32</a> (97 типоразмеров, R13–R20 — самый широкий выбор в группе), <a href='/tires/ha31' class='link inline weight-400'>SOLUS HA31</a> (19 типоразмеров, R13–R18) и <a href='/tires/ha32-plus' class='link inline weight-400'>SOLUS HA32+</a> (10 типоразмеров, R16–R18).</p><p>Для внедорожников и пикапов — линейка Road Venture: <a href='/tires/at52' class='link inline weight-400'>AT52</a> (47 типоразмеров, R15–R20), <a href='/tires/mt51' class='link inline weight-400'>MT51</a>, <a href='/tires/kl71' class='link inline weight-400'>KL71</a>, <a href='/tires/mt71' class='link inline weight-400'>MT71</a>, <a href='/tires/kl33' class='link inline weight-400'>KL33</a>, <a href='/tires/at61' class='link inline weight-400'>AT61</a> и <a href='/tires/ta31' class='link inline weight-400'>TA31</a> — от шоссейных до внедорожных рисунков протектора.</p><p>Для фургонов и микроавтобусов — <a href='/tires/cx11' class='link inline weight-400'>PorTran CX11</a>: 25 усиленных типоразмеров R15–R17 с маркировкой C.</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Кому подходят всесезонные шины"
+        },
+        "desc": "<p>Всесезонные модели рассчитаны на <b>мягкую зиму и межсезонье</b>: плюсовые температуры, мокрый асфальт, редкий снег. В устойчивый мороз и на льду они уступают зимним — там безопаснее <a href='/tires/winter' class='link inline weight-400'>зимняя резина</a>, а на льду и укатанном снегу <a href='/tires/studded' class='link inline weight-400'>шипованная</a>.</p><p>Разумный сценарий — небольшой годовой пробег, город с чищеными дорогами и поездки, которые можно отложить в снегопад. Если зима настоящая и авто нужно каждый день, комплект зимних шин остаётся обязательным.</p><p>Размер берут заводской, а подобрать модель по типу автомобиля и приоритету помогает <a href='/podbor' class='link inline weight-400'>конфигуратор подбора шин</a>.</p>"
+      }
+    ]
+  }
+}

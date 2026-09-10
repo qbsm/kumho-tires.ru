@@ -1,0 +1,44 @@
+.cta--plate {
+  padding: 5rem 0;
+  background: #f8f9fb;
+
+  @media (--lg) {
+    padding: 7rem 0;
+  }
+}
+
+.cta__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+
+  @media (--md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+}
+
+.cta__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cta__heading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cta__desc {
+  max-width: 62rem;
+  color: var(--color-6);
+}
+
+.cta__actions {
+  flex-shrink: 0;
+}

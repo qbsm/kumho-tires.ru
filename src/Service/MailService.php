@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use App\Support\Arr;
 use Psr\Http\Message\UploadedFileInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
@@ -25,7 +26,7 @@ final class MailService
     ];
 
     /** @var string[] */
-    private const SKIP_FIELDS = ['csrf_token', 'current_url', 'policy', 'lang', 'idempotency_key'];
+    private const SKIP_FIELDS = ['phone_shown', 'phone_digits', 'csrf_token', 'form_token', 'company_site', 'current_url', 'policy', 'lang', 'idempotency_key'];
 
     /**
      * @param array{
@@ -39,8 +40,7 @@ final class MailService
         private readonly MailerInterface $mailer,
         private readonly LoggerInterface $logger,
         private readonly array $config,
-    ) {
-    }
+    ) {}
 
     /**
      * @param array<string,mixed>  $formData     POST-данные формы
@@ -56,13 +56,13 @@ final class MailService
             $this->logger->warning('MAIL_TO не задан, письмо не отправлено', ['request_id' => $requestId]);
             return false;
         }
-        $recipients = array_values(array_filter(array_map('trim', explode(',', $to)), static fn (string $a): bool => $a !== ''));
+        $recipients = array_values(array_filter(array_map('trim', explode(',', $to)), static fn(string $a): bool => $a !== ''));
         if ($recipients === []) {
             $this->logger->warning('MAIL_TO не задан, письмо не отправлено', ['request_id' => $requestId]);
             return false;
         }
 
-        $currentUrl = $this->extractString($formData, 'current_url');
+        $currentUrl = Arr::str($formData, 'current_url');
         $pagePath = $currentUrl !== '' ? (parse_url($currentUrl, PHP_URL_PATH) ?: '/') : '/';
         $subject = trim($this->config['subject_prefix'] . ' Заявка с сайта — ' . $pagePath);
 
@@ -73,7 +73,7 @@ final class MailService
             ? new Address($this->config['from'], $this->config['from_name'])
             : new Address($this->config['from']);
 
-        $email = (new Email())
+        $email = new Email()
             ->from($from)
             ->to(...$recipients)
             ->subject($subject)
@@ -81,9 +81,9 @@ final class MailService
             ->html($htmlBody);
 
         // Reply-To: email клиента, если есть
-        $clientEmail = $this->extractString($formData, 'email');
+        $clientEmail = Arr::str($formData, 'email');
         if ($clientEmail !== '' && filter_var($clientEmail, FILTER_VALIDATE_EMAIL) !== false) {
-            $clientName = $this->extractString($formData, 'name');
+            $clientName = Arr::str($formData, 'name');
             $email->replyTo($clientName !== '' ? new Address($clientEmail, $clientName) : new Address($clientEmail));
         }
 
@@ -172,24 +172,24 @@ final class MailService
         $ip = htmlspecialchars($_SERVER['REMOTE_ADDR'] ?? 'unknown', ENT_QUOTES, 'UTF-8');
 
         return <<<HTML
-        <!DOCTYPE html>
-        <html lang="ru">
-        <head><meta charset="UTF-8"></head>
-        <body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#333">
-        <div style="max-width:600px;margin:20px auto;background:#fff;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden">
-          <div style="background:#4a4a49;color:#fff;padding:16px 24px;font-size:16px;font-weight:600">Новая заявка с сайта</div>
-          <div style="padding:24px">
-            <table style="width:100%;border-collapse:collapse">{$rows}</table>
-            {$filesHtml}
-          </div>
-          <div style="padding:12px 24px;background:#f9f9f9;font-size:12px;color:#999;border-top:1px solid #eee">
-            Страница: <a href="{$pageHtml}" style="color:#999">{$pageHtml}</a><br>
-            {$time} &middot; IP: {$ip}{$this->requestIdHtml($requestId)}
-          </div>
-        </div>
-        </body>
-        </html>
-        HTML;
+            <!DOCTYPE html>
+            <html lang="ru">
+            <head><meta charset="UTF-8"></head>
+            <body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#333">
+            <div style="max-width:600px;margin:20px auto;background:#fff;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden">
+              <div style="background:#4a4a49;color:#fff;padding:16px 24px;font-size:16px;font-weight:600">Новая заявка с сайта</div>
+              <div style="padding:24px">
+                <table style="width:100%;border-collapse:collapse">{$rows}</table>
+                {$filesHtml}
+              </div>
+              <div style="padding:12px 24px;background:#f9f9f9;font-size:12px;color:#999;border-top:1px solid #eee">
+                Страница: <a href="{$pageHtml}" style="color:#999">{$pageHtml}</a><br>
+                {$time} &middot; IP: {$ip}{$this->requestIdHtml($requestId)}
+              </div>
+            </div>
+            </body>
+            </html>
+            HTML;
     }
 
     private function requestIdHtml(string $requestId): string
@@ -255,8 +255,4 @@ final class MailService
         return $value;
     }
 
-    private function extractString(array $data, string $key): string
-    {
-        return isset($data[$key]) && is_string($data[$key]) ? trim($data[$key]) : '';
-    }
 }

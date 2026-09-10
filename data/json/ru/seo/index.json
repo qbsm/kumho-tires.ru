@@ -1,10 +1,10 @@
 {
   "name": "index",
-  "title": "Kumho Tire — сайт официального дистрибьютора шин Kumho tire в России",
+  "title": "Шины Kumho (Кумхо) — официальный дистрибьютор в России",
   "meta": [
     {
       "name": "description",
-      "content": "Шины для легковых авто, внедорожников и легко-грузовых автомобилей."
+      "content": "Официальный дистрибьютор шин Kumho (Кумхо) в России: летние, зимние и всесезонные модели для легковых автомобилей, внедорожников и коммерческого транспорта. 155 точек продаж в 55 городах."
     },
     {
       "property": "og:url",
@@ -16,11 +16,11 @@
     },
     {
       "property": "og:title",
-      "content": "Kumho Tire — сайт официального дистрибьютора шин Kumho tire в России"
+      "content": "Шины Kumho (Кумхо) — официальный дистрибьютор в России"
     },
     {
       "property": "og:description",
-      "content": "Шины для легковых авто, внедорожников и легко-грузовых автомобилей."
+      "content": "Официальный дистрибьютор шин Kumho (Кумхо) в России: летние, зимние и всесезонные модели для легковых автомобилей, внедорожников и коммерческого транспорта. 155 точек продаж в 55 городах."
     },
     {
       "property": "og:site_name",
@@ -28,11 +28,11 @@
     },
     {
       "property": "og:image",
-      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+      "content": "https://kumho-tires.ru/data/img/seo/og.jpg?v=3"
     },
     {
       "property": "og:image:secure_url",
-      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+      "content": "https://kumho-tires.ru/data/img/seo/og.jpg?v=3"
     }
   ]
 }

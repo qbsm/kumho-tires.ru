@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Линейка WinterCraft в каталоге"
+        },
+        "desc": "<p>WinterCraft — зимняя линейка Kumho: <b>7 моделей и 391 типоразмер</b>, посадочные диаметры <b>от R13 до R22</b>. Это самая крупная линейка в каталоге по числу размеров.</p><p><b>Шипованные</b> — <a href='/tires/wi32' class='link inline weight-400'>WinterCraft ice WI32</a> (77 типоразмеров, R13–R20), основная модель для легковых автомобилей и кроссоверов, и <a href='/tires/ws31' class='link inline weight-400'>WinterCraft ice WS31</a> (15 типоразмеров, R16–R20) для внедорожников.</p><p><b>Нешипованные для легковых автомобилей</b> — <a href='/tires/wp52-plus' class='link inline weight-400'>WinterCraft WP52+</a> со 136 типоразмерами (R13–R21, самый широкий выбор во всём каталоге), <a href='/tires/wi51' class='link inline weight-400'>WinterCraft ice WI51</a> (59 типоразмеров, R14–R20) и <a href='/tires/wp72' class='link inline weight-400'>WinterCraft WP72</a> (33 типоразмера, R18–R21) для крупных дисков.</p><p><b>Нешипованные для кроссоверов и внедорожников</b> — <a href='/tires/ws71' class='link inline weight-400'>WinterCraft WS71</a> (50 типоразмеров, R15–R22) и <a href='/tires/ws51' class='link inline weight-400'>WinterCraft ice WS51</a> (21 типоразмер, R15–R19).</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Что означают ice, WP и WS"
+        },
+        "desc": "<p><b>ice</b> в названии — модели, рассчитанные на лёд и укатанный снег. В этой группе есть и шипованные (WI32, WS31), и фрикционные (WI51, WS51) варианты.</p><p><b>WP</b> — модели для легковых автомобилей, <b>WS</b> — для кроссоверов и внедорожников: у них выше индекс нагрузки и жёстче каркас под большую массу.</p><p>Всю зимнюю линейку вместе, включая коммерческие WinterPorTran, показывает раздел <a href='/tires/winter' class='link inline weight-400'>зимних шин</a>; отдельно — <a href='/tires/studded' class='link inline weight-400'>шипованные</a> и <a href='/tires/friction' class='link inline weight-400'>нешипованные</a>. Подобрать модель по автомобилю помогает <a href='/podbor' class='link inline weight-400'>конфигуратор</a>.</p>"
+      }
+    ]
+  }
+}

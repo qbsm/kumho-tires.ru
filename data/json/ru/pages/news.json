@@ -1,5 +1,6 @@
 {
   "name": "news",
+  "title": "Новости",
   "sections": [
     {
       "name": "header",
@@ -9,14 +10,7 @@
       "name": "frame",
       "visible": true,
       "data": {
-        "cover": {
-          "400": "data/img/frames/400/news.webp",
-          "800": "data/img/frames/800/news.webp",
-          "1280": "data/img/frames/1280/news.webp",
-          "1600": "data/img/frames/1600/news.webp",
-          "1920": "data/img/frames/1920/news.webp",
-          "2560": "data/img/frames/2560/news.webp"
-        }
+        "cover": "data/img/frames/raw/news.webp"
       }
     },
     {
@@ -30,14 +24,16 @@
         },
         "items": [
           {
+            "slug": "winter-all-season-collection-2026",
+            "cover": "data/img/news/winter-all-season-collection-2026/raw/cover.webp",
+            "hex": "#EF0010",
+            "date": "Август 2026",
+            "title": "Обновлённая коллекция зимних и всесезонных шин",
+            "desc": "9 зимних моделей — шипованных и нешипованных — и 11 всесезонных: 685 типоразмеров от R13 до R22 в каталоге."
+          },
+          {
             "slug": "conference-sever-avto-2026",
-            "cover": {
-              "400": "data/img/news/conference-sever-avto-2026/400/cover.webp",
-              "800": "data/img/news/conference-sever-avto-2026/800/cover.webp",
-              "1280": "data/img/news/conference-sever-avto-2026/1280/cover.webp",
-              "1600": "data/img/news/conference-sever-avto-2026/1600/cover.webp",
-              "1920": "data/img/news/conference-sever-avto-2026/1920/cover.webp"
-            },
+            "cover": "data/img/news/conference-sever-avto-2026/raw/cover.webp",
             "hex": "#EF0010",
             "date": "Март 2026",
             "title": "Шинные дистрибьюторы обсудили стратегии роста",
@@ -45,14 +41,8 @@
           },
           {
             "slug": "dealers-2026",
-            "cover": {
-              "400": "data/img/news/400/2.webp",
-              "800": "data/img/news/800/2.webp",
-              "1280": "data/img/news/1280/2.webp",
-              "1600": "data/img/news/1600/2.webp",
-              "1920": "data/img/news/1920/2.webp"
-            },
-            "hex": "#008ACF",
+            "cover": "data/img/news/raw/2.png",
+            "hex": "#EF0010",
             "date": "Январь 2026",
             "title": "Расширение сети дилеров",
             "desc": "Kumho расширяет сеть официальных дилеров в регионах России."

@@ -2,61 +2,38 @@
   "slug": "hp91",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      16,
-      17,
-      18,
-      19
-    ],
-    "widths": [
-      215,
-      235,
-      245,
-      255,
-      265,
-      275,
-      285
-    ],
-    "profiles": [
-      45,
-      50,
-      55,
-      60,
-      65,
-      70
-    ]
+    "season": ["summer"],
+    "vehicle": ["suv"],
+    "priority": ["comfort"],
+    "diameters": [16, 17, 18, 19],
+    "widths": [215, 235, 245, 255, 265, 275, 285],
+    "profiles": [45, 50, 55, 60, 65, 70],
+    "family": "crugen"
   },
   "item": {
     "code": "HP91",
     "series": "CRUGEN",
-    "name": "Kumho HP91 CRUGEN"
+    "logo": "data/img/series/crugen.svg",
+    "name": "Kumho CRUGEN HP91",
+    "alt_names": ["Кумхо Круген HP91"]
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/hp91/400/hp91-30deg.webp",
-      "800": "data/img/tires/hp91/800/hp91-30deg.webp",
-      "1280": "data/img/tires/hp91/1280/hp91-30deg.webp",
-      "alt": "Kumho HP91 CRUGEN, ракурс 30°"
+      "src": "data/img/tires/hp91/raw/hp91-30deg.webp",
+      "alt": "Kumho CRUGEN HP91"
     },
     "front": {
-      "400": "data/img/tires/hp91/400/hp91-front.webp",
-      "800": "data/img/tires/hp91/800/hp91-front.webp",
-      "1280": "data/img/tires/hp91/1280/hp91-front.webp",
-      "alt": "Kumho HP91 CRUGEN, вид спереди"
+      "src": "data/img/tires/hp91/raw/hp91-front.webp",
+      "alt": "Kumho CRUGEN HP91, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/hp91/400/hp91-side.webp",
-      "800": "data/img/tires/hp91/800/hp91-side.webp",
-      "1280": "data/img/tires/hp91/1280/hp91-side.webp",
-      "alt": "Kumho HP91 CRUGEN, вид сбоку"
+      "src": "data/img/tires/hp91/raw/hp91-side.webp",
+      "alt": "Kumho CRUGEN HP91, вид сбоку"
     }
   },
   "desc": {
-    "short": "Летняя шина Kumho HP91 CRUGEN для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах.",
-    "full": "Kumho HP91 CRUGEN — летняя шина из линейки CRUGEN, предназначенная для кроссоверов и внедорожников. Серия CRUGEN сочетает комфорт городской езды с надёжностью на загородных маршрутах. Доступна в диаметрах R16–R19."
+    "short": "Kumho CRUGEN HP91 — летняя шина класса UHP для премиальных внедорожников: каркас ESCOT с арамидом и высший класс сцепления A в части размеров.",
+    "full": "Kumho CRUGEN HP91 — шина класса UHP для премиальных внедорожников: тринадцать типоразмеров от 215/65R16 98H до 275/45R19 108Y, включая посадки с индексом скорости Y. Асимметричный протектор разделён на функциональные зоны, а изогнутые поперечные канавки в плечевой части увеличивают и жёсткость блока, и площадь опоры. Тяжёлый кроссовер меньше кренится и точнее слушается руля.<br><br>Основа конструкции — фирменный каркас ESCOT: выпуклый профиль выравнивает давление в пятне контакта, арамид в брекере держит форму на скорости, жёсткая обмотка борта передаёт усилие от руля без задержки. Насечка C-Cut 3D в основании блоков не даёт им рваться по кромке под массой автомобиля, а высокодисперсная силика в смеси работает одновременно на сцепление по мокрому и на ресурс. Отдельные типоразмеры получили высший класс сцепления на мокрой дороге — A."
   },
   "season": "Летняя",
   "sizes": [
@@ -64,84 +41,174 @@
       "label": "215/65R16",
       "diameter": 16,
       "index": "98H",
-      "commercial": false
+      "art": "2233273",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "440395"
+      }
     },
     {
       "label": "265/70R16",
       "diameter": 16,
       "index": "112V",
-      "commercial": false
+      "art": "2166033",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441083"
+      }
     },
     {
       "label": "255/60R17",
       "diameter": 17,
       "index": "106V",
+      "art": "2166013",
       "commercial": false
     },
     {
       "label": "255/65R17",
       "diameter": 17,
       "index": "110V",
+      "art": "2165993",
       "commercial": false
     },
     {
       "label": "235/55R18",
       "diameter": 18,
       "index": "100H",
-      "commercial": false
+      "art": "2259113",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441131"
+      }
     },
     {
       "label": "235/60R18",
       "diameter": 18,
       "index": "107V",
-      "commercial": false
+      "art": "2164063",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "443004"
+      }
     },
     {
       "label": "245/60R18",
       "diameter": 18,
       "index": "105V",
-      "commercial": false
+      "art": "2219383",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "A",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "2401095"
+      }
     },
     {
       "label": "255/60R18",
       "diameter": 18,
       "index": "112V",
-      "commercial": false
+      "art": "2233213",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 73,
+        "noiseClass": "B",
+        "eprel": "2000400"
+      }
     },
     {
       "label": "285/55R18",
       "diameter": 18,
       "index": "113V",
-      "commercial": false
+      "art": "2166113",
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "A",
+        "eprel": "442657"
+      }
     },
     {
       "label": "235/55R19",
       "diameter": 19,
       "index": "101V",
-      "commercial": false
+      "art": "2164873",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "441103"
+      }
     },
     {
       "label": "245/50R19",
       "diameter": 19,
       "index": "105W",
-      "commercial": false
+      "art": "2227703",
+      "commercial": false,
+      "eu": {
+        "energy": "B",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "443002"
+      }
     },
     {
       "label": "265/50R19",
       "diameter": 19,
       "index": "110Y",
-      "commercial": false
+      "art": "2166133",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "442680"
+      }
     },
     {
       "label": "275/45R19",
       "diameter": 19,
       "index": "108Y",
-      "commercial": false
+      "art": "2155533",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 72,
+        "noiseClass": "B",
+        "eprel": "442683"
+      }
     }
   ],
   "features": [
     {
-      "text": "Летняя шина SUV-класса для комфортной городской езды и загородных поездок"
+      "text": "Летние шины SUV-класса для комфортной городской езды и загородных поездок"
     },
     {
       "text": "Асимметричный протектор с функциональными зонами для максимальной производительности"
@@ -152,5 +219,62 @@
     {
       "text": "Низкий уровень шума и высокая устойчивость к износу"
     }
-  ]
+  ],
+  "official": {
+    "tagline": "Шина класса UHP для внедорожников",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000631&idcate=MC000733&iditem=819",
+    "features": [
+      "Высокотехнологичный материал для оптимального сцепления на мокром покрытии",
+      "Курсовая устойчивость на высоких скоростях",
+      "Отличная управляемость и тормозные характеристики на мокром покрытии",
+      "Высокая устойчивость на поворотах",
+      "Превосходное сопротивление аквапланированию",
+      "Премиум внедорожники"
+    ]
+  },
+  "tech": {
+    "source": "https://www.kumhotire.com/en/tire/view.do?seq=789",
+    "items": [
+      {
+        "title": "Смесь с высокодисперсной силикой",
+        "text": "Частицы силики распределены мельче и равномернее по объёму смеси. Тяжёлому кроссоверу это даёт и сцепление на мокром, и ресурс.",
+        "image": {
+          "src": "data/img/tires/hp91/raw/hp91-tech-compound.webp",
+          "alt": "Резиновая смесь с высокодисперсной силикой Kumho CRUGEN HP91"
+        }
+      },
+      {
+        "title": "Изогнутые поперечные канавки",
+        "text": "Канавки в плечевой зоне идут по дуге, а не прямо. Так растёт и жёсткость блока, и площадь опоры — кроссовер меньше кренится и точнее слушается руля.",
+        "image": {
+          "src": "data/img/tires/hp91/raw/hp91-tech-lateral.webp",
+          "alt": "Изогнутые поперечные канавки Kumho CRUGEN HP91"
+        }
+      },
+      {
+        "title": "Насечка C-Cut 3D",
+        "text": "Трёхмерная насечка в основании блока. Блок остаётся жёстким там, где на него давит масса авто, и не рвётся по кромке.",
+        "image": {
+          "src": "data/img/tires/hp91/raw/hp91-tech-ccut.webp",
+          "alt": "Трёхмерная насечка C-Cut 3D на блоках Kumho CRUGEN HP91"
+        }
+      },
+      {
+        "title": "Четыре продольные канавки",
+        "text": "Четыре прямые канавки по всей окружности отводят воду из пятна контакта. У кроссовера с его массой и высоким центром тяжести запас до аквапланирования особенно важен.",
+        "image": {
+          "src": "data/img/tires/hp91/raw/hp91-tech-grooves.webp",
+          "alt": "Четыре продольные водоотводящие канавки Kumho CRUGEN HP91"
+        }
+      },
+      {
+        "title": "Каркас ESCOT",
+        "text": "Собственная разработка Kumho — просчитанный контур каркаса. Выпуклый профиль выравнивает давление в пятне, арамид в брекере держит форму на скорости, жёсткая обмотка борта и плотная резина боковины убирают вялость, прилив на боковине защищает обод от бордюра.",
+        "image": {
+          "src": "data/img/tires/hp91/raw/hp91-tech-escot.webp",
+          "alt": "Схема каркаса ESCOT в разрезе Kumho CRUGEN HP91"
+        }
+      }
+    ]
+  }
 }

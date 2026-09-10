@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Нешипованные шины Kumho в каталоге"
+        },
+        "desc": "<p>Нешипованных зимних моделей в каталоге <b>6, суммарно 322 типоразмера</b>, посадочные диаметры <b>от R13 до R22</b>. Фрикционные шины чаще называют «липучкой»: сцепление они держат не шипом, а составом смеси и ламелями, которые раскрываются в пятне контакта.</p><p><b>Для легковых автомобилей</b> — <a href='/tires/wp52-plus' class='link inline weight-400'>WinterCraft WP52+</a> с самым широким выбором размеров во всём каталоге (136 типоразмеров, R13–R21), <a href='/tires/wi51' class='link inline weight-400'>WinterCraft ice WI51</a> (59 типоразмеров, R14–R20) и <a href='/tires/wp72' class='link inline weight-400'>WinterCraft WP72</a> (33 типоразмера, R18–R21) для крупных дисков.</p><p><b>Для кроссоверов и внедорожников</b> — <a href='/tires/ws71' class='link inline weight-400'>WinterCraft WS71</a> (50 типоразмеров, R15–R22) и <a href='/tires/ws51' class='link inline weight-400'>WinterCraft ice WS51</a> (21 типоразмер, R15–R19).</p><p><b>Для коммерческого транспорта</b> — <a href='/tires/cw51' class='link inline weight-400'>WinterPorTran CW51</a>, R14–R17, с усиленными C-типоразмерами для фургонов и микроавтобусов.</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Шипы или липучка: что выбрать"
+        },
+        "desc": "<p>Короткий ответ: <b>шипы — там, где под колесом лёд и укатанный снег</b>; <b>липучка — там, где дороги чистят</b> и асфальт большую часть зимы мокрый или сухой.</p><p>Шип работает механически: вгрызается в лёд и заметно сокращает тормозной путь на нём. Платой идут шум, чуть больший расход и обязательная обкатка первых 500 км без резких стартов и торможений. На чистом асфальте шипованные шины проигрывают фрикционным в сцеплении и комфорте.</p><p>Фрикционные модели держат за счёт мягкой на морозе смеси и множества ламелей. Они тише, ровнее ведут себя на мокрой дороге с реагентами и не изнашиваются быстрее из-за выпадения шипов. На голом льду они уступают шипованным — это осознанное ограничение, а не недоработка.</p><p>Полный список шипованных моделей — на странице <a href='/tires/studded' class='link inline weight-400'>шипованных шин</a>, вся зимняя линейка вместе — в разделе <a href='/tires/winter' class='link inline weight-400'>зимних шин</a>. Подобрать модель по автомобилю и приоритету помогает <a href='/podbor' class='link inline weight-400'>конфигуратор</a>.</p>"
+      }
+    ]
+  }
+}

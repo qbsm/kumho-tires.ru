@@ -2,64 +2,37 @@
   "slug": "mt51",
   "visible": true,
   "filter": {
-    "season": [
-      "all-season"
-    ],
-    "diameters": [
-      15,
-      16,
-      17,
-      18
-    ],
-    "widths": [
-      "31",
-      "32",
-      "33",
-      "225",
-      "235",
-      "245",
-      "255",
-      "265",
-      "285"
-    ],
-    "profiles": [
-      "10.5",
-      "11.5",
-      "12.5",
-      "60",
-      "65",
-      "70",
-      "75",
-      "85"
-    ]
+    "season": ["all-season"],
+    "vehicle": ["suv"],
+    "priority": ["offroad"],
+    "diameters": [15, 16, 17, 18],
+    "widths": ["31", "32", "33", "225", "235", "245", "255", "265", "285"],
+    "profiles": ["10.5", "11.5", "12.5", "60", "65", "70", "75", "85"],
+    "family": "road-venture"
   },
   "item": {
     "code": "MT51",
     "series": "Road Venture",
-    "name": "Kumho MT51 Road Venture"
+    "logo": "data/img/series/road-venture.svg",
+    "name": "Kumho Road Venture MT51",
+    "alt_names": ["Кумхо Роуд Венчур MT51"]
   },
   "desc": {
-    "short": "Всесезонная шина Kumho MT51 Road Venture для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами.",
-    "full": "Kumho MT51 Road Venture — всесезонная шина из линейки Road Venture, предназначенная для внедорожников, пикапов и кроссоверов. Серия Road Venture разработана для уверенного движения как на шоссе, так и за его пределами. Доступна в диаметрах R15–R18."
+    "short": "Kumho Road Venture MT51 — грязевая шина нового поколения: агрессивный протектор с проработанной боковиной и трёхслойный каркас, 16 размеров.",
+    "full": "Kumho Road Venture MT51 — грязевая шина нового поколения для горных и каменистых маршрутов. Агрессивный рисунок протектора переходит на боковину: выступающие элементы цепляются за грунт, когда колесо идёт в колее и работает не подошвой, а плечом. Симметричная схема и три слоя в каркасе дают запас по износостойкости и держат форму под нагрузкой.<br><br>Шестнадцать типоразмеров — от дюймовых 31/10.5R15 109Q до метрических 265/60R18 119/116Q — подходят и подготовленным внедорожникам, и стоковым пикапам. Протектор очищается от грязи на ходу, а элементы в канавках не дают застревать камням. Маркировки M+S и P.O.R. подтверждают внедорожное назначение, при этом управляемость на дорогах общего пользования не принесена в жертву проходимости."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/mt51/400/mt51-30deg.webp",
-      "800": "data/img/tires/mt51/800/mt51-30deg.webp",
-      "1280": "data/img/tires/mt51/1280/mt51-30deg.webp",
-      "alt": "Kumho MT51 Road Venture, ракурс 30°"
+      "src": "data/img/tires/mt51/raw/mt51-30deg.webp",
+      "alt": "Kumho Road Venture MT51"
     },
     "front": {
-      "400": "data/img/tires/mt51/400/mt51-front.webp",
-      "800": "data/img/tires/mt51/800/mt51-front.webp",
-      "1280": "data/img/tires/mt51/1280/mt51-front.webp",
-      "alt": "Kumho MT51 Road Venture, вид спереди"
+      "src": "data/img/tires/mt51/raw/mt51-front.webp",
+      "alt": "Kumho Road Venture MT51, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/mt51/400/mt51-side.webp",
-      "800": "data/img/tires/mt51/800/mt51-side.webp",
-      "1280": "data/img/tires/mt51/1280/mt51-side.webp",
-      "alt": "Kumho MT51 Road Venture, вид сбоку"
+      "src": "data/img/tires/mt51/raw/mt51-side.webp",
+      "alt": "Kumho Road Venture MT51, вид сбоку"
     }
   },
   "season": "Внедорожная",
@@ -76,72 +49,84 @@
       "label": "31/10.5R15",
       "diameter": 15,
       "index": "109Q",
+      "art": "2168613",
       "commercial": false
     },
     {
       "label": "32/11.5R15",
       "diameter": 15,
       "index": "113Q",
+      "art": "2168593",
       "commercial": false
     },
     {
       "label": "33/12.5R15",
       "diameter": 15,
       "index": "108Q",
+      "art": "2168573",
       "commercial": false
     },
     {
       "label": "235/75R15",
       "diameter": 15,
       "index": "110/107Q",
+      "art": "2168653",
       "commercial": false
     },
     {
       "label": "225/75R16",
       "diameter": 16,
       "index": "115/112Q",
+      "art": "2168553",
       "commercial": false
     },
     {
       "label": "235/85R16",
       "diameter": 16,
       "index": "120/116Q",
+      "art": "2208373",
       "commercial": false
     },
     {
       "label": "245/70R16",
       "diameter": 16,
       "index": "118/115Q",
+      "art": "2168633",
       "commercial": false
     },
     {
       "label": "245/75R16",
       "diameter": 16,
       "index": "120/116Q",
+      "art": "2168533",
       "commercial": false
     },
     {
       "label": "255/70R16",
       "diameter": 16,
       "index": "115/112Q",
+      "art": "2168513",
       "commercial": false
     },
     {
       "label": "265/70R16",
       "diameter": 16,
       "index": "117/114Q",
+      "art": "2168493",
       "commercial": false
     },
     {
       "label": "225/70R17",
       "diameter": 17,
       "index": "110/107Q",
+      "art": "2184733",
       "commercial": false
     },
     {
       "label": "245/70R17",
       "diameter": 17,
       "index": "119/116Q",
+      "art": "2184713",
       "commercial": false
     },
     {
@@ -154,19 +139,34 @@
       "label": "265/70R17",
       "diameter": 17,
       "index": "121/118Q",
+      "art": "2168473",
       "commercial": false
     },
     {
       "label": "285/70R17",
       "diameter": 17,
       "index": "121/118Q",
+      "art": "2207083",
       "commercial": false
     },
     {
       "label": "265/60R18",
       "diameter": 18,
       "index": "119/116Q",
+      "art": "2207123",
       "commercial": false
     }
-  ]
+  ],
+  "official": {
+    "tagline": "Грязевая шина нового поколения",
+    "source": "https://www.kumhotire.com/ru/eu/tire/view.do?menuCd=MN000632&idcate=MC000737&iditem=829",
+    "features": [
+      "Агрессивный дизайн протектора и боковина для передвижения по горным и каменистым дорогам",
+      "Усиленная износостойкость, улучшенная благодаря симметричному рисунку и трем слоям",
+      "Усиленная управляемость как на дорогах общего пользования, так и на бездорожье",
+      "M+S",
+      "P.O.R. (Professional Off-road)",
+      "Off-road - Mud Terrain"
+    ]
+  }
 }

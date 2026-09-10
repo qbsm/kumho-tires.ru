@@ -3,19 +3,25 @@
   "visible": true,
   "filter": {
     "season": ["all-season"],
+    "vehicle": ["suv"],
+    "priority": ["offroad"],
     "diameters": [15, 16, 17, 18, 19, 20],
     "widths": [205, 215, 225, 235, 245, 255, 265, 275, 285, 305, 315],
-    "profiles": [55, 60, 65, 70, 75, 80, 85]
+    "profiles": [55, 60, 65, 70, 75, 80, 85],
+    "family": "road-venture"
   },
   "item": {
     "code": "AT52",
     "series": "Road Venture",
-    "name": "Kumho AT52 Road Venture"
+    "caption": "Универсальная вседорожная шина",
+    "logo": "data/img/series/road-venture.svg",
+    "name": "Kumho Road Venture AT52",
+    "alt_names": ["Кумхо Роуд Венчур AT52"]
   },
   "season": "Всесезонная",
   "desc": {
-    "short": "Всесезонная шина для внедорожников и пикапов, обеспечивающая уверенное сцепление на любых покрытиях — от асфальта до грунтовых дорог.",
-    "full": "Kumho AT52 Road Venture — высокотехнологичная всесезонная шина, разработанная для владельцев внедорожников и пикапов, которые ценят универсальность и надёжность. Агрессивный рисунок протектора с глубокими канавками обеспечивает эффективный отвод воды и грязи, а усиленная боковина защищает от повреждений на бездорожье.<br><br>Оптимизированный состав резиновой смеси гарантирует стабильную работу в широком диапазоне температур, что делает шину отличным выбором для круглогодичной эксплуатации. Технология переменной жёсткости блоков протектора снижает шум и повышает комфорт на шоссе, сохраняя при этом отличные внедорожные характеристики."
+    "short": "Всесезонные шины для внедорожников и пикапов, обеспечивающие уверенное сцепление на любых покрытиях — от асфальта до грунтовых дорог.",
+    "full": "Kumho Road Venture AT52 — всесезонная шина для внедорожников и пикапов, которые ездят и по асфальту, и по грунту. Агрессивный рисунок протектора с глубокими канавками отводит воду и грязь, усиленная боковина защищает от порезов на бездорожье.<br><br>Состав резиновой смеси рассчитан на широкий диапазон температур, поэтому комплект не нужно менять по сезону. Блоки протектора переменной жёсткости снижают шум на шоссе: внедорожная шина не гудит на асфальте и при этом не теряет проходимости."
   },
   "features": [
     {
@@ -33,71 +39,714 @@
   ],
   "images": {
     "30deg": {
-      "400": "data/img/tires/at52/400/at52-30deg.webp",
-      "800": "data/img/tires/at52/800/at52-30deg.webp",
-      "1280": "data/img/tires/at52/1280/at52-30deg.webp",
-      "alt": "Kumho AT52 Road Venture, ракурс 30°"
+      "src": "data/img/tires/at52/raw/at52-30deg.webp",
+      "alt": "Kumho Road Venture AT52"
     },
     "front": {
-      "400": "data/img/tires/at52/400/at52-front.webp",
-      "800": "data/img/tires/at52/800/at52-front.webp",
-      "1280": "data/img/tires/at52/1280/at52-front.webp",
-      "alt": "Kumho AT52 Road Venture, вид спереди"
+      "src": "data/img/tires/at52/raw/at52-front.webp",
+      "alt": "Kumho Road Venture AT52, вид спереди"
     },
     "side": {
-      "400": "data/img/tires/at52/400/at52-side.webp",
-      "800": "data/img/tires/at52/800/at52-side.webp",
-      "1280": "data/img/tires/at52/1280/at52-side.webp",
-      "alt": "Kumho AT52 Road Venture, вид сбоку"
+      "src": "data/img/tires/at52/raw/at52-side.webp",
+      "alt": "Kumho Road Venture AT52, вид сбоку"
     }
   },
   "sizes": [
-    { "label": "31/10.5R15", "diameter": 15, "profile": "", "width": "", "index": "109S", "commercial": false },
-    { "label": "225/70R15", "diameter": 15, "profile": 70, "width": 225, "index": "100T", "commercial": false },
-    { "label": "235/75R15", "diameter": 15, "profile": 75, "width": 235, "index": "109T", "commercial": false },
-    { "label": "205/80R16C", "diameter": 16, "profile": 80, "width": 205, "index": "110/108S", "commercial": true },
-    { "label": "215/65R16", "diameter": 16, "profile": 65, "width": 215, "index": "102H", "commercial": false },
-    { "label": "225/75R16", "diameter": 16, "profile": 75, "width": 225, "index": "115/112S", "commercial": false },
-    { "label": "235/60R16", "diameter": 16, "profile": 60, "width": 235, "index": "104H", "commercial": false },
-    { "label": "235/70R16", "diameter": 16, "profile": 70, "width": 235, "index": "106T", "commercial": false },
-    { "label": "235/85R16", "diameter": 16, "profile": 85, "width": 235, "index": "120/116S", "commercial": false },
-    { "label": "245/70R16", "diameter": 16, "profile": 70, "width": 245, "index": "111T", "commercial": false },
-    { "label": "245/75R16", "diameter": 16, "profile": 75, "width": 245, "index": "120/116S", "commercial": false },
-    { "label": "255/70R16", "diameter": 16, "profile": 70, "width": 255, "index": "111T", "commercial": false },
-    { "label": "265/70R16", "diameter": 16, "profile": 70, "width": 265, "index": "112T", "commercial": false },
-    { "label": "265/75R16", "diameter": 16, "profile": 75, "width": 265, "index": "116T", "commercial": false },
-    { "label": "35/12.5R17", "diameter": 17, "profile": "", "width": "", "index": "121R", "commercial": false },
-    { "label": "225/70R17C", "diameter": 17, "profile": 70, "width": 225, "index": "108/106S", "commercial": true },
-    { "label": "235/80R17", "diameter": 17, "profile": 80, "width": 235, "index": "120/117R", "commercial": false },
-    { "label": "245/65R17", "diameter": 17, "profile": 65, "width": 245, "index": "107T", "commercial": false },
-    { "label": "245/65R17", "diameter": 17, "profile": 65, "width": 245, "index": "111T", "commercial": false },
-    { "label": "245/70R17", "diameter": 17, "profile": 70, "width": 245, "index": "119/116S", "commercial": false },
-    { "label": "245/75R17", "diameter": 17, "profile": 75, "width": 245, "index": "121/118S", "commercial": false },
-    { "label": "255/65R17", "diameter": 17, "profile": 65, "width": 255, "index": "110T", "commercial": false },
-    { "label": "255/70R17", "diameter": 17, "profile": 70, "width": 255, "index": "112T", "commercial": false },
-    { "label": "255/75R17", "diameter": 17, "profile": 75, "width": 255, "index": "111/108R", "commercial": false },
-    { "label": "255/75R17", "diameter": 17, "profile": 75, "width": 255, "index": "115T", "commercial": false },
-    { "label": "265/65R17", "diameter": 17, "profile": 65, "width": 265, "index": "112T", "commercial": false },
-    { "label": "265/70R17", "diameter": 17, "profile": 70, "width": 265, "index": "121/118S", "commercial": false },
-    { "label": "265/70R17", "diameter": 17, "profile": 70, "width": 265, "index": "115T", "commercial": false },
-    { "label": "275/70R17", "diameter": 17, "profile": 70, "width": 275, "index": "121/118R", "commercial": false },
-    { "label": "285/70R17", "diameter": 17, "profile": 70, "width": 285, "index": "121/118R", "commercial": false },
-    { "label": "315/70R17", "diameter": 17, "profile": 70, "width": 315, "index": "121/118S", "commercial": false },
-    { "label": "235/60R18", "diameter": 18, "profile": 60, "width": 235, "index": "107H", "commercial": false },
-    { "label": "255/60R18", "diameter": 18, "profile": 60, "width": 255, "index": "112T", "commercial": false },
-    { "label": "255/70R18", "diameter": 18, "profile": 70, "width": 255, "index": "113T", "commercial": false },
-    { "label": "265/60R18", "diameter": 18, "profile": 60, "width": 265, "index": "110T", "commercial": false },
-    { "label": "265/65R18", "diameter": 18, "profile": 65, "width": 265, "index": "114T", "commercial": false },
-    { "label": "265/70R18", "diameter": 18, "profile": 70, "width": 265, "index": "116T", "commercial": false },
-    { "label": "275/65R18", "diameter": 18, "profile": 65, "width": 275, "index": "116T", "commercial": false },
-    { "label": "235/55R19", "diameter": 19, "profile": 55, "width": 235, "index": "105H", "commercial": false },
-    { "label": "255/55R19", "diameter": 19, "profile": 55, "width": 255, "index": "111H", "commercial": false },
-    { "label": "33/12.5R20", "diameter": 20, "profile": "", "width": "", "index": "119Q", "commercial": false },
-    { "label": "35/12.5R20", "diameter": 20, "profile": "", "width": "", "index": "121R", "commercial": false },
-    { "label": "265/60R20", "diameter": 20, "profile": 60, "width": 265, "index": "121/118S", "commercial": false },
-    { "label": "275/55R20", "diameter": 20, "profile": 55, "width": 275, "index": "113T", "commercial": false },
-    { "label": "275/55R20", "diameter": 20, "profile": 55, "width": 275, "index": "120/117S", "commercial": false },
-    { "label": "275/60R20", "diameter": 20, "profile": 60, "width": 275, "index": "115T", "commercial": false },
-    { "label": "305/55R20", "diameter": 20, "profile": 55, "width": 305, "index": "121/118S", "commercial": false }
+    {
+      "label": "31/10.5R15",
+      "diameter": 15,
+      "profile": "",
+      "width": "",
+      "index": "109S",
+      "commercial": false
+    },
+    {
+      "label": "225/70R15",
+      "diameter": 15,
+      "profile": 70,
+      "width": 225,
+      "index": "100T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1862060"
+      }
+    },
+    {
+      "label": "235/75R15",
+      "diameter": 15,
+      "profile": 75,
+      "width": 235,
+      "index": "109T",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1706085"
+      }
+    },
+    {
+      "label": "205/80R16C",
+      "diameter": 16,
+      "profile": 80,
+      "width": 205,
+      "index": "110/108S",
+      "commercial": true
+    },
+    {
+      "label": "215/65R16",
+      "diameter": 16,
+      "profile": 65,
+      "width": 215,
+      "index": "102H",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2031163"
+      }
+    },
+    {
+      "label": "225/75R16",
+      "diameter": 16,
+      "profile": 75,
+      "width": 225,
+      "index": "115/112S",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279577"
+      }
+    },
+    {
+      "label": "235/60R16",
+      "diameter": 16,
+      "profile": 60,
+      "width": 235,
+      "index": "104H",
+      "commercial": false
+    },
+    {
+      "label": "235/70R16",
+      "diameter": 16,
+      "profile": 70,
+      "width": 235,
+      "index": "106T",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1706073"
+      }
+    },
+    {
+      "label": "235/85R16",
+      "diameter": 16,
+      "profile": 85,
+      "width": 235,
+      "index": "120/116S",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279579"
+      }
+    },
+    {
+      "label": "245/70R16",
+      "diameter": 16,
+      "profile": 70,
+      "width": 245,
+      "index": "111T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1706098"
+      }
+    },
+    {
+      "label": "245/75R16",
+      "diameter": 16,
+      "profile": 75,
+      "width": 245,
+      "index": "120/116S",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1706114"
+      }
+    },
+    {
+      "label": "255/70R16",
+      "diameter": 16,
+      "profile": 70,
+      "width": 255,
+      "index": "111T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "E",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614597"
+      }
+    },
+    {
+      "label": "265/70R16",
+      "diameter": 16,
+      "profile": 70,
+      "width": 265,
+      "index": "112T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1656075"
+      }
+    },
+    {
+      "label": "265/75R16",
+      "diameter": 16,
+      "profile": 75,
+      "width": 265,
+      "index": "116T",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279824"
+      }
+    },
+    {
+      "label": "35/12.5R17",
+      "diameter": 17,
+      "profile": "",
+      "width": "",
+      "index": "121R",
+      "commercial": false
+    },
+    {
+      "label": "225/70R17C",
+      "diameter": 17,
+      "profile": 70,
+      "width": 225,
+      "index": "108/106S",
+      "commercial": true,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "2223702"
+      }
+    },
+    {
+      "label": "235/80R17",
+      "diameter": 17,
+      "profile": 80,
+      "width": 235,
+      "index": "120/117R",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279578"
+      }
+    },
+    {
+      "label": "245/65R17",
+      "diameter": 17,
+      "profile": 65,
+      "width": 245,
+      "index": "107T",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1673603"
+      }
+    },
+    {
+      "label": "245/65R17",
+      "diameter": 17,
+      "profile": 65,
+      "width": 245,
+      "index": "111T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1681746"
+      }
+    },
+    {
+      "label": "245/70R17",
+      "diameter": 17,
+      "profile": 70,
+      "width": 245,
+      "index": "119/116S",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "D",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1706113"
+      }
+    },
+    {
+      "label": "245/75R17",
+      "diameter": 17,
+      "profile": 75,
+      "width": 245,
+      "index": "121/118S",
+      "commercial": false
+    },
+    {
+      "label": "255/65R17",
+      "diameter": 17,
+      "profile": 65,
+      "width": 255,
+      "index": "110T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1605706"
+      }
+    },
+    {
+      "label": "255/70R17",
+      "diameter": 17,
+      "profile": 70,
+      "width": 255,
+      "index": "112T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614685"
+      }
+    },
+    {
+      "label": "255/75R17",
+      "diameter": 17,
+      "profile": 75,
+      "width": 255,
+      "index": "111/108R",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1664926"
+      }
+    },
+    {
+      "label": "255/75R17",
+      "diameter": 17,
+      "profile": 75,
+      "width": 255,
+      "index": "115T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1664926"
+      }
+    },
+    {
+      "label": "265/65R17",
+      "diameter": 17,
+      "profile": 65,
+      "width": 265,
+      "index": "112T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279816"
+      }
+    },
+    {
+      "label": "265/70R17",
+      "diameter": 17,
+      "profile": 70,
+      "width": 265,
+      "index": "121/118S",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279822"
+      }
+    },
+    {
+      "label": "265/70R17",
+      "diameter": 17,
+      "profile": 70,
+      "width": 265,
+      "index": "115T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279822"
+      }
+    },
+    {
+      "label": "275/70R17",
+      "diameter": 17,
+      "profile": 70,
+      "width": 275,
+      "index": "121/118R",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1438201"
+      }
+    },
+    {
+      "label": "285/70R17",
+      "diameter": 17,
+      "profile": 70,
+      "width": 285,
+      "index": "121/118R",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1438207"
+      }
+    },
+    {
+      "label": "315/70R17",
+      "diameter": 17,
+      "profile": 70,
+      "width": 315,
+      "index": "121/118S",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1438209"
+      }
+    },
+    {
+      "label": "235/60R18",
+      "diameter": 18,
+      "profile": 60,
+      "width": 235,
+      "index": "107H",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1862110"
+      }
+    },
+    {
+      "label": "255/60R18",
+      "diameter": 18,
+      "profile": 60,
+      "width": 255,
+      "index": "112T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614448"
+      }
+    },
+    {
+      "label": "255/70R18",
+      "diameter": 18,
+      "profile": 70,
+      "width": 255,
+      "index": "113T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279811"
+      }
+    },
+    {
+      "label": "265/60R18",
+      "diameter": 18,
+      "profile": 60,
+      "width": 265,
+      "index": "110T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614719"
+      }
+    },
+    {
+      "label": "265/65R18",
+      "diameter": 18,
+      "profile": 65,
+      "width": 265,
+      "index": "114T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1279818"
+      }
+    },
+    {
+      "label": "265/70R18",
+      "diameter": 18,
+      "profile": 70,
+      "width": 265,
+      "index": "116T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614802"
+      }
+    },
+    {
+      "label": "275/65R18",
+      "diameter": 18,
+      "profile": 65,
+      "width": 275,
+      "index": "116T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614922"
+      }
+    },
+    {
+      "label": "235/55R19",
+      "diameter": 19,
+      "profile": 55,
+      "width": 235,
+      "index": "105H",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "E",
+        "noise": 72,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1862095"
+      }
+    },
+    {
+      "label": "255/55R19",
+      "diameter": 19,
+      "profile": 55,
+      "width": 255,
+      "index": "111H",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "E",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1862078"
+      }
+    },
+    {
+      "label": "33/12.5R20",
+      "diameter": 20,
+      "profile": "",
+      "width": "",
+      "index": "119Q",
+      "commercial": false
+    },
+    {
+      "label": "35/12.5R20",
+      "diameter": 20,
+      "profile": "",
+      "width": "",
+      "index": "121R",
+      "commercial": false
+    },
+    {
+      "label": "265/60R20",
+      "diameter": 20,
+      "profile": 60,
+      "width": 265,
+      "index": "121/118S",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1438196"
+      }
+    },
+    {
+      "label": "275/55R20",
+      "diameter": 20,
+      "profile": 55,
+      "width": 275,
+      "index": "113T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614870"
+      }
+    },
+    {
+      "label": "275/55R20",
+      "diameter": 20,
+      "profile": 55,
+      "width": 275,
+      "index": "120/117S",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614870"
+      }
+    },
+    {
+      "label": "275/60R20",
+      "diameter": 20,
+      "profile": 60,
+      "width": 275,
+      "index": "115T",
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "D",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1614896"
+      }
+    },
+    {
+      "label": "305/55R20",
+      "diameter": 20,
+      "profile": 55,
+      "width": 305,
+      "index": "121/118S",
+      "commercial": false,
+      "eu": {
+        "energy": "E",
+        "wet": "C",
+        "noise": 73,
+        "noiseClass": "B",
+        "snow": true,
+        "eprel": "1438208"
+      }
+    }
   ]
 }

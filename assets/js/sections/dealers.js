@@ -208,7 +208,7 @@ function buildDealerBalloon(point) {
   return `<article class="card-dealer card-dealer-balloon"><div class="card-dealer__item title-wrap"><h3 class="card__title font-2 weight-600">${escapeHtml(point.name)}</h3><div class="card-dealer__subitem badges-wrap">${badges.join('')}</div><div class="card-dealer__subitem address-wrap opacity-80">${escapeHtml(point.address)}</div></div>${phoneBlock}${siteBlock}</article>`;
 }
 
-function loadYandexMaps() {
+export function loadYandexMaps() {
   return new Promise((resolve, reject) => {
     if (window.ymaps && typeof window.ymaps.ready === 'function') {
       resolve(window.ymaps);
@@ -274,7 +274,13 @@ function isPointInBounds(coords, bounds) {
   const [lat, lon] = coords;
   const [south, west] = southWest;
   const [north, east] = northEast;
-  return lat >= south && lat <= north && lon >= west && lon <= east;
+  if (lat < south || lat > north) {
+    return false;
+  }
+  // На мелком масштабе вид пересекает 180-й меридиан, и карта отдаёт границы, где восточная
+  // долгота меньше западной. Прямое сравнение «больше west и меньше east» тогда невыполнимо,
+  // и в выдачу не попадала ни одна точка — карточки не показывались вовсе.
+  return west <= east ? lon >= west && lon <= east : lon >= west || lon <= east;
 }
 
 function getVisibleIdsInMapBounds(mapState, allowedIds) {
@@ -481,6 +487,16 @@ function setupUrlCitySync(sectionEl, citySelect, applyFilters) {
     }
   }
 
+  // Городская страница отрендерена сервером только с точками своего города —
+  // выбор другого города ведёт полноценной навигацией на его URL
+  if (sectionEl.dataset.serverFiltered === '1') {
+    citySelect.addEventListener('change', () => {
+      const slug = cityToSlug(citySelect.value || '');
+      window.location.assign(buildBuyUrl(basePath, slug));
+    });
+    return;
+  }
+
   const pushUrl = () => {
     const slug = cityToSlug(citySelect.value || '');
     const target = buildBuyUrl(basePath, slug);
@@ -515,7 +531,59 @@ onReady(() => {
     const cards = Array.from(sectionEl.querySelectorAll('.js-dealer-card'));
     let mapState = null;
 
-    const applyFilters = ({ syncMap = true } = {}) => {
+    // Подгрузка карточек порциями: в выдачу может попасть полторы сотни точек, и вываливать
+    // их разом незачем — показываем первую порцию, остальные по кнопке или при подходе к ней
+    const CARDS_BATCH = 12;
+    let matchedCards = [];
+    let shownCount = CARDS_BATCH;
+    let moreButton = null;
+    let moreObserver = null;
+
+    const renderBatch = () => {
+      const limit = Math.min(shownCount, matchedCards.length);
+      const shown = new Set(matchedCards.slice(0, limit));
+      cards.forEach((cardEl) => cardEl.classList.toggle('hidden', !shown.has(cardEl)));
+      const rest = matchedCards.length - limit;
+      if (!moreButton) return;
+      // Подпись ставится только когда есть что догружать: иначе в разметке оставалось
+      // «Показать ещё 0 из 0» — скрытое, но видное в инспекторе и в поиске по странице
+      if (rest <= 0) {
+        moreButton.hidden = true;
+        moreButton.textContent = '';
+        return;
+      }
+      moreButton.hidden = false;
+      moreButton.textContent = `Показать ещё ${Math.min(rest, CARDS_BATCH)} из ${rest}`;
+      if (moreObserver) moreObserver.observe(moreButton);
+    };
+
+    const showMore = () => {
+      shownCount += CARDS_BATCH;
+      renderBatch();
+    };
+
+    const cardsWrap = sectionEl.querySelector('.cards-wrap');
+    if (cardsWrap && cards.length > CARDS_BATCH) {
+      moreButton = document.createElement('button');
+      moreButton.type = 'button';
+      moreButton.className = 'button button-sm outline-color-2 uppercase dealers__more js-dealers-more';
+      moreButton.hidden = true;
+      moreButton.addEventListener('click', showMore);
+      cardsWrap.insertAdjacentElement('afterend', moreButton);
+      if ('IntersectionObserver' in window) {
+        moreObserver = new IntersectionObserver(
+          (entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              moreObserver.unobserve(moreButton);
+              showMore();
+            }
+          },
+          { rootMargin: '200px' }
+        );
+      }
+    }
+
+    const applyFilters = ({ syncMap = true, resetBatch = true } = {}) => {
       const selectedCity = normalize(citySelect?.value || '');
       const requireGuarantee = Boolean(guaranteeCheckbox?.checked);
       const requireBshm = Boolean(bshmCheckbox?.checked);
@@ -544,24 +612,47 @@ onReady(() => {
       }
 
       const visibleIds = getVisibleIdsInMapBounds(mapState, matchedIds);
-      cards.forEach((cardEl) => {
-        const id = String(cardEl.dataset.id || '');
-        cardEl.classList.toggle('hidden', !visibleIds.has(id));
-      });
+      matchedCards = cards.filter((cardEl) => visibleIds.has(String(cardEl.dataset.id || '')));
+      if (resetBatch) shownCount = CARDS_BATCH;
+      renderBatch();
     };
 
     if (mapEl) {
-      createDealerMap(mapEl, (state) => {
-        mapState = state;
-        applyFilters();
-        mapState?.map?.events?.add('boundschange', () => applyFilters({ syncMap: false }));
-        applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
-      });
+      const initDealerMap = () => {
+        createDealerMap(mapEl, (state) => {
+          mapState = state;
+          applyFilters();
+          mapState?.map?.events?.add('boundschange', () => applyFilters({ syncMap: false, resetBatch: false }));
+          applyUserGeolocation(mapEl, mapState, citySelect, applyFilters);
+        });
+      };
+
+      // Ленивая загрузка карты: тяжёлый Yandex Maps API и 125 меток грузим,
+      // только когда блок карты приближается к вьюпорту (карточки рендерятся сервером).
+      if ('IntersectionObserver' in window) {
+        const mapObserver = new IntersectionObserver(
+          (entries, observer) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              observer.disconnect();
+              initDealerMap();
+            }
+          },
+          { rootMargin: '300px' }
+        );
+        mapObserver.observe(mapEl);
+      } else {
+        initDealerMap();
+      }
     }
 
     setupUrlCitySync(sectionEl, citySelect, applyFilters);
 
-    citySelect?.addEventListener('change', applyFilters);
+    const serverFiltered = sectionEl.dataset.serverFiltered === '1';
+    citySelect?.addEventListener('change', () => {
+      if (!serverFiltered) {
+        applyFilters();
+      }
+    });
     guaranteeCheckbox?.addEventListener('change', applyFilters);
     bshmCheckbox?.addEventListener('change', applyFilters);
     applyFilters();

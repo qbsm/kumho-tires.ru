@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
+use App\Action\ApiFormTokenAction;
 use App\Action\ApiSendAction;
+use App\Security\CaptchaVerifier;
+use App\Action\ApiWidgetRescueAction;
 use App\Action\HealthAction;
 use App\Action\PageAction;
-use App\Action\PhotoroomRemoveBackgroundAction;
 use App\Action\SitemapAction;
-use App\Api\PhotoroomApiClient;
 use App\Handler\HttpErrorHandler;
 use App\Handler\ServerErrorHandler;
 use App\Middleware\CorsMiddleware;
@@ -16,8 +17,20 @@ use App\Middleware\RateLimitMiddleware;
 use App\Middleware\RedirectMiddleware;
 use App\Middleware\RequestDurationMiddleware;
 use App\Middleware\SecurityHeadersMiddleware;
+use App\Notification\Channel\RescueChannel;
+use App\Notification\Channel\CallTouchChannel;
+use App\Notification\Channel\GoogleSheetsChannel;
+use App\Notification\Channel\MailChannel;
+use App\Notification\Channel\TelegramChannel;
+use App\Notification\NotificationDispatcher;
+use App\Support\FormToken;
 use App\Service\DataLoaderService;
+use App\Service\ArticleSeoBuilder;
+use App\Service\DefaultSeoBuilder;
 use App\Service\MailService;
+use App\Service\NewsSeoBuilder;
+use App\Service\SeoBuilderRegistry;
+use App\Service\TireSeoBuilder;
 use App\Twig\AssetExtension;
 use App\Twig\DataExtension;
 use App\Twig\UrlExtension;
@@ -35,6 +48,8 @@ use Slim\Views\Twig;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mailer\Transport;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Twig\Extension\DebugExtension;
 use Twig\Extension\StringLoaderExtension;
 
@@ -52,12 +67,21 @@ return static function (): ContainerInterface {
         LoggerInterface::class => static function () use ($settings): LoggerInterface {
             $logDir = (string) ($settings['paths']['logs'] ?? '');
             if ($logDir !== '' && !is_dir($logDir)) {
-                @mkdir($logDir, 0755, true);
+                @mkdir($logDir, 0o755, true);
             }
 
             $logger = new Logger('app');
             $logFile = rtrim($logDir, '/') . '/app.log';
-            $level = ($settings['env'] ?? 'development') === 'production' ? Logger::WARNING : Logger::DEBUG;
+            $default = ($settings['env'] ?? 'development') === 'production' ? Logger::WARNING : Logger::DEBUG;
+            $configured = strtoupper(trim((string) ($_ENV['APP_LOG_LEVEL'] ?? getenv('APP_LOG_LEVEL') ?: '')));
+            $level = $default;
+            if ($configured !== '') {
+                try {
+                    $level = Logger::toMonologLevel($configured);
+                } catch (\Throwable) {
+                    $level = $default;
+                }
+            }
             $handler = new RotatingFileHandler($logFile, 14, $level);
             $handler->setFormatter(new JsonFormatter());
             $logger->pushHandler($handler);
@@ -90,7 +114,7 @@ return static function (): ContainerInterface {
             $env = $twig->getEnvironment();
             $env->addExtension(new StringLoaderExtension());
             $env->addExtension(new AssetExtension($baseDir, $baseUrl));
-            $env->addExtension(new UrlExtension($baseUrl));
+            $env->addExtension(new UrlExtension($baseUrl, (string) ($settings['img_cache_version'] ?? '')));
             $env->addExtension(new DataExtension($baseDir, $baseUrl));
 
             if (!empty($settings['twig']['debug'])) {
@@ -114,18 +138,30 @@ return static function (): ContainerInterface {
         RequestDurationMiddleware::class => \DI\autowire(),
 
         HealthAction::class => \DI\autowire(),
+
+        // SEO Strategy: реестр builder'ов по типу коллекции + DefaultSeoBuilder как fallback.
+        // Deployments расширяют через config-override этого binding'а, добавляя свои Builder'ы:
+        //   SeoBuilderRegistry::class => static fn(ContainerInterface $c) => new SeoBuilderRegistry(
+        //       ['restaurants' => $c->get(RestaurantSeoBuilder::class)],
+        //       $c->get(DefaultSeoBuilder::class),
+        //   ),
+        DefaultSeoBuilder::class => \DI\autowire(),
+        TireSeoBuilder::class => \DI\autowire(),
+        NewsSeoBuilder::class => \DI\autowire(),
+        ArticleSeoBuilder::class => \DI\autowire(),
+        SeoBuilderRegistry::class => static fn(ContainerInterface $c) => new SeoBuilderRegistry(
+            [
+                'tires' => $c->get(TireSeoBuilder::class),
+                'news' => $c->get(NewsSeoBuilder::class),
+                'articles' => $c->get(ArticleSeoBuilder::class),
+            ],
+            $c->get(DefaultSeoBuilder::class),
+        ),
+
         PageAction::class => \DI\autowire()
             ->constructorParameter('settings', \DI\get('settings'))
-            ->constructorParameter('dispatcher', \DI\get(EventDispatcherInterface::class)),
-        PhotoroomApiClient::class => static fn(ContainerInterface $c) => new PhotoroomApiClient(
-            (string) ($c->get('settings')['photoroom']['api_key'] ?? ''),
-            (string) ($c->get('settings')['photoroom']['base_url'] ?? 'https://image-api.photoroom.com'),
-            (int) ($c->get('settings')['photoroom']['timeout'] ?? 60),
-            (int) ($c->get('settings')['photoroom']['connect_timeout'] ?? 10),
-            (string) ($c->get('settings')['photoroom']['sandbox_api_key'] ?? '')
-        ),
-        PhotoroomRemoveBackgroundAction::class => \DI\autowire()
-            ->constructorParameter('settings', \DI\get('settings')),
+            ->constructorParameter('dispatcher', \DI\get(EventDispatcherInterface::class))
+            ->constructorParameter('seoBuilderRegistry', \DI\get(SeoBuilderRegistry::class)),
         SitemapAction::class => \DI\autowire()->constructorParameter('settings', \DI\get('settings')),
         ServerErrorHandler::class => \DI\autowire()->constructorParameter('displayErrorDetails', \DI\get('displayErrorDetails')),
         HttpErrorHandler::class => \DI\autowire()->constructorParameter('errorMap', \DI\get('errorMap')),
@@ -157,7 +193,86 @@ return static function (): ContainerInterface {
             );
         },
 
-        ApiSendAction::class => \DI\autowire(),
+        HttpClientInterface::class => static fn() => HttpClient::create(),
+
+        MailChannel::class => static fn(ContainerInterface $c) => new MailChannel(
+            $c->get(MailService::class),
+            $c->get('settings')['mail'] ?? [],
+        ),
+
+        CallTouchChannel::class => static fn(ContainerInterface $c) => new CallTouchChannel(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['calltouch'] ?? [],
+        ),
+
+        TelegramChannel::class => static fn(ContainerInterface $c) => new TelegramChannel(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['telegram'] ?? [],
+        ),
+
+        GoogleSheetsChannel::class => static fn(ContainerInterface $c) => new GoogleSheetsChannel(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['google_sheets'] ?? [],
+            (string) ($c->get('settings')['project_root'] ?? ''),
+        ),
+
+        RescueChannel::class => static fn(ContainerInterface $c) => new RescueChannel(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['rescue'] ?? [],
+        ),
+
+        NotificationDispatcher::class => static fn(ContainerInterface $c) => new NotificationDispatcher(
+            [
+                $c->get(RescueChannel::class),
+                $c->get(MailChannel::class),
+                $c->get(CallTouchChannel::class),
+                $c->get(TelegramChannel::class),
+                $c->get(GoogleSheetsChannel::class),
+            ],
+            $c->get(LoggerInterface::class),
+        ),
+
+        // Секрет подписи живёт в cache и заводится сам: иначе каждый deployment пришлось бы
+        // править вручную, а забытый ключ означал бы неотправляемые формы.
+        FormToken::class => static function (ContainerInterface $c) {
+            $settings = $c->get('settings');
+            $config = (array) ($settings['form_token'] ?? []);
+            $file = (string) ($config['secret_file'] ?? '');
+            $secret = (string) (getenv('APP_SECRET') ?: '');
+
+            if ($secret === '' && $file !== '') {
+                if (is_file($file)) {
+                    $secret = trim((string) file_get_contents($file));
+                }
+                if ($secret === '') {
+                    $secret = bin2hex(random_bytes(32));
+                    @mkdir(dirname($file), 0o775, true);
+                    @file_put_contents($file, $secret, LOCK_EX);
+                    @chmod($file, 0o600);
+                }
+            }
+
+            return new FormToken(
+                $secret !== '' ? $secret : 'insecure-fallback',
+                (int) ($config['min_age'] ?? 3),
+                (int) ($config['max_age'] ?? 7200),
+            );
+        },
+
+        ApiFormTokenAction::class => \DI\autowire(),
+        CaptchaVerifier::class => static fn(ContainerInterface $c) => new CaptchaVerifier(
+            $c->get(HttpClientInterface::class),
+            $c->get(LoggerInterface::class),
+            $c->get('settings')['captcha'] ?? [],
+        ),
+
+        ApiSendAction::class => \DI\autowire()
+            ->constructorParameter('formGuard', \DI\factory(static fn($c) => $c->get('settings')['form_guard'] ?? [])),
+        ApiWidgetRescueAction::class => \DI\autowire(),
     ]);
 
     return $builder->build();

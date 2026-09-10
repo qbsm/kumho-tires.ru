@@ -11,10 +11,10 @@
     {% endif %}
     <div class="card-dealer__subitem badges-wrap">
       {% if bshmVisible %}
-        <span class="card-dealer__badge" data-filter="bshm">{{ bshmTitle }}</span>
+        <span class="card-dealer__badge" data-filter="bshm"><span class="card-dealer__badge-icon" aria-hidden="true"></span>{{ bshmTitle }}</span>
       {% endif %}
       {% if guaranteeVisible %}
-        <span class="card-dealer__badge" data-filter="guarantee">{{ guaranteeTitle }}</span>
+        <span class="card-dealer__badge" data-filter="guarantee"><span class="card-dealer__badge-icon" aria-hidden="true"></span>{{ guaranteeTitle }}</span>
       {% endif %}
     </div>
     {% if item.address is defined %}
@@ -29,7 +29,7 @@
     {% if phoneTitle and phoneHref %}
       <div class="card-dealer__item opacity-80">
         <div class="link-wrap">
-          <a href="tel:{{ phoneHref|replace({'tel:': ''}) }}" class="link link-a font-1-demi nowrap">{{ phoneTitle | raw }}</a>
+          <a href="tel:{{ phoneHref|replace({'tel:': ''}) }}" class="link weight-500 nowrap underline-static">{{ phoneTitle | raw }}</a>
         </div>
       </div>
     {% endif %}
@@ -40,7 +40,7 @@
   {% if siteTitle and siteHref %}
     <div class="card-dealer__item opacity-80">
       <div class="link-wrap">
-        <a href="{{ siteHref }}" target="_blank" rel="noopener noreferrer" class="link link-a nowrap">{{ siteTitle | raw }}</a>
+        <a href="{{ siteHref }}" target="_blank" rel="noopener noreferrer" class="link inline weight-400 underline-static">{{ siteTitle | raw }}</a>
       </div>
     </div>
   {% endif %}

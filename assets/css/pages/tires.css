@@ -13,14 +13,14 @@
 /* Grid: две колонки на десктопе */
 .tire-detail__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 3rem;
   min-width: 0;
 }
 
 @media (width >= 1200px) {
   .tire-detail__grid {
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: 40% minmax(0, 1fr);
     gap: 3rem 4rem;
   }
 }
@@ -32,6 +32,7 @@
 }
 
 .tire-detail__main-image {
+  position: relative;
   background: #f7f7f7;
   border-radius: 2rem;
   padding: 2rem;
@@ -46,7 +47,12 @@
   .tire-detail__main-image {
     height: 500px;
     aspect-ratio: auto;
+
+    /* Блок выше картинки: центрирование оставляло пустую полосу под шиной,
+       поэтому прижимаем её к низу — свободное место сверху занимает логотип линейки */
+    align-items: flex-end;
   }
+
 }
 
 .tire-detail__main-image picture {
@@ -55,6 +61,12 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+
+  /* На широком экране блок выше картинки: центрирование оставляло пустую полосу под шиной,
+     поэтому прижимаем её к низу, а место сверху занимает логотип линейки */
+  @media (width >= 1200px) {
+    align-items: flex-end;
+  }
 }
 
 .tire-detail__img {
@@ -125,8 +137,89 @@
   margin-bottom: 0.25rem;
 }
 
+/* Телефон: под логотип отводим полосу, чтобы он не ложился на кромку шины.
+   На десктопе места хватает — там отступ не нужен. */
+@media (--xs) {
+  .tire-detail__main-image--with-logo {
+    padding-top: 3.4rem;
+  }
+}
+
+/* Логотип линейки — в левом верхнем углу блока с фотографией шины */
+.tire-detail__series-logo {
+  position: absolute;
+  top: 2.2rem;
+  left: 2.2rem;
+  z-index: 1;
+
+  /* Высота — через переменную: модификаторы ниже задают её, а мобильный масштаб применяется
+     после них (иначе более поздний модификатор перебивал бы медиазапрос) */
+  --tire-detail-logo-height: 2.8rem;
+
+  height: var(--tire-detail-logo-height);
+  width: auto;
+
+  /* На узком экране длинный логотип упирается в max-width — object-fit не даёт его сплющить */
+  max-width: calc(100% - 3rem);
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+
+  @media (--lg) {
+    top: 2.8rem;
+    left: 3rem;
+  }
+
+}
+
+/* Те же пропорции, что в карточке, но крупнее: эталон — ecowing */
+.tire-detail__series-logo--crugen {
+  --tire-detail-logo-height: 2rem;
+}
+
+.tire-detail__series-logo--road-venture {
+  --tire-detail-logo-height: 2.24rem;
+}
+
+.tire-detail__series-logo--ecsta {
+  --tire-detail-logo-height: 2.43rem;
+}
+
+.tire-detail__series-logo--wintercraft {
+  --tire-detail-logo-height: 2.75rem;
+}
+
+.tire-detail__series-logo--ecowing {
+  --tire-detail-logo-height: 2.8rem;
+}
+
+.tire-detail__series-logo--solus {
+  --tire-detail-logo-height: 3.2rem;
+}
+
+.tire-detail__series-logo--portran {
+  --tire-detail-logo-height: 2.98rem;
+}
+
+/* Телефон: фотография меньше, логотип в полном размере наезжал на шину */
+@media (--xs) {
+  .tire-detail__series-logo {
+    top: 1.5rem;
+    left: 1.5rem;
+    height: calc(var(--tire-detail-logo-height) * 0.62);
+    max-width: calc(100% - 3rem);
+  }
+}
+
 .tire-detail__series {
   color: var(--color-5);
+}
+
+.tire-detail__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-self: flex-start;
 }
 
 .tire-detail__badge {
@@ -136,11 +229,30 @@
   background: var(--color-3);
   color: #fff;
   align-self: flex-start;
+  text-decoration: none;
+  transition: var(--transition-1);
+}
+
+/* Затемняющий слой поверх заливки — та же механика, что у кнопок: бейдж остаётся красным */
+a.tire-detail__badge:hover,
+a.tire-detail__badge:focus-visible {
+  box-shadow: inset 0 0 0 100rem rgb(0 0 0 / 8%);
+}
+
+a.tire-detail__badge:active {
+  box-shadow: inset 0 0 0 100rem rgb(0 0 0 / 16%);
 }
 
 .tire-detail__desc {
   line-height: 1.6;
   font-size: 1.125em;
+}
+
+.tire-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .tire-detail .custom-list {
@@ -150,6 +262,19 @@
 .tire-detail__text {
   line-height: 1.7;
   font-size: 1.125em;
+}
+
+/* На карточке модели блок FAQ — flex с gap 2.4rem, и собственный margin заголовка
+   складывался с ним в двойной отступ. */
+.tire-detail .faq .section__subitem.heading-wrap {
+  margin-bottom: 0;
+}
+
+/* «Похожие модели» на карточке живут в секции каталога, где заголовок отбит на
+   4rem под фильтры. На карточке фильтров нет — держим общие 2.4rem, как у
+   соседних блоков. */
+.tire-detail .tires .section__item.block-wrap {
+  gap: 2.4rem;
 }
 
 /* Sizes — full width */
@@ -169,40 +294,308 @@
   overflow: hidden;
 }
 
-/* Size table */
+/* Size table — оформление общее со статьями (components/data-table.css):
+   тонкие линии и красная черта под шапкой вместо заливки. */
 .tire-detail__table-wrap {
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
-  border-radius: 2rem 2rem 0 0;
 }
 
 .tire-detail__table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 1.125em;
+  line-height: 1.4;
+}
+
+/* Селектор с родителем: рядом лежит `.tire-detail p { margin: 0 }`, он специфичнее */
+.tire-detail .tire-detail__note {
+  margin-top: 2rem;
+  font-size: 0.9375em;
+  line-height: 1.6;
+  color: var(--color-5);
 }
 
 .tire-detail__table th,
 .tire-detail__table td {
-  padding: 1.15rem 1.5rem;
+  padding: 0.9rem 1.2rem 0.9rem 0;
   text-align: left;
   border-bottom: 1px solid var(--color-4);
   white-space: nowrap;
 }
 
-.tire-detail__table th {
-  font-weight: 600;
-  background: var(--color-3);
-  color: var(--color-1);
-  font-size: 0.9375em;
+/* Числовые и классовые колонки — по центру, по левому краю остаётся только размер */
+.tire-detail__table th:not(:first-child),
+.tire-detail__table td:not(:first-child) {
+  text-align: center;
+}
+
+/* Шапка залипает при прокрутке длинного списка размеров, поэтому фон непрозрачный */
+.tire-detail__table thead th {
+  padding-block: 0.8rem;
+  border-bottom: 2px solid var(--color-3);
+  background: var(--color-1);
+  font-family: var(--font-2);
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.tire-detail__table tbody tr:hover {
-  background: #f7f7f7;
+.tire-detail__table tbody td {
+  color: var(--color-6);
 }
 
-.tire-detail__table tbody tr:nth-child(even) {
-  background: #fafafa;
+.tire-detail__table tbody tr:last-child th,
+.tire-detail__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tire-detail__table tbody tr:hover td {
+    background-color: rgb(0 0 0 / 3%);
+  }
+}
+
+/* Ходовые типоразмеры под каталогом: ряд ссылок, а не карточки — это навигация,
+   а не витрина, и она не должна спорить со списком моделей */
+.tires .tires__sizes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-block-start: 4rem;
+  padding-block-start: 3rem;
+  border-block-start: 0.1rem solid var(--color-4);
+}
+
+.tires .tires__sizes-title {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-5);
+}
+
+.tires .tires__sizes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.tires .tires__sizes-link {
+  white-space: nowrap;
+}
+
+.tires .tires__sizes-link.underline-center::after {
+  background-color: var(--color-3);
+}
+
+/* Подмена списка на месте: пока грузится новый раздел, старый гасим и блокируем
+   повторные клики — иначе на медленной сети видно два подряд переключения */
+.tires.is-swapping {
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tires.is-swapping {
+    transition: none;
+  }
+}
+
+/* Technologies — оглавление слева, стенд справа.
+   Радиус стенда общий с галереей товара, линии оглавления — как у таблицы размеров:
+   тонкая серая под строкой, красная под активной. Стенд белый: кадры сняты на белом,
+   на сером они читались вклеенным прямоугольником. */
+.tire-tech {
+  display: grid;
+  grid-template-columns: minmax(0, 28rem) minmax(0, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+
+.tire-tech__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  min-width: 0;
+}
+
+/* Оптическая компенсация: у заголовка нижний свес строки, а у первого пункта
+   свой padding — при номинальных 2.4rem до текста набегало 3.6rem, больше шага
+   между пунктами. Поднимаем оглавление на величину свеса. */
+.tire-tech__nav {
+  margin-top: -1.2rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tire-tech__navitem {
+  display: block;
+  padding: 1.4rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-4);
+  background: none;
+  font-family: var(--font-2);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-5);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.tire-tech__navitem:hover {
+  color: var(--color-2);
+}
+
+.tire-tech__navitem.is-active {
+  color: var(--color-2);
+  border-bottom-color: var(--color-3);
+  border-bottom-width: 2px;
+  padding-bottom: 1.3rem;
+}
+
+.tire-tech__stage {
+  position: relative;
+  min-width: 0;
+}
+
+.tire-tech__figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38rem;
+  padding: 3rem;
+  background: var(--color-1);
+  border: 1px solid var(--color-4);
+  border-radius: 2rem;
+  margin-bottom: 2.4rem;
+}
+
+.tire-tech__figure img,
+.tire-tech__figure svg {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 32rem;
+}
+
+/* Кадры, снятые под всю рамку: стенд становится самим кадром, без полей и рамки */
+.tire-tech--fill .tire-tech__figure {
+  height: auto;
+  aspect-ratio: 3 / 2;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+.tire-tech--fill .tire-tech__figure img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+}
+
+/* Счётчик лежит на кадре — светлый, на затемнении, иначе теряется */
+.tire-tech--fill .tire-tech__count {
+  top: 1.6rem;
+  right: 1.6rem;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  background: rgb(0 0 0 / 45%);
+  color: rgb(255 255 255 / 75%);
+}
+
+.tire-tech--fill .tire-tech__count b {
+  color: var(--color-1);
+}
+
+.tire-detail .tire-tech__text {
+  margin: 0;
+  font-size: 1.125em;
+  line-height: 1.7;
+  color: var(--color-2);
+}
+
+/* Текст под кадром встаёт в ту же колонку, что и описание модели выше.
+   Смещение = 40% контейнера − 28rem оглавления; в процентах от стенда
+   (контейнер = стенд + 28rem + 4rem gap) это 40% − 15.2rem. Кадр во всю
+   ширину стенда не трогаем. */
+@media (width >= 1200px) {
+  .tire-detail .tire-tech__text {
+    margin-left: calc(40% - 15.2rem);
+  }
+}
+
+.tire-tech__count {
+  position: absolute;
+  top: 2rem;
+  right: 2.4rem;
+  margin: 0;
+  font-size: 1.3rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-5);
+}
+
+.tire-tech__count b {
+  color: var(--color-2);
+  font-weight: 600;
+}
+
+/* До инициализации скрипта видны все позиции: контент не зависит от JS */
+.tire-tech.is-ready .tire-tech__pane {
+  display: none;
+}
+
+.tire-tech.is-ready .tire-tech__pane.is-active {
+  display: block;
+  animation: tire-tech-in 0.3s ease-out;
+}
+
+.tire-tech:not(.is-ready) .tire-tech__count {
+  display: none;
+}
+
+@keyframes tire-tech-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.8rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (width <= 1023px) {
+  .tire-tech {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.8rem;
+  }
+
+  .tire-tech__figure {
+    height: 30rem;
+  }
+
+  .tire-tech__figure img,
+  .tire-tech__figure svg {
+    max-height: 24rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tire-tech.is-ready .tire-tech__pane.is-active {
+    animation: none;
+  }
 }

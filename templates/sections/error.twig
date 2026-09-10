@@ -1,0 +1,26 @@
+<section class="error section">
+  <div class="container">
+    {% if data.code is defined %}
+      <div class="section__item error-code-wrap">
+        {% include 'components/error-code.twig' with {'item': data.code} %}
+      </div>
+    {% endif %}
+    {% if data.heading is defined %}
+      <div class="section__item heading-wrap">
+        {% include 'components/heading.twig' with {'item': data.heading} %}
+      </div>
+    {% endif %}
+    {% if data.desc is defined %}
+      <div class="section__item desc-wrap">
+        <span class="longread">{{ data.desc | raw }}</span>
+      </div>
+    {% endif %}
+    {% if data.actions is defined %}
+      <div class="section__item button-wrap">
+        {% for action in data.actions %}
+          <a href="{{ action.href }}" class="{{ action.class|default('button') }}">{{ action.title }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
