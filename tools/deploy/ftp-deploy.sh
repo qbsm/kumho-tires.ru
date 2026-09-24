@@ -50,6 +50,28 @@ npm run generate-llms > public/llms-full.txt
 
 HEAD_SHA="$(git rev-parse HEAD 2>/dev/null || true)"
 
+# --- Страховка выкладки (24.09.2026) ------------------------------------------------------
+# На evolute-rolfspb квота FTP кончилась посреди заливки: put отдал «452», файлы легли нулём
+# байт, старое уже снеслось — сайт стал белым, а трекер трижды повторил то же самое. Здесь:
+# вывод каждого шага перехватывается; «нет места» или ошибка передачи — стоп ДО следующего шага
+# (удаления старого, манифестов, маркера), код 75 для «нет места» — трекер тогда не повторяет.
+guard_no_space() { grep -qiE '(^|[^0-9a-f])452([^0-9a-f]|$)|не осталось свободного места|no space left|quota|insufficient (storage|disk)' <<<"$1"; }
+guard_failed() { grep -qiE '^(put|mirror|mkdir|rm): .*(error|failed|Access failed|Fatal)|Fatal error|Login incorrect|530 ' <<<"$1"; }
+guard_step() { # $1 — что за шаг; stdin — вывод lftp
+  local out; out="$(cat | sed -E 's#ftp://[^@[:space:]/]*@#ftp://***@#g')"   # креды lftp печатает в URL
+  [[ -n "$out" ]] && echo "$out"
+  if guard_no_space "$out"; then
+    echo "⛔ FTP ${FTP_HOST}: НЕТ МЕСТА (квота хостинга) на шаге «$1» — дальше не иду: старое не удалял, маркер не трогал."
+    echo "   Нужно освободить место на хостинге и повторить выкладку. Повторять без этого бесполезно."
+    exit 75
+  fi
+  if guard_failed "$out"; then
+    echo "⛔ Ошибка передачи на шаге «$1» — дальше не иду: старое не удалял, маркер не трогал."
+    exit 1
+  fi
+}
+# ---------------------------------------------------------------------------------------------
+
 # --- Список модифицированного (отслеживаемые файлы с прошлого деплоя) ---
 CHANGED=()
 if [[ -n "${HEAD_SHA}" && -s "$MARKER" ]]; then
@@ -69,40 +91,36 @@ DRY="--dry-run"
 [[ $APPLY -eq 1 ]] && DRY=""
 
 echo "==> Фаза 1: сборка + ${#CHANGED[@]} изменённых файлов → ${FTP_HOST}:${FTP_DIR} (apply=${APPLY})"
-{
-  echo "set ssl:verify-certificate no"
-  echo "set ftp:ssl-allow true"
-  echo "set net:connection-limit 1"
-  echo "set net:persist-retries 0"
-  echo "set mirror:parallel-transfer-count 1"
-  # Собранная статика — всегда (хеши гитигнор). Порядок критичен: сначала новые хешированные
-  # файлы, только потом манифесты. Иначе манифест на проде уже указывает на ещё не залитый файл,
-  # и AssetExtension валит рендер («Ассет 'main.css' отсутствует в манифесте») — реальные 500 в
-  # окне деплоя, поймано логом 2026-08-01. --delete устаревших хешей — последним шагом.
-  echo "mirror -R ${DRY} --verbose --no-symlinks --exclude-glob *manifest*.json assets/css/build/ ${FTP_DIR}assets/css/build/"
-  echo "mirror -R ${DRY} --verbose --no-symlinks --exclude-glob *manifest*.json assets/js/build/  ${FTP_DIR}assets/js/build/"
-  if [[ $APPLY -eq 1 ]]; then
-    for manifest in assets/css/build/css-manifest.json assets/js/build/asset-manifest.json; do
-      [[ -f "$ROOT/$manifest" ]] && printf 'put "%s" -o "%s"\n' "$ROOT/$manifest" "${FTP_DIR}${manifest}"
-    done
-  fi
-  echo "mirror -R ${DRY} --verbose --no-symlinks --delete assets/css/build/ ${FTP_DIR}assets/css/build/"
-  echo "mirror -R ${DRY} --verbose --no-symlinks --delete assets/js/build/  ${FTP_DIR}assets/js/build/"
-  # Изменённые отслеживаемые файлы — только при реальной выкладке (mkdir/put меняют прод).
-  if [[ $APPLY -eq 1 ]]; then
+lftp_k() { # stdin — команды одной сессии
+  { echo "set ssl:verify-certificate no"; echo "set ftp:ssl-allow true"; echo "set net:connection-limit 1"
+    echo "set net:persist-retries 0"; echo "set mirror:parallel-transfer-count 1"; cat; echo "quit"; } \
+    | lftp -u "${FTP_USER},${FTP_PASS}" "${FTP_HOST}" 2>&1
+}
+# Порядок критичен и теперь ещё и со стопом между шагами: новые хешированные файлы → манифесты →
+# изменённые файлы → снос устаревших хешей. Манифест на проде не должен указывать на незалитый
+# или пустой файл (реальные 500 в окне деплоя 2026-08-01; «нет места» на evolute 24.09).
+printf '%s\n' "mirror -R ${DRY} --verbose --no-symlinks --exclude-glob *manifest*.json assets/css/build/ ${FTP_DIR}assets/css/build/" \
+              "mirror -R ${DRY} --verbose --no-symlinks --exclude-glob *manifest*.json assets/js/build/  ${FTP_DIR}assets/js/build/" \
+  | lftp_k | guard_step "новые бандлы"
+if [[ $APPLY -eq 1 ]]; then
+  for manifest in assets/css/build/css-manifest.json assets/js/build/asset-manifest.json; do
+    [[ -f "$ROOT/$manifest" ]] && printf 'put "%s" -o "%s"\n' "$ROOT/$manifest" "${FTP_DIR}${manifest}"
+  done | lftp_k | guard_step "манифесты сборки"
+  {
     for f in "${CHANGED[@]}"; do
       printf 'mkdir -p -f "%s"\n' "${FTP_DIR}$(dirname "$f")/"
       printf 'put "%s" -o "%s"\n' "$ROOT/$f" "${FTP_DIR}$f"
     done
-    # Манифест картинок — после файлов, на которые он ссылается (тот же принцип,
-    # что и у css/js-манифестов выше).
+    # Манифест картинок — после файлов, на которые он ссылается.
     if [[ -f "$ROOT/assets/img/build/image-dimensions.json" ]]; then
       printf 'mkdir -p -f "%s"\n' "${FTP_DIR}assets/img/build/"
       printf 'put "%s" -o "%s"\n' "$ROOT/assets/img/build/image-dimensions.json" "${FTP_DIR}assets/img/build/image-dimensions.json"
     fi
-  fi
-  echo "quit"
-} | lftp -u "${FTP_USER},${FTP_PASS}" "${FTP_HOST}"
+  } | lftp_k | guard_step "изменённые файлы"
+fi
+printf '%s\n' "mirror -R ${DRY} --verbose --no-symlinks --delete assets/css/build/ ${FTP_DIR}assets/css/build/" \
+              "mirror -R ${DRY} --verbose --no-symlinks --delete assets/js/build/  ${FTP_DIR}assets/js/build/" \
+  | lftp_k | guard_step "снос устаревших хешей"
 
 if [[ $APPLY -eq 1 ]]; then
   lftp -u "${FTP_USER},${FTP_PASS}" "${FTP_HOST}" -e "set ssl:verify-certificate no; set ftp:ssl-allow true; put robots.txt -o ${FTP_DIR}robots.txt; put public/llms.txt -o ${FTP_DIR}llms.txt; put public/llms-full.txt -o ${FTP_DIR}llms-full.txt; rm -r ${FTP_DIR}cache/twig; bye" >/dev/null 2>&1 || true
