@@ -131,7 +131,7 @@ public/index.php
 
 Основные модули:
 
-- `src/Action` — HTTP-обработчики (`PageAction`, `ApiSendAction`, `SitemapAction`, `HealthAction`, `PhotoroomRemoveBackgroundAction`)
+- `src/Action` — HTTP-обработчики (`PageAction`, `ApiSendAction`, `SitemapAction`, `HealthAction`)
 - `src/Middleware` — PSR-15 middleware (RequestDuration, CorrelationId, SecurityHeaders, CORS, RateLimit, Language, Redirect, TrailingSlash)
 - `src/Service` — бизнес-логика (`DataLoaderService`, `SeoService`, `LanguageService`, `TemplateDataBuilder`)
 - `src/Event` — PSR-14 события (`PageLoaded`, `EntityResolved`, `SeoBuilt`) через league/event

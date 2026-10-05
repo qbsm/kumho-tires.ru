@@ -2,41 +2,34 @@
   "slug": "kh31",
   "visible": true,
   "filter": {
-    "season": [
-      "summer"
-    ],
-    "diameters": [
-      16
-    ],
-    "widths": [
-      195,
-      225
-    ],
-    "profiles": [
-      55
-    ]
+    "season": ["summer"],
+    "vehicle": ["passenger"],
+    "priority": ["economy", "comfort"],
+    "diameters": [16],
+    "widths": [195, 225],
+    "profiles": [55],
+    "family": "ecowing"
   },
   "item": {
     "code": "KH31",
     "series": "Ecowing",
-    "name": "Kumho KH31 Ecowing"
+    "caption": "Одна из самых тихих шин в классе",
+    "logo": "data/img/series/ecowing.svg",
+    "name": "Kumho Ecowing KH31",
+    "alt_names": ["Кумхо Эковинг KH31"]
   },
   "desc": {
-    "short": "Летняя шина Kumho KH31 Ecowing для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума.",
-    "full": "Kumho KH31 Ecowing — летняя шина из линейки Ecowing, предназначенная для легковых автомобилей. Серия Ecowing делает ставку на экономичность, снижая расход топлива и уровень шума. Доступна в диаметрах R16–R16."
+    "short": "Kumho Ecowing KH31 — летняя шина в двух размерах R16 с увеличенным ресурсом: состав смеси подобран под равномерный износ и тихий ход.",
+    "full": "Kumho Ecowing KH31 — летняя шина линейки Ecowing в двух типоразмерах на шестнадцатый диаметр: 195/55R16 87V и 225/55R16 95W. Первый ставят на компактные седаны и хэтчбеки, второй — на более тяжёлые автомобили среднего класса.<br><br>Состав резиновой смеси подобран под увеличенный ресурс: протектор дольше сохраняет глубину рисунка при ежедневных городских пробегах, управляемость остаётся стабильной и на сухом, и на мокром покрытии. Размеры заметно различаются по европейской маркировке: широкий 225/55R16 получил класс сцепления на мокрой дороге B и всего 68 дБ (высший акустический класс A), у 195/55R16 — класс C и 71 дБ."
   },
   "images": {
     "30deg": {
-      "400": "data/img/tires/kh31/400/kh31-30deg.webp",
-      "800": "data/img/tires/kh31/800/kh31-30deg.webp",
-      "1280": "data/img/tires/kh31/1280/kh31-30deg.webp",
-      "alt": "Kumho KH31 Ecowing, ракурс 30°"
+      "src": "data/img/tires/kh31/raw/kh31-30deg.webp",
+      "alt": "Kumho Ecowing KH31"
     },
     "front": {
-      "400": "data/img/tires/kh31/400/kh31-front.webp",
-      "800": "data/img/tires/kh31/800/kh31-front.webp",
-      "1280": "data/img/tires/kh31/1280/kh31-front.webp",
-      "alt": "Kumho KH31 Ecowing, вид спереди"
+      "src": "data/img/tires/kh31/raw/kh31-front.webp",
+      "alt": "Kumho Ecowing KH31, вид спереди"
     }
   },
   "season": "Летняя",
@@ -45,18 +38,32 @@
       "label": "195/55R16",
       "diameter": 16,
       "index": "87V",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "C",
+        "wet": "C",
+        "noise": 71,
+        "noiseClass": "B",
+        "eprel": "651793"
+      }
     },
     {
       "label": "225/55R16",
       "diameter": 16,
       "index": "95W",
-      "commercial": false
+      "commercial": false,
+      "eu": {
+        "energy": "D",
+        "wet": "B",
+        "noise": 68,
+        "noiseClass": "A",
+        "eprel": "465134"
+      }
     }
   ],
   "features": [
     {
-      "text": "Летняя шина серии Ecowing для экономичной и комфортной езды"
+      "text": "Летние шины серии Ecowing для экономичной и комфортной езды"
     },
     {
       "text": "Оптимизированный состав резиновой смеси для увеличенного ресурса"

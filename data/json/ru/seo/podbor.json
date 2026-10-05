@@ -1,0 +1,30 @@
+{
+  "name": "podbor",
+  "title": "Подбор шин Kumho — конфигуратор по автомобилю, сезону и размеру",
+  "meta": [
+    {
+      "name": "description",
+      "content": "Подберите шины Kumho за четыре шага: тип автомобиля, сезон, приоритет и размер. Конфигуратор покажет подходящие модели из каталога."
+    },
+    {
+      "property": "og:type",
+      "content": "website"
+    },
+    {
+      "property": "og:title",
+      "content": "Подбор шин Kumho"
+    },
+    {
+      "property": "og:description",
+      "content": "Конфигуратор подбора шин Kumho по типу автомобиля, сезону, приоритету и размеру."
+    },
+    {
+      "property": "og:site_name",
+      "content": "Kumho Tire"
+    },
+    {
+      "property": "og:image",
+      "content": "https://kumho-tires.ru/data/img/seo/og.jpg?v=3"
+    }
+  ]
+}

@@ -10,14 +10,7 @@
       "name": "frame",
       "visible": true,
       "data": {
-        "cover": {
-          "400": "data/img/frames/400/buy.webp",
-          "800": "data/img/frames/800/buy.webp",
-          "1280": "data/img/frames/1280/buy.webp",
-          "1600": "data/img/frames/1600/buy.webp",
-          "1920": "data/img/frames/1920/buy.webp",
-          "2560": "data/img/frames/2560/buy.webp"
-        }
+        "cover": "data/img/frames/raw/buy.webp"
       }
     },
     {
@@ -25,9 +18,9 @@
       "visible": true,
       "data": {
         "url_sync_city": true,
-        "meta_title_base": "Где купить шины Kumho",
+        "meta_title_base": "Где купить шины Kumho в России — адреса дилеров",
         "meta_title_city_template": "Где купить шины Kumho в {city}",
-        "meta_description_base": "Адреса точек продаж шин Kumho и карта дилеров по России.",
+        "meta_description_base": "Где купить шины Kumho в России: адреса официальных точек продаж и дилеров «Север Авто», карта и телефоны по всей стране.",
         "meta_description_city_template": "Адреса точек продаж шин Kumho в {city}: дилеры, карта, телефоны и часы работы.",
         "filter": {
           "visible": true

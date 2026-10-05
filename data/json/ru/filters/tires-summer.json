@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Летние шины Kumho в каталоге"
+        },
+        "desc": "<p>В летней линейке <b>16 моделей и 463 типоразмера</b> с посадочным диаметром <b>от R12 до R22</b> — это самая широкая сезонная группа каталога. Летняя резина Kumho рассчитана на температуру примерно от +7 °C: в холоде состав твердеет и теряет сцепление, поэтому зимой её не эксплуатируют.</p><p>Для легковых автомобилей — линейки ECSTA и Ecowing: <a href='/tires/ps71' class='link inline weight-400'>ECSTA PS71</a> (112 типоразмеров, R16–R22), <a href='/tires/ps72' class='link inline weight-400'>ECSTA Sport S PS72</a> (93 типоразмера, R17–R22) для мощных и спортивных машин, <a href='/tires/hs52' class='link inline weight-400'>ECSTA HS52</a> (62 типоразмера, R14–R20) и <a href='/tires/es31' class='link inline weight-400'>Ecowing ES31</a> (60 типоразмеров, R13–R18) с упором на экономичность.</p><p>Для кроссоверов и внедорожников — серия CRUGEN: <a href='/tires/hp71' class='link inline weight-400'>CRUGEN HP71</a> (44 типоразмера, R16–R20) и <a href='/tires/hp91' class='link inline weight-400'>CRUGEN HP91</a> (13 типоразмеров, R16–R19), рассчитанные на большую массу и высокий центр тяжести.</p><p>Для фургонов и микроавтобусов — <a href='/tires/kc53' class='link inline weight-400'>PorTran KC53</a>: 42 усиленных типоразмера R12–R18 с маркировкой C и повышенным индексом нагрузки.</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Как выбрать летние шины Kumho"
+        },
+        "desc": "<p>Отправная точка — <b>заводской типоразмер</b> из руководства по эксплуатации или с таблички в проёме водительской двери: ширина, высота профиля, посадочный диаметр, индексы нагрузки и скорости. Брать индексы ниже заводских нельзя.</p><p>Дальше выбор идёт по задаче: <b>динамичная езда и точность руля</b> — ECSTA, <b>экономичность и низкий уровень шума</b> — Ecowing, <b>кроссовер или внедорожник</b> — CRUGEN, <b>работа под нагрузкой</b> — PorTran с индексом C.</p><p>Отобрать нужное помогает фильтр по диаметру, ширине и профилю выше на странице или <a href='/podbor' class='link inline weight-400'>конфигуратор подбора шин</a> — он спрашивает тип автомобиля, сезон, приоритет и размер и оставляет только подходящие модели.</p>"
+      }
+    ]
+  }
+}

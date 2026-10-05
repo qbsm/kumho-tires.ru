@@ -3,12 +3,19 @@
 
   width: 100%;
   padding: 1rem;
-  border: 0.1rem solid var(--color-4);
-  border-radius: 1rem;
+
+  /* Как карточки на сайте: рамки нет, панель держит мягкая тень */
+  border-radius: 1.6rem;
+  background: var(--color-1);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 6%),
+    0 24px 48px rgb(0 0 0 / 4%);
 
   @media (--lg) {
-    padding: 1.5rem;
-    border-radius: 2rem;
+    /* По бокам просторнее: воздух вокруг кнопок читается лучше */
+    padding: 1.5rem 3rem;
+    border-radius: 2.4rem;
   }
 }
 
@@ -33,10 +40,50 @@
   flex-wrap: wrap;
 }
 
+/* Селекты размера — один элемент ряда: переносятся на новую строку втроём,
+   и только когда не помещаются. По одному «Ширина» оставалась внизу одна */
+.filter .filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+
+  @media (--lg) {
+    gap: 1rem;
+  }
+}
+
 .filter .filter__label {
   white-space: nowrap;
-  color: var(--color-5);
+  color: var(--color-2);
   font-size: 0.9em;
+}
+
+/* Иконка рисуется маской, а не <img>: цветом управляем через background-color.
+   Как у чипов конфигуратора — фирменный красный; на активной кнопке фон красный,
+   поэтому там иконка становится белой. */
+.filter .filter__icon {
+  flex: 0 0 auto;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: var(--color-3);
+  mask: var(--filter-icon) center / contain no-repeat;
+
+  /* Кнопка перекрашивается за 0.2s — иконка должна догонять её, а не прыгать мгновенно */
+  transition: background-color 0.2s ease;
+}
+
+.filter .filter__selector:hover .filter__icon,
+.filter .filter__selector.active .filter__icon {
+  background-color: var(--color-1);
+}
+
+/* Иконка отбита от своего лейбла ровно так же, как в кнопках сезонов (0.8rem):
+   до правки у селектов расстояние набиралось из gap группы и было заметно теснее.
+   Левый margin отыгрывает воздух до предыдущей группы. */
+.filter .filter__icon--select {
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
 }
 
 .filter .custom-select {
@@ -51,16 +98,18 @@
   padding: 0 0.8rem;
 }
 
+/* Посадка и размер — как у чипов конфигуратора, чтобы элементы выбора выглядели одинаково */
 .filter .filter__selector {
   height: var(--filter-control-height);
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
+  gap: 0.8rem;
   border: 0.1rem solid var(--color-4);
   border-radius: 0.75rem;
   background: var(--color-1);
   color: var(--color-2);
-  padding: 0 0.9rem;
+  padding: 0 1.2rem;
   font-size: 0.95em;
   line-height: 1.2;
   cursor: pointer;

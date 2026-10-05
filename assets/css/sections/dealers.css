@@ -57,3 +57,77 @@
   max-width: 32rem;
   border-color: transparent;
 }
+
+.dealers .cities-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 0.1rem solid var(--color-4);
+}
+
+.dealers .cities-nav__title {
+  font-family: var(--font-2);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-5);
+}
+
+.dealers .cities-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dealers .cities-nav__link {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--color-6);
+  text-decoration: none;
+  border-bottom: 0.1rem solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.dealers .cities-nav__link:hover,
+.dealers .cities-nav__link:focus-visible {
+  color: var(--color-3);
+  border-bottom-color: var(--color-3);
+}
+
+.dealers .cities-nav__link--all {
+  color: var(--color-2);
+  font-weight: 500;
+}
+
+/* Кнопка догрузки карточек: появляется под сеткой, когда точек больше первой порции */
+.dealers .dealers__more {
+  margin-inline: auto;
+  margin-block-start: 2rem;
+}
+
+/* Атрибут hidden сам по себе кнопку не убирает: правило браузера [hidden] слабее
+   класса .button с его display, и скрытая кнопка оставалась пустым местом в потоке */
+.dealers .dealers__more[hidden] {
+  display: none;
+}
+
+/* Городская страница: сводка и вопросы — свой ритм, чтобы не липли к списку точек */
+.dealers__city-intro {
+  margin-block-end: 3rem;
+}
+
+.dealers__city-faq {
+  margin-block-start: 4rem;
+}
+
+.dealers__city-faq-title {
+  display: block;
+  margin-block-end: 1.5rem;
+  font-family: var(--font-2);
+  font-size: 1.15em;
+  font-weight: 700;
+}

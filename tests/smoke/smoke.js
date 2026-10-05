@@ -5,6 +5,8 @@
  *   npm run test:smoke
  */
 
+import { readFileSync } from 'node:fs';
+
 const BASE_URL = process.env.SMOKE_BASE_URL || process.env.BASE_URL || 'http://localhost:8080';
 
 async function request(method, path, { followRedirect = true } = {}) {
@@ -55,14 +57,18 @@ async function run() {
     fail++;
   }
 
-  // GET /en/ → 200 (мультиязычность)
+  // GET /en/ — только для мультиязычных деплойментов; одноязычный сайт обязан отдавать 404
   try {
+    const global = JSON.parse(readFileSync(new URL('../../data/json/global.json', import.meta.url), 'utf8'));
+    const langs = Array.isArray(global.languages?.items) ? global.languages.items : global.languages || [];
+    const multilingual = langs.some((item) => (typeof item === 'string' ? item : item.code) === 'en');
     const r = await request('GET', '/en/');
-    const pass = r.status === 200;
-    checks.push({ name: 'GET /en/ → 200', pass, status: r.status });
+    const expected = multilingual ? 200 : 404;
+    const pass = r.status === expected;
+    checks.push({ name: `GET /en/ → ${expected}`, pass, status: r.status });
     pass ? ok++ : fail++;
   } catch (e) {
-    checks.push({ name: 'GET /en/ → 200', pass: false, error: e.message });
+    checks.push({ name: 'GET /en/', pass: false, error: e.message });
     fail++;
   }
 
@@ -77,14 +83,19 @@ async function run() {
     fail++;
   }
 
-  // Redirect без trailing slash → со слешом (запрос без слеша, ожидаем редирект или 200 на URL со слешом)
+  // Канонический адрес — без хвостового слеша: /contacts отдаётся сразу, /contacts/ редиректит на него
   try {
-    const r = await request('GET', '/contacts'); // без слеша
-    const pass = r.status === 200 && r.url && r.url.endsWith('/');
-    checks.push({ name: 'Redirect /contacts → /contacts/', pass, status: r.status, url: r.url });
+    const direct = await request('GET', '/contacts');
+    const slashed = await request('GET', '/contacts/');
+    const pass =
+      direct.status === 200 &&
+      !direct.url.replace(/^https?:\/\/[^/]+/, '').endsWith('/') &&
+      slashed.status === 200 &&
+      !slashed.url.replace(/^https?:\/\/[^/]+/, '').endsWith('/');
+    checks.push({ name: 'Канонический /contacts без слеша', pass, status: direct.status, url: direct.url });
     pass ? ok++ : fail++;
   } catch (e) {
-    checks.push({ name: 'Redirect /contacts → /contacts/', pass: false, error: e.message });
+    checks.push({ name: 'Канонический /contacts без слеша', pass: false, error: e.message });
     fail++;
   }
 

@@ -1,0 +1,13 @@
+<div class="error-code" aria-hidden="true">
+  <span class="error-code__digit">4</span>
+  <span class="error-code__wheel">
+    {% include 'components/picture.twig' with {
+      image: item.image,
+      alt: '',
+      class: 'error-code__img',
+      sizes_preset: 'thumbnail',
+      loading: 'eager'
+    } %}
+  </span>
+  <span class="error-code__digit">4</span>
+</div>

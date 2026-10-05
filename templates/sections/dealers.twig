@@ -1,4 +1,7 @@
 {% set urlSyncCity = data.url_sync_city | default(false) %}
+{# На /buy/<город> сервер рендерит только точки этого города: полный список из ~155 магазинов
+   на каждой городской странице — это 600+ КиБ HTML и дубль-контент между 56 URL #}
+{% set pageCitySlug = (urlSyncCity and route_params is defined and route_params|length == 1) ? route_params[0] : '' %}
 {% set metaTitleBase = data.meta_title_base | default('') %}
 {% set metaTitleCityTemplate = data.meta_title_city_template | default('') %}
 {% set metaDescriptionBase = data.meta_description_base | default('') %}
@@ -12,11 +15,49 @@
     {% if metaTitleCityTemplate %}data-meta-title-city-template="{{ metaTitleCityTemplate | e('html_attr') }}"{% endif %}
     {% if metaDescriptionBase %}data-meta-description-base="{{ metaDescriptionBase | e('html_attr') }}"{% endif %}
     {% if metaDescriptionCityTemplate %}data-meta-description-city-template="{{ metaDescriptionCityTemplate | e('html_attr') }}"{% endif %}
+    {% if pageCitySlug %}data-server-filtered="1"{% endif %}
   {% endif %}>
   <div class="container">
     {% set dealersData = load_json('data/json/' ~ lang_code ~ '/pages/dealers.json') %}
     {% set dealerItems = dealersData.items | default(data.items | default([])) %}
     {% set onlyMappedCards = data.map.only_mapped_cards | default(false) %}
+    {% if pageCitySlug %}
+      {% set renderDealerItems = [] %}
+      {% for item in dealerItems %}
+        {% if city_to_slug(item.city|default('')) == pageCitySlug %}
+          {% set renderDealerItems = renderDealerItems|merge([item]) %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% set renderDealerItems = dealerItems %}
+    {% endif %}
+
+    {# JSON-LD: точки продаж (ItemList) — где купить шины Kumho, с адресом/гео/телефоном #}
+    {# На странице города (/buy/<город>) ItemList сужается до его точек — local SEO без чужих адресов #}
+    {% set _ldCitySlug = (urlSyncCity and route_params is defined and route_params|length == 1) ? route_params[0] : '' %}
+    {% set _ldCityName = '' %}
+    {% set _stores = [] %}
+    {% for item in dealerItems %}
+      {% if item.location is defined and item.location and (_ldCitySlug == '' or city_to_slug(item.city|default('')) == _ldCitySlug) %}
+        {% if _ldCitySlug and _ldCityName == '' %}{% set _ldCityName = item.city|default('') %}{% endif %}
+        {% set _loc = item.location|split(',') %}
+        {% set _addr = {'@type': 'PostalAddress', 'streetAddress': item.address|default(''), 'addressCountry': 'RU'} %}
+        {% if item.city|default('') is not empty %}{% set _addr = _addr|merge({'addressLocality': item.city}) %}{% endif %}
+        {% if item.region|default('') is not empty %}{% set _addr = _addr|merge({'addressRegion': item.region}) %}{% endif %}
+        {% set _store = {'@type': 'AutoPartsStore', 'name': item.name|default(''), 'address': _addr} %}
+        {% if _loc|length == 2 %}{% set _store = _store|merge({'geo': {'@type': 'GeoCoordinates', 'latitude': _loc[0]|trim, 'longitude': _loc[1]|trim}}) %}{% endif %}
+        {% set _phones = [] %}
+        {% for ph in item.phones|default([]) %}{% if ph.title is defined %}{% set _phones = _phones|merge([ph.title]) %}{% endif %}{% endfor %}
+        {% if _phones|length > 0 %}{% set _store = _store|merge({'telephone': _phones}) %}{% endif %}
+        {% if item.site.href|default('') is not empty %}{% set _store = _store|merge({'url': item.site.href}) %}{% endif %}
+        {% set _stores = _stores|merge([{'@type': 'ListItem', 'position': _stores|length + 1, 'item': _store}]) %}
+      {% endif %}
+    {% endfor %}
+    {% if _stores|length > 0 %}
+    <script type="application/ld+json">
+    {{ {'@context': 'https://schema.org', '@type': 'ItemList', 'name': _ldCityName ? 'Где купить шины Kumho: ' ~ _ldCityName : 'Где купить шины Kumho', 'numberOfItems': _stores|length, 'itemListElement': _stores}|json_encode|raw }}
+    </script>
+    {% endif %}
     {% set filterVisible = true %}
     {% if data.filter is defined %}
       {% if data.filter is iterable %}
@@ -68,6 +109,39 @@
       </div>
     {% endif %}
 
+    {# Городская страница: сводка и вопросы собираются из данных точек этого города.
+       Без них 55 адресов отличались от общего /buy только заголовком и списком. #}
+    {% if pageCitySlug and renderDealerItems | length > 0 %}
+      {% set _cityCase = initialHeadingCityCase != '' ? initialHeadingCityCase : pageCitySlug %}
+      {% set _count = renderDealerItems | length %}
+      {% set _c10 = _count % 10 %}{% set _c100 = _count % 100 %}
+      {% set _pointWord = (_c10 == 1 and _c100 != 11) ? 'точка' : ((_c10 >= 2 and _c10 <= 4 and (_c100 < 12 or _c100 > 14)) ? 'точки' : 'точек') %}
+      {% set _authWord = (_c10 == 1 and _c100 != 11) ? 'авторизованная' : ((_c10 >= 2 and _c10 <= 4 and (_c100 < 12 or _c100 > 14)) ? 'авторизованные' : 'авторизованных') %}
+      {% set _nets = [] %}
+      {% set _guarantee = 0 %}
+      {% set _sites = 0 %}
+      {% for _d in renderDealerItems %}
+        {% set _n = _d.name | default('') | trim %}
+        {% if _n and _n not in _nets %}{% set _nets = _nets|merge([_n]) %}{% endif %}
+        {% if _d.guarantee.visible | default(false) %}{% set _guarantee = _guarantee + 1 %}{% endif %}
+        {% if _d.site.href | default('') %}{% set _sites = _sites + 1 %}{% endif %}
+      {% endfor %}
+      {% set _netCount = _nets | length %}
+      {% set _n10 = _netCount % 10 %}{% set _n100 = _netCount % 100 %}
+      {% set _netWord = (_n10 == 1 and _n100 != 11) ? 'сеть' : ((_n10 >= 2 and _n10 <= 4 and (_n100 < 12 or _n100 > 14)) ? 'сети' : 'сетей') %}
+
+      <div class="section__item longread-wrap dealers__city-intro">
+        <span class="longread">
+          <p>В {{ _cityCase }} шины Kumho продают <b>{{ _count }} {{ _authWord }} {{ _pointWord }}</b>
+          {%- if _netCount > 1 %} — это {{ _netCount }} {{ _netWord }}: {{ _nets | slice(0, 5) | join(', ') }}{% if _netCount > 5 %} и другие{% endif %}{% endif %}.
+          {% if _guarantee == _count %}Во всех действует программа <a href="/warranty">«Расширенная гарантия Kumho»</a> — дополнительный год защиты от эксплуатационных повреждений.{% elseif _guarantee > 0 %}В {{ _guarantee }} из них действует программа <a href="/warranty">«Расширенная гарантия Kumho»</a>.{% endif %}</p>
+          <p>Адреса, телефоны и часы работы — в списке ниже, расположение точек видно на карте.
+          Подобрать модель под свой автомобиль можно в <a href="/tires">каталоге</a> или
+          <a href="/podbor">конфигуратором</a>.</p>
+        </span>
+      </div>
+    {% endif %}
+
     {% if filterVisible %}
       {% set citySelectOptions = [{'value': '', 'label': 'Все'}] %}
       {% for city in cityOptions | sort %}
@@ -86,6 +160,7 @@
           'type': 'toggle',
           'class': 'option-wrap',
           'label': 'Расширенная гарантия',
+          'icon': '/data/img/ui/icons/icon-check-sm-color-2.svg',
           'input_class': 'filter__checkbox js-dealers-guarantee'
         }
       ] %}
@@ -95,6 +170,7 @@
             'type': 'toggle',
             'class': 'option-wrap',
             'label': 'Бесплатный шиномонтаж',
+            'icon': '/data/img/ui/icons/icon-check-sm-color-2.svg',
             'input_class': 'filter__checkbox js-dealers-bshm'
           }
         ]) %}
@@ -117,7 +193,7 @@
           data-geolocation="{{ data.map.geolocation|default(false) ? '1' : '0' }}"
           data-fallback-src="{{ data.map.src|default('') }}"
           aria-label="Карта точек продаж">
-          {% for item in dealerItems %}
+          {% for item in renderDealerItems %}
             {% set dealerId = item.id | default(loop.index) %}
             {% set phones = item.phones | default([]) %}
             {% set guaranteeData = item.guarantee | default({}) %}
@@ -148,9 +224,9 @@
       </div>
     {% endif %}
 
-    {% if dealerItems is not empty %}
+    {% if renderDealerItems is not empty %}
       <div class="section__item cards-wrap">
-        {% for item in dealerItems %}
+        {% for item in renderDealerItems %}
           {% if not onlyMappedCards or (item.location is defined and item.location) %}
             {% set dealerId = item.id | default(loop.index) %}
             {% set guaranteeData = item.guarantee | default({}) %}
@@ -168,6 +244,57 @@
           {% endif %}
         {% endfor %}
       </div>
+    {% endif %}
+
+    {# Вопросы городской страницы: ответы собираются из тех же данных, что и список точек,
+       поэтому не расходятся с ним и не повторяются между городами дословно. #}
+    {% if pageCitySlug and renderDealerItems | length > 0 %}
+      {% set _faqCity = initialHeadingCityCase != '' ? initialHeadingCityCase : pageCitySlug %}
+      {% set _faqItems = [
+        {
+          'icon': {'src': url('data/img/ui/icons/icon-arrow-down-color-2.svg')},
+          'title': 'Где купить шины Kumho в ' ~ _faqCity ~ '?',
+          'desc': 'В ' ~ _faqCity ~ ' работает ' ~ _count ~ ' ' ~ _authWord ~ ' ' ~ _pointWord
+            ~ (_netCount > 1 ? ' — ' ~ (_nets | slice(0, 5) | join(', ')) : ' сети ' ~ (_nets | first))
+            ~ '. Адреса, телефоны и часы работы перечислены на этой странице, расположение видно на карте.'
+        },
+        {
+          'icon': {'src': url('data/img/ui/icons/icon-arrow-down-color-2.svg')},
+          'title': 'Действует ли расширенная гарантия в ' ~ _faqCity ~ '?',
+          'desc': (_guarantee == _count
+            ? 'Да, программа «Расширенная гарантия Kumho» действует во всех ' ~ _count ~ ' ' ~ _pointWord ~ ' города'
+            : (_guarantee > 0
+              ? 'Да, программа действует в ' ~ _guarantee ~ ' ' ~ _pointWord ~ ' из ' ~ _count
+              : 'Программа оформляется в авторизованных шинных центрах — участниках'))
+            ~ '. Она добавляет год защиты от эксплуатационных повреждений сверх гарантии производителя; чек нужно зарегистрировать на сайте в течение 30 дней после покупки.'
+        },
+        {
+          'icon': {'src': url('data/img/ui/icons/icon-arrow-down-color-2.svg')},
+          'title': 'Как подобрать модель под свой автомобиль?',
+          'desc': 'В каталоге есть фильтр по сезону и типоразмеру, а конфигуратор подбирает модель по типу авто, сезону и приоритету — комфорт, управляемость, экономичность или проходимость. Типоразмер указан на боковине текущей шины и на табличке в проёме водительской двери.'
+        }
+      ] %}
+      <div class="section__item dealers__city-faq">
+        <span class="dealers__city-faq-title uppercase">Вопросы о покупке в {{ _faqCity }}</span>
+        {% include 'components/accordion.twig' with {'items': _faqItems, 'accordion_id': 'city-faq'} %}
+      </div>
+    {% endif %}
+
+    {% if urlSyncCity and cityOptions | length > 1 %}
+      <nav class="section__item cities-nav" aria-label="Города, где купить шины Kumho">
+        <span class="cities-nav__title">{{ pageCitySlug ? 'Купить в других городах' : 'Купить по городам' }}</span>
+        <ul class="cities-nav__list">
+          {% if pageCitySlug %}
+            <li><a class="cities-nav__link cities-nav__link--all" href="{{ url('buy') }}">Все точки продаж</a></li>
+          {% endif %}
+          {% for city in cityOptions | sort %}
+            {% set citySlug = city_to_slug(city) %}
+            {% if citySlug and citySlug != pageCitySlug %}
+              <li><a class="cities-nav__link" href="{{ url('buy/' ~ citySlug) }}">{{ city }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
     {% endif %}
   </div>
 </section>

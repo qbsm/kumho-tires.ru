@@ -1,0 +1,90 @@
+{
+  "article": {
+    "title": "Расшифровка названий шин Kumho: что значат WI, WP и WS",
+    "seo_title": "Названия шин Kumho: что значат WI, WP, WS, PS, HS и HA",
+    "category": "Практика",
+    "date_iso": "2026-09-11",
+    "date": "11 сентября 2026",
+    "cover": "data/img/articles/model-naming/raw/model-naming-cover.webp",
+    "lead": "WP52+, WS71, WI32 — коды выглядят как случайный набор букв и цифр, но система в них есть. Разбираем, что стоит за каждой буквой, почему все зимние модели начинаются с W и что на самом деле означает номер.",
+    "desc": "Как устроены названия шин Kumho: серии и коды моделей, что означают WI, WP, WS и CW у зимних, буквы летних и всесезонных линеек и что значат цифры.",
+    "toc": [
+      {
+        "anchor": "iz-chego",
+        "title": "Из чего состоит название"
+      },
+      {
+        "anchor": "zima",
+        "title": "Зимние: буква W в начале"
+      },
+      {
+        "anchor": "leto",
+        "title": "Летние и всесезонные"
+      },
+      {
+        "anchor": "cifry",
+        "title": "Что значат цифры"
+      },
+      {
+        "anchor": "vybor",
+        "title": "Как этим пользоваться при выборе"
+      }
+    ],
+    "body": "<h2 id='iz-chego'>Из чего состоит название</h2><p>Полное имя шины собрано из четырёх частей. Возьмём <a href='/tires/ws71'>Kumho WinterCraft WS71</a>: Kumho — бренд, WinterCraft — серия, WS — буквенный код, 71 — номер модели внутри серии.</p><p>Серия говорит о назначении и пишется словом, код и номер — короткая техническая метка, по которой шину ищут в прайсе и на складе. В обиходе модель почти всегда называют кодом: «ВэЭс семьдесят один», а не полным именем.</p><h2 id='zima'>Зимние: буква W в начале</h2><p>Все зимние модели Kumho начинаются с W. Вторая буква говорит, для какого транспорта сделана шина.</p><div class='data-table-wrap'><table class='data-table data-table--compact'><caption class='data-table__caption'>Зимние коды в каталоге Kumho</caption><thead><tr><th scope='col'>Код</th><th scope='col'>Серия</th><th scope='col'>Для чего</th><th scope='col'>Шипы</th></tr></thead><tbody><tr><th scope='row'>WP</th><td>WinterCraft</td><td>Легковые</td><td>Нешипованные</td></tr><tr><th scope='row'>WS</th><td>WinterCraft и ice</td><td>Кроссоверы, SUV</td><td>Обе версии</td></tr><tr><th scope='row'>WI</th><td>WinterCraft ice</td><td>Легковые, SUV</td><td>Обе версии</td></tr><tr><th scope='row'>CW</th><td>WinterPorTran</td><td>Коммерческие</td><td>Обе версии</td></tr></tbody></table></div><p><b>WP</b> — зимние для легковых автомобилей: <a href='/tires/wp52-plus'>WP52+</a> и <a href='/tires/wp72'>WP72</a>, обе нешипованные.</p><p><b>WS</b> — зимние для кроссоверов и внедорожников. Здесь и шипованная <a href='/tires/ws31'>WinterCraft ice WS31</a>, и нешипованные <a href='/tires/ws51'>ice WS51</a> и <a href='/tires/ws71'>WS71</a>.</p><p><b>WI</b> — линейка WinterCraft ice для легковых и кроссоверов: шипованная <a href='/tires/wi32'>WI32</a> и нешипованная <a href='/tires/wi51'>WI51</a>.</p><p><b>CW</b> — WinterPorTran, зима для фургонов и микроавтобусов: шипованная <a href='/tires/cw11'>CW11</a> и нешипованная <a href='/tires/cw51'>CW51</a>.</p><p>Важная оговорка: буква не отвечает за шипы. И в WS, и в WI, и в CW есть обе версии, так что тип шипования смотрят в карточке модели, а не угадывают по коду. Что выбрать, разобрано в статье <a href='/articles/studded-vs-friction'>шипы или липучка</a>.</p><h2 id='leto'>Летние и всесезонные</h2><p>У остальных сезонов буква привязана не к сезону, а к серии и типу автомобиля.</p><div class='data-table-wrap'><table class='data-table data-table--compact'><caption class='data-table__caption'>Остальные коды и серии в каталоге</caption><thead><tr><th scope='col'>Код</th><th scope='col'>Серия</th><th scope='col'>Назначение</th></tr></thead><tbody><tr><th scope='row'>HS, PS, KU</th><td>ECSTA</td><td>Летние, управляемость</td></tr><tr><th scope='row'>ES, KH</th><td>Ecowing</td><td>Летние, экономичность</td></tr><tr><th scope='row'>HA</th><td>SOLUS</td><td>Всесезонные легковые</td></tr><tr><th scope='row'>HP</th><td>CRUGEN</td><td>Летние для кроссоверов</td></tr><tr><th scope='row'>AT, MT, KL, TA</th><td>Road Venture</td><td>Внедорожные, всесезонные</td></tr><tr><th scope='row'>KC, CX</th><td>PorTran</td><td>Коммерческие</td></tr></tbody></table></div><p>Конкретные модели: ECSTA — <a href='/tires/hs51'>HS51</a>, <a href='/tires/hs52'>HS52</a>, <a href='/tires/hs63'>HS63</a>, <a href='/tires/ps71'>PS71</a>, <a href='/tires/ps72'>PS72</a> и <a href='/tires/ku39'>KU39</a>; Ecowing — <a href='/tires/es31'>ES31</a> и семейство KH; SOLUS — <a href='/tires/ha31'>HA31</a>, <a href='/tires/ha32'>HA32</a> и <a href='/tires/ha32-plus'>HA32+</a>; CRUGEN — <a href='/tires/hp71'>HP71</a> и <a href='/tires/hp91'>HP91</a>; Road Venture — восемь моделей AT, KL, MT и TA; PorTran — <a href='/tires/kc53'>KC53</a> и <a href='/tires/cx11'>CX11</a>.</p><p>Проще запомнить через серии. ECSTA — про управляемость и скорость, Ecowing — про экономичность и тишину, SOLUS — всесезонные для легковых, CRUGEN — асфальтовые для кроссоверов, Road Venture — всё, что съезжает с асфальта, PorTran — коммерческий транспорт.</p><h2 id='cifry'>Что значат цифры</h2><p>Номер после букв — не размер, не год выпуска и не индекс. Это порядковый номер модели внутри линейки, и внутри одной серии больший номер обычно означает более новую разработку.</p><p>Пример прямо из каталога: <a href='/tires/kh27'>Ecowing KH27</a> — предшественник <a href='/tires/es31'>Ecowing ES31</a>. Похожая история у летних ECSTA: <a href='/tires/ps71'>PS71</a> и более поздняя <a href='/tires/ps72'>ECSTA Sport S PS72</a>, которую вынесли в отдельную подсерию.</p><p>Плюс в конце, как у <a href='/tires/wp52-plus'>WP52+</a> и <a href='/tires/ha32-plus'>HA32+</a>, означает обновлённую версию той же модели.</p><h2 id='vybor'>Как этим пользоваться при выборе</h2><p>Код удобен для поиска, но выбирать по нему нельзя: он не говорит ни о размере, ни о классах этикетки, ни о наличии знака горы с тремя пиками. Внутри одной модели типоразмеры различаются и по индексам, и по классу сцепления.</p><p>Поэтому порядок обратный: сначала размер и сезон, потом цифры в паспорте конкретного типоразмера. Как читать обозначения на самой шине — в разборе <a href='/articles/sidewall-marking'>маркировки боковины</a>, а как читать этикетку — <a href='/articles/eu-tyre-label'>здесь</a>.</p>",
+    "faq": [
+      {
+        "icon": {
+          "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+        },
+        "title": "Что означает WI в названии шин Kumho?",
+        "desc": "Это код зимней линейки WinterCraft ice для легковых автомобилей и кроссоверов. В каталоге две модели: шипованная WI32 и нешипованная WI51.",
+        "answerText": "Это код зимней линейки WinterCraft ice для легковых автомобилей и кроссоверов. В каталоге две модели: шипованная WI32 и нешипованная WI51."
+      },
+      {
+        "icon": {
+          "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+        },
+        "title": "Чем WS отличается от WP?",
+        "desc": "WP — зимние для легковых автомобилей, WS — зимние для кроссоверов и внедорожников. Обе группы относятся к серии WinterCraft.",
+        "answerText": "WP — зимние для легковых автомобилей, WS — зимние для кроссоверов и внедорожников. Обе группы относятся к серии WinterCraft."
+      },
+      {
+        "icon": {
+          "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+        },
+        "title": "Все ли шины с буквой W зимние?",
+        "desc": "Да, у Kumho код каждой зимней модели начинается с W: WP, WS, WI для легковых и SUV и CW у зимней коммерческой линейки WinterPorTran.",
+        "answerText": "Да, у Kumho код каждой зимней модели начинается с W: WP, WS, WI для легковых и SUV и CW у зимней коммерческой линейки WinterPorTran."
+      },
+      {
+        "icon": {
+          "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+        },
+        "title": "Можно ли по коду понять, шипованная шина или нет?",
+        "desc": "Нет. И в WS, и в WI, и в CW есть шипованные и нешипованные модели. Например, WI32 шипованная, а WI51 нет. Тип шипования смотрят в карточке модели.",
+        "answerText": "Нет. И в WS, и в WI, и в CW есть шипованные и нешипованные модели. Например, WI32 шипованная, а WI51 нет. Тип шипования смотрят в карточке модели."
+      },
+      {
+        "icon": {
+          "src": "data/img/ui/icons/icon-arrow-down-color-2.svg"
+        },
+        "title": "Что означают цифры после букв?",
+        "desc": "Порядковый номер модели внутри линейки, а не размер и не год. Внутри серии больший номер обычно означает более новую разработку: Ecowing KH27 — предшественник ES31. Плюс в конце, как у WP52+, означает обновлённую версию.",
+        "answerText": "Порядковый номер модели внутри линейки, а не размер и не год. Внутри серии больший номер обычно означает более новую разработку: Ecowing KH27 — предшественник ES31. Плюс в конце, как у WP52+, означает обновлённую версию."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Каталог моделей Kumho на kumho-tires.ru",
+        "href": "/tires"
+      }
+    ],
+    "cta": {
+      "title": "Подобрать шины по размеру",
+      "desc": "Конфигуратор спросит автомобиль, сезон и типоразмер и покажет подходящие модели Kumho с точками продаж.",
+      "href": "/podbor",
+      "label": "Подобрать размер"
+    },
+    "related": ["sidewall-marking", "studded-vs-friction", "eu-tyre-label"]
+  }
+}

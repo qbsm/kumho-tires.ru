@@ -2,7 +2,7 @@
   <div class="section__item block-wrap">
     <div class="section__subitem logo-wrap">
       <a href="/" class="link header__logo" itemprop="url">
-        <img src="{{ url(global.logo.vertical.black.src|default('data/img/ui/logos/logo-v-color-2.svg')) }}" alt="{{ global.logo.vertical.black.alt|default('Logo') }}" class="img-responsive" itemprop="logo" width="284" height="74">
+        <img src="{{ url(global.logo.vertical.black.src|default('data/img/ui/logos/dealer-brand-logo-color-2.svg')) }}" alt="{{ global.logo.vertical.black.alt|default('Logo') }}" itemprop="logo" width="852" height="75">
       </a>
     </div>
     <nav class="section__subitem nav-wrap" aria-label="Основное меню">
@@ -19,8 +19,30 @@
         {% else %}
           {% set isActive = pageKey == normalizedItemHref %}
         {% endif %}
-        <div class="section__inner nav-link-wrap">
-          <a href="{{ url(itemHref) }}" class="link color-2 underline-center header__nav-link{{ isActive ? ' active' : '' }}">{{ item.title }}</a>
+        {% set hasSubmenu = item.children is defined and item.children is not empty %}
+        <div class="section__inner nav-link-wrap{{ hasSubmenu ? ' has-submenu' : '' }}">
+          <a href="{{ url(itemHref) }}" class="link color-2 underline-center header__nav-link{{ isActive ? ' active' : '' }}"{{ hasSubmenu ? ' aria-haspopup="true"' : '' }}>{{ item.title }}{% if hasSubmenu %}<svg class="header__nav-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>{% endif %}</a>
+          {% if hasSubmenu %}
+            <div class="header__submenu">
+              <div class="header__submenu-inner">
+                <div class="header__submenu-groups">
+                  {% for group in item.children %}
+                    <div class="header__submenu-group">
+                      {% if group.group is defined and group.group %}
+                        <span class="header__submenu-title uppercase">{{ group.group }}</span>
+                      {% endif %}
+                      <div class="header__submenu-list">
+                        {% for sub in group.items | default([]) %}
+                          {# Шипованные и нешипованные — подразделы зимних: сдвиг вместо отдельного уровня #}
+                          <a href="{{ url(sub.href) }}" class="link color-2 underline-center header__submenu-link{{ sub.nested is defined and sub.nested ? ' header__submenu-link--nested' : '' }}">{{ sub.title }}</a>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
         </div>
         {% endif %}
       {% endfor %}

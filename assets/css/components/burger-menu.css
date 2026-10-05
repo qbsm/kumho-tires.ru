@@ -4,6 +4,10 @@
   display: none;
   position: fixed;
   inset: 0;
+
+  /* Отступ под шапку держит сама панель, а не прокручиваемый список:
+     иначе при прокрутке строки уезжают под логотип, который стоит на месте */
+  padding-top: 10rem;
   background-color: var(--color-1);
   z-index: var(--z-index-5);
 }
@@ -14,8 +18,11 @@
 
 .burger-menu .container {
   width: 100%;
-  height: 100vh;
-  padding-top: 10rem;
+  height: 100%;
+
+  /* Каталог развёрнут целиком — список длиннее экрана и должен прокручиваться */
+  padding-bottom: 4rem;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

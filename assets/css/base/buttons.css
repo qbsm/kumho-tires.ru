@@ -170,7 +170,7 @@
 }
 
 .button.outline-color-2 {
-    border-color: var(--color-2);
+    border-color: var(--color-4);
 }
 
 .button.outline-color-3 {
@@ -219,6 +219,12 @@
 
 .button-animated.animation-shift:hover::after {
     transform: translateX(0.5rem);
+}
+
+/* Контурная кнопка: текст остаётся тёмным, акцент держит фирменная стрелка —
+   как красные иконки в кнопках фильтра и чипах подбора */
+.button.outline-color-2.button-animated.animation-shift::after {
+    background-color: var(--color-3);
 }
 
 .button-md.button-animated:hover .button__item.animation-shift {

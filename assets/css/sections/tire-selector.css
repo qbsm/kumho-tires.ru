@@ -1,0 +1,386 @@
+/* Выделение блока на главной: тот же светлый бэнд, что у секций partners и trust */
+.tire-selector--plate {
+  padding: 5rem 0;
+  background: #f8f9fb;
+
+  @media (--lg) {
+    padding: 7rem 0;
+  }
+}
+
+/* Переход между шагами прокручивает к блоку — держим его ниже липкой шапки */
+.tire-selector__app {
+  scroll-margin-top: calc(var(--header-top-offset) + var(--header-fixed-height) + 1rem);
+}
+
+.tire-selector .section__item.block-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (--lg) {
+    gap: 4rem;
+  }
+}
+
+.tire-selector__step {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (--lg) {
+    gap: 3rem;
+  }
+}
+
+.tire-selector__step-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.tire-selector__counter {
+  font-family: var(--font-2);
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-5);
+
+  @media (--lg) {
+    font-size: 0.9em;
+  }
+}
+
+/* Размер вопроса задаёт штатная шкала .h3 — на телефоне свой rem выходил крупнее
+   заголовка секции и выбивался из остальных блоков */
+.tire-selector__question {
+  line-height: 1.2;
+}
+
+.tire-selector__note {
+  color: var(--color-5);
+}
+
+/* Чипы выбранных ответов — в языке контролов фильтра каталога: та же рамка,
+   радиус и высота, поэтому итог подбора читается как выставленный фильтр */
+.tire-selector__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.tire-selector__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 3.2rem;
+  padding: 0 1.2rem;
+  border: 0.1rem solid var(--color-4);
+  border-radius: 0.75rem;
+  background: var(--color-1);
+  font-size: 0.9em;
+  line-height: 1.2;
+  color: var(--color-2);
+}
+
+.tire-selector__chip-icon {
+  flex: 0 0 auto;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: var(--color-3);
+  mask: var(--tire-selector-icon) center / contain no-repeat;
+}
+
+.tire-selector__options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (--xm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (--md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Тот же четырёхколоночный ритм, что у карточек каталога выше по странице */
+  @media (--lg) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Карточка варианта повторяет оболочку card-tire: та же рамка, радиус, отступы и hover,
+   иконка занимает место фотографии шины — 60% ширины, прижата вправо вниз. */
+.tire-selector__option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+
+  /* Как карточки контактов и каталога: рамки нет, форму держит мягкая тень.
+     Вариант — это <button>, поэтому дефолтную рамку снимаем явно. */
+  border: none;
+  border-radius: 1.6rem;
+  background: var(--color-1);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 6%),
+    0 24px 48px rgb(0 0 0 / 4%);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    box-shadow 0.25s ease-out,
+    transform 0.25s ease-out;
+
+  @media (--lg) {
+    padding: 2rem;
+    border-radius: 2.4rem;
+  }
+}
+
+/* Выбранный вариант держит метка с галочкой — карточка остаётся без обводки,
+   только тень чуть глубже */
+.tire-selector__option.active {
+  box-shadow:
+    0 2px 4px rgb(0 0 0 / 6%),
+    0 14px 36px rgb(0 0 0 / 12%),
+    0 36px 72px rgb(0 0 0 / 8%);
+}
+
+/* Только для указателя: на тач-устройствах :hover залипает после тапа */
+@media (hover: hover) {
+  .tire-selector__option:hover {
+    box-shadow:
+      0 2px 4px rgb(0 0 0 / 6%),
+      0 14px 36px rgb(0 0 0 / 12%),
+      0 36px 72px rgb(0 0 0 / 8%);
+    transform: translateY(-2px);
+  }
+
+  .tire-selector__option:hover .tire-selector__option-mark {
+    opacity: 1;
+  }
+}
+
+/* Правый отступ держит место под меткой выбора, чтобы длинный заголовок не заходил под неё */
+.tire-selector__option-title {
+  padding-right: 3rem;
+  font-size: 1.25em;
+  line-height: 1.2;
+}
+
+.tire-selector__option-desc {
+  margin-top: 0.25rem;
+  color: var(--color-5);
+}
+
+/* Иконка тяготеет к правому краю, но не упирается в него: по центру 60%-блока она висела
+   в отрыве от края, а вплотную к паддингу — прижата. Отступ держит середину. */
+.tire-selector__option-icon-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  width: 60%;
+  margin-top: auto;
+  padding-top: 2rem;
+  padding-right: 2rem;
+
+  @media (--lg) {
+    padding-right: 2.5rem;
+  }
+}
+
+.tire-selector__option-icon {
+  width: 6.4rem;
+  height: 6.4rem;
+  background-color: var(--color-3);
+  mask: var(--tire-selector-icon) center / contain no-repeat;
+
+  @media (--lg) {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+/* Метка выбора: пустой контур появляется на hover, у выбранного — залитый акцентом */
+.tire-selector__option-mark {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--color-4);
+  border-radius: 50%;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+
+  @media (--lg) {
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+.tire-selector__option-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-1);
+  mask: url("/data/img/ui/icons/icon-check-sm-color-2.svg") center / 50% no-repeat;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.tire-selector__option.active .tire-selector__option-mark {
+  opacity: 1;
+  border-color: var(--color-3);
+  background: var(--color-3);
+}
+
+.tire-selector__option.active .tire-selector__option-mark::after {
+  opacity: 1;
+}
+
+/* Радиус — как у селектов фильтра каталога, высота — как у кнопок рядом (5.6rem):
+   32px фильтра здесь читались узкими и не давали нормальной зоны нажатия */
+.tire-selector__sizes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (--xm) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 78rem;
+  }
+}
+
+.tire-selector__size-field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 5.6rem;
+  padding: 0 1.6rem;
+  border: 1px solid var(--color-4);
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease;
+}
+
+.tire-selector__size-field:focus-within {
+  border-color: var(--color-2);
+}
+
+.tire-selector__size-icon {
+  flex: 0 0 auto;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: var(--color-5);
+  mask: var(--tire-selector-icon) center / contain no-repeat;
+}
+
+.tire-selector__size-label {
+  flex: 0 0 auto;
+  font-size: 0.9em;
+  color: var(--color-5);
+}
+
+.tire-selector__size-select {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-2);
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--color-2);
+  cursor: pointer;
+  outline: none;
+}
+
+.tire-selector__step-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+}
+
+/* Неактивная кнопка — контур, а не серая заливка: сплошное серое пятно спорит по весу с карточками */
+.tire-selector__button.disabled {
+  background: transparent;
+  border-color: var(--color-4);
+  color: var(--color-5);
+  pointer-events: none;
+}
+
+/* Второстепенное действие не спорит с основным: текстовая кнопка вместо равной по весу */
+.tire-selector__link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.95em;
+  letter-spacing: 0.04em;
+  color: var(--color-5);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.tire-selector__link-button:hover {
+  color: var(--color-2);
+}
+
+.tire-selector__link-button--back::before {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: currentcolor;
+  mask: url("/data/img/ui/icons/icon-arrow-right-sm-color-2.svg") center / contain no-repeat;
+  transform: rotate(180deg);
+  transition: transform 0.25s ease-out;
+}
+
+.tire-selector__link-button--back:hover::before {
+  transform: rotate(180deg) translateX(0.5rem);
+}
+
+.tire-selector__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (--lg) {
+    gap: 2rem;
+  }
+}
+
+/* На светлом бэнде прозрачная card-tire выглядела серой рядом с белыми карточками шагов */
+.tire-selector__card-wrap .card-tire {
+  background: var(--color-1);
+}
+
+.tire-selector__card-wrap {
+  width: 100%;
+  min-width: 0;
+
+  @media (--xm) {
+    flex: 0 0 calc((100% - 1rem) / 2);
+  }
+
+  @media (--md) {
+    flex: 0 0 calc((100% - 1rem * 2) / 3);
+  }
+
+  @media (--lg) {
+    flex: 0 0 calc((100% - 2rem * 3) / 4);
+  }
+}

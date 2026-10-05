@@ -3,6 +3,7 @@
 namespace App\Twig;
 
 use App\Support\CitySlugger;
+use App\Support\Json;
 use App\Support\JsonProcessor;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
@@ -15,6 +16,9 @@ class DataExtension extends AbstractExtension
     private array $cache = [];
     /** @var array<string, array{width: int, height: int}>|null */
     private ?array $imageDimensionsManifest = null;
+    private bool $imageManifestExists = false;
+    /** @var list<string>|null */
+    private ?array $imageSizeKeys = null;
 
     public function __construct(string $baseDir, string $baseUrl)
     {
@@ -27,10 +31,44 @@ class DataExtension extends AbstractExtension
         return [
             new TwigFunction('load_json', [$this, 'loadJson']),
             new TwigFunction('image_dimensions', [$this, 'getImageDimensions']),
+            new TwigFunction('image_has', [$this, 'imageHas']),
+            new TwigFunction('image_variants', [$this, 'imageVariants']),
+            new TwigFunction('image_fallback', [$this, 'imageFallback']),
             new TwigFunction('city_to_slug', [CitySlugger::class, 'slug']),
             new TwigFunction('resolve_city_by_slug', [$this, 'resolveCityBySlug']),
             new TwigFunction('resolve_section_meta', [$this, 'resolveSectionMeta']),
+            new TwigFunction('dealer_cities', [$this, 'dealerCities']),
+            new TwigFunction('inline_svg', [$this, 'inlineSvg'], ['is_safe' => ['html']]),
         ];
+    }
+
+    /**
+     * Уникальные города точек продаж из dealers.json (для areaServed в разметке).
+     *
+     * @return list<string>
+     */
+    public function dealerCities(string $langCode): array
+    {
+        if ($langCode === '') {
+            return [];
+        }
+        $dealers = $this->loadJson("data/json/{$langCode}/pages/dealers.json");
+        if (!is_array($dealers) || !isset($dealers['items']) || !is_array($dealers['items'])) {
+            return [];
+        }
+        $cities = [];
+        foreach ($dealers['items'] as $dealer) {
+            if (!is_array($dealer)) {
+                continue;
+            }
+            $city = isset($dealer['city']) && is_string($dealer['city']) ? trim($dealer['city']) : '';
+            if ($city !== '' && !in_array($city, $cities, true)) {
+                $cities[] = $city;
+            }
+        }
+        sort($cities);
+
+        return $cities;
     }
 
     /**
@@ -119,36 +157,206 @@ class DataExtension extends AbstractExtension
     }
 
     /**
-     * Возвращает { width, height } для пути из манифеста (tools/build/images.js).
+     * Возвращает { width, height } для пути из манифеста (tools/build/build-images.js).
+     *
+     * Принимает любую форму пути:
+     *   data/img/intro/800/foo.webp
+     *   /data/img/intro/800/foo.webp
+     *   https://host/data/img/intro/800/foo.webp
+     *   intro/800/foo.webp
      *
      * @return array{width: int, height: int}|null
      */
-    /**
-     * Путь в манифесте: относительно data/img (например intro/cover.jpg или restaurants/.../1.jpg).
-     * В шаблон может приходить с префиксом data/img/ — он отрезается при поиске.
-     */
     public function getImageDimensions(string $path): ?array
     {
-        $path = ltrim(str_replace('\\', '/', $path), '/');
-        $path = preg_replace('#^data/img/#', '', $path);
-        if ($path === '') {
+        $key = $this->normalizeManifestKey($path);
+        if ($key === '') {
             return null;
         }
-        if ($this->imageDimensionsManifest === null) {
-            $manifestPath = $this->baseDir . '/data/img/image-dimensions.json';
-            if (!is_file($manifestPath)) {
-                $this->imageDimensionsManifest = [];
-                return null;
+        $this->loadImageDimensionsManifest();
+        $entry = $this->imageDimensionsManifest[$key] ?? null;
+        if ($entry === null) {
+            return null;
+        }
+        return ['width' => $entry['width'], 'height' => $entry['height']];
+    }
+
+    /**
+     * Проверяет наличие файла изображения в манифесте.
+     *
+     * Используется в picture.twig для гейтинга `<source>` и srcset items — чтобы не
+     * эмитить пути к несуществующим файлам (например, AVIF, пропущенный из-за
+     * skip-upscale в build-images.js).
+     *
+     * Graceful fallback: если манифест не существует на диске (свежий клон без
+     * `npm run build:images`), возвращает `true` — шаблон ведёт себя как до
+     * введения гейтинга, эмитит всё, что в JSON.
+     */
+    public function imageHas(string $path): bool
+    {
+        $key = $this->normalizeManifestKey($path);
+        if ($key === '') {
+            return false;
+        }
+        $this->loadImageDimensionsManifest();
+        if (!$this->imageManifestExists) {
+            return true;
+        }
+        return isset($this->imageDimensionsManifest[$key]);
+    }
+
+    private function normalizeManifestKey(string $path): string
+    {
+        $path = str_replace('\\', '/', $path);
+        $path = preg_replace('#^https?://[^/]+/#', '', $path) ?? $path;
+        $path = ltrim($path, '/');
+        return preg_replace('#^data/img/#', '', $path) ?? $path;
+    }
+
+    /**
+     * Для raw-path возвращает резолвнутые ключи (proposal 0003, raw-source contract).
+     *
+     * Вход:  "data/img/intro/raw/desk-lemons.webp"
+     * Выход: [
+     *   '400'  => ['webp' => 'data/img/intro/400/desk-lemons.webp', 'avif' => 'data/img/intro/400/desk-lemons.avif'],
+     *   '800'  => ['webp' => 'data/img/intro/800/desk-lemons.webp', 'avif' => null],
+     *   '1600' => null,  // вообще не сгенерирован под этот ключ
+     * ]
+     *
+     * Только downscale: эмитим ключи, которые реально есть в manifest'е.
+     * Если в пути нет `/raw/` сегмента → возвращаем [] (контракт нарушен).
+     * Если манифест отсутствует на диске → возвращаем [] (build:images не запускался).
+     *
+     * @return array<string, array{webp: ?string, avif: ?string}|null>
+     */
+    public function imageVariants(string $rawPath): array
+    {
+        $pattern = $this->extractPatternFromRawPath($rawPath);
+        if ($pattern === null) {
+            return [];
+        }
+        $this->loadImageDimensionsManifest();
+        if (!$this->imageManifestExists) {
+            return [];
+        }
+
+        $variants = [];
+        foreach ($this->loadImageSizeKeys() as $key) {
+            $webpKey = $pattern['dir'] . $key . '/' . $pattern['basename'] . '.webp';
+            $avifKey = $pattern['dir'] . $key . '/' . $pattern['basename'] . '.avif';
+
+            $hasWebp = isset($this->imageDimensionsManifest[$webpKey]);
+            $hasAvif = isset($this->imageDimensionsManifest[$avifKey]);
+
+            $variants[$key] = ($hasWebp || $hasAvif)
+                ? [
+                    'webp' => $hasWebp ? 'data/img/' . $webpKey : null,
+                    'avif' => $hasAvif ? 'data/img/' . $avifKey : null,
+                ]
+                : null;
+        }
+        return $variants;
+    }
+
+    /**
+     * Возвращает наименьший доступный webp-вариант для raw-path.
+     *
+     * Используется в card-секциях (card-news, card-tire и т.п.) для
+     * `<div style="background-image: url(...)">` или `<img src="...">` —
+     * когда нужен один путь, не srcset. Берётся самый маленький ключ
+     * (обычно 400) — экономит трафик в card-grid'ах.
+     *
+     * Если raw не валиден или manifest пуст → ''.
+     */
+    public function imageFallback(string $rawPath): string
+    {
+        foreach ($this->imageVariants($rawPath) as $variant) {
+            if (is_array($variant) && !empty($variant['webp'])) {
+                return $variant['webp'];
             }
-            $content = @file_get_contents($manifestPath);
-            $data = $content !== false ? json_decode($content, true) : null;
-            $this->imageDimensionsManifest = is_array($data) ? $data : [];
         }
-        $entry = $this->imageDimensionsManifest[$path] ?? null;
-        if (!is_array($entry) || !isset($entry['width'], $entry['height'])) {
+        return '';
+    }
+
+    /**
+     * Извлекает (dir, basename) из raw-path для resolve в manifest.
+     *
+     * "data/img/intro/raw/desk-lemons.webp" → ['dir' => 'intro/', 'basename' => 'desk-lemons']
+     * "data/img/restaurants/X/raw/cover.jpg" → ['dir' => 'restaurants/X/', 'basename' => 'cover']
+     *
+     * Возвращает null если в пути нет `/raw/` сегмента (контракт нарушен).
+     *
+     * @return array{dir: string, basename: string}|null
+     */
+    private function extractPatternFromRawPath(string $rawPath): ?array
+    {
+        $path = $this->normalizeManifestKey($rawPath);
+        if ($path === '' || !str_contains($path, '/raw/')) {
             return null;
         }
-        return ['width' => (int) $entry['width'], 'height' => (int) $entry['height']];
+        $cleaned = str_replace('/raw/', '/', $path);
+        $info = pathinfo($cleaned);
+        $dir = $info['dirname'];
+        $dirPrefix = ($dir === '.' || $dir === '') ? '' : $dir . '/';
+        return [
+            'dir' => $dirPrefix,
+            'basename' => $info['filename'],
+        ];
+    }
+
+    /**
+     * @return list<string>
+     */
+    private function loadImageSizeKeys(): array
+    {
+        if ($this->imageSizeKeys !== null) {
+            return $this->imageSizeKeys;
+        }
+        $path = $this->baseDir . '/config/image-sizes.json';
+        $data = is_file($path) ? Json::load($path) : null;
+        $keys = is_array($data) && isset($data['keys']) && is_array($data['keys'])
+            ? $data['keys']
+            : ['400', '800', '1280', '1600', '1920', '2560'];
+        $this->imageSizeKeys = array_values(array_map('strval', $keys));
+        return $this->imageSizeKeys;
+    }
+
+    private function loadImageDimensionsManifest(): void
+    {
+        if ($this->imageDimensionsManifest !== null) {
+            return;
+        }
+        $manifestPath = $this->baseDir . '/assets/img/build/image-dimensions.json';
+        $this->imageManifestExists = is_file($manifestPath);
+        $this->imageDimensionsManifest = Json::load($manifestPath) ?? [];
+    }
+
+    /**
+     * Встраивает SVG-схему в разметку: текст внутри остаётся живым и наследует шрифты сайта.
+     */
+    public function inlineSvg(string $relativePath): string
+    {
+        // JsonProcessor уже превратил data/* в абсолютный URL — возвращаем к пути от корня проекта
+        if (str_starts_with($relativePath, $this->baseUrl)) {
+            $relativePath = substr($relativePath, strlen($this->baseUrl));
+        }
+        $relativePath = ltrim($relativePath, '/');
+        if (!preg_match('#^data/img/[A-Za-z0-9/_-]+\.svg$#', $relativePath)) {
+            return '';
+        }
+
+        $path = $this->baseDir . '/' . $relativePath;
+        $real = realpath($path);
+        if ($real === false || !str_starts_with($real, $this->baseDir . '/data/img/')) {
+            return '';
+        }
+
+        $markup = file_get_contents($real);
+        if ($markup === false) {
+            return '';
+        }
+
+        return preg_replace('/<\?xml.*?\?>\s*/s', '', $markup) ?? '';
     }
 
     public function loadJson(string $relativePath): ?array
@@ -159,20 +367,8 @@ class DataExtension extends AbstractExtension
             return $this->cache[$relativePath];
         }
 
-        $fullPath = $this->baseDir . '/' . $relativePath;
-        if (!is_file($fullPath)) {
-            $this->cache[$relativePath] = null;
-            return null;
-        }
-
-        $content = @file_get_contents($fullPath);
-        if ($content === false) {
-            $this->cache[$relativePath] = null;
-            return null;
-        }
-
-        $data = json_decode($content, true);
-        if ($data === null && json_last_error() !== JSON_ERROR_NONE) {
+        $data = Json::load($this->baseDir . '/' . $relativePath);
+        if ($data === null) {
             $this->cache[$relativePath] = null;
             return null;
         }

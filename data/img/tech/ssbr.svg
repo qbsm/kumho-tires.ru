@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 360" width="825" height="360" role="img"
+     aria-label="Сравнение S-SBR второго и пятого поколения: в пятом поколении полимерные цепи закреплены на частицах силики с двух концов">
+  <defs>
+    <radialGradient id="ball" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#fdfdfd"/>
+      <stop offset="0.55" stop-color="#e3e3e5"/>
+      <stop offset="1" stop-color="#c3c4c8"/>
+    </radialGradient>
+    <style>
+      .lbl { font: 600 12px/1 'TT Norms Pro', 'Inter', system-ui, sans-serif; fill: #4b4b4b; text-anchor: middle; }
+      .pill { font: 700 22px/1 'TT Norms Pro', 'Inter', system-ui, sans-serif; text-anchor: middle; }
+      .chain { fill: none; stroke: #1b86d4; stroke-width: 4.5; stroke-linecap: round; }
+      .loose { fill: none; stroke: #f5a11e; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+
+  <g id="gen2">
+    <path class="chain" d="M8 210 C40 150 70 130 96 160 C120 188 96 214 66 226 C36 238 26 262 54 272"/>
+    <path class="chain" d="M20 96 C60 40 120 44 158 76 C196 108 236 96 268 62"/>
+    <path class="chain" d="M186 62 C232 44 268 66 300 92 C330 116 350 106 356 74"/>
+    <path class="chain" d="M120 168 C160 196 206 190 240 172"/>
+    <g class="loose">
+      <path d="M14 60 a14 14 0 1 0 20 6"/><path d="M60 132 a13 13 0 1 0 18 5"/>
+      <path d="M126 122 a13 13 0 1 0 18 5"/><path d="M186 96 a13 13 0 1 0 18 5"/>
+      <path d="M212 46 a13 13 0 1 0 18 5"/><path d="M24 200 a13 13 0 1 0 18 5"/>
+      <path d="M92 200 a13 13 0 1 0 18 5"/><path d="M206 236 a13 13 0 1 0 18 5"/>
+      <path d="M330 60 a13 13 0 1 0 18 5"/>
+    </g>
+    <g>
+      <circle cx="36" cy="57" r="26" fill="url(#ball)"/><text class="lbl" x="36" y="61">силика</text>
+      <circle cx="181" cy="76" r="27" fill="url(#ball)"/><text class="lbl" x="181" y="80">силика</text>
+      <circle cx="316" cy="93" r="26" fill="url(#ball)"/><text class="lbl" x="316" y="97">силика</text>
+      <circle cx="106" cy="161" r="27" fill="url(#ball)"/><text class="lbl" x="106" y="165">силика</text>
+      <circle cx="240" cy="197" r="26" fill="url(#ball)"/><text class="lbl" x="240" y="201">силика</text>
+      <circle cx="65" cy="232" r="26" fill="url(#ball)"/><text class="lbl" x="65" y="236">силика</text>
+    </g>
+    <rect x="0" y="287" width="364" height="55" rx="27" fill="#909195"/>
+    <text class="pill" x="182" y="322" fill="#fff">S-SBR 2-го поколения</text>
+  </g>
+
+  <path d="M386 128 L386 216 L432 172 Z" fill="#7db037"/>
+
+  <g id="gen5">
+    <path class="chain" d="M470 78 C512 60 556 84 584 120 C610 152 640 156 668 132"/>
+    <path class="chain" d="M486 96 C500 150 540 178 574 168 C610 158 640 176 660 206"/>
+    <path class="chain" d="M672 84 C700 110 724 136 736 172"/>
+    <path class="chain" d="M598 158 C630 132 654 108 672 78"/>
+    <path class="chain" d="M508 210 C540 196 566 182 580 164"/>
+    <path class="chain" d="M690 92 C716 120 730 150 738 180"/>
+    <g>
+      <circle cx="481" cy="59" r="27" fill="url(#ball)"/><text class="lbl" x="481" y="63">силика</text>
+      <circle cx="668" cy="62" r="28" fill="url(#ball)"/><text class="lbl" x="668" y="66">силика</text>
+      <circle cx="585" cy="152" r="27" fill="url(#ball)"/><text class="lbl" x="585" y="156">силика</text>
+      <circle cx="497" cy="200" r="27" fill="url(#ball)"/><text class="lbl" x="497" y="204">силика</text>
+      <circle cx="727" cy="187" r="27" fill="url(#ball)"/><text class="lbl" x="727" y="191">силика</text>
+    </g>
+    <g>
+      <circle cx="524" cy="47" r="7" fill="#5aa832"/><circle cx="633" cy="47" r="7" fill="#5aa832"/>
+      <circle cx="618" cy="142" r="7" fill="#5aa832"/><circle cx="719" cy="151" r="7" fill="#5aa832"/>
+      <circle cx="704" cy="21" r="7" fill="#d92b2b"/><circle cx="474" cy="90" r="7" fill="#d92b2b"/>
+      <circle cx="553" cy="131" r="7" fill="#d92b2b"/><circle cx="586" cy="188" r="7" fill="#d92b2b"/>
+      <circle cx="640" cy="90" r="7" fill="#d92b2b"/><circle cx="697" cy="92" r="7" fill="#d92b2b"/>
+      <circle cx="699" cy="213" r="7" fill="#d92b2b"/>
+      <circle cx="513" cy="76" r="8" fill="#f5a11e"/><circle cx="663" cy="99" r="8" fill="#f5a11e"/>
+      <circle cx="691" cy="178" r="8" fill="#f5a11e"/>
+    </g>
+    <rect x="407" y="287" width="381" height="55" rx="27" fill="#7db037"/>
+    <text class="pill" x="597" y="322" fill="#fff">S-SBR 5-го поколения</text>
+  </g>
+</svg>

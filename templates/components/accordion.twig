@@ -19,7 +19,7 @@
 }
 </script>
 {% endif %}
-<div class="accordion" itemscope itemtype="https://schema.org/FAQPage" id="accordion-{{ accordion_id|default('faq') }}">
+<div class="accordion" itemscope itemtype="https://schema.org/FAQPage" id="accordion-{{ accordion_id|default('faq') }}"{% if preview_limit|default(0) > 0 %} data-preview-limit="{{ preview_limit }}"{% endif %}>
   {% for item in items %}
     <div class="accordion__item question-wrap" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
       <button type="button" class="accordion__subitem title-wrap" aria-expanded="false" aria-controls="accordion-panel-{{ accordion_id|default('faq') }}-{{ loop.index0 }}" id="accordion-trigger-{{ accordion_id|default('faq') }}-{{ loop.index0 }}">
@@ -34,6 +34,6 @@
     </div>
   {% endfor %}
   <div class="accordion__item show-all">
-    <button type="button" class="accordion__show-all link color-2 weight-500 uppercase">{{ global.accordion['show-all'][lang_code]|default(global.accordion['show-all'].ru) }}</button>
+    <button type="button" class="accordion__show-all link color-2 weight-400 underline-static">{{ global.accordion['show-all'][lang_code]|default(global.accordion['show-all'].ru) }}</button>
   </div>
 </div>

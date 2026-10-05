@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" width="640" height="250" role="img"
+     aria-label="Брекер: раньше корд только из нейлона N-66, теперь гибридный жгут из арамида и нейлона">
+  <style>
+    .cap  { font: 600 14px/1 'TT Norms Pro','Inter',system-ui,sans-serif; fill: #2b2f36; }
+    .pill { font: 700 15px/1 'TT Norms Pro','Inter',system-ui,sans-serif; text-anchor: middle; fill: #fff; }
+    .lead { stroke: #2b2f36; stroke-width: 1.5; fill: none; }
+    .n { fill: #b9bcc2; stroke: #8b8f97; stroke-width: 1.2; }
+    .a { fill: #ded7bd; stroke: #ada691; stroke-width: 1.2; }
+  </style>
+
+  <!-- нейлоновый жгут -->
+  <g transform="translate(24,26)">
+    <g>
+      <rect class="n" x="2"  y="6" width="34" height="76" rx="17" transform="rotate(28 19 44)"/>
+      <rect class="n" x="30" y="6" width="34" height="76" rx="17" transform="rotate(28 47 44)"/>
+      <rect class="n" x="58" y="6" width="34" height="76" rx="17" transform="rotate(28 75 44)"/>
+      <rect class="n" x="86" y="6" width="34" height="76" rx="17" transform="rotate(28 103 44)"/>
+      <rect class="n" x="114" y="6" width="34" height="76" rx="17" transform="rotate(28 131 44)"/>
+    </g>
+    <path class="lead" d="M20 122 L74 74"/>
+    <path d="M74 74 l11 1 l-6 8 z" fill="#2b2f36"/>
+    <text class="cap" x="0" y="140">N-66 (нейлон)</text>
+    <rect x="0" y="160" width="176" height="32" rx="16" fill="#909398"/>
+    <text class="pill" x="88" y="182">Нейлон</text>
+  </g>
+
+  <path d="M258 100 L258 140 L286 120 Z" fill="#2b2f36"/>
+
+  <!-- гибридный жгут -->
+  <g transform="translate(324,26)">
+    <g>
+      <rect class="a" x="2"   y="6" width="34" height="76" rx="17" transform="rotate(28 19 44)"/>
+      <rect class="n" x="30"  y="6" width="34" height="76" rx="17" transform="rotate(28 47 44)"/>
+      <rect class="a" x="58"  y="6" width="34" height="76" rx="17" transform="rotate(28 75 44)"/>
+      <rect class="n" x="86"  y="6" width="34" height="76" rx="17" transform="rotate(28 103 44)"/>
+      <rect class="a" x="114" y="6" width="34" height="76" rx="17" transform="rotate(28 131 44)"/>
+    </g>
+    <path class="lead" d="M232 22 L166 52"/>
+    <path d="M166 52 l11 -1 l-4 9 z" fill="#2b2f36"/>
+    <text class="cap" x="196" y="16">N-66</text>
+    <path class="lead" d="M24 122 L74 78"/>
+    <path d="M74 78 l11 1 l-6 8 z" fill="#2b2f36"/>
+    <text class="cap" x="0" y="140">Арамид</text>
+    <rect x="0" y="160" width="216" height="32" rx="16" fill="#d81f26"/>
+    <text class="pill" x="108" y="182">Арамид + нейлон</text>
+  </g>
+</svg>

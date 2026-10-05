@@ -14,10 +14,31 @@
             {% endfor %}
           </nav>
         {% endif %}
-        {% if n.cover is defined and n.cover.src %}
-          <div class="news-detail__cover-wrap">
-            <div class="news-detail__cover" style="background-image: url('{{ url(n.cover.src) }}');"></div>
-          </div>
+        {# Обложка по контракту ADR-0007: raw-path строкой или {src}; фон — DPR-адаптивный image-set. #}
+        {% set _coverRaw = '' %}
+        {% if n.cover is defined %}
+          {% if n.cover is iterable == false and n.cover %}
+            {% set _coverRaw = n.cover %}
+          {% elseif n.cover.src is defined and n.cover.src is iterable == false %}
+            {% set _coverRaw = n.cover.src %}
+          {% endif %}
+        {% endif %}
+        {% if _coverRaw %}
+          {% set _v = image_variants(_coverRaw) %}
+          {% set _set = [] %}
+          {% for _size, _dpr in {'800': '1x', '1280': '2x', '1600': '3x'} %}
+            {% if _v[_size] is defined and _v[_size] and _v[_size].webp %}
+              {% set _set = _set|merge(["url('" ~ url(_v[_size].webp) ~ "') " ~ _dpr]) %}
+            {% endif %}
+          {% endfor %}
+          {% set _fallbackUrl = (_v['1280'] is defined and _v['1280'] and _v['1280'].webp) ? url(_v['1280'].webp) : url(image_fallback(_coverRaw)) %}
+          {% set _bg = "background-image: url('" ~ _fallbackUrl ~ "');" %}
+          {% if _set|length > 0 %}{% set _bg = _bg ~ " background-image: -webkit-image-set(" ~ _set|join(', ') ~ "); background-image: image-set(" ~ _set|join(', ') ~ ");" %}{% endif %}
+          {% if _fallbackUrl %}
+            <div class="news-detail__cover-wrap">
+              <div class="news-detail__cover" style="{{ _bg }}"></div>
+            </div>
+          {% endif %}
         {% endif %}
         <div class="news-detail__meta">
           {% if n.hex is defined %}<span class="news-detail__hex" style="background: {{ n.hex }};"></span>{% endif %}

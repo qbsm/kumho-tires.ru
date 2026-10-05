@@ -1,7 +1,30 @@
-<a href="{% if item.slug is defined %}{{ url('/news/' ~ item.slug) }}{% else %}#{% endif %}" class="card-news card-news-link link">
+<a href="{% if item.slug is defined %}{{ url((base|default('/news/')) ~ item.slug) }}{% else %}#{% endif %}" class="card-news card-news-link link">
   <div class="card-news__item cover-wrap">
-    {% if item.cover.src is defined %}
+    {# Новый контракт (ADR-0007): cover — raw-path (string или {src}). Фон — DPR-адаптивный image-set. #}
+    {% set _coverRaw = '' %}
+    {% if item.cover is iterable == false and item.cover %}
+      {% set _coverRaw = item.cover %}
+    {% elseif item.cover.src is defined and item.cover.src is iterable == false %}
+      {% set _coverRaw = item.cover.src %}
+    {% endif %}
+    {% if _coverRaw %}
+      {% set _v = image_variants(_coverRaw) %}
+      {% set _set = [] %}
+      {% for _size, _dpr in {'400': '1x', '800': '2x', '1280': '3x'} %}
+        {% if _v[_size] is defined and _v[_size] and _v[_size].webp %}
+          {% set _set = _set|merge(["url('" ~ url(_v[_size].webp) ~ "') " ~ _dpr]) %}
+        {% endif %}
+      {% endfor %}
+      {% set _fallbackUrl = (_v['800'] is defined and _v['800'] and _v['800'].webp) ? url(_v['800'].webp) : url(image_fallback(_coverRaw)) %}
+      {% set _bg = "background-image: url('" ~ _fallbackUrl ~ "');" %}
+      {% if _set|length > 0 %}{% set _bg = _bg ~ " background-image: -webkit-image-set(" ~ _set|join(', ') ~ "); background-image: image-set(" ~ _set|join(', ') ~ ");" %}{% endif %}
+      {% if _fallbackUrl %}
+        <div class="card-news__cover" style="{{ _bg }}"></div>
+      {% endif %}
+    {# LEGACY: cover.src — direct url string внутри объекта (без raw/) #}
+    {% elseif item.cover.src is defined %}
       <div class="card-news__cover" style="background-image: url('{{ url(item.cover.src) }}');"></div>
+    {# LEGACY: cover как объект с числовыми ключами #}
     {% elseif item.cover['800'] is defined %}
       <div class="card-news__cover" style="background-image: url('{{ url(item.cover['800']) }}');"></div>
     {% elseif item.cover['400'] is defined %}
@@ -10,10 +33,13 @@
   </div>
   <div class="card-news__item content-wrap">
     <div class="card-news__item date-link-wrap">
-      <div class="card-news__subitem date-wrap">
-        <div class="card-news__hex-cube"{% if item.hex is defined %} style="background: {{ item.hex }};"{% endif %}></div>
-        <span class="card-news__date">{{ item.date | raw }}</span>
-      </div>
+      {% if (item.date is defined and item.date) or (item.reading is defined and item.reading > 0) %}
+        <div class="card-news__subitem date-wrap">
+          <div class="card-news__hex-cube"{% if item.hex is defined and item.hex %} style="background: {{ item.hex }};"{% endif %}></div>
+          {% if item.date is defined and item.date %}<span class="card-news__date">{{ item.date | raw }}</span>{% endif %}
+          {% if item.reading is defined and item.reading > 0 %}<span class="card-news__reading">{{ item.reading }} мин чтения</span>{% endif %}
+        </div>
+      {% endif %}
       <div class="card-news__subitem link-wrap">
         <span class="card-news__link nowrap uppercase">Читать статью</span>
       </div>

@@ -5,3 +5,209 @@
 .contacts .container {
   /* Стили для контейнера в contacts */
 }
+
+/* Компактные вертикальные отступы: базовые .section дают по 6rem сверху и снизу,
+   на короткой странице контактов они складываются в огромные пустоты. */
+.page-contacts .promo.section {
+  padding-bottom: 2.5rem;
+
+  @media (--lg) {
+    padding-bottom: 3.5rem;
+  }
+}
+
+.page-contacts .content-container.section {
+  padding-top: 0;
+  padding-bottom: 1.5rem;
+}
+
+.page-contacts .content-container.section + .footer {
+  margin-top: 4.5rem;
+
+  @media (--lg) {
+    margin-top: 6rem;
+  }
+}
+
+/* --- Мягкие карточки ------------------------------------------------------
+   Многослойная мягкая тень вместо рамки; подъёма на наведении нет намеренно.
+   Одна колонка: блоки идут стопкой. */
+
+.contacts-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (--lg) {
+    gap: 2.5rem;
+  }
+}
+
+.contacts-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.4rem 2rem;
+  border-radius: 1.6rem;
+  background: var(--color-1);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 4%),
+    0 8px 24px rgb(0 0 0 / 6%),
+    0 24px 48px rgb(0 0 0 / 4%);
+
+  @media (--lg) {
+    padding: 3.5rem;
+    border-radius: 2.4rem;
+  }
+}
+
+.contacts-card__desc {
+  display: block;
+  max-width: 58rem;
+  margin-top: 0.8rem;
+  color: rgb(0 0 0 / 70%);
+}
+
+.contacts-card__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+/* Сетка строки: подпись сверху во второй колонке, иконка — напротив значения */
+.contacts-card__row {
+  display: grid;
+  grid-template-columns: 2.8rem minmax(0, 1fr);
+  align-items: start;
+  gap: 0.4rem 1.6rem;
+  padding: 1.8rem 0;
+  color: inherit;
+}
+
+.contacts-card__row + .contacts-card__row {
+  border-top: 1px solid var(--color-4);
+}
+
+/* Высота бокса равна строке значения — иконка садится на первую базовую линию */
+.contacts-card__icon {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.24rem;
+}
+
+.contacts-card__icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contacts-card__label {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-5);
+}
+
+.contacts-card__value {
+  grid-column: 2;
+  grid-row: 2;
+  font-family: var(--font-2);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.contacts-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+
+.contacts-card--map {
+  padding-bottom: 2rem;
+
+  @media (--lg) {
+    padding-bottom: 2.5rem;
+  }
+}
+
+.contacts-card__map {
+  position: relative;
+  width: 100%;
+  height: 28rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+
+  @media (--lg) {
+    height: 38rem;
+    border-radius: 1.6rem;
+  }
+}
+
+.contacts-card__map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contacts-card__form {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+
+/* Карта и форма — без теней: тень остаётся приёмом контентных блоков.
+   Отступы по вертикали тоже снимаем: у блоков без плашки padding карточки
+   складывался с зазором стопки и разрывал страницу. */
+.contacts-card--map,
+.contacts-card--form {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Короткая акцентная линия под самим заголовком — приём card-action__line */
+.contacts-card:not(.contacts-card--form) .heading::after {
+  content: "";
+  display: block;
+  width: 8rem;
+  height: 0.2rem;
+  margin-top: 1.2rem;
+  background-color: var(--color-3);
+}
+
+.contacts-card:not(.contacts-card--map, .contacts-card--form) .contacts-card__list {
+  margin-top: 0.5rem;
+}
+
+.contacts-card--form {
+  margin-top: 0;
+
+  @media (--lg) {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Розничный блок — другая аудитория после формы: отделяем заметно,
+   иначе он читается продолжением кнопки отправки */
+.contacts-card--form + .contacts-card {
+  margin-top: 3rem;
+
+  @media (--lg) {
+    margin-top: 5rem;
+  }
+}
