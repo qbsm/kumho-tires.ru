@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Линейка Crugen в каталоге"
+        },
+        "desc": "<p>Crugen — летняя линейка Kumho для кроссоверов и внедорожников: <b>2 модели и 57 типоразмеров</b>, посадочные диаметры <b>от R16 до R20</b>.</p><p><a href='/tires/hp71' class='link inline weight-400'>Crugen HP71</a> — основная модель, 44 типоразмера от R16 до R20, рассчитана на асфальт и тяжёлый кузов: усиленный каркас, устойчивость к нагреву на трассе.</p><p><a href='/tires/hp91' class='link inline weight-400'>Crugen HP91</a> — 13 типоразмеров, R16–R19, для мощных кроссоверов с упором на управляемость.</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Crugen или Road Venture"
+        },
+        "desc": "<p>Crugen — шоссейные шины для кроссоверов, которые почти всё время ездят по асфальту. Тихие, устойчивые на скорости, с предсказуемым торможением на мокрой дороге.</p><p>Road Venture — линейка для грунта, щебня и грязи: крупный рисунок, усиленные боковины. На асфальте такие шины шумнее и изнашиваются быстрее.</p><p>Смотрите <a href='/tires/road-venture' class='link inline weight-400'>Road Venture</a>, если хотя бы часть маршрутов проходит вне асфальта. Зимние модели для кроссоверов собраны в <a href='/tires/wintercraft' class='link inline weight-400'>WinterCraft</a>.</p>"
+      }
+    ]
+  }
+}

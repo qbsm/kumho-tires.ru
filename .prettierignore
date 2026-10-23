@@ -1,8 +1,11 @@
-node_modules/
-vendor/
-dist/
+assets/js/vendor/
 assets/js/build/
 assets/css/build/
-data/
-public/assets/
-public/data/
+node_modules/
+vendor/
+cache/
+logs/
+public/assets
+public/data
+*.min.js
+*.min.css

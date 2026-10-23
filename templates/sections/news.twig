@@ -9,14 +9,14 @@
           </div>
         {% endif %}
         {% if page_id is defined and page_id != 'news' and data.all_news_link is defined %}
-          <a href="{{ url(data.all_news_link.href | default('/news/')) }}" class="link underline-center news__all-link">{{ data.all_news_link.title | default('Все новости') }}</a>
+          <a href="{{ url(data.all_news_link.href | default('/news/')) }}" class="link underline-static news__all-link">{{ data.all_news_link.title | default('Все новости') }}</a>
         {% endif %}
       </div>
       {% if data.items is defined and data.items is not empty %}
         <div class="section__subitem cards-news-wrap">
           {% for item in data.items %}
             <div class="section__inner card-news-wrap">
-              {% include 'components/card-news.twig' with {'item': item} %}
+              {% include 'components/card-news.twig' with {'item': item, 'heading_tag': (page_id is defined and page_id == 'news') ? 'h2' : 'span'} %}
             </div>
           {% endfor %}
         </div>

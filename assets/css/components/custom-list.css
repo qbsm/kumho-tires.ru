@@ -1,14 +1,37 @@
+/* Маркер — красный шеврон: точка списка в фирменной палитре не читалась
+   и спорила с акцентами заголовков. Рисуем углом из двух границ, чтобы
+   не тащить иконку и не зависеть от шрифта. */
 .custom-list {
   margin: 0;
-  margin-left: 1.5rem;
   padding: 0;
+  list-style: none;
   font-size: 1em;
 }
 
 .custom-list__item {
+  position: relative;
   padding-top: 0.5rem;
+  padding-left: 2.4rem;
+}
+
+.custom-list__item::before {
+  content: "";
+  position: absolute;
+  left: 0.4rem;
+  top: calc(0.5rem + 0.56em);
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: -0.3rem;
+  border-top: 0.2rem solid var(--color-3);
+  border-right: 0.2rem solid var(--color-3);
+  transform: rotate(45deg);
 }
 
 .custom-list__item-no-bullet {
   list-style: none;
+  padding-left: 0;
+}
+
+.custom-list__item-no-bullet::before {
+  content: none;
 }

@@ -1,0 +1,27 @@
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.icon-text__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.icon-text__icon img {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.icon-text__text {
+  min-width: 0;
+}
+
+.icon-text__link,
+.icon-text__title {
+  font-size: 1.125em;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}

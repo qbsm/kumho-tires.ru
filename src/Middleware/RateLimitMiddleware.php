@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Middleware;
 
+use App\Support\Json;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -11,15 +12,17 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 /**
- * Rate limiting для POST /api/send: ограничение запросов по IP в скользящем окне.
- * Конфиг: settings['rate_limit_api_send'] => [ 'max_requests' => 10, 'window_seconds' => 60 ].
+ * Rate limiting публичных POST-эндпоинтов: ограничение запросов по IP в скользящем окне.
+ * Конфиг: settings['rate_limit_api_send'] => [ 'max_requests' => 10, 'window_seconds' => 60,
+ * 'paths' => ['/api/send'] ]. Deployment добавляет в 'paths' свои эндпоинты — правка ядра
+ * для этого не нужна.
  * Хранилище: файлы в cache/rate_limit/ (по хешу IP).
  */
 final class RateLimitMiddleware implements MiddlewareInterface
 {
-    private const TARGET_PATH = '/api/send';
+    private const DEFAULT_PATHS = ['/api/send'];
 
-    /** @var array{max_requests?: int, window_seconds?: int} */
+    /** @var array{max_requests?: int, window_seconds?: int, paths?: array<int,string>} */
     private array $config;
 
     private string $cacheDir;
@@ -41,7 +44,9 @@ final class RateLimitMiddleware implements MiddlewareInterface
         $path = $request->getUri()->getPath();
         $method = $request->getMethod();
 
-        if ($method !== 'POST' || $path !== self::TARGET_PATH) {
+        $targetPaths = $this->config['paths'] ?? self::DEFAULT_PATHS;
+
+        if ($method !== 'POST' || !in_array(rtrim($path, '/') ?: '/', $targetPaths, true)) {
             return $handler->handle($request);
         }
 
@@ -52,23 +57,24 @@ final class RateLimitMiddleware implements MiddlewareInterface
         }
 
         $ip = $this->getClientIp($request);
-        $key = md5($ip);
+        // Счётчик свой на каждый путь: иначе копии контакта из виджета съедали бы лимит
+        // обычной формы, и человек, потыкав виджет, не смог бы отправить заявку.
+        $key = md5($ip . '|' . (rtrim($path, '/') ?: '/'));
         $file = $this->cacheDir . '/' . $key . '.json';
 
         if (!is_dir($this->cacheDir)) {
-            @mkdir($this->cacheDir, 0755, true);
+            @mkdir($this->cacheDir, 0o755, true);
         }
+
+        $this->pruneExpired($window);
 
         $now = time();
         $data = ['count' => 0, 'window_start' => $now];
-        if (is_readable($file)) {
-            $raw = (string) @file_get_contents($file);
-            $decoded = json_decode($raw, true);
-            if (is_array($decoded) && isset($decoded['window_start'], $decoded['count'])) {
-                if ($now - (int) $decoded['window_start'] < $window) {
-                    $data = ['count' => (int) $decoded['count'], 'window_start' => (int) $decoded['window_start']];
-                }
-            }
+        $decoded = Json::load($file);
+        if ($decoded !== null && isset($decoded['window_start'], $decoded['count'])
+            && $now - (int) $decoded['window_start'] < $window
+        ) {
+            $data = ['count' => (int) $decoded['count'], 'window_start' => (int) $decoded['window_start']];
         }
 
         $data['count']++;
@@ -89,6 +95,26 @@ final class RateLimitMiddleware implements MiddlewareInterface
         }
 
         return $handler->handle($request);
+    }
+
+    /**
+     * Счётчик на IP остаётся в cache/rate_limit навсегда, хотя после окна бесполезен.
+     * Чистим отработавшие файлы примерно раз в сто запросов — скан директории на каждом
+     * POST под ботовым наплывом сам стал бы нагрузкой.
+     */
+    private function pruneExpired(int $window): void
+    {
+        if (mt_rand(1, 100) !== 1) {
+            return;
+        }
+
+        $deadline = time() - max($window * 10, 3600);
+        foreach (glob($this->cacheDir . '/*.json') ?: [] as $file) {
+            $mtime = @filemtime($file);
+            if ($mtime !== false && $mtime < $deadline) {
+                @unlink($file);
+            }
+        }
     }
 
     private function getClientIp(ServerRequestInterface $request): string

@@ -1,10 +1,10 @@
 {
   "name": "tires",
-  "title": "Модели шин Kumho",
+  "title": "Шины Kumho (Кумхо) — каталог моделей, купить в России",
   "meta": [
     {
       "name": "description",
-      "content": "Каталог шин Kumho: модели AT52, Road Venture, PorTran, Ecowing, SOLUS, CRUGEN, ECSTA и другие."
+      "content": "Каталог шин Kumho (Кумхо): 36 моделей и 1148 типоразмеров R12–R22 — летняя, зимняя, всесезонная и шипованная резина. Фильтр по сезону, диаметру, ширине и профилю."
     },
     {
       "property": "og:url",
@@ -16,11 +16,11 @@
     },
     {
       "property": "og:title",
-      "content": "Модели шин Kumho"
+      "content": "Шины Kumho (Кумхо) — каталог моделей, купить в России"
     },
     {
       "property": "og:description",
-      "content": "Каталог шин Kumho: модели AT52, Road Venture, PorTran, Ecowing, SOLUS, CRUGEN, ECSTA и другие."
+      "content": "Каталог шин Kumho (Кумхо): 36 моделей и 1148 типоразмеров R12–R22 — летняя, зимняя, всесезонная и шипованная резина. Фильтр по сезону, диаметру, ширине и профилю."
     },
     {
       "property": "og:site_name",
@@ -28,7 +28,7 @@
     },
     {
       "property": "og:image",
-      "content": "https://kumho-tires.ru/data/img/seo/og.webp?v=2"
+      "content": "https://kumho-tires.ru/data/img/seo/og.jpg?v=3"
     }
   ]
 }

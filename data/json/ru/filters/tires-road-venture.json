@@ -1,0 +1,27 @@
+{
+  "content": {
+    "class": "content-tires",
+    "items": [
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "Линейка Road Venture в каталоге"
+        },
+        "desc": "<p>Road Venture — внедорожная линейка Kumho: <b>8 моделей и 104 типоразмера</b>, посадочные диаметры <b>от R14 до R20</b>.</p><p><b>Универсальные A/T</b> — <a href='/tires/at52' class='link inline weight-400'>Road Venture AT52</a> (47 типоразмеров, R15–R20), основная модель линейки, и <a href='/tires/at61' class='link inline weight-400'>Road Venture AT61</a> (5 типоразмеров, R15–R16).</p><p><b>Грязевые M/T</b> — <a href='/tires/mt51' class='link inline weight-400'>Road Venture MT51</a> (16 типоразмеров, R15–R18) и <a href='/tires/mt71' class='link inline weight-400'>Road Venture MT71</a> (11 типоразмеров, R15–R20) с крупными грунтозацепами.</p><p><b>Шоссейно-внедорожные</b> — <a href='/tires/kl71' class='link inline weight-400'>KL71</a> (13 типоразмеров), <a href='/tires/kl33' class='link inline weight-400'>KL33</a> (8), <a href='/tires/ta31' class='link inline weight-400'>TA31</a> и <a href='/tires/kl21' class='link inline weight-400'>KL21</a> по 2 типоразмера.</p>"
+      },
+      {
+        "class": "content-wrap",
+        "content": "<div class='section__subitem heading-wrap'><span class='heading-accent self-start' aria-hidden='true'></span>{% include 'components/heading.twig' with {'item': item.heading} %}</div><div class='section__subitem longread-wrap'><span class='longread'>{{ item.desc | raw }}</span></div>",
+        "heading": {
+          "tag": "h2",
+          "class": "h3 heading font-2 weight-700 heading-flex uppercase",
+          "title": "A/T или M/T"
+        },
+        "desc": "<p><b>A/T</b> (all-terrain) — компромисс: держит грунт и щебень, но остаётся приемлемой на асфальте по шуму и износу. Такие шины берут на авто, которые ежедневно ездят по городу и выезжают на грунт по выходным.</p><p><b>M/T</b> (mud-terrain) — крупные блоки и широкие канавки для грязи и глубокой колеи. На асфальте такие шины заметно шумнее, тормозной путь длиннее, ресурс меньше.</p><p>Если бездорожья в маршрутах нет, шоссейные модели для кроссоверов собраны в <a href='/tires/crugen' class='link inline weight-400'>Crugen</a>. Зимние варианты для внедорожников — в <a href='/tires/wintercraft' class='link inline weight-400'>WinterCraft</a>.</p>"
+      }
+    ]
+  }
+}

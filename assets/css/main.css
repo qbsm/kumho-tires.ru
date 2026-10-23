@@ -29,8 +29,13 @@
 @import "sections/us.css";
 @import "sections/navigation.css";
 @import "sections/tires.css";
+@import "sections/tire-selector.css";
+@import "sections/cta.css";
 @import "sections/dealers.css";
 @import "sections/news.css";
+@import "sections/articles.css";
+@import "sections/faq.css";
+@import "sections/error.css";
 
 /* Components */
 @import "components/accordion.css";
@@ -42,10 +47,12 @@
 @import "components/cover.css";
 @import "components/custom-checkbox.css";
 @import "components/custom-list.css";
+@import "components/data-table.css";
 @import "components/features-list.css";
 @import "components/form-callback.css";
 @import "components/glightbox-custom.css";
 @import "components/heading.css";
+@import "components/icon-text.css";
 @import "components/mini-table.css";
 @import "components/numbered-list.css";
 @import "components/slider.css";
@@ -61,11 +68,14 @@
 @import "components/card-news.css";
 @import "components/card-doc.css";
 @import "components/filter.css";
+@import "components/error-code.css";
 
 /* Pages */
 @import "pages/404.css";
+@import "pages/about.css";
 @import "pages/contacts.css";
 @import "pages/index.css";
 @import "sections/logoline.css";
 @import "pages/tires.css";
 @import "pages/news.css";
+@import "pages/article.css";
