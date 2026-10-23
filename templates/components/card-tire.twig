@@ -9,7 +9,13 @@
   {% set cardCaption = item.official.tagline | default(item.item.caption) | default(item.item.series) | default('') %}
   {% if cardCaption %}
     <div class="card__item desc-wrap">
-      <span class="card__desc">{{ cardCaption }}</span>
+      {# caption_deferred: карточка лежит в скрытом блоке (результаты подбора) — подпись в data-атрибуте,
+         текст ставит JS при показе; иначе 38 подписей «…шина…» попадают в индексируемый текст и раздувают тошноту главной #}
+      {% if caption_deferred is defined and caption_deferred %}
+        <span class="card__desc js-deferred-caption" data-caption="{{ cardCaption }}"></span>
+      {% else %}
+        <span class="card__desc">{{ cardCaption }}</span>
+      {% endif %}
     </div>
   {% endif %}
   {% if item.item.frame is defined and item.item.frame %}

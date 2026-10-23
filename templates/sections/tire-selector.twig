@@ -177,7 +177,7 @@
                 data-priority="{{ priorityTokens }}"
                 data-sizes="{{ sizeTokens }}"
               >
-                {% include 'components/card-tire.twig' with {'item': tireItem, 'heading_tag': 'span'} %}
+                {% include 'components/card-tire.twig' with {'item': tireItem, 'heading_tag': 'span', 'caption_deferred': true} %}
               </div>
             {% endfor %}
           </div>

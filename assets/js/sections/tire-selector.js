@@ -197,6 +197,12 @@ const initSelector = (root) => {
       entry.card.el.style.order = String(index);
     });
 
+    // Подписи карточек отложены (см. card-tire.twig, caption_deferred) — ставим при первом показе результатов
+    root.querySelectorAll('.js-deferred-caption').forEach((el) => {
+      el.textContent = el.dataset.caption || '';
+      el.classList.remove('js-deferred-caption');
+    });
+
     if (emptyEl) {
       const isEmpty = matched.length === 0;
       const note = emptyEl.querySelector('.js-selector-empty-note');
