@@ -23,6 +23,7 @@ use App\Notification\Channel\GoogleSheetsChannel;
 use App\Notification\Channel\MailChannel;
 use App\Notification\Channel\TelegramChannel;
 use App\Notification\NotificationDispatcher;
+use App\Support\RescueQueue;
 use App\Support\FormToken;
 use App\Service\DataLoaderService;
 use App\Service\ArticleSeoBuilder;
@@ -219,11 +220,15 @@ return static function (): ContainerInterface {
             (string) ($c->get('settings')['project_root'] ?? ''),
         ),
 
-        RescueChannel::class => static fn(ContainerInterface $c) => new RescueChannel(
-            $c->get(HttpClientInterface::class),
-            $c->get(LoggerInterface::class),
-            $c->get('settings')['rescue'] ?? [],
-        ),
+        RescueChannel::class => static function (ContainerInterface $c) {
+            $settings = $c->get('settings');
+            $config = (array) ($settings['rescue'] ?? []);
+            $queue = ($config['queue'] ?? true) === false ? null : new RescueQueue(
+                $c->get(LoggerInterface::class),
+                (string) ($settings['paths']['logs'] ?? ''),
+            );
+            return new RescueChannel($c->get(HttpClientInterface::class), $c->get(LoggerInterface::class), $config, $queue);
+        },
 
         NotificationDispatcher::class => static fn(ContainerInterface $c) => new NotificationDispatcher(
             [

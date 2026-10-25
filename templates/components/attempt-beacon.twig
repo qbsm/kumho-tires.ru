@@ -65,9 +65,12 @@
     if (consent && !consent.checked) d.fields = Object.assign(d.fields || {}, { policy: 'не отмечено' });
     send(d);
   }, true);
-  function report(outcome, error) {
+  function report(outcome, error, timing) {
     if (!state.last) return;
-    send({ kind: 'result', session_id: state.last.id, outcome: outcome, error: error || '' });
+    var ev = { kind: 'result', session_id: state.last.id, outcome: outcome, error: error || '' };
+    // Сколько заняла отправка и на чём: капча и запросы к серверу (ADR-0017).
+    if (timing && typeof timing === 'object') ev.timing = timing;
+    send(ev);
     if (outcome === 'sent') {
       var f = state.last.form;
       if (f && f.dataset) { delete f.dataset.ismartSession; delete f.dataset.ismartStarted; }
@@ -76,10 +79,15 @@
   }
   document.addEventListener('ismart:send-result', function (e) {
     var det = e.detail || {};
-    report(det.outcome || '', det.error || '');
+    report(det.outcome || '', det.error || '', det.timing);
   }, true);
   function classify(status, text) {
-    if (status >= 200 && status < 300) report('sent');
+    // Успех формы платформы отмечает сама форма (ismart:send-result) — с хронологией отправки; отметь
+    // его здесь, сессия закрылась бы раньше и timing не дошёл бы до приёмника. Прочие формы — как раньше.
+    if (status >= 200 && status < 300) {
+      var f = state.last && state.last.form;
+      if (!(f && f.getAttribute && f.getAttribute('data-callback-form-initialized') === '1')) report('sent');
+    }
     else if (status === 0) report('network_error', 'нет ответа');
     else report('http_' + status, String(text || '').slice(0, 120));
   }

@@ -141,6 +141,8 @@ return [
         'site' => (string) (getenv('RESCUE_SITE') ?: ''),
         'key' => (string) (getenv('RESCUE_KEY') ?: ''),
         'timeout' => (int) (getenv('RESCUE_TIMEOUT') ?: 10),
+        // Очередь досылки (RescueQueue, ADR-0017): сбой сети, DNS или 5xx приёмника не теряет копию заявки.
+        'queue' => filter_var((string) (getenv('RESCUE_QUEUE') ?: 'true'), FILTER_VALIDATE_BOOLEAN),
     ],
     'calltouch' => [
         'enable' => filter_var((string) (getenv('CALLTOUCH_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),

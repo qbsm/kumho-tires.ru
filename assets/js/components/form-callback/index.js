@@ -1,7 +1,14 @@
 import { FormApi } from './api.js';
 import { primeFormToken, primeAllTokenFields, ensureFormToken, refreshFormToken } from './token.js';
 import { formTitle } from './form-title.js';
-import { initCaptcha, appendCaptchaToken } from './captcha.js';
+import {
+  initCaptcha,
+  appendCaptchaToken,
+  captchaToken,
+  lastCaptcha,
+  captchaOnScreen,
+  hasLateCaptchaToken,
+} from './captcha.js';
 import { FormValidator } from './validation.js';
 import { PhoneMask } from './mask.js';
 import { FormUI } from './ui.js';
@@ -91,6 +98,9 @@ export class CallbackForm {
     }
 
     this.isSubmitting = true;
+    // Хронология отправки для приёмника: без неё «отправлялось 15 секунд» не разложить на капчу,
+    // сервер и повторы (ADR-0017).
+    this.timing = { started: performance.now(), steps: [] };
     this.ui.setLoadingState();
     this.abortController = new AbortController();
     let hasSucceeded = false;
@@ -103,7 +113,8 @@ export class CallbackForm {
         formData.set('idempotency_key', this.form.dataset.ismartSession);
       }
       await ensureFormToken(formData, this.form);
-      await appendCaptchaToken(formData);
+      await appendCaptchaToken(formData, { late: () => this._submitWithLateCaptcha() });
+      this._step('captcha', lastCaptcha());
       const response = await this._sendWithRetry(formData);
 
       if (response.processing === true) {
@@ -121,6 +132,8 @@ export class CallbackForm {
     } catch (error) {
       if (error && error.name === 'AbortError') {
         this._reportOutcome('network_error', 'timeout');
+        this._showCaptchaPending();
+        this._retryIfLateCaptcha();
         return;
       }
 
@@ -133,7 +146,9 @@ export class CallbackForm {
       }
       this._reportOutcome(outcome, (error && error.message) || '');
 
-      this._handleError(error);
+      const captchaRelated = status === 0 || (error && error.code === 'CAPTCHA_INVALID');
+      if (!(captchaRelated && this._showCaptchaPending())) this._handleError(error);
+      if (captchaRelated) this._retryIfLateCaptcha();
     } finally {
       this.isSubmitting = false;
       if (hasSucceeded) {
@@ -150,7 +165,56 @@ export class CallbackForm {
    * Исход попытки — сниппету маячков: он живёт отдельно от бандла и сам исхода не знает.
    */
   _reportOutcome(outcome, error = '') {
-    this.form.dispatchEvent(new CustomEvent('ismart:send-result', { bubbles: true, detail: { outcome, error } }));
+    const detail = { outcome, error };
+    if (this.timing && outcome !== 'validation_failed') {
+      detail.timing = { total_ms: Math.round(performance.now() - this.timing.started), steps: this.timing.steps };
+    }
+    this.form.dispatchEvent(new CustomEvent('ismart:send-result', { bubbles: true, detail }));
+  }
+
+  /** Шаг отправки в хронологию: капча (как прошла и сколько ждали) или запрос к серверу. */
+  _step(kind, data) {
+    if (this.timing && this.timing.steps.length < 8) this.timing.steps.push({ k: kind, ...data });
+  }
+
+  async _timedSend(formData) {
+    const started = performance.now();
+    try {
+      const response = await this.api.send(formData, this.abortController.signal);
+      this._step('send', { ms: Math.round(performance.now() - started), status: 200 });
+      return response;
+    } catch (error) {
+      let status = error && typeof error.status === 'number' ? error.status : 0;
+      if (error && error.name === 'AbortError') status = 'timeout';
+      this._step('send', { ms: Math.round(performance.now() - started), status });
+      throw error;
+    }
+  }
+
+  /** Отказ капчи (CAPTCHA_INVALID): свежая проверка — картинка, если нужна, — и повтор той же заявки. */
+  async _resendWithFreshCaptcha(formData, error) {
+    const token = await captchaToken({ fresh: true, late: () => this._submitWithLateCaptcha() });
+    this._step('captcha', lastCaptcha());
+    if (!token) throw error;
+    formData.set('smart-token', token);
+    return this._timedSend(formData);
+  }
+
+  /** Ответ капчи пришёл позже тайм-аута формы — заявка уходит сама, если человек её ещё не отправил. */
+  _submitWithLateCaptcha() {
+    if (this.isSubmitting || this.form.classList.contains('is-success') || !this.form.isConnected) return;
+    this._handleSubmit({ preventDefault() {} });
+  }
+
+  /** Окно капчи на экране — просьба пройти проверку вместо ошибки: заявка отправится сама. */
+  _showCaptchaPending() {
+    if (!captchaOnScreen()) return false;
+    this.ui.showFormError(this.i18n.get('error', 'captcha_pending', DEFAULT_ERROR_TEXTS[this.lang].captcha_pending));
+    return true;
+  }
+
+  _retryIfLateCaptcha() {
+    if (hasLateCaptchaToken()) setTimeout(() => this._submitWithLateCaptcha(), 0);
   }
 
   _handleInput(event) {
@@ -222,8 +286,9 @@ export class CallbackForm {
    */
   async _sendWithRetry(formData) {
     try {
-      return await this.api.send(formData, this.abortController.signal);
+      return await this._timedSend(formData);
     } catch (error) {
+      if (error && error.code === 'CAPTCHA_INVALID') return this._resendWithFreshCaptcha(formData, error);
       if (!error || error.code !== 'TOKEN_INVALID') throw error;
 
       const token = await refreshFormToken();
@@ -232,7 +297,7 @@ export class CallbackForm {
       formData.set('form_token', token);
       const wait = Number(error.retryAfter) > 0 ? Number(error.retryAfter) : 3;
       await new Promise((resolve) => setTimeout(resolve, (wait + 0.5) * 1000));
-      return this.api.send(formData, this.abortController.signal);
+      return this._timedSend(formData);
     }
   }
 
