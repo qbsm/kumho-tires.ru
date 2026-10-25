@@ -144,6 +144,11 @@ return [
         // Очередь досылки (RescueQueue, ADR-0017): сбой сети, DNS или 5xx приёмника не теряет копию заявки.
         'queue' => filter_var((string) (getenv('RESCUE_QUEUE') ?: 'true'), FILTER_VALIDATE_BOOLEAN),
     ],
+
+    // Каналы после ответа посетителю (DeferredChannel), через запятую: mail, telegram (ADR-0017).
+    'notifications' => [
+        'deferred' => (string) (getenv('FORM_DEFER_CHANNELS') ?: ''),
+    ],
     'calltouch' => [
         'enable' => filter_var((string) (getenv('CALLTOUCH_ENABLE') ?: 'false'), FILTER_VALIDATE_BOOLEAN),
         'route_key' => (string) (getenv('CALLTOUCH_ROUTE_KEY') ?: ''),

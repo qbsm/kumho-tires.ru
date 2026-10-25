@@ -22,6 +22,8 @@ use App\Notification\Channel\CallTouchChannel;
 use App\Notification\Channel\GoogleSheetsChannel;
 use App\Notification\Channel\MailChannel;
 use App\Notification\Channel\TelegramChannel;
+use App\Notification\Channel\DeferredChannel;
+use App\Notification\ChannelInterface;
 use App\Notification\NotificationDispatcher;
 use App\Support\RescueQueue;
 use App\Support\FormToken;
@@ -230,16 +232,27 @@ return static function (): ContainerInterface {
             return new RescueChannel($c->get(HttpClientInterface::class), $c->get(LoggerInterface::class), $config, $queue);
         },
 
-        NotificationDispatcher::class => static fn(ContainerInterface $c) => new NotificationDispatcher(
-            [
-                $c->get(RescueChannel::class),
-                $c->get(MailChannel::class),
-                $c->get(CallTouchChannel::class),
-                $c->get(TelegramChannel::class),
-                $c->get(GoogleSheetsChannel::class),
-            ],
-            $c->get(LoggerInterface::class),
-        ),
+        NotificationDispatcher::class => static function (ContainerInterface $c) {
+            // Письмо и Telegram можно отправлять после ответа посетителю (FORM_DEFER_CHANNELS, ADR-0017).
+            $deferred = array_filter(array_map('trim', explode(',', strtolower(
+                (string) ($c->get('settings')['notifications']['deferred'] ?? ''),
+            ))));
+            $logger = $c->get(LoggerInterface::class);
+            $channel = static fn(ChannelInterface $ch): ChannelInterface => in_array($ch->name(), $deferred, true)
+                ? new DeferredChannel($ch, $logger)
+                : $ch;
+
+            return new NotificationDispatcher(
+                [
+                    $c->get(RescueChannel::class),
+                    $channel($c->get(MailChannel::class)),
+                    $c->get(CallTouchChannel::class),
+                    $channel($c->get(TelegramChannel::class)),
+                    $c->get(GoogleSheetsChannel::class),
+                ],
+                $logger,
+            );
+        },
 
         // Секрет подписи живёт в cache и заводится сам: иначе каждый deployment пришлось бы
         // править вручную, а забытый ключ означал бы неотправляемые формы.
