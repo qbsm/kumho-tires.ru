@@ -54,4 +54,10 @@ final class ChannelResult
     {
         return $this->status === self::STATUS_SUCCESS;
     }
+
+    /** Итог для отчёта о каналах в приёмник (канал → статус). */
+    public function state(): string
+    {
+        return $this->status;
+    }
 }

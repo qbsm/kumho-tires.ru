@@ -333,12 +333,14 @@
       "ru": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Ваше имя",
+        "email": "E-mail",
         "photos": "Нажмите или перетащите фотографии шин(-ы)",
         "message": "Опишите ситуацию: что произошло, модель и размер шин, номер расширенной гарантии и др."
       },
       "en": {
         "phone": "+7 ( _ _ _ ) _ _ _ - _ _ - _ _",
         "name": "Your name",
+        "email": "E-mail",
         "photos": "Click or drag & drop photos",
         "message": "Describe the issue: what happened, tire model and size, warranty number, etc."
       }
@@ -347,6 +349,7 @@
       "ru": {
         "phone": "Телефон",
         "name": "Ваше имя",
+        "email": "E-mail",
         "policy": "Я ознакомился с&nbsp;<a href='/data/docs/personal-data-policy.pdf' target='_blank' class='link inline weight-400 underline-static'>Политикой обработки персональных данных</a> и&nbsp;согласен с&nbsp;обработкой моих персональных данных способами и&nbsp;для целей, указанных в&nbsp;Политике.",
         "photos": "Прикрепите изображения",
         "message": "Сообщение"
@@ -354,6 +357,7 @@
       "en": {
         "phone": "Phone",
         "name": "Your name",
+        "email": "E-mail",
         "policy": "I consent to the processing of personal data in&nbsp;accordance with the&nbsp;<a href='/en/policy/' target='_blank' class='link inline weight-400 underline-static'>Privacy Policy</a>",
         "photos": "Attach images",
         "message": "Message"
@@ -374,6 +378,8 @@
         "name_min_length": "Имя должно содержать не менее 2 символов",
         "phone_required": "Пожалуйста, укажите номер телефона",
         "phone_invalid": "Неверный формат номера телефона",
+        "email_required": "Пожалуйста, укажите e-mail",
+        "email_invalid": "Неверный формат E-mail",
         "message_required": "Пожалуйста, опишите ситуацию",
         "policy_required": "Необходимо согласиться с политикой конфиденциальности",
         "form_errors": "Пожалуйста, исправьте ошибки в форме",
@@ -391,6 +397,8 @@
         "name_min_length": "Name should be at least 2 characters",
         "phone_required": "Please enter your phone number",
         "phone_invalid": "Invalid phone number format",
+        "email_required": "Please enter your e-mail",
+        "email_invalid": "Invalid e-mail format",
         "message_required": "Please describe the issue",
         "policy_required": "You must agree to the privacy policy",
         "form_errors": "Please correct the errors in the form",
