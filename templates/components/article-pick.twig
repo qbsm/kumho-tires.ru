@@ -1,0 +1,12 @@
+<aside class="article-pick" aria-label="{{ title|e('html_attr') }}">
+  <span class="article-pick__title font-2 weight-700 uppercase">{{ title }}</span>
+  {% if desc is defined and desc %}
+    <span class="article-pick__desc">{{ desc|raw }}</span>
+  {% endif %}
+  <span class="article-pick__actions">
+    <a href="{{ url(href) }}" class="button button-sm button-3 uppercase link" data-tag="article-pick">{{ label }}</a>
+    {% if more_href is defined and more_href %}
+      <a href="{{ url(more_href) }}" class="link underline-static weight-500">{{ more_label }}</a>
+    {% endif %}
+  </span>
+</aside>

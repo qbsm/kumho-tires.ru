@@ -68,6 +68,11 @@
           {% endif %}
         </div>
       </section>
+      {% if a.cta is defined and a.cta.href is defined %}
+        <div class="article-sticky">
+          <a href="{{ url(a.cta.href) }}" class="button button-sm button-3 uppercase link" data-tag="article-sticky">{{ a.cta.sticky|default(a.cta.label|default('Подобрать шины')) }}</a>
+        </div>
+      {% endif %}
     </article>
 
     {% if a.faq is defined and a.faq|length > 0 %}
