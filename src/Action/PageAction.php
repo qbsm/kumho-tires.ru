@@ -265,10 +265,10 @@ final class PageAction
 
             $heading = ($seasonLabel !== '' ? $seasonLabel . ' шины' : 'Шины') . ' Kumho'
                 . $familySuffix . ' ' . $sizeLabel;
-            $title = $heading . ' — все модели в этом размере';
-            $description = ($seasonGenitive !== '' ? 'Каталог ' . $seasonGenitive . ' шин' : 'Каталог шин')
-                . ' Kumho' . $familySuffix . ' в размере ' . $sizeLabel . ': модели официального дистрибьютора, '
-                . 'характеристики, индексы нагрузки и скорости. Где купить в России.';
+            $title = $heading . ' — купить в России, все модели размера';
+            $description = 'Купить ' . ($seasonLabel !== '' ? mb_strtolower($seasonLabel) . ' шины' : 'шины')
+                . ' Kumho' . $familySuffix . ' ' . $sizeLabel . ' у авторизованных дилеров: модели официального '
+                . 'дистрибьютора, характеристики, индексы нагрузки и скорости, точки продаж на карте.';
         }
 
         if ($title !== '') {
