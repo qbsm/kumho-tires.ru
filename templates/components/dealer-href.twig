@@ -1,0 +1,8 @@
+{% macro href(url) %}
+  {%- set u = url|default('')|trim -%}
+  {%- if u matches '/^https?:\\/\\//' and 'utm_' not in u -%}
+    {{- (u ~ ('?' in u ? '&' : '?') ~ 'utm_source=kumho-tires.ru&utm_medium=referral&utm_campaign=gde-kupit')|e('html') -}}
+  {%- else -%}
+    {{- u|e('html') -}}
+  {%- endif -%}
+{% endmacro %}

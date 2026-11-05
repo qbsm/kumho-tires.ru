@@ -1,3 +1,4 @@
+{% import 'components/dealer-href.twig' as dealer_link %}
 <article class="card-dealer" {% if item.location is defined %}data-location="{{ item.location }}"{% endif %}>
   <div class="card-dealer__item title-wrap">
     {% set guaranteeData = item.guarantee | default({}) %}
@@ -40,7 +41,7 @@
   {% if siteTitle and siteHref %}
     <div class="card-dealer__item opacity-80">
       <div class="link-wrap">
-        <a href="{{ siteHref }}" target="_blank" rel="noopener noreferrer" class="link inline weight-400 underline-static">{{ siteTitle | raw }}</a>
+        <a href="{{ dealer_link.href(siteHref) }}" target="_blank" rel="noopener noreferrer" class="link inline weight-400 underline-static">{{ siteTitle | raw }}</a>
       </div>
     </div>
   {% endif %}

@@ -1,3 +1,4 @@
+{% import 'components/dealer-href.twig' as dealer_link %}
 {% set urlSyncCity = data.url_sync_city | default(false) %}
 {# На /buy/<город> сервер рендерит только точки этого города: полный список из ~155 магазинов
    на каждой городской странице — это 600+ КиБ HTML и дубль-контент между 56 URL #}
@@ -216,7 +217,7 @@
                 data-address="{{ item.address|default('')|e('html_attr') }}"
                 data-phones="{{ phones|json_encode|e('html_attr') }}"
                 data-site="{{ item.site.title|default(item.site|default(''))|e('html_attr') }}"
-                data-site-href="{{ item.site.href|default(item.site_href|default(''))|e('html_attr') }}">
+                data-site-href="{{ dealer_link.href(item.site.href|default(item.site_href|default(''))) }}">
               </div>
             {% endif %}
           {% endfor %}
