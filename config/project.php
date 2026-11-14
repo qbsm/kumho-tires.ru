@@ -179,6 +179,7 @@ return [
         'tires/winter',
         'tires/studded',
         'tires/185-65-r15',
+        'tires/185-75-r16',
         'tires/205-55-r16',
         'tires/215-65-r16',
         'tires/225-55-r18',
