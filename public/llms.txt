@@ -92,7 +92,7 @@ kumho-tires.ru — сайт официального дистрибьютора 
     когда оправдана всесезонка /articles/all-season-ha32, PS71 или HS52 /articles/ps71-vs-hs52,
     шины для кроссовера /articles/tires-for-suv, шины для фургона /articles/tires-for-van,
     шины на ГАЗель 185/75 R16C /articles/tires-for-gazelle,
-    индексы нагрузки и скорости /articles/load-speed-index, проверка шины в реестре EPREL
+    индексы нагрузки и скорости с полными таблицами /articles/load-speed-index, проверка шины в реестре EPREL
     /articles/eprel-check, как отличить оригинал /articles/original-check,
     расширенная гарантия /articles/extended-warranty,
     Kumho на конвейере автопроизводителей /articles/oem-fitment,
@@ -104,7 +104,7 @@ kumho-tires.ru — сайт официального дистрибьютора 
     смена типоразмера и что значит XL /articles/tire-size-change,
     направленные и асимметричные шины /articles/tire-direction,
     шины для электромобиля /articles/ev-tires,
-    корейские производители шин /articles/korean-tires,
+    корейские производители шин и Kumho или Hankook в тестах /articles/korean-tires,
     расшифровка названий моделей /articles/model-naming
 - Контакты: /contacts
 - Политика конфиденциальности: /policy
