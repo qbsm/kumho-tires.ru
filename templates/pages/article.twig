@@ -47,6 +47,21 @@
             </div>
           {% endif %}
 
+          {% if a.summary is defined and a.summary %}
+            <aside class="section__item article-detail__summary" aria-label="Коротко">
+              <span class="article-detail__summary-title font-2 weight-700 uppercase">Коротко</span>
+              {% if a.summary is iterable %}
+                <ul class="article-detail__summary-list">
+                  {% for _point in a.summary %}
+                    <li class="article-detail__summary-item">{{ _point|raw }}</li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <p class="article-detail__summary-text">{{ a.summary|raw }}</p>
+              {% endif %}
+            </aside>
+          {% endif %}
+
           {% if a.toc is defined and a.toc|length > 1 %}
             <nav class="section__item article-detail__toc" aria-label="Содержание статьи">
               <span class="article-detail__toc-title uppercase">Содержание</span>
@@ -77,7 +92,7 @@
 
     {% if a.faq is defined and a.faq|length > 0 %}
       {% include 'sections/faq.twig' with {'data': {
-        'heading': {'tag': 'h2', 'class': 'h2 heading font-2 weight-700 heading-flex uppercase', 'title': a.faq_title|default('Коротко о главном')},
+        'heading': {'tag': 'h2', 'class': 'h2 heading font-2 weight-700 heading-flex uppercase', 'title': a.faq_title|default('Вопросы и ответы')},
         'items': a.faq
       }} %}
     {% endif %}

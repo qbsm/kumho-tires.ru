@@ -55,6 +55,56 @@
   text-wrap: pretty;
 }
 
+.article-detail__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem;
+  background: var(--color-surface);
+
+  @media (--sm) {
+    padding: 2.4rem 3rem;
+  }
+}
+
+.article-detail__summary-title {
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+}
+
+.article-detail__summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.article-detail__summary-item,
+.article-detail__summary-text {
+  margin: 0;
+  font-size: 1.125em;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.article-detail__summary-item {
+  position: relative;
+  padding-left: 2.4rem;
+}
+
+.article-detail__summary-item::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0.3rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: var(--color-3);
+  transform: skewX(-45deg);
+}
+
 /* Содержание: панель на тонких линиях. Рамка-карточка здесь была бы второй «коробкой»
    сразу после обложки. */
 .article-detail__toc {
@@ -171,7 +221,7 @@
   margin-block: 2.4rem;
   padding: 2rem;
   border-left: 0.4rem solid var(--color-3);
-  background: #f8f9fb;
+  background: var(--color-surface);
   line-height: 1.5;
 
   @media (--sm) {
