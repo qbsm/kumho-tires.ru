@@ -41,25 +41,21 @@ final class TireSeoBuilder implements SeoBuilderInterface
         }
 
         // Усиленный SEO-title (на h1 не влияет — он в шаблоне).
-        $titleParts = [];
-        if (stripos($name, 'шина') === false) {
-            $titleParts[] = 'Шина';
-        }
-        $titleParts[] = $name;
-        if ($sizeStr !== '') {
-            $titleParts[] = $sizeStr;
-        }
-        $title = trim(implode(' ', $titleParts));
-        if ($title !== '') {
-            // Длинные названия моделей вместе с полным хвостом вылезают за 65 символов и
-            // обрезаются в выдаче — для них берём короткий хвост.
-            $suffix = ' — характеристики и размеры';
-            if (mb_strlen($title . $suffix) > 65) {
-                $suffix = ' — характеристики';
+        $kind = match (mb_strtolower($season)) {
+            'летняя' => 'летняя шина',
+            'зимняя' => 'зимняя нешипованная шина',
+            'зимняя, шипованная' => 'зимняя шипованная шина',
+            'всесезонная' => 'всесезонная шина',
+            'внедорожная' => 'внедорожная шина',
+            default => 'шина',
+        };
+        $title = $name;
+        if ($name !== '') {
+            $title = trim($name . ' — ' . $kind . ' ' . $sizeStr);
+            $suffix = ': размеры и где купить';
+            if (mb_strlen($title . $suffix) <= 70) {
+                $title .= $suffix;
             }
-            $title .= $suffix;
-        } else {
-            $title = $name;
         }
 
         $imgSrc = '';
