@@ -118,7 +118,10 @@ foreach ($langs as $lang) {
                     continue;
                 }
                 $value = getByPath($json, $key);
-                $formatted = formatValue($value, $key);
+                $formatted = isset($field['join']) && is_array($value)
+                    ? implode((string) $field['join'], array_map('strval', $value))
+                    : formatValue($value, $key);
+                $formatted = trim((string) preg_replace('/\s+/', ' ', strip_tags($formatted)));
                 if ($formatted !== '') {
                     $lines[] = $label . ': ' . $formatted;
                 }

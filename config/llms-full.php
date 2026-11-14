@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Описывает коллекции контента: откуда брать список slug'ов и как форматировать каждый элемент.
  * Для универсального ядра — подставьте свои коллекции под тип проекта (каталог, рестораны, события и т.д.).
  *
- * @return array{title: string, intro: string, collections: array<int, array{list_path: string, list_key: string, item_dir: string, name_key: string, desc_key?: string, visible_key?: string, fields: array<int, array{label: string, key: string}>}>}
+ * @return array{title: string, intro: string, collections: array<int, array{list_path: string, list_key: string, item_dir: string, name_key: string, desc_key?: string, visible_key?: string, fields: array<int, array{label: string, key: string, join?: string}>}>}
  */
 return [
     'title' => 'Kumho Tire',
@@ -63,6 +63,7 @@ return [
             'visible_key' => 'visible',
             'url_pattern' => '/articles/{slug}',
             'fields' => [
+                ['label' => 'Коротко', 'key' => 'article.summary', 'join' => ' '],
                 ['label' => 'Рубрика', 'key' => 'article.category'],
             ],
         ],
