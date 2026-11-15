@@ -101,15 +101,6 @@
 
             </div>
 
-            {# --- Коротко: ответы покупателю до описания --- #}
-            {% if tire.summary is defined and tire.summary %}
-              {% include 'components/summary-box.twig' with {
-                'class': 'section__item',
-                'items': tire.summary is iterable ? tire.summary : [],
-                'text': tire.summary is iterable ? '' : tire.summary
-              } only %}
-            {% endif %}
-
             {# --- Описание --- #}
             {% if tire.desc.full is defined and tire.desc.full %}
             <div class="section__item block-wrap">

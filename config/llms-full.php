@@ -51,7 +51,6 @@ return [
                 ['label' => 'Код', 'key' => 'item.code'],
                 ['label' => 'Серия', 'key' => 'item.series'],
                 ['label' => 'Сезонность', 'key' => 'season'],
-                ['label' => 'Коротко', 'key' => 'summary', 'join' => ' '],
                 ['label' => 'Доступные размеры', 'key' => 'sizes'],
             ],
         ],
