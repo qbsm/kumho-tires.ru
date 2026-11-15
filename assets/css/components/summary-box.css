@@ -1,0 +1,50 @@
+/* Блок «Коротко» — общий для статей и карточек моделей */
+.summary-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem;
+  background: var(--color-surface);
+
+  @media (--sm) {
+    padding: 2.4rem 3rem;
+  }
+}
+
+.summary-box__title {
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+}
+
+.summary-box__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.summary-box__item,
+.summary-box__text {
+  margin: 0;
+  font-size: 1.125em;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.summary-box__item {
+  position: relative;
+  padding-left: 2.4rem;
+}
+
+.summary-box__item::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0.3rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: var(--color-3);
+  transform: skewX(-45deg);
+}

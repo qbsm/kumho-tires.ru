@@ -48,18 +48,11 @@
           {% endif %}
 
           {% if a.summary is defined and a.summary %}
-            <aside class="section__item article-detail__summary" aria-label="Коротко">
-              <span class="article-detail__summary-title font-2 weight-700 uppercase">Коротко</span>
-              {% if a.summary is iterable %}
-                <ul class="article-detail__summary-list">
-                  {% for _point in a.summary %}
-                    <li class="article-detail__summary-item">{{ _point|raw }}</li>
-                  {% endfor %}
-                </ul>
-              {% else %}
-                <p class="article-detail__summary-text">{{ a.summary|raw }}</p>
-              {% endif %}
-            </aside>
+            {% include 'components/summary-box.twig' with {
+              'class': 'section__item',
+              'items': a.summary is iterable ? a.summary : [],
+              'text': a.summary is iterable ? '' : a.summary
+            } only %}
           {% endif %}
 
           {% if a.toc is defined and a.toc|length > 1 %}

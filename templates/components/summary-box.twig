@@ -1,0 +1,14 @@
+{# Блок «Коротко»: 2–3 ответа читателю до основного текста. items — список строк (допустим <b>), либо text — одна строка. #}
+{% set _title = title|default('Коротко') %}
+<aside class="summary-box{% if class is defined and class %} {{ class }}{% endif %}" aria-label="{{ _title }}">
+  <span class="summary-box__title font-2 weight-700 uppercase">{{ _title }}</span>
+  {% if items is defined and items is iterable and items|length > 0 %}
+    <ul class="summary-box__list">
+      {% for _point in items %}
+        <li class="summary-box__item">{{ _point|raw }}</li>
+      {% endfor %}
+    </ul>
+  {% elseif text is defined and text %}
+    <p class="summary-box__text">{{ text|raw }}</p>
+  {% endif %}
+</aside>
