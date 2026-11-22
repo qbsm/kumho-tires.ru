@@ -2,7 +2,7 @@
    Не блокирует FCP/LCP/TBT. ID из config или fallback 107236894 #}
 {% set _ym_id = config.settings.yandex_metric_id|default(0) %}
 {% if _ym_id == 0 %}{% set _ym_id = 107236894 %}{% endif %}
-<!-- Yandex.Metrika counter -->
+{# Yandex.Metrika counter #}
 <script>
   (function() {
     function initMetrika() {
@@ -41,4 +41,4 @@
     }
   })();
 </script>
-<!-- /Yandex.Metrika counter -->
+{# /Yandex.Metrika counter #}
